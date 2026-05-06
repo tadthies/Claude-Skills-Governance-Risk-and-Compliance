@@ -264,28 +264,43 @@ layout: null
     .linkedin-card-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
     @media (max-width: 680px) { .linkedin-card { flex-direction: column; } .linkedin-card-image { width: 100%; max-height: 260px; } }
 
-    /* ── SKILLS HEADER GRID ── */
-    .skills-header-grid {
+    /* ── SKILLS HEADER CATEGORIES ── */
+    .skills-category-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0.4rem 1.2rem;
-      max-width: 860px;
-      margin: 0.9rem auto 1.3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem 1.6rem;
+      max-width: 900px;
+      margin: 1rem auto 1.3rem;
       text-align: left;
     }
-    .skills-header-grid span {
-      font-size: 0.82rem;
+    .skill-cat-label {
+      font-size: 0.63rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 0.2rem;
+    }
+    .skill-cat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.7rem;
+    }
+    .skill-cat-chips span {
+      font-size: 0.8rem;
       color: rgba(255,255,255,0.92);
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.28rem;
     }
     @media (max-width: 720px) {
-      .skills-header-grid { grid-template-columns: repeat(3, 1fr); }
+      .skills-category-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 460px) {
-      .skills-header-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-category-grid { grid-template-columns: 1fr 1fr; }
     }
 
     /* ── FEEDBACK FORM ── */
@@ -536,27 +551,70 @@ layout: null
   <h1>Claude Skills for Governance, Risk, &amp; Compliance Frameworks</h1>
   <p style="font-size:clamp(0.88rem,2vw,1rem);opacity:0.88;margin-bottom:0.2rem;">Expert-level, framework-specific compliance guidance — powered by Claude Skills.</p>
   <p style="font-size:clamp(0.8rem,1.8vw,0.93rem);opacity:0.78;margin-bottom:0.6rem;">Benchmarked to deliver 96% accuracy across 500 assertions (vs. 81% baseline). Open-source (<a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;opacity:0.9;">GitHub</a>)</p>
-  <div class="skills-header-grid">
-    <span><img src="assets/Logos/iso27001.jpg" alt="ISO 27001" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> ISO 27001</span>
-    <span><img src="assets/Logos/soc2.jpeg" alt="SOC 2" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> SOC 2</span>
-    <span><img src="assets/Logos/fedramp.svg" alt="FedRAMP" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> FedRAMP</span>
-    <span>🇪🇺 GDPR</span>
-    <span><img src="assets/Logos/hipaa.png" alt="HIPAA" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> HIPAA</span>
-    <span><img src="assets/Logos/nist-csf.jpeg" alt="NIST CSF" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> NIST CSF</span>
-    <span><img src="assets/Logos/pci-dss.png" alt="PCI DSS" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> PCI DSS</span>
-    <span>🚨 TSA Cybersecurity</span>
-    <span><img src="assets/Logos/iso42001.webp" alt="ISO 42001" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> ISO 42001</span>
-    <span><img src="assets/Logos/iso27701.png" alt="ISO 27701" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> ISO 27701</span>
-    <span><img src="assets/Logos/dora.png" alt="DORA" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> DORA</span>
-    <span>🇮🇳 DPDPA</span>
-    <span><img src="assets/Logos/cmmc.png" alt="CMMC" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> CMMC 2.0</span>
-    <span><img src="assets/Logos/nist-ai-rmf.svg" alt="NIST AI RMF" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> NIST AI RMF</span>
-    <span><img src="assets/Logos/swift-csp.png" alt="SWIFT CSP" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> SWIFT CSP</span>
-    <span>🇦🇺 ISM</span>
-    <span>🇪🇺 NIS2</span>
-    <span><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" alt="CA" style="height:1em;width:auto;vertical-align:middle;border-radius:2px;"> CCPA/CPRA</span>
-    <span><img src="assets/Logos/itar.jpg" alt="ITAR" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> ITAR</span>
-    <span><img src="assets/Logos/lgpd-brazil.svg" alt="Brazil" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> LGPD</span>
+  <div class="skills-category-grid">
+
+    <!-- Privacy & Data Protection -->
+    <div class="skill-cat">
+      <div class="skill-cat-label">🔐 Privacy &amp; Data Protection</div>
+      <div class="skill-cat-chips">
+        <span>🇪🇺 GDPR</span>
+        <span><img src="assets/Logos/hipaa.png" alt="HIPAA" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> HIPAA</span>
+        <span><img src="assets/Logos/iso27701.png" alt="ISO 27701" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> ISO 27701</span>
+        <span>🇮🇳 DPDPA</span>
+        <span><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" alt="CA" style="height:0.95em;width:auto;vertical-align:middle;border-radius:1px;"> CCPA/CPRA</span>
+        <span><img src="assets/Logos/lgpd-brazil.svg" alt="Brazil" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> LGPD</span>
+      </div>
+    </div>
+
+    <!-- Information Security -->
+    <div class="skill-cat">
+      <div class="skill-cat-label">🛡️ Information Security</div>
+      <div class="skill-cat-chips">
+        <span><img src="assets/Logos/iso27001.jpg" alt="ISO 27001" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> ISO 27001</span>
+        <span><img src="assets/Logos/soc2.jpeg" alt="SOC 2" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> SOC 2</span>
+        <span><img src="assets/Logos/nist-csf.jpeg" alt="NIST CSF" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> NIST CSF</span>
+        <span>🇦🇺 ISM</span>
+      </div>
+    </div>
+
+    <!-- Cybersecurity Regulation -->
+    <div class="skill-cat">
+      <div class="skill-cat-label">🏛️ Cybersecurity Regulation</div>
+      <div class="skill-cat-chips">
+        <span><img src="assets/Logos/fedramp.svg" alt="FedRAMP" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> FedRAMP</span>
+        <span><img src="assets/Logos/cmmc.png" alt="CMMC" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> CMMC 2.0</span>
+        <span>🇪🇺 NIS2</span>
+        <span>🚨 TSA</span>
+      </div>
+    </div>
+
+    <!-- Financial Services -->
+    <div class="skill-cat">
+      <div class="skill-cat-label">🏦 Financial Services</div>
+      <div class="skill-cat-chips">
+        <span><img src="assets/Logos/pci-dss.png" alt="PCI DSS" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> PCI DSS</span>
+        <span><img src="assets/Logos/dora.png" alt="DORA" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> DORA</span>
+        <span><img src="assets/Logos/swift-csp.png" alt="SWIFT CSP" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> SWIFT CSP</span>
+      </div>
+    </div>
+
+    <!-- AI Governance -->
+    <div class="skill-cat">
+      <div class="skill-cat-label">🤖 AI Governance</div>
+      <div class="skill-cat-chips">
+        <span><img src="assets/Logos/iso42001.webp" alt="ISO 42001" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> ISO 42001</span>
+        <span><img src="assets/Logos/nist-ai-rmf.svg" alt="NIST AI RMF" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> NIST AI RMF</span>
+      </div>
+    </div>
+
+    <!-- Export &amp; Defense -->
+    <div class="skill-cat">
+      <div class="skill-cat-label">🚀 Export &amp; Defense</div>
+      <div class="skill-cat-chips">
+        <span><img src="assets/Logos/itar.jpg" alt="ITAR" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> ITAR</span>
+      </div>
+    </div>
+
   </div>
   <div class="badges">
     <img src="https://img.shields.io/badge/Release-v0.8.0-brightgreen.svg" alt="Release v0.8.0" />
