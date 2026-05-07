@@ -1,0 +1,34 @@
+{
+  "eval_id": 116,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Correctly identifies High as the overall impact level (high-water mark from High Confidentiality)",
+      "passed": false,
+      "evidence": "The response concludes MODERATE as the overall categorization: 'OVERALL SYSTEM CATEGORIZATION: MODERATE'. It rates Confidentiality as 'MODERATE to HIGH' but recommends MODERATE ('Recommended Rating: MODERATE with consideration for HIGH if...'), and the final high-water mark table yields Moderate across all objectives. The expected High overall level driven by High Confidentiality for PII/salary data is not reached."
+    },
+    {
+      "text": "Selects the High baseline from SP 800-53B",
+      "passed": false,
+      "evidence": "The response selects 'SELECTED BASELINE: MODERATE' based on its MODERATE overall categorization. It does not select the High baseline. The note about HIGH is conditional and not the recommended path."
+    },
+    {
+      "text": "Applies FIPS 199 framework to assess CIA objectives individually",
+      "passed": true,
+      "evidence": "The response evaluates CONFIDENTIALITY, INTEGRITY, and AVAILABILITY separately under 'Impact Analysis by Security Objective', assigns individual ratings, and applies the high-water mark principle per FIPS 199. The FIPS 199 notation is used: 'SC HR_System = {(Confidentiality, MODERATE), (Integrity, MODERATE), (Availability, MODERATE)}'."
+    },
+    {
+      "text": "Notes PT family (privacy controls) apply due to PII processing",
+      "passed": true,
+      "evidence": "The response lists 'PT — PII Processing and Transparency (Privacy Controls — Rev. 5 addition)' as a key control family in Step 2, describing it as covering 'lawful collection, use, and retention of PII; Privacy Act System of Records Notice (SORN); Privacy Impact Assessment (PIA) required per E-Government Act of 2002.'"
+    },
+    {
+      "text": "References SP 800-60 for information type categorization guidance",
+      "passed": true,
+      "evidence": "The response references 'NIST SP 800-60, Volume II, Guide for Mapping Types of Information and Information Systems to Security Categories' in the information types section and aligns the three information types to SP 800-60 type codes (C.3.1.1, C.3.5.1, C.3.1.2)."
+    }
+  ],
+  "pass_count": 3,
+  "total_count": 5,
+  "pass_rate": 0.6
+}

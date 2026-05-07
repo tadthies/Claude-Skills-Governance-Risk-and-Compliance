@@ -1,0 +1,510 @@
+NIST SP 800-53 Rev 5 — Multi-Factor Authentication Requirements for Federal Systems
+Executive Order 14028 / OMB M-22-09 Phishing-Resistant MFA Guidance
+==============================================================================
+
+OVERVIEW
+--------
+Implementing multi-factor authentication (MFA) for a federal system involves several
+controls within the IA (Identification and Authentication) family of NIST SP 800-53
+Rev 5. The specific controls required depend on the system's FIPS 199 impact level
+(Low, Moderate, or High) and the user population (privileged vs. non-privileged,
+network vs. local access). Overlaid on the baseline requirements, Executive Order 14028
+and OMB Memorandum M-22-09 impose additional mandates for phishing-resistant MFA that
+go beyond the standard SP 800-53 baseline language.
+
+This response addresses:
+  1. The specific IA-2 control enhancements that mandate MFA
+  2. Baseline assignments for each enhancement (L/M/H per SP 800-53B)
+  3. EO 14028 and OMB M-22-09 phishing-resistant MFA requirements
+  4. The PIV/FIDO2 vs. SMS/TOTP distinction
+  5. SP 800-63B Authenticator Assurance Level (AAL) alignment
+  6. Implementation guidance and SSP narrative considerations
+
+
+PART 1 — SP 800-53 Rev 5 IA-2 CONTROLS THAT REQUIRE MFA
+=========================================================
+
+The base control IA-2 (Identification and Authentication — Organizational Users)
+requires that the system uniquely identify and authenticate organizational users. MFA
+is mandated through specific enhancements to IA-2. The relevant enhancements are:
+
+
+1. IA-2(1) — Multi-Factor Authentication to Privileged Accounts
+   -------------------------------------------------------------
+   Baseline Assignment: LOW | MODERATE | HIGH (all three baselines)
+
+   Control Statement:
+   Implement multi-factor authentication for access to privileged accounts.
+
+   Scope: All privileged (administrative) accounts, regardless of access method
+   (network, local, or console). "Privileged" means accounts with elevated permissions
+   such as system administrators, database administrators, and security administrators.
+
+   Key Implementation Points:
+   - Both factors must be from different categories: something you know, something you
+     have, or something you are.
+   - This enhancement applies to ALL privileged account access — not just network access.
+   - Required at the LOW baseline, making it mandatory for every federal information
+     system regardless of categorization.
+   - Post-EO 14028, the acceptable authenticator types are further constrained (see
+     Part 3 below).
+
+   SP 800-53B Baseline: Required at Low, Moderate, and High.
+
+
+2. IA-2(2) — Multi-Factor Authentication to Non-Privileged Accounts
+   -----------------------------------------------------------------
+   Baseline Assignment: LOW | MODERATE | HIGH (all three baselines)
+
+   Control Statement:
+   Implement multi-factor authentication for access to non-privileged accounts.
+
+   Scope: All non-privileged (standard user) accounts. In the Rev 5 version of this
+   enhancement, the requirement applies broadly — the historical limitation to "network
+   access" from Rev 4 has been revised so that Rev 5 focuses on the account type
+   rather than the access vector.
+
+   Key Implementation Points:
+   - MFA applies to the full population of organizational users, not just administrators.
+   - Systems must ensure that all users authenticate with at least two factors prior to
+     gaining access.
+   - Required at the LOW baseline in SP 800-53 Rev 5, representing a significant
+     strengthening from Rev 4 where IA-2(2) was only required at Moderate and above.
+
+   SP 800-53B Baseline: Required at Low, Moderate, and High.
+
+
+3. IA-2(6) — Access to Accounts — Separate Device
+   ------------------------------------------------
+   Baseline Assignment: HIGH only
+
+   Control Statement:
+   Implement multi-factor authentication for [Selection: local; network] access to
+   [Selection: privileged accounts; non-privileged accounts] such that:
+     (a) One of the factors is provided by a device separate from the system gaining
+         access; and
+     (b) The device meets [Assignment: organization-defined strength of mechanism
+         requirements].
+
+   Scope: High-impact systems only. This enhancement goes beyond IA-2(1) and IA-2(2)
+   by requiring that at least one authentication factor be provided by a physically
+   separate device — typically a hardware token, smart card, or mobile authenticator
+   app on a separate device.
+
+   Key Implementation Points:
+   - The "separate device" requirement prevents an attacker who has compromised the
+     workstation from also controlling the second factor.
+   - PIV/CAC cards (smart cards) inherently satisfy this requirement because the
+     cryptographic operations occur on the card itself, separate from the workstation.
+   - FIDO2 hardware security keys (e.g., YubiKey) also satisfy this requirement.
+   - Organization-defined strength of mechanism requirements should reference NIST SP
+     800-63B Authenticator Assurance Level 3 (AAL3) for High-impact systems.
+
+   SP 800-53B Baseline: Required at High only. Organizations with Moderate systems
+   should consider this enhancement based on risk; it is also a strong candidate for
+   supplemental control selection when threat modeling indicates insider threat or
+   advanced persistent threat (APT) actors.
+
+
+4. IA-2(8) — Access to Accounts — Replay Resistant
+   -------------------------------------------------
+   Baseline Assignment: MODERATE | HIGH
+
+   Control Statement:
+   Implement replay-resistant authentication mechanisms for access to [Selection:
+   privileged accounts; non-privileged accounts].
+
+   Scope: Moderate and High impact systems. This enhancement requires that the
+   authentication mechanism cannot be successfully replayed by an adversary who
+   captures the authentication exchange.
+
+   Key Implementation Points:
+   - Replay resistance is satisfied by authenticators that use nonces, timestamps, or
+     cryptographic challenge-response protocols — meaning each authentication exchange
+     produces a unique, time-limited credential.
+   - PIV/CAC cards and FIDO2 keys inherently provide replay resistance through
+     asymmetric cryptography.
+   - One-time password (OTP) tokens (hardware TOTP) provide partial replay resistance
+     because the OTP is time-limited, but they are susceptible to real-time phishing
+     (attacker intercepts and immediately replays the OTP). See Part 3.
+   - Kerberos with pre-authentication, TLS mutual authentication, and SAML assertions
+     with short validity windows also satisfy replay resistance in specific deployment
+     contexts.
+   - SMS-based OTP does NOT provide meaningful replay resistance — it is vulnerable
+     to SIM-swapping and SS7 protocol attacks, and it is not considered replay-
+     resistant in the context of this control.
+
+   SP 800-53B Baseline: Required at Moderate and High. Not included in Low baseline
+   but may be selected as a supplemental control based on risk.
+
+
+5. IA-2(12) — Acceptance of PIV Credentials
+   ------------------------------------------
+   Baseline Assignment: LOW | MODERATE | HIGH (all three baselines)
+
+   Control Statement:
+   Accept and electronically verify Personal Identity Verification (PIV) credentials
+   from other federal agencies.
+
+   Scope: All federal information systems. This control flows from Homeland Security
+   Presidential Directive 12 (HSPD-12), which mandates government-wide use of PIV
+   credentials (FIPS 201 compliant), and OMB M-11-11, which required all federal
+   agencies to accept PIV credentials from employees of other agencies.
+
+   Key Implementation Points:
+   - The system must be technically capable of validating PIV credentials — this
+     requires integrating with a PIV-capable identity provider or implementing a
+     Certificate Validation Authority (CVA).
+   - PIV validation involves checking:
+       (a) Certificate path validation against the Federal PKI (FPKI) trust anchor
+       (b) Certificate revocation (OCSP or CRL checks against the issuing CA)
+       (c) Cardholder Unique Identifier (CHUID) validation or Card Authentication
+           Certificate (CAC) validation
+   - For cloud-hosted or SaaS systems, PIV acceptance is typically implemented through
+     an agency identity provider (IdP) that federates PIV authentication (e.g., using
+     SAML 2.0 or OIDC) rather than requiring direct PIV card integration at the
+     application layer.
+   - IA-2(12) is a universally required control: it appears in the Low, Moderate, and
+     High baselines and cannot be scoped out for federal systems.
+
+   SP 800-53B Baseline: Required at Low, Moderate, and High.
+
+
+SUMMARY TABLE — MFA-Related IA-2 Enhancements and Baseline Assignments
+-----------------------------------------------------------------------
+
+Control     | Description                          | Low | Moderate | High
+------------|--------------------------------------|-----|----------|-----
+IA-2        | Identification & Authentication      |  Y  |    Y     |  Y
+IA-2(1)     | MFA — Privileged Accounts            |  Y  |    Y     |  Y
+IA-2(2)     | MFA — Non-Privileged Accounts        |  Y  |    Y     |  Y
+IA-2(6)     | MFA — Separate Device                |  N  |    N     |  Y
+IA-2(8)     | Replay-Resistant Authentication      |  N  |    Y     |  Y
+IA-2(12)    | Acceptance of PIV Credentials        |  Y  |    Y     |  Y
+
+Note: "Y" = included in SP 800-53B baseline; "N" = not in baseline (may be added
+through risk-based supplementation or overlay requirements).
+
+Additional Supporting Controls (not MFA mandates but directly relevant):
+  - IA-5(2) [M/H] — PKI-Based Authentication: requirements for PKI authenticators,
+    certificate validation, key storage (must be hardware-protected for AAL3).
+  - IA-11 [M/H] — Re-authentication: requires re-authentication after defined periods
+    of inactivity or when roles/privileges change.
+  - IA-12 [M/H] — Identity Proofing: requires in-person or supervised remote identity
+    proofing at IAL2 or IAL3 (per SP 800-63A) before issuing authenticators.
+
+
+PART 2 — RELATED AUTHENTICATOR MANAGEMENT CONTROL: IA-5
+========================================================
+
+While IA-2 establishes the MFA requirement, IA-5 (Authenticator Management) governs
+how authenticators are issued, protected, revoked, and maintained. Key enhancements:
+
+IA-5(2) — PKI-Based Authentication [Moderate/High]
+   Requires:
+   (a) Validation of certificates through construction and verification of a
+       certification path to an accepted trust anchor including checking certificate
+       status information.
+   (b) Enforcement of authorized access to the private key.
+   (c) Mapping of the authenticated identity to the account of the individual or group.
+   (d) Implementation of a local cache of revocation data to support path discovery
+       and validation for systems unable to access revocation information via the network.
+
+This control is directly satisfied by PIV/CAC deployment. The private key must reside
+in a hardware-protected cryptographic module (the PIV card itself, satisfying FIPS
+140-3 Level 2 or higher requirements).
+
+IA-5(1) — Password-Based Authentication [Low/Moderate/High]
+   For systems that still use passwords as one factor, SP 800-63B Section 5 guidance
+   applies:
+   - Minimum 8 characters for memorized secrets (federal agencies typically set 15+)
+   - No mandatory composition rules (per SP 800-63B — complexity requirements are
+     counterproductive to security)
+   - Check passwords against known compromised password lists
+   - No mandatory periodic rotation unless compromise is suspected
+   - Support paste functionality in password fields
+
+
+PART 3 — EXECUTIVE ORDER 14028 AND OMB M-22-09 PHISHING-RESISTANT MFA REQUIREMENTS
+====================================================================================
+
+Executive Order 14028, "Improving the Nation's Cybersecurity" (May 12, 2021), Section 3,
+mandates that federal agencies adopt a Zero Trust Architecture (ZTA) and modernize their
+cybersecurity practices, including MFA. The implementing guidance is OMB Memorandum
+M-22-09, "Moving the U.S. Government Toward Zero Trust Cybersecurity Principles"
+(January 26, 2022).
+
+
+Key EO 14028 Directives for MFA:
+---------------------------------
+Section 3(b)(i): Within 180 days, agencies must employ multi-factor authentication
+where the authentication is resistant to phishing attacks.
+
+The EO explicitly distinguishes between "multi-factor authentication" (the general
+capability) and "phishing-resistant multi-factor authentication" (the specific security
+property required for federal systems).
+
+
+OMB M-22-09 Phishing-Resistant MFA Mandate:
+--------------------------------------------
+M-22-09 establishes the following specific requirements:
+
+1. ALL federal staff, contractors, and partners must use phishing-resistant MFA.
+
+2. Phishing-resistant MFA is defined as authentication that uses cryptographic
+   techniques that prevent the authenticator output from being used to authenticate
+   to a different party (i.e., the authenticator is bound to the specific service
+   and cannot be replayed to a fraudulent site).
+
+3. Deadline: Agencies must meet the MFA requirements within the fiscal year
+   2024 milestones defined in the memorandum.
+
+4. Approved phishing-resistant MFA methods (per M-22-09):
+   APPROVED:
+   - PIV/CAC smart cards (FIPS 201 / HSPD-12)
+   - FIDO2 / WebAuthn hardware security keys (e.g., YubiKey, Google Titan Key)
+   - Platform authenticators using FIDO2 (e.g., Windows Hello for Business with
+     hardware TPM, Apple Face ID/Touch ID tied to Passkeys)
+
+   NOT ACCEPTABLE as phishing-resistant MFA (even though they are "MFA"):
+   - SMS-based one-time passwords (OTP) — vulnerable to SIM swapping, SS7 attacks,
+     and real-time adversary-in-the-middle (AiTM) phishing
+   - Voice call OTP — same vulnerabilities as SMS
+   - Email-based OTP — susceptible to account compromise and AiTM phishing
+   - TOTP/HOTP authenticator apps (e.g., Google Authenticator, Microsoft Authenticator
+     in OTP mode) — the 6-digit code can be intercepted and replayed by AiTM tools
+     (e.g., Evilginx2, Modlishka) in real time; NOT phishing-resistant
+   - Push notifications without number matching — susceptible to MFA fatigue attacks
+
+5. Internal-facing systems: Even internal/intranet systems must use phishing-resistant
+   MFA for agency staff. M-22-09 does not permit exceptions for internal applications.
+
+6. External-facing systems: Agencies must offer phishing-resistant MFA as an option
+   to members of the public where technically feasible.
+
+
+CISA Guidance — Implementing Phishing-Resistant MFA (2022):
+------------------------------------------------------------
+CISA has issued accompanying guidance reinforcing the M-22-09 requirements:
+- Tier 1 (Preferred): Hardware PIV/CAC or FIDO2 hardware security keys
+- Tier 2 (Acceptable for limited use cases): FIDO2 platform authenticators with
+  biometric binding on government-managed devices
+- NOT Acceptable: Any OTP-based method (SMS, TOTP, email) for systems subject to
+  M-22-09
+
+Key Distinction — Why TOTP Fails the Phishing-Resistant Test:
+TOTP codes (the 6-digit codes from apps like Google Authenticator) are:
+  - Not bound to the relying party (RP) — the same code could be submitted to a
+    fraudulent site
+  - Interceptable by real-time AiTM phishing proxies — the attacker captures the
+    TOTP and immediately forwards it to the legitimate service
+  - Not providing replay resistance in the M-22-09 / EO 14028 sense
+
+PIV and FIDO2 are phishing-resistant because:
+  - The cryptographic signature is bound to the specific origin/relying party
+    (the domain or service). A signature generated for agency.gov cannot be used
+    to authenticate to evil-agency.gov
+  - The private key never leaves the hardware device
+  - Authentication is a challenge-response protocol — there is no replayable
+    shared secret
+
+
+PART 4 — SP 800-63B AUTHENTICATOR ASSURANCE LEVELS (AAL) ALIGNMENT
+====================================================================
+
+NIST SP 800-63B (Digital Identity Guidelines — Authentication and Lifecycle Management,
+Rev 3, June 2017; Rev 4 Draft under development) defines three Authenticator Assurance
+Levels. Federal systems must map to the appropriate AAL based on impact level and risk:
+
+AAL1 (Single Factor):
+  - Not sufficient for any federal system covered by IA-2(1) or IA-2(2)
+  - Suitable only for low-risk, public-facing informational applications without
+    personal data
+
+AAL2 (Multi-Factor, not necessarily phishing-resistant):
+  - Requires two or more authentication factors
+  - Approved authenticators include: OTP hardware/software tokens, PIV, FIDO2,
+    look-up secrets, memorized secret + OTP
+  - Satisfies SP 800-53 IA-2(1) and IA-2(2) at baseline level
+  - Does NOT satisfy M-22-09 phishing-resistant MFA requirement if using TOTP/OTP
+  - Appropriate for: Moderate impact systems not handling particularly sensitive data
+
+AAL3 (Hardware-based, Phishing-Resistant, Verifier Impersonation Resistant):
+  - Requires a hardware cryptographic authenticator
+  - Requires verifier impersonation resistance (the authenticator is bound to the
+    specific RP)
+  - Approved authenticators: PIV/CAC, FIDO2 hardware security keys (roaming
+    authenticators), FIDO2 platform authenticators with hardware TPM at specified
+    assurance level
+  - Satisfies M-22-09 phishing-resistant MFA requirement
+  - Required for: High-impact systems, systems processing sensitive PII, privileged
+    access to High systems, any system subject to IA-2(6)
+
+Mapping Summary:
+  System Baseline | Minimum AAL | Phishing-Resistant Required?
+  Low             | AAL2        | Yes (per M-22-09, all federal systems)
+  Moderate        | AAL2        | Yes (per M-22-09)
+  High            | AAL3        | Yes (per M-22-09 and IA-2(6) requirement)
+
+Note: M-22-09 effectively raises the floor for all federal systems to phishing-resistant
+AAL2 or AAL3, superseding the plain AAL2 baseline reading of IA-2(1)/(2).
+
+
+PART 5 — PIV vs. FIDO2 vs. SMS/TOTP: PRACTICAL COMPARISON
+===========================================================
+
+Criterion               | PIV/CAC        | FIDO2 HW Key   | TOTP App       | SMS OTP
+------------------------|----------------|----------------|----------------|--------
+Phishing-resistant      | YES            | YES            | NO             | NO
+Replay-resistant        | YES            | YES            | Partial        | NO
+Verifier impersonation  | YES (origin    | YES (origin    | NO             | NO
+resistant               |  bound)        |  bound)        |                |
+Hardware-protected key  | YES (FIPS 140) | YES            | NO             | NO
+Federal mandate (M-22)  | APPROVED       | APPROVED       | NOT APPROVED   | NOT APPROVED
+HSPD-12 compliant       | YES            | NO*            | NO             | NO
+Suitable for PIV-req.   | YES            | NO             | NO             | NO
+systems (IA-2(12))      |                |                |                |
+Works without network   | YES (offline   | YES (offline   | YES (offline   | NO
+                        |  card reader)  |  USB/NFC)      |  TOTP)         |
+Phishing sim. training  | Immune         | Immune         | Vulnerable     | Vulnerable
+
+*FIDO2 keys are not HSPD-12/FIPS 201 PIV credentials, but they satisfy phishing-
+resistant MFA per M-22-09. For systems requiring PIV per HSPD-12 and IA-2(12), only
+PIV/CAC satisfies both requirements simultaneously. Agencies may use FIDO2 as a
+supplemental or alternative phishing-resistant method where PIV is not technically
+feasible (e.g., mobile devices, developer APIs).
+
+
+PART 6 — IMPLEMENTATION GUIDANCE FOR FEDERAL SYSTEMS
+=====================================================
+
+Step 1: Determine System Impact Level
+  - Conduct FIPS 199 categorization and document in the system categorization form
+  - High-impact systems must implement IA-2(1), IA-2(2), IA-2(6), IA-2(8), IA-2(12)
+  - Moderate systems must implement IA-2(1), IA-2(2), IA-2(8), IA-2(12)
+  - Low systems must implement IA-2(1), IA-2(2), IA-2(12)
+  - All systems, regardless of baseline, must implement phishing-resistant MFA per M-22-09
+
+Step 2: Select Phishing-Resistant Authenticator(s)
+  Option A — PIV/CAC (preferred for federal employees and contractors):
+    - Deploy PIV card readers at workstations
+    - Integrate with agency Active Directory/LDAP using PKINIT or smart card logon
+    - For web applications, implement PIV authentication via agency IdP (e.g., GSA
+      Login.gov, agency ICAM solution)
+    - Validate certificates against FPKI trust anchors
+    - Implement OCSP checking for real-time revocation validation (configure caching
+      for continuity of operations)
+
+  Option B — FIDO2 Hardware Security Keys:
+    - Deploy WebAuthn/FIDO2 at the application or IdP layer
+    - Register keys to user accounts with attestation verification
+    - Enforce enterprise-attestation or AAL3-level authenticators via RP policy
+    - Suitable for developer workflows, API access, cloud services, and mobile
+    - Document in SSP as supplemental phishing-resistant MFA method
+
+  Option C — Hybrid (PIV primary, FIDO2 fallback):
+    - PIV for primary workstation authentication
+    - FIDO2 for remote access, cloud services, and mobile scenarios
+    - Centralize both through agency IdP using SAML 2.0 or OIDC federation
+
+Step 3: Address Legacy Systems
+  - Legacy systems that cannot natively support PIV or FIDO2 must use a PIV-enabled
+    IdP or proxy to front-end the authentication (e.g., Shibboleth, Okta, Azure AD
+    with PIV federation)
+  - Document compensating controls in the SSP if a short-term legacy exception exists
+  - Include a Plan of Action and Milestones (POA&M) item with a specific remediation
+    date for any system not yet meeting phishing-resistant MFA requirements
+
+Step 4: Document in the SSP (System Security Plan)
+  For each MFA control, the SSP narrative should address:
+
+  IA-2(1) Implementation Statement (example structure):
+    "The [System Name] implements multi-factor authentication for all privileged
+    accounts using PIV/CAC smart cards (FIPS 201) as the primary authentication
+    mechanism, supplemented by FIDO2 hardware security keys for privileged access
+    from mobile or remote environments where PIV card readers are unavailable.
+    Privileged account authentication is managed through [Agency IdP Name] using
+    [SAML 2.0 / PKINIT / smart card logon]. Certificate validation is performed
+    against the Federal PKI Common Policy Root CA. OCSP responses are cached locally
+    for [X hours] to support operations during network outages. This implementation
+    satisfies AAL3 requirements per NIST SP 800-63B and phishing-resistant MFA
+    requirements per OMB M-22-09."
+
+Step 5: Assessment Considerations (SP 800-53A)
+  Assessors will examine, interview, and test:
+  - Examine: SSP narratives, PIV/FIDO2 configuration documentation, IdP configuration,
+    certificate validation policies, identity proofing records (IA-12)
+  - Interview: ISSO, system administrator, identity management personnel
+  - Test: Attempt authentication without second factor (should fail); verify PIV
+    certificate validation (including revocation checking); test FIDO2 attestation
+    enforcement; verify that SMS/TOTP methods are not enabled for accounts subject
+    to phishing-resistant MFA requirements
+
+
+PART 7 — COMPLIANCE CHECKLIST SUMMARY
+======================================
+
+Requirement                                         | Source        | All Baselines?
+----------------------------------------------------|---------------|---------------
+Implement MFA for privileged accounts               | IA-2(1)       | Yes (L/M/H)
+Implement MFA for non-privileged accounts           | IA-2(2)       | Yes (L/M/H)
+Accept PIV credentials from other agencies          | IA-2(12)      | Yes (L/M/H)
+Implement replay-resistant authentication           | IA-2(8)       | M/H only
+Implement MFA via separate device                   | IA-2(6)       | H only
+MFA must be phishing-resistant (PIV/FIDO2)          | EO 14028 /    | Yes — ALL
+                                                    | OMB M-22-09   | federal systems
+SMS and TOTP OTP are NOT acceptable                 | CISA / M-22-09| Yes — prohibited
+PIV certificates must be validated via FPKI         | IA-5(2)       | M/H
+Identity proofing at IAL2/IAL3 before issuing creds | IA-12         | M/H
+High-impact systems require AAL3 authenticators     | SP 800-63B    | H only
+
+
+AUTHORITATIVE REFERENCES
+========================
+
+1. NIST SP 800-53 Rev 5 — Security and Privacy Controls for Information Systems and
+   Organizations (September 2020, updated December 2020)
+   Controls: IA-2, IA-2(1), IA-2(2), IA-2(6), IA-2(8), IA-2(12), IA-5, IA-5(2)
+   https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final
+
+2. NIST SP 800-53B — Control Baselines for Information Systems and Organizations
+   (October 2020) — Defines Low, Moderate, and High baseline control selections
+   https://csrc.nist.gov/publications/detail/sp/800-53b/final
+
+3. NIST SP 800-63B — Digital Identity Guidelines: Authentication and Lifecycle
+   Management (Rev 3, June 2017) — Defines AAL1, AAL2, AAL3 and approved
+   authenticator types
+   https://csrc.nist.gov/publications/detail/sp/800-63b/final
+
+4. NIST SP 800-53A Rev 5 — Assessing Security and Privacy Controls (January 2022)
+   — Assessment procedures for all SP 800-53 Rev 5 controls
+   https://csrc.nist.gov/publications/detail/sp/800-53a/rev-5/final
+
+5. Executive Order 14028 — Improving the Nation's Cybersecurity (May 12, 2021)
+   Section 3: Federal Government Cybersecurity
+   https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/
+   executive-order-on-improving-the-nations-cybersecurity/
+
+6. OMB Memorandum M-22-09 — Moving the U.S. Government Toward Zero Trust
+   Cybersecurity Principles (January 26, 2022)
+   Phishing-resistant MFA mandate: Section II (Identity pillar)
+   https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf
+
+7. FIPS 201-3 — Personal Identity Verification (PIV) of Federal Employees and
+   Contractors (January 2022) — PIV card specification
+   https://csrc.nist.gov/publications/detail/fips/201/3/final
+
+8. HSPD-12 — Policy for a Common Identification Standard for Federal Employees
+   and Contractors (August 2004) — Foundational PIV policy mandate
+
+9. CISA — Implementing Phishing-Resistant MFA (October 2022)
+   https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-
+   phishing-resistant-mfa-508c.pdf
+
+10. OMB M-11-11 — Continued Implementation of HSPD-12 (February 2011)
+    Requirement for all agencies to accept PIV credentials from other agencies (IA-2(12))
+
+==============================================================================
+Response generated using NIST SP 800-53 Rev 5 Compliance Skill
+Skill: nist-800-53 | Eval: eval-118 | Date: 2026-05-07
+==============================================================================

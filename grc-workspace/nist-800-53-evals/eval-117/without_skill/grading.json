@@ -1,0 +1,34 @@
+{
+  "eval_id": 117,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies AC-2(3) as the Automated/Disable Accounts control and explains what it requires",
+      "passed": true,
+      "evidence": "The response opens with 'AC-2(3) - ACCOUNT MANAGEMENT | DISABLE INACTIVE ACCOUNTS' and quotes the full control text. It explains the 90-day ODV and that 120 accounts exceeded it by 30+ days, calling it 'a clear, measurable control deficiency.'"
+    },
+    {
+      "text": "Recommends immediately disabling the 120 identified inactive accounts",
+      "passed": true,
+      "evidence": "Phase 1 Step 3 states 'For all confirmed orphan and clearly inactive accounts: disable (not delete) accounts in the authoritative identity store.' Milestone 1 in the POA&M (30-day target) is 'Complete triage and disable all 120 identified inactive accounts.' Step 7 gives 'heightened scrutiny to inactive privileged accounts' as the highest risk."
+    },
+    {
+      "text": "Provides POA&M required fields including control ID, risk level, milestone steps, and completion date",
+      "passed": true,
+      "evidence": "Section 3 provides all required POA&M fields: '2. Control Identifier: AC-2(3)'; '6. Scheduled Completion Date: typically 90 to 180 days'; '7. Milestones with Completion Dates' (4 milestones at 30, 60, 90, 180 days); '10. Identified Risk: Risk Level: HIGH'. The structure explicitly labels these as required fields."
+    },
+    {
+      "text": "Advises fixing the automated account review/enforcement process",
+      "passed": true,
+      "evidence": "Phase 2 Step 5 ('Implement Automated Controls') directs: 'Configure your IAM/AD environment to automatically disable accounts after 90 days of inactivity... implement scheduled scripts querying lastLogonTimestamp attribute against a 90-day threshold... SIEM/SOAR integration: Create automated alerts at 75 days (warning), 85 days (pre-disable notification), and 90 days (auto-disable action).' Milestone 2 includes 'Implement automated inactivity enforcement controls.'"
+    },
+    {
+      "text": "Notes that OTS findings must be tracked until closure and mentions ISSO/System Owner accountability",
+      "passed": true,
+      "evidence": "Field 9 (Status) states 'Update as: Open — Ongoing, then Closed only when all milestones are complete and the authorizing official concurs.' Field 4 (Point of Contact) references 'the system owner or ISSO responsible for remediation.' Section 5 item 4 states 'Include AC-2(3) compliance metrics in your continuous monitoring program... reviewed by the ISSO and reported to the AO as part of ongoing authorization reporting.' Section 6 states 'Do not close the POA&M item until automated controls are operational AND a clean follow-up audit report has been generated.'"
+    }
+  ],
+  "pass_count": 5,
+  "total_count": 5,
+  "pass_rate": 1.0
+}

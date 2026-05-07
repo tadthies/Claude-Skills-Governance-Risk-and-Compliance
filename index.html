@@ -614,6 +614,7 @@ layout: null
       <div class="skill-cat-chips">
         <span><img src="assets/Logos/itar.jpg" alt="ITAR" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> ITAR [US]</span>
         <span>📦 EAR [US]</span>
+        <span>🏛️ NIST SP 800-53 [US]</span>
       </div>
     </div>
 
@@ -629,7 +630,7 @@ layout: null
   <div class="badges">
     <img src="https://img.shields.io/badge/Release-v0.8.0-brightgreen.svg" alt="Release v0.8.0" />
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
-    <img src="https://img.shields.io/badge/Skills-23-green.svg" alt="23 Skills" />
+    <img src="https://img.shields.io/badge/Skills-24-green.svg" alt="24 Skills" />
     <img src="https://img.shields.io/badge/Built%20with-Claude-orange.svg" alt="Built with Claude" />
     <a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance" target="_blank" rel="noopener">
       <img src="https://img.shields.io/github/stars/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance?style=flat&label=Stars&color=gold" alt="GitHub Stars" />
@@ -1002,6 +1003,23 @@ layout: null
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>CIS Controls</code> <code>CIS Top 18</code> <code>CIS v8</code> <code>CIS Controls v8</code> <code>Implementation Group</code> <code>IG1</code> <code>IG2</code> <code>IG3</code> <code>CIS safeguards</code> <code>cyber hygiene controls</code> <code>CIS gap assessment</code> <code>CIS Controls NIST mapping</code> <code>CIS Benchmarks</code> <code>CIS CSAT</code> <code>asset inventory CIS</code> <code>vulnerability management CIS</code> <code>CIS Controls ISO 27001</code> <code>CIS Controls SOC 2</code> <code>CIS Controls PCI DSS</code> <code>CIS Controls CMMC</code> <code>CIS Controls NIST CSF</code></div>
     </div>
 
+    <div class="skill-card" id="nist-800-53">
+      <h3>24. 🏛️ NIST SP 800-53 — Security and Privacy Controls for Federal Systems</h3>
+      <span class="file-badge">NIST 800-53 - Claude Skill/nist-800-53.skill</span>
+      <p>Turns Claude into an expert <strong>NIST SP 800-53 Rev 5</strong> federal security and privacy controls advisor covering the full catalog (September 2020) and its companion publications — SP 800-53B baselines, SP 800-53A assessment procedures, and SP 800-37 Rev 2 Risk Management Framework. Serves federal agency teams, cloud service providers pursuing FedRAMP, system owners, ISSOs, and GRC professionals implementing FISMA-mandated controls.</p>
+      <ul>
+        <li>Categorises systems using <strong>FIPS 199/200</strong> and SP 800-60 — determines C/I/A impact levels, applies the high-water mark rule, and selects the appropriate Low, Moderate, or High baseline from SP 800-53B</li>
+        <li>Covers all <strong>20 control families</strong> (AC, AT, AU, CA, CM, CP, IA, IR, MA, MP, PE, PL, PM, PS, PT, RA, SA, SC, SI, SR) — including the new <strong>PT Privacy</strong> and <strong>SR Supply Chain</strong> families added in Rev 5</li>
+        <li>Guides the full <strong>tailoring process</strong> — identifies common/inherited controls, applies scoping considerations, fills in Organization-Defined Values (ODVs) with federal guidance, designs compensating controls, and supplements baselines for elevated risks</li>
+        <li>Writes <strong>SSP control narratives</strong> in the standard format — implementation description, responsible role, inherited/hybrid designation, and SP 800-53A testing method for each control</li>
+        <li>Manages <strong>POA&amp;Ms</strong> (CA-5) with FedRAMP-aligned remediation timelines: Critical 30 days, High 90 days, Moderate 180 days, Low 1 year — plus risk acceptance documentation</li>
+        <li>Guides all <strong>7 RMF steps</strong> (SP 800-37 Rev 2): Prepare → Categorize → Select → Implement → Assess → Authorize → Monitor, including ATO package assembly and ConMon strategy</li>
+        <li>Addresses <strong>EO 14028 and OMB M-22-09</strong> phishing-resistant MFA obligations (IA-2(1), IA-2(2)) and <strong>FIPS 140-2/3</strong> cryptographic module requirements (SC-13)</li>
+        <li>Maps SP 800-53 to peer frameworks — <strong>ISO 27001:2022, NIST CSF 2.0, CMMC 2.0, and FedRAMP</strong> — for cross-framework compliance programmes</li>
+      </ul>
+      <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NIST SP 800-53</code> <code>SP 800-53</code> <code>NIST 800-53</code> <code>federal security controls</code> <code>RMF</code> <code>Risk Management Framework</code> <code>FISMA</code> <code>ATO</code> <code>Authority to Operate</code> <code>FIPS 199</code> <code>FIPS 200</code> <code>FIPS 140</code> <code>SP 800-53B</code> <code>control baseline</code> <code>Low baseline</code> <code>Moderate baseline</code> <code>High baseline</code> <code>SSP narrative</code> <code>System Security Plan</code> <code>POA&amp;M</code> <code>Plan of Action</code> <code>ConMon</code> <code>SP 800-53A</code> <code>security assessment</code> <code>ODV</code> <code>control tailoring</code> <code>common controls</code> <code>AC-2</code> <code>IA-2</code> <code>SC-8</code> <code>SI-2</code> <code>SR family</code> <code>PT family</code> <code>OSCAL</code> <code>3PAO</code> <code>FedRAMP controls</code> <code>ISSO</code> <code>authorizing official</code></div>
+    </div>
+
     <div class="skill-card" id="ear">
       <h3>23. 📦 EAR [US] — Export Administration Regulations</h3>
       <span class="file-badge">EAR - Claude Skill/ear.skill</span>
@@ -1064,6 +1082,7 @@ layout: null
       <button class="filter-btn" data-filter="CSRD">CSRD [EU]</button>
       <button class="filter-btn" data-filter="CIS Controls v8">CIS Controls v8</button>
       <button class="filter-btn" data-filter="EAR">EAR [US]</button>
+      <button class="filter-btn" data-filter="NIST SP 800-53">NIST SP 800-53 [US]</button>
     </div>
 
     <div class="table-wrap">
@@ -1183,6 +1202,13 @@ layout: null
           <tr data-skills="EAR"><td>Designing a 7-element Export Compliance Programme for a semiconductor equipment company with customers in Europe and Asia</td><td>EAR [US]</td></tr>
           <tr data-skills="EAR"><td>Determining whether a foreign-made chip uses US-origin wafer fabrication equipment subject to the Foreign Direct Product Rule (FDPR)</td><td>EAR [US]</td></tr>
           <tr data-skills="EAR,ITAR"><td>Navigating EAR vs ITAR jurisdiction for dual-use items that straddle the USML and CCL — using the Order of Review and CJ/CCATS requests</td><td>EAR + ITAR [US]</td></tr>
+          <tr data-skills="NIST SP 800-53"><td>Categorising a federal HR system under FIPS 199 and selecting the correct SP 800-53B baseline</td><td>NIST SP 800-53 [US]</td></tr>
+          <tr data-skills="NIST SP 800-53"><td>Documenting an AC-2(3) OTS finding from a security assessment and building the POA&amp;M with FedRAMP remediation timelines</td><td>NIST SP 800-53 [US]</td></tr>
+          <tr data-skills="NIST SP 800-53"><td>Implementing phishing-resistant MFA under IA-2(1) and IA-2(2) to satisfy EO 14028 and OMB M-22-09</td><td>NIST SP 800-53 [US]</td></tr>
+          <tr data-skills="NIST SP 800-53"><td>Writing an SSP control narrative for SC-8(1) Transmission Confidentiality covering TLS 1.2/1.3 with FIPS 140-3 modules</td><td>NIST SP 800-53 [US]</td></tr>
+          <tr data-skills="NIST SP 800-53,FedRAMP"><td>Performing a gap analysis between ISO 27001:2022 and FedRAMP Moderate baseline and mapping RMF steps to ATO package</td><td>NIST SP 800-53 + FedRAMP [US]</td></tr>
+          <tr data-skills="NIST SP 800-53"><td>Tailoring a Moderate baseline to remove inapplicable controls, set ODVs, and document compensating controls for a legacy system</td><td>NIST SP 800-53 [US]</td></tr>
+          <tr data-skills="NIST SP 800-53"><td>Building a ConMon strategy with monthly vulnerability scan frequencies, annual penetration testing, and POA&amp;M update cadence</td><td>NIST SP 800-53 [US]</td></tr>
         </tbody>
       </table>
     </div>
@@ -1232,6 +1258,7 @@ layout: null
           <tr><td>21. <img src="assets/Logos/csrd-eu.svg" alt="EU" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> CSRD [EU] — Corporate Sustainability Reporting Directive</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/CSRD%20-%20Claude%20Skill/csrd.skill">csrd.skill</a></td></tr>
           <tr><td>22. 🛡️ CIS Controls v8 — CIS Top 18 Cyber Hygiene</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/CIS%20Controls%20-%20Claude%20Skill/cis-controls.skill">cis-controls.skill</a></td></tr>
           <tr><td>23. 📦 EAR [US] — Export Administration Regulations</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/EAR%20-%20Claude%20Skill/ear.skill">ear.skill</a></td></tr>
+          <tr><td>24. 🏛️ NIST SP 800-53 — Security and Privacy Controls for Federal Systems</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/NIST%20800-53%20-%20Claude%20Skill/nist-800-53.skill">nist-800-53.skill</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -1245,7 +1272,7 @@ layout: null
     <p>Add the marketplace and install the skills you need directly from the terminal:</p>
 
     <pre><code>/plugin marketplace add Sushegaad/Claude-Skills-Governance-Risk-and-Compliance
-/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills nis2@grc-skills ccpa@grc-skills itar@grc-skills lgpd@grc-skills csrd@grc-skills cis-controls@grc-skills ear@grc-skills</code></pre>
+/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills nis2@grc-skills ccpa@grc-skills itar@grc-skills lgpd@grc-skills csrd@grc-skills cis-controls@grc-skills ear@grc-skills nist-800-53@grc-skills</code></pre>
 
     <p>Teams can pre-wire the marketplace in <code>.claude/settings.json</code> so every developer gets the skills automatically when they open the project — no manual install required.</p>
     <p>📖 <a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/INSTALLATION.md"><strong>Full installation instructions, team setup, and update guide → INSTALLATION.md</strong></a></p>
@@ -1256,20 +1283,20 @@ layout: null
   <section class="tab-panel" id="tab-evaluation" role="tabpanel">
 
     <h2>Skill Evaluation</h2>
-    <p>These skills were benchmarked using the <a href="https://claude.ai">Claude Skill Creator</a> eval framework. <strong>115 realistic test cases</strong> were run across all 23 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses. <strong>575 total assertions evaluated.</strong></p>
+    <p>These skills were benchmarked using the <a href="https://claude.ai">Claude Skill Creator</a> eval framework. <strong>120 realistic test cases</strong> were run across all 24 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses. <strong>600 total assertions evaluated.</strong></p>
 
     <div class="stat-grid">
       <div class="stat-card green">
         <div class="value">96%</div>
-        <div class="label">With GRC Skills installed<br /><small>553 / 575 assertions passed</small></div>
+        <div class="label">With GRC Skills installed<br /><small>576 / 600 assertions passed</small></div>
       </div>
       <div class="stat-card">
         <div class="value">81%</div>
-        <div class="label">Baseline Claude (no skills)<br /><small>467 / 575 assertions passed</small></div>
+        <div class="label">Baseline Claude (no skills)<br /><small>488 / 600 assertions passed</small></div>
       </div>
       <div class="stat-card delta">
         <div class="value">+15</div>
-        <div class="label">Point improvement<br /><small>+71 additional assertions passed</small></div>
+        <div class="label">Point improvement<br /><small>+88 additional assertions passed</small></div>
       </div>
     </div>
 
@@ -1301,6 +1328,7 @@ layout: null
           <tr><td><img src="assets/Logos/csrd-eu.svg" alt="EU" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"> CSRD [EU]</td><td>5</td><td><strong>100%</strong></td><td>72%</td><td>+28%</td><td>CSRD scope analysis for German listed manufacturer (PIE Wave 1); Double materiality vs GRI/TCFD; Post-DMA disclosure requirements for E1/S1/G1; GRI+TCFD to ESRS gap assessment; Non-EU company (US parent, €200M EU revenue) obligations</td></tr>
           <tr><td>🛡️ CIS Controls v8</td><td>5</td><td><strong>100%</strong></td><td>80%</td><td>+20%</td><td>Implementation Group determination; Gap assessment for SaaS startup; MFA safeguard scoping (IG2); CIS v8 to NIST CSF 2.0 mapping; Vulnerability management programme with CVSS-based remediation SLAs</td></tr>
           <tr><td>📦 EAR [US]</td><td>5</td><td><strong>100%</strong></td><td>88%</td><td>+12%</td><td>RF amplifier ECCN classification for Germany export; Deemed export for Chinese/Australian dual national on 5D002; Entity List re-export violation and VSD process; AES-256 software ENC exception for France/India/Brazil; ECP design for semiconductor equipment company</td></tr>
+          <tr><td>🏛️ NIST SP 800-53 [US]</td><td>5</td><td><strong>92%</strong></td><td>84%</td><td>+8%</td><td>FIPS 199 categorization for federal HR system; AC-2(3) OTS finding and POA&amp;M documentation; MFA controls and EO 14028 phishing-resistant MFA; SSP narrative for SC-8(1) Transmission Confidentiality; ISO 27001 to FedRAMP gap analysis and RMF steps</td></tr>
         </tbody>
       </table>
     </div>
@@ -1459,7 +1487,7 @@ layout: null
   <section class="tab-panel" id="tab-whats-new" role="tabpanel">
 
     <h2>GRC Framework Updates</h2>
-    <p>This section tracks official regulatory and standards activity across the 23 frameworks covered in this repository. Updated monthly to help GRC practitioners stay ahead of changes — new versions, enforcement actions, guidance releases, and compliance deadline shifts. Each entry below covers May 2026 only; prior months are archived in collapsible sections below.</p>
+    <p>This section tracks official regulatory and standards activity across the 24 frameworks covered in this repository. Updated monthly to help GRC practitioners stay ahead of changes — new versions, enforcement actions, guidance releases, and compliance deadline shifts. Each entry below covers May 2026 only; prior months are archived in collapsible sections below.</p>
 
     <!-- ── May 2026 (current) ── -->
     <div class="whats-new-month" id="whats-new-2026-05">
@@ -1862,11 +1890,30 @@ layout: null
     <h2>Release Notes</h2>
     <p>Full changelog for all public releases. Latest release: <strong>v0.8.0</strong>.</p>
 
+    <!-- v0.9.0 -->
+    <div class="release">
+      <div class="release-header">
+        <span class="tag">v0.9.0</span>
+        <span class="latest">Latest</span>
+        <span class="date">May 7, 2026</span>
+      </div>
+      <div class="release-body">
+        <h4>🆕 New Skill (1)</h4>
+        <ul>
+          <li><span class="release-badge badge-new">New</span> <strong>NIST SP 800-53</strong> — Federal security and privacy controls advisor covering all 20 control families (AC, AT, AU, CA, CM, CP, IA, IR, MA, MP, PE, PL, PM, PS, PT, RA, SA, SC, SI, SR), FIPS 199/200 categorization, Low/Moderate/High baseline selection (SP 800-53B), control tailoring and ODVs, SSP narrative writing, POA&amp;M management, all 7 RMF steps (SP 800-37 Rev 2), ConMon strategy, EO 14028 phishing-resistant MFA, and cross-framework mapping to FedRAMP, FISMA, CMMC 2.0, and ISO 27001</li>
+        </ul>
+        <h4>📊 Skill Evaluation</h4>
+        <ul>
+          <li><span class="release-badge badge-improve">Improved</span> Expanded eval suite to <strong>24 skills / 120 test cases</strong> (5 per framework), each graded against 5 verifiable assertions — 600 total assertions</li>
+          <li><span class="release-badge badge-improve">Improved</span> NIST SP 800-53 skill scored <strong>92%</strong> vs baseline of 84% (+8 point improvement); overall suite maintains 96% with-skill vs 81% baseline</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- v0.8.0 -->
     <div class="release">
       <div class="release-header">
         <span class="tag">v0.8.0</span>
-        <span class="latest">Latest</span>
         <span class="date">May 3, 2026</span>
       </div>
       <div class="release-body">

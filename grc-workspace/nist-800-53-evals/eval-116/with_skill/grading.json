@@ -1,0 +1,34 @@
+{
+  "eval_id": 116,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Correctly identifies High as the overall impact level (high-water mark from High Confidentiality)",
+      "passed": false,
+      "evidence": "The response concludes MODERATE for all three CIA objectives and assigns an overall categorization of MODERATE. Confidentiality is rated MODERATE for all information types (PII, salary, performance records). The expected High Confidentiality rating (driven by PII/salary sensitivity) and resulting High overall categorization is never reached. The response explicitly argues against High: 'A High categorization would be appropriate if a breach would cause severe or catastrophic harm... While unauthorized disclosure of 5,000 employees' PII is serious, it does not meet the FIPS 199 threshold.'"
+    },
+    {
+      "text": "Selects the High baseline from SP 800-53B",
+      "passed": false,
+      "evidence": "The response selects the MODERATE baseline ('SELECTED BASELINE: MODERATE') because it determined the overall system categorization is Moderate, not High. It explicitly states 'Why NOT High' and argues against High baseline selection."
+    },
+    {
+      "text": "Applies FIPS 199 framework to assess CIA objectives individually",
+      "passed": true,
+      "evidence": "The response performs a detailed per-information-type CIA assessment under 'CIA IMPACT ASSESSMENT — PER INFORMATION TYPE', evaluating Confidentiality, Integrity, and Availability separately for each of the three information types (Employee PII, Salary/Compensation Data, Performance Review Records) with explicit FIPS 199 impact ratings."
+    },
+    {
+      "text": "Notes PT family (privacy controls) apply due to PII processing",
+      "passed": true,
+      "evidence": "Step 3 is entirely dedicated to 'PT FAMILY (PII PROCESSING AND TRANSPARENCY) — MANDATORY OVERLAY', stating 'the Privacy controls (PT family) under SP 800-53 Rev 5 are mandatory regardless of the Moderate impact categorization' and enumerating PT-1 through PT-8."
+    },
+    {
+      "text": "References SP 800-60 for information type categorization guidance",
+      "passed": true,
+      "evidence": "The response explicitly references 'NIST SP 800-60 Volume II, Guide for Mapping Types of Information and Information Systems to Security Categories' in Step 1 and includes a dedicated Step 4 titled 'SP 800-60 REFERENCE DETAIL' with specific information type codes (C.3.1.1, C.3.1.2)."
+    }
+  ],
+  "pass_count": 3,
+  "total_count": 5,
+  "pass_rate": 0.6
+}

@@ -1,0 +1,513 @@
+================================================================================
+EXPERT NIST SP 800-53 REV 5 RESPONSE
+FINDING: AC-2(3) — Other Than Satisfied (OTS)
+Federal System Security Plan (SSP) — Inactive Account Remediation and POA&M Guidance
+================================================================================
+Date: 2026-05-07
+Control: AC-2(3) | Baseline: Moderate and High | Family: Access Control (AC)
+================================================================================
+
+
+PART 1: AC-2(3) CONTROL DESCRIPTION AND REGULATORY CONTEXT
+------------------------------------------------------------
+
+Control: AC-2(3) — Account Management | Disable Accounts
+
+Control Statement (NIST SP 800-53 Rev 5):
+  "Disable accounts within [Assignment: organization-defined time period] when
+  the accounts: (a) Have expired; (b) Are no longer associated with a user or
+  individual; (c) Are in violation of organizational policy; or (d) Have been
+  inactive for [Assignment: organization-defined time period]."
+
+Baseline Assignment:
+  - Low:      NOT required
+  - Moderate: REQUIRED
+  - High:     REQUIRED
+
+Your ODV (Organization-Defined Value): 90 days of inactivity triggers mandatory
+account disablement.
+
+Why This Control Matters:
+AC-2(3) is a foundational access control requirement because dormant accounts
+represent one of the highest-probability attack vectors for credential-based
+intrusions. Inactive accounts:
+  - Are rarely monitored for anomalous logon attempts
+  - May retain stale but valid credentials (unchanged passwords)
+  - Provide unauthorized access if credentials are compromised
+  - Violate the principle of least privilege (AC-6) by maintaining access for
+    users who no longer require it
+  - Can be exploited in lateral movement during a breach
+
+The assessor's finding — 120 accounts inactive for over 120 days against your
+stated ODV of 90 days — is a clear, objective, and documented OTS finding.
+The violation exceeds your ODV by 30+ days and affects a significant population
+(120 accounts), which elevates the risk severity.
+
+Related Controls You Must Also Review:
+  - AC-2 (base): Account management lifecycle — creation, review, modification,
+    removal
+  - AC-2(1): Automated system account management (Moderate/High)
+  - AC-2(5): Inactivity logout (session-level; separate from AC-2(3))
+  - AC-5: Separation of duties — verify disabled account holders had no
+    conflicting privilege concentrations
+  - IA-4: Identifier management — identifiers for inactive accounts must also
+    be managed
+  - CA-7: Continuous monitoring — your ConMon process should have caught this
+  - CA-5: POA&M — document this finding immediately
+
+
+================================================================================
+PART 2: IMMEDIATE REMEDIATION STEPS
+================================================================================
+
+The remediation process has two parallel tracks: immediate operational
+remediation (fix the condition now) and process remediation (fix why it
+happened and prevent recurrence).
+
+--- TRACK A: IMMEDIATE OPERATIONAL REMEDIATION (Days 1-7) ---
+
+Step 1: Account Inventory and Validation (Day 1-2)
+  - Pull a complete report of all 120 flagged accounts from your identity
+    management system or Active Directory (or equivalent directory service).
+  - For each of the 120 accounts, validate:
+      a) Last logon timestamp (confirm inactivity period)
+      b) Account type (user, service, privileged, shared, or system account)
+      c) Current account status (enabled/disabled)
+      d) Associated individual or function (is the account orphaned?)
+      e) Group memberships and privilege level
+  - Segregate the 120 accounts into sub-categories:
+      - Standard user accounts inactive > 90 days
+      - Privileged accounts inactive > 90 days (PRIORITY — disable FIRST)
+      - Service accounts (do NOT disable without application impact analysis;
+        coordinate with application owners)
+      - Accounts for separated employees (disable immediately; may require
+        coordination with HR and PS-4 controls)
+
+Step 2: Prioritized Disablement (Day 2-5)
+  - PRIORITY 1 (Day 2): Disable all privileged/admin accounts in the inactive
+    set first. Privileged account compromise has the highest blast radius.
+  - PRIORITY 2 (Day 3-4): Disable all standard user accounts confirmed inactive
+    for > 90 days.
+  - PRIORITY 3 (Day 4-5): For each service account, perform application impact
+    analysis. Coordinate with system/application owners before disabling. If
+    a service account is genuinely inactive (no application dependency), disable
+    it. If active dependency exists, document the exception and escalate.
+  - Document every account disabled, including: account name, account type,
+    last logon date, disabled-by, disabled-on timestamp, and ticket/work order
+    reference.
+
+Step 3: Notification Protocol (Day 1-3, concurrent)
+  - Notify account holders' managers (or HR for separated personnel) before
+    disabling, where operationally feasible and where the delay does not extend
+    the violation window beyond an acceptable period.
+  - For accounts of active employees that are simply unused, give a documented
+    24-48 hour notice before disablement per your access control policy.
+  - For accounts of separated personnel, disable immediately and notify the
+    responsible manager.
+
+Step 4: Exception Handling (Day 3-5)
+  - Any account that cannot be immediately disabled (e.g., undocumented service
+    accounts with unresolved dependencies) must be:
+      a) Logged as an outstanding exception in the POA&M milestone tracker
+      b) Assigned an owner responsible for resolving the dependency
+      c) Given a hard deadline (suggest 30 days maximum for service account
+         resolution) with written approval from the ISSO and System Owner
+  - Do NOT simply carry exceptions forward without documentation — each one
+    must have an owner and a date.
+
+--- TRACK B: ROOT CAUSE AND PROCESS REMEDIATION (Days 7-60) ---
+
+Step 5: Root Cause Analysis (Day 7-14)
+  Determine WHY 120 accounts were not disabled within the 90-day ODV. Common
+  root causes include:
+    a) Automated account review process was not configured, broke, or was
+       disabled
+    b) Reports were generated but not acted upon (process failure, not technical)
+    c) Account review responsibility was unclear (no defined owner)
+    d) Service desk or IT operations lacked an enforced workflow to disable
+       flagged accounts
+    e) The ODV was documented in the SSP but never operationalized in the
+       directory service or IAM tool
+    f) Exceptions were granted informally without documentation
+  Document the root cause in the POA&M milestone record.
+
+Step 6: Automated Controls Implementation (Day 14-45)
+  Implement or repair the automated account management capability required by
+  AC-2(1) (which is also a Moderate/High baseline requirement and may itself
+  be OTS if automation was absent):
+    - Configure Active Directory (or your IAM/IDM platform) to automatically
+      flag accounts reaching 75 days of inactivity (15-day warning ahead of
+      90-day threshold)
+    - Configure automatic disablement at 90 days of inactivity
+    - Establish automated notifications to account managers at 60 days and
+      75 days
+    - Test the automated process end-to-end in a non-production environment
+      before deploying to production
+    - Document the configuration settings as evidence for future assessments
+
+Step 7: Policy and Procedure Update (Day 14-30)
+  - Review and update the Access Control Policy (required by AC-1) to explicitly
+    state the 90-day ODV and the automated enforcement mechanism
+  - Update the Account Management Procedure to define:
+      - Roles responsible for account review and disablement
+      - Escalation path for accounts that cannot be automatically disabled
+      - Quarterly manual review requirement as a backup to automation
+      - Service account exception handling process
+  - Ensure procedures reference the specific system and directory service
+    configuration, not generic language
+
+Step 8: Training and Awareness (Day 30-60)
+  - Brief IT operations and help desk staff on the revised account management
+    procedures
+  - Document training completion records (supports AT-3)
+
+Step 9: Verification and Evidence Collection (Day 45-60)
+  - Run a post-remediation account report showing zero accounts inactive > 90
+    days
+  - Capture screenshots or exported reports from the directory service
+    demonstrating the automated disablement configuration
+  - Request a spot-check or mini-assessment from your ISSO or an independent
+    reviewer to confirm the control is now Satisfied
+  - Retain all remediation evidence in your compliance artifact repository
+
+
+================================================================================
+PART 3: POA&M DOCUMENTATION — REQUIRED FIELDS AND GUIDANCE
+================================================================================
+
+The POA&M is mandated by CA-5 (Plan of Action and Milestones) and is a required
+component of your authorization package. The following provides the complete
+field-by-field guidance for documenting this specific finding.
+
+--- POA&M ENTRY: COMPLETED TEMPLATE ---
+
++---------------------------+---------------------------------------------------+
+| FIELD                     | VALUE / GUIDANCE                                  |
++---------------------------+---------------------------------------------------+
+| POA&M Item ID             | [Assign sequential ID, e.g., POA&M-2026-042]      |
+|                           | Must be unique and traceable to the SAR finding   |
++---------------------------+---------------------------------------------------+
+| Weakness / Deficiency     | AC-2(3) — Inactive accounts are not being         |
+|                           | disabled within the organization-defined value     |
+|                           | (ODV) of 90 days of inactivity. Security          |
+|                           | assessment identified 120 user accounts with       |
+|                           | last logon dates exceeding 120 days, in violation |
+|                           | of the documented ODV and SP 800-53 Rev 5          |
+|                           | control AC-2(3).                                  |
++---------------------------+---------------------------------------------------+
+| Source of Discovery       | Security Assessment / Third-Party Assessment       |
+|                           | (SCA/3PAO) — [Assessment date] — SAR Finding      |
+|                           | Reference: [SAR-Finding-ID]                       |
++---------------------------+---------------------------------------------------+
+| Control Identifier        | AC-2(3) — Account Management: Disable Accounts    |
+|                           | NIST SP 800-53 Rev 5                              |
++---------------------------+---------------------------------------------------+
+| Risk Level                | MODERATE                                          |
+|                           |                                                   |
+|                           | Rationale: Dormant accounts with valid credentials|
+|                           | present an attack surface for credential-based    |
+|                           | intrusion and lateral movement. The 120 affected  |
+|                           | accounts exceed the ODV by 30+ days. Risk is      |
+|                           | elevated if any accounts belong to privileged     |
+|                           | users; re-evaluate as HIGH if privileged accounts |
+|                           | are confirmed in the inactive set.                |
++---------------------------+---------------------------------------------------+
+| Scheduled Completion Date | [Insert date: recommend 60 days from SAR          |
+|                           | issuance for full remediation, consistent with    |
+|                           | Moderate risk timeline guidance]                  |
+|                           |                                                   |
+|                           | Note: FedRAMP POA&M guidance requires Moderate    |
+|                           | findings to be remediated within 180 days;        |
+|                           | FISMA/agency policy may impose tighter deadlines. |
+|                           | Recommend 60 days given the straightforward       |
+|                           | technical remediation path.                       |
++---------------------------+---------------------------------------------------+
+| Responsible Parties       | Primary: ISSO (Information System Security        |
+|                           | Officer) — [Name / Title]                        |
+|                           |                                                   |
+|                           | Secondary: System Owner (SO) — [Name / Title]    |
+|                           |                                                   |
+|                           | Supporting: IT Operations / Identity Management   |
+|                           | Team — [Team name or lead name]                  |
+|                           |                                                   |
+|                           | Approving: Authorizing Official (AO) or AODR     |
+|                           | must be informed; AO signature required if risk   |
+|                           | acceptance is invoked for any sub-items           |
++---------------------------+---------------------------------------------------+
+| Resources Required        | - IT Operations staff time: ~40-80 hours          |
+|                           |   (account analysis, disablement, testing)        |
+|                           | - IAM/Directory service admin access              |
+|                           | - AD or IDM platform configuration capability     |
+|                           | - Policy/procedure update: ISSO ~8 hours          |
+|                           | - No significant new budget anticipated           |
+|                           |   (remediation uses existing tooling)             |
++---------------------------+---------------------------------------------------+
+| Status                    | OPEN [at time of entry]                           |
+|                           | Update monthly per ConMon requirements            |
++---------------------------+---------------------------------------------------+
+
+--- MILESTONE SCHEDULE (REQUIRED — Document Each Step with Dates) ---
+
+Milestone 1 — Account Inventory and Triage
+  Description: Generate complete report of all 120 inactive accounts. Categorize
+               by account type (standard, privileged, service). Identify
+               separated employees and orphaned accounts.
+  Owner: IT Operations Lead / ISSO
+  Target Date: [Day 2 from SAR receipt]
+  Evidence: Account inventory spreadsheet with last logon dates, account types,
+            and owner identification
+
+Milestone 2 — Privileged Account Disablement
+  Description: Disable all privileged/admin accounts in the inactive set.
+               Verify disablement via directory query.
+  Owner: IT Operations Lead
+  Target Date: [Day 3 from SAR receipt]
+  Evidence: Screenshot/export from AD or IDM showing disabled status; change
+            management ticket reference
+
+Milestone 3 — Standard User Account Disablement
+  Description: Disable all standard user accounts inactive > 90 days (excluding
+               service accounts pending dependency analysis).
+  Owner: IT Operations Lead
+  Target Date: [Day 5 from SAR receipt]
+  Evidence: Account status report; notification records sent to managers
+
+Milestone 4 — Service Account Dependency Analysis
+  Description: Complete application impact analysis for all service accounts in
+               the inactive set. Disable those with no active dependency.
+               Document exceptions for accounts with unresolved dependencies.
+  Owner: Application Owners / IT Operations
+  Target Date: [Day 10 from SAR receipt]
+  Evidence: Dependency analysis document; exception log with owner assignments
+
+Milestone 5 — Root Cause Analysis Completion
+  Description: Document the root cause of the control failure (automation gap,
+               process failure, responsibility gap, etc.). Present findings to
+               ISSO and System Owner.
+  Owner: ISSO
+  Target Date: [Day 14 from SAR receipt]
+  Evidence: Root Cause Analysis memo signed by ISSO and System Owner
+
+Milestone 6 — Automated Account Review/Disablement Configuration
+  Description: Implement or repair automated account inactivity monitoring and
+               disablement at the 90-day threshold. Configure warning
+               notifications at 60 and 75 days. Test in non-production
+               environment before production deployment.
+  Owner: IT Operations / IAM Team
+  Target Date: [Day 45 from SAR receipt]
+  Evidence: Configuration documentation; test results; change management record
+
+Milestone 7 — Policy and Procedure Update
+  Description: Update Access Control Policy (AC-1) and Account Management
+               Procedure to reflect the 90-day ODV, automated controls, roles
+               and responsibilities, and exception handling process.
+  Owner: ISSO
+  Target Date: [Day 30 from SAR receipt]
+  Evidence: Revised policy and procedure documents with version numbers and
+            approval signatures
+
+Milestone 8 — Post-Remediation Verification
+  Description: Run account activity report demonstrating zero accounts inactive
+               > 90 days. ISSO conducts internal spot-check. Retain evidence.
+  Owner: ISSO
+  Target Date: [Day 55 from SAR receipt]
+  Evidence: Post-remediation account report (exported); ISSO verification memo
+
+Milestone 9 — POA&M Closure and ISSO/SO Sign-Off
+  Description: ISSO and System Owner review all milestone evidence. Complete
+               POA&M closure documentation. Notify AO/AODR of remediation
+               completion and submit updated POA&M.
+  Owner: ISSO and System Owner
+  Target Date: [Day 60 from SAR receipt — Scheduled Completion Date]
+  Evidence: Signed POA&M closure memo; updated SSP implementation narrative
+            for AC-2(3); evidence package submitted to AO
+
+
+================================================================================
+PART 4: ISSO AND SYSTEM OWNER SIGN-OFF REQUIREMENTS
+================================================================================
+
+Federal policy and SP 800-37 Rev 2 establish clear accountability requirements
+for POA&M management. The following sign-offs are required:
+
+1. ISSO Responsibilities and Sign-Off:
+   - The ISSO is the day-to-day security point of accountability for this
+     finding. The ISSO must:
+       a) Review and validate the initial finding against the SAR
+       b) Approve the POA&M entry before it is submitted to the AO
+       c) Verify each milestone is completed and evidence is adequate
+       d) Sign the POA&M closure memo when all milestones are complete
+       e) Update the SSP AC-2(3) implementation narrative to reflect the
+          remediated and now-operational control
+       f) Certify the accuracy of the POA&M in monthly ConMon reports
+   - ISSO signature is required on:
+       - Initial POA&M entry (at submission)
+       - Each monthly status update if milestones shift
+       - Final POA&M closure memo
+
+2. System Owner (SO) Responsibilities and Sign-Off:
+   - The System Owner has ultimate accountability for the system's security
+     posture and must:
+       a) Acknowledge the finding and concur with the remediation plan
+       b) Authorize the resource allocation (staff time, tooling changes)
+       c) Accept any residual risk during the remediation window
+       d) Co-sign the POA&M closure memo
+       e) Ensure the updated Account Management Procedure is formally approved
+   - SO signature is required on:
+       - Initial POA&M entry concurrence
+       - Root Cause Analysis memo
+       - POA&M closure memo
+       - Updated Access Control Policy (AC-1) if revised
+
+3. Authorizing Official (AO) / AODR Notification:
+   - The AO must be notified of the OTS finding and the POA&M entry.
+   - If any accounts in the 120-account set are privileged accounts, the AO
+     should be explicitly briefed given the elevated risk to the authorization
+     boundary.
+   - AO signature is NOT required for routine Moderate-risk POA&M entries
+     UNLESS: (a) risk acceptance is invoked, (b) the finding affects a critical
+     or high-impact component, or (c) agency policy requires AO concurrence.
+   - If remediation cannot be completed within the scheduled completion date,
+     a formal risk acceptance memorandum requiring AO signature must be
+     prepared and executed.
+
+4. Risk Acceptance (if needed):
+   If any sub-item (e.g., service accounts with unresolved dependencies) cannot
+   be remediated within the standard timeline, a Risk Acceptance must be
+   documented separately, including:
+     - Specific accounts or account types accepted under the risk acceptance
+     - Business justification for the delay
+     - Compensating controls in place during the acceptance period
+     - Expiration date of the risk acceptance
+     - ISSO signature, System Owner signature, and AO signature
+   Risk acceptance is NOT a permanent closure of the POA&M item — the item
+   remains open and must be reviewed at each ConMon cycle.
+
+
+================================================================================
+PART 5: SSP UPDATE REQUIREMENTS
+================================================================================
+
+Once remediation is complete, update the SSP implementation narrative for
+AC-2(3) from "Partially Implemented" (or "Planned") to "Implemented" with the
+following narrative components:
+
+Control: AC-2(3) — Account Management: Disable Accounts
+Implementation Status: Implemented
+
+Implementation Description:
+  [System Name] disables user accounts that have been inactive for 90 days or
+  more, consistent with the organization-defined value (ODV) documented in the
+  Access Control Policy [Policy Name, Version X.X, dated YYYY-MM-DD]. Account
+  inactivity is monitored automatically through [tool name, e.g., Active
+  Directory / identity management platform]. The system is configured to:
+    (1) Send automated notification to the account owner's manager at 60 days
+        and 75 days of inactivity;
+    (2) Automatically disable the account at 90 days of inactivity.
+  Service accounts are reviewed quarterly by [role] to verify continued
+  business need. Accounts associated with separated personnel are disabled
+  within [X] hours of HR notification per the account termination procedure
+  [Procedure Name, Version X.X]. Account disablement is logged and retained
+  in [audit log system] for [retention period] per AU-11. The ISSO conducts
+  a quarterly review of the account activity report to verify compliance with
+  the 90-day ODV.
+
+Responsible Roles:
+  - ISSO: Quarterly compliance review; POA&M management
+  - IT Operations / IAM Team: Automated system configuration; disablement
+    execution
+  - System Owner: Policy approval; resource authorization
+
+Evidence / Artifacts:
+  - Access Control Policy [version and date]
+  - Account Management Procedure [version and date]
+  - Directory service / IAM configuration screenshot showing 90-day threshold
+  - Quarterly account activity report (most recent)
+  - ISSO quarterly review memo
+
+
+================================================================================
+PART 6: CONTINUOUS MONITORING (ConMon) — PREVENTING RECURRENCE
+================================================================================
+
+To prevent this finding from recurring at the next assessment cycle:
+
+1. Monthly ConMon Check: Include an account inactivity report in your monthly
+   ConMon package. Run a query for accounts approaching 75 days and accounts
+   at 90+ days. Review results with IT Operations and document actions taken.
+
+2. Automated Alerting: Configure alerts (via SIEM or IAM platform) when any
+   account exceeds 85 days of inactivity — providing a 5-day buffer to take
+   manual action before the ODV is breached.
+
+3. Quarterly Manual Review: Supplement automation with a quarterly manual
+   account review (tie to CA-7 continuous monitoring tasks) that specifically
+   covers:
+     - Service accounts
+     - Shared accounts
+     - Privileged accounts
+     - Any accounts excluded from automated review
+
+4. Annual Control Assessment: Include AC-2(3) as a prioritized control in your
+   annual assessment (or ConMon-based ongoing assessment) to validate that the
+   automated process continues to function correctly.
+
+5. POA&M Monthly Updates: Until this POA&M item is formally closed, provide
+   milestone progress updates monthly. Include accounts remaining to be
+   disabled, milestones completed, and any new exceptions identified.
+
+
+================================================================================
+PART 7: SUMMARY CHECKLIST — ACTIONS AND DELIVERABLES
+================================================================================
+
+IMMEDIATE (Days 1-7):
+  [ ] Generate complete inventory of 120 inactive accounts
+  [ ] Disable privileged accounts first
+  [ ] Disable standard user accounts inactive > 90 days
+  [ ] Initiate service account dependency analysis
+  [ ] Open POA&M entry with all required fields populated
+  [ ] Notify ISSO, System Owner, and AO of the finding and remediation plan
+
+SHORT-TERM (Days 7-30):
+  [ ] Complete root cause analysis
+  [ ] Update Access Control Policy and Account Management Procedure
+  [ ] Assign milestone owners and dates in POA&M
+  [ ] Resolve service account exceptions or escalate to formal risk acceptance
+  [ ] ISSO and System Owner sign initial POA&M entry
+
+MEDIUM-TERM (Days 30-60):
+  [ ] Implement/repair automated account disablement at 90-day threshold
+  [ ] Test automation in non-production; deploy to production
+  [ ] Complete post-remediation verification report
+  [ ] Update SSP AC-2(3) narrative to "Implemented"
+  [ ] ISSO and System Owner sign POA&M closure memo
+  [ ] Submit updated POA&M and SSP to AO/AODR
+
+ONGOING:
+  [ ] Monthly account inactivity ConMon report
+  [ ] Quarterly manual account review
+  [ ] Annual control assessment of AC-2(3)
+  [ ] Monthly POA&M status updates until closure
+
+
+================================================================================
+REFERENCES
+================================================================================
+  - NIST SP 800-53 Rev 5: Security and Privacy Controls for Information Systems
+    and Organizations — AC-2(3) (September 2020)
+  - NIST SP 800-53A Rev 5: Assessing Security and Privacy Controls in
+    Information Systems and Organizations (January 2022)
+  - NIST SP 800-53B: Control Baselines for Information Systems and Organizations
+    (October 2020) — Moderate and High baseline, AC-2(3)
+  - NIST SP 800-37 Rev 2: Risk Management Framework for Information Systems
+    and Organizations (December 2018) — RMF Steps 5, 6, 7; POA&M management
+  - OMB Circular A-130: Managing Information as a Strategic Resource (2016) —
+    POA&M and ATO requirements
+  - CISA Federal Continuous Diagnostics and Mitigation (CDM) Program —
+    Account Management/Identity management capabilities
+  - FedRAMP POA&M Template and Guidance (if applicable to your authorization)
+
+================================================================================
+END OF RESPONSE
+================================================================================

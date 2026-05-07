@@ -1,0 +1,344 @@
+SSP CONTROL NARRATIVE
+System Security Plan (SSP) — Control Implementation Description
+
+Control:        SC-8(1) — Transmission Confidentiality and Integrity | Cryptographic Protection
+Impact Level:   Moderate
+Date:           2026-05-07
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONTROL STATEMENT (REFERENCE)
+
+SC-8(1): The information system implements cryptographic mechanisms to prevent
+unauthorized disclosure of information and detect changes to information during
+transmission unless otherwise protected by [organization-defined alternative
+physical safeguards].
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RESPONSIBLE ROLES
+
+Control Owner:          Chief Information Security Officer (CISO)
+Implementation Owner:   Infrastructure / Platform Engineering Team
+Review Frequency:       Annual and upon significant change
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART A — CONTROL SUMMARY
+
+This system implements FIPS 140-2/140-3 validated cryptographic mechanisms on
+all transmission paths to protect the confidentiality and integrity of federal
+information in transit. Cryptographic protection applies to all data flows
+between end users and the system, between system components, and between this
+system and external services or interconnected systems. No unencrypted
+transmission of sensitive federal data is permitted across any network boundary,
+including internal network segments carrying CUI or other sensitive information.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART B — IMPLEMENTATION NARRATIVE
+
+1. CRYPTOGRAPHIC STANDARDS AND FIPS COMPLIANCE
+
+   The organization enforces the use of FIPS 140-2 validated (or FIPS 140-3
+   validated where available) cryptographic modules for all transmission
+   encryption across the system boundary. This requirement is codified in the
+   organization's Cryptographic Policy and enforced through system configuration
+   baselines.
+
+   Approved algorithms in use include:
+   - Symmetric encryption:  AES-256 (GCM or CBC mode with HMAC-SHA-256) for
+                            bulk data encryption in transit.
+   - Asymmetric / key exchange: ECDHE (P-256 or P-384 curves) or RSA-2048+
+                                for session key establishment.
+   - Integrity / authentication: HMAC-SHA-256 or HMAC-SHA-384; digital
+                                 signatures using RSA-2048+ or ECDSA P-256.
+   - Hash functions:        SHA-256 or SHA-384 (SHA-1 is prohibited).
+
+   Use of MD5, RC4, DES, 3DES, export-grade ciphers, and SSL 3.0 / TLS 1.0 /
+   TLS 1.1 is explicitly prohibited and blocked at the infrastructure level.
+
+
+2. EXTERNAL-FACING TRANSMISSION PATHS (USER TO SYSTEM)
+
+   All user-facing interfaces — including the web application portal, REST APIs,
+   and any mobile or thick-client endpoints — enforce TLS 1.2 at minimum, with
+   TLS 1.3 preferred. This is enforced at the Application Load Balancer / TLS
+   termination layer.
+
+   TLS configuration enforces:
+   a. Strong cipher suites only (e.g., TLS_AES_256_GCM_SHA384 for TLS 1.3;
+      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 for TLS 1.2 fallback).
+   b. Perfect Forward Secrecy (PFS) through ECDHE key exchange, ensuring
+      session keys cannot be retroactively decrypted if long-term keys are
+      compromised.
+   c. Server certificate validation using a certificate issued by a NIST-
+      approved or FedRAMP-authorized Certificate Authority (CA), with
+      certificates following a 2-year maximum validity cycle.
+   d. HSTS (HTTP Strict Transport Security) headers with a minimum max-age of
+      31,536,000 seconds, preventing protocol downgrade attacks.
+   e. HTTP is redirected to HTTPS at the load balancer layer; plain HTTP
+      connections are rejected and logged.
+
+   TLS cipher suite and protocol enforcement is validated quarterly using
+   automated scanning tools (e.g., SSL Labs API or equivalent government-
+   approved tooling) and upon any change to TLS termination configuration.
+
+
+3. INTERNAL / EAST-WEST TRANSMISSION PATHS (COMPONENT TO COMPONENT)
+
+   Data flows between internal system components — including microservices,
+   application servers, database servers, message queues, and caching layers —
+   are encrypted in transit using mutual TLS (mTLS) 1.2/1.3 enforced by the
+   service mesh (e.g., Istio, Linkerd, or equivalent). This ensures that both
+   the calling and receiving services authenticate each other and that the
+   channel is encrypted, preventing lateral-movement-based interception even
+   within the private network.
+
+   Specific internal paths and their cryptographic controls:
+   a. Application tier to database tier: TLS 1.2+ enforced at the database
+      driver/connector level; certificates issued by the internal private CA
+      managed by the organization. Database connections using cleartext are
+      rejected by firewall policy.
+   b. Application tier to cache (e.g., Redis / ElastiCache): TLS enforced at
+      the client configuration; in-transit encryption enabled at the managed
+      service level.
+   c. Application tier to message broker (e.g., Kafka, SQS, RabbitMQ): TLS
+      1.2+ enforced; messages containing CUI additionally apply envelope
+      encryption at the application layer prior to queuing.
+   d. Container-to-container communication within Kubernetes clusters: Network
+      policies restrict pod-to-pod traffic; mTLS enforced via the service mesh
+      for all sensitive service communication.
+
+   Where physical separation of network segments (e.g., dedicated private
+   subnets, VLANs with no routing to untrusted segments) is employed as an
+   alternative or complementary safeguard, this is documented in the system's
+   network diagram and the relevant segment is identified in the SSP as
+   operating under [organization-defined alternative physical safeguards].
+   However, even in those cases, TLS encryption is applied as defense-in-depth.
+
+
+4. INTERCONNECTIONS WITH EXTERNAL SYSTEMS AND THIRD PARTIES
+
+   All connections to interconnected systems — federal agencies, cloud service
+   providers (CSPs), SaaS vendors, or other system interconnections governed by
+   Interconnection Security Agreements (ISAs) / Memoranda of Understanding
+   (MOUs) — traverse encrypted channels:
+
+   a. Encrypted VPN tunnels (IPsec IKEv2 with AES-256-GCM and SHA-256
+      integrity) or dedicated encrypted private circuits are used for
+      site-to-site connections to partner agency networks.
+   b. API-based integrations with external CSPs or SaaS use TLS 1.2+;
+      API gateway configurations reject connections using deprecated protocols.
+   c. SFTP or FTPS (TLS-based) with AES-256 is used for any scheduled bulk
+      file transfers; plain FTP is prohibited and blocked by firewall ACL.
+   d. Email containing CUI uses S/MIME or encrypted secure file transfer
+      portals; unencrypted SMTP for CUI is prohibited.
+
+
+5. CERTIFICATE AND KEY MANAGEMENT
+
+   The organization maintains a Certificate Management Procedure that governs
+   the full lifecycle of all certificates used for transmission encryption:
+
+   a. Certificate issuance: Certificates are issued by a NIST SP 800-57-
+      compliant CA. Public-facing certificates use a publicly trusted CA;
+      internal certificates use the organization's private CA integrated with
+      the enterprise PKI.
+   b. Key length and algorithm: RSA keys are minimum 2048-bit; ECC keys use
+      P-256 or P-384 curves.
+   c. Certificate validity: Maximum validity period is 2 years for internal
+      certificates; 1 year for public-facing certificates, aligned with current
+      CA/Browser Forum and NIST guidance.
+   d. Certificate renewal: Automated renewal processes (e.g., ACME protocol /
+      Let's Encrypt for public certs, or enterprise SCEP/EST for internal certs)
+      are in place to renew certificates at least 30 days before expiration.
+      Expiration monitoring alerts are configured with a 60-day and 14-day
+      notification threshold.
+   e. Certificate revocation: CRL and/or OCSP stapling is configured to enable
+      revocation checking. Compromised certificates are revoked within 24 hours
+      of confirmed compromise.
+   f. Private key protection: Private keys for TLS certificates are stored in
+      a Hardware Security Module (HSM) or a FIPS 140-2 Level 2 validated
+      secrets management solution (e.g., HashiCorp Vault with HSM backing, AWS
+      CloudHSM, or Azure Key Vault HSM tier). Keys are never stored in plaintext
+      in configuration files, source code repositories, or environment variables.
+   g. Key rotation: Session keys are ephemeral (PFS ensures new keys per
+      session). Long-term signing and encryption keys follow the organization's
+      key rotation schedule (minimum annual rotation for RSA/ECC keys, or upon
+      suspected compromise).
+
+
+6. ENFORCEMENT AND PREVENTION OF NON-ENCRYPTED TRANSMISSIONS
+
+   Technical controls are implemented to prevent non-encrypted transmissions:
+
+   a. Network Security Groups (NSGs) / firewall rules block inbound and
+      outbound cleartext protocol ports (TCP/21 for FTP, TCP/23 for Telnet,
+      TCP/80 for HTTP as a destination, TCP/143 for IMAP cleartext, etc.) at
+      the network perimeter and internal segment boundaries.
+   b. Web Application Firewall (WAF) rules are configured to block HTTP
+      requests and enforce HTTPS.
+   c. Configuration management tooling (e.g., Ansible, Terraform) enforces
+      TLS-enabled configurations as code and flags any non-compliant
+      configuration as a policy violation in the CI/CD pipeline prior to
+      deployment.
+   d. Compliance-as-code / SIEM alerting triggers an alert and creates a
+      security incident ticket if a network flow is detected on a prohibited
+      cleartext protocol port involving a system asset.
+
+
+7. OPERATING SYSTEM AND APPLICATION HARDENING SUPPORTING SC-8(1)
+
+   System hardening baselines (aligned with DISA STIGs or CIS Benchmarks at
+   Level 2, as applicable) include specific settings that support transmission
+   encryption enforcement:
+
+   a. SSH is configured to use only SSHv2; SSHv1 is disabled. SSH ciphers are
+      restricted to AES-128-CTR, AES-192-CTR, AES-256-CTR, AES-128-GCM,
+      AES-256-GCM; weak ciphers (arcfour, 3des-cbc, blowfish) are disabled.
+   b. Operating system TLS libraries (e.g., OpenSSL) are maintained at current
+      patch levels and configured to enforce minimum TLS 1.2.
+   c. Application frameworks are configured with TLS-only modes; application
+      configuration is reviewed during security code review to confirm no
+      cleartext fallback options are enabled.
+
+
+8. MONITORING, AUDITING, AND CONTINUOUS MONITORING
+
+   The effectiveness of cryptographic transmission controls is continuously
+   monitored:
+
+   a. Network traffic analysis tools (IDS/IPS with SSL inspection capability
+      on perimeter flows) monitor for anomalous unencrypted traffic or use of
+      deprecated TLS versions.
+   b. Automated TLS/SSL configuration scanning is performed quarterly and after
+      changes to identify any protocol or cipher suite weaknesses.
+   c. Certificate expiration monitoring is automated; alerts are sent to the
+      security operations team at 60-day and 14-day intervals before expiration.
+   d. SIEM dashboards include metrics for TLS protocol version distribution
+      across detected sessions; deviations from expected TLS 1.2/1.3 usage
+      trigger investigation.
+   e. Annual penetration testing explicitly includes testing for SSL/TLS
+      weaknesses (e.g., BEAST, POODLE, DROWN, ROBOT attack susceptibility)
+      and validates that no downgrade attacks are possible.
+   f. Results of TLS scanning and certificate audits are retained as artifacts
+      in the continuous monitoring repository and are made available to the AO
+      and assessors upon request.
+
+
+9. POLICIES AND PROCEDURES SUPPORTING THIS CONTROL
+
+   The following organizational policies and procedures directly govern SC-8(1)
+   implementation:
+
+   - Cryptographic Policy (CP-001): Defines approved algorithms, key lengths,
+     and prohibited ciphers in alignment with NIST SP 800-175B.
+   - System and Communications Protection Policy (SCP-001): Establishes the
+     organization's requirement for encryption of all sensitive data in transit.
+   - Certificate Management Procedure (CMP-001): Documents the lifecycle
+     management of all cryptographic certificates used by the system.
+   - Network Security Policy (NSP-001): Defines prohibited cleartext protocols
+     and firewall rule requirements.
+   - Configuration Management Policy (CMP-002): Ensures TLS configurations
+     are included in baseline configurations subject to change control.
+
+   All policies are reviewed annually and approved by the CISO.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART C — EVIDENCE ARTIFACTS (FOR 3PAO ASSESSMENT)
+
+The following artifacts should be provided to the 3PAO assessor to substantiate
+this control implementation:
+
+1. Network architecture / data flow diagrams annotating all transmission paths
+   and the encryption protocol applied to each.
+2. TLS/SSL configuration scan reports (e.g., SSL Labs API output or equivalent)
+   for all external-facing endpoints, dated within the last 90 days.
+3. Firewall / Network Security Group rule exports demonstrating that cleartext
+   protocol ports are blocked.
+4. Current certificate inventory (hostname, CA, algorithm, key length,
+   expiration date) for all system certificates.
+5. FIPS 140-2/140-3 certificate numbers for cryptographic modules in use
+   (reference NIST CMVP database listings).
+6. Configuration management baseline excerpts showing TLS enforcement settings
+   for load balancers, web servers, database connectors, and service mesh.
+7. Organization's Cryptographic Policy and Certificate Management Procedure.
+8. Evidence of mTLS enforcement in service mesh (e.g., Istio PeerAuthentication
+   policy configuration screenshots or exports).
+9. HSM or secrets manager configuration evidence showing private key storage
+   protection.
+10. Penetration test report excerpt covering TLS/SSL testing results (most
+    recent annual test).
+11. SIEM alert rules and sample alert evidence for cleartext protocol detection.
+12. Certificate expiration monitoring alert configuration and evidence.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART D — RELATED CONTROLS
+
+SC-8         Transmission Confidentiality and Integrity (base control)
+SC-8(2)      Pre/Post Transmission Handling
+SC-12        Cryptographic Key Establishment and Management
+SC-13        Cryptographic Protection
+SC-17        Public Key Infrastructure Certificates
+SC-28        Protection of Information at Rest
+IA-3         Device Identification and Authentication (supports mTLS)
+SA-9         External Information System Services (ISAs/MOUs)
+AU-2 / AU-12 Audit Events / Audit Record Generation (logging of TLS events)
+CM-6         Configuration Settings (enforcing TLS baselines)
+CM-7         Least Functionality (disabling cleartext protocols)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART E — CONTROL ORIGINATION AND INHERITANCE
+
+Control Origination:    Hybrid
+  - Inherited (from CSP/FedRAMP Authorized IaaS/PaaS, if applicable):
+      The underlying infrastructure provider's FedRAMP authorization inherits
+      physical layer protections and some network-layer encryption services
+      (e.g., encrypted VPC peering, underlying TLS libraries on managed
+      services). Specific inherited capabilities are documented in the
+      Customer Responsibility Matrix (CRM) provided by the CSP.
+  - System-Specific (this system's responsibility):
+      Application-layer TLS configuration, certificate management, cipher
+      suite enforcement, mTLS for internal service communication, prohibition
+      of cleartext protocols via firewall policy, and all monitoring and
+      auditing activities described above are the responsibility of this
+      system's operators.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART F — PARAMETER VALUES (ORGANIZATION-DEFINED)
+
+Per SC-8(1), the organization has defined the following parameter:
+
+  [organization-defined alternative physical safeguards]:
+      Dedicated private network segments (air-gapped or VLAN-isolated) within
+      the organization's classified enclave for intra-enclave processing paths
+      that are physically secured and access-controlled. These segments are
+      documented in the network architecture diagram (Appendix [X]) and are
+      subject to physical access controls per PE-3. Cryptographic encryption
+      is applied as an additional layer even on these segments.
+
+  Note: For Moderate impact systems, physical safeguards alone are NOT accepted
+  as a substitute for cryptographic protection on any path that traverses a
+  shared or untrusted network segment. Cryptographic protection is therefore
+  applied universally across this system's transmission paths.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IMPLEMENTATION STATUS:  Implemented
+ASSESSMENT RESULT (PLACEHOLDER):  [To be completed by 3PAO]
+DATE OF LAST REVIEW:    2026-05-07
+NEXT SCHEDULED REVIEW:  2027-05-07
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

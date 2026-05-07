@@ -1,0 +1,34 @@
+{
+  "eval_id": 120,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Describes the ISO 27001 to SP 800-53 relationship including approximate control overlap",
+      "passed": true,
+      "evidence": "Section 1 provides a detailed domain-by-domain mapping table of ISO 27001:2022 Annex A to SP 800-53 Rev 5 families. The summary explicitly states: 'SP 800-53 Rev 5 derives from a common heritage with ISO 27001 and the two frameworks share roughly 70–80% conceptual overlap at the domain level.' It also notes that domain-level alignment does not equate to control-level compliance, and SP 800-53 is 'significantly more prescriptive, more granular, and carries U.S. federal-law specificity.'"
+    },
+    {
+      "text": "Identifies FIPS 140-2/3 cryptography as a gap (not covered by ISO 27001)",
+      "passed": true,
+      "evidence": "Gap 1 is titled 'FIPS 140-2 / FIPS 140-3 VALIDATED CRYPTOGRAPHIC MODULES' and directly contrasts ISO 27001:2022 Annex A 8.24 ('algorithms must be appropriate' — no FIPS mandate) with FedRAMP's requirement that 'ALL cryptographic modules used in the system must be validated to FIPS 140-2 or FIPS 140-3.' Controls SC-13 and IA-7 are cited. The gap summary table confirms 'ISO 27001 Coverage: Appropriate algs (8.24)' vs 'FedRAMP Moderate Requirement: FIPS 140-2/3 validated modules.'"
+    },
+    {
+      "text": "Identifies 3PAO requirement and US-CERT incident reporting as FedRAMP-specific gaps",
+      "passed": true,
+      "evidence": "Gap 5 is titled 'THIRD-PARTY ASSESSMENT ORGANIZATION (3PAO) REQUIREMENT' explaining that ISO CB auditors are not equivalent to accredited 3PAOs. Gap 4 is titled 'US-CERT / CISA INCIDENT REPORTING' and states: 'FedRAMP incident reporting requirements... All security incidents affecting federal data must be reported to US-CERT (now CISA) within 1 hour of discovery for critical/major incidents.' Both are identified as FedRAMP-specific gaps."
+    },
+    {
+      "text": "Describes all 7 RMF steps (Prepare, Categorize, Select, Implement, Assess, Authorize, Monitor) in context of FedRAMP",
+      "passed": true,
+      "evidence": "Section 3 covers all seven RMF steps with FedRAMP-specific detail: 'STEP 1 — PREPARE', 'STEP 2 — CATEGORIZE', 'STEP 3 — SELECT', 'STEP 4 — IMPLEMENT', 'STEP 5 — ASSESS', 'STEP 6 — AUTHORIZE', 'STEP 7 — MONITOR'. Each step includes key tasks, key outputs, and timeline estimates in the FedRAMP context."
+    },
+    {
+      "text": "Distinguishes between Agency ATO and JAB P-ATO authorization paths",
+      "passed": true,
+      "evidence": "Section 3 opens with: 'AGENCY ATO PATH: CSP works directly with a specific federal agency customer. The agency Authorizing Official (AO) grants an Authority to Operate (ATO). Fastest for single-agency relationships.' And 'JAB P-ATO PATH: CSP works with the Joint Authorization Board (JAB)... Results in a Provisional ATO (P-ATO) accepted by all federal agencies. Highest rigor; longest timeline.' Step 6 (Authorize) further elaborates both paths with timelines."
+    }
+  ],
+  "pass_count": 5,
+  "total_count": 5,
+  "pass_rate": 1.0
+}

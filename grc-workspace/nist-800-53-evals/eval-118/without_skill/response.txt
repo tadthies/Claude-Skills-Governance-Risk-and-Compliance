@@ -1,0 +1,200 @@
+NIST SP 800-53 Rev 5 Multi-Factor Authentication Requirements and Executive Order 14028
+=====================================================================================
+
+OVERVIEW
+--------
+Multi-factor authentication (MFA) is a critical security control for federal systems. NIST SP 800-53 Rev 5 addresses MFA requirements primarily within the Identification and Authentication (IA) control family, with additional references in Access Control (AC) and other families. Executive Order 14028 strengthens these requirements with specific mandates for phishing-resistant MFA across federal systems.
+
+
+PART 1: SP 800-53 REV 5 CONTROLS REQUIRING MFA
+-----------------------------------------------
+
+1. IA-2: Identification and Authentication (Organizational Users)
+   The primary MFA control. Requires that the information system uniquely identifies and authenticates organizational users.
+
+   Key enhancement sub-controls requiring MFA:
+
+   IA-2(1) - Multi-Factor Authentication to Privileged Accounts
+   - Requires MFA for access to privileged accounts (e.g., system administrators, root accounts)
+   - Baseline applicability: LOW, MODERATE, HIGH
+   - One of the most universally required MFA controls across all baselines
+
+   IA-2(2) - Multi-Factor Authentication to Non-Privileged Accounts
+   - Requires MFA for access to non-privileged accounts
+   - Baseline applicability: MODERATE, HIGH
+   - Not required in the LOW baseline but strongly recommended
+
+   IA-2(6) - Access to Accounts — Separate Device
+   - Requires MFA using a device separate from the system gaining access
+   - Baseline applicability: Not in any baseline by default (organization-defined)
+   - Often implemented in HIGH environments and by policy overlay
+
+   IA-2(8) - Phishing-Resistant Multi-Factor Authentication to Privileged Accounts
+   - Requires phishing-resistant MFA specifically for privileged accounts
+   - Phishing-resistant methods include: PIV/CAC smart cards, FIDO2/WebAuthn hardware keys
+   - Baseline applicability: HIGH (introduced prominently in Rev 5)
+   - Directly supports EO 14028 mandates
+
+   IA-2(12) - Acceptance of PIV Credentials
+   - Requires systems to accept Personal Identity Verification (PIV) credentials
+   - PIV credentials inherently provide MFA (something you have + something you know)
+   - Baseline applicability: LOW, MODERATE, HIGH
+   - Applies to all federal systems — aligns with HSPD-12 requirements
+
+   IA-2(13) - Out-of-Band Authentication
+   - Requires out-of-band authentication for non-privileged accounts in certain scenarios
+   - Baseline applicability: Organization-defined; common in HIGH environments
+
+2. IA-5: Authenticator Management
+   While not exclusively an MFA control, IA-5 governs the management of authenticators used in MFA solutions.
+
+   IA-5(1) - Password-Based Authentication
+   - Sets minimum complexity and management requirements for passwords used as one factor
+   - Baseline applicability: LOW, MODERATE, HIGH
+
+   IA-5(2) - Public Key Infrastructure (PKI)-Based Authentication
+   - Requires validation of PKI certificates, directly supports smart card/PIV MFA
+   - Baseline applicability: MODERATE, HIGH
+
+   IA-5(6) - Protection of Authenticators
+   - Requires protection of authenticators (tokens, smart cards, etc.)
+   - Baseline applicability: Organization-defined
+
+   IA-5(7) - No Embedded Unencrypted Static Authenticators
+   - Prevents embedding of static credentials, supports MFA integrity
+   - Baseline applicability: MODERATE, HIGH
+
+3. IA-8: Identification and Authentication (Non-Organizational Users)
+   Addresses MFA requirements for external users, contractors, and partners.
+
+   IA-8(1) - Acceptance of PIV Credentials from Other Agencies
+   - Requires acceptance of PIV credentials from other federal agencies
+   - Baseline applicability: LOW, MODERATE, HIGH
+
+   IA-8(2) - Acceptance of External Authenticators
+   - Requires acceptance of external authenticators meeting NIST SP 800-63 standards
+   - Baseline applicability: LOW, MODERATE, HIGH
+
+   IA-8(4) - Use of Defined Profiles
+   - Systems must use profiles as defined in SP 800-63 for identity assurance
+   - Baseline applicability: LOW, MODERATE, HIGH
+
+4. AC-17: Remote Access
+   AC-17(3) - Managed Access Control Points
+   - Requires the use of MFA for remote access sessions
+   - Baseline applicability: MODERATE, HIGH
+   - Critical for VPN and remote desktop scenarios
+
+5. AC-2: Account Management and AC-3: Access Enforcement
+   These controls, while not explicitly mandating MFA, require implementation of mechanisms (including MFA) to enforce least privilege and access controls, especially for privileged accounts.
+
+
+PART 2: BASELINE APPLICABILITY SUMMARY TABLE
+--------------------------------------------
+
+Control             | LOW | MODERATE | HIGH | Notes
+--------------------|-----|----------|------|-------------------------------
+IA-2(1)             |  X  |    X     |  X   | MFA for privileged accounts
+IA-2(2)             |     |    X     |  X   | MFA for non-privileged accounts
+IA-2(6)             |     |          |      | Org-defined, often HIGH
+IA-2(8)             |     |          |  X   | Phishing-resistant MFA, privileged
+IA-2(12)            |  X  |    X     |  X   | PIV credential acceptance
+IA-5(2)             |     |    X     |  X   | PKI-based authentication
+IA-8(1)             |  X  |    X     |  X   | PIV from other agencies
+IA-8(2)             |  X  |    X     |  X   | External authenticators (SP 800-63)
+AC-17(3)            |     |    X     |  X   | MFA for remote access
+
+Note: LOW baseline systems still require MFA for privileged accounts (IA-2(1)) and PIV
+acceptance (IA-2(12)), making MFA universally applicable across all federal systems.
+
+
+PART 3: EXECUTIVE ORDER 14028 REQUIREMENTS FOR PHISHING-RESISTANT MFA
+----------------------------------------------------------------------
+
+Executive Order 14028, "Improving the Nation's Cybersecurity," signed May 12, 2021, established sweeping cybersecurity mandates for the federal government. Key MFA-related requirements include:
+
+3.1 Core MFA Mandate (Section 3 — Modernizing Federal Government Cybersecurity)
+   - Section 3(b)(ii): Federal agencies must adopt multi-factor authentication within 180 days of the order
+   - MFA must be implemented across all federal information systems, including both privileged and non-privileged accounts
+   - The mandate applies to cloud services, on-premises systems, and hybrid environments
+
+3.2 Phishing-Resistant MFA Specifically
+   EO 14028 does not use the exact phrase "phishing-resistant" directly in every clause, but the Office of Management and Budget (OMB) and CISA subsequently clarified through implementing guidance (OMB M-22-09) that:
+
+   OMB Memorandum M-22-09 (Zero Trust Architecture Strategy, January 2022) — implementing EO 14028:
+   - Requires agencies to use phishing-resistant MFA methods, specifically:
+     * PIV/CAC (Personal Identity Verification / Common Access Card) smart cards
+     * FIDO2/WebAuthn hardware security keys
+   - Explicitly prohibits reliance on weaker MFA methods (SMS OTP, voice call OTPs, push notifications without number matching) as the sole MFA mechanism for high-value assets
+   - Agencies must achieve phishing-resistant MFA for:
+     * All privileged users (system admins, privileged access workstations)
+     * All federal employees accessing federal systems
+     * Where technically feasible, all non-privileged users
+
+3.3 Phishing-Resistant Methods Defined
+   Under EO 14028 / OMB M-22-09 / CISA guidance, phishing-resistant MFA is defined as:
+   - Authentication that cryptographically verifies both the authenticator and the relying party (the system being accessed)
+   - Resistant to real-time phishing attacks (adversary-in-the-middle attacks)
+   - Acceptable methods:
+     * PIV/CAC smart cards (FIPS 201-compliant)
+             - Hardware-based, certificate-backed
+        - Satisfies AAL3 under SP 800-63B
+     * FIDO2/WebAuthn with hardware security keys (e.g., YubiKey)
+        - Cryptographic binding to the origin/relying party
+        - Resistant to credential theft and real-time phishing
+        - Satisfies AAL2 or AAL3 depending on implementation
+   - Non-phishing-resistant methods (acceptable for limited use cases only):
+     * TOTP (time-based one-time passwords via authenticator apps) — susceptible to real-time phishing
+     * SMS/voice OTP — susceptible to SIM swapping and real-time phishing
+
+3.4 CISA Binding Operational Directives
+   CISA BOD 22-02 and subsequent guidance under EO 14028 authority:
+   - Agencies must enumerate all internet-accessible systems and enforce MFA
+   - Specific timelines were established for remediation of systems lacking MFA
+   - Privileged accounts must use phishing-resistant MFA first, then extended to all users
+
+3.5 Timeline and Accountability
+   - 60 days: Agencies to document MFA deployment plans
+   - 180 days: Implement MFA across all systems
+   - 1 year: Achieve phishing-resistant MFA for privileged users
+   - Ongoing: OMB oversight and agency reporting requirements
+
+
+PART 4: INTEGRATION OF SP 800-53 AND EO 14028 FOR FEDERAL SYSTEM IMPLEMENTATION
+---------------------------------------------------------------------------------
+
+4.1 Alignment
+   - IA-2(8) (Phishing-Resistant MFA for Privileged Accounts) directly codifies EO 14028 / M-22-09 requirements in SP 800-53 Rev 5 control language
+   - IA-2(12) (PIV Acceptance) supports the PIV-based phishing-resistant pathway
+   - SP 800-63B AAL2/AAL3 provides the technical standards underpinning both SP 800-53 and EO 14028 guidance
+
+4.2 Implementation Recommendations for Federal System MFA
+   Step 1: Identify all privileged accounts — implement phishing-resistant MFA immediately (IA-2(1), IA-2(8))
+   Step 2: Enable PIV/CAC acceptance for all organizational users (IA-2(12))
+   Step 3: Extend MFA to all non-privileged accounts (IA-2(2))
+   Step 4: Enforce MFA for all remote access sessions (AC-17(3))
+   Step 5: Manage and protect authenticators per IA-5 requirements
+   Step 6: Accept external credentials per IA-8 for cross-agency/partner access
+   Step 7: Document in SSP and validate during ATO process
+
+4.3 Key Supporting Standards
+   - NIST SP 800-63B: Authentication and Lifecycle Management (defines AAL1/2/3)
+   - FIPS 201-3: PIV standard for federal employees and contractors
+   - NIST SP 800-157: Guidelines for Derived PIV Credentials (mobile devices)
+   - OMB M-22-09: Federal Zero Trust Architecture Strategy
+   - CISA Zero Trust Maturity Model: Implementation guidance
+
+
+SUMMARY
+-------
+For federal systems:
+
+1. All baselines (LOW, MODERATE, HIGH): IA-2(1) requires MFA for privileged accounts; IA-2(12) requires PIV acceptance universally.
+
+2. MODERATE and HIGH baselines additionally require: IA-2(2) for non-privileged accounts, IA-5(2) for PKI authentication, AC-17(3) for remote access MFA.
+
+3. HIGH baseline additionally requires: IA-2(8) for phishing-resistant MFA on privileged accounts.
+
+4. EO 14028 / OMB M-22-09 mandate phishing-resistant MFA (PIV/CAC or FIDO2/WebAuthn) for all privileged users and, where feasible, all federal employees — going beyond baseline checkbox compliance to require cryptographically strong, origin-binding authentication methods that defeat real-time phishing and adversary-in-the-middle attacks.
+
+Agencies that implement PIV/CAC or FIDO2 hardware keys for all users simultaneously satisfy both the SP 800-53 control requirements and the EO 14028 / M-22-09 phishing-resistant MFA mandates.

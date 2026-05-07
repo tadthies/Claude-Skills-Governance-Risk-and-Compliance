@@ -1,0 +1,292 @@
+FIPS 199 CATEGORIZATION AND NIST SP 800-53 BASELINE SELECTION
+Federal HR System — PII, Salary Data, and Performance Reviews (5,000 Staff)
+
+==============================================================================
+OVERVIEW
+==============================================================================
+
+This analysis walks through the FIPS 199 security categorization process for
+a federal HR system storing employee PII, salary data, and performance reviews,
+and then maps that categorization to the appropriate NIST SP 800-53 baseline.
+
+==============================================================================
+STEP 1: FIPS 199 SECURITY CATEGORIZATION
+==============================================================================
+
+FIPS 199 ("Standards for Security Categorization of Federal Information and
+Information Systems") requires agencies to assess the potential impact of a
+security breach across three security objectives:
+
+  - Confidentiality: Preserving authorized restrictions on access and disclosure
+  - Integrity: Guarding against improper modification or destruction
+  - Availability: Ensuring timely and reliable access to information
+
+For each objective, the potential impact is rated LOW, MODERATE, or HIGH.
+The overall system categorization is determined by the "high-water mark" —
+the highest impact level across all three objectives.
+
+------------------------------------------------------------------------------
+Information Types in Scope
+------------------------------------------------------------------------------
+
+This HR system contains the following information types (aligned to NIST SP
+800-60, Volume II, "Guide for Mapping Types of Information and Information
+Systems to Security Categories"):
+
+  1. Personally Identifiable Information (PII) — employee records
+     NIST 800-60 Type: C.3.1.1 — General Information (PII)
+
+  2. Salary / Compensation Data — financial HR records
+     NIST 800-60 Type: C.3.5.1 — Compensation Management (Pay and Benefits)
+
+  3. Performance Reviews — employee appraisal records
+     NIST 800-60 Type: C.3.1.2 — Human Resources Management (Performance)
+
+------------------------------------------------------------------------------
+Impact Analysis by Security Objective
+------------------------------------------------------------------------------
+
+CONFIDENTIALITY
+  - Employee PII (names, SSNs, home addresses, dates of birth, etc.) is
+    sensitive personal data protected under the Privacy Act of 1974. Unauthorized
+    disclosure could harm 5,000 individuals through identity theft, financial
+    harm, or reputational damage.
+  - Salary data is sensitive and its exposure could cause significant
+    embarrassment, workplace conflict, and individual financial harm.
+  - Performance reviews contain evaluative judgments that could harm careers
+    or violate privacy expectations if disclosed.
+  - Impact Rating: MODERATE to HIGH. A breach affecting 5,000 federal employees
+    involving SSNs and financial data would cause serious adverse effects.
+    Most agencies categorize this type of system at MODERATE for confidentiality
+    as the standard baseline, though agencies with a large workforce or highly
+    sensitive positions may elect HIGH.
+  - Recommended Rating: MODERATE (with consideration for HIGH if the workforce
+    includes sensitive national security positions or the agency's risk
+    tolerance requires it)
+
+INTEGRITY
+  - Corruption or unauthorized modification of salary data could result in
+    improper payments, payroll fraud, or denial of correct compensation —
+    causing direct financial harm to employees and the agency.
+  - Modification of performance records could impair promotion decisions,
+    disciplinary actions, or workforce management functions.
+  - PII corruption could cause incorrect benefits enrollment or identity errors.
+  - Impact Rating: MODERATE. Integrity failures would cause serious adverse
+    effects on agency mission and individual employee welfare, but are unlikely
+    to be catastrophic or irreversible in most scenarios.
+  - Recommended Rating: MODERATE
+
+AVAILABILITY
+  - An HR system supporting 5,000 staff must be available for payroll
+    processing cycles, benefits enrollment windows, and onboarding/offboarding
+    workflows. Extended outages could disrupt pay, benefits, and HR operations.
+  - However, the system does not typically support life-safety or real-time
+    mission-critical operations (e.g., emergency response).
+  - Impact Rating: MODERATE. Temporary unavailability would cause significant
+    disruption but is unlikely to result in catastrophic harm.
+  - Recommended Rating: MODERATE
+
+------------------------------------------------------------------------------
+Security Categorization Result
+------------------------------------------------------------------------------
+
+Applying the high-water mark principle per FIPS 199:
+
+  SC HR_System = {(Confidentiality, MODERATE), (Integrity, MODERATE),
+                  (Availability, MODERATE)}
+
+  OVERALL SYSTEM CATEGORIZATION: MODERATE
+
+This is expressed in FIPS 199 notation as:
+
+  SC HR_System = {(confidentiality, MODERATE), (integrity, MODERATE),
+                  (availability, MODERATE)} = MODERATE
+
+NOTE: If the agency determines that the confidentiality impact should be HIGH
+(e.g., due to inclusion of law enforcement personnel records, SCI-cleared staff
+data, or whistleblower information), the overall categorization would become
+HIGH, and a different baseline would apply. Agencies should document their
+rationale in the System Security Plan (SSP).
+
+==============================================================================
+STEP 2: NIST SP 800-53 BASELINE SELECTION
+==============================================================================
+
+NIST SP 800-53 Rev. 5 ("Security and Privacy Controls for Information Systems
+and Organizations") provides three control baselines tied directly to the FIPS
+199 categorization:
+
+  - LOW Baseline:      For systems categorized as LOW overall
+  - MODERATE Baseline: For systems categorized as MODERATE overall
+  - HIGH Baseline:     For systems categorized as HIGH overall
+
+Based on the MODERATE overall categorization above:
+
+  SELECTED BASELINE: MODERATE
+
+The NIST SP 800-53 Rev. 5 MODERATE baseline includes approximately 323 control
+requirements (base controls plus required enhancements) across 20 control
+families. Key control families particularly relevant to this HR system include:
+
+  AC  — Access Control
+        Enforce least-privilege access; role-based access control for HR
+        personnel, managers, and system administrators. Restrict access to PII
+        to only authorized users.
+
+  AT  — Awareness and Training
+        Security awareness training for all users handling PII and salary data.
+
+  AU  — Audit and Accountability
+        Log and review access to PII, salary records, and performance data.
+        Audit logs must be protected against tampering.
+
+  CA  — Assessment, Authorization, and Monitoring
+        Conduct security assessments; obtain Authority to Operate (ATO) from
+        the Authorizing Official (AO); continuous monitoring program.
+
+  CM  — Configuration Management
+        Maintain baselines for the HR application, database, and server
+        configurations.
+
+  CP  — Contingency Planning
+        Backup and recovery procedures for PII and HR data; test recovery
+        capabilities; define Recovery Time Objective (RTO) and Recovery Point
+        Objective (RPO).
+
+  IA  — Identification and Authentication
+        Multi-factor authentication (MFA) for all privileged users and remote
+        access; strong password policies; PIV/CAC authentication where required
+        by HSPD-12.
+
+  IR  — Incident Response
+        Documented incident response plan that specifically addresses PII
+        breaches, including OMB Memorandum M-17-12 breach notification
+        requirements (report to US-CERT within 1 hour of discovery).
+
+  MP  — Media Protection
+        Protect and sanitize removable media; encrypt data at rest on storage
+        media containing PII.
+
+  PE  — Physical and Environmental Protection
+        Physical access controls to the internal data center; visitor controls;
+        environmental safeguards (fire, flood, HVAC).
+
+  PL  — Planning
+        System Security Plan (SSP) documenting the security architecture,
+        control implementation, and interconnections.
+
+  PS  — Personnel Security
+        Screening of individuals with access to PII; rules of behavior; access
+        termination procedures for separated employees.
+
+  PT  — PII Processing and Transparency (Privacy Controls — Rev. 5 addition)
+        Privacy controls specifically addressing lawful collection, use, and
+        retention of PII; Privacy Act System of Records Notice (SORN); Privacy
+        Impact Assessment (PIA) required per E-Government Act of 2002.
+
+  RA  — Risk Assessment
+        System-level risk assessment; vulnerability scanning; supply chain
+        risk management.
+
+  SA  — System and Services Acquisition
+        Secure development practices; security requirements in acquisition
+        contracts; software assurance.
+
+  SC  — System and Communications Protection
+        Encryption of PII and salary data in transit (TLS 1.2+); network
+        segmentation; boundary protection.
+
+  SI  — System and Information Integrity
+        Malware protection; security alerts; flaw remediation; spam protection.
+
+==============================================================================
+STEP 3: ADDITIONAL COMPLIANCE OBLIGATIONS
+==============================================================================
+
+Beyond the NIST SP 800-53 MODERATE baseline, this system triggers several
+additional federal requirements:
+
+  1. PRIVACY ACT OF 1974
+     The system constitutes a "System of Records" under the Privacy Act because
+     it retrieves employee information by personal identifier. The agency must:
+     - Publish a System of Records Notice (SORN) in the Federal Register
+     - Establish a routine uses schedule
+     - Respond to Privacy Act requests
+
+  2. PRIVACY IMPACT ASSESSMENT (PIA)
+     Required under Section 208 of the E-Government Act of 2002. Must be
+     completed before deployment and updated when the system changes
+     significantly.
+
+  3. OMB CIRCULAR A-130 (Managing Information as a Strategic Resource)
+     Requires senior agency official for privacy (SAOP) involvement, privacy
+     continuous monitoring, and privacy risk management.
+
+  4. FISMA (Federal Information Security Modernization Act of 2014)
+     Requires an Authority to Operate (ATO) from the Authorizing Official.
+     The ATO package must include: SSP, Security Assessment Report (SAR),
+     Plan of Action and Milestones (POA&M).
+
+  5. OMB M-17-12 (Preparing for and Responding to a Breach of PII)
+     Establishes breach response requirements including US-CERT notification
+     within 1 hour and affected-individual notification timelines.
+
+  6. HSPD-12 / PIV
+     Federal employees must authenticate using Personal Identity Verification
+     (PIV) cards for logical access to federal systems where technically
+     feasible.
+
+  7. NIST SP 800-122 (Guide to Protecting the Confidentiality of PII)
+     Provides supplemental guidance specific to PII protection, including
+     de-identification and minimization techniques.
+
+==============================================================================
+STEP 4: RECOMMENDED IMPLEMENTATION APPROACH
+==============================================================================
+
+  1. Conduct a formal FIPS 199 categorization workshop with the system owner,
+     information owner, and ISSO — document all information types and impact
+     ratings in the SSP.
+
+  2. Register the system in the agency's GRC tool (e.g., CSAM, Xacta, or
+     similar) under the MODERATE baseline.
+
+  3. Tailor the MODERATE baseline as needed:
+     - Apply organization-defined parameters (ODPs) per agency policy
+     - Add compensating controls where required
+     - Scoping guidance: exclude controls not applicable to the internal
+       data center hosting model (e.g., some cloud-specific controls)
+
+  4. Complete the Privacy Impact Assessment and submit the SORN for
+     Federal Register publication prior to system go-live.
+
+  5. Conduct security assessment (typically by an independent assessor or
+     the agency's A&A team) against the tailored MODERATE baseline.
+
+  6. Obtain ATO from the Authorizing Official before processing live PII.
+
+  7. Establish a continuous monitoring strategy per NIST SP 800-137 aligned
+     to the MODERATE categorization.
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+  FIPS 199 Categorization:  MODERATE
+                             {(Confidentiality, MODERATE),
+                              (Integrity, MODERATE),
+                              (Availability, MODERATE)}
+
+  NIST SP 800-53 Baseline:  MODERATE (~323 controls and enhancements)
+
+  Key Additional Frameworks: Privacy Act SORN, PIA (E-Gov Act), FISMA ATO,
+                              OMB M-17-12, HSPD-12/PIV, NIST SP 800-122
+
+  Hosting Consideration:    Internal data center hosting is fully compatible
+                             with the MODERATE baseline. The agency retains
+                             full control over physical and environmental
+                             controls (PE family) and does not need to apply
+                             FedRAMP authorization processes applicable to
+                             cloud service providers.
+
+==============================================================================

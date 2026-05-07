@@ -1,0 +1,174 @@
+NIST SP 800-53 AC-2(3) Remediation Guidance and POA&M Documentation
+Finding: AC-2(3) - Account Management | Disable Inactive Accounts
+Status: Other Than Satisfied (OTS)
+Finding Detail: 120 accounts inactive for 120+ days; ODV (Organization-Defined Value) for disabling is 90 days
+
+================================================================================
+SECTION 1: UNDERSTANDING THE CONTROL
+================================================================================
+
+AC-2(3) - ACCOUNT MANAGEMENT | DISABLE INACTIVE ACCOUNTS
+Control Text: "Disable accounts within [Assignment: organization-defined time period] when accounts: (a) Have expired; (b) Are no longer associated with a user or individual; (c) Are in violation of organizational policy; or (d) Have been inactive for [Assignment: organization-defined time period]."
+
+Your SSP states an ODV of 90 days for the inactivity threshold. The assessor identified 120 accounts that have been inactive for 120+ days — a 30+ day gap beyond your stated threshold. This is a clear, measurable control deficiency and must be remediated and tracked as a formal POA&M item.
+
+================================================================================
+SECTION 2: IMMEDIATE REMEDIATION STEPS
+================================================================================
+
+PHASE 1: EMERGENCY REMEDIATION (Within 30 days — POA&M Milestone 1)
+
+Step 1 — Pull the Full Inactive Account Inventory
+- Generate a report from your Identity and Access Management (IAM) system, Active Directory (AD), LDAP, or applicable user provisioning system.
+- Export all accounts with last login date, account type (user, service, privileged, shared), owning system, and associated role/privilege level.
+- Cross-reference with HR records and access request logs to identify accounts that may belong to separated personnel, contractors who have completed engagements, or temporary accounts that were never closed.
+
+Step 2 — Triage and Categorize the 120 Accounts
+Before bulk-disabling, categorize accounts into:
+  a) Confirmed orphan accounts — users who have left the organization; disable immediately.
+  b) Service/system accounts — do NOT disable without coordination with system owners; may break automated processes.
+  c) Accounts belonging to active users who have not logged in — verify with supervisors/system owners before disabling.
+  d) Emergency/break-glass accounts — these may legitimately be inactive; document exceptions with risk acceptance.
+
+Step 3 — Disable Non-Exempt Accounts
+- For all confirmed orphan and clearly inactive accounts: disable (not delete) accounts in the authoritative identity store.
+- Retain account records for audit trail purposes — do not delete until proper off-boarding procedures confirm no data recovery needs.
+- Use a standardized naming convention or flag in the IAM system to mark accounts as "Disabled - AC-2(3) Remediation [DATE]."
+- Document each account actioned: username, system, date last active, date disabled, who authorized the action.
+
+Step 4 — Notify System and Data Owners
+- For accounts where ownership is unclear, send formal notification to supervisors/system owners requesting confirmation of account necessity within 5 business days.
+- Document all responses. Accounts with no response after the deadline should be disabled pending further review.
+
+PHASE 2: PROCESS REMEDIATION (Within 60 days — POA&M Milestone 2)
+
+Step 5 — Implement Automated Controls
+- Configure your IAM/AD environment to automatically disable accounts after 90 days of inactivity. This is achievable via:
+  * Active Directory: Use "Maximum password age" in conjunction with PowerShell scripts or Group Policy; more precisely, implement scheduled scripts querying lastLogonTimestamp attribute against a 90-day threshold.
+  * Cloud IAM (AWS IAM, Azure AD, GCP): Use built-in credential reports and lifecycle policies or third-party PAM tools.
+  * SIEM/SOAR integration: Create automated alerts at 75 days (warning), 85 days (pre-disable notification), and 90 days (auto-disable action).
+- Ensure service accounts are excluded from automatic disabling via a documented exception process with periodic review.
+
+Step 6 — Update Account Management Procedures
+- Revise the Account Management Policy and Standard Operating Procedure (SOP) to explicitly codify the 90-day inactivity ODV.
+- Establish the process for:
+  * Quarterly (at minimum) review of inactive accounts.
+  * Automated notification to account owners at 60 days and 80 days of inactivity.
+  * Formal exception process for service accounts, break-glass accounts, and emergency access accounts.
+  * Off-boarding integration: HR termination triggers must feed directly into the IAM provisioning/de-provisioning workflow within 24 hours.
+
+Step 7 — Privileged Account Focus
+- Apply heightened scrutiny to inactive privileged accounts (system administrators, database administrators, network administrators). These represent the highest risk.
+- Consider a shorter inactivity threshold (e.g., 45 days) for privileged accounts if not already documented, and update the SSP ODV accordingly.
+
+PHASE 3: VERIFICATION AND EVIDENCE COLLECTION (Within 90 days — POA&M Milestone 3)
+
+Step 8 — Conduct a Full Account Audit
+- Run a follow-up report confirming all 120 identified accounts have been either disabled or formally excepted with documented justification.
+- Verify that no new accounts have exceeded the 90-day threshold since remediation began.
+- Retain all reports as evidence artifacts.
+
+Step 9 — Update the SSP
+- Ensure the System Security Plan accurately reflects the implemented automated controls, the 90-day ODV, and the exception management process.
+- If your ODV has changed, update it in the SSP and obtain re-approval from the Authorizing Official (AO) or their designated representative.
+
+================================================================================
+SECTION 3: POA&M DOCUMENTATION REQUIREMENTS
+================================================================================
+
+Under NIST SP 800-53A and OMB Memorandum M-02-01 (as updated), findings assessed as "Other Than Satisfied" must be tracked in a formal Plan of Action and Milestones (POA&M). Below is the required documentation structure.
+
+POA&M ENTRY — REQUIRED FIELDS AND RECOMMENDED CONTENT:
+
+1. POA&M ID
+   Assign a unique identifier per your organization's POA&M numbering scheme (e.g., POA&M-2026-AC-2(3)-001).
+
+2. Control Identifier
+   AC-2(3) — Account Management | Disable Inactive Accounts
+
+3. Weakness / Vulnerability Description
+   "The organization's information system does not automatically disable or enforce disabling of inactive user accounts within the organization-defined value (ODV) of 90 days. A security assessment identified 120 user accounts with no recorded logon activity for a period exceeding 120 days (30+ days beyond the stated ODV). The failure to enforce this control creates risk of unauthorized access through dormant credentials that may be compromised, forgotten, or associated with personnel no longer authorized to access the system."
+
+4. Point of Contact (POC)
+   Name and title of the system owner or ISSO responsible for remediation.
+
+5. Resources Required
+   - IAM administrator time (estimated: X hours for initial account audit and disablement)
+   - Potential licensing for PAM/IAM tooling if automated enforcement is not available natively
+   - System owner coordination time for service account review
+   - Estimated cost: [populate per your resource model]
+
+6. Scheduled Completion Date
+   Provide a realistic date — typically 90 to 180 days for full remediation of process-level findings. Immediate disablement of the 120 accounts should be a near-term milestone (within 30 days).
+
+7. Milestones with Completion Dates
+   Milestone 1 (30 days): Complete triage and disable all 120 identified inactive accounts. Generate and retain evidence report. Deliverable: Account Disable Evidence Report.
+   Milestone 2 (60 days): Implement automated inactivity enforcement controls. Update Account Management SOP and Policy. Deliverable: Updated SOP; screenshot/config export of automated rule.
+   Milestone 3 (90 days): Conduct follow-up account audit confirming zero accounts exceed 90-day threshold. Update SSP AC-2(3) control implementation narrative. Deliverable: Clean account audit report; updated SSP section.
+   Milestone 4 (180 days): Conduct first quarterly review under the new process to verify sustained compliance. Deliverable: Quarterly account review report.
+
+8. Changes to Milestones
+   Leave blank initially. Update with explanations if milestones are missed or adjusted, including new completion dates and justification.
+
+9. Status
+   Initial status: "Open — In Progress"
+   Update as: "Open — Ongoing," then "Closed" only when all milestones are complete and the authorizing official concurs.
+
+10. Identified Risk
+    Risk Level: HIGH
+    Rationale: Dormant accounts with valid credentials represent a significant attack surface. Compromised inactive accounts are commonly exploited in lateral movement and privilege escalation attacks. The 120 identified accounts exceed the ODV by 30+ days, indicating a systemic process failure, not an isolated incident.
+
+11. Risk Acceptance / Mitigation Strategy
+    "The organization will mitigate this risk through immediate disablement of identified inactive accounts (short-term) and implementation of automated enforcement controls aligned to the 90-day ODV (long-term). No risk acceptance is requested at this time. Compensating controls in place during remediation include [e.g., privileged account session monitoring via SIEM, network segmentation limiting lateral movement, multi-factor authentication on remote access channels]."
+
+12. Supporting Evidence / Artifacts (attach or reference)
+    - Inactive account report (pre-remediation) dated [date]
+    - Account disable confirmation report dated [date]
+    - Updated Account Management SOP version [X.X] dated [date]
+    - Automated control configuration screenshot/export dated [date]
+    - Follow-up clean account audit report dated [date]
+    - Updated SSP AC-2(3) section, version [X.X] dated [date]
+
+================================================================================
+SECTION 4: SSP UPDATE REQUIREMENTS
+================================================================================
+
+Your SSP implementation statement for AC-2(3) must be updated to accurately reflect:
+
+1. The ODV: Explicitly state "90 days" as the inactivity threshold triggering account disablement.
+
+2. Implementation description: Describe the automated mechanism (e.g., "Active Directory scheduled task queries lastLogonTimestamp attribute nightly; accounts exceeding 90 days of inactivity are automatically disabled. System owners receive automated notification at 75 days.").
+
+3. Exception process: Describe how service accounts, emergency accounts, and other non-standard accounts are handled with appropriate compensating controls and periodic review.
+
+4. Roles and responsibilities: Identify who owns the account review process (typically the ISSO, system administrator, or IAM team) and the frequency of manual oversight review (quarterly recommended).
+
+================================================================================
+SECTION 5: ONGOING COMPLIANCE — PREVENTING RECURRENCE
+================================================================================
+
+To prevent this finding from recurring at the next assessment:
+
+1. Establish a formal quarterly account review as a standing governance process. Document minutes and sign-off from the system owner.
+
+2. Integrate HR off-boarding with IAM provisioning. Account disablement should be triggered by HR separation events within 24 hours, independent of the 90-day inactivity timer.
+
+3. Define and document service account exceptions explicitly in the SSP. Each exception should have a named owner, a documented business justification, and a periodic review date.
+
+4. Include AC-2(3) compliance metrics in your continuous monitoring program (ConMon). Monthly or quarterly reports on inactive account counts should be reviewed by the ISSO and reported to the AO as part of ongoing authorization reporting.
+
+5. Conduct tabletop or process walkthrough of account management procedures annually to ensure staff are trained on the SOP and automated controls are functioning as intended.
+
+================================================================================
+SECTION 6: COMMON PITFALLS TO AVOID
+================================================================================
+
+- Do not close the POA&M item until automated controls are operational AND a clean follow-up audit report has been generated. Premature closure will result in a repeat finding.
+- Do not disable service accounts without system owner sign-off. Inadvertent disablement of service accounts can cause system outages.
+- Do not conflate "disabled" with "deleted." Disabled accounts preserve audit trail integrity; deletion may violate records retention requirements.
+- Ensure the 90-day threshold is measured from last logon, not last password change or account creation date — these are different attributes in most directory services.
+- Document everything. The assessor will want to see not just that the 120 accounts were disabled, but that a sustainable process now exists to prevent recurrence.
+
+================================================================================
+
+This guidance is based on NIST SP 800-53 Rev. 5 (AC-2(3)), NIST SP 800-53A Rev. 5 assessment procedures, OMB Circular A-130, and federal POA&M management best practices.

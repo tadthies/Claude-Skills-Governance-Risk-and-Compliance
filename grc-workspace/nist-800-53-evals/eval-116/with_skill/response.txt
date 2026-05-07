@@ -1,0 +1,439 @@
+================================================================================
+NIST SP 800-53 Rev 5 COMPLIANCE ADVISORY RESPONSE
+FIPS 199 Categorization & Baseline Selection — Federal HR System
+================================================================================
+
+SYSTEM DESCRIPTION
+------------------
+System Name:    Federal Human Resources Information System (HRIS)
+System Type:    Internal agency application (on-premises data center)
+User Population: 5,000 federal employees
+Data Types:     Personally Identifiable Information (PII), salary/compensation
+                data, performance evaluation records
+Hosting:        Internal government data center (not cloud)
+
+================================================================================
+STEP 1 — FIPS 199 SYSTEM CATEGORIZATION
+================================================================================
+
+Authority: Federal Information Processing Standard (FIPS) Publication 199,
+"Standards for Security Categorization of Federal Information and Information
+Systems" (February 2004), implemented under FISMA 2014 (44 U.S.C. § 3551).
+
+Methodology: Each information type processed by the system is assessed against
+the three security objectives — Confidentiality, Integrity, and Availability —
+and assigned a potential impact level of Low, Moderate, or High. The overall
+system categorization is determined by the high-water mark across all three
+objectives for all information types in scope.
+
+SP 800-60 Reference: NIST SP 800-60 Volume II, "Guide for Mapping Types of
+Information and Information Systems to Security Categories," provides the
+recommended impact levels for standard government information types. The
+following mappings apply to this HR system:
+
+INFORMATION TYPES IN SCOPE
+---------------------------
+1. Employee PII (names, SSNs, addresses, dates of birth, contact info)
+   SP 800-60 Type: C.3.1.1 — General Personnel Records / Privacy Data
+
+2. Salary and Compensation Data (pay grades, salaries, benefits, deductions)
+   SP 800-60 Type: C.3.1.2 — Payroll and Benefits Data
+
+3. Performance Review Records (ratings, disciplinary actions, promotion records)
+   SP 800-60 Type: C.3.1.1 — General Personnel Records
+
+--------------------------------------------------------------------------------
+CIA IMPACT ASSESSMENT — PER INFORMATION TYPE
+--------------------------------------------------------------------------------
+
+INFORMATION TYPE 1: Employee PII (5,000 staff records)
+-------------------------------------------------------
+CONFIDENTIALITY — MODERATE
+  Rationale: Unauthorized disclosure of PII for 5,000 federal employees would
+  cause serious adverse effects to those individuals (identity theft risk,
+  financial harm, reputational damage) and to the agency (regulatory sanctions,
+  loss of public trust, notification obligations under the Privacy Act of 1974).
+  A breach would not rise to the level of "severe or catastrophic" affecting
+  national security or critical operations, but the scale (5,000 records) and
+  sensitivity of SSNs and financial data clearly exceeds a "limited" impact.
+  Per SP 800-60, PII data is typically assigned Moderate Confidentiality.
+  Impact Level: MODERATE
+
+INTEGRITY — MODERATE
+  Rationale: Unauthorized modification of employee PII records (e.g., altering
+  direct deposit routing numbers, changing addresses, falsifying identity
+  fields) would cause serious adverse effects — incorrect payroll disbursements,
+  inability to locate employees in emergencies, erroneous background-check
+  results. While damaging, such modifications are generally detectable and
+  correctable; they do not rise to catastrophic operational failure.
+  Impact Level: MODERATE
+
+AVAILABILITY — LOW
+  Rationale: Temporary unavailability of general PII records (beyond active
+  payroll functions) would have limited adverse effect. Employees can be
+  identified through alternative records; short-term outages do not prevent
+  mission execution. HR lookups are important but not time-critical at the
+  operational level.
+  Impact Level: LOW
+
+INFORMATION TYPE 2: Salary and Compensation Data
+-------------------------------------------------
+CONFIDENTIALITY — MODERATE
+  Rationale: Federal salary data for GS-scale employees is partially public
+  information under OPM regulations, but specific compensation details
+  (locality pay, benefits elections, deductions, garnishments) are protected
+  under the Privacy Act. Unauthorized disclosure would cause serious adverse
+  effects to individual employees and could expose the agency to Privacy Act
+  violations. Scale of 5,000 records elevates impact beyond Low.
+  Impact Level: MODERATE
+
+INTEGRITY — MODERATE
+  Rationale: Integrity of payroll-linked salary data is critical. Unauthorized
+  modification could result in improper payments, violations of the Improper
+  Payments Information Act, OPM audit findings, and financial harm to employees.
+  Errors in salary records could propagate into payroll processing systems,
+  causing systematic overpayments or underpayments. Recovery could be complex
+  and time-consuming, constituting a serious adverse effect.
+  Impact Level: MODERATE
+
+AVAILABILITY — MODERATE
+  Rationale: Salary/compensation data feeds into payroll processing cycles. If
+  the HR system is unavailable during a pay period processing window, payroll
+  for 5,000 employees cannot be processed on time — a serious adverse effect
+  on both employees and agency operations. Payroll deadlines are immovable;
+  a missed pay cycle constitutes significant operational and legal harm.
+  Impact Level: MODERATE
+
+INFORMATION TYPE 3: Performance Review Records
+-----------------------------------------------
+CONFIDENTIALITY — MODERATE
+  Rationale: Performance evaluations, disciplinary records, and promotion
+  decisions are sensitive personnel data protected under the Privacy Act and
+  5 U.S.C. § 552a. Disclosure could harm employee reputations, expose the
+  agency to grievance proceedings, and undermine trust in the HR process.
+  Unauthorized access to these records for 5,000 employees constitutes a
+  serious adverse effect.
+  Impact Level: MODERATE
+
+INTEGRITY — MODERATE
+  Rationale: Tampering with performance ratings or disciplinary records would
+  have serious adverse effects — improper promotions, wrongful disciplinary
+  actions, civil service merit system violations, and potential litigation
+  (whistleblower retaliation, EEO claims). The integrity of the federal merit
+  system is foundational to civil service law.
+  Impact Level: MODERATE
+
+AVAILABILITY — LOW
+  Rationale: Performance reviews are typically accessed infrequently (annual
+  review cycles, promotion boards). Temporary unavailability has limited adverse
+  effect on day-to-day agency operations. Review cycles can be rescheduled in
+  most circumstances.
+  Impact Level: LOW
+
+--------------------------------------------------------------------------------
+HIGH-WATER MARK DETERMINATION
+--------------------------------------------------------------------------------
+
+Per FIPS 199 Section 3, the overall system categorization is the highest impact
+level recorded across all three security objectives for all information types
+processed by the system.
+
+Security Objective | Highest Impact Level Across All Information Types
+-------------------|--------------------------------------------------
+CONFIDENTIALITY    | MODERATE (PII, Salary, Performance Records)
+INTEGRITY          | MODERATE (PII, Salary, Performance Records)
+AVAILABILITY       | MODERATE (Salary/Compensation — payroll dependency)
+
+                        +---------------------------------+
+                        |  OVERALL SYSTEM CATEGORIZATION  |
+                        |                                 |
+                        |  SC = {(C, MODERATE),           |
+                        |        (I, MODERATE),           |
+                        |        (A, MODERATE)}           |
+                        |                                 |
+                        |  FIPS 199 CATEGORY: MODERATE    |
+                        +---------------------------------+
+
+Formal categorization notation per FIPS 199:
+  SC-HR System = {(confidentiality, MODERATE), (integrity, MODERATE),
+                  (availability, MODERATE)}
+
+================================================================================
+STEP 2 — NIST SP 800-53B BASELINE SELECTION
+================================================================================
+
+Authority: NIST SP 800-53B, "Control Baselines for Information Systems and
+Organizations" (October 2020).
+
+SELECTED BASELINE: MODERATE
+
+Rationale:
+  The FIPS 199 high-water mark of MODERATE maps directly to the SP 800-53B
+  Moderate control baseline. This baseline encompasses approximately 323
+  controls and control enhancements and is the appropriate starting point for
+  all federal information systems categorized at the Moderate impact level.
+
+  The Moderate baseline is also the most common baseline applied to federal
+  administrative and mission-support systems, and it aligns with FedRAMP
+  Moderate authorization requirements for cloud equivalents of systems of
+  this type.
+
+Why NOT Low:
+  The Low baseline is insufficient for a system storing PII for 5,000
+  employees, salary data with payroll dependencies, and sensitive performance
+  records. The Privacy Act, OMB Circular A-130, and the NIST Privacy Framework
+  all require controls commensurate with the sensitivity and volume of PII
+  processed. Low baseline controls do not provide adequate access controls,
+  audit capabilities, or data protection measures for this data sensitivity.
+
+Why NOT High:
+  A High categorization would be appropriate if a breach would cause severe or
+  catastrophic harm — such as loss of life, national security compromise, or
+  widespread critical infrastructure failure. While unauthorized disclosure of
+  5,000 employees' PII is serious, it does not meet the FIPS 199 threshold for
+  "severe or catastrophic" adverse effects. High baseline controls would impose
+  disproportionate burden without proportionate risk reduction for this system.
+  If future analysis reveals that the system supports law enforcement,
+  intelligence, or national security HR functions, High should be reconsidered.
+
+MODERATE BASELINE — KEY CONTROL FAMILIES APPLICABLE TO THIS SYSTEM
+-------------------------------------------------------------------
+
+AC — Access Control (Moderate Baseline)
+  AC-2    Account Management: Formal account creation, modification, removal
+          and review procedures for all HR system users.
+  AC-2(1) Automated System Account Management [M enhancement]
+  AC-3    Access Enforcement: Role-based access control (RBAC) enforcing
+          least privilege — HR staff see only records within their scope.
+  AC-5    Separation of Duties: No single user can both create and approve
+          salary changes.
+  AC-6    Least Privilege
+  AC-6(1) Authorize Access to Security Functions [M enhancement]
+  AC-17   Remote Access: Controls for any VPN or remote HR system access.
+  Recommended ODV: AC-2(3) — disable inactive accounts after 90 days.
+
+AU — Audit and Accountability (Moderate Baseline)
+  AU-2    Event Logging: Log all read/write/delete access to PII and salary
+          records, privileged user actions, authentication events.
+  AU-3    Content of Audit Records
+  AU-9    Protection of Audit Information
+  AU-11   Audit Record Retention
+  Recommended ODV: AU-11 — retain audit logs for 3 years (aligned with
+          Privacy Act records retention schedules).
+
+IA — Identification and Authentication (Moderate Baseline)
+  IA-2    Identification and Authentication (Org Users)
+  IA-2(1) MFA for Privileged Accounts [M]: Multi-factor authentication
+          required for all HR administrators and privileged roles.
+  IA-2(2) MFA for Non-Privileged Accounts [M]: MFA recommended for all
+          users given PII sensitivity.
+  IA-5    Authenticator Management: Password complexity and rotation policies.
+  IA-5(1) Password-Based Authentication [M enhancement]
+
+SC — System and Communications Protection (Moderate Baseline)
+  SC-8    Transmission Confidentiality and Integrity: Encrypt all data in
+          transit (TLS 1.2+ minimum).
+  SC-8(1) Cryptographic Protection [M enhancement]
+  SC-28   Protection of Information at Rest: Encrypt PII, salary, and
+          performance data at rest (AES-256 recommended).
+  SC-28(1) Cryptographic Protection [M enhancement]
+  SC-7    Boundary Protection: Network segmentation isolating the HR
+          system from general-purpose networks.
+
+SI — System and Information Integrity (Moderate Baseline)
+  SI-2    Flaw Remediation: Patch critical vulnerabilities within 30 days;
+          high within 60 days.
+  SI-3    Malware Protection
+  SI-7    Software, Firmware, and Information Integrity [M]
+  SI-12   Information Management and Retention: Manage PII in accordance
+          with Privacy Act records schedules.
+
+CP — Contingency Planning (Moderate Baseline)
+  CP-9    Information System Backup: Regular backups of all HR data.
+  CP-9(1) Testing for Reliability/Integrity [M]
+  CP-10   Information System Recovery and Reconstitution
+
+RA — Risk Assessment (Moderate Baseline)
+  RA-3    Risk Assessment: Conduct and document a system-level risk assessment.
+  RA-5    Vulnerability Monitoring and Scanning: Regular vulnerability scans
+          of the HR system and its hosting infrastructure.
+  RA-3(1) Supply Chain Risk Assessment [M enhancement]: Assess risks from
+          any third-party HR software components or vendors.
+
+CA — Assessment, Authorization and Monitoring (Moderate Baseline)
+  CA-2    Control Assessments: Independent security assessment before ATO.
+  CA-7    Continuous Monitoring: Ongoing assessment of control effectiveness.
+  CA-9    Internal System Connections: Document and authorize connections to
+          payroll or other agency systems.
+
+PS — Personnel Security (Moderate Baseline)
+  PS-3    Personnel Screening: Background investigations for all HR system
+          users commensurate with data sensitivity.
+  PS-4    Personnel Termination: Immediate account deactivation upon departure.
+  PS-5    Personnel Transfer: Modify access rights upon internal transfers.
+
+PE — Physical and Environmental Protection (Moderate Baseline)
+  PE-2    Physical Access Authorizations
+  PE-3    Physical Access Control: Physical access controls for the data
+          center hosting the HR system.
+  PE-6    Monitoring Physical Access
+  Note: As an on-premises data center deployment, PE controls are system-
+  specific and cannot be fully inherited from a cloud provider.
+
+================================================================================
+STEP 3 — PT FAMILY (PII PROCESSING AND TRANSPARENCY) — MANDATORY OVERLAY
+================================================================================
+
+Because this system processes Personally Identifiable Information for 5,000
+federal employees, the Privacy controls (PT family) under SP 800-53 Rev 5 are
+mandatory regardless of the Moderate impact categorization. OMB Circular A-130,
+"Managing Information as a Strategic Resource" (July 2016), requires agencies
+to implement privacy controls for all systems processing PII.
+
+The PT family (PT-1 through PT-8) must be applied as a privacy overlay on top
+of the Moderate security baseline:
+
+PT-1  — Policy and Procedures: Establish and maintain a PII processing policy
+        documenting the legal authority, purpose, and use limitations for
+        collecting employee PII.
+
+PT-2  — Authority to Process PII: Document the legal authority authorizing the
+        collection and use of employee PII (e.g., 5 U.S.C. Chapter 31 federal
+        employment statutes, Privacy Act of 1974).
+
+PT-3  — Purposes of Processing PII: Document and limit PII processing to
+        stated HR purposes only. Do not use salary or performance data for
+        unapproved secondary purposes.
+
+PT-4  — Consent: Determine whether and how employee consent is required or
+        appropriate for specific PII processing activities (note: employment
+        relationships may not require separate consent for core HR functions,
+        but supplemental uses require analysis).
+
+PT-5  — Privacy Notice: Provide Privacy Act Statements at the point of PII
+        collection informing employees of the authority, purpose, routine uses,
+        and whether disclosure is mandatory or voluntary.
+        Action Required: Publish a System of Records Notice (SORN) in the
+        Federal Register for this HR system per Privacy Act requirements.
+
+PT-6  — Privacy Reports: Report on PII processing activities as required by
+        OMB reporting requirements.
+
+PT-7  — Specific Categories of PII: Identify whether any special categories
+        of PII are processed (e.g., financial account data for direct deposit,
+        medical information in benefits records). Apply enhanced protections
+        if sensitive PII categories are present.
+
+PT-8  — Computer Matching Requirements: Assess whether any data matching
+        with other federal agency records occurs, triggering Computer Matching
+        and Privacy Protection Act requirements.
+
+Additional Privacy Requirements:
+  - Conduct a Privacy Impact Assessment (PIA) per E-Government Act of 2002
+    Section 208 prior to system deployment.
+  - Publish or update the System of Records Notice (SORN) per 5 U.S.C. § 552a.
+  - Designate a Senior Agency Official for Privacy (SAOP) point of contact.
+  - Document data minimization practices — collect only PII necessary for HR
+    functions; do not aggregate beyond operational need.
+
+================================================================================
+STEP 4 — SP 800-60 REFERENCE DETAIL
+================================================================================
+
+NIST SP 800-60 Volume II provides the following specific guidance for the
+information types present in this HR system:
+
+Information Type C.3.1.1 — Personnel Records:
+  Default Impact Values: Confidentiality = Moderate, Integrity = Moderate,
+                         Availability = Low
+  Adjustment Factors: The volume of records (5,000) and the inclusion of
+  financial data (salary) supports maintaining Moderate ratings without
+  downgrade.
+
+Information Type C.3.1.2 — Payroll and Benefits Data:
+  Default Impact Values: Confidentiality = Moderate, Integrity = Moderate,
+                         Availability = Moderate
+  Rationale: Payroll availability is time-sensitive due to pay period cycles;
+  Moderate availability is appropriate and consistent with SP 800-60 defaults.
+
+Practitioner Note: SP 800-60 default values may be adjusted up or down based
+on specific agency mission context. Adjustments must be documented and approved
+by the Authorizing Official (AO). In this case, no adjustments from the SP
+800-60 defaults are warranted — the defaults match the mission risk analysis.
+
+================================================================================
+STEP 5 — RMF INTEGRATION PATH
+================================================================================
+
+This categorization decision feeds directly into the NIST Risk Management
+Framework (RMF), SP 800-37 Rev 2:
+
+RMF Step 1 — Prepare:
+  Assign ISSO, System Owner, Authorizing Official. Establish privacy roles
+  (SAOP, Privacy Officer). Define system boundary to include all components
+  storing or processing HR data.
+
+RMF Step 2 — Categorize:
+  Document FIPS 199 categorization in the System Categorization document.
+  Categorization = {(C, MODERATE), (I, MODERATE), (A, MODERATE)}.
+  Overall: MODERATE.
+
+RMF Step 3 — Select:
+  Select SP 800-53B Moderate baseline. Apply PT family privacy overlay.
+  Identify common controls inherited from the data center/agency infrastructure
+  (PE, MA, CP controls may be partially or fully inheritable). Document in SSP.
+
+RMF Step 4 — Implement:
+  Implement Moderate baseline controls. Prioritize: AC (access control),
+  IA (MFA), SC-8/SC-28 (encryption), AU (audit logging), PT (privacy),
+  AC-6 (least privilege).
+
+RMF Step 5 — Assess:
+  Independent security assessment using SP 800-53A Rev 5 procedures.
+  Include Privacy Impact Assessment review.
+
+RMF Step 6 — Authorize:
+  Authorizing Official issues ATO based on residual risk. Complete PIA and
+  SORN publication prior to ATO.
+
+RMF Step 7 — Monitor:
+  Implement continuous monitoring strategy per CA-7. Conduct annual control
+  assessments. Manage POA&M items for any control deficiencies found.
+
+================================================================================
+SUMMARY AND RECOMMENDED NEXT STEPS
+================================================================================
+
+FIPS 199 Categorization:  MODERATE
+SP 800-53B Baseline:       MODERATE (~323 controls/enhancements)
+Privacy Overlay:           PT family (PT-1 through PT-8) — MANDATORY
+SP 800-60 Types:           C.3.1.1 (Personnel Records), C.3.1.2 (Payroll)
+
+Immediate Action Items:
+  1. Complete SP 800-60 information type mapping and document in System
+     Categorization document for AO approval.
+  2. Initiate Privacy Impact Assessment (PIA) per E-Government Act Section 208.
+  3. Publish or update System of Records Notice (SORN) in Federal Register.
+  4. Begin SSP development with Moderate baseline control selection and PT
+     family overlay.
+  5. Identify common controls inheritable from the data center (facility PE
+     controls, network infrastructure SC controls).
+  6. Implement MFA (IA-2(1), IA-2(2)) and encryption at rest (SC-28(1)) and
+     in transit (SC-8(1)) as highest-priority controls given PII sensitivity.
+  7. Establish audit logging (AU-2, AU-3, AU-11) prior to system go-live.
+  8. Conduct background investigations (PS-3) for all HR system privileged users.
+
+Key References:
+  - FIPS 199 (February 2004)
+  - FIPS 200 (March 2006)
+  - NIST SP 800-53 Rev 5 (September 2020)
+  - NIST SP 800-53B (October 2020)
+  - NIST SP 800-60 Volumes I and II (August 2008)
+  - NIST SP 800-37 Rev 2 (December 2018)
+  - Privacy Act of 1974 (5 U.S.C. § 552a)
+  - OMB Circular A-130 (July 2016)
+  - E-Government Act of 2002, Section 208
+
+================================================================================
+END OF RESPONSE
+================================================================================

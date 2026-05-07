@@ -1,0 +1,697 @@
+================================================================================
+NIST SP 800-53 EXPERT RESPONSE
+Topic: FedRAMP Moderate Authorization for ISO 27001:2022-Certified Organizations
+================================================================================
+
+QUESTION: We are preparing for our first FedRAMP Moderate authorization. We
+currently have ISO 27001:2022 certification. What is the relationship between SP
+800-53 Moderate controls and ISO 27001:2022 Annex A, what gaps will we likely
+have, and how does the RMF process work for FedRAMP?
+
+================================================================================
+SECTION 1 — ISO 27001:2022 ANNEX A → SP 800-53 MODERATE CONTROL FAMILY MAPPING
+================================================================================
+
+ISO 27001:2022 and NIST SP 800-53 Rev 5 share substantial conceptual overlap,
+but they differ in scope, prescriptiveness, and the specific controls each
+requires. Your ISO 27001:2022 certification provides a meaningful starting point,
+but it is not a substitute for the SP 800-53 Moderate baseline. The table below
+maps each ISO 27001:2022 Annex A control domain to the corresponding SP 800-53
+Rev 5 control family (or families) and identifies the nature of the alignment.
+
+--------------------------------------------------------------------------------
+ISO 27001:2022 Annex A Domain          | SP 800-53 Rev 5 Family / Controls
+--------------------------------------------------------------------------------
+5.1–5.14 Organizational Controls       | PL (Planning), PM (Program Mgmt),
+  (Policies, roles, asset mgmt,        |   PS (Personnel Security),
+  info classification, supplier        |   RA (Risk Assessment),
+  security, threat intelligence,       |   SA (System & Services Acquisition),
+  incident management)                 |   SR (Supply Chain Risk Management)
+                                       |
+5.15–5.18 Access Control               | AC (Access Control): AC-1 through
+  (Access rights, privileged           |   AC-25; particularly AC-2, AC-3,
+  access, information access           |   AC-5, AC-6, AC-17
+  restriction, authentication)         |
+                                       |
+5.19–5.22 Supplier Relationships       | SR-1 through SR-12 (Supply Chain
+  (Supplier security policy,           |   Risk Management); SA-9 (External
+  managing supplier services,          |   System Services)
+  cloud services)                      |
+                                       |
+5.23–5.28 Incident Management          | IR-1 through IR-10 (Incident
+  (Planning, reporting, response,      |   Response); CA-2 (Assessments);
+  lessons learned)                     |   AU (Audit & Accountability)
+                                       |
+5.29–5.30 Business Continuity          | CP-1 through CP-13 (Contingency
+  (ICT continuity, redundancy)         |   Planning); CP-7, CP-9, CP-10
+                                       |
+5.31–5.36 Legal / Compliance           | CA (Assessment, Authorization,
+  (Legal requirements, IP, privacy,    |   Monitoring); PT (PII Processing
+  evidence, compliance review)         |   & Transparency); RA-5
+                                       |
+5.37 Documented Operating Procedures   | CM-1 (Config Policy); PL-2 (SSP)
+                                       |
+6.1–6.8 People Controls                | AT-1 through AT-6 (Awareness &
+  (Screening, terms, awareness,        |   Training); PS-1 through PS-9
+  training, disciplinary, remote       |   (Personnel Security); AC-17
+  working, reporting)                  |
+                                       |
+7.1–7.14 Physical Controls             | PE-1 through PE-23 (Physical &
+  (Physical perimeter, entry,          |   Environmental Protection)
+  securing offices, monitoring,        |
+  delivery areas, equipment)           |
+                                       |
+8.1–8.2 Operational Security           | CM-2, CM-6 (Configuration);
+  (User endpoint devices,              |   SC-28 (Data at Rest)
+  privileged access workstations)      |
+                                       |
+8.3–8.8 Asset / Vulnerability Mgmt     | CM-8 (Inventory); RA-5 (Vuln
+  (Info deletion, masking,             |   Scanning); SI-2 (Patching);
+  data leakage prevention,             |   MP (Media Protection)
+  vulnerability management)            |
+                                       |
+8.9–8.13 Configuration & Change        | CM-1 through CM-14 (Config Mgmt);
+  (Configuration mgmt, info            |   CP-9, CP-10 (Backup/Recovery);
+  deletion, data backup)               |   SA-10 (Developer Config Mgmt)
+                                       |
+8.14–8.16 Redundancy / Monitoring      | CP-7, CP-11 (Availability);
+  (Redundancy, monitoring,             |   AU-2 through AU-13 (Audit);
+  logging, clock sync)                 |   SI-4 (System Monitoring)
+                                       |
+8.17–8.22 Network Security             | SC-1 through SC-51 (System &
+  (Network segmentation, web           |   Communications Protection);
+  filtering, cryptography,             |   SC-7, SC-8, SC-28; IA controls
+  network connections)                 |
+                                       |
+8.23–8.28 Application Security         | SA-11, SA-15 (Dev Security Testing);
+  (Secure development, testing,        |   SI-3 (Malware); SC-18
+  source code)                         |   (Mobile Code)
+                                       |
+8.29–8.32 Secure Dev / Change          | SA-3 (SDLC); CM-3, CM-4 (Change
+  (DevSecOps, outsourced dev,          |   Control); SA-8, SA-10, SA-11
+  separation environments, change      |
+  management)                          |
+                                       |
+8.33–8.34 Test / Audit                 | CA-2 (Security Assessments);
+  (Test information, protection        |   RA-5; AU (Audit); SA-11
+  of audit tools)                      |
+--------------------------------------------------------------------------------
+
+SUMMARY OF ALIGNMENT: Your ISO 27001:2022 certification confirms that you have a
+functioning Information Security Management System (ISMS) covering policy,
+risk assessment, supplier management, incident response, physical security,
+business continuity, and access control at an organizational level. SP 800-53 Rev 5
+derives from a common heritage with ISO 27001 and the two frameworks share roughly
+70–80% conceptual overlap at the domain level.
+
+However, alignment at the domain level does not equate to compliance at the
+control level. SP 800-53 is significantly more prescriptive, more granular, and
+carries U.S. federal-law specificity that ISO 27001 does not.
+
+================================================================================
+SECTION 2 — FEDRAMP MODERATE GAPS FOR ISO 27001:2022-CERTIFIED ORGANIZATIONS
+================================================================================
+
+The gaps below represent areas where ISO 27001:2022 certification typically
+provides little or no coverage for FedRAMP Moderate requirements. These are
+the highest-priority remediation items.
+
+--------------------------------------------------------------------------------
+GAP 1 — FIPS 140-2 / FIPS 140-3 VALIDATED CRYPTOGRAPHIC MODULES
+--------------------------------------------------------------------------------
+Controls: SC-13 (Cryptographic Protection), IA-7 (Cryptographic Module Auth)
+Baseline: Moderate (required)
+
+ISO 27001:2022 Annex A 8.24 requires "use of cryptography" and says
+algorithms must be "appropriate." It does not mandate FIPS 140-validated
+modules.
+
+FedRAMP requirement: ALL cryptographic modules used in the system must be
+validated to FIPS 140-2 or FIPS 140-3 (the successor standard). This applies
+to:
+  - TLS/HTTPS implementations (must use FIPS-approved cipher suites)
+  - Data-at-rest encryption (SC-28; disk encryption libraries must be validated)
+  - VPN / remote access tunnels (SC-8(1))
+  - SSH implementations
+  - Any key management system
+
+Action items:
+  - Inventory all cryptographic implementations across the system
+  - Verify each against the NIST Cryptographic Module Validation Program (CMVP)
+    at csrc.nist.gov/projects/cryptographic-module-validation-program
+  - Replace or reconfigure any non-validated modules (e.g., OpenSSL must be
+    used in FIPS mode with a FIPS 140-2/3 validated build)
+  - Document FIPS validation certificate numbers in the SSP under SC-13
+
+--------------------------------------------------------------------------------
+GAP 2 — PIV / PIV-INTEROPERABLE MULTI-FACTOR AUTHENTICATION (MFA)
+--------------------------------------------------------------------------------
+Controls: IA-2(1), IA-2(2), IA-2(12), IA-8(1), IA-8(2), IA-8(4)
+Baseline: Moderate (required)
+
+ISO 27001:2022 Annex A 8.5 ("Secure Authentication") requires MFA for
+privileged access but does not specify PIV (Personal Identity Verification)
+cards as the required authenticator type.
+
+FedRAMP/HSPD-12 requirement: Federal policy (OMB M-11-11, HSPD-12, OMB
+M-19-17) mandates that all privileged users and all users accessing
+federal systems use PIV credentials or PIV-Interoperable (PIV-I) credentials
+for network authentication:
+
+  - IA-2(1): MFA for privileged accounts (network access) — PIV required
+  - IA-2(2): MFA for non-privileged accounts (network access) — PIV or
+    PIV-I required for federal employee/contractor access
+  - IA-2(12): PIV credentials accepted and verified
+  - IA-8(1)/(2)/(4): Non-organizational users (public, contractors not
+    issued PIV) must use NIST IAL/AAL-aligned credentials per SP 800-63B
+
+Action items:
+  - Implement PIV card authentication for all privileged users
+  - For SaaS/cloud offerings, implement PIV-compatible identity federation
+    via SAML or OIDC with a PIV-capable IdP (e.g., Azure AD Government,
+    Okta FedRAMP, Ping Identity FedRAMP)
+  - Document authenticator types, IAL/AAL levels, and PIV certificate
+    validation procedures in SSP IA-2 narratives
+
+--------------------------------------------------------------------------------
+GAP 3 — CONTINUOUS MONITORING (CONMON) FREQUENCIES
+--------------------------------------------------------------------------------
+Controls: CA-7 (Continuous Monitoring), RA-5 (Vulnerability Monitoring),
+          SI-2 (Flaw Remediation), CM-6 (Configuration Settings)
+Baseline: Moderate (required)
+
+ISO 27001:2022 requires vulnerability management and monitoring but does not
+specify frequencies. FedRAMP ConMon requirements are prescriptive:
+
+  Activity                          | FedRAMP Frequency
+  ----------------------------------|-------------------
+  OS vulnerability scans            | Monthly
+  Web application vulnerability scans| Monthly
+  Database vulnerability scans      | Weekly
+  Annual 3PAO control assessment    | Annual
+  Annual penetration test (3PAO)    | Annual
+  POA&M updates                     | Monthly
+  Inventory updates                 | Monthly
+  Significant Change Requests       | Before major changes
+
+Remediation deadlines (FedRAMP):
+  - Critical vulnerabilities: 30 days
+  - High vulnerabilities: 90 days
+  - Moderate vulnerabilities: 180 days
+  - Low vulnerabilities: 1 year (or risk acceptance)
+
+Action items:
+  - Implement automated vulnerability scanning at required FedRAMP frequencies
+  - Stand up a monthly POA&M management process
+  - Procure a 3PAO-accredited assessor for annual assessment and penetration test
+  - Document ConMon strategy in CA-7 SSP narrative with specific frequencies
+    and responsible parties
+  - Establish a FedRAMP Significant Change Request process
+
+--------------------------------------------------------------------------------
+GAP 4 — US-CERT / CISA INCIDENT REPORTING
+--------------------------------------------------------------------------------
+Controls: IR-6 (Incident Reporting), IR-6(1), IR-7, IR-8
+Baseline: Moderate (required)
+
+ISO 27001:2022 Annex A 5.26 ("Response to information security incidents")
+and 5.27 require incidents be managed and lessons learned, but reporting
+timelines are organization-defined. ISO 27001 does not require reporting to
+external government bodies.
+
+FedRAMP incident reporting requirements (OMB M-17-25, US-CERT Federal
+Incident Notification Guidelines):
+  - All security incidents affecting federal data must be reported to US-CERT
+    (now CISA) within 1 hour of discovery for critical/major incidents
+  - Monthly operational reports to FedRAMP PMO and agency Authorizing Official
+  - Incident handling procedures must reference the US-CERT reporting portal
+    and use US-CERT severity categories (CAT 0 through CAT 6)
+
+FedRAMP IR-6 ODV (Organization-Defined Value): Report within 1 hour to
+FedRAMP PMO and agency customer(s); submit US-CERT notification within
+1 hour for CAT 1/2 incidents.
+
+Action items:
+  - Update IR policy and procedures to include US-CERT/CISA reporting
+    obligations and timelines
+  - Train incident response team on FedRAMP-specific reporting procedures
+  - Establish secure communications channel with agency customers for
+    incident notification
+  - Document IR-6 SSP narrative with specific reporting timelines and
+    escalation procedures
+  - Include IR-8 (Incident Response Plan) that references FedRAMP IR
+    Playbook template
+
+--------------------------------------------------------------------------------
+GAP 5 — THIRD-PARTY ASSESSMENT ORGANIZATION (3PAO) REQUIREMENT
+--------------------------------------------------------------------------------
+Controls: CA-2 (Control Assessments), CA-8 (Penetration Testing)
+Baseline: FedRAMP-specific requirement (not in standard SP 800-53B baseline)
+
+ISO 27001:2022 requires internal audits (Clause 9.2) and management review
+(Clause 9.3), and certification body audits. However, the ISO certification
+body (CB) auditor is not equivalent to a FedRAMP 3PAO.
+
+FedRAMP requirement: All assessments must be conducted by an accredited 3PAO:
+  - 3PAOs must be accredited by either:
+    a. American Association for Laboratory Accreditation (A2LA) under R311
+    b. FedRAMP PMO directly (for select organizations)
+  - The 3PAO conducts the initial assessment (producing the SAR) and all
+    annual assessments thereafter
+  - 3PAOs must be independent from the CSP — internal teams cannot serve
+    as the 3PAO
+
+Action items:
+  - Identify and engage an accredited 3PAO early in the process
+    (list available at marketplace.fedramp.gov)
+  - Budget for initial 3PAO assessment (typically 6–18 weeks engagement)
+    and recurring annual assessments
+  - Provide 3PAO with a complete readiness package: SSP, policies,
+    architecture diagrams, system inventory, prior audit evidence
+  - Consider engaging 3PAO for a FedRAMP Readiness Assessment (FRA)
+    before the full assessment to identify gaps
+
+--------------------------------------------------------------------------------
+GAP 6 — FEDRAMP ORGANIZATION-DEFINED VALUES (ODVs)
+--------------------------------------------------------------------------------
+Controls: Multiple — AC-2(3), AC-7, AU-11, IA-5(1), SI-2, CA-7, and others
+Baseline: FedRAMP-specific parameter values
+
+ISO 27001:2022 leaves most operational parameters to the organization
+(e.g., password complexity, log retention, account lockout thresholds).
+FedRAMP prescribes specific ODV values that override organization discretion.
+
+Key FedRAMP ODV requirements for Moderate systems:
+
+  Control   | Parameter                        | FedRAMP Required Value
+  ----------|----------------------------------|------------------------
+  AC-2(3)   | Disable inactive accounts after  | 90 days
+  AC-7      | Account lockout threshold        | 3 invalid attempts
+  AC-7      | Lockout duration                 | 30 minutes (or admin unlock)
+  AU-11     | Audit log retention              | 90 days online; 1 year archived
+  IA-5(1)   | Minimum password length          | 15 characters
+  IA-5(1)   | Password complexity              | Upper, lower, number, special
+  IA-5(1)   | Password history                 | 24 passwords remembered
+  IA-5(1)   | Maximum password age             | 60 days (privileged);
+            |                                  | No max for PIV/MFA accounts
+  RA-5      | Vulnerability scan frequency     | Monthly (OS/web); Weekly (DB)
+  SI-2      | Patch critical vulns within      | 30 days
+  SI-2      | Patch high vulns within          | 90 days
+  CA-7      | ConMon frequency                 | See Section 3 above
+
+Action items:
+  - Conduct an ODV gap analysis comparing your current operational parameters
+    against FedRAMP-required values
+  - Update technical configurations (AD Group Policy, SIEM retention settings,
+    vulnerability scanner schedules) to meet FedRAMP ODVs
+  - Document all ODVs explicitly in the SSP; FedRAMP reviewers specifically
+    check that ODV parameters are populated (not left as "[organization-defined]")
+
+--------------------------------------------------------------------------------
+GAP 7 — FEDRAMP SSP TEMPLATE AND DOCUMENTATION FORMAT
+--------------------------------------------------------------------------------
+Controls: PL-2 (System Security Plan), CA-2, CA-7
+Baseline: FedRAMP-specific requirement
+
+ISO 27001:2022 requires a Statement of Applicability (SoA) and documented
+ISMS policies, but does not specify SSP format.
+
+FedRAMP requirement: CSPs must use the official FedRAMP SSP template
+(available at fedramp.gov/documents-templates). The template is ~350+ pages
+when fully completed and includes:
+
+  - System description (architecture, boundaries, data flows)
+  - FIPS 199 categorization determination
+  - All 325+ Moderate baseline controls with implementation narratives
+  - Responsible roles for each control
+  - Implementation status (Implemented / Partially Implemented / Planned /
+    Not Applicable)
+  - Control inheritance designations (system-specific vs. inherited from CSP,
+    IaaS/PaaS provider, or common control provider)
+  - Customer responsibilities (controls customers must implement)
+
+Additional FedRAMP package documents required:
+  - System Security Plan (SSP) — FedRAMP template
+  - SSP Attachments: Control Implementation Summary (CIS), Customer
+    Responsibility Matrix (CRM), FIPS 199 categorization, system inventory,
+    network diagrams, data flow diagrams, ports/protocols/services list
+  - Security Assessment Plan (SAP) — developed by 3PAO
+  - Security Assessment Report (SAR) — produced by 3PAO
+  - Plan of Action and Milestones (POA&M) — maintained by CSP
+  - FedRAMP Readiness Assessment Report (RAR) — optional but recommended
+
+Action items:
+  - Download the current FedRAMP SSP template from fedramp.gov
+  - Map your existing ISO 27001 documentation (SoA, ISMS policies,
+    risk assessment) to SSP sections — most will supplement rather than
+    replace SSP narratives
+  - Assign ISSO / compliance team to write control narratives for all
+    325+ Moderate controls
+  - Develop architecture diagrams and data flow diagrams at FedRAMP
+    required detail level
+  - Engage a FedRAMP consultant or use FedRAMP Marketplace CSP resources
+    for SSP template guidance
+
+--------------------------------------------------------------------------------
+GAP SUMMARY TABLE
+--------------------------------------------------------------------------------
+
+Gap Area                | ISO 27001 Coverage  | FedRAMP Moderate Requirement
+------------------------|---------------------|--------------------------------
+FIPS 140 Cryptography   | "Appropriate algs"  | FIPS 140-2/3 validated modules
+                        | (8.24)              | for ALL crypto (SC-13, IA-7)
+PIV/PIV-I MFA           | MFA required (8.5)  | PIV cards required; SP 800-63B
+                        |                     | IAL/AAL alignment (IA-2(1)(2)(12))
+ConMon Frequencies      | Unspecified         | Monthly scans, weekly DB scans,
+                        |                     | annual 3PAO assessment (CA-7)
+US-CERT Incident        | Internal reporting  | 1-hour US-CERT reporting for
+Reporting               | (5.26)              | major incidents (IR-6)
+3PAO Requirement        | CB audits           | Accredited 3PAO for all
+                        |                     | assessments (CA-2, CA-8)
+FedRAMP ODVs            | Org-defined         | Specific numeric values mandated
+                        |                     | (AC-2, AC-7, AU-11, IA-5, SI-2)
+SSP / Package Format    | SoA + policies      | FedRAMP SSP template; full
+                        |                     | authorization package (PL-2)
+
+================================================================================
+SECTION 3 — RMF PROCESS FOR FEDRAMP (SP 800-37 Rev 2 ADAPTED)
+================================================================================
+
+FedRAMP is operationalized through the NIST Risk Management Framework
+(SP 800-37 Rev 2), adapted with FedRAMP-specific requirements. There are two
+authorization paths:
+
+  AGENCY ATO PATH: CSP works directly with a specific federal agency customer.
+    The agency Authorizing Official (AO) grants an Authority to Operate (ATO).
+    Fastest for single-agency relationships.
+
+  JAB P-ATO PATH: CSP works with the Joint Authorization Board (JAB) —
+    comprised of DoD CIO, DHS CIO, and GSA CIO. Results in a Provisional ATO
+    (P-ATO) accepted by all federal agencies. Highest rigor; longest timeline.
+    JAB prioritizes CSPs using the FedRAMP Connect process.
+
+Both paths follow the same seven RMF steps:
+
+--------------------------------------------------------------------------------
+STEP 1 — PREPARE
+SP 800-37 Rev 2, Chapter 2; FedRAMP: fedramp.gov/prepare/
+--------------------------------------------------------------------------------
+Purpose: Establish the organizational and system context; assign roles;
+         understand the authorization path.
+
+Key tasks for FedRAMP Moderate:
+  1. Assign FedRAMP roles:
+     - Authorizing Official (AO): agency CISO or designated senior official
+       (for Agency ATO) or JAB representatives (for P-ATO)
+     - System Owner (SO): CSP executive accountable for the system
+     - Information System Security Officer (ISSO): manages day-to-day
+       security operations and SSP
+     - FedRAMP Point of Contact (POC): CSP contact for FedRAMP PMO
+  2. Understand FedRAMP boundary: define what is "in scope" for authorization
+     (the Authorization Boundary — all components processing, transmitting,
+     or storing federal data)
+  3. Select authorization path (Agency ATO vs. JAB P-ATO)
+  4. Conduct initial gap assessment against FedRAMP Moderate baseline
+  5. Develop remediation roadmap and project plan
+  6. Register system in FedRAMP Marketplace (fedramp.gov/marketplace)
+  7. Engage 3PAO early
+
+Key outputs: Assigned roles; selected authorization path; gap remediation plan;
+             FedRAMP Marketplace registration.
+
+Timeline estimate: 1–3 months
+
+--------------------------------------------------------------------------------
+STEP 2 — CATEGORIZE
+FIPS 199; SP 800-60; FedRAMP: FIPS 199 template
+--------------------------------------------------------------------------------
+Purpose: Determine the system's security impact level (Low, Moderate, or High)
+         based on the federal data it processes, stores, and transmits.
+
+Key tasks for FedRAMP Moderate:
+  1. Identify all federal information types processed using SP 800-60 Vol II
+  2. Assess Confidentiality, Integrity, and Availability impact for each type
+  3. Apply the high-water mark: overall system category = highest C/I/A value
+  4. For FedRAMP Moderate: system must be categorized as FIPS 199 Moderate
+     (at least one of C/I/A = Moderate; none = High)
+  5. Complete and sign the FIPS 199 Security Categorization document
+     (AO and SO signatures required)
+  6. Incorporate categorization into SSP Section 2
+
+Note: If categorization yields a High impact level for any objective, the
+system requires the FedRAMP High baseline (~421 controls), not Moderate.
+
+Key outputs: Signed FIPS 199 Security Categorization document; system
+             description in SSP Sections 1–2.
+
+Timeline estimate: 2–4 weeks
+
+--------------------------------------------------------------------------------
+STEP 3 — SELECT
+SP 800-53B (Moderate baseline); FedRAMP baseline documentation
+--------------------------------------------------------------------------------
+Purpose: Select, tailor, and document the controls for the system.
+
+Key tasks for FedRAMP Moderate:
+  1. Start with SP 800-53B Moderate baseline (~325 controls/enhancements)
+  2. Apply FedRAMP overlay: FedRAMP-specific ODV values override the standard
+     baseline parameters (see Gap 6 above)
+  3. Identify inherited controls:
+     - Controls implemented by your underlying IaaS/PaaS provider
+       (e.g., AWS GovCloud, Azure Government, Google Cloud) that are inherited
+     - Document in the Control Implementation Summary (CIS) and SSP
+     - Your IaaS/PaaS provider must have a FedRAMP authorization for
+       you to inherit their controls
+  4. Identify customer-responsible controls: controls the agency customer
+     must implement (document in Customer Responsibility Matrix — CRM)
+  5. Identify system-specific controls: controls you implement yourself
+  6. Assign ODV parameter values for all controls with organization-defined
+     parameters (use FedRAMP-required values where specified)
+  7. Document tailoring decisions in SSP
+  8. Develop Continuous Monitoring Strategy (CA-7 narrative)
+
+Key outputs: Complete control selection documented in SSP; ConMon strategy;
+             CIS; CRM.
+
+Timeline estimate: 2–4 months (dependent on SSP writing resources)
+
+--------------------------------------------------------------------------------
+STEP 4 — IMPLEMENT
+SP 800-53 Rev 5 (implementation guidance); FedRAMP SSP template
+--------------------------------------------------------------------------------
+Purpose: Implement all selected controls and document implementation in the SSP.
+
+Key tasks for FedRAMP Moderate:
+  1. Implement all system-specific controls (technical, operational,
+     and management controls)
+  2. Write SSP control narratives for all ~325 controls:
+     - For each control: what is implemented, how it is implemented,
+       who is responsible, what evidence exists
+     - Address all control parameters (ODV values must be populated)
+     - Distinguish base control from enhancements
+  3. Complete SSP attachments:
+     - System architecture diagrams (with authorization boundary marked)
+     - Data flow diagrams (showing federal data flows)
+     - Network diagrams (logical and physical)
+     - Hardware/software inventory (CM-8)
+     - Ports, protocols, services list
+     - User types and privileges list
+  4. Conduct internal pre-assessment / readiness review
+  5. Complete POC for FedRAMP Readiness Assessment (optional but strongly
+     recommended for first-time authorizations)
+
+Key outputs: Completed SSP with all narratives; all SSP attachments;
+             implemented controls with evidence artifacts.
+
+Timeline estimate: 3–9 months (typically the longest phase for first ATO)
+
+--------------------------------------------------------------------------------
+STEP 5 — ASSESS
+SP 800-53A Rev 5; FedRAMP SAP/SAR templates; 3PAO-conducted
+--------------------------------------------------------------------------------
+Purpose: Determine if controls are implemented correctly, operating as intended,
+         and producing the desired outcome.
+
+Key tasks for FedRAMP Moderate:
+  1. 3PAO develops Security Assessment Plan (SAP) using SP 800-53A procedures
+     and FedRAMP SAP template
+  2. CSP reviews and approves SAP; agency AO concurs (for Agency ATO path)
+  3. 3PAO conducts assessment using three methods:
+     - EXAMINE: Review SSP, policies, procedures, configuration files,
+       architecture diagrams, audit logs, training records
+     - INTERVIEW: Discuss implementation with ISSO, system administrators,
+       operators, developers, end users
+     - TEST: Run vulnerability scans, penetration test, configuration checks,
+       firewall rule reviews, backup restoration tests, access control tests
+  4. 3PAO produces Security Assessment Report (SAR):
+     - Executive summary with authorization recommendation
+     - Control-by-control findings (Satisfied vs. Other Than Satisfied)
+     - Risk ratings for OTS findings
+     - Penetration test results
+  5. CSP responds to SAR findings:
+     - Remediate findings where possible before authorization
+     - Open POA&M items for findings not yet remediated
+  6. CSP develops initial POA&M from SAR OTS findings
+
+FedRAMP-specific assessment requirements:
+  - Annual penetration test using FedRAMP penetration test guidance
+  - Automated vulnerability scanning results submitted to FedRAMP PMO
+  - FedRAMP SAR template must be used
+  - 3PAO independence must be maintained (no conflict of interest)
+
+Key outputs: SAP; SAR; initial POA&M; 3PAO authorization recommendation.
+
+Timeline estimate: 2–4 months (3PAO assessment engagement)
+
+--------------------------------------------------------------------------------
+STEP 6 — AUTHORIZE
+SP 800-37 Rev 2, Chapter 2.7; FedRAMP authorization process
+--------------------------------------------------------------------------------
+Purpose: Senior official (Authorizing Official) formally accepts residual risk
+         and grants or denies Authority to Operate.
+
+Authorization package (submitted to AO or JAB):
+  1. System Security Plan (SSP) — with all attachments
+  2. Security Assessment Report (SAR) — produced by 3PAO
+  3. Plan of Action and Milestones (POA&M) — with remediation timelines
+  4. FedRAMP Authorization Package cover letter / executive summary
+
+Agency ATO path:
+  - CSP submits complete authorization package to agency AO
+  - Agency reviews package (often with FedRAMP PMO support)
+  - Agency AO makes authorization decision:
+    * Authorization to Operate (ATO) — risk is acceptable; valid for 1 year
+      (with ConMon) or up to 3 years
+    * Denial of Authorization to Operate (DATO) — risk not acceptable;
+      system must not process federal data until remediated
+  - ATO letter issued; system listed as "FedRAMP Authorized" in Marketplace
+
+JAB P-ATO path:
+  - FedRAMP PMO conducts package review (kick-off through final package)
+  - JAB technical reviewers assess the package
+  - JAB issues Provisional ATO (P-ATO) if risk is acceptable
+  - P-ATO can be leveraged by all federal agencies (reduces per-agency review)
+
+Key FedRAMP authorization metrics (Moderate systems):
+  - No unmitigated Critical or High risks at time of authorization
+  - Open High POA&M items must have realistic remediation plans
+  - AO accepts residual risk for all open POA&M items
+
+Key outputs: ATO letter (Agency path) or P-ATO letter (JAB path);
+             FedRAMP Marketplace listing updated to "Authorized."
+
+Timeline estimate: 1–4 months (Agency ATO); 6–18 months (JAB P-ATO)
+
+--------------------------------------------------------------------------------
+STEP 7 — MONITOR
+SP 800-37 Rev 2, Chapter 2.8; SP 800-137; FedRAMP ConMon Guide
+--------------------------------------------------------------------------------
+Purpose: Maintain ongoing situational awareness about the security posture;
+         detect and respond to changes; sustain the ATO.
+
+FedRAMP ConMon ongoing requirements:
+  1. Monthly deliverables to FedRAMP PMO and agency customers:
+     - Vulnerability scan results (OS, web app — monthly; DB — weekly)
+     - Updated POA&M (with remediation status)
+     - Updated system inventory
+     - Updated CIS (Control Implementation Summary)
+  2. Annual deliverables:
+     - Annual assessment by 3PAO (all controls or a selected subset per
+       FedRAMP ConMon Strategy guide)
+     - Annual penetration test by 3PAO
+     - Updated SSP (reflecting any significant changes)
+     - Annual security review
+  3. Significant Change Requests (SCRs):
+     - Required before making significant changes to the authorization
+       boundary, architecture, or security posture
+     - CSP submits SCR to FedRAMP PMO; may trigger re-assessment
+     - Examples: new cloud region, new external service, major architecture
+       change, new data type
+  4. Incident reporting:
+     - US-CERT / CISA notification within 1 hour for major incidents
+     - Agency customer notification per SLA / contract terms
+     - Monthly operational reports to FedRAMP PMO
+  5. Ongoing POA&M management:
+     - Monthly updates required
+     - Critical items: remediate within 30 days
+     - High items: remediate within 90 days
+     - Risk acceptances require ISSO, SO, and AO approval
+  6. FedRAMP Marketplace status maintenance:
+     - System remains "Authorized" only with current ConMon deliverables
+     - FedRAMP PMO may revoke authorization for ConMon non-compliance
+
+Continuous Authorization (preferred): Rather than periodic full re-authorization
+every 3 years, FedRAMP encourages continuous authorization — the AO remains
+continuously informed via ConMon deliverables and makes ongoing risk acceptance
+decisions. This avoids the "big bang" re-authorization cycle.
+
+Key outputs: Monthly ConMon deliverables; updated POA&M; annual 3PAO assessment;
+             incident reports; SCRs as needed; sustained ATO status.
+
+================================================================================
+SECTION 4 — RECOMMENDED FEDRAMP MODERATE READINESS ROADMAP
+================================================================================
+
+Based on your ISO 27001:2022 certification, we recommend the following phased
+approach:
+
+Phase 1 — Prepare and Gap Analysis (Months 1–2):
+  - Complete FedRAMP Marketplace registration
+  - Engage 3PAO for FedRAMP Readiness Assessment (FRA)
+  - Conduct FIPS 140 cryptographic module inventory
+  - Assess PIV/MFA gaps with your IdP vendor
+  - Download FedRAMP SSP template and begin scoping
+
+Phase 2 — Remediate Critical Gaps (Months 3–8):
+  - Implement FIPS 140-validated cryptographic modules throughout
+  - Implement PIV/PIV-I authentication via federated IdP
+  - Configure all ODVs to FedRAMP-required values
+  - Stand up monthly vulnerability scanning program
+  - Update IR policy with US-CERT reporting procedures
+  - Begin writing SSP control narratives (can leverage ISO SoA as input)
+  - Complete architecture diagrams and data flow diagrams
+
+Phase 3 — SSP Completion and Pre-Assessment (Months 6–10):
+  - Complete all 325+ SSP control narratives
+  - Complete all SSP attachments
+  - Conduct internal readiness review
+  - Engage 3PAO for formal readiness assessment (optional but recommended)
+  - Remediate readiness assessment findings
+
+Phase 4 — 3PAO Assessment (Months 10–14):
+  - 3PAO develops SAP and conducts full assessment
+  - Respond to SAR findings; remediate where possible
+  - Open POA&M for unresolved findings
+
+Phase 5 — Authorization (Months 14–18):
+  - Submit authorization package to agency AO or JAB
+  - Respond to agency / FedRAMP PMO review questions
+  - Receive ATO / P-ATO
+
+Phase 6 — Sustain ConMon (Month 18+):
+  - Begin monthly ConMon deliverables
+  - Annual 3PAO assessment and pen test
+  - Maintain POA&M; remediate findings on schedule
+
+================================================================================
+KEY REFERENCES
+================================================================================
+
+  NIST SP 800-53 Rev 5    — Security and Privacy Controls (control catalog)
+  NIST SP 800-53B         — Control Baselines (Moderate baseline definition)
+  NIST SP 800-53A Rev 5   — Assessment Procedures
+  NIST SP 800-37 Rev 2    — Risk Management Framework
+  NIST SP 800-60 Vol I/II — Information Types and Impact Levels
+  NIST SP 800-63B         — Digital Identity (authenticator assurance)
+  NIST SP 800-137         — Continuous Monitoring
+  FIPS 140-3              — Cryptographic Module Validation Standard
+  FIPS 199                — Standards for Security Categorization
+  FIPS 200                — Minimum Security Requirements
+  FedRAMP.gov             — SSP template, baseline documentation, 3PAO list,
+                            ConMon guide, incident communications guide
+  CMVP (csrc.nist.gov)    — Cryptographic Module Validation Program
+  FedRAMP Marketplace     — marketplace.fedramp.gov (authorized CSPs, 3PAOs)
+
+================================================================================
+END OF RESPONSE
+================================================================================

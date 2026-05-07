@@ -1458,6 +1458,41 @@
       "files": []
     },
     {
+      "id": 116,
+      "skill": "nist-800-53",
+      "prompt": "We are a federal agency developing a new HR system that will store employee PII, salary data, and performance reviews for 5,000 staff. It will be hosted on an internal data center. How do we categorize this system under FIPS 199, and which NIST SP 800-53 baseline should we select?",
+      "expected_output": "Applies FIPS 199 to each objective: Confidentiality — High (PII and salary data, severe harm to individuals if disclosed); Integrity — Moderate (errors in salary/HR data have serious but not catastrophic effects); Availability — Moderate (downtime is serious but not life-safety). Overall: High-water mark = High Confidentiality → system is High impact. Therefore selects the High baseline from SP 800-53B. Notes that the system processes PII so PT family controls apply regardless. Mentions SP 800-60 for information type impact determination. Notes ATO must be granted by Authorizing Official.",
+      "files": []
+    },
+    {
+      "id": 117,
+      "skill": "nist-800-53",
+      "prompt": "Our federal system SSP has a finding from the security assessor: AC-2(3) is 'Other Than Satisfied' because inactive accounts are not disabled within our stated ODV of 90 days. The assessor found 120 accounts inactive for over 120 days. Walk me through how to remediate this finding and what we need to document in the POA&M.",
+      "expected_output": "Identifies AC-2(3) as the Automated System Account Management — Disable Accounts control. Explains the remediation: immediately disable the 120 identified accounts; fix the automated review process (whether AD script, IAM tool, or manual process). For the POA&M: documents the control ID (AC-2(3)), finding description (120 accounts inactive >90 days), risk level (Moderate), responsible parties, scheduled completion date (FedRAMP/FISMA: within defined milestone), milestone steps (immediate disable of known accounts; automate future reviews; verify with re-scan). Notes the ISSO and System Owner must review the POA&M. Explains that OTS findings must be tracked until resolved.",
+      "files": []
+    },
+    {
+      "id": 118,
+      "skill": "nist-800-53",
+      "prompt": "We need to implement multi-factor authentication for our federal system. Which specific SP 800-53 Rev 5 controls require MFA, what baselines do they appear in, and what does Executive Order 14028 (Improving the Nation's Cybersecurity) require regarding phishing-resistant MFA?",
+      "expected_output": "Identifies the primary MFA controls: IA-2(1) (MFA for privileged accounts — Low/Moderate/High baseline), IA-2(2) (MFA for non-privileged network access — Low/Moderate/High), IA-2(6) (MFA using separate device — High only), IA-2(8) (replay-resistant — Moderate/High). Notes EO 14028 and OMB M-22-09 require phishing-resistant MFA (PIV/CAC or FIDO2/WebAuthn) for federal employees and contractors — SMS/TOTP OTP is no longer acceptable for privileged access. Notes IA-2(12) requires acceptance of PIV credentials. Explains the difference between phishing-resistant (hardware-bound) vs. phishing-susceptible (SMS, TOTP) authenticators. References NIST SP 800-63B assurance levels.",
+      "files": []
+    },
+    {
+      "id": 119,
+      "skill": "nist-800-53",
+      "prompt": "We are writing SSP control narratives for our Moderate impact federal system. Please write a complete implementation narrative for SC-8(1) — Transmission Confidentiality and Integrity / Cryptographic Protection — that would satisfy a 3PAO assessor.",
+      "expected_output": "Produces a well-structured SSP narrative for SC-8(1) covering: implementation statement explaining that all data in transit is protected using TLS 1.2 or TLS 1.3 with FIPS 140-2/3 validated cryptographic modules; specific details about where TLS is applied (APIs, web interfaces, admin consoles, database connections); identification of the FIPS-validated module(s) in use; responsible roles (ISSO, system administrator); evidence artifacts (TLS configuration screenshots or scan output, FIPS 140-2/3 certificate numbers); any compensating controls for legacy connections. Notes that TLS 1.0 and 1.1 are prohibited. Identifies this as a system-specific control (not inherited). Correctly links SC-8(1) to SC-13 (cryptographic protection) and SC-28(1) for data at rest.",
+      "files": []
+    },
+    {
+      "id": 120,
+      "skill": "nist-800-53",
+      "prompt": "We are preparing for our first FedRAMP Moderate authorization. We currently have ISO 27001:2022 certification. What is the relationship between SP 800-53 Moderate controls and ISO 27001:2022 Annex A, what gaps will we likely have, and how does the RMF process work for FedRAMP?",
+      "expected_output": "Explains that ISO 27001:2022 Annex A maps closely to SP 800-53 families (AC→5.15-5.18, AU→8.15-8.16, IR→5.24-5.28, SC→8.20-8.26, etc.) and that ISO 27001 provides a strong foundation. Identifies typical FedRAMP gaps not fully covered by ISO 27001: FIPS 140-2/3 cryptography (SC-13), PIV/phishing-resistant MFA (IA-2(1)/(2)/(12)), FedRAMP-specific ConMon frequencies, US-CERT incident reporting within 1 hour (IR-6), formal POA&M management, FIPS 199 categorization document, requirement for a 3PAO, FedRAMP SSP template format, and FedRAMP-specific ODV values. Describes the RMF steps for FedRAMP: Prepare → Categorize → Select (Moderate baseline + FedRAMP overlay) → Implement → Assess (3PAO SAR) → Authorize (Agency ATO or JAB P-ATO) → Monitor (monthly scans, annual pen test, monthly POA&M updates).",
+      "files": []
+    },
+    {
       "id": 111,
       "skill": "ear",
       "prompt": "We manufacture an RF power amplifier that operates at 6 GHz with an output power of 40W. It is used in commercial wireless base stations. How do I classify it under the EAR, and does it need an export licence to ship to Germany?",

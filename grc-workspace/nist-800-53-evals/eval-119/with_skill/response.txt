@@ -1,0 +1,514 @@
+================================================================================
+SYSTEM SECURITY PLAN (SSP) CONTROL NARRATIVE
+NIST SP 800-53 Rev 5 — SC-8(1): Transmission Confidentiality and Integrity |
+Cryptographic Protection
+================================================================================
+
+SYSTEM NAME:        [Organization Federal Information System Name]
+SYSTEM IDENTIFIER:  [System Identifier / FISMA UID]
+IMPACT LEVEL:       Moderate (FIPS 199 High-Water Mark)
+SSP VERSION:        1.0
+DATE:               2026-05-07
+PREPARED BY:        Information System Security Officer (ISSO)
+REVIEWED BY:        System Owner / Authorizing Official Designated Representative
+
+--------------------------------------------------------------------------------
+CONTROL INFORMATION
+--------------------------------------------------------------------------------
+
+Control ID:           SC-8(1)
+Control Family:       System and Communications Protection (SC)
+Control Title:        Transmission Confidentiality and Integrity | Cryptographic
+                      Protection
+SP 800-53B Baseline:  Moderate, High
+Control Type:         System-Specific (see Control Designation section)
+Enhancement Of:       SC-8 — Transmission Confidentiality and Integrity
+Related Controls:     SC-8, SC-12, SC-13, SC-17, SC-28(1), AC-17, IA-3, IA-8,
+                      MA-4, SI-8
+
+--------------------------------------------------------------------------------
+CONTROL STATEMENT (NIST SP 800-53 Rev 5)
+--------------------------------------------------------------------------------
+
+SC-8:    Implement cryptographic mechanisms to prevent unauthorized disclosure
+         of information and to detect changes to information during transmission
+         unless otherwise protected by [Assignment: organization-defined
+         alternative physical safeguards].
+
+SC-8(1): Implement cryptographic mechanisms to prevent unauthorized disclosure
+         of information and detect changes to information during transmission.
+
+Note: SC-8(1) removes the alternative of physical safeguards available in the
+base SC-8 control. For Moderate impact systems, cryptographic protection is
+mandatory for all data-in-transit — physical alternatives are not acceptable.
+
+--------------------------------------------------------------------------------
+IMPLEMENTATION STATUS
+--------------------------------------------------------------------------------
+
+  [X] Implemented
+  [ ] Partially Implemented
+  [ ] Planned
+  [ ] Not Applicable
+  [ ] Alternative Implementation
+
+Implementation Date:     [Date]
+Planned Completion Date: N/A
+
+--------------------------------------------------------------------------------
+CONTROL DESIGNATION
+--------------------------------------------------------------------------------
+
+Designation:  System-Specific / Hybrid
+
+Rationale: The base cryptographic policy (SC-8(1) policy and standards) is
+inherited as a Common Control from the organization's enterprise Information
+Security Policy and the Network Security Standards document maintained by the
+Enterprise Security Operations Center (ESOC). However, specific configuration
+and enforcement of cryptographic protocols within the application layer, API
+endpoints, and inter-service communications are System-Specific responsibilities
+implemented and maintained by the system team.
+
+  Common (Inherited) Component:
+    - Enterprise TLS configuration standards and approved cipher suite lists
+      (inherited from [Organization] Enterprise SC-8 Common Control)
+    - Enterprise PKI / Certificate Authority infrastructure (inherited from
+      SC-12, SC-17 common control provider)
+    - Boundary protection device TLS termination policy (inherited from
+      network/infrastructure team)
+
+  System-Specific Component:
+    - TLS configuration on application servers, APIs, and microservices
+    - Certificate lifecycle management for system-specific certificates
+    - Verification that all data paths use approved cryptographic protocols
+    - Prohibition and removal of deprecated protocol support (TLS 1.0, TLS 1.1,
+      SSL v2/v3)
+
+--------------------------------------------------------------------------------
+IMPLEMENTATION DESCRIPTION
+--------------------------------------------------------------------------------
+
+1. OVERVIEW
+
+The [System Name] implements cryptographic protection for all information
+transmitted across internal and external networks in accordance with SC-8(1).
+All data in transit — including user-to-application, application-to-database,
+service-to-service, and administrative communications — is protected using
+FIPS-validated cryptographic modules and NIST-approved algorithms. This
+implementation satisfies the Moderate baseline requirement that cryptographic
+mechanisms, rather than alternative physical safeguards, be used to protect
+transmission confidentiality and integrity.
+
+2. CRYPTOGRAPHIC STANDARDS AND FIPS VALIDATION
+
+2.1 FIPS 140-2 / FIPS 140-3 Validated Modules
+
+All cryptographic operations protecting data in transit are performed using
+FIPS 140-2 or FIPS 140-3 validated cryptographic modules, consistent with
+the requirements of SC-13 (Cryptographic Protection) and FIPS 140-3 (March
+2019 transition).
+
+  a. Web and Application Layer (External-Facing):
+     - Module: OpenSSL FIPS Object Module (FIPS 140-2, Certificate #[CMVP #])
+       OR
+     - Module: Microsoft Windows CNG (Cryptographic Next Generation) FIPS 140-2
+       Validated (Certificate #[CMVP #])
+     - These modules are validated under NIST's Cryptographic Module Validation
+       Program (CMVP) and listed on the NIST CMVP active certificates list.
+
+  b. Cloud Infrastructure Layer (if applicable — e.g., AWS GovCloud):
+     - AWS uses FIPS 140-2 validated endpoints (e.g., s3.us-gov-west-1.amazonaws.com
+       FIPS endpoints; AWS Key Management Service FIPS module).
+     - Verified via AWS FIPS compliance documentation and CMVP certificate
+       references published by the CSP.
+
+  c. Database and Backend Communications:
+     - Native TLS libraries within [Database Platform, e.g., PostgreSQL 15 /
+       Microsoft SQL Server 2019] configured to use the OS-level FIPS-validated
+       cryptographic provider.
+
+2.2 Approved Algorithms (per SC-13 / NIST SP 800-175B Rev 1)
+
+  Confidentiality: AES-256-GCM (preferred), AES-128-GCM
+  Integrity:       HMAC-SHA-256, HMAC-SHA-384
+  Key Exchange:    ECDHE (secp256r1 / P-256, secp384r1 / P-384), DHE-2048 (minimum)
+  Authentication:  RSA-2048 (minimum), ECDSA P-256 / P-384
+  Certificates:    SHA-256 or stronger signature hash; RSA 2048-bit minimum key
+                   length or ECC 256-bit minimum
+
+3. TLS PROTOCOL VERSION REQUIREMENTS AND ENFORCEMENT
+
+3.1 Approved Protocol Versions
+
+  APPROVED:
+    - TLS 1.3  (preferred for all new deployments and where supported)
+    - TLS 1.2  (acceptable; required minimum for all in-scope communication paths)
+
+  PROHIBITED — Explicitly Disabled:
+    - TLS 1.1  (disabled; deprecated per NIST SP 800-52 Rev 2, RFC 8996)
+    - TLS 1.0  (disabled; deprecated per NIST SP 800-52 Rev 2, RFC 8996)
+    - SSL v3   (disabled; vulnerable to POODLE attack, RFC 7568)
+    - SSL v2   (disabled)
+
+3.2 Enforcement Mechanism
+
+TLS version restrictions are enforced at multiple layers:
+
+  a. Load Balancer / Reverse Proxy (e.g., AWS ALB, NGINX, F5):
+     - SSL/TLS policy configured to [Organization]-defined approved policy
+       (e.g., "ELBSecurityPolicy-TLS13-1-2-2021-06" or equivalent).
+     - Cipher suites restricted to approved list; weak ciphers (RC4, 3DES,
+       NULL, EXPORT-grade) are explicitly disabled.
+     - Configuration managed via [Infrastructure-as-Code tool, e.g., Terraform]
+       and enforced through configuration management baselines (see CM-6, CM-7).
+
+  b. Application Server Layer:
+     - Web/application servers (e.g., Apache HTTP Server, Nginx, IIS) configured
+       with SSLProtocol directives or equivalent restricting to TLS 1.2 and 1.3.
+     - Verified via automated configuration scanning (see Section 7, Evidence).
+
+  c. Database / Backend Services:
+     - Database connections require TLS; unencrypted connections are rejected.
+     - Connection strings and drivers configured to enforce TLS with certificate
+       validation (not "accept any certificate" mode).
+
+  d. API Gateway:
+     - All REST and SOAP API calls require TLS 1.2 or TLS 1.3.
+     - API Gateway (e.g., AWS API Gateway, Kong) configured with matching TLS
+       policy; HTTP (unencrypted) endpoints are disabled.
+
+  e. Inter-Service / Microservice Communications (Internal):
+     - Internal service mesh (e.g., Istio / AWS App Mesh) enforces mutual TLS
+       (mTLS) for east-west traffic between microservices.
+     - mTLS certificates issued by internal Certificate Authority through the
+       enterprise PKI (SC-12, SC-17).
+
+4. SCOPE OF CRYPTOGRAPHIC PROTECTION
+
+The following communication paths are within scope for SC-8(1) and are
+confirmed to use approved cryptographic protection:
+
+  Path                                      Protocol     Notes
+  ----------------------------------------- ------------ -------------------------
+  User browser to web application           TLS 1.2/1.3  Public internet; HSTS enforced
+  Mobile client to API Gateway              TLS 1.2/1.3  Certificate pinning applied
+  Application to database server            TLS 1.2/1.3  Client cert auth (mTLS)
+  Application to external APIs / 3rd party  TLS 1.2/1.3  Validated at integration testing
+  Admin/SSH access (ISSO / admins)          TLS / SSH-2  SSH-2 with approved algorithms
+  Remote maintenance connections (MA-4)     TLS 1.2/1.3  Encrypted VPN + TLS
+  Batch file transfer (SFTP / FTPS)         SSH-2 / TLS  Replaces FTP (FTP is prohibited)
+  Monitoring / logging data streams         TLS 1.2/1.3  To SIEM collector endpoints
+  Cloud storage API calls                   TLS 1.2/1.3  FIPS endpoints used
+  Inter-AZ / inter-region replication       TLS 1.2/1.3  CSP-managed encryption in transit
+
+5. CERTIFICATE MANAGEMENT
+
+  a. Public-Facing Certificates:
+     - Issued by [Trusted CA, e.g., DigiCert Federal SSP, IdenTrust] consistent
+       with the Federal PKI (FPKI) framework.
+     - Certificate validity: Maximum 398 days (per CA/Browser Forum Baseline
+       Requirements); renewal tracked in the certificate inventory.
+
+  b. Internal / Service Certificates:
+     - Issued by the organization's internal CA (subordinate to the enterprise
+       root CA) under the SC-12 / SC-17 common control.
+     - Certificate inventory maintained in [Certificate Management Tool, e.g.,
+       Venafi, AWS Certificate Manager, HashiCorp Vault PKI].
+
+  c. Certificate Revocation:
+     - OCSP (Online Certificate Status Protocol) and/or CRL (Certificate
+       Revocation List) checked for all certificate validations.
+     - Revocation procedures documented in [PKI Policy / CPS document].
+
+  d. Cipher Suite Order (TLS 1.3 — negotiated by protocol):
+     TLS_AES_256_GCM_SHA384
+     TLS_AES_128_GCM_SHA256
+     TLS_CHACHA20_POLY1305_SHA256 (if supported)
+
+  e. Cipher Suite Order (TLS 1.2 — explicit configuration):
+     TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+     TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+     TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+     TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+     [All CBC-mode and RC4 cipher suites disabled]
+
+6. RELATIONSHIP TO RELATED CONTROLS
+
+SC-8(1) is implemented as part of an integrated cryptography and communications
+protection strategy that includes the following related controls:
+
+  SC-8   (Base Control): The base control requirement is fully satisfied by the
+         cryptographic implementation described herein. No physical alternative
+         safeguard is used or claimed.
+
+  SC-12  (Cryptographic Key Establishment and Management): Cryptographic keys
+         used for TLS sessions are managed through the enterprise PKI and
+         automated certificate management platform. Key generation uses approved
+         random number generators within FIPS-validated modules. Session keys
+         are ephemeral (via ECDHE/DHE key exchange), providing forward secrecy.
+
+  SC-13  (Cryptographic Protection): All algorithms and modules referenced in
+         this narrative comply with SC-13 requirements — only FIPS-validated
+         modules and NIST-approved algorithms are used. SC-8(1) and SC-13 are
+         implemented in concert; SC-13 defines the cryptographic standards that
+         SC-8(1) applies to data in transit.
+
+  SC-17  (Public Key Infrastructure Certificates): Certificates used for TLS
+         authentication are issued in compliance with SC-17, using either the
+         Federal PKI (for external-facing systems) or the organization's internal
+         CA (for internal services).
+
+  SC-28(1) (Protection of Information at Rest | Cryptographic Protection):
+         Data at rest is protected separately by SC-28(1), which uses AES-256
+         encryption via FIPS-validated modules for all sensitive data stored
+         within the system's databases, file systems, and backup media. SC-8(1)
+         and SC-28(1) together provide end-to-end cryptographic coverage —
+         SC-8(1) covers data in motion; SC-28(1) covers data at rest. This
+         layered approach ensures no sensitive information exists in plaintext
+         at any point in its lifecycle within the authorization boundary.
+
+  AC-17  (Remote Access): Remote administrative access is encrypted per SC-8(1).
+         VPN tunnels use IKEv2/IPsec with AES-256 and SHA-384.
+
+  MA-4   (Nonlocal Maintenance): Maintenance sessions conducted remotely are
+         performed exclusively over encrypted channels (TLS 1.2/1.3 or SSH-2)
+         consistent with this control.
+
+  IA-3   (Device Identification and Authentication): mTLS client certificates
+         used for inter-service authentication are provisioned and managed
+         consistently with this control.
+
+7. CONFIGURATION MANAGEMENT INTEGRATION
+
+TLS configurations are treated as security-relevant configuration parameters
+(CM-6) and are:
+
+  - Documented in the system's approved baseline configuration (CM-2).
+  - Restricted from unauthorized modification through change control (CM-3).
+  - Scanned for compliance deviations via automated vulnerability scanning
+    tools (RA-5) and configuration compliance tools (CM-6, CM-7).
+  - Deviation from the approved TLS configuration generates a finding that is
+    tracked in the Plan of Action and Milestones (POA&M) if not remediated
+    within [30] days (consistent with RA-5 organizational parameters).
+
+8. CONTINUOUS MONITORING
+
+SC-8(1) implementation is verified on an ongoing basis through:
+
+  a. Automated TLS/SSL scanning: [Tool, e.g., Qualys SSL Labs Enterprise,
+     Tenable.io, AWS Security Hub] scans all externally and internally exposed
+     TLS endpoints [frequency: monthly minimum, or upon significant change].
+     Scans confirm:
+       - TLS 1.0 and 1.1 are not negotiable
+       - No weak or deprecated cipher suites are offered
+       - Certificate validity and chain of trust
+       - HSTS header presence (for HTTPS endpoints)
+
+  b. Web Application Vulnerability Scanning (RA-5): DAST scans include checks
+     for insecure protocol negotiation and certificate issues.
+
+  c. Penetration Testing (CA-8): Annual third-party penetration test includes
+     TLS configuration assessment as part of network and application testing.
+
+  d. SIEM Alerting: TLS handshake failures and anomalous cipher negotiation
+     attempts are logged and alerted via the SIEM (AU-2, AU-12, SI-4).
+
+--------------------------------------------------------------------------------
+RESPONSIBLE ROLES
+--------------------------------------------------------------------------------
+
+Role                              Responsibility
+--------------------------------- -----------------------------------------------
+Information System Owner (ISO)    Accountable for overall SC-8(1) compliance;
+                                  approves cryptographic standards deviations
+
+Information System Security       Authors and maintains this SSP narrative;
+Officer (ISSO)                    reviews TLS scan results; manages POA&M items
+                                  related to SC-8(1)
+
+System/Application Administrator  Implements and maintains TLS configuration on
+                                  application servers, load balancers, and APIs;
+                                  manages certificate renewals
+
+Network Security Engineer         Configures and maintains boundary protection
+                                  devices, load balancers, and VPN endpoints;
+                                  enforces TLS policy at network layer
+
+Cloud/Infrastructure Engineer     Maintains IaC templates enforcing TLS policy;
+                                  manages cloud service FIPS endpoint configuration
+
+Enterprise PKI Team               Issues, renews, and revokes certificates;
+                                  maintains CA infrastructure (SC-12, SC-17)
+
+Security Operations (SOC)         Monitors TLS-related alerts; responds to
+                                  certificate expiration alerts and anomalous
+                                  TLS events
+
+Third-Party Assessor (3PAO)       Assesses SC-8(1) implementation during annual
+                                  security assessment (CA-2) per SP 800-53A
+
+--------------------------------------------------------------------------------
+EVIDENCE AND ARTIFACTS
+--------------------------------------------------------------------------------
+
+The following artifacts are available to a 3PAO assessor for examination,
+interview, and test activities (per SP 800-53A Rev 5 assessment procedures):
+
+Artifact                                    Type        Location / Reference
+------------------------------------------- ----------- ---------------------------
+SC-8 / SC-8(1) Policy Statement             Examine     [Organization] Information
+                                                        Security Policy, Section [X]
+                                                        Version [X], dated [Date]
+
+TLS/SSL Configuration Standards             Examine     Network Security Standards
+Document                                                Document, Section [X]
+                                                        (approved [Date])
+
+System-Specific TLS Configuration           Examine     System Security Plan,
+Baseline (CM-2)                                         Appendix [X] — Baseline
+                                                        Configuration
+
+Load Balancer / Proxy TLS Config            Examine /   [IaC repo path] or [config
+(e.g., Nginx ssl.conf, ALB policy)          Test        file location]; confirms
+                                                        TLS 1.0/1.1 disabled
+
+TLS Scan Results (Qualys SSL / Tenable)     Examine /   [Artifact repository] —
+                                            Test        Most recent scan report,
+                                                        dated [Date]; A or A+ rating
+
+FIPS 140-2/3 CMVP Certificate References    Examine     NIST CMVP listing:
+                                                        https://csrc.nist.gov/projects/
+                                                        cryptographic-module-validation-
+                                                        program/validated-modules
+                                                        Certificate #[CMVP #]
+
+Certificate Inventory / Management          Examine     [Venafi / ACM / Vault]
+Records                                                 dashboard export, dated [Date]
+
+Penetration Test Report (Annual)            Examine     [3PAO Firm Name] Penetration
+                                                        Test Report, dated [Date],
+                                                        Section [X] — TLS Assessment
+
+SIEM Alert Configuration for TLS           Examine /   [SIEM Platform] alert rule
+Events                                      Interview   configuration, Rule ID [X]
+
+mTLS Configuration (inter-service)          Examine /   Service mesh configuration
+                                            Test        (e.g., Istio PeerAuthentication
+                                                        policy); demonstrates
+                                                        STRICT mode enforced
+
+Vulnerability Scan Results (RA-5)          Examine     [Scanning tool] output
+                                                        confirming no MEDIUM or HIGH
+                                                        TLS-related findings open
+
+Interview — ISSO / System Admin             Interview   Confirm awareness of TLS
+                                                        requirements; demonstrate
+                                                        configuration change process
+
+--------------------------------------------------------------------------------
+ASSESSOR NOTES — 3PAO ASSESSMENT GUIDANCE
+--------------------------------------------------------------------------------
+
+Assessment Method Mapping (per SP 800-53A Rev 5, SC-8(1)-1):
+
+  Examine:  SC-8(1) policy; procedures addressing transmission confidentiality
+            and integrity; system design documentation; system configuration
+            settings and associated documentation; system audit records; other
+            relevant documents or records.
+
+  Interview: Organizational personnel with information security responsibilities;
+             system/network administrators.
+
+  Test:     Mechanisms implementing transmission confidentiality and integrity
+            protection; FIPS-validated cryptographic mechanisms.
+
+Key Assessor Test Procedures:
+
+  1. Use SSL/TLS testing tool (e.g., testssl.sh, Qualys SSL Labs, nmap --script ssl*)
+     to verify that TLS 1.0 and TLS 1.1 are NOT negotiable on any in-scope
+     endpoint. A finding of TLS 1.0 or 1.1 being accepted = OTS finding.
+
+  2. Verify cipher suites offered do not include RC4, 3DES, NULL, EXPORT, or
+     any anonymous (aNULL) cipher suites.
+
+  3. Confirm that all cipher suites offered use ECDHE or DHE key exchange
+     (forward secrecy). RSA key exchange (non-ephemeral) = OTS finding.
+
+  4. Verify FIPS 140-2 or 140-3 CMVP certificate numbers are current and active
+     on the NIST CMVP website for all cryptographic modules in use.
+
+  5. Test at least three representative endpoints covering: (a) external
+     user-facing HTTPS, (b) API endpoint, (c) internal service-to-service path.
+
+  6. Review certificate attributes: key length, signature algorithm, validity
+     period, revocation mechanism. SHA-1 signatures = OTS finding.
+
+  7. Verify HTTP (port 80) is either disabled or redirects to HTTPS with HSTS.
+     HTTP accepted without redirect = OTS finding.
+
+  8. Review IaC or configuration management records to confirm TLS settings
+     are version-controlled and subject to change control (CM-3).
+
+  9. Confirm the SC-8(1) implementation links to SC-13 (only approved algorithms
+     used) and SC-28(1) (complementary at-rest encryption in place).
+
+  10. Verify there are no active POA&M items related to deprecated TLS versions
+      or weak cipher suites that have exceeded their scheduled completion date.
+
+--------------------------------------------------------------------------------
+ORGANIZATION-DEFINED VALUES (ODVs)
+--------------------------------------------------------------------------------
+
+  ODV Parameter                             Assigned Value
+  ----------------------------------------- ----------------------------------
+  Minimum TLS protocol version              TLS 1.2
+  Preferred TLS protocol version            TLS 1.3
+  Prohibited protocol versions              SSL v2, SSL v3, TLS 1.0, TLS 1.1
+  Minimum RSA key length                    2048 bits
+  Minimum ECC key length (curve)            256 bits (P-256 / secp256r1)
+  FIPS validation requirement               FIPS 140-2 or FIPS 140-3 (active
+                                            CMVP certificate required)
+  TLS scan frequency                        Monthly (or upon significant change)
+  Certificate maximum validity period       398 days (external); 825 days
+                                            (internal, per PKI policy)
+  OCSP/CRL checking                         Required for all certificate
+                                            validations
+
+--------------------------------------------------------------------------------
+REVISION HISTORY
+--------------------------------------------------------------------------------
+
+Version  Date        Author        Description
+-------- ----------- ------------- -------------------------------------------
+1.0      2026-05-07  [ISSO Name]   Initial narrative — SC-8(1) Moderate baseline
+                                   implementation; TLS 1.2/1.3, FIPS 140-2/3,
+                                   SC-13 and SC-28(1) linkage documented.
+
+--------------------------------------------------------------------------------
+REFERENCES
+--------------------------------------------------------------------------------
+
+  - NIST SP 800-53 Rev 5, SC-8 and SC-8(1) — Transmission Confidentiality
+    and Integrity | Cryptographic Protection (September 2020)
+  - NIST SP 800-53B — Control Baselines for Information Systems and
+    Organizations (October 2020)
+  - NIST SP 800-53A Rev 5 — Assessing Security and Privacy Controls
+    (January 2022) — SC-8(1) assessment procedures
+  - NIST SP 800-52 Rev 2 — Guidelines for TLS Implementations (August 2019)
+    [TLS 1.0/1.1 deprecated; TLS 1.3 recommended]
+  - NIST SP 800-175B Rev 1 — Guideline for Using Cryptographic Standards
+    in the Federal Government: Cryptographic Mechanisms (March 2020)
+  - FIPS 140-2 / FIPS 140-3 — Security Requirements for Cryptographic Modules
+  - FIPS 199 — Standards for Security Categorization of Federal Information
+    and Information Systems
+  - FIPS 200 — Minimum Security Requirements for Federal Information Systems
+  - RFC 8996 — Deprecating TLS 1.0 and TLS 1.1 (March 2021)
+  - RFC 7568 — Deprecating Secure Sockets Layer Version 3.0 (June 2015)
+  - OMB M-22-09 — Moving the US Government Toward Zero Trust Cybersecurity
+    Principles (January 2022)
+  - NIST CMVP — Cryptographic Module Validation Program:
+    https://csrc.nist.gov/projects/cryptographic-module-validation-program
+
+================================================================================
+END OF SC-8(1) CONTROL NARRATIVE
+================================================================================

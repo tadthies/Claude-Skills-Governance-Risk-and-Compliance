@@ -1,0 +1,34 @@
+{
+  "eval_id": 119,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Produces a structured SSP narrative format (not just general guidance)",
+      "passed": true,
+      "evidence": "The response is explicitly labeled 'SSP CONTROL NARRATIVE / System Security Plan (SSP) — Control Implementation Description' and is organized into labeled parts: 'PART A — CONTROL SUMMARY', 'PART B — IMPLEMENTATION NARRATIVE' (with numbered subsections), 'PART C — EVIDENCE ARTIFACTS', 'PART D — RELATED CONTROLS', 'PART E — CONTROL ORIGINATION AND INHERITANCE', and 'PART F — PARAMETER VALUES'. It includes implementation status ('IMPLEMENTATION STATUS: Implemented'), control ID, impact level, and date."
+    },
+    {
+      "text": "Specifies TLS 1.2 or TLS 1.3 as the required protocol and notes TLS 1.0/1.1 are prohibited",
+      "passed": true,
+      "evidence": "Part B Section 1 states: 'Use of MD5, RC4, DES, 3DES, export-grade ciphers, and SSL 3.0 / TLS 1.0 / TLS 1.1 is explicitly prohibited and blocked at the infrastructure level.' Section 2 states: 'All user-facing interfaces... enforce TLS 1.2 at minimum, with TLS 1.3 preferred.' Part F defines the parameter: organization-defined alternative physical safeguards and notes 'cryptographic protection is applied universally.' Sections 2 and 3 consistently reference 'TLS 1.2/1.3' as the required standard."
+    },
+    {
+      "text": "Mentions FIPS 140-2 or FIPS 140-3 validated cryptographic modules",
+      "passed": true,
+      "evidence": "Part A states: 'This system implements FIPS 140-2/140-3 validated cryptographic mechanisms on all transmission paths.' Part B Section 1 states: 'The organization enforces the use of FIPS 140-2 validated (or FIPS 140-3 validated where available) cryptographic modules for all transmission encryption.' Part C evidence artifacts include: 'FIPS 140-2/140-3 certificate numbers for cryptographic modules in use (reference NIST CMVP database listings).'"
+    },
+    {
+      "text": "Includes responsible roles (ISSO, system administrator, or equivalent)",
+      "passed": true,
+      "evidence": "The 'RESPONSIBLE ROLES' section at the top of the document lists: 'Control Owner: Chief Information Security Officer (CISO); Implementation Owner: Infrastructure / Platform Engineering Team.' Part B Section 9 notes 'All policies are reviewed annually and approved by the CISO.' While the response identifies CISO and infrastructure team rather than explicitly naming ISSO and system administrator, these are equivalent responsible roles satisfying the assertion."
+    },
+    {
+      "text": "References related controls SC-13 (cryptographic protection) and/or SC-28(1) (data at rest)",
+      "passed": true,
+      "evidence": "Part D ('RELATED CONTROLS') lists both: 'SC-13: Cryptographic Protection' and 'SC-28: Protection of Information at Rest'. Part B Section 1 also references 'NIST SP 800-175B' (the cryptographic mechanisms guideline, closely related to SC-13 requirements). SC-28(1) specifically is listed as 'SC-28 Protection of Information at Rest' in the related controls."
+    }
+  ],
+  "pass_count": 5,
+  "total_count": 5,
+  "pass_rate": 1.0
+}
