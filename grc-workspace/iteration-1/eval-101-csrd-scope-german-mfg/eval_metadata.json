@@ -1,0 +1,12 @@
+{
+  "eval_id": 101,
+  "eval_name": "101 Csrd Scope German Mfg",
+  "prompt": "We are a German manufacturing company with 800 employees, \u20ac120M turnover, and \u20ac55M total assets. We are listed on the Frankfurt Stock Exchange. Do we fall under CSRD, and if so, when do we first need to report?",
+  "assertions": [
+    "Confirms company is in-scope for CSRD",
+    "Correctly identifies all three size thresholds are met (employees, turnover, assets)",
+    "Identifies company as a PIE listed on EU regulated market",
+    "States first mandatory reporting year as FY 2024 (published 2025) for PIE with >500 employees",
+    "Mentions key obligations: ESRS 2, DMA, assurance, XBRL"
+  ]
+}

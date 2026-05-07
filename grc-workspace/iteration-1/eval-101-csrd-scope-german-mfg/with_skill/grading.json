@@ -1,0 +1,34 @@
+{
+  "eval_id": 101,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Confirms company is in-scope for CSRD",
+      "passed": true,
+      "evidence": "Explicitly states \"The company falls under CSRD\""
+    },
+    {
+      "text": "Correctly identifies all three size thresholds are met (employees, turnover, assets)",
+      "passed": true,
+      "evidence": "Lists all three: 800 employees (>250), \u20ac120M turnover (>\u20ac40M), \u20ac55M assets (>\u20ac20M)"
+    },
+    {
+      "text": "Identifies company as a PIE listed on EU regulated market",
+      "passed": true,
+      "evidence": "Correctly identifies Frankfurt Stock Exchange as EU regulated market and PIE status"
+    },
+    {
+      "text": "States first mandatory reporting year as FY 2024 (published 2025) for PIE with >500 employees",
+      "passed": true,
+      "evidence": "States \"First Reporting Year: FY 2024, published in 2025\" as Wave 1"
+    },
+    {
+      "text": "Mentions key obligations: ESRS 2, DMA, assurance, XBRL",
+      "passed": true,
+      "evidence": "Lists ESRS 2, DMA, Art. 26a limited assurance, XBRL/iXBRL, management report location"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "pass_rate": 1.0
+}

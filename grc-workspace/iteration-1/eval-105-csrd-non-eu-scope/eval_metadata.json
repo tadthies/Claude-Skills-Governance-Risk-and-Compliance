@@ -1,0 +1,12 @@
+{
+  "eval_id": 105,
+  "eval_name": "105 Csrd Non Eu Scope",
+  "prompt": "We are a US-headquartered technology company with \u20ac200M in EU revenue from our German and French subsidiaries combined. The German subsidiary has 600 employees and is not listed. Does CSRD apply to us as a non-EU company, and what do we need to do?",
+  "assertions": [
+    "Confirms CSRD applies citing non-EU company threshold (>\u20ac150M EU turnover)",
+    "Identifies German subsidiary qualifies as a large EU company",
+    "States first mandatory reporting year is FY 2028 (published 2029)",
+    "Explains EU subsidiary must file ESRS-compliant reports",
+    "Notes equivalence condition \u2014 US frameworks not yet recognised as equivalent"
+  ]
+}

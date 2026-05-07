@@ -1,0 +1,34 @@
+{
+  "eval_id": 105,
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Confirms CSRD applies citing non-EU company threshold (>\u20ac150M EU turnover)",
+      "passed": true,
+      "evidence": "Confirms CSRD applies to non-EU parent citing \u20ac150M threshold"
+    },
+    {
+      "text": "Identifies German subsidiary qualifies as a large EU company",
+      "passed": true,
+      "evidence": "Identifies German subsidiary as large with 600 employees"
+    },
+    {
+      "text": "States first mandatory reporting year is FY 2028 (published 2029)",
+      "passed": false,
+      "evidence": "Incorrectly suggests German subsidiary reports starting FY2025 (confusing subsidiary vs parent obligation)"
+    },
+    {
+      "text": "Explains EU subsidiary must file ESRS-compliant reports",
+      "passed": true,
+      "evidence": "Correctly explains subsidiaries must file under CSRD"
+    },
+    {
+      "text": "Notes equivalence condition \u2014 US frameworks not yet recognised as equivalent",
+      "passed": false,
+      "evidence": "Does not address equivalence status of US frameworks"
+    }
+  ],
+  "passed": 3,
+  "total": 5,
+  "pass_rate": 0.6
+}

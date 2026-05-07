@@ -1,0 +1,34 @@
+{
+  "eval_id": 103,
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Confirms ESRS 2 General Disclosures are mandatory regardless of DMA",
+      "passed": true,
+      "evidence": "Correctly identifies ESRS 2 as mandatory regardless of DMA"
+    },
+    {
+      "text": "Lists key E1 disclosures including Scope 1/2/3 GHG and transition plan (E1-1)",
+      "passed": true,
+      "evidence": "Lists Scope 1/2/3 GHG, transition plan, scenario analysis for E1"
+    },
+    {
+      "text": "Notes E1-1 transition plan is legally required under Art. 19a even if climate were non-material",
+      "passed": false,
+      "evidence": "Does not specifically note transition plan is required even if E1 were non-material under Art. 19a(2)(a)"
+    },
+    {
+      "text": "Lists key S1 disclosures including gender pay gap and LTIFR",
+      "passed": true,
+      "evidence": "Lists gender pay gap, LTIFR, CEO pay ratio for S1"
+    },
+    {
+      "text": "States non-material topics require a materiality statement but not full disclosure",
+      "passed": true,
+      "evidence": "Notes non-material topics need exclusion rationale documented"
+    }
+  ],
+  "passed": 4,
+  "total": 5,
+  "pass_rate": 0.8
+}

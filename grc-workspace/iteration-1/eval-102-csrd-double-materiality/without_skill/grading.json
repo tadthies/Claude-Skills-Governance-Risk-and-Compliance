@@ -1,0 +1,34 @@
+{
+  "eval_id": 102,
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Explains both impact materiality (inside-out) and financial materiality (outside-in)",
+      "passed": true,
+      "evidence": "Explains both financial-in and impact-out perspectives correctly"
+    },
+    {
+      "text": "Correctly states a topic is material if it meets EITHER criterion",
+      "passed": true,
+      "evidence": "States OR logic correctly"
+    },
+    {
+      "text": "Contrasts GRI (impact only) and TCFD (financial only) vs CSRD (both)",
+      "passed": true,
+      "evidence": "Correctly contrasts GRI and TCFD with CSRD"
+    },
+    {
+      "text": "Provides step-by-step DMA process with ESRS 1 reference",
+      "passed": true,
+      "evidence": "Provides 8-step DMA process but without ESRS article citations"
+    },
+    {
+      "text": "Mentions scale, scope, irremediability criteria for impact assessment",
+      "passed": false,
+      "evidence": "Mentions severity and likelihood but does not specify Scale/Scope/Irremediability formula"
+    }
+  ],
+  "passed": 4,
+  "total": 5,
+  "pass_rate": 0.8
+}

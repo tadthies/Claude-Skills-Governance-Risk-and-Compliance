@@ -1,0 +1,12 @@
+{
+  "eval_id": 103,
+  "eval_name": "103 Csrd Disclosure Requirements",
+  "prompt": "Our company has completed our double materiality assessment. Climate change (ESRS E1), own workforce (ESRS S1), and business conduct (ESRS G1) came out as material. What do we actually need to disclose under CSRD?",
+  "assertions": [
+    "Confirms ESRS 2 General Disclosures are mandatory regardless of DMA",
+    "Lists key E1 disclosures including Scope 1/2/3 GHG and transition plan (E1-1)",
+    "Notes E1-1 transition plan is legally required under Art. 19a even if climate were non-material",
+    "Lists key S1 disclosures including gender pay gap and LTIFR",
+    "States non-material topics require a materiality statement but not full disclosure"
+  ]
+}

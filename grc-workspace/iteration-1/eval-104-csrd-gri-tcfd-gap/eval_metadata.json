@@ -1,0 +1,12 @@
+{
+  "eval_id": 104,
+  "eval_name": "104 Csrd Gri Tcfd Gap",
+  "prompt": "We currently report under GRI Standards and have a TCFD report. How much work is it to transition to CSRD/ESRS? What gaps are we likely to have?",
+  "assertions": [
+    "Acknowledges GRI and TCFD as a strong foundation (not starting from scratch)",
+    "Identifies double materiality as a key structural gap (GRI=impact only, TCFD=financial/climate only)",
+    "Identifies Scope 3 completeness (all 15 categories) as a likely gap",
+    "Identifies mandatory limited assurance as a new requirement",
+    "References ESRS 1 Appendix C or GRI interoperability mapping"
+  ]
+}

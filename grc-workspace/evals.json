@@ -1386,6 +1386,41 @@
       "prompt": "We are expanding our Brazilian operations and want to transfer customer data to our parent company servers in the United States. The US has no LGPD adequacy decision. What transfer mechanisms are available and what do we need to implement?",
       "expected_output": "Explains ANPD has not issued US adequacy decision (Art. 34). Available mechanisms: standard contractual clauses (Art. 35 \u2014 note ANPD has not published standard clauses yet so specific clauses must ensure adequate protection); binding corporate rules (Art. 35, I); specific data subject consent for the transfer (Art. 33, VIII); ANPD case-by-case authorisation (Art. 33, IX). Recommends BCRs or specific contractual clauses for intragroup transfer. Notes ongoing ANPD regulatory development.",
       "files": []
+    },
+    {
+      "id": 101,
+      "skill": "csrd",
+      "prompt": "We are a German manufacturing company with 800 employees, \u20ac120M turnover, and \u20ac55M total assets. We are listed on the Frankfurt Stock Exchange. Do we fall under CSRD, and if so, when do we first need to report?",
+      "expected_output": "Identifies the company as in-scope for CSRD as a large company (\u22652 of 3 thresholds: >250 employees \u2713, >\u20ac40M turnover \u2713, >\u20ac20M assets \u2713) and listed, but not a PIE with >500 employees. Correctly concludes first mandatory reporting year is FY 2025 (report published in 2026). Notes the PIE/non-PIE distinction and that listed SME rules do not apply.",
+      "files": []
+    },
+    {
+      "id": 102,
+      "skill": "csrd",
+      "prompt": "Explain the concept of double materiality under CSRD. How is it different from how materiality works under GRI or TCFD? Walk me through how a company should conduct a double materiality assessment.",
+      "expected_output": "Clear explanation of both lenses \u2014 impact materiality (inside-out: effects on people/environment) and financial materiality (outside-in: risks/opportunities for the company). Explains that GRI uses impact materiality only and TCFD uses financial materiality only. Provides step-by-step DMA process referencing ESRS 1 (context, impact identification, significance scoring, financial risk/opportunity assessment, materiality determination, documentation). Mentions scale, scope, irremediability criteria.",
+      "files": []
+    },
+    {
+      "id": 103,
+      "skill": "csrd",
+      "prompt": "Our company has completed our double materiality assessment. Climate change (ESRS E1), own workforce (ESRS S1), and business conduct (ESRS G1) came out as material. Pollution, water, biodiversity, circular economy, value chain workers, communities, and consumers were all assessed as non-material. What do we actually need to disclose under CSRD?",
+      "expected_output": "Correctly identifies that ESRS 2 (General Disclosures) is mandatory regardless. Then lists the specific E1, S1, and G1 disclosure requirements that apply. Notes that E1-1 (transition plan) is legally required even if somehow E1 were non-material. Notes that non-material topics require only a brief materiality statement. Provides key datapoints for E1 (GHG Scope 1/2/3, energy, transition plan), S1 (headcount, pay gap, LTIFR, collective bargaining), G1 (anti-corruption, payment practices).",
+      "files": []
+    },
+    {
+      "id": 104,
+      "skill": "csrd",
+      "prompt": "We currently report under GRI Standards and have a TCFD report. How much work is it to transition to CSRD/ESRS? What gaps are we likely to have?",
+      "expected_output": "Acknowledges the strong foundation from GRI (especially on impact topics) and TCFD (especially on climate financial risks). Identifies likely gaps: Scope 3 GHG emissions (all 15 categories \u2014 required by ESRS E1 if material), transition plan (ESRS E1-1), digital XBRL tagging, limited assurance requirement, double materiality assessment (GRI uses impact only, TCFD uses financial only \u2014 need both), value chain data, gender pay gap (ESRS S1-16), mandatory placement in management report. References ESRS 1 Appendix C GRI interoperability.",
+      "files": []
+    },
+    {
+      "id": 105,
+      "skill": "csrd",
+      "prompt": "We are a US-headquartered technology company with \u20ac200M in EU revenue from our German and French subsidiaries combined. The German subsidiary has 600 employees and is not listed. Does CSRD apply to us as a non-EU company, and what do we need to do?",
+      "expected_output": "Confirms CSRD applies to non-EU companies with >\u20ac150M net EU turnover and at least one EU subsidiary that qualifies (large company or listed). The German subsidiary has 600 employees and likely meets the large company thresholds \u2014 so yes, CSRD applies. First mandatory reporting year is FY 2028 (reporting in 2029). Explains the group-level sustainability report obligation. Notes that the non-EU parent must produce the CSRD report or can rely on an equivalent third-country standard if the Commission grants equivalence.",
+      "files": []
     }
   ]
 }

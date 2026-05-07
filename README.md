@@ -1,11 +1,11 @@
 # Claude Skills for Governance, Risk & Compliance (GRC)
-Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), and Brazil's LGPD (Lei Geral de Proteção de Dados) — powered by Claude Skills.
+Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), Brazil's LGPD (Lei Geral de Proteção de Dados), and EU CSRD (Corporate Sustainability Reporting Directive) — powered by Claude Skills.
 
-Benchmarked across 100 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **96%** vs a baseline of **81%** across 500 total assertions.
+Benchmarked across 105 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **96%** vs a baseline of **81%** across 525 total assertions.
 
 [![Release: v0.8.0](https://img.shields.io/badge/Release-v0.8.0-brightgreen.svg)](../../releases/tag/v0.8.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills: 20](https://img.shields.io/badge/Skills-20-green.svg)](#the-skills)
+[![Skills: 21](https://img.shields.io/badge/Skills-21-green.svg)](#the-skills)
 [![Built with Claude](https://img.shields.io/badge/Built%20with-Claude-orange.svg)](https://claude.ai)
 [![GitHub Stars](https://img.shields.io/github/stars/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance?style=flat&label=Stars&color=gold)](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance)
 
@@ -36,6 +36,7 @@ Benchmarked across 100 test cases (5 per framework) using the eval framework —
   - [CCPA/CPRA California Privacy](#-ccpacpra-california-privacy)
   - [ITAR — International Traffic in Arms Regulations](#-itar--international-traffic-in-arms-regulations)
   - [LGPD — Brazil's General Data Protection Law](#-lgpd--brazils-general-data-protection-law)
+  - [CSRD — EU Corporate Sustainability Reporting Directive](#-csrd--eu-corporate-sustainability-reporting-directive)
 - [Potential Use Cases](#potential-use-cases)
 - [How to Install a Skill](#how-to-install-a-skill)
 - [Install via Claude Code Marketplace](#install-via-claude-code-marketplace)
@@ -474,6 +475,27 @@ The LGPD skill turns Claude into an expert advisor on **Brazil's Lei Geral de Pr
 
 ---
 
+### 21. <img src="assets/Logos/csrd-eu.svg" alt="EU" height="20" style="vertical-align:middle;object-fit:contain;"> CSRD [EU] — Corporate Sustainability Reporting Directive
+
+**File:** `CSRD - Claude Skill/csrd.skill`
+
+The CSRD skill turns Claude into an expert advisor on **EU Directive 2022/2464 (CSRD)**, which requires approximately 50,000 companies to disclose detailed environmental, social, and governance (ESG) information under the **European Sustainability Reporting Standards (ESRS)**. CSRD came into force on 5 January 2023 and replaces the Non-Financial Reporting Directive (NFRD).
+
+- Determines **CSRD scope and first reporting year** — analyses PIE (>500 employees), large company, listed SME, and non-EU company (>€150M EU turnover) thresholds across all four cohorts (FY 2024–2028)
+- Guides the **Double Materiality Assessment (DMA)** — ESRS 1 step-by-step process covering impact materiality (scale, scope, irremediability) and financial materiality (risks and opportunities), with scoring templates
+- Produces **CSRD gap assessments** — maps current GRI/TCFD/CDP/SASB disclosures to mandatory ESRS datapoints and identifies priority gaps
+- Drafts **ESRS disclosures** — ESRS 2 General Disclosures (GOV-1 to GOV-5, SBM-1 to SBM-3, IRO-1) and all topical standards (E1–E5, S1–S4, G1) for material topics
+- Advises on **ESRS E1 Climate Change** — Scope 1, 2, and all 15 Scope 3 GHG emission categories, transition plan (Art. 19a(2)(a)), EU Taxonomy alignment, physical and transition risk financial effects
+- Supports **ESRS S1 Own Workforce** disclosures — gender pay gap, CEO pay ratio, LTIFR, collective bargaining coverage, health & safety management systems
+- Designs **Scope 3 GHG emissions programmes** — category prioritisation matrix, data collection methods (CDP Supply Chain, spend-based, supplier surveys), proxy methodology disclosure
+- Plans **assurance readiness** — limited assurance requirements under Art. 26a, documentation standards, transition to reasonable assurance post-2028
+- Advises on **XBRL/iXBRL digital tagging** requirements under ESEF and management report placement obligations
+- Provides **CSRD vs GRI/TCFD/SASB/CDP comparison** — framework interoperability, Appendix C mapping, and gap identification for existing reporters
+
+**Trigger phrases:** `CSRD`, `Corporate Sustainability Reporting Directive`, `ESRS`, `double materiality`, `double materiality assessment`, `DMA`, `ESG reporting Europe`, `sustainability disclosure EU`, `non-financial reporting`, `ESRS E1`, `ESRS S1`, `ESRS G1`, `Scope 3 CSRD`, `transition plan ESRS`, `CSRD gap assessment`, `CSRD scope`, `EU sustainability reporting`, `ESRS assurance`, `XBRL sustainability`, `CSRD vs GRI`, `CSRD vs TCFD`, `EU Taxonomy CSRD`, `NFRD CSRD`, `ESRS materiality`
+
+---
+
 ## Potential Use Cases
 
 | Scenario | Relevant Skill(s) |
@@ -630,6 +652,7 @@ The LGPD skill turns Claude into an expert advisor on **Brazil's Lei Geral de Pr
    | <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" alt="CA" height="16" style="vertical-align:middle;"> CCPA/CPRA [California] Privacy | [ccpa.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/CCPA%20-%20Claude%20Skill/ccpa.skill) |
    | <img src="assets/Logos/itar.jpg" alt="ITAR" height="20" style="vertical-align:middle;object-fit:contain;"> ITAR [US] — International Traffic in Arms Regulations | [itar.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/ITAR%20-%20Claude%20Skill/itar.skill) |
    | <img src="assets/Logos/lgpd-brazil.svg" alt="Brazil" height="20" style="vertical-align:middle;object-fit:contain;"> LGPD [Brazil] — General Data Protection Law | [lgpd.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/LGPD%20-%20Claude%20Skill/lgpd.skill) |
+   | <img src="assets/Logos/csrd-eu.svg" alt="EU" height="20" style="vertical-align:middle;object-fit:contain;"> CSRD [EU] — Corporate Sustainability Reporting Directive | [csrd.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/CSRD%20-%20Claude%20Skill/csrd.skill) |
 
 2. Open Claude and navigate to **Customize → Skills**.
 3. Click **Upload Skill** and select the `.skill` file.
@@ -649,7 +672,7 @@ Add the marketplace and install the skills you need directly from the terminal:
 
 ```shell
 /plugin marketplace add Sushegaad/Claude-Skills-Governance-Risk-and-Compliance
-/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills nis2@grc-skills ccpa@grc-skills itar@grc-skills lgpd@grc-skills
+/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills nis2@grc-skills ccpa@grc-skills itar@grc-skills lgpd@grc-skills csrd@grc-skills
 ```
 
 Teams can pre-wire the marketplace in `.claude/settings.json` so every developer gets the skills automatically when they open the project — no manual install required.
@@ -660,13 +683,13 @@ Teams can pre-wire the marketplace in `.claude/settings.json` so every developer
 
 ## Skill Evaluation
 
-These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **100 realistic test cases** were run across all 20 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
+These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **105 realistic test cases** were run across all 21 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
 
 | Configuration | Pass Rate | Assertions Passed |
 |---------------|-----------|-------------------|
-| **With GRC Skills installed** | **96%** | **478 / 500** |
-| Without skills (baseline Claude) | 81% | 407 / 500 |
-| **Delta** | **+15 points** | **+71 assertions** |
+| **With GRC Skills installed** | **96%** | **503 / 525** |
+| Without skills (baseline Claude) | 81% | 425 / 525 |
+| **Delta** | **+15 points** | **+78 assertions** |
 
 ### Per-Skill Results
 
@@ -692,6 +715,7 @@ These skills were benchmarked using the [Claude Skill Creator](https://claude.ai
 | CCPA/CPRA [California] | 5 | **100%** | 96% | +4% | E-commerce threshold analysis; Combined right-to-know and delete workflow; Ad tech sale vs sharing classification; GDPR-to-CCPA gap analysis; SPI classification for mobile app |
 | ITAR [US] | 5 | **100%** | 100% | 0% | USML jurisdiction analysis for military laptops; Deemed export for German engineer; DSP-73 temporary export for trade show; Violation and VSD process; TAA mandatory clauses for India |
 | LGPD [Brazil] | 5 | **100%** | 80% | +20% | Extraterritorial scope for US SaaS with Brazilian customers; Data deletion request across CRM/email/analytics; Sensitive health data marketing restrictions; Breach notification timelines (3 working days vs GDPR 72h); International transfer mechanisms to the US |
+| CSRD [EU] | 5 | **100%** | 72% | +28% | CSRD scope analysis for German listed manufacturer (PIE Wave 1); Double materiality vs GRI/TCFD; Post-DMA disclosure requirements for E1/S1/G1; GRI+TCFD to ESRS gap assessment; Non-EU company (US parent, €200M EU revenue) obligations |
 
 📊 **[View the full eval results →](grc-skills-eval-results.html)**
 

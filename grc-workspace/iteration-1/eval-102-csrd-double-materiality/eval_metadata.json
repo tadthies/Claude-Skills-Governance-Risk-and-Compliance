@@ -1,0 +1,12 @@
+{
+  "eval_id": 102,
+  "eval_name": "102 Csrd Double Materiality",
+  "prompt": "Explain the concept of double materiality under CSRD. How is it different from how materiality works under GRI or TCFD? Walk me through how a company should conduct a double materiality assessment.",
+  "assertions": [
+    "Explains both impact materiality (inside-out) and financial materiality (outside-in)",
+    "Correctly states a topic is material if it meets EITHER criterion",
+    "Contrasts GRI (impact only) and TCFD (financial only) vs CSRD (both)",
+    "Provides step-by-step DMA process with ESRS 1 reference",
+    "Mentions scale, scope, irremediability criteria for impact assessment"
+  ]
+}

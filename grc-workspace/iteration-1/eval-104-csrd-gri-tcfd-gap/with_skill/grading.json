@@ -1,0 +1,34 @@
+{
+  "eval_id": 104,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Acknowledges GRI and TCFD as a strong foundation (not starting from scratch)",
+      "passed": true,
+      "evidence": "States \"GRI and TCFD provide a meaningful foundation\" and 12-18 months transition"
+    },
+    {
+      "text": "Identifies double materiality as a key structural gap (GRI=impact only, TCFD=financial/climate only)",
+      "passed": true,
+      "evidence": "Identifies double materiality as critical structural gap with GRI/TCFD comparison"
+    },
+    {
+      "text": "Identifies Scope 3 completeness (all 15 categories) as a likely gap",
+      "passed": true,
+      "evidence": "Lists Scope 3 all 15 categories as critical gap for E1"
+    },
+    {
+      "text": "Identifies mandatory limited assurance as a new requirement",
+      "passed": true,
+      "evidence": "States mandatory assurance under Art. 26a as new requirement not in GRI/TCFD"
+    },
+    {
+      "text": "References ESRS 1 Appendix C or GRI interoperability mapping",
+      "passed": true,
+      "evidence": "References \"ESRS 1 Appendix C explicitly maps GRI disclosures to ESRS datapoints\""
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "pass_rate": 1.0
+}
