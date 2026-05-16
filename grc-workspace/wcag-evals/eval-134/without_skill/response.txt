@@ -1,0 +1,94 @@
+WCAG Version and Conformance Level Requirements by Region
+For a SaaS company selling to government agencies and private sector businesses in the US, EU, and UK
+
+=============================================================
+UNITED STATES
+=============================================================
+
+Government Customers:
+- Applicable Law: Section 508 of the Rehabilitation Act (29 U.S.C. § 794d), as revised in 2017
+- Required Standard: WCAG 2.0, Level AA (incorporated by reference into the Revised Section 508 Standards)
+- Who It Applies To: Federal agencies and any vendors/contractors providing electronic and information technology (EIT) to federal agencies
+- Important Note: As a SaaS vendor selling to US federal agencies, your product must meet Section 508, which maps to WCAG 2.0 AA. Many states also have their own accessibility laws that mirror Section 508 or go further.
+- Trend: The Access Board has signaled intent to update Section 508 to reference WCAG 2.1 or 2.2, but as of 2026 the legal baseline remains WCAG 2.0 AA.
+
+Private Sector Customers:
+- Applicable Law: Americans with Disabilities Act (ADA), Titles II and III
+- Required Standard: No explicit WCAG version is written into the ADA statute, but the DOJ has issued rules (effective April 2026 for larger entities) requiring WCAG 2.1, Level AA for state and local government websites and web content (Title II).
+- For Title III (private businesses open to the public): Courts and the DOJ consistently treat WCAG 2.1 AA as the de facto standard based on DOJ guidance and litigation outcomes.
+- Practical Recommendation: Target WCAG 2.1 AA at a minimum for all US customers to satisfy both Section 508 and ADA obligations.
+
+=============================================================
+EUROPEAN UNION
+=============================================================
+
+Government Customers:
+- Applicable Law: EU Web Accessibility Directive (Directive 2016/2102) and the European Accessibility Act (EAA, Directive 2019/882)
+- Required Standard: EN 301 549 (the harmonized European standard), which currently references WCAG 2.1, Level AA
+- Who It Applies To:
+  * Web Accessibility Directive: Public sector bodies (government websites and mobile apps) — already in force
+  * European Accessibility Act (EAA): Broader scope covering private sector products and services including SaaS, with compliance required by June 28, 2025
+- Conformance Level: WCAG 2.1, Level AA (via EN 301 549 v3.2.1 or later)
+
+Private Sector Customers:
+- Applicable Law: European Accessibility Act (EAA), transposed into national law by each EU member state
+- Required Standard: WCAG 2.1, Level AA (via EN 301 549)
+- Effective Date: June 28, 2025 — private sector companies must comply
+- Scope: The EAA covers a wide range of digital services and products, including SaaS platforms used by consumers and businesses
+- Note: Individual EU member states may have additional national accessibility requirements that go beyond the EAA baseline.
+
+=============================================================
+UNITED KINGDOM
+=============================================================
+
+Government Customers:
+- Applicable Law: Public Sector Bodies (Websites and Mobile Applications) Accessibility Regulations 2018 (SI 2018/952), implementing the EU Web Accessibility Directive post-Brexit
+- Required Standard: WCAG 2.1, Level AA
+- Who It Applies To: UK public sector bodies and vendors providing digital services to them
+- Enforcement: The Government Digital Service (GDS) and Equality and Human Rights Commission (EHRC) oversee compliance
+
+Private Sector Customers:
+- Applicable Law: Equality Act 2010 (the UK equivalent of the ADA)
+- Required Standard: No explicit WCAG version mandated in statute, but WCAG 2.1 AA is the recognized benchmark used by courts and the EHRC
+- Practical Recommendation: Target WCAG 2.1 AA to meet both public sector regulations and Equality Act obligations
+
+=============================================================
+SUMMARY TABLE
+=============================================================
+
+Region       | Customer Type    | Law/Regulation              | Required WCAG Version & Level
+-------------|------------------|-----------------------------|------------------------------
+US           | Government       | Section 508                 | WCAG 2.0, Level AA (minimum); WCAG 2.1 AA recommended
+US           | Private Sector   | ADA (Titles II & III)       | WCAG 2.1, Level AA (de facto standard)
+EU           | Government       | Web Accessibility Directive | WCAG 2.1, Level AA (via EN 301 549)
+EU           | Private Sector   | European Accessibility Act  | WCAG 2.1, Level AA (via EN 301 549), effective June 28, 2025
+UK           | Government       | Public Sector Bodies Regs   | WCAG 2.1, Level AA
+UK           | Private Sector   | Equality Act 2010           | WCAG 2.1, Level AA (de facto standard)
+
+=============================================================
+PRACTICAL RECOMMENDATION
+=============================================================
+
+To meet legal compliance across all three regions and both customer types, you should target:
+
+  >> WCAG 2.1, Level AA <<
+
+This single standard satisfies:
+- Section 508 (US federal government) — which legally requires WCAG 2.0 AA but WCAG 2.1 AA is a superset
+- ADA requirements (US private sector)
+- EN 301 549 / EU Web Accessibility Directive (EU government)
+- European Accessibility Act (EU private sector)
+- UK Public Sector Bodies Regulations (UK government)
+- UK Equality Act (UK private sector)
+
+Additional Considerations:
+1. WCAG 2.2: Released in October 2023, WCAG 2.2 adds new success criteria (notably around focus indicators and dragging movements). While not yet legally mandated in most jurisdictions, it is best practice and will likely become the legal baseline over time. Consider planning for WCAG 2.2 AA compliance.
+2. VPAT/ACR: For US government sales, prepare a Voluntary Product Accessibility Template (VPAT) or Accessibility Conformance Report (ACR) documenting your conformance with Section 508 / WCAG 2.1 AA.
+3. Accessibility Statements: EU and UK public sector regulations require a published accessibility statement. This is recommended best practice for all customer-facing products.
+4. WCAG 3.0: Still in development and not yet a legal requirement. Do not use WCAG 3.0 as your compliance baseline at this time.
+
+=============================================================
+IMPORTANT DISCLAIMER
+=============================================================
+
+This response reflects general knowledge as of May 2026 and is intended for informational purposes only. It does not constitute legal advice. Accessibility laws are evolving — particularly the EAA's national implementations and potential US Section 508 updates. Consult a qualified accessibility attorney or compliance specialist for advice specific to your products, customers, and jurisdictions.

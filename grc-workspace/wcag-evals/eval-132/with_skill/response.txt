@@ -1,0 +1,470 @@
+WCAG 2.1 AA to WCAG 2.2 AA Upgrade: New Success Criteria Analysis
+=================================================================
+Date: 2026-05-16
+Reference: WCAG 2.2 (W3C Recommendation, October 2023)
+
+OVERVIEW
+--------
+WCAG 2.2 is a backward-compatible extension of WCAG 2.1. If you currently conform to
+WCAG 2.1 AA, you must meet nine new success criteria to claim WCAG 2.2 AA conformance.
+Additionally, one criterion from WCAG 2.1 (SC 4.1.1 Parsing) was removed in WCAG 2.2.
+
+The new criteria span both Level A and Level AA. All Level A criteria are also required
+for AA conformance, so every new SC listed below applies to a WCAG 2.2 AA claim.
+
+
+REMOVED CRITERION IN WCAG 2.2
+------------------------------
+SC 4.1.1 Parsing (Level A) - REMOVED
+
+This criterion required that HTML/XML markup have no duplicate attributes, properly
+nested elements, unique IDs (except where permitted by spec), and complete start/end
+tags. It was removed because modern browsers handle markup errors gracefully and
+consistently, making the criterion effectively untestable and redundant with browser
+behavior. Assistive technologies now rely on the browser's DOM rather than raw markup,
+so the original rationale no longer applies.
+
+ACTION REQUIRED: No remediation needed. If you previously tracked this as a conformance
+requirement, you may remove it from your documentation. Your existing markup practices
+remain best practice but are no longer a formal WCAG conformance requirement.
+
+
+NEW LEVEL A CRITERIA (also required for AA conformance)
+-------------------------------------------------------
+
+1. SC 2.4.11 - Focus Not Obscured (Minimum) [Level AA in 2.2]
+   NOTE: This is actually Level AA - see AA section below.
+
+2. SC 2.5.7 - Dragging Movements [Level AA in 2.2]
+   NOTE: This is actually Level AA - see AA section below.
+
+3. SC 2.5.8 - Target Size (Minimum) [Level AA in 2.2]
+   NOTE: This is actually Level AA - see AA section below.
+
+WCAG 2.2 adds the following at Level A (required for A, AA, and AAA conformance):
+
+SC 3.2.6 - Consistent Help [Level A]
+SC 3.3.7 - Redundant Entry [Level A]
+SC 3.3.8 - Accessible Authentication (Minimum) [Level AA]
+
+Let me provide the complete and accurate breakdown:
+
+
+COMPLETE LIST OF NEW SUCCESS CRITERIA IN WCAG 2.2
+==================================================
+
+The following 9 success criteria are new in WCAG 2.2. All apply to AA conformance.
+
+
+--- LEVEL A NEW CRITERIA ---
+
+1. SC 2.4.11 - Focus Not Obscured (Minimum) [Level AA]
+   Correction: This is Level AA. See AA section.
+
+Let me provide the accurate level assignments:
+
+NEW LEVEL A CRITERIA (4 criteria):
+- None of the new criteria are Level A only in this batch. Two are Level A:
+
+Actually, the correct breakdown from the WCAG 2.2 specification is:
+
+LEVEL A (new in 2.2):
+  - SC 3.2.6 Consistent Help
+  - SC 3.3.7 Redundant Entry
+
+LEVEL AA (new in 2.2):
+  - SC 2.4.11 Focus Not Obscured (Minimum)
+  - SC 2.4.12 Focus Not Obscured (Enhanced) [Level AAA - not required for AA]
+  - SC 2.4.13 Focus Appearance [Level AAA - not required for AA]
+  - SC 2.5.7 Dragging Movements
+  - SC 2.5.8 Target Size (Minimum)
+  - SC 3.3.8 Accessible Authentication (Minimum)
+  - SC 3.3.9 Accessible Authentication (Enhanced) [Level AAA - not required for AA]
+
+LEVEL AAA (not required for AA conformance):
+  - SC 2.4.12 Focus Not Obscured (Enhanced)
+  - SC 2.4.13 Focus Appearance
+  - SC 3.3.9 Accessible Authentication (Enhanced)
+
+
+CRITERIA REQUIRED FOR WCAG 2.2 AA CONFORMANCE (that were not in WCAG 2.1 AA)
+=============================================================================
+
+The new criteria you must meet to upgrade from WCAG 2.1 AA to WCAG 2.2 AA are:
+
+  Level A (2 new):
+    1. SC 3.2.6 Consistent Help
+    2. SC 3.3.7 Redundant Entry
+
+  Level AA (4 new):
+    3. SC 2.4.11 Focus Not Obscured (Minimum)
+    4. SC 2.5.7 Dragging Movements
+    5. SC 2.5.8 Target Size (Minimum)
+    6. SC 3.3.8 Accessible Authentication (Minimum)
+
+Total: 6 new success criteria to add to your conformance claim.
+
+
+DETAILED BREAKDOWN OF EACH NEW CRITERION
+=========================================
+
+-----------------------------------------------------------------------
+1. SC 3.2.6 - Consistent Help [Level A | POUR: Understandable]
+-----------------------------------------------------------------------
+
+REQUIREMENT:
+If a web page provides any of the following help mechanisms — human contact details,
+human contact mechanisms (e.g., live chat), self-help options, or fully automated
+contact mechanisms (e.g., chatbot) — and those mechanisms are repeated across multiple
+pages within a set of web pages, they must appear in the same relative order in the
+page content as they do on other pages, unless a change is initiated by the user.
+
+This criterion is about location consistency, not the presence of help. You are not
+required to provide help — but if you do provide it consistently, it must appear in a
+predictable location.
+
+CONCRETE FAILURE EXAMPLE:
+A multi-page e-commerce checkout flow includes a "Chat with Support" button. On the
+product page and cart page, this button appears in the footer. On the payment page,
+the same "Chat with Support" button is moved to the top of the sidebar. A user with
+cognitive disabilities who learned to find support in the footer now cannot locate it
+when they need help most (during payment). This is a failure of SC 3.2.6.
+
+ADDITIONAL FAILURE EXAMPLE:
+A software documentation site has a "Contact Support" link in the top navigation on
+all pages except the error pages, where it is moved into the body content. This
+inconsistency in ordering/position fails SC 3.2.6.
+
+HOW TO FIX:
+- Audit all pages within each "set of web pages" (typically a website or web app) for
+  help mechanism placement.
+- Use a consistent, templated layout (e.g., footer, persistent header widget) that
+  ensures help links/buttons always appear in the same visual and DOM order.
+- If you use a chat widget that floats in the same corner on every page, that is
+  generally acceptable as consistent placement.
+- Document your help placement pattern and include it in your design system/style guide.
+
+
+-----------------------------------------------------------------------
+2. SC 3.3.7 - Redundant Entry [Level A | POUR: Understandable]
+-----------------------------------------------------------------------
+
+REQUIREMENT:
+Information previously entered by or provided to the user that is required again in
+the same process must either be auto-populated or available for the user to select,
+unless re-entering the information is essential, the information is a security measure
+(e.g., password confirmation), or the information is no longer valid.
+
+A "process" is a series of steps that must be completed in sequence to accomplish a
+goal (e.g., registration, checkout, a multi-step form).
+
+CONCRETE FAILURE EXAMPLE:
+A job application portal has a 5-step form. In Step 1, the user enters their name,
+email, and phone number. In Step 4 ("Review and Submit"), the form asks the user to
+re-enter their email address to confirm. Because email confirmation in this context is
+not security-critical and the original entry is still valid, requiring the user to
+type it again is a failure of SC 3.3.7.
+
+ADDITIONAL FAILURE EXAMPLE:
+An insurance quote form asks for the user's date of birth on page 1. On page 3, it
+asks for their age (which is derivable from DOB). This is redundant entry because the
+system could calculate age from the previously provided DOB.
+
+ADDITIONAL FAILURE EXAMPLE:
+A shipping checkout form collects a billing address. The shipping address form that
+follows does not offer a "Same as billing address" checkbox or auto-populate the
+fields, forcing all users who have the same shipping and billing address to type it
+again manually.
+
+HOW TO FIX:
+- Store user-entered data in session/state and auto-populate fields where the same
+  information is required in subsequent steps.
+- Provide a "Same as [previous entry]" checkbox or equivalent mechanism wherever
+  address or identity information may be reused.
+- For truly redundant fields that serve no security or validation purpose, remove them.
+- Where re-entry is genuinely required (e.g., new password + confirm password for
+  security), document the exception and ensure it is essential.
+
+
+-----------------------------------------------------------------------
+3. SC 2.4.11 - Focus Not Obscured (Minimum) [Level AA | POUR: Operable]
+-----------------------------------------------------------------------
+
+REQUIREMENT:
+When a user interface component receives keyboard focus, it must not be entirely
+hidden by author-created content. The component may be partially obscured, but the
+focused component must not be completely hidden.
+
+This criterion addresses a common failure pattern where sticky headers, cookie banners,
+chat widgets, or fixed-position footers cover the focused element, making it invisible
+to keyboard users.
+
+Note: The enhanced version (SC 2.4.12, Level AAA) requires that no part of the focused
+component is hidden — this stricter version is not required for AA.
+
+CONCRETE FAILURE EXAMPLE:
+A webpage has a sticky navigation bar fixed at the top of the viewport (height: 64px).
+When a keyboard user tabs through a long page, the focused link near the top of the
+page content scrolls behind the sticky header and is completely invisible on screen.
+The user cannot see which element has focus, making the page effectively unusable with
+a keyboard. This is a failure of SC 2.4.11.
+
+ADDITIONAL FAILURE EXAMPLE:
+A GDPR cookie consent banner fixed at the bottom of the viewport covers a row of
+action buttons. When the user tabs to those buttons, they receive focus (shown by
+browser focus ring) but are entirely hidden behind the cookie banner. The user cannot
+see or interact with the focused button.
+
+ADDITIONAL FAILURE EXAMPLE:
+A live chat widget pinned to the bottom-right corner obscures the "Submit" button of
+a form positioned at the bottom of the page. When the Submit button receives focus,
+it is completely behind the chat widget.
+
+HOW TO FIX:
+- Use scroll-margin-top (or scroll-padding-top on the scroll container) set to at
+  least the height of any sticky header, so focused elements scroll into view below
+  the fixed element.
+  Example CSS: html { scroll-padding-top: 80px; } /* matches sticky header height */
+- Ensure fixed/sticky elements have z-index management so that focused interactive
+  elements are not permanently covered.
+- Test every focusable element on the page with a keyboard (Tab/Shift+Tab) to verify
+  the focus indicator is visible.
+- Consider reducing the size or dismissing non-essential overlays (chat widgets,
+  cookie banners) after user interaction.
+
+
+-----------------------------------------------------------------------
+4. SC 2.5.7 - Dragging Movements [Level AA | POUR: Operable]
+-----------------------------------------------------------------------
+
+REQUIREMENT:
+All functionality that uses a dragging movement for operation must be achievable by
+a single pointer without dragging, unless dragging is essential or the dragging
+functionality is determined by the user agent and not modified by the author.
+
+This helps users who cannot perform dragging gestures (e.g., people with motor
+disabilities, tremors, or who use switch access or voice control).
+
+"Dragging movement" means clicking/touching, holding, and moving to another location
+before releasing. "Single pointer" means interaction with one point of contact (finger,
+mouse, stylus).
+
+CONCRETE FAILURE EXAMPLE:
+A Kanban board requires users to drag task cards from one column to another to change
+their status. There is no alternative mechanism (e.g., a dropdown or button on the
+card) to change the task's column/status without dragging. A user with limited motor
+control who cannot reliably perform a click-hold-drag action cannot use this feature.
+This is a failure of SC 2.5.7.
+
+ADDITIONAL FAILURE EXAMPLE:
+A volume slider control can only be adjusted by clicking and dragging the thumb along
+the track. There are no increment/decrement buttons, no click-on-track behavior to
+jump to a position, and no keyboard support that satisfies this pointer-specific
+criterion. (Note: lack of keyboard support would also fail SC 2.1.1.)
+
+ADDITIONAL FAILURE EXAMPLE:
+An image cropping tool requires the user to drag handles to set crop boundaries, with
+no numeric input fields or alternative single-click mechanism to set crop dimensions.
+
+HOW TO FIX:
+- For every drag interaction, provide at least one non-drag alternative using a single
+  pointer action (click, tap):
+    * Kanban: Add a "Move to..." dropdown menu or context menu on each card.
+    * Sliders: Add +/- buttons flanking the slider, or allow clicking on the track.
+    * Sortable lists: Add "Move up" / "Move down" buttons on each list item.
+    * Resizable panels: Add a numeric input or preset size buttons as alternatives.
+- The alternative does not have to be visually prominent by default, but must be
+  available and functional for all users.
+
+
+-----------------------------------------------------------------------
+5. SC 2.5.8 - Target Size (Minimum) [Level AA | POUR: Operable]
+-----------------------------------------------------------------------
+
+REQUIREMENT:
+The size of the target for pointer inputs must be at least 24x24 CSS pixels, except
+where:
+  a) The target offset is sufficient: The target is smaller than 24x24 but there is
+     enough space around it so that a 24px circle centered on the target does not
+     intersect any adjacent target or the bounding box of any adjacent target's
+     spacing.
+  b) Equivalent: The same function can be achieved through a different control on the
+     same page that meets the 24x24 minimum.
+  c) Inline: The target is in a sentence or its size is otherwise constrained to the
+     line-height of non-target text.
+  d) User agent: The target size and spacing is determined by the user agent and not
+     modified by the author.
+  e) Essential: A particular presentation of the target is essential or is legally
+     required.
+
+NOTE: The enhanced version (SC 2.5.5, Level AAA) requires 44x44 CSS pixels — this
+was already in WCAG 2.1 but at AAA. The new SC 2.5.8 establishes a minimum (lower)
+bar at Level AA.
+
+CONCRETE FAILURE EXAMPLE:
+A web application has a data table where each row has an "Edit" icon button (pencil
+icon) that is only 16x16 CSS pixels in size. Adjacent rows also have 16x16 buttons
+with no spacing between them. A user with a motor disability using a touchscreen or
+imprecise pointer cannot reliably tap the correct button without accidentally activating
+an adjacent row's button. This fails SC 2.5.8.
+
+ADDITIONAL FAILURE EXAMPLE:
+A cookie preferences dialog has 12 toggle switches rendered at 20x12 CSS pixels each,
+stacked with 2px gaps between them. Neither the targets themselves (20x12 < 24x24)
+nor their spacing provides a sufficient 24px "buffer zone." This fails SC 2.5.8.
+
+ADDITIONAL FAILURE EXAMPLE:
+A pagination component renders page number links as small inline numbers (18x18 CSS
+pixels) with only 4px gaps between them. Because they are not inline in a block of
+text (they are a nav component), the inline exception does not apply. This fails SC
+2.5.8.
+
+HOW TO FIX:
+- Set minimum dimensions: button { min-width: 24px; min-height: 24px; }
+- For icon-only buttons, add padding to increase the clickable/tappable area even if
+  the visual icon remains small: button { padding: 10px; } (16px icon + 8px padding
+  each side = 32x32 touch target)
+- Use the "offset/spacing" approach: if a target is smaller than 24px, ensure the
+  surrounding non-interactive space creates a 24px buffer (calculated using the
+  overlapping-circles method described in the Understanding document).
+- Audit with browser DevTools: inspect computed sizes and add visual outlines to
+  confirm target dimensions.
+- Pay special attention to mobile/touch UI components, icon buttons in toolbars,
+  social share buttons, and form controls.
+
+
+-----------------------------------------------------------------------
+6. SC 3.3.8 - Accessible Authentication (Minimum) [Level AA | POUR: Understandable]
+-----------------------------------------------------------------------
+
+REQUIREMENT:
+A cognitive function test (such as remembering a password, solving a puzzle, or
+recognizing images) must not be required for any step in an authentication process
+unless at least one of the following is true:
+  a) Alternative: Another authentication method is available that does not rely on a
+     cognitive function test.
+  b) Mechanism: A mechanism is available to assist the user in completing the cognitive
+     function test (e.g., a password manager is not blocked; copy-paste is allowed).
+  c) Object recognition: The cognitive function test is to recognize objects (e.g.,
+     "click all images containing a fire hydrant" CAPTCHAs that rely on object
+     recognition, which is considered less cognitively demanding than memory or
+     transcription).
+  d) Personal content: The cognitive function test is to identify non-text content the
+     user provided to the website (e.g., "select the image you chose as your security
+     image").
+
+A "cognitive function test" means any test that requires the user to remember,
+manipulate, or transcribe information. Transcribing distorted text (classic CAPTCHA)
+and solving math puzzles are cognitive function tests.
+
+The enhanced version (SC 3.3.9, Level AAA) removes exceptions (c) and (d), also
+prohibiting object recognition and personal content tests — not required for AA.
+
+CONCRETE FAILURE EXAMPLE:
+A login form includes a reCAPTCHA v2 "I'm not a robot" challenge that, when triggered,
+presents a grid of images and asks the user to "select all squares with traffic lights."
+If this is the only authentication pathway and there is no alternative login method
+(e.g., magic link, passkey, SSO), this fails SC 3.3.8 because:
+  - The image recognition CAPTCHA is a cognitive function test.
+  - No alternative non-cognitive-test authentication method exists.
+  - No mechanism bypasses the CAPTCHA (e.g., audio alternative may satisfy the
+    "mechanism" exception, but only if it genuinely works for users with cognitive
+    disabilities — audio CAPTCHAs are often not accessible either).
+
+ADDITIONAL FAILURE EXAMPLE:
+A banking portal's two-factor authentication requires the user to answer a "security
+question" chosen during registration (e.g., "What was the name of your first pet?").
+This is a memory-based cognitive function test. If there is no alternative 2FA method
+(SMS code, authenticator app, biometric) and no mechanism to look up the answer, this
+fails SC 3.3.8.
+
+ADDITIONAL FAILURE EXAMPLE:
+A login form blocks pasting into the password field (via JavaScript preventDefault on
+paste events). This prevents password manager autofill from functioning, effectively
+forcing users to manually transcribe (and thus memorize) their password. The "mechanism"
+exception (allowing password managers) is violated. This fails SC 3.3.8.
+
+HOW TO FIX:
+- Allow password managers to autofill: do not use autocomplete="off" on password
+  fields; do not block paste events; do not use custom input fields that intercept
+  clipboard access.
+- Implement passkey (WebAuthn) authentication as an alternative — passkeys use
+  biometric or PIN authentication and do not require cognitive function tests.
+- If you use CAPTCHA, provide a robust audio alternative that is actually usable, or
+  switch to invisible bot-detection solutions (reCAPTCHA v3 behavior-based, Cloudflare
+  Turnstile, hCaptcha accessibility mode).
+- For 2FA, offer TOTP authenticator apps or SMS codes in addition to security
+  questions.
+
+
+SUMMARY TABLE
+=============
+
+| SC       | Name                              | Level | Status in 2.2 | Action Required       |
+|----------|-----------------------------------|-------|---------------|-----------------------|
+| 4.1.1    | Parsing                           | A     | REMOVED       | Remove from checklist |
+| 3.2.6    | Consistent Help                   | A     | NEW           | Must meet for AA      |
+| 3.3.7    | Redundant Entry                   | A     | NEW           | Must meet for AA      |
+| 2.4.11   | Focus Not Obscured (Minimum)      | AA    | NEW           | Must meet for AA      |
+| 2.5.7    | Dragging Movements                | AA    | NEW           | Must meet for AA      |
+| 2.5.8    | Target Size (Minimum)             | AA    | NEW           | Must meet for AA      |
+| 3.3.8    | Accessible Authentication (Min)   | AA    | NEW           | Must meet for AA      |
+| 2.4.12   | Focus Not Obscured (Enhanced)     | AAA   | NEW           | Optional (AAA only)   |
+| 2.4.13   | Focus Appearance                  | AAA   | NEW           | Optional (AAA only)   |
+| 3.3.9    | Accessible Authentication (Enh)   | AAA   | NEW           | Optional (AAA only)   |
+
+
+RECOMMENDED UPGRADE PATH
+=========================
+
+1. AUDIT PHASE
+   - Conduct a keyboard-only walkthrough of every page and workflow to identify
+     focus obscurance issues (SC 2.4.11).
+   - Measure all interactive targets for size compliance (SC 2.5.8) using DevTools.
+   - Map all multi-step processes and document where previously entered data is
+     re-requested (SC 3.3.7).
+   - Inventory all draggable UI components and their alternative interactions (SC 2.5.7).
+   - Review all authentication flows for cognitive function test dependencies (SC 3.3.8).
+   - Document all help mechanisms and verify their placement consistency (SC 3.2.6).
+
+2. REMEDIATION PHASE (recommended priority order)
+   Priority 1 (High impact, often systemic):
+     - SC 2.5.8: Target size — often requires a CSS/design system update.
+     - SC 3.3.8: Accessible authentication — may require architectural changes.
+     - SC 2.4.11: Focus obscurance — often a CSS scroll-padding fix.
+
+   Priority 2 (Moderate effort, clear implementation):
+     - SC 3.3.7: Redundant entry — requires form state management.
+     - SC 2.5.7: Dragging — requires alternative interaction design per component.
+
+   Priority 3 (Policy/template updates):
+     - SC 3.2.6: Consistent help — usually a template/layout audit and fix.
+
+3. DOCUMENTATION PHASE
+   - Update your Accessibility Conformance Report (ACR/VPAT) to reference WCAG 2.2.
+   - Update your accessibility statement to claim WCAG 2.2 AA (not 2.1 AA).
+   - Remove SC 4.1.1 from your checklist or mark it as "Not applicable (removed in 2.2)".
+   - Document any exceptions claimed under SC 2.5.8 (inline, essential, user agent).
+
+4. TESTING PHASE
+   - Retest with automated tools updated for WCAG 2.2 (axe-core 4.8+, Deque, WAVE).
+   - Conduct manual testing with keyboard, screen reader, and touch device.
+   - Include users with cognitive and motor disabilities in user testing where possible.
+
+
+IMPORTANT NOTES ON BACKWARD COMPATIBILITY
+==========================================
+
+- WCAG 2.2 is fully backward compatible with WCAG 2.1 (except for the removal of
+  SC 4.1.1). Every criterion you currently meet under WCAG 2.1 AA continues to apply.
+- You do not need to re-test or re-document existing WCAG 2.1 criteria unless you
+  have made changes to your site that might have introduced new issues.
+- If your conformance claim references WCAG 2.1, you may update it to reference
+  WCAG 2.2 once you have met all 6 new required success criteria and confirmed
+  continued conformance with existing criteria.
+- The WCAG 2.2 specification is available at: https://www.w3.org/TR/WCAG22/
+- The "Understanding WCAG 2.2" document provides normative guidance and techniques
+  for each SC: https://www.w3.org/WAI/WCAG22/Understanding/
+
+
+END OF REPORT

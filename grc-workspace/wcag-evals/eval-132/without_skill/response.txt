@@ -1,0 +1,190 @@
+WCAG 2.1 AA to WCAG 2.2 AA Upgrade: New Success Criteria
+==========================================================
+Date: 2026-05-16
+
+WCAG 2.2 was published as a W3C Recommendation in October 2023. When upgrading
+a conformance claim from WCAG 2.1 AA to WCAG 2.2 AA, you must meet the
+following new success criteria (WCAG 2.2 removes 4.1.1 Parsing, which was
+previously AA, so that one is gone, but the new additions at AA level are the
+ones listed below).
+
+Note: WCAG 2.2 adds nine new success criteria total across A, AA, and AAA
+levels. The ones that apply to an AA conformance claim (i.e., all A and AA
+criteria) are:
+
+------------------------------------------------------------------------
+NEW SUCCESS CRITERIA REQUIRED FOR WCAG 2.2 AA
+------------------------------------------------------------------------
+
+1. 2.4.11 - Focus Not Obscured (Minimum) [AA]
+   -----------------------------------------------
+   WHAT IT REQUIRES:
+   When a user interface component receives keyboard focus, the component must
+   not be entirely hidden by author-created content. At minimum, some part of
+   the focused element must remain visible. The component does not need to be
+   fully visible — partial visibility satisfies this criterion — but it cannot
+   be completely covered.
+
+   WHAT MIGHT FAIL:
+   A website has a sticky header navigation bar fixed to the top of the page.
+   When a user tabs through links on the page, the focused link scrolls up and
+   becomes completely hidden behind the sticky header. The user cannot see which
+   element has focus at all, causing complete loss of orientation for keyboard
+   users.
+
+2. 2.4.12 - Focus Not Obscured (Enhanced) [AAA - NOT required for AA]
+   NOTE: This is AAA, not required for AA conformance. Listed here for
+   completeness but you do NOT need to meet this for a 2.2 AA claim.
+
+3. 2.4.13 - Focus Appearance [AAA - NOT required for AA]
+   NOTE: This is also AAA. Not required for AA conformance.
+
+4. 2.5.7 - Dragging Movements [AA]
+   ---------------------------------
+   WHAT IT REQUIRES:
+   All functionality that uses a dragging movement for operation must also be
+   achievable by a single pointer (e.g., a click or tap) without dragging,
+   unless dragging is essential. This ensures that users who have difficulty
+   performing precise dragging actions (such as people with motor disabilities
+   or tremors) can still access the functionality.
+
+   WHAT MIGHT FAIL:
+   A Kanban-style task management board requires users to drag cards from one
+   column to another to change their status. There is no alternative way to
+   move a card — no "Move to..." button, context menu, or keyboard shortcut.
+   Users who cannot perform a click-and-drag gesture (e.g., someone using a
+   switch device or someone with hand tremors) are completely unable to change
+   task status.
+
+5. 2.5.8 - Target Size (Minimum) [AA]
+   -------------------------------------
+   WHAT IT REQUIRES:
+   The size of the target (the clickable/tappable area) for pointer inputs must
+   be at least 24x24 CSS pixels, OR there must be sufficient spacing around
+   smaller targets such that the total area (target plus spacing) meets the
+   24x24 CSS pixel minimum. Inline targets within text (like hyperlinks in a
+   paragraph) are exempt, as are targets where the size is determined by the
+   user agent and not modified by the author, and where the size is essential
+   to the information being conveyed.
+
+   WHAT MIGHT FAIL:
+   A mobile-friendly website has a row of small social media icon links in the
+   footer. Each icon is rendered at 16x16 CSS pixels with only 2px of margin
+   between them. Because neither the icon itself nor the surrounding spacing
+   meets the 24x24 CSS pixel minimum, users with motor impairments, large
+   fingers, or hand tremors are likely to miss or accidentally activate the
+   wrong link.
+
+6. 3.2.6 - Consistent Help [A]
+   -----------------------------
+   WHAT IT REQUIRES:
+   If a web page includes any of the following help mechanisms — human contact
+   details, a human contact mechanism (e.g., a chat button), a self-help option
+   (e.g., an FAQ or help center link), or a fully automated contact mechanism
+   (e.g., a chatbot) — that mechanism must appear in the same relative location
+   across multiple pages of the website when it appears on multiple pages.
+
+   WHAT MIGHT FAIL:
+   An e-commerce site displays a "Live Chat" button in the bottom-right corner
+   on the homepage and product pages, but on the checkout page the Live Chat
+   button is moved to the top-left corner of the header. Users with cognitive
+   disabilities who rely on consistent page layout to find help cannot locate
+   the chat button when they encounter difficulties at checkout, because it has
+   moved from the location they learned to expect.
+
+7. 3.3.7 - Redundant Entry [A]
+   -----------------------------
+   WHAT IT REQUIRES:
+   Information previously entered by the user that is required again in the
+   same process must either be auto-populated or available for the user to
+   select. Users should not be required to re-enter the same information they
+   have already provided in an earlier step of a multi-step process. Exceptions
+   apply when re-entering the information is essential (e.g., password
+   confirmation fields), when the information is no longer valid, or when
+   re-entering is required for security reasons.
+
+   WHAT MIGHT FAIL:
+   An online insurance application asks the user to enter their full name,
+   address, and date of birth on page 1 of a 5-page form. On page 4, the same
+   form asks the user to enter their name and date of birth again as part of
+   a "policy holder confirmation" section, without pre-filling these fields
+   from the earlier entry. Users with cognitive disabilities, memory
+   impairments, or motor difficulties are burdened by having to re-type
+   identical information they already provided.
+
+8. 3.3.8 - Accessible Authentication (Minimum) [AA]
+   ---------------------------------------------------
+   WHAT IT REQUIRES:
+   A cognitive function test (such as remembering a password, solving a puzzle,
+   or transcribing characters) must not be required for any step in an
+   authentication process, UNLESS at least one of the following is true:
+   (a) An alternative authentication method is available that does not rely on
+       a cognitive function test;
+   (b) A mechanism is available to assist the user in completing the cognitive
+       function test (e.g., a password manager is not blocked, copy-paste is
+       allowed for OTP codes);
+   (c) The cognitive function test is to recognize objects (e.g., select all
+       images with traffic lights);
+   (d) The cognitive function test is to identify non-text content the user
+       provided themselves (e.g., identifying a personal photo they uploaded).
+
+   WHAT MIGHT FAIL:
+   A banking website's login page uses a CAPTCHA that requires users to
+   transcribe distorted text characters. No alternative authentication method
+   is provided, and there is no audio alternative. The site also blocks
+   password manager autofill (via autocomplete="off"). Users with cognitive
+   disabilities such as dyslexia, or users with memory impairments who rely on
+   password managers, are locked out of their accounts with no accessible
+   alternative.
+
+   A second example: A site requires users to mentally solve an arithmetic
+   puzzle ("What is 14 + 27?") to log in, with no alternative method offered.
+   This imposes a cognitive function test that users with dyscalculia or other
+   cognitive impairments cannot reliably pass.
+
+9. 3.3.9 - Accessible Authentication (Enhanced) [AAA - NOT required for AA]
+   NOTE: This is AAA. Not required for AA conformance.
+
+------------------------------------------------------------------------
+SUMMARY TABLE: NEW AA CRITERIA REQUIRED FOR WCAG 2.2 AA CONFORMANCE
+------------------------------------------------------------------------
+
+SC       | Level | Short Name                        | Guideline
+---------|-------|-----------------------------------|---------------------------
+2.4.11   | AA    | Focus Not Obscured (Minimum)      | 2.4 Navigable
+2.5.7    | AA    | Dragging Movements                | 2.5 Input Modalities
+2.5.8    | AA    | Target Size (Minimum)             | 2.5 Input Modalities
+3.2.6    | A     | Consistent Help                   | 3.2 Predictable
+3.3.7    | A     | Redundant Entry                   | 3.3 Input Assistance
+3.3.8    | AA    | Accessible Authentication (Min.)  | 3.3 Input Assistance
+
+NOTE: WCAG 2.2 also removes the previous requirement for 4.1.1 Parsing (which
+was AA in WCAG 2.1). You no longer need to satisfy that criterion under a
+WCAG 2.2 AA claim.
+
+------------------------------------------------------------------------
+IMPORTANT CONSIDERATIONS FOR YOUR UPGRADE EFFORT
+------------------------------------------------------------------------
+
+- Focus Not Obscured (2.4.11) is especially relevant if your UI uses sticky
+  headers, sticky footers, cookie consent banners, chat widgets, or any fixed-
+  position overlapping content. Audit all fixed/sticky elements.
+
+- Dragging Movements (2.5.7) requires reviewing any drag-and-drop interfaces:
+  sliders, sortable lists, Kanban boards, map panning, carousels, and similar
+  interactions all need pointer-based (non-drag) alternatives.
+
+- Target Size (2.5.8) requires measuring interactive elements. Icon buttons,
+  pagination links, close buttons on modals, and small form controls are
+  common failure points. Note that inline text links in body copy are exempt.
+
+- Consistent Help (3.2.6) only applies if you offer help mechanisms. If you
+  do, audit their position across all page templates.
+
+- Redundant Entry (3.3.7) requires a review of all multi-step forms, checkout
+  flows, registration wizards, and application forms.
+
+- Accessible Authentication (3.3.8) requires reviewing all login, registration,
+  MFA, and account recovery flows. Ensure password managers are not blocked
+  and that CAPTCHAs have accessible alternatives or are replaced with
+  object-recognition or user-content-identification approaches.

@@ -262,7 +262,7 @@
   <div class="header-inner">
     <a href="index.html" class="back-link">← Back to GRC Skills</a>
     <h1>Benchmark Results</h1>
-    <p>Side-by-side evaluation of Claude with and without GRC Skills across 130 real-world compliance scenarios for all 26 skills.</p>
+    <p>Side-by-side evaluation of Claude with and without GRC Skills across 135 real-world compliance scenarios for all 27 skills.</p>
   </div>
 </div>
 
@@ -487,6 +487,14 @@
           <td class="stat-cell delta-neutral">+0%</td>
           <td class="stat-cell">25/25</td>
         </tr>
+        <tr>
+          <td><a href="#skill-wcag" onclick="openSkill('wcag'); return false;" class="skill-link">WCAG</a></td>
+          <td class="stat-cell">100%</td>
+          <td class="stat-cell">89%</td>
+          <td class="stat-cell delta-positive">+11%</td>
+          <td class="stat-cell">27/27</td>
+          <td class="stat-cell">23/27</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -495,9 +503,9 @@
     <h3>Methodology</h3>
     <p>Each skill was evaluated on 5 real-world compliance scenarios submitted by compliance professionals and software teams. Every test case ran twice — once with the skill active, once as a baseline without it. Responses were graded against 5 objective assertions per test (keyword presence, structural completeness, specific regulatory citations).</p>
     <ul>
-      <li><strong>26 skills</strong> × <strong>5 prompts</strong> = 130 test cases</li>
-      <li>Each case run twice (with skill + baseline) = 260 total runs</li>
-      <li>5 assertions per test = <strong>780 total assertion checks</strong></li>
+      <li><strong>27 skills</strong> × <strong>5 prompts</strong> = 135 test cases</li>
+      <li>Each case run twice (with skill + baseline) = 270 total runs</li>
+      <li>5–6 assertions per test = <strong>~810 total assertion checks</strong></li>
       <li>ISO 27701 results reflect the updated skill (iteration 2 after user feedback improvements)</li>
     </ul>
   </div>
@@ -53894,6 +53902,100 @@ This guidance is based on the Revised Section 508 Standards (2018) and the under
           </div>
         </div>
       </div>
+
+  <div class="skill-accordion" id="skill-wcag">
+    <button class="skill-toggle" onclick="toggleSkill('wcag')">
+      <span>♿ WCAG — Web Content Accessibility Guidelines</span>
+      <span class="skill-stats">
+        <span class="badge badge-pass">100% with skill</span>
+        <span class="badge badge-baseline">89% baseline</span>
+        <span class="badge badge-delta">+11% improvement</span>
+      </span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="skill-content" style="display:none;">
+      <div class="eval-item">
+        <h4>Test 1: Colour Contrast Audit (SC 1.4.3)</h4>
+        <p class="eval-prompt"><strong>Prompt:</strong> Our website uses the following colour combinations. Which ones fail WCAG 2.1 AA contrast requirements and what should we replace them with? Body text #767676/#FFFFFF, Nav links #0066CC/#FFFFFF, Button text #FFFFFF/#3D9970, Placeholder #AAAAAA/#FFFFFF, Error messages #CC0000/#FFFFFF, Disabled button #999999/#CCCCCC.</p>
+        <div class="eval-outputs">
+          <div class="eval-output with-skill">
+            <h5>With WCAG Skill</h5>
+            <div class="output-content"><p>Identifies SC 1.4.3 Contrast (Minimum) Level AA. Flags button text (#FFFFFF/#3D9970, ~3.51:1 — fails 4.5:1 for normal text) and placeholder (#AAAAAA/#FFFFFF, ~2.32:1 — fails; not exempt). Confirms passing combinations (nav links 5.56:1, error messages 5.89:1). Notes disabled button exempt as inactive UI component. Provides specific replacement colours: #2E7A58 for button (~5.38:1) and #696969 for placeholder (~5.08:1).</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐⭐ 6/6 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly identifies SC 1.4.3 as the applicable criterion with level AA</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly flags button text (#FFFFFF on #3D9970) as failing</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly flags placeholder text (#AAAAAA on #FFFFFF) as failing</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly identifies disabled button as exempt from contrast requirements</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides specific replacement colour suggestions for failures</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly identifies all passing combinations</span></div></div></div>
+          </div>
+          <div class="eval-output without-skill">
+            <h5>Baseline (No Skill)</h5>
+            <div class="output-content"><p>Correctly identifies the two failing colour pairs and the disabled button exemption. Provides replacement colours. Does not cite SC 1.4.3 by number; references WCAG 2.1 AA only generically.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#f59e0b;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/6 assertions passed (83%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Correctly identifies SC 1.4.3 as the applicable criterion with level AA</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly flags button text (#FFFFFF on #3D9970) as failing</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly flags placeholder text (#AAAAAA on #FFFFFF) as failing</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly identifies disabled button as exempt from contrast requirements</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides specific replacement colour suggestions for failures</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly identifies all passing combinations</span></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="eval-item">
+        <h4>Test 2: WCAG 2.2 Upgrade Criteria</h4>
+        <p class="eval-prompt"><strong>Prompt:</strong> We are currently conforming to WCAG 2.1 AA. What new success criteria do we need to meet to upgrade our conformance claim to WCAG 2.2 AA? For each new criterion, explain what it requires and give a concrete example of what might fail.</p>
+        <div class="eval-outputs">
+          <div class="eval-output with-skill">
+            <h5>With WCAG Skill</h5>
+            <div class="output-content"><p>Lists all 4 new AA criteria (2.4.11 Focus Not Obscured, 2.5.7 Dragging Movements, 2.5.8 Target Size, 3.3.8 Accessible Authentication), the 2 new Level A criteria that also apply (3.2.6 Consistent Help, 3.3.7 Redundant Entry), explicitly notes SC 4.1.1 Parsing removed, and distinguishes 3 AAA-only additions (2.4.12, 2.4.13, 3.3.9). Concrete failure examples for each criterion.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists all 4 new AA-level criteria added in WCAG 2.2</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists new Level A criteria in 2.2 that also apply for AA conformance</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions SC 4.1.1 Parsing was removed in WCAG 2.2</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides a concrete failure example for each new AA criterion</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Notes AAA-level criteria added in 2.2 as optional</span></div></div></div>
+          </div>
+          <div class="eval-output without-skill">
+            <h5>Baseline (No Skill)</h5>
+            <div class="output-content"><p>Correctly lists all 6 required criteria (4 AA + 2 new Level A) and notes 4.1.1 removal. Does not mention the AAA-level additions (2.4.12, 2.4.13, 3.3.9) that are optional.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#f59e0b;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐ 4/5 assertions passed (80%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists all 4 new AA-level criteria added in WCAG 2.2</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists new Level A criteria in 2.2 that also apply for AA conformance</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions SC 4.1.1 Parsing was removed in WCAG 2.2</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides a concrete failure example for each new AA criterion</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Notes AAA-level criteria added in 2.2 as optional</span></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="eval-item">
+        <h4>Test 3: React Modal ARIA Code Review</h4>
+        <p class="eval-prompt"><strong>Prompt:</strong> Our React app has a custom modal dialog that appears when users click 'Edit Profile'. Review this code and identify all WCAG accessibility issues. [ProfileModal component using div with no role, span labels, no focus management, no Escape handler]</p>
+        <div class="eval-outputs">
+          <div class="eval-output with-skill">
+            <h5>With WCAG Skill</h5>
+            <div class="output-content"><p>Identifies 7 distinct violations with SC citations: missing role=dialog/aria-modal/aria-labelledby (SC 4.1.2), no focus movement on open (SC 2.4.3), no focus trap (SC 2.1.2), span instead of label (SC 1.3.1), no Escape handler (SC 2.1.1), focus not returned on close (SC 2.4.3), background content not made inert. Provides complete corrected React component with createPortal, useRef, focus trap, Escape handler, and label elements.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐⭐ 6/6 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies missing role=dialog and aria-modal (SC 4.1.2)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies missing focus management on open (SC 2.4.3)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies no focus trap (SC 2.1.2)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies span used instead of label (SC 1.3.1)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies missing Escape key handler (SC 2.1.1)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides corrected code with proper ARIA attributes</span></div></div></div>
+          </div>
+          <div class="eval-output without-skill">
+            <h5>Baseline (No Skill)</h5>
+            <div class="output-content"><p>Correctly identifies all 5 WCAG violations (role, focus management, focus trap, label, Escape). Does not provide corrected code — only lists the issues as a checklist.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#f59e0b;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/6 assertions passed (83%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies missing role=dialog and aria-modal (SC 4.1.2)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies missing focus management on open (SC 2.4.3)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies no focus trap (SC 2.1.2)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies span used instead of label (SC 1.3.1)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies missing Escape key handler (SC 2.1.1)</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Provides corrected code with proper ARIA attributes</span></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="eval-item">
+        <h4>Test 4: WCAG Legal Compliance by Region</h4>
+        <p class="eval-prompt"><strong>Prompt:</strong> We are a SaaS company with customers in the US, EU, and UK. What WCAG version and conformance level do we need to meet for legal compliance in each region? We sell to both government agencies and private sector businesses.</p>
+        <div class="eval-outputs">
+          <div class="eval-output with-skill">
+            <h5>With WCAG Skill</h5>
+            <div class="output-content"><p>Covers all 5 jurisdiction segments: US federal (Section 508 → WCAG 2.0 AA min, 2.1 AA market standard), US state/local (ADA Title II DOJ rule → WCAG 2.1 AA, April 2026 deadline passed), US private (ADA Title III → WCAG 2.1 AA de facto), EU public/private (EN 301 549 → WCAG 2.1 AA; EAA June 2025 now in force), UK (PSBAR 2018 → WCAG 2.1 AA; Equality Act). Recommends WCAG 2.2 AA as unified target with 5-step roadmap.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly states US federal requirement: Section 508 / WCAG 2.0 AA minimum</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly states EU requirement: EN 301 549 / WCAG 2.1 AA via EAA and WAD</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly states UK requirement: UK PSBAR 2018 / WCAG 2.1 AA</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers both government and private sector distinctions in each region</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides a practical unified recommendation</span></div></div></div>
+          </div>
+          <div class="eval-output without-skill">
+            <h5>Baseline (No Skill)</h5>
+            <div class="output-content"><p>Correctly identifies WCAG 2.1 AA as the cross-jurisdictional standard. Covers all three regions with appropriate law citations. Recommends targeting WCAG 2.1 AA and notes planning for 2.2 AA.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly states US federal requirement: Section 508 / WCAG 2.0 AA minimum</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly states EU requirement: EN 301 549 / WCAG 2.1 AA via EAA and WAD</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly states UK requirement: UK PSBAR 2018 / WCAG 2.1 AA</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers both government and private sector distinctions in each region</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Provides a practical unified recommendation</span></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="eval-item">
+        <h4>Test 5: Accessibility Statement Drafting</h4>
+        <p class="eval-prompt"><strong>Prompt:</strong> Write an accessibility statement for our e-commerce website 'ShopEasy'. We currently meet most WCAG 2.1 AA criteria but have three known issues: older PDFs (SC 1.1.1, 4.1.2), live chat not announcing messages (SC 4.1.3), video demos lack audio descriptions (SC 1.2.5). Last audit: March 15, 2024 using automated tools, NVDA, and VoiceOver.</p>
+        <div class="eval-outputs">
+          <div class="eval-output with-skill">
+            <h5>With WCAG Skill</h5>
+            <div class="output-content"><p>Produces a publication-ready accessibility statement with 10 structured sections: correctly uses "partially conforms" status, lists all 3 issues with SC citations (1.1.1, 4.1.2, 4.1.3, 1.2.5), includes March 15 2024 audit date and testing methodology, multi-jurisdiction complaints pathway (EU enforcement authority, UK EHRC, US ADA, Australian AHRC), and all EU Web Accessibility Directive mandatory elements (Decision 2018/1523).</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly uses "partially conforms" conformance status</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists all three known non-conformances with correct SC references</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Includes contact information and feedback mechanism</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Includes date of last assessment and testing methodology</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Includes formal complaints procedure (EU Web Accessibility Directive)</span></div></div></div>
+          </div>
+          <div class="eval-output without-skill">
+            <h5>Baseline (No Skill)</h5>
+            <div class="output-content"><p>Produces a solid accessibility statement with correct "partially conformant" status, all 3 SC citations, audit date, contact section. Mentions escalation to "national enforcement authority" but does not name specific EU enforcement bodies or multi-jurisdiction pathways.</p></div>
+            <div class="output-grading"><div class="grade-summary" style="color:#f59e0b;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐ 4/5 assertions passed (80%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Correctly uses "partially conforms" conformance status</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists all three known non-conformances with correct SC references</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Includes contact information and feedback mechanism</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Includes date of last assessment and testing methodology</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Includes formal complaints procedure (EU Web Accessibility Directive)</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 

@@ -1,0 +1,77 @@
+Accessibility Statement for ShopEasy
+=====================================
+
+Last Updated: May 16, 2026
+
+
+Our Commitment
+--------------
+
+ShopEasy is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply relevant accessibility standards to ensure we provide an inclusive shopping experience.
+
+
+Conformance Status
+------------------
+
+ShopEasy aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines explain how to make web content more accessible to people with disabilities. Conformance with these guidelines helps make the web more user-friendly for all people.
+
+We are partially conformant with WCAG 2.1 Level AA. "Partially conformant" means that some parts of the content do not fully conform to the accessibility standard due to the known issues listed below.
+
+
+Known Accessibility Issues
+--------------------------
+
+We are aware of the following accessibility limitations on our website and are actively working to resolve them:
+
+1. Older PDF Product Manuals (WCAG 2.1 SC 1.1.1 Non-text Content; SC 4.1.2 Name, Role, Value)
+   Some of our older PDF product manuals were created before our current accessibility standards were adopted. These documents may not include proper alternative text for images and may not have correctly identified form fields, interactive elements, or structural markup. We are in the process of remediating these documents. In the meantime, if you need an accessible version of a product manual, please contact us and we will provide the information in an alternative format.
+
+2. Live Chat Widget (WCAG 2.1 SC 4.1.3 Status Messages)
+   Our live chat widget does not currently announce new incoming messages to users of screen readers. As a result, screen reader users may not be aware when a new chat message arrives without manually navigating to the chat area. We are working with our live chat provider to implement the necessary ARIA live region announcements. If you need assistance while we resolve this issue, please use our email or phone support options.
+
+3. Video Product Demonstrations (WCAG 2.1 SC 1.2.5 Audio Description (Prerecorded))
+   Product demonstration videos on our website do not currently include audio descriptions of the visual content shown. This means users who are blind or have low vision may miss visual information presented in the videos. We are in the process of producing audio description tracks for all product demonstration videos. If you need information about a product shown in a video, please contact us and we will assist you.
+
+
+Technical Specifications
+------------------------
+
+ShopEasy relies on the following technologies for conformance with WCAG 2.1:
+
+- HTML5
+- CSS
+- JavaScript
+- WAI-ARIA
+
+
+Audit and Assessment Approach
+------------------------------
+
+ShopEasy assesses the accessibility of our website through the following methods:
+
+- Automated accessibility testing tools
+- Manual testing with screen readers, including NVDA (Windows) and VoiceOver (macOS/iOS)
+- Periodic expert reviews
+
+Our most recent accessibility audit was conducted on March 15, 2024.
+
+
+Feedback and Contact Information
+----------------------------------
+
+We welcome your feedback on the accessibility of ShopEasy. If you experience accessibility barriers on our website, or if you need information or a service in an accessible format, please contact us:
+
+- Email: accessibility@shopeasy.com
+- Phone: [Your Phone Number]
+- Postal Address: [Your Company Address]
+
+We aim to respond to accessibility feedback within 2 business days.
+
+
+Formal Complaints
+-----------------
+
+If you are not satisfied with our response to your accessibility feedback, you may contact the relevant national authority responsible for enforcing accessibility regulations in your region.
+
+
+This statement was prepared on May 16, 2026.

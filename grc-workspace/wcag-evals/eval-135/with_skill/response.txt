@@ -1,0 +1,339 @@
+================================================================================
+ACCESSIBILITY STATEMENT FOR SHOPEASY
+================================================================================
+
+Last updated: 16 May 2026
+Audit date: 15 March 2024
+
+--------------------------------------------------------------------------------
+1. INTRODUCTION
+--------------------------------------------------------------------------------
+
+ShopEasy is committed to ensuring digital accessibility for people with
+disabilities. We continually improve the user experience for everyone and apply
+relevant accessibility standards to achieve this goal.
+
+This accessibility statement applies to the ShopEasy website and all web-based
+services operated under the shopeasy.com domain (hereinafter "the Website").
+
+--------------------------------------------------------------------------------
+2. CONFORMANCE STATUS
+--------------------------------------------------------------------------------
+
+The Web Content Accessibility Guidelines (WCAG) define requirements for
+designers and developers to improve accessibility for people with disabilities.
+WCAG 2.1 defines three levels of conformance: Level A (minimum), Level AA
+(enhanced), and Level AAA (highest). ShopEasy targets WCAG 2.1 Level AA
+conformance.
+
+CONFORMANCE CLAIM: ShopEasy PARTIALLY CONFORMS with WCAG 2.1 Level AA.
+
+"Partially conforms" means that some parts of the content do not conform to
+the accessibility standard. The specific non-conformances are identified in
+Section 4 of this statement.
+
+This conformance claim covers the ShopEasy website as a whole, including:
+  - All product listing and detail pages
+  - Shopping cart and checkout processes
+  - Account registration and management
+  - Search functionality
+  - Customer support pages
+  - Blog and editorial content
+  - Embedded third-party widgets (where applicable)
+
+Excluded from this claim:
+  - Third-party content not under our direct control (e.g., external payment
+    provider interfaces), where those providers maintain their own separate
+    conformance claims.
+
+--------------------------------------------------------------------------------
+3. TECHNICAL SPECIFICATIONS
+--------------------------------------------------------------------------------
+
+ShopEasy relies on the following technologies for conformance with WCAG 2.1:
+
+  - HTML5
+  - CSS3
+  - JavaScript (ECMAScript 2015+)
+  - WAI-ARIA 1.1
+  - PDF (Adobe PDF format; see known limitations in Section 4)
+
+The Website has been tested with the following assistive technologies:
+
+  - NVDA (NonVisual Desktop Access) with Mozilla Firefox on Windows
+  - VoiceOver with Safari on macOS and iOS
+  - Keyboard-only navigation (no pointing device)
+  - Browser zoom up to 400%
+  - Windows High Contrast Mode
+
+Testing methodology: Combined automated scanning and manual testing.
+  - Automated tools: [Specify tools used, e.g., axe-core, Deque Axe DevTools,
+    Lighthouse Accessibility]
+  - Manual testing conducted with the assistive technologies listed above.
+
+Date of last comprehensive accessibility audit: 15 March 2024.
+
+--------------------------------------------------------------------------------
+4. KNOWN ACCESSIBILITY ISSUES (NON-CONFORMANCES)
+--------------------------------------------------------------------------------
+
+The following known issues represent areas where ShopEasy does not currently
+meet WCAG 2.1 Level AA. We are actively working to resolve these.
+
+----------------------------------------------------------------------
+Issue 1: Inaccessible PDF Product Manuals
+----------------------------------------------------------------------
+  Affected content:
+    Older PDF product manuals available for download on product detail pages.
+
+  WCAG Success Criteria not met:
+    - SC 1.1.1 Non-text Content (Level A): Some PDF documents contain images,
+      diagrams, and non-text elements that lack appropriate text alternatives.
+      Users relying on screen readers may not receive equivalent information.
+    - SC 4.1.2 Name, Role, Value (Level A): Some older PDFs lack proper tag
+      structure, form field labels, and programmatic attributes required for
+      assistive technologies to interpret interactive elements and reading order
+      correctly.
+
+  Impact:
+    Users who rely on screen readers or other assistive technologies may be
+    unable to access the full content of affected PDF manuals.
+
+  Accessible alternative:
+    If you require an accessible version of a specific product manual, please
+    contact our accessibility support team (see Section 6). We will provide an
+    accessible alternative in HTML or plain-text format within 5 business days.
+
+  Remediation plan:
+    We are systematically remediating all product manuals. New manuals published
+    after 1 January 2025 are produced to WCAG 2.1 AA standards. Remediation of
+    legacy documents is ongoing, with an estimated completion date of
+    [INSERT TARGET DATE].
+
+----------------------------------------------------------------------
+Issue 2: Live Chat Widget Does Not Announce New Messages
+----------------------------------------------------------------------
+  Affected content:
+    The live chat widget available site-wide via the chat icon in the lower
+    right corner of the screen.
+
+  WCAG Success Criteria not met:
+    - SC 4.1.3 Status Messages (Level AA): When a new chat message arrives from
+      a support agent, the message is displayed visually but not communicated
+      to screen reader users via an appropriate ARIA live region or equivalent
+      programmatic mechanism. Users of screen readers may therefore miss
+      incoming messages without switching focus manually to the chat panel.
+
+  Impact:
+    Screen reader users who initiate a live chat session may not be aware that
+    a support agent has responded, resulting in a degraded or unusable support
+    experience.
+
+  Accessible alternative:
+    Screen reader users who experience difficulty with the live chat widget are
+    encouraged to contact our support team by email or telephone instead
+    (see Section 6).
+
+  Remediation plan:
+    We are working with our live chat widget provider to implement ARIA live
+    region announcements (role="log" or aria-live="polite") for incoming
+    messages. This fix is targeted for completion by [INSERT TARGET DATE].
+
+----------------------------------------------------------------------
+Issue 3: Video Product Demonstrations Lack Audio Descriptions
+----------------------------------------------------------------------
+  Affected content:
+    Embedded product demonstration videos on product detail pages and in the
+    ShopEasy Learning Hub.
+
+  WCAG Success Criteria not met:
+    - SC 1.2.5 Audio Description (Prerecorded) (Level AA): Video product
+      demonstrations contain visual information (e.g., on-screen text, product
+      features shown only visually, button interactions) that is not conveyed
+      through the existing audio track. Extended or inserted audio descriptions
+      are not currently provided for any prerecorded video content.
+
+  Impact:
+    Users who are blind or have low vision and cannot perceive the visual
+    content of product videos may be unable to obtain equivalent information
+    about product features and usage.
+
+  Accessible alternative:
+    We are preparing text transcripts for all product demonstration videos.
+    Where transcripts are currently available, they are linked directly below
+    the video player. If no transcript is yet available for a specific video,
+    please contact us (see Section 6) and we will provide a descriptive
+    transcript within 5 business days.
+
+  Remediation plan:
+    Audio descriptions are being produced for all new product videos (effective
+    immediately). Existing video library remediation is in progress, prioritised
+    by product popularity, with an estimated completion date of
+    [INSERT TARGET DATE].
+
+--------------------------------------------------------------------------------
+5. DISPROPORTIONATE BURDEN
+--------------------------------------------------------------------------------
+
+ShopEasy does not currently invoke the disproportionate burden exemption for
+any content or functionality. All non-conformances identified in Section 4 are
+being actively remediated within commercially reasonable timescales.
+
+Should ShopEasy determine that any specific remediation effort constitutes a
+disproportionate burden under applicable accessibility regulations, we will
+publish a detailed justification here, including the assessment criteria applied
+and the duration of the exemption.
+
+--------------------------------------------------------------------------------
+6. FEEDBACK AND CONTACT INFORMATION
+--------------------------------------------------------------------------------
+
+We welcome your feedback on the accessibility of ShopEasy. If you experience
+barriers to access, find content you cannot access, or have suggestions for
+improvement, please contact us:
+
+  Accessibility Support Contact:
+  Name/Role: Accessibility Officer, ShopEasy
+  Email:     accessibility@shopeasy.com
+  Telephone: [INSERT PHONE NUMBER]
+  Postal address:
+    ShopEasy Accessibility Team
+    [INSERT STREET ADDRESS]
+    [INSERT CITY, POSTCODE]
+    [INSERT COUNTRY]
+
+  Response commitment:
+    We aim to acknowledge all accessibility feedback within 2 business days and
+    to provide a substantive response or an accessible alternative to affected
+    content within 5 business days.
+
+  Requesting an accessible format:
+    If you need information on this website in a different format (e.g., large
+    print, audio, accessible PDF, or plain-text), please contact us using the
+    details above. Describe the content you require and your preferred format,
+    and we will respond as quickly as possible.
+
+--------------------------------------------------------------------------------
+7. ENFORCEMENT AND COMPLAINTS PROCEDURE
+--------------------------------------------------------------------------------
+
+We are committed to resolving all accessibility complaints. If you are
+dissatisfied with our response to your accessibility feedback, you may escalate
+your complaint as follows:
+
+  Internal escalation:
+    Email our Data Protection and Compliance team at: compliance@shopeasy.com
+    Reference "Accessibility Complaint" in the subject line.
+
+  External enforcement bodies (by jurisdiction):
+
+  United Kingdom:
+    Equality and Human Rights Commission (EHRC)
+    Website: www.equalityhumanrights.com
+    The Equality Act 2010 and the Public Sector Bodies (Websites and Mobile
+    Applications) Accessibility Regulations 2018 apply to public sector bodies.
+    Private sector organisations are subject to the Equality Act 2010.
+
+  European Union:
+    If ShopEasy operates in an EU member state as a public sector body or
+    within scope of the EU Web Accessibility Directive (Directive 2016/2102),
+    complaints may be directed to the relevant national enforcement body.
+    For private sector e-commerce entities, the European Accessibility Act
+    (Directive 2019/882), applicable from 28 June 2025, establishes
+    accessibility requirements and member-state enforcement mechanisms.
+    Contact the national market surveillance authority in your country of
+    residence for complaints under the EAA.
+
+  United States:
+    The Americans with Disabilities Act (ADA) prohibits discrimination on the
+    basis of disability. Complaints may be filed with the U.S. Department of
+    Justice, Civil Rights Division: www.ada.gov
+
+  Australia:
+    Disability Discrimination Act 1992 complaints may be lodged with the
+    Australian Human Rights Commission: www.humanrights.gov.au
+
+--------------------------------------------------------------------------------
+8. EU WEB ACCESSIBILITY DIRECTIVE COMPLIANCE INFORMATION
+--------------------------------------------------------------------------------
+
+This section is included to satisfy the minimum content requirements of the
+EU Web Accessibility Directive (Directive 2016/2102) and its implementing
+Decision (EU) 2018/1523, which specifies the model accessibility statement for
+public sector bodies. Private-sector organisations in scope of the European
+Accessibility Act (Directive 2019/882) are advised to follow this model as
+best practice.
+
+  a. Preparation of this statement:
+     This accessibility statement was prepared through a combination of
+     self-assessment and the findings of the formal accessibility audit
+     conducted on 15 March 2024 using automated and manual testing methods.
+
+  b. Statement preparation date:
+     This statement was first published on [INSERT ORIGINAL PUBLICATION DATE].
+     It was last reviewed and updated on 16 May 2026.
+
+  c. Review schedule:
+     This statement will be reviewed and updated at least annually, or sooner
+     following any significant change to the Website or following completion of
+     remediation work described in Section 4.
+
+  d. Formal complaints mechanism (EU):
+     Users in the European Union who are not satisfied with our response to
+     an accessibility complaint may refer their complaint to the relevant
+     national enforcement body designated under Article 7 of Directive 2016/2102
+     or the equivalent national authority under the European Accessibility Act.
+
+--------------------------------------------------------------------------------
+9. COMPATIBILITY WITH BROWSERS AND ASSISTIVE TECHNOLOGIES
+--------------------------------------------------------------------------------
+
+ShopEasy is designed to be compatible with the following assistive technologies
+and browser combinations:
+
+  Supported combinations (tested):
+    - NVDA (latest release) + Mozilla Firefox (latest) on Windows 10/11
+    - VoiceOver + Safari (latest) on macOS (latest two major versions)
+    - VoiceOver + Safari on iOS (latest two major versions)
+    - Keyboard-only navigation in Chrome, Firefox, Edge (latest versions)
+    - TalkBack + Chrome on Android (latest two major versions)
+
+  The Website is NOT optimised for use with Internet Explorer 11 or earlier
+  versions of any browser. Users are encouraged to use a modern, supported
+  browser for the best accessible experience.
+
+--------------------------------------------------------------------------------
+10. ASSESSMENT APPROACH
+--------------------------------------------------------------------------------
+
+ShopEasy assessed the accessibility of its Website using the following approach:
+
+  - Self-evaluation against WCAG 2.1 Level AA success criteria
+  - Automated scanning using [specify tools, e.g., axe-core, Deque Axe DevTools]
+  - Manual testing by internal QA team trained in accessibility testing
+  - Assistive technology user testing with NVDA on Windows and VoiceOver on
+    macOS and iOS, conducted as part of the audit on 15 March 2024
+  - Periodic automated scans run as part of the continuous integration pipeline
+
+  ShopEasy intends to commission an independent third-party accessibility audit
+  on or before [INSERT NEXT SCHEDULED AUDIT DATE].
+
+--------------------------------------------------------------------------------
+DOCUMENT INFORMATION
+--------------------------------------------------------------------------------
+
+Standard applied:       Web Content Accessibility Guidelines (WCAG) 2.1,
+                        W3C Recommendation, 5 June 2018
+                        https://www.w3.org/TR/WCAG21/
+
+Conformance level:      WCAG 2.1 Level AA (Partial Conformance)
+
+Scope:                  https://www.shopeasy.com/ and all sub-pages
+
+Statement version:      2.0
+Last reviewed:          16 May 2026
+Next scheduled review:  16 May 2027 (or earlier if material changes occur)
+
+================================================================================
+END OF ACCESSIBILITY STATEMENT
+================================================================================

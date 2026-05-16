@@ -1,0 +1,227 @@
+WCAG 2.1 AA Colour Contrast Audit
+===================================
+Date: 2026-05-16
+Standard: WCAG 2.1 Success Criterion 1.4.3 – Contrast (Minimum)
+Conformance Level: AA
+Version Introduced: WCAG 2.0 (carried forward unchanged into 2.1 and 2.2)
+
+APPLICABLE CRITERION
+---------------------
+SC 1.4.3 Contrast (Minimum) [Level AA] — WCAG 2.0 / 2.1 / 2.2
+
+The visual presentation of text and images of text must have a contrast ratio of at least:
+  - 4.5:1  for normal text (below 18pt / 14pt bold)
+  - 3.0:1  for large text (at least 18pt, or 14pt bold) — approximately 24px regular or 18.67px bold
+  - EXCEPTION: Disabled components, decorative text, and logotypes are exempt.
+
+Contrast ratios are computed using the relative luminance formula defined in WCAG 2.x (sRGB colour
+space, gamma-corrected). All ratios below are calculated to two decimal places.
+
+===========================================
+COLOUR PAIR ANALYSIS
+===========================================
+
+──────────────────────────────────────────
+1. BODY TEXT: #767676 on #FFFFFF
+──────────────────────────────────────────
+Foreground: #767676  (R:118, G:118, B:118)
+Background: #FFFFFF  (R:255, G:255, B:255)
+
+Relative luminance of #767676:
+  Channel value = 118/255 = 0.4627
+  Linearised: ((0.4627 + 0.055) / 1.055)^2.4 ≈ 0.1772
+  All channels equal → L = 0.1772
+
+Relative luminance of #FFFFFF: L = 1.0
+
+Contrast ratio = (1.0 + 0.05) / (0.1772 + 0.05) = 1.05 / 0.2272 ≈ 4.62:1
+
+RESULT: BORDERLINE PASS (≈4.62:1 ≥ 4.5:1 required for normal text)
+
+Note: #767676 is the well-known "just-passing grey." Some calculators round to exactly 4.48:1 or
+4.54:1 depending on rounding precision. To be safe — and to accommodate rendering variation across
+monitors — a slightly darker shade is strongly recommended. This value should be treated as a
+marginal pass that carries real-world risk.
+
+RECOMMENDATION: If you wish to stay grey, darken to #767676 → #696969 (ratio ≈5.08:1) or
+#6B6B6B (≈4.89:1) for a safer margin. For branded greys, #5C5C5C provides ≈7.0:1.
+
+──────────────────────────────────────────
+2. NAVIGATION LINKS: #0066CC on #FFFFFF
+──────────────────────────────────────────
+Foreground: #0066CC  (R:0, G:102, B:204)
+Background: #FFFFFF
+
+Relative luminance of #0066CC:
+  R: 0 → 0
+  G: 102/255 = 0.4 → ((0.4 + 0.055)/1.055)^2.4 ≈ 0.1329
+  B: 204/255 = 0.8 → ((0.8 + 0.055)/1.055)^2.4 ≈ 0.6038
+  L = 0.2126×0 + 0.7152×0.1329 + 0.0722×0.6038
+    = 0 + 0.0951 + 0.0436 = 0.1387
+
+Contrast ratio = (1.0 + 0.05) / (0.1387 + 0.05) = 1.05 / 0.1887 ≈ 5.56:1
+
+RESULT: PASS (5.56:1 ≥ 4.5:1 for normal text; ≥ 3.0:1 for large text)
+
+No change required for contrast compliance. This is a comfortable pass.
+
+Note for interactive elements: SC 1.4.11 (Non-text Contrast, AA, WCAG 2.1) requires a 3:1 ratio
+for UI component boundaries (e.g., underlines or focus indicators) against adjacent colours.
+#0066CC focus indicators on white easily pass that threshold.
+
+──────────────────────────────────────────
+3. BUTTON TEXT: #FFFFFF on #3D9970
+──────────────────────────────────────────
+Foreground: #FFFFFF  (L = 1.0)
+Background: #3D9970  (R:61, G:153, B:112)
+
+Relative luminance of #3D9970:
+  R: 61/255 = 0.2392 → ((0.2392+0.055)/1.055)^2.4 ≈ 0.0466
+  G: 153/255 = 0.6000 → ((0.6+0.055)/1.055)^2.4 ≈ 0.3185
+  B: 112/255 = 0.4392 → ((0.4392+0.055)/1.055)^2.4 ≈ 0.1607
+  L = 0.2126×0.0466 + 0.7152×0.3185 + 0.0722×0.1607
+    = 0.0099 + 0.2278 + 0.0116 = 0.2493
+
+Contrast ratio = (1.0 + 0.05) / (0.2493 + 0.05) = 1.05 / 0.2993 ≈ 3.51:1
+
+RESULT: FAIL for normal text (3.51:1 < 4.5:1 required)
+        PASS for large text (3.51:1 ≥ 3.0:1) — only if button label is 18pt+ regular or 14pt+ bold
+
+At typical button font sizes (14–16px regular weight), this FAILS AA.
+
+REPLACEMENT OPTIONS for #3D9970 background with white text:
+  Option A (darken background): #2E7A58 → ratio ≈ 5.38:1 with white  [PASS]
+  Option B (darker green):      #276749 → ratio ≈ 6.83:1 with white  [PASS, AAA territory]
+  Option C (keep brand hue, tweak): #287A56 → ratio ≈ 5.52:1         [PASS]
+
+Alternatively, switch to dark text on the original background:
+  #1A1A1A (#3D9970 bg) → ratio ≈ 9.5:1 [PASS] — requires design change
+
+RECOMMENDED FIX: Darken the button background to #2E7A58 (a natural-looking forest green) while
+retaining white text. This preserves your green brand identity at a safe 5.4:1 ratio.
+
+──────────────────────────────────────────
+4. PLACEHOLDER TEXT: #AAAAAA on #FFFFFF
+──────────────────────────────────────────
+Foreground: #AAAAAA  (R:170, G:170, B:170)
+Background: #FFFFFF
+
+Relative luminance of #AAAAAA:
+  170/255 = 0.6667 → ((0.6667+0.055)/1.055)^2.4 ≈ 0.4019
+  L = 0.4019
+
+Contrast ratio = (1.05) / (0.4019 + 0.05) = 1.05 / 0.4519 ≈ 2.32:1
+
+RESULT: FAIL (2.32:1 < 4.5:1 for normal text; < 3.0:1 even for large text)
+
+This is a significant failure. Placeholder text is considered text content under SC 1.4.3.
+Although it is transient (disappears on focus/input), WCAG 2.1 does not exempt placeholder text
+from the contrast requirement — confirmed by the WCAG 2.1 Understanding document for SC 1.4.3.
+
+REPLACEMENT OPTIONS:
+  Option A: #767676 on #FFFFFF → ≈4.54:1 [Borderline PASS — use with caution; see item 1]
+  Option B: #696969 on #FFFFFF → ≈5.08:1 [PASS — recommended minimum for placeholder]
+  Option C: #5C5C5C on #FFFFFF → ≈7.0:1  [PASS, good accessibility margin]
+
+RECOMMENDED FIX: Use #767676 as the absolute minimum, but prefer #696969 or darker for
+placeholder text, since users often find placeholder text harder to read even when it technically
+passes. Also ensure placeholder text is not the sole means of conveying input instructions
+(SC 3.3.2 Labels or Instructions).
+
+──────────────────────────────────────────
+5. ERROR MESSAGES: #CC0000 on #FFFFFF
+──────────────────────────────────────────
+Foreground: #CC0000  (R:204, G:0, B:0)
+Background: #FFFFFF
+
+Relative luminance of #CC0000:
+  R: 204/255 = 0.8 → ((0.8+0.055)/1.055)^2.4 ≈ 0.6038
+  G: 0 → 0
+  B: 0 → 0
+  L = 0.2126×0.6038 + 0 + 0 = 0.1284
+
+Contrast ratio = 1.05 / (0.1284 + 0.05) = 1.05 / 0.1784 ≈ 5.89:1
+
+RESULT: PASS (5.89:1 ≥ 4.5:1 for normal text)
+
+No change required for contrast compliance.
+
+Additional accessibility notes for error messages:
+  - SC 1.4.1 (Use of Colour, Level A): Error messages MUST NOT rely on colour alone to convey
+    meaning. Pair with an icon, bold text, or error prefix (e.g., "Error: …") so colour-blind
+    users are not disadvantaged.
+  - SC 3.3.1 (Error Identification, Level A): Errors must be identified in text.
+  - #CC0000 is a robust, accessible red for this purpose.
+
+──────────────────────────────────────────
+6. DISABLED BUTTON: #999999 on #CCCCCC
+──────────────────────────────────────────
+Foreground: #999999  (R:153, G:153, B:153)
+Background: #CCCCCC  (R:204, G:204, B:204)
+
+Relative luminance of #999999:
+  153/255 = 0.6 → 0.3185  → L = 0.3185
+
+Relative luminance of #CCCCCC:
+  204/255 = 0.8 → 0.6038  → L = 0.6038
+
+Contrast ratio = (0.6038 + 0.05) / (0.3185 + 0.05) = 0.6538 / 0.3685 ≈ 1.77:1
+
+RESULT: EXEMPT — NO FAILURE RECORDED
+
+SC 1.4.3 explicitly exempts:
+  "Text or images of text that are part of an inactive user interface component … have no
+   contrast requirement."
+  (WCAG 2.1 SC 1.4.3, Exception clause)
+
+A disabled button is an inactive UI component. The 1.77:1 ratio is intentionally low to
+communicate the "unavailable" state to sighted users — this is acceptable under WCAG 2.1.
+
+Design best practice: In addition to low contrast, use other visual cues such as a "not-allowed"
+cursor, a "disabled" aria attribute (aria-disabled="true"), and — where possible — a tooltip or
+inline message explaining why the control is disabled and how to enable it (supports SC 3.3.2
+and general usability).
+
+===========================================
+SUMMARY TABLE
+===========================================
+
+Colour Pair                       Ratio    Threshold   Status
+---------------------------------+--------+-----------+-----------------------------
+Body text #767676/#FFFFFF         4.62:1   4.5:1 AA    MARGINAL PASS (risk: darken)
+Nav links #0066CC/#FFFFFF         5.56:1   4.5:1 AA    PASS
+Button text #FFFFFF/#3D9970       3.51:1   4.5:1 AA    FAIL  → use #2E7A58 bg
+Placeholder #AAAAAA/#FFFFFF       2.32:1   4.5:1 AA    FAIL  → use #696969 minimum
+Error msg #CC0000/#FFFFFF         5.89:1   4.5:1 AA    PASS
+Disabled btn #999999/#CCCCCC      1.77:1   EXEMPT      EXEMPT (inactive component)
+
+===========================================
+PRIORITY ACTION PLAN
+===========================================
+
+HIGH PRIORITY (must fix for AA conformance):
+  1. Placeholder text #AAAAAA → replace with #696969 (or darker). Affects all form inputs.
+  2. Button background #3D9970 → replace with #2E7A58 (keeping white text). Affects all CTAs.
+
+LOW RISK / MONITOR:
+  3. Body text #767676 — technically passes at ≈4.62:1 but is extremely marginal. Recommend
+     darkening to #696969 to remove risk from rounding differences and real-world rendering.
+
+NO ACTION REQUIRED:
+  4. Nav links #0066CC — passes comfortably.
+  5. Error messages #CC0000 — passes; ensure non-colour indicators also present (SC 1.4.1).
+  6. Disabled button #999999/#CCCCCC — exempt; no change needed for WCAG conformance.
+
+===========================================
+LEGAL / REGULATORY CONTEXT
+===========================================
+
+SC 1.4.3 at AA level is legally required under:
+  - EN 301 549 (EU Web Accessibility Directive and European Accessibility Act)
+  - Section 508 (US federal agencies and federally-funded entities)
+  - AODA WCAG 2.0 AA (Canada – Ontario)
+  - BS 8878 / Public Sector Bodies Accessibility Regulations 2018 (UK)
+  - Australia DDA / AS EN 301 549
+
+Failure to meet SC 1.4.3 AA for items 3 and 4 above would constitute a non-conformance under
+all of these frameworks and should be remediated before publication.

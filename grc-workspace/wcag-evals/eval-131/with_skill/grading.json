@@ -1,0 +1,39 @@
+{
+  "eval_id": 131,
+  "eval_name": "wcag-colour-contrast-audit",
+  "prompt": "Our website uses the following colour combinations. Which ones fail WCAG 2.1 AA contrast requirements and what should we replace them with? Body text #767676/#FFFFFF, Nav links #0066CC/#FFFFFF, Button text #FFFFFF/#3D9970, Placeholder #AAAAAA/#FFFFFF, Error messages #CC0000/#FFFFFF, Disabled button #999999/#CCCCCC.",
+  "expectations": [
+    {
+      "text": "Correctly identifies SC 1.4.3 as the applicable criterion with level AA",
+      "passed": true,
+      "evidence": "Response explicitly cites 'SC 1.4.3 Contrast (Minimum) — Level AA' and references the 4.5:1 and 3:1 thresholds"
+    },
+    {
+      "text": "Correctly flags button text (#FFFFFF on #3D9970) as failing",
+      "passed": true,
+      "evidence": "Identified as ~3.51:1 which fails the 4.5:1 threshold for normal text"
+    },
+    {
+      "text": "Correctly flags placeholder text (#AAAAAA on #FFFFFF) as failing",
+      "passed": true,
+      "evidence": "Identified as ~2.32:1, noted WCAG does not exempt placeholder text"
+    },
+    {
+      "text": "Correctly identifies disabled button as exempt from contrast requirements",
+      "passed": true,
+      "evidence": "Notes inactive UI component exception explicitly under SC 1.4.3"
+    },
+    {
+      "text": "Provides specific replacement colour suggestions for failures",
+      "passed": true,
+      "evidence": "Recommends #2E7A58 for button background (~5.38:1) and #696969 for placeholder text (~5.08:1)"
+    },
+    {
+      "text": "Correctly identifies all passing combinations",
+      "passed": true,
+      "evidence": "Nav links 5.56:1, Error messages 5.89:1 both correctly identified as passing"
+    }
+  ],
+  "total": 6,
+  "passed": 6
+}

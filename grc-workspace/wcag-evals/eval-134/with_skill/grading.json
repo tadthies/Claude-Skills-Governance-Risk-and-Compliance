@@ -1,0 +1,34 @@
+{
+  "eval_id": 134,
+  "eval_name": "wcag-legal-compliance-by-region",
+  "prompt": "We are a SaaS company with customers in the US, EU, and UK. What WCAG version and conformance level do we need to meet for legal compliance in each region? We sell to both government agencies and private sector businesses.",
+  "expectations": [
+    {
+      "text": "Correctly states US federal requirement: Section 508 / WCAG 2.0 AA minimum",
+      "passed": true,
+      "evidence": "Correctly states Section 508 references WCAG 2.0 AA via 36 CFR Part 1194 E205; notes WCAG 2.1 is market standard"
+    },
+    {
+      "text": "Correctly states EU requirement: EN 301 549 / WCAG 2.1 AA via EAA and Web Accessibility Directive",
+      "passed": true,
+      "evidence": "Correctly cites EN 301 549 referencing WCAG 2.1 AA; covers both EU WAD (public) and EAA (private, June 2025)"
+    },
+    {
+      "text": "Correctly states UK requirement: UK PSBAR 2018 / WCAG 2.1 AA for public sector",
+      "passed": true,
+      "evidence": "Correctly cites Public Sector Bodies Accessibility Regulations 2018 requiring WCAG 2.1 AA"
+    },
+    {
+      "text": "Covers both government and private sector distinctions in each region",
+      "passed": true,
+      "evidence": "Separately addresses government and private sector for US, EU, and UK"
+    },
+    {
+      "text": "Provides a practical unified recommendation (WCAG 2.1 or 2.2 AA satisfies all)",
+      "passed": true,
+      "evidence": "Recommends targeting WCAG 2.2 AA as superset that satisfies all jurisdictions with 5-step roadmap"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -1,0 +1,388 @@
+WCAG Accessibility Audit — ProfileModal Component
+=================================================
+Auditor: WCAG Expert Review (WCAG 2.1 AA baseline)
+Date: 2026-05-16
+
+EXECUTIVE SUMMARY
+-----------------
+The ProfileModal component contains 7 distinct WCAG violations spanning all four POUR
+principles. Several issues are critical (Level A) and would prevent assistive-technology
+users from operating the modal at all. None of the violations require complex remediation;
+all can be fixed with correct ARIA attributes, semantic HTML, and a small amount of focus-
+management JavaScript.
+
+==========================================================================
+ISSUE 1 — Missing ARIA Dialog Role and Required ARIA Attributes
+==========================================================================
+WCAG Success Criterion: 4.1.2 Name, Role, Value (Level A)
+POUR Principle: Robust
+
+What the violation is:
+The outer modal container <div class="modal-content"> carries no role="dialog" attribute.
+Screen readers therefore have no way to announce to the user that a dialog has opened, and
+cannot apply their dialog-mode interaction model. WCAG 4.1.2 requires that all UI
+components expose their role programmatically. A dialog without role="dialog" (or
+role="alertdialog") is announced as a generic container, disorienting assistive-technology
+users who cannot tell they are inside an interactive overlay.
+
+Additionally, every ARIA dialog must be labelled via aria-labelledby (pointing at the
+dialog's heading) or aria-label, so the dialog's accessible name is announced when focus
+enters it. Neither attribute is present.
+
+Required fix:
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <h2 id="modal-title">Edit Profile</h2>
+
+The aria-modal="true" attribute tells supporting browsers and screen readers that content
+behind the dialog is inert, which is essential for browsers that do not natively support
+inert. Note: aria-modal alone is not sufficient — see Issue 2 for focus trapping.
+
+==========================================================================
+ISSUE 2 — No Focus Trap Inside the Modal
+==========================================================================
+WCAG Success Criterion: 2.1.2 No Keyboard Trap (Level A) — inverse obligation
+                        2.1.1 Keyboard (Level A)
+POUR Principle: Operable
+
+What the violation is:
+2.1.1 requires that all functionality be operable via keyboard. 2.1.2 requires that
+keyboard focus not become trapped in a component in a way that prevents the user from
+leaving — but the complementary obligation is that while a modal is open, focus must be
+contained within it (ARIA Authoring Practices Guide §3.8 Dialog Pattern). Without a focus
+trap, a keyboard user who tabs past the last focusable element in the modal will move focus
+into the obscured background page. Because the background content is not made inert, they
+can interact with page controls behind the modal, which is both a functional failure and a
+disorienting experience. The WAI-ARIA APG Dialog Pattern, cited as a normative technique
+for WCAG 2.1, mandates focus confinement.
+
+Required fix (React hook):
+
+  import { useEffect, useRef } from 'react';
+
+  function useFocusTrap(ref, isActive) {
+    useEffect(() => {
+      if (!isActive) return;
+      const focusable = ref.current?.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      );
+      const first = focusable?.[0];
+      const last = focusable?.[focusable.length - 1];
+
+      function handleKeyDown(e) {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      }
+      document.addEventListener('keydown', handleKeyDown);
+      first?.focus(); // move focus into dialog on open (see Issue 3)
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [isActive]);
+  }
+
+==========================================================================
+ISSUE 3 — Focus Not Moved Into the Dialog on Open
+==========================================================================
+WCAG Success Criterion: 2.4.3 Focus Order (Level A)
+POUR Principle: Operable
+
+What the violation is:
+When a modal opens, focus must be programmatically moved into the dialog. The current
+implementation renders the modal into the DOM but leaves focus wherever it was (typically
+on the "Edit Profile" trigger button in the background). A screen-reader user will hear
+nothing change; a keyboard user must Tab many times to reach the modal content.
+WCAG 2.4.3 requires that focus order preserve meaning and operability. APG Dialog Pattern
+specifies that focus should be set to the first focusable element (or the dialog container
+itself) immediately upon open.
+
+Required fix:
+Move focus to the first interactive element (or the dialog div) in the useEffect hook
+shown in Issue 2 (first?.focus()). Also store the triggering element so focus can be
+restored on close (Issue 4).
+
+==========================================================================
+ISSUE 4 — Focus Not Returned to Trigger on Close
+==========================================================================
+WCAG Success Criterion: 2.4.3 Focus Order (Level A)
+POUR Principle: Operable
+
+What the violation is:
+When the modal closes, focus vanishes (typically moves to <body>). The user loses their
+place in the page entirely. This is a well-established failure of 2.4.3 and is explicitly
+called out in the ARIA APG Dialog Pattern: "When the dialog closes, focus returns to the
+element that invoked the dialog."
+
+Required fix:
+
+  // Before opening the modal, capture the trigger
+  const triggerRef = useRef(null);
+
+  function handleOpen() {
+    triggerRef.current = document.activeElement;
+    setIsOpen(true);
+  }
+
+  function handleClose() {
+    setIsOpen(false);
+    triggerRef.current?.focus();
+  }
+
+==========================================================================
+ISSUE 5 — Form Inputs Have No Programmatic Labels
+==========================================================================
+WCAG Success Criterion: 1.3.1 Info and Relationships (Level A)
+                        1.1.1 Non-text Content (Level A) — for placeholder-as-label pattern
+                        2.4.6 Headings and Labels (Level AA)
+POUR Principle: Perceivable, Operable
+
+What the violation is:
+Both form fields use a <span> as a visual label instead of a <label> element. A <span> has
+no programmatic association with its input. When a screen reader focuses the input, it reads
+only the placeholder text (if anything), not the field label. Placeholder text is
+insufficient as a label for three additional reasons:
+  (a) it disappears once the user starts typing, removing the visible label (failure of
+      1.3.1 and 2.4.6 for sighted users with cognitive disabilities);
+  (b) placeholder contrast is typically below 4.5:1, failing 1.4.3 (see Issue 6);
+  (c) some screen readers do not consistently announce placeholder as the accessible name.
+
+WCAG 1.3.1 requires that information conveyed visually (here, which field is which) be
+programmatically determinable. The correct pattern is an explicit <label for="..."> or
+wrapping label element.
+
+Required fix:
+
+  <div>
+    <label htmlFor="full-name">Full Name</label>
+    <input id="full-name" type="text" placeholder="Enter your name" />
+  </div>
+  <div>
+    <label htmlFor="email">Email</label>
+    <input id="email" type="email" placeholder="Enter email" />
+  </div>
+
+==========================================================================
+ISSUE 6 — No Escape Key Handler to Close the Dialog
+==========================================================================
+WCAG Success Criterion: 2.1.1 Keyboard (Level A)
+POUR Principle: Operable
+
+What the violation is:
+The ARIA Authoring Practices Guide Dialog Pattern (a normative technique for satisfying
+WCAG 2.1.1) specifies that pressing Escape must close the dialog. The current implementation
+provides no keyboard handler for the Escape key. Keyboard-only users must Tab to the Cancel
+button and activate it — a longer path — and users who expect Escape to dismiss the overlay
+(an established, cross-platform convention) have no way to do so. This is a failure of the
+keyboard operability requirement.
+
+Required fix:
+
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === 'Escape') onClose();
+    }
+    if (isOpen) document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose]);
+
+==========================================================================
+ISSUE 7 — Background Content Not Made Inert
+==========================================================================
+WCAG Success Criterion: 1.3.1 Info and Relationships (Level A)
+                        4.1.3 Status Messages (Level AA) — secondary
+POUR Principle: Perceivable, Robust
+
+What the violation is:
+When a modal is open, background page content should be hidden from the accessibility tree
+so screen-reader users navigating with virtual cursor or browse mode cannot wander into
+content that is visually obscured. aria-modal="true" signals inertness to some browsers but
+is not universally honoured. The current component neither sets inert on the root, nor uses
+aria-hidden="true" on background containers. Screen-reader users using virtual cursor can
+read background content, which conflicts with the visual design intent and exposes
+potentially confusing or misleading content relationships (1.3.1 failure).
+
+Required fix (React approach):
+
+  useEffect(() => {
+    const appRoot = document.getElementById('root'); // or your app root
+    if (isOpen) {
+      appRoot.setAttribute('inert', '');
+      appRoot.setAttribute('aria-hidden', 'true');
+    } else {
+      appRoot.removeAttribute('inert');
+      appRoot.removeAttribute('aria-hidden');
+    }
+    return () => {
+      appRoot.removeAttribute('inert');
+      appRoot.removeAttribute('aria-hidden');
+    };
+  }, [isOpen]);
+
+Note: The modal element itself must NOT be a descendant of the inert/aria-hidden root, or
+it will be hidden from AT as well. Render the modal via a React Portal into document.body.
+
+==========================================================================
+COMPLETE CORRECTED COMPONENT
+==========================================================================
+
+import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
+
+function ProfileModal({ isOpen, onClose, triggerRef }) {
+  const dialogRef = useRef(null);
+
+  // Focus trap + initial focus
+  useEffect(() => {
+    if (!isOpen || !dialogRef.current) return;
+
+    const focusableSelectors =
+      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    const focusableElements = dialogRef.current.querySelectorAll(focusableSelectors);
+    const firstEl = focusableElements[0];
+    const lastEl = focusableElements[focusableElements.length - 1];
+
+    firstEl?.focus();
+
+    function handleTabKey(e) {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    }
+
+    function handleEscape(e) {
+      if (e.key === 'Escape') onClose();
+    }
+
+    document.addEventListener('keydown', handleTabKey);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('keydown', handleTabKey);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  // Return focus to trigger on close
+  useEffect(() => {
+    if (!isOpen && triggerRef?.current) {
+      triggerRef.current.focus();
+    }
+  }, [isOpen, triggerRef]);
+
+  // Make background inert
+  useEffect(() => {
+    const appRoot = document.getElementById('root');
+    if (!appRoot) return;
+    if (isOpen) {
+      appRoot.setAttribute('inert', '');
+      appRoot.setAttribute('aria-hidden', 'true');
+    } else {
+      appRoot.removeAttribute('inert');
+      appRoot.removeAttribute('aria-hidden');
+    }
+    return () => {
+      appRoot.removeAttribute('inert');
+      appRoot.removeAttribute('aria-hidden');
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  return createPortal(
+    // Overlay: clicking it closes the dialog; stop propagation inside the dialog
+    <div
+      className="modal-overlay"
+      onClick={onClose}
+      aria-hidden="true" /* overlay itself is decorative */
+    >
+      <div
+        ref={dialogRef}
+        className="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        onClick={(e) => e.stopPropagation()} /* prevent overlay click from firing inside */
+      >
+        <h2 id="modal-title">Edit Profile</h2>
+        <form>
+          <div>
+            <label htmlFor="full-name">Full Name</label>
+            <input
+              id="full-name"
+              type="text"
+              placeholder="Enter your name"
+              autoComplete="name"
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter email"
+              autoComplete="email"
+            />
+          </div>
+          <div className="buttons">
+            <button type="button" onClick={onClose}>
+              Cancel
+            </button>
+            <button type="submit">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+/* Usage in parent — capture trigger ref for focus restoration: */
+function ProfilePage() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const triggerRef = useRef(null);
+
+  return (
+    <>
+      <button ref={triggerRef} onClick={() => setIsOpen(true)}>
+        Edit Profile
+      </button>
+      <ProfileModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+      />
+    </>
+  );
+}
+
+==========================================================================
+SUMMARY TABLE
+==========================================================================
+
+| # | Issue                              | SC          | Level | POUR        |
+|---|------------------------------------|-------------|-------|-------------|
+| 1 | No role="dialog" / aria-labelledby | 4.1.2       | A     | Robust      |
+| 2 | No focus trap                      | 2.1.1/2.1.2 | A     | Operable    |
+| 3 | Focus not moved to dialog on open  | 2.4.3       | A     | Operable    |
+| 4 | Focus not restored to trigger      | 2.4.3       | A     | Operable    |
+| 5 | Inputs lack programmatic labels    | 1.3.1/2.4.6 | A/AA  | Perceivable |
+| 6 | No Escape key to close             | 2.1.1       | A     | Operable    |
+| 7 | Background content not inert       | 1.3.1       | A     | Perceivable |
+
+All 7 issues are resolved in the corrected component above. Six of the seven violations
+are Level A — the most severe conformance level — meaning the modal would fail even a
+minimum WCAG 2.1 Level A audit in its original form.
+
+Additional recommended enhancement (not a WCAG violation but best practice):
+- Add autoComplete="name" and autoComplete="email" on the inputs to support SC 1.3.5
+  Identify Input Purpose (Level AA, WCAG 2.1) for users of autofill tools.
+  (Included in the corrected code above.)
