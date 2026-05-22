@@ -55,7 +55,7 @@ ALL_SKILL_FILES = sorted(set(STANDALONE_SKILL_FILES) | set(PLUGIN_SKILL_FILES))
 # Expected inventory — update when adding a new skill
 # ---------------------------------------------------------------------------
 
-# Canonical lowercase kebab-case names for all 27 skills
+# Canonical lowercase kebab-case names for all 28 skills
 EXPECTED_SKILL_NAMES = {
     "ccpa",
     "cis-controls",
@@ -78,6 +78,7 @@ EXPECTED_SKILL_NAMES = {
     "nist-800-53",
     "nist-ai-rmf",
     "nist-csf",
+    "nzism",
     "pci-compliance",
     "section-508",
     "soc2",
@@ -109,6 +110,7 @@ EXPECTED_STANDALONE_FILENAMES = {
     "nist-800-53.skill",
     "nist-ai-rmf.skill",
     "NIST Cybersecurity.skill",
+    "nzism.skill",
     "PCI-Compliance.skill",
     "section-508.skill",
     "soc2.skill",

@@ -578,6 +578,28 @@
         "screen-reader",
         "grc"
       ]
+    },
+    {
+      "name": "nzism",
+      "source": "./plugins/nzism",
+      "description": "Expert New Zealand Information Security Manual (NZISM) advisor for NZ government agencies. Gap analysis, system certification & accreditation, classification framework guidance, control implementation, and GCSB/NCSC NZ compliance.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Hemant Naik",
+        "email": "hemant.naik@gmail.com"
+      },
+      "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
+      "category": "compliance",
+      "keywords": [
+        "nzism",
+        "new-zealand",
+        "gcsb",
+        "ncsc-nz",
+        "government-security",
+        "cybersecurity",
+        "compliance",
+        "grc"
+      ]
     }
   ]
 }

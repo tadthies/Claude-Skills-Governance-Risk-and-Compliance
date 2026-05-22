@@ -1711,6 +1711,77 @@
       "prompt": "Write an accessibility statement for our e-commerce website 'ShopEasy'. We currently meet most WCAG 2.1 AA criteria but have three known issues: older PDFs not fully accessible (SC 1.1.1, 4.1.2), live chat not announcing messages to screen readers (SC 4.1.3), video product demos lack audio descriptions (SC 1.2.5). Last audit: March 15, 2024 using automated tools, NVDA, and VoiceOver.",
       "expected_output": "Produces publication-ready accessibility statement with: 'partially conforms' status, all 3 known issues with SC citations, audit date and methodology, contact/feedback mechanism, formal complaints procedure per EU Web Accessibility Directive.",
       "files": []
+    },
+    {
+      "id": 136,
+      "skill": "nzism",
+      "skill_path": "plugins/nzism/skills/nzism/SKILL.md",
+      "prompt": "We are a New Zealand government agency building a new case management system that will store In-Confidence and Restricted information for about 200 staff. We have no formal NZISM compliance program yet. Give us a gap analysis of what we are likely missing and a roadmap to certify and accredit the system.",
+      "expected_output": "A structured gap analysis covering key NZISM control areas (governance, access control, audit logging, network security, cryptography, physical security, incident management) with status for each, plus a phased roadmap including documentation, control implementation, assessment, and Certification & Accreditation (C&A). Should reference classification levels and the C&A requirement for Restricted systems.",
+      "assertions": [
+        "Identifies Restricted classification and its C&A requirement",
+        "Covers at least 5 distinct NZISM control domains in the gap analysis",
+        "Includes a phased roadmap with C&A as a milestone",
+        "Mentions mandatory documentation (SSP, risk assessment, POA&M)",
+        "References GCSB/NCSC NZ as the governing body"
+      ]
+    },
+    {
+      "id": 137,
+      "skill": "nzism",
+      "skill_path": "plugins/nzism/skills/nzism/SKILL.md",
+      "prompt": "Our NZ government agency wants to move a Restricted data system to AWS Sydney (Australia). What NZISM controls, approvals, and data residency requirements apply? What is the process to get approval?",
+      "expected_output": "Clear guidance that offshore hosting of Restricted data requires Accrediting Authority approval, explaining data residency requirements, the cloud risk assessment process, shared responsibility model documentation requirements, and what approvals are needed from the Accrediting Authority. Should mention the NZ Government Cloud Computing Risk & Resilience Guide.",
+      "assertions": [
+        "States that Restricted data offshore hosting requires Accrediting Authority approval",
+        "Mentions the NZ Government Cloud Computing Risk & Resilience Guide",
+        "Explains the shared responsibility model requirement",
+        "Covers cloud risk assessment requirements",
+        "Notes data sovereignty considerations for NZ government"
+      ]
+    },
+    {
+      "id": 138,
+      "skill": "nzism",
+      "skill_path": "plugins/nzism/skills/nzism/SKILL.md",
+      "prompt": "Write a complete NZISM-compliant Access Control Policy for a NZ government agency operating a Restricted system. Include all mandatory sections and map each to the relevant NZISM control areas.",
+      "expected_output": "A complete, structured Access Control Policy including: Purpose, Scope, Classification marking (RESTRICTED), Policy Statement covering least privilege and separation of duties, Roles & Responsibilities, Procedures covering account lifecycle, privileged access, access reviews, MFA requirements, Review Cycle, References to NZISM control sections, and a document control block. Each section should reference relevant NZISM control areas.",
+      "assertions": [
+        "Includes a document control block (version, author, approved by, date)",
+        "Contains a classification marking (RESTRICTED or equivalent)",
+        "Covers least privilege and separation of duties principles",
+        "Includes MFA requirement for privileged and remote access",
+        "References NZISM control sections or control IDs",
+        "Includes access review/re-certification requirements"
+      ]
+    },
+    {
+      "id": 139,
+      "skill": "nzism",
+      "skill_path": "plugins/nzism/skills/nzism/SKILL.md",
+      "prompt": "Our agency has just discovered that a third-party supplier processing our Restricted government data has suffered a ransomware attack and some data may have been exfiltrated. What are our NZISM incident response and reporting obligations? Who do we need to notify and by when?",
+      "expected_output": "Clear guidance on NZISM incident response obligations including: immediate containment steps, mandatory NCSC NZ notification for significant incidents involving Restricted data, Privacy Commissioner notification if personal information is involved, Accrediting Authority notification, internal incident response plan activation, evidence preservation requirements, and post-incident review obligations.",
+      "assertions": [
+        "Identifies mandatory NCSC NZ notification for Restricted data incidents",
+        "Mentions Privacy Commissioner notification for personal information breaches",
+        "Covers evidence preservation and chain of custody",
+        "References the supplier security obligation (third-party incident notification clause)",
+        "Includes post-incident review and lessons learned requirement"
+      ]
+    },
+    {
+      "id": 140,
+      "skill": "nzism",
+      "skill_path": "plugins/nzism/skills/nzism/SKILL.md",
+      "prompt": "Our NZ government agency is onboarding a new SaaS vendor who will process In-Confidence HR data. What security obligations must we include in the contract, and what due diligence should we conduct before signing?",
+      "expected_output": "Comprehensive guidance covering: pre-engagement security assessment steps (supplier vetting, security certification check like ISO 27001), mandatory contractual requirements (NZISM-equivalent controls, right to audit, incident notification timeframes, data handling and disposal, data residency), offshore processing considerations for In-Confidence data, and ongoing monitoring requirements.",
+      "assertions": [
+        "Covers pre-engagement supplier security due diligence",
+        "Lists specific mandatory contractual security clauses",
+        "Mentions right to audit clause",
+        "Addresses data residency and offshore processing for In-Confidence",
+        "Includes incident notification timeframe requirement in contract"
+      ]
     }
   ]
 }

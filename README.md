@@ -1,5 +1,5 @@
 # Claude Skills for Governance, Risk & Compliance (GRC)
-Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), Brazil's LGPD (Lei Geral de Proteção de Dados), EU CSRD (Corporate Sustainability Reporting Directive), CIS Controls v8 (CIS Top 18), EAR (Export Administration Regulations), NIST SP 800-53 (Security and Privacy Controls for Federal Systems), EU AI Act (Regulation (EU) 2024/1689), and Section 508 (US Federal ICT Accessibility), and WCAG (Web Content Accessibility Guidelines) — powered by Claude Skills.
+Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), Brazil's LGPD (Lei Geral de Proteção de Dados), EU CSRD (Corporate Sustainability Reporting Directive), CIS Controls v8 (CIS Top 18), EAR (Export Administration Regulations), NIST SP 800-53 (Security and Privacy Controls for Federal Systems), EU AI Act (Regulation (EU) 2024/1689), Section 508 (US Federal ICT Accessibility), WCAG (Web Content Accessibility Guidelines), and NZISM (New Zealand Information Security Manual) — powered by Claude Skills.
 
 Benchmarked across 125 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **96%** vs a baseline of **82%** across 625 total assertions.
 
@@ -43,6 +43,7 @@ Benchmarked across 125 test cases (5 per framework) using the eval framework —
   - [EU AI Act — Regulation (EU) 2024/1689](#-eu-ai-act--regulation-eu-20241689)
   - [Section 508 — US Federal ICT Accessibility](#-section-508--us-federal-ict-accessibility)
   - [WCAG — Web Content Accessibility Guidelines](#-wcag--web-content-accessibility-guidelines)
+  - [NZISM — New Zealand Information Security Manual](#-nzism--new-zealand-information-security-manual)
 - [Potential Use Cases](#potential-use-cases)
 - [How to Install a Skill](#how-to-install-a-skill)
 - [Install via Claude Code Marketplace](#install-via-claude-code-marketplace)
@@ -614,6 +615,23 @@ The WCAG skill turns Claude into an expert advisor on **WCAG 2.0, 2.1, and 2.2**
 
 **Trigger phrases:** `WCAG`, `WCAG 2.1`, `WCAG 2.2`, `web accessibility`, `POUR principles`, `accessibility audit`, `colour contrast`, `screen reader`, `keyboard accessibility`, `ARIA`, `focus visible`, `reflow`, `accessibility statement`, `EN 301 549`, `European Accessibility Act`, `WCAG conformance`, `success criteria`, `alt text`, `captions accessibility`, `SC 1.4.3`, `SC 4.1.2`, `NVDA`, `VoiceOver`, `JAWS screen reader`, `WCAG 2.2 upgrade`
 
+### 28. 🇳🇿 NZISM — New Zealand Information Security Manual
+
+**File:** `NZISM - Claude Skill/nzism.skill`
+
+The NZISM skill turns Claude into an expert advisor on the **New Zealand Information Security Manual (NZISM)** — the mandatory cybersecurity framework published by the **Government Communications Security Bureau (GCSB)** / **National Cyber Security Centre (NCSC NZ)** for NZ government agencies and their supply chains. It covers the NZ Government Information Classification System (ISCS) from Unclassified through Top Secret, all 18+ NZISM control sections, the Certification & Accreditation (C&A) process, and mandatory agency obligations.
+
+**Key capabilities:**
+- **Gap analysis** — structured control-by-control gap assessment across all NZISM security domains, with status (Implemented / Partial / Not Implemented / N/A), evidence required, and remediation priority for any classification level
+- **Certification & Accreditation (C&A)** — step-by-step pathway for Restricted and above: SSP preparation, security risk assessment, independent assessment, POA&M, and Accrediting Authority sign-off
+- **Classification framework** — NZ Government ISCS guidance (Unclassified, In-Confidence, Restricted, Confidential, Secret, Top Secret): how to classify systems, aggregation risk, handling requirements (labelling, transmission, storage, disposal)
+- **Control implementation guidance** — actionable advice for all 18 NZISM sections: governance, physical, personnel, network, access control, cryptography, audit & logging, cloud computing, enterprise mobility, third-party suppliers, incident management, and more
+- **Policy generation** — complete, NZISM-referenced policies (Access Control, Incident Response, Information Security, Acceptable Use, Business Continuity) with document control blocks and classification markings
+- **Supply chain security** — contractual obligations for SaaS vendors and outsourced suppliers processing government data, offshore processing approvals, right-to-audit clauses, and incident notification requirements
+- **Cloud guidance** — NZ Government Cloud Computing Risk & Resilience Guide alignment, data residency requirements, shared responsibility model documentation
+
+**Trigger phrases:** `NZISM`, `NZ government security`, `GCSB compliance`, `NCSC NZ`, `Restricted system NZ`, `Confidential system NZ`, `NZ information classification`, `agency security policy NZ`, `system certification NZ`, `C&A NZ`, `government cybersecurity New Zealand`, `NZISM gap analysis`, `NZISM controls`, `NZ classification ISCS`, `NZISM policy`
+
 ---
 
 ## Potential Use Cases
@@ -835,7 +853,7 @@ Teams can pre-wire the marketplace in `.claude/settings.json` so every developer
 
 ## Skill Evaluation
 
-These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **135 realistic test cases** were run across all 27 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
+These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **140 realistic test cases** were run across all 28 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
 
 | Configuration | Pass Rate | Assertions Passed |
 |---------------|-----------|-------------------|

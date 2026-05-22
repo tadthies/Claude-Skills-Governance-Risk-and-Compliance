@@ -61,6 +61,7 @@ EXPECTED_PLUGINS = {
     "nist-800-53",
     "nist-ai-rmf",
     "nist-csf",
+    "nzism",
     "pci-compliance",
     "section-508",
     "soc2",
