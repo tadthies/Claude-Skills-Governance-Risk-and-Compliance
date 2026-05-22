@@ -84,6 +84,7 @@ EXPECTED_SKILL_NAMES = {
     "soc2",
     "swift-csp",
     "tsa-compliance",
+    "vn-pdpl",
     "wcag",
 }
 
@@ -112,6 +113,7 @@ EXPECTED_STANDALONE_FILENAMES = {
     "NIST Cybersecurity.skill",
     "nzism.skill",
     "PCI-Compliance.skill",
+    "vn-pdpl.skill",
     "section-508.skill",
     "soc2.skill",
     "swift-csp.skill",

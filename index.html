@@ -636,6 +636,7 @@ layout: null
         <span>🇮🇳 DPDPA [India]</span>
         <span><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" alt="CA" style="height:0.95em;width:auto;vertical-align:middle;border-radius:1px;"> CCPA/CPRA [CA]</span>
         <span><img src="assets/Logos/lgpd-brazil.svg" alt="Brazil" style="height:1.1em;width:auto;vertical-align:middle;object-fit:contain;"> LGPD [Brazil]</span>
+        <span>🇻🇳 VN-PDPL [Vietnam]</span>
       </div>
     </div>
 
@@ -713,7 +714,7 @@ layout: null
   </div>
 
   <div class="badges">
-    <img src="https://img.shields.io/badge/Release-v1.1.0-brightgreen.svg" alt="Release v1.1.0" />
+    <img src="https://img.shields.io/badge/Release-v1.2.0-brightgreen.svg" alt="Release v1.2.0" />
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
     <img src="https://img.shields.io/badge/Skills-27-green.svg" alt="27 Skills" />
     <img src="https://img.shields.io/badge/Built%20with-Claude-orange.svg" alt="Built with Claude" />
@@ -1202,12 +1203,24 @@ layout: null
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NZISM</code> <code>NZ government security</code> <code>GCSB compliance</code> <code>NCSC NZ</code> <code>Restricted system NZ</code> <code>NZ classification</code> <code>agency security NZ</code> <code>system certification NZ</code> <code>C&amp;A NZ</code> <code>NZISM gap analysis</code> <code>NZISM controls</code> <code>NZ ISCS</code></div>
     </div>
 
+<div class="skill-card" id="vn-pdpl">
+      <h3>29. 🇻🇳 Vietnam PDPL — Law on Personal Data Protection</h3>
+      <span class="file-badge">Vietnam PDPL - Claude Skill/vn-pdpl.skill</span>
+      <p>Turns Claude into an expert advisor on <strong>Vietnam's Law on Personal Data Protection No. 91/2025/QH15</strong> (effective 1 January 2026) and implementing <strong>Decree 356/2025/ND-CP</strong>, administered by the Ministry of Public Security. Applies to Vietnamese entities and foreign organisations processing data of Vietnamese citizens (extraterritorial reach). Vietnam's first comprehensive personal data protection law.</p>
+      <ul>
+        <li>Conducts <strong>VN-PDPL gap analyses</strong> — maps obligations across all 6 data subject rights, consent, lawful basis, cross-border transfer, DPIA, security, breach notification, DPO, and SME exemptions</li>
+        <li>Drafts <strong>cross-border transfer impact assessments</strong> (Article 20, due within 60 days) and domestic DPIAs (Article 21) with sector-specific rules for finance, AI, cloud, and blockchain</li>
+        <li>Guides <strong>breach response</strong> — 72-hour notification workflow to Ministry of Public Security; finance sector dual notification to both authority and data subjects</li>
+      </ul>
+      <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>Vietnam data privacy</code> <code>VN-PDPL</code> <code>Law 91/2025</code> <code>Nghị định 356</code> <code>Vietnamese personal data</code> <code>Vietnam PDPL</code> <code>cross-border transfer Vietnam</code> <code>Vietnam breach notification</code> <code>Vietnam data protection</code> <code>Vietnamese data subjects</code></div>
+    </div>
+
 
     <h2 id="section-usecases">Potential Use Cases</h2>
 
     <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:0.5rem;">Filter by category — each button shows use cases for all frameworks in that group.</p>
     <div class="filter-bar" id="usecase-filters" role="group" aria-label="Filter use cases by category">
-      <button class="filter-btn active" data-filter="all">Show All (140)</button>
+      <button class="filter-btn active" data-filter="all">Show All (145)</button>
       <button class="filter-btn" data-filter="privacy">🔐 Privacy &amp; Data</button>
       <button class="filter-btn" data-filter="infosec">🛡️ Info Security</button>
       <button class="filter-btn" data-filter="cyberreg">🏛️ Cybersecurity Reg</button>
@@ -1362,6 +1375,11 @@ layout: null
           <tr data-skills="NZISM"><td>Generating an NZISM-compliant Access Control Policy for a Restricted system with classification markings and control references</td><td>NZISM [New Zealand]</td></tr>
           <tr data-skills="NZISM"><td>NZISM incident response obligations after a third-party supplier ransomware attack affecting Restricted government data</td><td>NZISM [New Zealand]</td></tr>
           <tr data-skills="NZISM"><td>Contractual security obligations for a SaaS vendor processing NZ government In-Confidence HR data — right-to-audit, incident notification</td><td>NZISM [New Zealand]</td></tr>
+          <tr data-skills="VN-PDPL"><td>VN-PDPL gap analysis for a Singapore SaaS company processing Vietnamese employee HR data on servers hosted in Singapore — extraterritorial scope and cross-border transfer obligations</td><td>VN-PDPL [Vietnam]</td></tr>
+          <tr data-skills="VN-PDPL"><td>72-hour breach notification response for a Vietnamese fintech startup — financial data breach affecting 8,000 customers with dual authority and data subject notification</td><td>VN-PDPL [Vietnam]</td></tr>
+          <tr data-skills="VN-PDPL"><td>DPIA outline for a Vietnamese telemedicine platform using AI on health records, facial recognition, and behavioral tracking — sensitive data and AI opt-out obligations</td><td>VN-PDPL [Vietnam]</td></tr>
+          <tr data-skills="VN-PDPL"><td>SME exemption assessment for a Vietnamese micro-enterprise — determining which VN-PDPL obligations are deferred for 5 years and which still apply</td><td>VN-PDPL [Vietnam]</td></tr>
+          <tr data-skills="VN-PDPL"><td>Consent validity review — assessing a pre-ticked marketing checkbox against Decree 356 Article 6 and handling withdrawal within the 15-working-day deadline</td><td>VN-PDPL [Vietnam]</td></tr>
         </tbody>
       </table>
     </div>
@@ -1416,6 +1434,7 @@ layout: null
           <tr><td>26. ♿ Section 508 — US Federal ICT Accessibility</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/Section%20508%20-%20Claude%20Skill/section-508.skill">section-508.skill</a></td></tr>
           <tr><td>27. ♿ WCAG — Web Content Accessibility Guidelines</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/WCAG%20-%20Claude%20Skill/wcag.skill">wcag.skill</a></td></tr>
           <tr><td>28. 🇳🇿 NZISM — New Zealand Information Security Manual</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/NZISM%20-%20Claude%20Skill/nzism.skill">nzism.skill</a></td></tr>
+          <tr><td>29. 🇻🇳 VN-PDPL — Vietnam Law on Personal Data Protection</td><td><a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/Vietnam%20PDPL%20-%20Claude%20Skill/vn-pdpl.skill">vn-pdpl.skill</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -1429,7 +1448,7 @@ layout: null
     <p>Add the marketplace and install the skills you need directly from the terminal:</p>
 
     <pre><code>/plugin marketplace add Sushegaad/Claude-Skills-Governance-Risk-and-Compliance
-/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills nis2@grc-skills ccpa@grc-skills itar@grc-skills lgpd@grc-skills csrd@grc-skills cis-controls@grc-skills ear@grc-skills nist-800-53@grc-skills eu-ai-act@grc-skills section-508@grc-skills wcag@grc-skills nzism@grc-skills</code></pre>
+/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills nis2@grc-skills ccpa@grc-skills itar@grc-skills lgpd@grc-skills csrd@grc-skills cis-controls@grc-skills ear@grc-skills nist-800-53@grc-skills eu-ai-act@grc-skills section-508@grc-skills wcag@grc-skills nzism@grc-skills vn-pdpl@grc-skills</code></pre>
 
     <p>Teams can pre-wire the marketplace in <code>.claude/settings.json</code> so every developer gets the skills automatically when they open the project — no manual install required.</p>
     <p>📖 <a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/INSTALLATION.md"><strong>Full installation instructions, team setup, and update guide → INSTALLATION.md</strong></a></p>
@@ -1490,6 +1509,7 @@ layout: null
           <tr><td>♿ Section 508 [US]</td><td>5</td><td><strong>100%</strong></td><td>100%</td><td>±0%</td><td>VPAT 2.x procurement language (FAR 52.239-2); Keyboard and screen reader audit methodology; PDF accessibility remediation checklist; JAWS+Chrome AT testing matrix; Undue burden exception documentation</td></tr>
           <tr><td>♿ WCAG [International]</td><td>5</td><td><strong>100%</strong></td><td>89%</td><td>+11%</td><td>Colour contrast audit with replacement suggestions (SC 1.4.3); WCAG 2.2 upgrade criteria (6 new criteria, SC 4.1.1 removal); React modal ARIA code review with corrected implementation; Legal compliance mapping across US/EU/UK; Accessibility statement for e-commerce site</td></tr>
           <tr><td>🇳🇿 NZISM [New Zealand]</td><td>5</td><td><strong>—</strong></td><td>—</td><td>—</td><td>Gap analysis for Restricted system; Cloud (AWS offshore) hosting approval; NZISM Access Control Policy; Incident response obligations; Supplier contractual security obligations</td></tr>
+          <tr><td>🇻🇳 VN-PDPL [Vietnam]</td><td>5</td><td><strong>—</strong></td><td>—</td><td>—</td><td>SaaS extraterritorial scope and cross-border transfer obligations; Fintech breach notification (72-hour dual notification); Telemedicine DPIA with AI opt-out obligations; Micro-enterprise SME exemptions; Consent validity review and 15-day withdrawal deadline</td></tr>
         </tbody>
       </table>
     </div>
@@ -2046,14 +2066,26 @@ layout: null
     <hr />
 
     <h2>Release Notes</h2>
-    <p>Full changelog for all public releases. Latest release: <strong>v1.1.0</strong>.</p>
+    <p>Full changelog for all public releases. Latest release: <strong>v1.2.0</strong>.</p>
+
+    <!-- v1.2.0 -->
+    <div class="release current">
+      <div class="release-header">
+        <span class="tag">v1.2.0</span>
+        <span class="date">May 2026</span>
+        <span class="whats-new-current-badge">Latest</span>
+      </div>
+      <ul>
+        <li><span class="release-badge badge-new">New</span> <strong>Vietnam PDPL</strong> — Vietnam Law on Personal Data Protection (Law No. 91/2025/QH15, effective 1 January 2026) advisor covering gap analysis, all 6 data subject rights with legally mandated response timeframes (Decree 356/2025/ND-CP), cross-border transfer impact assessments (Article 20, 60-day dossier deadline), domestic DPIA (Article 21), 72-hour breach notification, sector-specific rules (finance/banking dual notification, AI opt-out obligations, cloud encryption, blockchain no-direct-storage rule), DPO qualification requirements, SME exemptions, and consent validity rules (pre-ticked boxes invalid)</li>
+        <li><span class="release-badge badge-improve">Improved</span> Expanded eval suite to <strong>29 skills / 145 test cases</strong> — 5 Vietnam PDPL test cases added covering extraterritorial SaaS scope, fintech breach response, telemedicine DPIA, micro-enterprise SME exemptions, and consent withdrawal handling</li>
+      </ul>
+    </div>
 
     <!-- v1.1.0 -->
-    <div class="release current">
+    <div class="release">
       <div class="release-header">
         <span class="tag">v1.1.0</span>
         <span class="date">May 2026</span>
-        <span class="whats-new-current-badge">Latest</span>
       </div>
       <ul>
         <li><span class="release-badge badge-new">New</span> <strong>NZISM</strong> — New Zealand Information Security Manual advisor covering the GCSB/NCSC NZ mandatory framework for NZ government agencies: NZ Government Information Classification System (Unclassified → Top Secret), all 18+ control sections, Certification &amp; Accreditation (C&amp;A) for Restricted and above, agency security obligations, supply chain and supplier contractual requirements, cloud data residency guidance, and NZISM-aligned policy generation</li>
@@ -2432,7 +2464,7 @@ layout: null
   // ── USE CASE FILTER (category-based) ──
   (function () {
     const categoryMap = {
-      'privacy':   ['GDPR', 'HIPAA', 'ISO 27701', 'DPDPA', 'CCPA/CPRA', 'LGPD'],
+      'privacy':   ['GDPR', 'HIPAA', 'ISO 27701', 'DPDPA', 'CCPA/CPRA', 'LGPD', 'VN-PDPL'],
       'infosec':   ['ISO 27001', 'SOC 2', 'NIST CSF', 'CIS Controls v8', 'ISM'],
       'cyberreg':  ['FedRAMP', 'CMMC 2.0', 'NIS2', 'TSA Cybersecurity', 'NIST SP 800-53'],
       'financial': ['PCI DSS', 'DORA', 'SWIFT CSP'],

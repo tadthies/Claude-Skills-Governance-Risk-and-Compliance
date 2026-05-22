@@ -1,5 +1,5 @@
 # Claude Skills for Governance, Risk & Compliance (GRC)
-Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), Brazil's LGPD (Lei Geral de Proteção de Dados), EU CSRD (Corporate Sustainability Reporting Directive), CIS Controls v8 (CIS Top 18), EAR (Export Administration Regulations), NIST SP 800-53 (Security and Privacy Controls for Federal Systems), EU AI Act (Regulation (EU) 2024/1689), Section 508 (US Federal ICT Accessibility), WCAG (Web Content Accessibility Guidelines), and NZISM (New Zealand Information Security Manual) — powered by Claude Skills.
+Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), Brazil's LGPD (Lei Geral de Proteção de Dados), EU CSRD (Corporate Sustainability Reporting Directive), CIS Controls v8 (CIS Top 18), EAR (Export Administration Regulations), NIST SP 800-53 (Security and Privacy Controls for Federal Systems), EU AI Act (Regulation (EU) 2024/1689), Section 508 (US Federal ICT Accessibility), WCAG (Web Content Accessibility Guidelines), NZISM (New Zealand Information Security Manual), and Vietnam PDPL (Law on Personal Data Protection No. 91/2025/QH15) — powered by Claude Skills.
 
 Benchmarked across 125 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **96%** vs a baseline of **82%** across 625 total assertions.
 
@@ -44,6 +44,7 @@ Benchmarked across 125 test cases (5 per framework) using the eval framework —
   - [Section 508 — US Federal ICT Accessibility](#-section-508--us-federal-ict-accessibility)
   - [WCAG — Web Content Accessibility Guidelines](#-wcag--web-content-accessibility-guidelines)
   - [NZISM — New Zealand Information Security Manual](#-nzism--new-zealand-information-security-manual)
+  - [Vietnam PDPL — Law on Personal Data Protection](#-vietnam-pdpl--law-on-personal-data-protection)
 - [Potential Use Cases](#potential-use-cases)
 - [How to Install a Skill](#how-to-install-a-skill)
 - [Install via Claude Code Marketplace](#install-via-claude-code-marketplace)
@@ -634,6 +635,25 @@ The NZISM skill turns Claude into an expert advisor on the **New Zealand Informa
 
 ---
 
+### 29. 🇻🇳 Vietnam PDPL — Law on Personal Data Protection
+
+**File:** `Vietnam PDPL - Claude Skill/vn-pdpl.skill`
+
+The Vietnam PDPL skill turns Claude into an expert advisor on **Vietnam's Law on Personal Data Protection No. 91/2025/QH15** — the country's first comprehensive personal data protection law, effective **1 January 2026** — and its implementing regulation **Decree 356/2025/ND-CP**. Administered by the **Ministry of Public Security**, the law applies to Vietnamese entities and foreign organisations processing personal data of Vietnamese citizens (extraterritorial reach).
+
+**Key capabilities:**
+- **Gap analysis** — structured compliance assessment against all VN-PDPL obligations: lawful basis, consent, data subject rights, cross-border transfer, DPIA, security, breach notification, DPO, and SME exemptions
+- **Data subject rights fulfilment** — workflows for all 6 rights (informed, consent/withdraw, access/rectify, delete/restrict/object, complaints, protection) with legally required response timeframes from Decree 356
+- **Impact assessments** — DPIA template (Article 21, due within 60 days) and cross-border transfer impact assessment dossier (Article 20, due within 60 days of first transfer, update every 6 months)
+- **Privacy notices and consent forms** — PDPL-compliant notices covering all required disclosure elements; consent forms using valid formats (written, SMS, email, app form — not pre-ticked boxes)
+- **Breach notification** — 72-hour workflow for notifying the Ministry of Public Security; finance sector dual notification to both authority and data subjects
+- **Sector-specific guidance** — detailed rules for finance/banking (annual assessments, audit logs), AI/automated processing (opt-out rights, periodic assessment), cloud (encryption at rest/in transit), blockchain (no direct personal data on-chain), and big data (strong auth, continuous monitoring)
+- **DPO qualification review** — college degree + 2 years experience in IT/law/cybersecurity/compliance; independence requirements; external DPO option
+
+**Trigger phrases:** `Vietnam data privacy`, `VN-PDPL`, `Law 91/2025`, `Nghị định 356`, `Vietnamese personal data`, `Vietnam PDPL`, `cross-border transfer Vietnam`, `Vietnam breach notification`, `Vietnam data protection`, `Vietnamese data subjects`
+
+---
+
 ## Potential Use Cases
 
 | Scenario | Relevant Skill(s) |
@@ -853,7 +873,7 @@ Teams can pre-wire the marketplace in `.claude/settings.json` so every developer
 
 ## Skill Evaluation
 
-These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **140 realistic test cases** were run across all 28 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
+These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **145 realistic test cases** were run across all 29 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
 
 | Configuration | Pass Rate | Assertions Passed |
 |---------------|-----------|-------------------|

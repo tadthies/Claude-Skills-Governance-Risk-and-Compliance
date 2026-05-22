@@ -1,0 +1,26 @@
+{
+  "name": "vn-pdpl",
+  "description": "Expert Vietnam Personal Data Protection Law (PDPL) compliance advisor for Law No. 91/2025/QH15 and Decree 356/2025/ND-CP. Covers gap analysis, data subject rights fulfilment, cross-border transfer impact assessments, DPIA, breach notification, privacy notices, sector-specific rules (finance, AI, cloud, blockchain), and DPO qualification requirements. Effective January 1, 2026.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hemant Naik",
+    "email": "hemant.naik@gmail.com"
+  },
+  "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
+  "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "license": "MIT",
+  "keywords": [
+    "vietnam",
+    "vn-pdpl",
+    "personal-data-protection",
+    "privacy",
+    "data-protection",
+    "compliance",
+    "grc",
+    "gdpr",
+    "law-91-2025",
+    "decree-356",
+    "southeast-asia",
+    "apac"
+  ]
+}

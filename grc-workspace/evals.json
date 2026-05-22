@@ -1782,6 +1782,76 @@
         "Addresses data residency and offshore processing for In-Confidence",
         "Includes incident notification timeframe requirement in contract"
       ]
+    },
+    {
+      "id": 141,
+      "skill": "vn-pdpl",
+      "skill_path": "plugins/vn-pdpl/skills/vn-pdpl",
+      "prompt": "We are a Singapore-based SaaS company that provides HR software to Vietnamese enterprises. Our product collects names, national ID numbers, phone numbers, email addresses, and employment records of Vietnamese employees. Our servers are hosted in Singapore. Conduct a VN-PDPL gap analysis and tell us what our top compliance obligations are.",
+      "expected_output": "Gap analysis identifying: extraterritorial scope applies (foreign entity processing Vietnamese data), cross-border transfer impact assessment required within 60 days, consent requirements for employee data, data subject rights fulfilment procedures with timeframes, breach notification obligations, DPO consideration, and specific national ID numbers as basic personal data requiring protection.",
+      "assertions": [
+        "Identifies that VN-PDPL applies extraterritorially to the Singapore company as it processes Vietnamese citizens data",
+        "Flags cross-border transfer impact assessment obligation (Article 20, within 60 days of first transfer)",
+        "Mentions 72-hour breach notification requirement",
+        "Lists applicable data subject rights and response timeframes",
+        "Notes that national ID numbers are basic personal data under Article 3 of Decree 356"
+      ]
+    },
+    {
+      "id": 142,
+      "skill": "vn-pdpl",
+      "skill_path": "plugins/vn-pdpl/skills/vn-pdpl",
+      "prompt": "Our Vietnamese fintech startup processes financial transaction data, credit scores, and bank account details of Vietnamese customers. We experienced a data breach yesterday affecting 8,000 customers. What do we need to do now, and what are our notification obligations?",
+      "expected_output": "Breach response guidance covering: 72-hour notification to Ministry of Public Security (and simultaneously to data subjects per Decree 356 Article 8 for finance sector), required notification content, containment steps, breach register maintenance, and penalty exposure for financial data (VND 3 billion or 5% revenue for cross-border violations).",
+      "assertions": [
+        "States the 72-hour deadline for notifying the personal data protection authority",
+        "Mentions finance sector dual notification requirement: both authority AND data subjects within 72 hours",
+        "Lists the required content of the breach notification",
+        "Notes financial/banking/transaction data is sensitive personal data under VN-PDPL",
+        "Advises maintaining an internal breach register"
+      ]
+    },
+    {
+      "id": 143,
+      "skill": "vn-pdpl",
+      "skill_path": "plugins/vn-pdpl/skills/vn-pdpl",
+      "prompt": "We run a telemedicine platform serving Vietnamese patients. We want to use AI to analyze patient health records, facial recognition for identity verification, and behavioral tracking to improve our app. Draft a data protection impact assessment outline for this processing and identify any high-risk elements.",
+      "expected_output": "DPIA outline covering: health data (sensitive, requires explicit consent), biometric/facial recognition data (sensitive), behavioral tracking (sensitive per Decree 356 Article 4), AI opt-out requirement per Decree 356 Article 10, DPIA submission deadline of 60 days, required DPIA content fields, and identification of three sensitive data categories each requiring separate explicit consent.",
+      "assertions": [
+        "Identifies health data, biometric data, and behavioral tracking data as sensitive personal data requiring explicit separate consent",
+        "Mentions DPIA must be submitted within 60 days of first processing (Article 21)",
+        "Notes the right to opt out of AI/automated processing under Decree 356 Article 10",
+        "Lists DPIA content requirements (purpose, data categories, retention, security measures, risk assessment)",
+        "Notes the periodic assessment requirement for AI systems"
+      ]
+    },
+    {
+      "id": 144,
+      "skill": "vn-pdpl",
+      "skill_path": "plugins/vn-pdpl/skills/vn-pdpl",
+      "prompt": "We are a micro-enterprise with 8 employees building a B2B SaaS product in Vietnam. We only process names, email addresses, and company information of our business contacts. Our larger competitors say we need a DPIA and a DPO. Is that correct? What VN-PDPL obligations apply to us?",
+      "expected_output": "Guidance confirming micro-enterprise exemption from DPIA (Article 21), DPO assessment based on processing scale and sensitivity, consent and basic obligations still apply, no sensitive data processing means full exemption applies for 5 years, but standard consent/lawful basis/security/breach notification obligations remain.",
+      "assertions": [
+        "Confirms micro-enterprises are exempt from DPIA (Article 21) unless processing sensitive data or at large scale",
+        "Clarifies the 5-year exemption period from 1 January 2026",
+        "States that basic obligations (consent, lawful basis, breach notification, data subject rights) still apply even for micro-enterprises",
+        "Addresses DPO requirement \u2014 not mandatory for small scale non-sensitive processing",
+        "Confirms names and email addresses are basic (not sensitive) personal data"
+      ]
+    },
+    {
+      "id": 145,
+      "skill": "vn-pdpl",
+      "skill_path": "plugins/vn-pdpl/skills/vn-pdpl",
+      "prompt": "Our Vietnamese e-commerce platform currently uses a pre-ticked consent checkbox that reads \"I agree to receive marketing communications and allow processing of my personal data for all purposes.\" A customer wants to withdraw their consent for marketing but keep their account. Is our consent mechanism compliant? How should we handle the withdrawal request?",
+      "expected_output": "Assessment that pre-ticked checkbox is explicitly invalid under VN-PDPL/Decree 356 (silence and pre-ticked boxes do not constitute consent), bundled consent for unrelated purposes is invalid, required fix is separate unchecked consent per purpose, withdrawal must be honoured within 15 working days for restriction and the marketing processing must cease, data subject can keep account as consent withdrawal does not invalidate the service contract.",
+      "assertions": [
+        "Identifies pre-ticked checkbox as invalid consent under Decree 356 Article 6",
+        "Identifies bundled consent covering unrelated purposes (marketing + data processing) as invalid",
+        "States withdrawal of consent must be honoured within 15 working days per Decree 356 Article 5",
+        "Clarifies that withdrawal of consent does not affect the lawfulness of prior processing",
+        "Recommends separate, purpose-specific, unchecked consent mechanisms as the compliant fix"
+      ]
     }
   ]
 }
