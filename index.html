@@ -168,28 +168,129 @@ layout: null
     .skill-card {
       background: var(--white);
       border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
       border-radius: var(--radius);
-      padding: 1.4rem 1.6rem;
-      margin: 1.4rem 0;
-      box-shadow: var(--shadow);
+      padding: 1.35rem 1.55rem 1.4rem;
+      margin: 1.2rem 0;
+      box-shadow: 0 2px 8px rgba(30,58,95,.07), 0 1px 2px rgba(0,0,0,.04);
+      transition: box-shadow .2s ease, transform .18s ease;
     }
-    .skill-card h3 { margin-top: 0; }
+    .skill-card:hover {
+      box-shadow: 0 6px 22px rgba(30,58,95,.13), 0 2px 6px rgba(0,0,0,.06);
+      transform: translateY(-2px);
+    }
+    .skill-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+    .skill-card p {
+      font-size: 0.93rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin: 0 0 0.7rem;
+    }
+    .skill-card ul {
+      margin: 0 0 0.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+    .skill-card ul li {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin: 0.28rem 0;
+      line-height: 1.5;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .skill-card ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1.45;
+    }
     .skill-card .file-badge {
-      display: inline-block;
-      font-size: 0.8rem;
-      background: #f0f4f8;
-      border: 1px solid #c8d3de;
-      border-radius: 4px;
-      padding: 0.15em 0.5em;
-      margin-bottom: 0.7rem;
-      font-family: monospace;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.76rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 20px;
+      padding: 0.18em 0.72em;
+      margin-bottom: 0.8rem;
+      color: #1d4ed8;
+      font-weight: 500;
+      font-family: ui-monospace, 'SF Mono', 'Fira Mono', monospace;
+      letter-spacing: -0.01em;
     }
-    .use-cases { margin-top: 0.65rem; font-size: 0.87rem; }
-    .use-cases strong { color: var(--text); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .use-cases ul { margin: 0.25rem 0 0 1.2rem; padding: 0; color: var(--text-muted); }
-    .use-cases li { margin: 0.2rem 0; }
-    .trigger-tags { margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted); }
-    .trigger-tags code { background: #e8f1fb; border-color: #b8d0ed; color: var(--primary-dark); margin: 0.1rem; display: inline-block; }
+    .trigger-tags {
+      margin-top: 0.9rem;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+    .trigger-tags strong {
+      display: block;
+      font-size: 0.71rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+    .trigger-tags code {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      border-radius: 20px;
+      padding: 0.15em 0.62em;
+      font-size: 0.77rem;
+      font-family: inherit;
+      font-weight: 500;
+      display: inline-block;
+      margin: 0.15rem 0.1rem;
+    }
+    .use-cases {
+      margin-top: 0.9rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.65rem 0.9rem 0.55rem;
+    }
+    .use-cases > strong {
+      display: block;
+      font-size: 0.71rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #64748b;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .use-cases ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .use-cases li {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin: 0.22rem 0;
+      line-height: 1.45;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .use-cases li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
 
     /* ── SKILL CARD ACCORDION ── */
     .skill-toggle {
@@ -627,7 +728,7 @@ layout: null
 <header class="site-header">
   <h1>Claude Skills for Governance, Risk, &amp; Compliance Frameworks</h1>
   <p style="font-size:clamp(0.88rem,2vw,1rem);opacity:0.88;margin-bottom:0.2rem;">Expert-level, framework-specific compliance guidance — powered by Claude Skills.</p>
-  <p style="font-size:clamp(0.8rem,1.8vw,0.93rem);opacity:0.78;margin-bottom:0.6rem;">Benchmarked to deliver 96% accuracy across 625 assertions (vs. 82% baseline). Open-source (<a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;opacity:0.9;">GitHub</a>)</p>
+  <p style="font-size:clamp(0.8rem,1.8vw,0.93rem);opacity:0.78;margin-bottom:0.6rem;">Benchmarked to deliver 96% accuracy across 675 assertions (vs. 81% baseline). Open-source (<a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;opacity:0.9;">GitHub</a>)</p>
   <div class="skills-category-grid" id="header-skills-grid">
 
     <!-- Privacy & Data Protection -->
