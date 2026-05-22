@@ -184,6 +184,10 @@ layout: null
       margin-bottom: 0.7rem;
       font-family: monospace;
     }
+    .use-cases { margin-top: 0.65rem; font-size: 0.87rem; }
+    .use-cases strong { color: var(--text); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .use-cases ul { margin: 0.25rem 0 0 1.2rem; padding: 0; color: var(--text-muted); }
+    .use-cases li { margin: 0.2rem 0; }
     .trigger-tags { margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted); }
     .trigger-tags code { background: #e8f1fb; border-color: #b8d0ed; color: var(--primary-dark); margin: 0.1rem; display: inline-block; }
 
@@ -717,7 +721,7 @@ layout: null
   <div class="badges">
     <img src="https://img.shields.io/badge/Release-v1.1.0-brightgreen.svg" alt="Release v1.1.0" />
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
-    <img src="https://img.shields.io/badge/Skills-27-green.svg" alt="27 Skills" />
+    <img src="https://img.shields.io/badge/Skills-30-green.svg" alt="30 Skills" />
     <img src="https://img.shields.io/badge/Built%20with-Claude-orange.svg" alt="Built with Claude" />
     <a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance" target="_blank" rel="noopener">
       <img src="https://img.shields.io/github/stars/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance?style=flat&label=Stars&color=gold" alt="GitHub Stars" />
@@ -758,7 +762,6 @@ layout: null
       <div class="section-nav">
         <button class="section-nav-btn active" data-section="section-overview">Overview</button>
         <button class="section-nav-btn" data-section="section-skills">The Skills</button>
-        <button class="section-nav-btn" data-section="section-usecases">Use Cases</button>
       </div>
     </nav>
 
@@ -832,6 +835,7 @@ layout: null
         <li>Guides <strong>2013 → 2022 transition</strong>, explaining the 11 new controls and mapping changes</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>ISO 27001</code> <code>ISMS</code> <code>Annex A</code> <code>SoA</code> <code>gap analysis</code> <code>risk register</code> <code>certification readiness</code> <code>internal audit</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Preparing for an ISO 27001:2022 Stage 2 certification audit with gap analysis across all Annex A controls</li><li>Writing an Information Security Policy and Statement of Applicability (SoA) mapped to all 93 controls</li><li>Building a risk register and risk treatment plan using the likelihood × impact scoring method</li><li>Guiding a 2013 → 2022 transition, including the 11 new controls and mapping changes</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -845,6 +849,7 @@ layout: null
         <li>Handles <strong>vendor risk</strong>: tiering, 32-question security questionnaires, SOC 2 report review, CUEC tracking</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>SOC 2</code> <code>Trust Services Criteria</code> <code>TSC</code> <code>CC6</code> <code>Type 1</code> <code>Type 2</code> <code>AICPA</code> <code>audit readiness</code> <code>control statement</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Running a SOC 2 readiness assessment before engaging an external auditor</li><li>Documenting controls for a SOC 2 Type 2 report with auditor-ready evidence tables</li><li>Reviewing a vendor’s SOC 2 report and tracking Customer User Entity Controls (CUECs)</li><li>Responding to a customer security questionnaire spanning multiple frameworks</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -859,6 +864,7 @@ layout: null
         <li>Supports <strong>Continuous Monitoring (ConMon)</strong> obligations and guides the <strong>Rev 4 → Rev 5 transition</strong></li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>FedRAMP</code> <code>ATO</code> <code>SSP</code> <code>POA&M</code> <code>3PAO</code> <code>NIST 800-53</code> <code>ConMon</code> <code>AWS GovCloud</code> <code>impact level</code> <code>OSCAL</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Scoping a FedRAMP Moderate authorisation on AWS GovCloud or Azure Government</li><li>Writing SSP control narratives for all 20 NIST SP 800-53 control families</li><li>Preparing a POA&M with FedRAMP-compliant remediation timelines</li><li>Navigating the FedRAMP 20x pathway and the September 2026 OSCAL mandate</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -872,6 +878,7 @@ layout: null
         <li>Covers lawful basis, consent, data subject rights (Arts. 15–22), international transfers (Arts. 44–49), breach response (Arts. 32–34)</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>GDPR</code> <code>data protection</code> <code>privacy</code> <code>personal data</code> <code>DPA</code> <code>DPIA</code> <code>lawful basis</code> <code>data subject rights</code> <code>consent</code> <code>RoPA</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Auditing an API or database schema for GDPR compliance before product launch</li><li>Drafting a DPIA for a new AI feature that processes personal data</li><li>Preparing an Article 28 Data Processing Agreement for a third-party vendor relationship</li><li>Managing a 72-hour breach notification to a national supervisory authority</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -885,6 +892,7 @@ layout: null
         <li><strong>Guides breach response</strong> using the 4-factor risk assessment, notification timelines, and HHS reporting obligations</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>HIPAA</code> <code>PHI</code> <code>ePHI</code> <code>covered entity</code> <code>business associate</code> <code>BAA</code> <code>NPP</code> <code>breach notification</code> <code>Privacy Rule</code> <code>Security Rule</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Generating a Business Associate Agreement (BAA) for a healthcare SaaS vendor relationship</li><li>Assessing whether a data incident constitutes a reportable HIPAA breach using the 4-factor risk assessment</li><li>Advising on technical safeguards for AWS, Azure, or GCP healthcare cloud deployments</li><li>Completing an HIPAA Security Rule risk analysis for a new healthcare application</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -899,6 +907,7 @@ layout: null
         <li>Guides <strong>CSF 1.1 → CSF 2.0 migration</strong> with a detailed subcategory mapping and migration checklist</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NIST CSF</code> <code>Cybersecurity Framework</code> <code>CSF 2.0</code> <code>Govern function</code> <code>GV.SC</code> <code>ID.AM</code> <code>PR.AA</code> <code>cybersecurity profile</code> <code>implementation tiers</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Assessing current cybersecurity posture using NIST CSF 2.0 across all six functions</li><li>Building an Organisational Profile with Current and Target states for board reporting</li><li>Guiding a CSF 1.1 → CSF 2.0 migration with subcategory mapping and a migration checklist</li><li>Mapping CSF 2.0 subcategories to ISO 27001:2022, NIST SP 800-53, and CIS Controls v8</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -912,6 +921,7 @@ layout: null
         <li>Guides <strong>v3.2.1 → v4.0.1 migration</strong> including MFA expansion, payment page script integrity (Req 6.4.3), phishing protection (Req 5.4.1)</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>PCI DSS</code> <code>PCI compliance</code> <code>cardholder data</code> <code>CDE</code> <code>SAQ</code> <code>ROC</code> <code>QSA</code> <code>PAN</code> <code>tokenisation</code> <code>merchant level</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Scoping a PCI DSS Cardholder Data Environment for a cloud-hosted e-commerce platform</li><li>Selecting the right SAQ type for a merchant using a hosted or redirect payment page</li><li>Guiding a v3.2.1 → v4.0.1 migration including all requirements that became mandatory March 2025</li><li>Assessing scope-reduction options via tokenisation or P2PE to shrink the CDE</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -926,6 +936,7 @@ layout: null
         <li>Guides <strong>OT/ICS-specific implementation</strong> — data diodes, jump servers for legacy HMIs, passive monitoring tools (Claroty, Dragos, Nozomi)</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>TSA Security Directive</code> <code>SD Pipeline-2021</code> <code>TSA cybersecurity</code> <code>Critical Cyber Systems</code> <code>CCS</code> <code>CRMP</code> <code>IRP testing</code> <code>OT segmentation TSA</code> <code>pipeline cybersecurity</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining whether a pipeline or rail operation is a TSA covered entity and which directive applies</li><li>Drafting a Cybersecurity Implementation Plan (CIP) for pipeline OT/SCADA environments</li><li>Aligning a TSA Cyber Risk Management Plan (CRMP) to NIST CSF 2.0 and CISA Cross-Sector CPGs</li><li>Guiding OT/ICS segmentation using data diodes, jump servers, and passive monitoring tools</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -940,6 +951,7 @@ layout: null
         <li><strong>Maps ISO 42001 to the EU AI Act</strong> — aligns AISIA to the Fundamental Rights Impact Assessment (FRIA) for high-risk AI systems</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>ISO 42001</code> <code>ISO/IEC 42001</code> <code>AI Management System</code> <code>AIMS</code> <code>AISIA</code> <code>AI governance standard</code> <code>Annex A AI controls</code> <code>AI certification</code> <code>EU AI Act management system</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Running an ISO 42001 gap assessment for an AI provider with multiple ML models in production</li><li>Completing an AI System Impact Assessment (AISIA) for an automated hiring or credit-scoring tool</li><li>Integrating an ISO 42001 AIMS with an existing ISO 27001:2022 ISMS to avoid duplicating controls</li><li>Generating a Statement of Applicability (SoA) covering all 38 Annex A controls</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -955,6 +967,7 @@ layout: null
         <li><strong>Maps ISO 27701 to GDPR</strong> article by article, plus CCPA/CPRA, LGPD, PIPEDA, and UK GDPR</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>ISO 27701</code> <code>PIMS</code> <code>privacy information management</code> <code>PII controller</code> <code>PII processor</code> <code>DPIA</code> <code>RoPA</code> <code>data subject rights</code> <code>privacy by design</code> <code>data processing agreement</code> <code>GDPR alignment ISO 27701</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Running an ISO 27701:2025 gap assessment for a SaaS company acting as both PII controller and processor</li><li>Drafting a GDPR-aligned Data Processing Agreement with all Article 28 mandatory clauses</li><li>Completing a DPIA for a new AI feature that profiles users for targeted advertising</li><li>Mapping ISO 27701:2025 controls to GDPR articles to use as certification evidence</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -970,6 +983,7 @@ layout: null
         <li>Scopes <strong>TLPT programmes</strong> per Art. 26 and CDR (EU) 2025/1190, covering threat intelligence, red team, mutual recognition, and tester qualifications</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>DORA</code> <code>Regulation (EU) 2022/2554</code> <code>digital operational resilience</code> <code>ICT risk management framework</code> <code>Art. 18 classification</code> <code>Art. 19 incident reporting</code> <code>Art. 26 TLPT</code> <code>Art. 30 contractual provisions</code> <code>Register of Information</code> <code>ICT concentration risk</code> <code>DORA vs NIS2</code> <code>Chapter II DORA</code> <code>Chapter III DORA</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Running a DORA gap analysis for an EU credit institution ahead of a supervisory review</li><li>Building a three-stage ICT incident reporting procedure (4h / 72h / 1 month) per Art. 19</li><li>Reviewing ICT third-party contracts against all Art. 30(2)(a)–(i) mandatory provisions</li><li>Advising on the DORA vs. NIS2 lex specialis interaction and residual obligations for a European bank</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -985,6 +999,7 @@ layout: null
         <li>Guides <strong>Data Principal rights fulfilment</strong> — access (Section 11), correction/erasure (Section 12), grievance redressal (Section 13), and the unique right to nominate (Section 14)</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>DPDPA</code> <code>Digital Personal Data Protection Act</code> <code>India data protection</code> <code>Data Fiduciary</code> <code>Data Principal</code> <code>Significant Data Fiduciary</code> <code>DPDP Rules 2025</code> <code>Rule 6 DPDP breach</code> <code>Rule 12 parental consent</code> <code>India privacy law</code> <code>DPDPA vs GDPR</code> <code>DigiLocker consent</code> <code>India children data</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Running a DPDPA gap analysis for an Indian SaaS company ahead of the May 2027 deadline</li><li>Designing a Rule 3-compliant privacy notice with multi-language and layered disclosure obligations</li><li>Implementing a children’s data programme with Rule 12 parental verification (DigiLocker, virtual tokens)</li><li>Advising on India cross-border transfer obligations — blacklist approach and contractual safeguards</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -998,6 +1013,7 @@ layout: null
         <li>Calculates <strong>SPRS scores</strong> (starting at 110; deductions per unmet practice; range −203 to +110) and prioritises highest-impact gaps</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>CMMC</code> <code>CMMC 2.0</code> <code>CMMC Level 2</code> <code>CUI</code> <code>NIST 800-171</code> <code>DFARS 7021</code> <code>C3PAO</code> <code>SPRS score</code> <code>defense contractor</code> <code>DIB</code> <code>DoD contractor</code> <code>FCI</code> <code>SSP CMMC</code> <code>POA&amp;M CMMC</code> <code>DIBCAC</code> <code>CUI scoping</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining your CMMC level based on DFARS clauses (7012, 7019, 7020, 7021) and CUI handling scope</li><li>Running a CMMC Level 2 gap assessment across all 110 NIST SP 800-171 practices</li><li>Calculating your SPRS score and prioritising the highest-impact gap remediations</li><li>Preparing evidence packages and POA&M documentation for a C3PAO assessment</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1013,6 +1029,7 @@ layout: null
         <li>Maps <strong>AI RMF to ISO 42001, EU AI Act, and NIST CSF</strong> — showing which categories satisfy Art. 9, equivalent ISO 42001 clauses, and how AI RMF extends cybersecurity frameworks</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NIST AI RMF</code> <code>AI RMF</code> <code>NIST AI 100-1</code> <code>AI Risk Management Framework</code> <code>GOVERN function</code> <code>MAP function</code> <code>MEASURE function</code> <code>MANAGE function</code> <code>AI RMF Playbook</code> <code>AI risk profile</code> <code>AI trustworthiness</code> <code>AI bias assessment</code> <code>MEASURE 2.2</code> <code>AI risk register</code> <code>responsible AI framework</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Building an AI organisational profile using Current and Target states across all 19 categories</li><li>Running a GOVERN gap assessment for an organisation starting its AI risk programme</li><li>Evaluating a credit scoring or hiring AI model against MEASURE 2.x trustworthiness criteria before deployment</li><li>Mapping NIST AI RMF categories to EU AI Act Art. 9 and ISO 42001 requirements</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1028,6 +1045,7 @@ layout: null
         <li><strong>Maps CSCF to ISO 27001:2022, PCI DSS v4.0.1, and NIST CSF 2.0</strong> — identifying synergies and SWIFT-specific additions not covered by existing certifications</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>SWIFT CSP</code> <code>CSCF</code> <code>KYC-SA</code> <code>SWIFT security attestation</code> <code>Alliance Access</code> <code>SWIFT operator MFA</code> <code>SWIFT secure zone</code> <code>CSCF v2025</code> <code>Control 4.2 SWIFT</code> <code>Control 6.4 SWIFT</code> <code>Control 7.1 SWIFT</code> <code>SWIFT architecture A1</code> <code>SWIFT service bureau</code> <code>SWIFT gap assessment</code> <code>SWIFT hardware token</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining your SWIFT architecture type (A1/A2/A3/A4/B) and scoping the full CSCF control matrix</li><li>Running a CSCF v2025 gap assessment for an Alliance Access on-premises deployment</li><li>Preparing evidence and completing the annual KYC-SA attestation via swift.com/myswift</li><li>Mapping existing ISO 27001 or PCI DSS controls to CSCF requirements to identify SWIFT-specific gaps</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1043,6 +1061,7 @@ layout: null
         <li>Advises <strong>private sector cloud providers and supply chain partners</strong> on ISM obligations under government contracts and when IRAP is required for non-government entities</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>ISM</code> <code>Information Security Manual</code> <code>ASD cybersecurity</code> <code>IRAP assessment</code> <code>system authorisation</code> <code>ATO Australia</code> <code>PROTECTED system</code> <code>OFFICIAL Sensitive</code> <code>Essential Eight</code> <code>ASD compliance</code> <code>ISM controls</code> <code>ISM gap analysis</code> <code>ISM hardening</code> <code>cyber.gov.au</code> <code>NC OS PROTECTED</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Understanding ISM control applicability markings (NC/OS/PROTECTED) for an Australian government cloud system</li><li>Preparing all artefacts for an IRAP assessment of a PROTECTED-level system — SSP, risk register, evidence</li><li>Mapping Essential Eight Maturity Level requirements to their ISM guideline chapters</li><li>Drafting a System Security Plan (SSP) for ATO sign-off on an OFFICIAL: Sensitive case management system</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1058,6 +1077,7 @@ layout: null
         <li>Addresses the <strong>DORA lex specialis interaction</strong> — explains DORA precedence for financial entities under Art. 4, identifies residual NIS2 obligations, and recommends an integrated compliance programme</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NIS2</code> <code>NIS 2</code> <code>Directive EU 2022/2555</code> <code>essential entity</code> <code>important entity</code> <code>NIS2 compliance</code> <code>Article 21 NIS2</code> <code>Article 23 NIS2</code> <code>NIS2 incident reporting</code> <code>NIS2 gap analysis</code> <code>NIS2 supply chain</code> <code>NIS2 governance</code> <code>NIS2 penalties</code> <code>NIS2 and DORA</code> <code>NIS2 and ISO 27001</code> <code>ENISA NIS2</code> <code>network information security directive</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining whether a European company is an Essential or Important Entity under NIS2</li><li>Walking through the NIS2 Art. 23 incident reporting workflow (24h / 72h / 1 month) after a ransomware attack</li><li>Drafting an NIS2-compliant incident response policy covering all 10 Art. 21 security measures</li><li>Explaining the DORA lex specialis relationship and residual NIS2 obligations for a European financial entity</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1073,6 +1093,7 @@ layout: null
         <li>Assesses <strong>CPPA enforcement and penalty exposure</strong> — $2,500/unintentional, $7,500/intentional, $100–$750/consumer for breach class actions — and advises on remediation prioritisation</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>CCPA</code> <code>CPRA</code> <code>California Consumer Privacy Act</code> <code>California Privacy Rights Act</code> <code>Do Not Sell or Share</code> <code>sensitive personal information California</code> <code>CPPA</code> <code>California privacy compliance</code> <code>right to know California</code> <code>right to delete California</code> <code>California opt-out</code> <code>GPC signal</code> <code>Global Privacy Control</code> <code>ad tech CCPA</code> <code>CCPA vs GDPR</code> <code>CCPA service provider</code> <code>CCPA penalty</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining whether your business meets any CCPA/CPRA threshold ($25M revenue, 100K+ consumers, or 50%+ revenue from PI sale)</li><li>Building a combined right-to-know and right-to-delete response workflow meeting the 45-day deadline</li><li>Classifying ad tech activities (cookie sync, RTB) as sale vs. CPRA sharing vs. service provider processing</li><li>Performing a GDPR-to-CCPA/CPRA gap analysis to identify California-specific requirements</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1088,6 +1109,7 @@ layout: null
         <li>Advises on <strong>violations and voluntary disclosures</strong> — walks through the VSD process (22 CFR § 127.12), penalty exposure (civil up to $1.369M/violation; criminal up to $1M fine and 20 years), mitigating factors, and corrective action planning</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>ITAR</code> <code>International Traffic in Arms Regulations</code> <code>USML</code> <code>United States Munitions List</code> <code>DDTC</code> <code>defense export</code> <code>deemed export</code> <code>TAA</code> <code>technical assistance agreement</code> <code>MLA</code> <code>DSP-5</code> <code>DSP-73</code> <code>ITAR registration</code> <code>ITAR violation</code> <code>voluntary disclosure ITAR</code> <code>ITAR vs EAR</code> <code>commodity jurisdiction</code> <code>technology control plan</code> <code>Empowered Official</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Performing USML jurisdiction analysis for a defense article to determine ITAR vs. EAR applicability</li><li>Guiding DSP-5 and DSP-73 export licence applications and drafting TAAs and MLAs</li><li>Managing deemed export obligations for foreign national employees accessing ITAR-controlled technical data</li><li>Advising on voluntary self-disclosure (VSD) after an ITAR violation and structuring penalty mitigation</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1101,6 +1123,7 @@ layout: null
         <li>Guides <strong>data subject rights fulfilment</strong> (Arts. 17–22) — access, correction, deletion, portability, and automated decision review — with 15-day response workflows</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>LGPD</code> <code>Brazil data protection</code> <code>Lei Geral de Proteção de Dados</code> <code>ANPD</code> <code>Brazilian privacy law</code> <code>LGPD compliance</code> <code>LGPD gap assessment</code> <code>Encarregado</code> <code>RIPD</code> <code>LGPD legal basis</code> <code>Brazil data breach</code> <code>ANPD notification</code> <code>LGPD vs GDPR</code> <code>Brazil personal data</code> <code>LGPD penalty</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Assessing extraterritorial LGPD applicability for a US or EU company with Brazilian users</li><li>Completing a RIPD (Data Processing Impact Report) for high-risk sensitive data processing activities</li><li>Managing a breach notification within the 3-working-day ANPD deadline</li><li>Mapping LGPD legal bases for processing to equivalent GDPR bases and identifying gaps</li></ul></div>
     </div>
 
 <div class="skill-card">
@@ -1114,6 +1137,7 @@ layout: null
         <li>Advises on <strong>ESRS E1 Climate Change</strong> — Scope 1, 2 (location- and market-based), and all 15 Scope 3 GHG categories; transition plan under Art. 19a(2)(a); EU Taxonomy alignment; physical and transition risk financial effects</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>CSRD</code> <code>Corporate Sustainability Reporting Directive</code> <code>ESRS</code> <code>double materiality</code> <code>double materiality assessment</code> <code>DMA</code> <code>ESG reporting Europe</code> <code>sustainability disclosure EU</code> <code>non-financial reporting</code> <code>ESRS E1</code> <code>ESRS S1</code> <code>ESRS G1</code> <code>Scope 3 CSRD</code> <code>transition plan ESRS</code> <code>CSRD gap assessment</code> <code>CSRD scope</code> <code>EU sustainability reporting</code> <code>ESRS assurance</code> <code>XBRL sustainability</code> <code>CSRD vs GRI</code> <code>EU Taxonomy CSRD</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining whether your company falls under CSRD and identifying your first mandatory reporting year</li><li>Conducting a Double Materiality Assessment (DMA) covering all material ESRS topical standards</li><li>Building a Scope 3 GHG emissions programme covering all 15 categories required under ESRS E1</li><li>Performing a GRI / TCFD to ESRS gap analysis for companies transitioning to mandatory reporting</li></ul></div>
     </div>
 
 <div class="skill-card" id="cis-controls">
@@ -1127,6 +1151,7 @@ layout: null
         <li>Delivers a structured <strong>IG1 12-week quick-start programme</strong> — week-by-week: asset inventory, secure configuration, access controls, patch management, backups, and security awareness training</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>CIS Controls</code> <code>CIS Top 18</code> <code>CIS v8</code> <code>CIS Controls v8</code> <code>Implementation Group</code> <code>IG1</code> <code>IG2</code> <code>IG3</code> <code>CIS safeguards</code> <code>cyber hygiene controls</code> <code>CIS gap assessment</code> <code>CIS Controls NIST mapping</code> <code>CIS Benchmarks</code> <code>CIS CSAT</code> <code>asset inventory CIS</code> <code>vulnerability management CIS</code> <code>CIS Controls ISO 27001</code> <code>CIS Controls SOC 2</code> <code>CIS Controls PCI DSS</code> <code>CIS Controls CMMC</code> <code>CIS Controls NIST CSF</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Determining whether your organisation needs IG1, IG2, or IG3 controls with a scoped 12-week quick-start plan</li><li>Running a CIS Controls v8 gap assessment with 🔴/🟡/🟢 status across all 18 controls and applicable safeguards</li><li>Building a vulnerability management programme with CVSS-based remediation SLAs (Control 7)</li><li>Mapping CIS Controls v8 to NIST CSF 2.0 for a unified cross-framework compliance programme</li></ul></div>
     </div>
 
 <div class="skill-card" id="ear">
@@ -1140,6 +1165,7 @@ layout: null
         <li>Guides <strong>restricted party screening</strong> against the Entity List, Denied Persons List, Unverified List, MEU List, and OFAC SDN — with Consolidated Screening List (CSL) workflow</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>EAR</code> <code>Export Administration Regulations</code> <code>ECCN</code> <code>EAR99</code> <code>BIS</code> <code>export control</code> <code>Commerce Control List</code> <code>CCL</code> <code>dual-use export</code> <code>export licence</code> <code>Entity List</code> <code>Denied Persons List</code> <code>deemed export</code> <code>FDPR</code> <code>Foreign Direct Product Rule</code> <code>licence exception</code> <code>ENC exception</code> <code>voluntary self-disclosure</code> <code>VSD</code> <code>SNAP-R</code> <code>export compliance programme</code> <code>ECP</code> <code>restricted party screening</code> <code>export to China</code> <code>export to Russia</code> <code>de minimis rule</code> <code>CCATS</code> <code>EAR vs ITAR</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Classifying an item under the EAR — ECCN determination and licence requirement analysis for specific destinations</li><li>Assessing deemed export obligations for foreign national employees accessing controlled encryption technology</li><li>Determining whether AES-256 cybersecurity software qualifies for the ENC licence exception for France, India, or Brazil</li><li>Designing a 7-element Export Compliance Programme for a dual-use technology or semiconductor company</li></ul></div>
     </div>
 
 <div class="skill-card" id="nist-800-53">
@@ -1153,6 +1179,7 @@ layout: null
         <li>Writes <strong>SSP control narratives</strong> in the standard format — implementation description, responsible role, inherited/hybrid designation, and SP 800-53A testing method for each control</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NIST SP 800-53</code> <code>SP 800-53</code> <code>NIST 800-53</code> <code>federal security controls</code> <code>RMF</code> <code>Risk Management Framework</code> <code>FISMA</code> <code>ATO</code> <code>Authority to Operate</code> <code>FIPS 199</code> <code>FIPS 200</code> <code>FIPS 140</code> <code>SP 800-53B</code> <code>control baseline</code> <code>Low baseline</code> <code>Moderate baseline</code> <code>High baseline</code> <code>SSP narrative</code> <code>System Security Plan</code> <code>POA&amp;M</code> <code>Plan of Action</code> <code>ConMon</code> <code>SP 800-53A</code> <code>security assessment</code> <code>ODV</code> <code>control tailoring</code> <code>common controls</code> <code>AC-2</code> <code>IA-2</code> <code>SC-8</code> <code>SI-2</code> <code>SR family</code> <code>PT family</code> <code>OSCAL</code> <code>3PAO</code> <code>FedRAMP controls</code> <code>ISSO</code> <code>authorizing official</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Categorising a federal system under FIPS 199/200 and selecting the correct Low, Moderate, or High SP 800-53B baseline</li><li>Implementing phishing-resistant MFA under IA-2(1) and IA-2(2) to satisfy EO 14028 and OMB M-22-09</li><li>Writing SSP control narratives in the standard federal format for any of the 20 control families</li><li>Building a ConMon strategy with monthly vulnerability scan frequencies, annual pen-testing, and POA&M cadence</li></ul></div>
     </div>
 
 <div class="skill-card" id="eu-ai-act">
@@ -1166,6 +1193,7 @@ layout: null
         <li>Walks through all <strong>Arts. 9–17 provider obligations</strong>: risk management (5-step lifecycle process), data governance, Annex IV technical documentation, automatic logging, transparency to deployers, human oversight design (stop button, override capability), accuracy/robustness/cybersecurity, 12-item provider checklist, and 13-component Quality Management System</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>EU AI Act</code> <code>AI Act</code> <code>Regulation 2024/1689</code> <code>high-risk AI</code> <code>prohibited AI</code> <code>GPAI model</code> <code>general-purpose AI</code> <code>AI system classification</code> <code>AI conformity assessment</code> <code>CE marking AI</code> <code>EU AI database</code> <code>AI Office</code> <code>AI Board</code> <code>systemic risk AI</code> <code>Art. 5 AI</code> <code>Annex III AI</code> <code>AI provider obligations</code> <code>AI deployer obligations</code> <code>human oversight AI</code> <code>AI risk management</code> <code>Art. 50 transparency</code> <code>chatbot disclosure AI</code> <code>AI Act compliance</code> <code>GPAI obligations</code> <code>open-source AI Act</code> <code>AI Act penalty</code> <code>AI Act timeline</code> <code>AI Act GDPR</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Classifying an AI system across all four risk tiers and understanding provider obligations under Arts. 9–17</li><li>Assessing whether an AI use case triggers an Art. 5 prohibited practice prohibition (in force from 2 February 2025)</li><li>Determining GPAI model obligations and whether the 10²⁵ FLOPs systemic risk threshold applies</li><li>Navigating dual EU MDR / EU AI Act regulation for an AI-powered medical diagnostic imaging tool</li></ul></div>
 </div>
 
 <div class="skill-card" id="section-508">
@@ -1178,6 +1206,7 @@ layout: null
         <li>Drafts <strong>procurement language</strong> — FAR clause 52.239-2 RFP requirements, remediation SLAs, post-award ACR update obligations, and undue burden exception documentation (E202.5)</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>Section 508</code> <code>508 compliance</code> <code>federal accessibility</code> <code>VPAT</code> <code>ACR</code> <code>Accessibility Conformance Report</code> <code>ICT accessibility</code> <code>36 CFR Part 1194</code> <code>Revised 508 Standards</code> <code>undue burden</code> <code>FAR 52.239-2</code> <code>JAWS screen reader</code> <code>keyboard accessibility federal</code> <code>PDF accessibility 508</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Completing a VPAT 2.x Accessibility Conformance Report (ACR) for a federal agency SaaS procurement</li><li>Auditing a federal web portal for WCAG 2.0 AA compliance with JAWS, NVDA, and keyboard-only testing</li><li>Drafting RFP procurement language with Section 508 accessibility requirements under FAR 52.239-2</li><li>Documenting an undue burden determination (E202.5) for a legacy ICT system with an alternative access plan</li></ul></div>
     </div>
 
 <div class="skill-card" id="wcag">
@@ -1190,6 +1219,7 @@ layout: null
         <li>Produces <strong>accessibility statements</strong>, maps WCAG to legal frameworks by jurisdiction (EN 301 549, EAA, Section 508, ADA, UK PSBAR), and advises on WCAG 2.1 AA vs 2.2 AA conformance claims</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>WCAG</code> <code>WCAG 2.1</code> <code>WCAG 2.2</code> <code>web accessibility</code> <code>POUR principles</code> <code>accessibility audit</code> <code>colour contrast</code> <code>screen reader</code> <code>keyboard accessibility</code> <code>ARIA</code> <code>focus visible</code> <code>reflow</code> <code>accessibility statement</code> <code>EN 301 549</code> <code>European Accessibility Act</code> <code>WCAG conformance</code> <code>success criteria</code> <code>alt text</code> <code>captions accessibility</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Auditing a web or React application for WCAG 2.1 AA compliance across all POUR principles</li><li>Upgrading a WCAG 2.1 conformance claim to WCAG 2.2 AA and identifying the 6 new required criteria</li><li>Reviewing ARIA patterns, keyboard focus management, and live region announcements for interactive components</li><li>Determining WCAG version and conformance level required under US, EU, and UK accessibility laws</li></ul></div>
     </div>
 
 <div class="skill-card" id="nzism">
@@ -1202,6 +1232,7 @@ layout: null
         <li>Generates <strong>NZISM-referenced policies</strong> (Access Control, Incident Response, Information Security) with classification markings and document control blocks</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>NZISM</code> <code>NZ government security</code> <code>GCSB compliance</code> <code>NCSC NZ</code> <code>Restricted system NZ</code> <code>NZ classification</code> <code>agency security NZ</code> <code>system certification NZ</code> <code>C&amp;A NZ</code> <code>NZISM gap analysis</code> <code>NZISM controls</code> <code>NZ ISCS</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Gap analysis of a NZ government system against NZISM for Restricted classification — with C&A roadmap</li><li>NZISM guidance for moving Restricted government data to offshore cloud — approvals and data residency requirements</li><li>Generating NZISM-compliant security policies (Access Control, Incident Response) with classification markings</li><li>Reviewing supplier contractual security obligations for NZ government In-Confidence data</li></ul></div>
     </div>
 
 <div class="skill-card" id="vn-pdpl">
@@ -1214,6 +1245,7 @@ layout: null
         <li>Guides <strong>breach response</strong> — 72-hour notification workflow to Ministry of Public Security; finance sector dual notification to both authority and data subjects</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>Vietnam data privacy</code> <code>VN-PDPL</code> <code>Law 91/2025</code> <code>Nghị định 356</code> <code>Vietnamese personal data</code> <code>Vietnam PDPL</code> <code>cross-border transfer Vietnam</code> <code>Vietnam breach notification</code> <code>Vietnam data protection</code> <code>Vietnamese data subjects</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>VN-PDPL gap analysis for a foreign company processing Vietnamese citizen data — extraterritorial scope and obligations</li><li>72-hour breach notification response for a Vietnamese fintech company with dual authority and data subject notification</li><li>DPIA for an AI-powered telemedicine platform processing health records, biometrics, and behavioural data</li><li>Assessing SME exemptions — which VN-PDPL obligations are deferred for 5 years and which apply from day one</li></ul></div>
     </div>
 
 <div class="skill-card" id="eu-cra">
@@ -1226,181 +1258,9 @@ layout: null
         <li>Guides <strong>CE marking, technical documentation (Annex VII), SBOM programme</strong> (SPDX/CycloneDX), and <strong>5-year support period</strong> obligations including end-of-life notification</li>
       </ul>
       <div class="trigger-tags"><strong>Trigger phrases:</strong> <code>EU CRA</code> <code>Cyber Resilience Act</code> <code>CRA compliance</code> <code>product with digital elements</code> <code>PDE</code> <code>Annex I requirements</code> <code>CRA conformity assessment</code> <code>CE marking cybersecurity</code> <code>SBOM EU</code> <code>ENISA vulnerability reporting</code> <code>Class I CRA</code> <code>Class II CRA</code> <code>IoT security EU</code></div>
+      <div class="use-cases"><strong>Potential Use Cases:</strong><ul><li>Classifying a connected product as Default, Class I, or Class II and selecting the correct conformity route</li><li>Conducting an Annex I gap analysis across 10 Part I security properties and 9 Part II vulnerability handling obligations</li><li>Implementing a 24-hour ENISA early warning + 72-hour full notification programme for actively exploited vulnerabilities</li><li>Building an SBOM programme (SPDX/CycloneDX) and meeting the 5-year support period and end-of-life notification obligations</li></ul></div>
     </div>
 
-
-    <h2 id="section-usecases">Potential Use Cases</h2>
-
-    <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:0.5rem;">Filter by category — each button shows use cases for all frameworks in that group.</p>
-    <div class="filter-bar" id="usecase-filters" role="group" aria-label="Filter use cases by category">
-      <button class="filter-btn active" data-filter="all">Show All (150)</button>
-      <button class="filter-btn" data-filter="privacy">🔐 Privacy &amp; Data</button>
-      <button class="filter-btn" data-filter="infosec">🛡️ Info Security</button>
-      <button class="filter-btn" data-filter="cyberreg">🏛️ Cybersecurity Reg</button>
-      <button class="filter-btn" data-filter="financial">🏦 Financial Services</button>
-      <button class="filter-btn" data-filter="ai">🤖 AI &amp; Governance</button>
-      <button class="filter-btn" data-filter="export">🚀 Export &amp; Defense</button>
-      <button class="filter-btn" data-filter="esg">🌱 ESG &amp; Sustainability</button>
-      <button class="filter-btn" data-filter="accessibility">♿ Accessibility</button>
-    </div>
-
-    <div class="table-wrap">
-      <table id="usecase-table">
-        <thead><tr><th>Scenario</th><th>Relevant Skill(s)</th></tr></thead>
-        <tbody>
-          <tr data-skills="ISO 27001"><td>Preparing for an ISO 27001:2022 Stage 2 certification audit</td><td>ISO 27001</td></tr>
-          <tr data-skills="ISO 27001"><td>Writing an Information Security Policy mapped to Annex A</td><td>ISO 27001</td></tr>
-          <tr data-skills="SOC 2"><td>Running a SOC 2 readiness assessment before engaging an auditor</td><td>SOC 2</td></tr>
-          <tr data-skills="SOC 2"><td>Documenting controls for a SOC 2 Type 2 report</td><td>SOC 2</td></tr>
-          <tr data-skills="FedRAMP"><td>Scoping a FedRAMP Moderate authorization on AWS GovCloud</td><td>FedRAMP [US]</td></tr>
-          <tr data-skills="FedRAMP"><td>Writing SSP control narratives for all 20 NIST 800-53 control families</td><td>FedRAMP [US]</td></tr>
-          <tr data-skills="GDPR"><td>Auditing an API for GDPR compliance before product launch</td><td>GDPR [EU]</td></tr>
-          <tr data-skills="GDPR"><td>Drafting a DPIA for a new AI feature that processes personal data</td><td>GDPR [EU]</td></tr>
-          <tr data-skills="HIPAA"><td>Generating a BAA for a healthcare SaaS vendor relationship</td><td>HIPAA [US]</td></tr>
-          <tr data-skills="HIPAA"><td>Assessing whether a data incident constitutes a reportable HIPAA breach</td><td>HIPAA [US]</td></tr>
-          <tr data-skills="ISO 27001,SOC 2"><td>Building a compliance program that satisfies both ISO 27001 and SOC 2</td><td>ISO 27001 + SOC 2</td></tr>
-          <tr data-skills="all"><td>Responding to a customer security questionnaire covering multiple frameworks</td><td>All skills</td></tr>
-          <tr data-skills="NIST CSF"><td>Assessing current cybersecurity posture using NIST CSF 2.0</td><td>NIST CSF</td></tr>
-          <tr data-skills="NIST CSF"><td>Building a CSF organisational profile with Current and Target states</td><td>NIST CSF</td></tr>
-          <tr data-skills="PCI DSS"><td>Scoping a PCI DSS CDE for a cloud-hosted e-commerce platform</td><td>PCI DSS</td></tr>
-          <tr data-skills="PCI DSS"><td>Selecting the right SAQ type for a merchant using a hosted payment page</td><td>PCI DSS</td></tr>
-          <tr data-skills="TSA Cybersecurity"><td>Determining whether your pipeline or rail operation is a TSA covered entity</td><td>TSA [US]</td></tr>
-          <tr data-skills="TSA Cybersecurity"><td>Drafting a Cybersecurity Implementation Plan (CIP) for pipeline OT/SCADA environments</td><td>TSA [US]</td></tr>
-          <tr data-skills="ISO 42001"><td>Running an ISO 42001 gap assessment for an AI provider with multiple ML models</td><td>ISO 42001</td></tr>
-          <tr data-skills="ISO 42001"><td>Completing an AI System Impact Assessment (AISIA) for an automated hiring tool</td><td>ISO 42001</td></tr>
-          <tr data-skills="ISO 42001,ISO 27001"><td>Integrating an ISO 42001 AIMS with an existing ISO 27001 ISMS</td><td>ISO 42001 + ISO 27001</td></tr>
-          <tr data-skills="TSA Cybersecurity,NIST CSF"><td>Aligning a TSA CRMP to NIST CSF 2.0 and CISA Cross-Sector CPGs</td><td>TSA [US] + NIST CSF</td></tr>
-          <tr data-skills="ISO 27701"><td>Running an ISO 27701:2025 gap assessment for a SaaS company acting as both PII controller and processor</td><td>ISO 27701</td></tr>
-          <tr data-skills="ISO 27701"><td>Transitioning from ISO 27701:2019 certification to the 2025 standalone edition</td><td>ISO 27701</td></tr>
-          <tr data-skills="ISO 27701"><td>Drafting a GDPR-aligned Data Processing Agreement (DPA) with all required Article 28 clauses</td><td>ISO 27701</td></tr>
-          <tr data-skills="ISO 27701"><td>Completing a DPIA for a new AI feature that profiles users for targeted advertising</td><td>ISO 27701</td></tr>
-          <tr data-skills="ISO 27701"><td>Mapping ISO 27701:2025 controls to GDPR articles for a compliance audit</td><td>ISO 27701</td></tr>
-          <tr data-skills="ISO 27701,ISO 27001"><td>Integrating a PIMS with an existing ISO 27001:2022 ISMS to avoid duplicating controls</td><td>ISO 27701 + ISO 27001</td></tr>
-          <tr data-skills="DORA"><td>Running a DORA gap analysis for an EU credit institution ahead of a supervisory review</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Classifying an ICT incident against Art. 18 criteria and CDR (EU) 2024/1772 thresholds</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Building a three-stage incident reporting procedure (4h / 72h / 1 month) per Art. 19</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Reviewing ICT vendor contracts against Art. 30(2) mandatory provisions</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Building or validating the Register of Information per CIR (EU) 2024/2956</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Assessing ICT concentration risk for a bank reliant on a single hyperscaler</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Scoping a TLPT programme and evaluating whether Art. 26 applies</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DORA"><td>Advising on the interaction between DORA and NIS2 for a financial entity</td><td>DORA [EU]</td></tr>
-          <tr data-skills="DPDPA"><td>Running a DPDPA gap analysis for an Indian SaaS company ahead of the May 2027 deadline</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="DPDPA,GDPR"><td>Identifying which GDPR-compliant processing activities need fresh consent under DPDPA</td><td>DPDPA [India] + GDPR [EU]</td></tr>
-          <tr data-skills="DPDPA"><td>Designing a Rule 3-compliant notice with multi-language obligations</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="DPDPA"><td>Implementing a 72-hour breach notification pipeline per Section 8(6) and Rule 6</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="DPDPA"><td>Designing a children's data compliance programme with Rule 12 parental verification</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="DPDPA"><td>Preparing for potential Significant Data Fiduciary designation — DPO, DPIA, audit</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="DPDPA"><td>Updating Data Processing Agreements with vendors to satisfy Rule 16</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="DPDPA"><td>Assessing India cross-border transfer obligations — blacklist approach and contractual safeguards</td><td>DPDPA [India]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Determining your CMMC level based on contract DFARS clauses and CUI handling</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Running a CMMC Level 2 gap assessment across all 110 NIST SP 800-171 practices</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Drafting a System Security Plan (SSP) covering all 110 practices with implementation narratives</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Calculating your SPRS score and prioritising the highest-impact gap remediations</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Preparing for a C3PAO assessment — evidence packages, critical practices, POA&amp;M rules</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Scoping CUI within your organisation and designing an enclave to reduce CMMC scope</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Managing DFARS 252.204-7012 72-hour DIBNET incident reporting obligations</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="CMMC 2.0"><td>Flowing down CMMC requirements to subcontractors handling CUI under DFARS 252.204-7021</td><td>CMMC 2.0 [US]</td></tr>
-          <tr data-skills="NIST AI RMF"><td>Building an AI organizational profile using NIST AI RMF Current and Target states across all 19 categories</td><td>NIST AI RMF</td></tr>
-          <tr data-skills="NIST AI RMF"><td>Running a GOVERN gap assessment for an organization starting its AI risk programme</td><td>NIST AI RMF</td></tr>
-          <tr data-skills="NIST AI RMF"><td>Evaluating a credit scoring model against MEASURE 2.x trustworthiness criteria before deployment</td><td>NIST AI RMF</td></tr>
-          <tr data-skills="NIST AI RMF"><td>Building an AI risk register mapped to AI RMF categories for a deployed ML system</td><td>NIST AI RMF</td></tr>
-          <tr data-skills="NIST AI RMF"><td>Assessing bias and fairness of a hiring AI tool (demographic parity, equalized odds, EEOC 4/5ths rule)</td><td>NIST AI RMF</td></tr>
-          <tr data-skills="NIST AI RMF"><td>Designing a post-deployment AI monitoring programme using MEASURE 3.x and MANAGE 3.x</td><td>NIST AI RMF</td></tr>
-          <tr data-skills="NIST AI RMF,ISO 42001"><td>Mapping NIST AI RMF to the EU AI Act Art. 9 risk management system requirement</td><td>NIST AI RMF + ISO 42001</td></tr>
-          <tr data-skills="NIST AI RMF,NIST CSF"><td>Integrating NIST AI RMF with an existing NIST CSF cybersecurity programme</td><td>NIST AI RMF + NIST CSF</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Determining your SWIFT architecture type (A1/A2/A3/A4/B) and getting the full CSCF v2025 control applicability matrix</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Running a CSCF v2025 gap assessment for an Alliance Access on-premises deployment</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Understanding why software OTP fails Control 4.2 and remediating with hardware tokens before the July attestation deadline</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Preparing evidence and completing the annual KYC-SA attestation via swift.com/myswift</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Developing a SWIFT-specific incident response plan covering 24-hour notification and 30-day report obligations</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Verifying your service bureau's (Type B) KYC-SA attestation and understanding split control responsibilities</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="SWIFT CSP,ISO 27001"><td>Mapping existing ISO 27001 or PCI DSS controls to CSCF requirements to identify SWIFT-specific gaps</td><td>SWIFT CSP + ISO 27001 / PCI DSS</td></tr>
-          <tr data-skills="SWIFT CSP"><td>Remediating common CSCF non-compliance patterns: shared VLAN, stale patches, missing SIEM coverage, token inventory gaps</td><td>SWIFT CSP</td></tr>
-          <tr data-skills="ISM"><td>Understanding which ISM control applicability markings (NC/OS/PROTECTED) apply to an Australian government cloud system and what controls are required</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM"><td>Preparing all artefacts for an IRAP assessment of a PROTECTED-level system — SSP, network diagrams, risk register, control evidence</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM"><td>Hardening a Windows Server 2022 deployment to ISM Chapter 13 requirements with a full evidence checklist</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM"><td>Mapping Essential Eight Maturity Level 2 requirements to their ISM guideline chapters and understanding what ML2 demands for each strategy</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM"><td>Understanding ISM compliance obligations for a private sector cloud provider supplying services to an Australian federal agency</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM"><td>Drafting a System Security Plan (SSP) for ATO sign-off on an OFFICIAL: Sensitive case management system</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM"><td>Understanding approved cryptographic algorithms (AES-256, TLS 1.2+, SHA-256 minimum) and log retention periods under the ISM</td><td>ISM [Australia]</td></tr>
-          <tr data-skills="ISM,ISO 27001"><td>Comparing ISM requirements with ISO 27001 controls to identify government-specific gaps not covered by existing certification</td><td>ISM [Australia] + ISO 27001</td></tr>
-          <tr data-skills="NIS2"><td>Determining whether a European energy company is an Essential or Important Entity under NIS2 and understanding its obligations</td><td>NIS2 [EU]</td></tr>
-          <tr data-skills="NIS2"><td>Walking through the NIS2 Art. 23 incident reporting workflow (24h/72h/1-month) after a ransomware attack</td><td>NIS2 [EU]</td></tr>
-          <tr data-skills="NIS2,ISO 27001"><td>Performing a gap analysis between an existing ISO 27001:2022 ISMS and full NIS2 compliance</td><td>NIS2 [EU] + ISO 27001</td></tr>
-          <tr data-skills="NIS2"><td>Drafting an NIS2-compliant incident response policy covering all 10 Art. 21 measures and Art. 23 reporting timelines</td><td>NIS2 [EU]</td></tr>
-          <tr data-skills="NIS2,DORA"><td>Explaining the DORA lex specialis relationship and identifying residual NIS2 obligations for a European bank</td><td>NIS2 [EU] + DORA [EU]</td></tr>
-          <tr data-skills="NIS2"><td>Understanding Art. 20 management body obligations, personal liability, and required cybersecurity training under NIS2</td><td>NIS2 [EU]</td></tr>
-          <tr data-skills="NIS2"><td>Assessing supply chain security obligations under NIS2 Art. 21(2)(d) and Art. 26 ENISA coordinated risk assessments</td><td>NIS2 [EU]</td></tr>
-          <tr data-skills="NIS2"><td>Calculating maximum NIS2 penalty exposure and comparing EE vs IE supervisory regimes (Art. 32 vs Art. 33)</td><td>NIS2 [EU]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Determining whether your business meets any CCPA/CPRA threshold ($25M revenue, 100K+ consumers, or 50%+ revenue from PI sale/sharing)</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Building a combined right-to-know and right-to-delete response workflow meeting the 45-day deadline</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Classifying ad tech activities (cookie sync, RTB, audience segments) as sale vs. sharing vs. service provider processing under CPRA</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Identifying and protecting Sensitive Personal Information (SPI) — geolocation, biometrics, health data — with a "Limit the Use of My SPI" mechanism (15-business-day deadline)</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CCPA/CPRA,GDPR"><td>Performing a GDPR-to-CCPA/CPRA gap analysis — identifying GPC signal obligation, Do Not Sell or Share link, and SPI limitation rights not required under GDPR</td><td>CCPA/CPRA [California] + GDPR [EU]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Drafting a CCPA-compliant "Do Not Sell or Share My Personal Information" opt-out mechanism that honours Global Privacy Control (GPC) signals</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Assessing CPPA enforcement exposure and penalty calculations ($2,500/violation unintentional, $7,500/intentional or for minors' data)</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CCPA/CPRA"><td>Classifying vendors as service providers, contractors, or third parties under CPRA and updating contracts to include required limitations</td><td>CCPA/CPRA [California]</td></tr>
-          <tr data-skills="CSRD"><td>Determining whether your company falls under CSRD and identifying your first mandatory reporting year (FY 2024–2028 based on PIE status, size, listing, or EU turnover)</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CSRD"><td>Conducting a Double Materiality Assessment (DMA) — identifying which ESRS topical standards (E1–E5, S1–S4, G1) are material using impact and financial materiality lenses</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CSRD"><td>Building a Scope 3 GHG emissions programme covering all 15 GHG Protocol categories required under ESRS E1</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CSRD,GDPR"><td>Performing a GRI / TCFD to ESRS gap analysis for companies with existing sustainability reports transitioning to CSRD</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CSRD"><td>Drafting a CSRD-compliant climate transition plan aligned with ESRS E1-1 and Art. 19a(2)(a) — decarbonisation targets, capex planning, and EU Taxonomy alignment</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CSRD"><td>Assessing CSRD obligations for a US-headquartered multinational with EU subsidiaries and &gt;€150M EU revenue</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CSRD"><td>Preparing for limited assurance under Art. 26a — documentation, control evidence, and transition pathway to reasonable assurance</td><td>CSRD [EU]</td></tr>
-          <tr data-skills="CIS Controls v8"><td>Determining whether a professional services firm needs IG1, IG2, or IG3 controls — and getting a scoped 12-week quick-start plan</td><td>CIS Controls v8</td></tr>
-          <tr data-skills="CIS Controls v8,HIPAA"><td>Running a CIS Controls v8 gap assessment for a healthcare organisation and mapping findings to HIPAA Security Rule safeguards</td><td>CIS Controls v8 + HIPAA</td></tr>
-          <tr data-skills="CIS Controls v8"><td>Implementing all 56 IG1 safeguards across endpoints, user accounts, backups, and training — prioritised by security impact</td><td>CIS Controls v8</td></tr>
-          <tr data-skills="CIS Controls v8"><td>Deploying MFA across external applications, remote access, and admin accounts (Safeguards 6.3/6.4/6.5) and selecting phishing-resistant options</td><td>CIS Controls v8</td></tr>
-          <tr data-skills="CIS Controls v8,NIST CSF"><td>Mapping CIS Controls v8 to NIST CSF 2.0 subcategories for a unified cross-framework compliance programme</td><td>CIS Controls v8 + NIST CSF</td></tr>
-          <tr data-skills="CIS Controls v8"><td>Building a vulnerability management programme with CVSS-based remediation SLAs, authenticated scans, and tracking KPIs</td><td>CIS Controls v8</td></tr>
-          <tr data-skills="CIS Controls v8"><td>Designing a SIEM and log management programme per Control 8 — what events to collect, retention standards, and NTP synchronisation</td><td>CIS Controls v8</td></tr>
-          <tr data-skills="EAR"><td>Classifying an RF power amplifier under the EAR — ECCN determination and licence requirement analysis for export to Germany</td><td>EAR [US]</td></tr>
-          <tr data-skills="EAR"><td>Assessing deemed export obligations for a Chinese national employee accessing controlled encryption source code (5D002)</td><td>EAR [US]</td></tr>
-          <tr data-skills="EAR"><td>Responding to a discovered Entity List re-export violation — voluntary self-disclosure process and penalty mitigation strategy</td><td>EAR [US]</td></tr>
-          <tr data-skills="EAR"><td>Determining whether AES-256 cybersecurity software requires a BIS licence for export to France, India, and Brazil under the ENC exception</td><td>EAR [US]</td></tr>
-          <tr data-skills="EAR"><td>Designing a 7-element Export Compliance Programme for a semiconductor equipment company with customers in Europe and Asia</td><td>EAR [US]</td></tr>
-          <tr data-skills="EAR"><td>Determining whether a foreign-made chip uses US-origin wafer fabrication equipment subject to the Foreign Direct Product Rule (FDPR)</td><td>EAR [US]</td></tr>
-          <tr data-skills="EAR,ITAR"><td>Navigating EAR vs ITAR jurisdiction for dual-use items that straddle the USML and CCL — using the Order of Review and CJ/CCATS requests</td><td>EAR + ITAR [US]</td></tr>
-          <tr data-skills="NIST SP 800-53"><td>Categorising a federal HR system under FIPS 199 and selecting the correct SP 800-53B baseline</td><td>NIST SP 800-53 [US]</td></tr>
-          <tr data-skills="NIST SP 800-53"><td>Documenting an AC-2(3) OTS finding from a security assessment and building the POA&amp;M with FedRAMP remediation timelines</td><td>NIST SP 800-53 [US]</td></tr>
-          <tr data-skills="NIST SP 800-53"><td>Implementing phishing-resistant MFA under IA-2(1) and IA-2(2) to satisfy EO 14028 and OMB M-22-09</td><td>NIST SP 800-53 [US]</td></tr>
-          <tr data-skills="NIST SP 800-53"><td>Writing an SSP control narrative for SC-8(1) Transmission Confidentiality covering TLS 1.2/1.3 with FIPS 140-3 modules</td><td>NIST SP 800-53 [US]</td></tr>
-          <tr data-skills="NIST SP 800-53,FedRAMP"><td>Performing a gap analysis between ISO 27001:2022 and FedRAMP Moderate baseline and mapping RMF steps to ATO package</td><td>NIST SP 800-53 + FedRAMP [US]</td></tr>
-          <tr data-skills="NIST SP 800-53"><td>Tailoring a Moderate baseline to remove inapplicable controls, set ODVs, and document compensating controls for a legacy system</td><td>NIST SP 800-53 [US]</td></tr>
-          <tr data-skills="NIST SP 800-53"><td>Building a ConMon strategy with monthly vulnerability scan frequencies, annual penetration testing, and POA&amp;M update cadence</td><td>NIST SP 800-53 [US]</td></tr>
-          <tr data-skills="EU AI Act"><td>Classifying an AI-powered CV screening tool for European employers — risk tier determination and provider obligations under Arts. 9–17</td><td>EU AI Act [EU]</td></tr>
-          <tr data-skills="EU AI Act"><td>Assessing whether a predictive policing AI tool violates EU AI Act Art. 5 prohibited practices (social scoring and predictive criminal assessment)</td><td>EU AI Act [EU]</td></tr>
-          <tr data-skills="EU AI Act"><td>Determining GPAI model obligations for an open-source LLM with 3×10²⁴ FLOPs training compute — open-source exception and systemic risk threshold</td><td>EU AI Act [EU]</td></tr>
-          <tr data-skills="EU AI Act"><td>Navigating dual EU MDR / EU AI Act regulation for an AI diagnostic imaging tool CE-marked as a Class IIa medical device</td><td>EU AI Act [EU]</td></tr>
-          <tr data-skills="EU AI Act"><td>Understanding Art. 50(1) chatbot AI disclosure obligations and distinguishing deployer vs GPAI provider obligations for an e-commerce chatbot</td><td>EU AI Act [EU]</td></tr>
-          <tr data-skills="Section 508"><td>Completing a VPAT 2.x ACR for a SaaS procurement by a federal agency — specifying conformance levels and testing methodology</td><td>Section 508 [US]</td></tr>
-          <tr data-skills="Section 508"><td>Auditing a federal web portal for WCAG 2.0 AA compliance — keyboard, screen reader (JAWS), contrast, and reflow testing methodology</td><td>Section 508 [US]</td></tr>
-          <tr data-skills="Section 508"><td>Drafting RFP procurement language with Section 508 accessibility requirements and post-award remediation SLAs under FAR 52.239-2</td><td>Section 508 [US]</td></tr>
-          <tr data-skills="Section 508"><td>Documenting an undue burden determination (E202.5) for a legacy ICT system and identifying an alternative means of access</td><td>Section 508 [US]</td></tr>
-          <tr data-skills="Section 508"><td>Remediating a PDF document for Section 508 accessibility — tagging structure, alt text, reading order, and form field labels</td><td>Section 508 [US]</td></tr>
-          <tr data-skills="WCAG"><td>Auditing a React application for WCAG 2.1 AA compliance — identifying POUR failures across colour contrast, ARIA, keyboard, and reflow</td><td>WCAG [International]</td></tr>
-          <tr data-skills="WCAG"><td>Upgrading a WCAG 2.1 AA conformance claim to WCAG 2.2 AA — identifying the 6 new required criteria and providing fix examples</td><td>WCAG [International]</td></tr>
-          <tr data-skills="WCAG"><td>Reviewing a custom React modal dialog for WCAG violations — role=dialog, focus management, keyboard trap, and label associations</td><td>WCAG [International]</td></tr>
-          <tr data-skills="WCAG"><td>Determining WCAG version and conformance level required for legal compliance across US, EU, and UK jurisdictions for a SaaS product</td><td>WCAG [International]</td></tr>
-          <tr data-skills="WCAG"><td>Writing an accessibility statement for an e-commerce site with known non-conformances — conformance status, SC citations, and complaints procedure</td><td>WCAG [International]</td></tr>
-          <tr data-skills="NZISM"><td>Gap analysis of a new NZ government case management system against NZISM for Restricted classification — with C&amp;A roadmap</td><td>NZISM [New Zealand]</td></tr>
-          <tr data-skills="NZISM"><td>NZISM guidance for moving Restricted government data to AWS Sydney — offshore hosting approvals and data residency requirements</td><td>NZISM [New Zealand]</td></tr>
-          <tr data-skills="NZISM"><td>Generating an NZISM-compliant Access Control Policy for a Restricted system with classification markings and control references</td><td>NZISM [New Zealand]</td></tr>
-          <tr data-skills="NZISM"><td>NZISM incident response obligations after a third-party supplier ransomware attack affecting Restricted government data</td><td>NZISM [New Zealand]</td></tr>
-          <tr data-skills="NZISM"><td>Contractual security obligations for a SaaS vendor processing NZ government In-Confidence HR data — right-to-audit, incident notification</td><td>NZISM [New Zealand]</td></tr>
-          <tr data-skills="VN-PDPL"><td>VN-PDPL gap analysis for a Singapore SaaS company processing Vietnamese employee HR data on servers hosted in Singapore — extraterritorial scope and cross-border transfer obligations</td><td>VN-PDPL [Vietnam]</td></tr>
-          <tr data-skills="VN-PDPL"><td>72-hour breach notification response for a Vietnamese fintech startup — financial data breach affecting 8,000 customers with dual authority and data subject notification</td><td>VN-PDPL [Vietnam]</td></tr>
-          <tr data-skills="VN-PDPL"><td>DPIA outline for a Vietnamese telemedicine platform using AI on health records, facial recognition, and behavioral tracking — sensitive data and AI opt-out obligations</td><td>VN-PDPL [Vietnam]</td></tr>
-          <tr data-skills="VN-PDPL"><td>SME exemption assessment for a Vietnamese micro-enterprise — determining which VN-PDPL obligations are deferred for 5 years and which still apply</td><td>VN-PDPL [Vietnam]</td></tr>
-          <tr data-skills="VN-PDPL"><td>Consent validity review — assessing a pre-ticked marketing checkbox against Decree 356 Article 6 and handling withdrawal within the 15-working-day deadline</td><td>VN-PDPL [Vietnam]</td></tr>
-          <tr data-skills="EU CRA"><td>CRA classification of a commercial password manager — Class I (Annex III) determination, conformity assessment route, and top Annex I Part I requirements</td><td>EU CRA [EU]</td></tr>
-          <tr data-skills="EU CRA"><td>Annex I gap analysis for industrial PLCs used in water treatment — Class II (Annex IV) mandatory Notified Body assessment and secure-by-default obligations</td><td>EU CRA [EU]</td></tr>
-          <tr data-skills="EU CRA"><td>Step-by-step 24/72-hour ENISA vulnerability reporting workflow for a US consumer IoT manufacturer with an actively exploited firmware vulnerability in Germany</td><td>EU CRA [EU]</td></tr>
-          <tr data-skills="EU CRA"><td>SBOM requirements for a consumer smart home hub — format (SPDX/CycloneDX), minimum content, on-request provision, and 5-year maintenance obligation</td><td>EU CRA [EU]</td></tr>
-          <tr data-skills="EU CRA"><td>EU importer obligations and Annex I violations for Wi-Fi routers with default "admin" passwords and unnecessary open ports — penalty exposure up to €15M/2.5% turnover</td><td>EU CRA [EU]</td></tr>
-        </tbody>
-      </table>
-    </div>
 
   </section>
 
@@ -1478,7 +1338,7 @@ layout: null
   <section class="tab-panel" id="tab-evaluation" role="tabpanel">
 
     <h2>Skill Evaluation</h2>
-    <p>These skills were benchmarked using the <a href="https://claude.ai">Claude Skill Creator</a> eval framework. <strong>125 realistic test cases</strong> were run across all 25 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses. <strong>625 total assertions evaluated.</strong></p>
+    <p>These skills were benchmarked using the <a href="https://claude.ai">Claude Skill Creator</a> eval framework. <strong>150 realistic test cases</strong> were run across all 30 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses. <strong>750 total assertions evaluated.</strong> Benchmark results for skills 28–30 (NZISM, VN-PDPL, EU CRA) are pending formal grading.</p>
 
     <div class="stat-grid">
       <div class="stat-card green">
@@ -1527,9 +1387,9 @@ layout: null
           <tr><td>🤖 EU AI Act [EU]</td><td>5</td><td><strong>100%</strong></td><td>88%</td><td>+12%</td><td>CV screening tool high-risk classification under Annex III Area 4; Predictive policing Art. 5 prohibition analysis; Open-source GPAI model obligations with 3×10²⁴ FLOPs; AI diagnostic imaging tool dual MDR/AI Act regulation; E-commerce chatbot Art. 50(1) disclosure obligations</td></tr>
           <tr><td>♿ Section 508 [US]</td><td>5</td><td><strong>100%</strong></td><td>100%</td><td>±0%</td><td>VPAT 2.x procurement language (FAR 52.239-2); Keyboard and screen reader audit methodology; PDF accessibility remediation checklist; JAWS+Chrome AT testing matrix; Undue burden exception documentation</td></tr>
           <tr><td>♿ WCAG [International]</td><td>5</td><td><strong>100%</strong></td><td>89%</td><td>+11%</td><td>Colour contrast audit with replacement suggestions (SC 1.4.3); WCAG 2.2 upgrade criteria (6 new criteria, SC 4.1.1 removal); React modal ARIA code review with corrected implementation; Legal compliance mapping across US/EU/UK; Accessibility statement for e-commerce site</td></tr>
-          <tr><td>🇳🇿 NZISM [New Zealand]</td><td>5</td><td><strong>—</strong></td><td>—</td><td>—</td><td>Gap analysis for Restricted system; Cloud (AWS offshore) hosting approval; NZISM Access Control Policy; Incident response obligations; Supplier contractual security obligations</td></tr>
-          <tr><td>🇻🇳 VN-PDPL [Vietnam]</td><td>5</td><td><strong>—</strong></td><td>—</td><td>—</td><td>SaaS extraterritorial scope and cross-border transfer obligations; Fintech breach notification (72-hour dual notification); Telemedicine DPIA with AI opt-out obligations; Micro-enterprise SME exemptions; Consent validity review and 15-day withdrawal deadline</td></tr>
-          <tr><td>🇪🇺 EU CRA [EU]</td><td>5</td><td><strong>—</strong></td><td>—</td><td>—</td><td>Password manager Class I classification and conformity route; Industrial PLC Class II mandatory Notified Body assessment; 24/72-hour ENISA vulnerability reporting; SBOM format and maintenance obligations; Importer Annex I violations for default credentials and open ports</td></tr>
+          <tr><td>🇳🇿 NZISM [New Zealand]</td><td>5</td><td><strong>Pending</strong></td><td>Pending</td><td>—</td><td>Gap analysis for Restricted system; Cloud (AWS offshore) hosting approval; NZISM Access Control Policy; Incident response obligations; Supplier contractual security obligations</td></tr>
+          <tr><td>🇻🇳 VN-PDPL [Vietnam]</td><td>5</td><td><strong>Pending</strong></td><td>Pending</td><td>—</td><td>SaaS extraterritorial scope and cross-border transfer obligations; Fintech breach notification (72-hour dual notification); Telemedicine DPIA with AI opt-out obligations; Micro-enterprise SME exemptions; Consent validity review and 15-day withdrawal deadline</td></tr>
+          <tr><td>🇪🇺 EU CRA [EU]</td><td>5</td><td><strong>Pending</strong></td><td>Pending</td><td>—</td><td>Password manager Class I classification and conformity route; Industrial PLC Class II mandatory Notified Body assessment; 24/72-hour ENISA vulnerability reporting; SBOM format and maintenance obligations; Importer Annex I violations for default credentials and open ports</td></tr>
         </tbody>
       </table>
     </div>
@@ -2443,7 +2303,7 @@ layout: null
 
   // ── SECTION NAV: highlight active section on scroll ──
   (function () {
-    const sectionIds = ['section-overview', 'section-skills', 'section-usecases'];
+    const sectionIds = ['section-overview', 'section-skills'];
     const navBtns = document.querySelectorAll('.section-nav-btn');
 
     // Click → smooth scroll
@@ -2471,48 +2331,6 @@ layout: null
     });
   })();
 
-  // ── USE CASE FILTER (category-based) ──
-  (function () {
-    const categoryMap = {
-      'privacy':   ['GDPR', 'HIPAA', 'ISO 27701', 'DPDPA', 'CCPA/CPRA', 'LGPD', 'VN-PDPL'],
-      'infosec':   ['ISO 27001', 'SOC 2', 'NIST CSF', 'CIS Controls v8', 'ISM'],
-      'cyberreg':  ['FedRAMP', 'CMMC 2.0', 'NIS2', 'TSA Cybersecurity', 'NIST SP 800-53', 'EU CRA'],
-      'financial': ['PCI DSS', 'DORA', 'SWIFT CSP'],
-      'ai':        ['ISO 42001', 'NIST AI RMF', 'EU AI Act'],
-      'export':    ['ITAR', 'EAR'],
-      'esg':       ['CSRD'],
-      'accessibility': ['Section 508', 'WCAG'],
-      'government': ['ISM', 'NZISM'],
-    };
-
-    function skillMatchesCategory(skillName, category) {
-      const keywords = categoryMap[category] || [];
-      return keywords.some(kw => skillName.includes(kw) || kw.includes(skillName));
-    }
-
-    const filterBtns = document.querySelectorAll('#usecase-filters .filter-btn');
-    const rows = document.querySelectorAll('#usecase-table tbody tr');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        rows.forEach(row => {
-          const skills = row.dataset.skills || '';
-          if (filter === 'all' || skills === 'all') {
-            row.style.display = '';
-            return;
-          }
-          const skillList = skills.split(',').map(s => s.trim());
-          const show = skillList.some(s => skillMatchesCategory(s, filter));
-          row.style.display = show ? '' : 'none';
-        });
-      });
-    });
-  })();
 
 
   // ── SKILL CARD ACCORDION ──
