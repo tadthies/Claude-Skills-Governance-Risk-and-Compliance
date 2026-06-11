@@ -1649,12 +1649,329 @@ layout: null
   <section class="tab-panel" id="tab-whats-new" role="tabpanel">
 
     <h2>GRC Framework Updates</h2>
-    <p>This section tracks official regulatory and standards activity across the 24 frameworks covered in this repository. Updated monthly to help GRC practitioners stay ahead of changes — new versions, enforcement actions, guidance releases, and compliance deadline shifts. Each entry below covers May 2026 only; prior months are archived in collapsible sections below.</p>
+    <p>This section tracks official regulatory and standards activity across the 30 frameworks covered in this repository. Updated monthly to help GRC practitioners stay ahead of changes — new versions, enforcement actions, guidance releases, and compliance deadline shifts. Each entry below covers June 2026 only; prior months are archived in collapsible sections below.</p>
 
-    <!-- ── May 2026 (current) ── -->
-    <div class="whats-new-month" id="whats-new-2026-05">
+    <!-- ── June 2026 (current) ── -->
+    <div class="whats-new-month" id="whats-new-2026-06">
       <div class="whats-new-month-header">
-        <h3>🗓️ May 2026 <span class="whats-new-current-badge">Current</span></h3>
+        <h3>🗓️ June 2026 <span class="whats-new-current-badge">Current</span></h3>
+        <p class="whats-new-published">Published: June 10, 2026</p>
+        <p style="font-size:0.88rem;color:var(--text);margin:0 0 1rem;line-height:1.6;">Seven frameworks carry a 🔴 Major indicator this month — an unusually heavy cycle. FedRAMP finalises CR26 by June 30; the EU AI Act's August 2026 high-risk deadline is being deferred to December 2027 / August 2028 under the Digital Omnibus on AI (formal adoption pending); the HIPAA Security Rule final rule missed its May target; the simplified ESRS delegated act for CSRD is expected this month; SWIFT CSCF v2026 governs the 2026 attestation cycle with Control 2.4 mandatory; California's CCPA risk-assessment regime is live with ADMT obligations six months out; and the EU CRA's notified-body framework applies from June 11.</p>
+      </div>
+
+      <div class="whats-new-grid">
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/iso27001.jpg" alt="ISO 27001" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>ISO 27001 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>ISO/IEC 27001:2022 remains stable. Audit practice continues to embed <strong>Amendment 1:2024</strong> climate-action clauses, and ISO/IEC JTC 1/SC 27 has confirmed no revision before 2027 at the earliest. No new transition deadlines are in play. Practitioners should focus on integration work — harmonising ISMS scope statements with adjacent AIMS (ISO 42001) and PIMS (ISO 27701) implementations.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/soc2.jpeg" alt="SOC 2" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>SOC 2 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>The AICPA 2017 Trust Services Criteria (with 2022 Points of Focus) remain unchanged. Auditors increasingly expect AI system monitoring, model versioning, and third-party AI dependency controls as CC6/CC7 evidence, and SOC 2 + AI overlay engagements (aligned to ISO 42001 and NIST AI RMF) keep growing. No action required beyond keeping control narratives current for AI-adjacent systems.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/fedramp.svg" alt="FedRAMP" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>FedRAMP 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p><strong>CR26 finalises this month.</strong> FedRAMP publishes the final Consolidated Rules for 2026 by June 30, effective July 1 with optional transition to January 1, 2027. The single official label becomes <strong>"FedRAMP Certified"</strong>; FIPS 199 impact levels are replaced by <strong>Certification Classes A–D</strong>; narrative guidance becomes machine-readable MUST/MUST NOT rules; Rev5 and 20x are distinct, non-reciprocal lanes. FedRAMP Ready retires July 28, 2026. <strong>Action:</strong> file final comments via GitHub, map legacy SSP narratives to the new rule structure.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🇪🇺</span>
+            <h4>GDPR 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>The <strong>Digital Omnibus</strong> is now the dominant GDPR story. The EDPB-EDPS Joint Opinion 2/2026 opposes narrowing the personal data definition via pseudonymisation carve-outs, while supporting simplification of breach notification and cookie consent. June milestones: EDPB consultation on a <strong>single EU-wide DPIA template</strong> closed June 9. Proposed changes include an explicit legitimate-interest pathway for AI training. The GDPR text is unchanged — treat all Omnibus relief as prospective only.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/hipaa.png" alt="HIPAA" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>HIPAA 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p><strong>The Security Rule final rule did not publish in the May window.</strong> The December 2024 NPRM (mandatory MFA, encryption, network segmentation, elimination of "addressable" safeguards) remains proposed with no confirmed timeline; 100+ hospital groups including CHIME are pressing HHS to withdraw it. OCR's January 2026 inflation adjustment raised max civil monetary penalties to <strong>$2,190,294</strong> at the willful-neglect-uncorrected tier. <strong>Action:</strong> keep MFA/encryption moving — treat May 2026 publication claims as outdated.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/nist-csf.jpeg" alt="NIST CSF" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>NIST CSF 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>NIST is reviewing comments on <strong>SP 1347</strong> (Informative References Quick-Start Guide; comment period closed May 6) with finalisation expected later in 2026. The OLIR ecosystem around CSF 2.0 continues to expand — including the OWASP LLM Security OLIR released in April — giving organisations richer mappings for AI-era risks. The core CSF 2.0 framework is unchanged.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/pci-dss.png" alt="PCI DSS" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>PCI DSS 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>PCI DSS v4.0.1 remains the sole active standard, with no v4.1 timeline announced. 2026 assessments are the first full cycle under the complete rule set. QSA scrutiny remains concentrated on <strong>Req. 6.4.3</strong> (payment page script integrity) and <strong>Req. 12.3.2</strong> (targeted risk analyses). Organisations that deferred these requirements continue to see them raised as findings.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🚂</span>
+            <h4>TSA Cybersecurity 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p><strong>SD Pipeline-2021-01G</strong> (effective January 9, 2026) remains the current directive for critical pipeline operators, and freight rail directive <strong>SD 1580-21-01E</strong> runs through January 15, 2027. TSA's permanent rulemaking to replace Security Directives with binding regulations continues to advance, with a final rule still expected no earlier than late 2026. No new directives or amendments this month.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/iso42001.webp" alt="ISO 42001" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>ISO 42001 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>The EU AI Act Omnibus deferral <strong>eases — but does not remove — the timeline pressure</strong> driving ISO 42001 adoption: high-risk obligations now land December 2027 / August 2028, giving organisations a realistic window to certify first. Certification-body accreditation under <strong>ISO/IEC 42006:2025</strong> continues to ramp, and ISO/IEC 42005:2025 remains the reference methodology for AI System Impact Assessments. No revision to 42001:2023 expected in 2026.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/iso27701.png" alt="ISO 27701" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>ISO 27701 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>Certification bodies are now actively issuing <strong>ISO/IEC 27701:2025</strong> certificates following accreditation readiness reviews completed in spring. Early uptake is strongest among privacy-first organisations using the new standalone structure (no ISO 27001 prerequisite). Holders of 27701:2019 certificates remain on the transition clock to <strong>October 2028</strong>. No changes to the standard this month.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/dora.png" alt="DORA" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>DORA 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>DORA has entered its <strong>first genuine supervisory enforcement cycle</strong>. The ESAs' Joint Examination Teams are actively examining the 19 designated CTPPs (including AWS, Azure, Google Cloud, IBM, and SAP), and supervisors have flagged <strong>persistent Register of Information deficiencies</strong> as an enforcement priority after the second annual submission cycle. Financial entities should verify registers correctly reflect CTPP oversight status. No amendments to Regulation (EU) 2022/2554 are pending.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🇮🇳</span>
+            <h4>DPDPA (India) 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>2026 remains India's compliance "build year." The government is still expected to publish the first <strong>Significant Data Fiduciary designations</strong> during 2026, triggering India-resident DPO, annual DPIA, and audit obligations. The next hard milestone is <strong>November 13, 2026</strong> — Consent Manager registration framework becomes operational — ahead of full enforcement on <strong>May 13, 2027</strong> with penalties up to ₹250 crore. Finalise notice/consent architecture and children's-data age-gating now.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/cmmc.png" alt="CMMC" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>CMMC 2.0 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>Phase 1 (self-assessments) continues under the 48 CFR rule. The critical date is five months out: <strong>Phase 2 begins November 10, 2026</strong>, when third-party C3PAO certification becomes a condition of award for Level 2 contracts. C3PAO assessment capacity is tightening — certification typically takes 9–12 months end-to-end, so contractors not yet in the pipeline are at real risk of missing contract eligibility windows.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/nist-ai-rmf.svg" alt="NIST AI RMF" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>NIST AI RMF 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>AI RMF 1.0 (NIST AI 100-1) and the Generative AI Profile remain unchanged, and no revision has been announced. The framework continues to gain regulatory relevance as the de facto US reference for AI governance — and with EU AI Act high-risk deadlines deferred, many multinationals are using AI RMF profiles as the bridge framework while EU harmonised standards mature.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/swift-csp.png" alt="SWIFT CSP" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>SWIFT CSP 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p><strong>CSCF v2026 now governs the 2026 attestation cycle</strong> — the most consequential CSCF release in years. Now <strong>32 controls (25 mandatory + 7 advisory)</strong>. Headline change: <strong>Control 2.4 (Back Office Data Flow Security) is mandatory</strong>, extending the perimeter into middleware, file transfers, and payment engines. Some Architecture B institutions must <strong>reclassify as A4</strong>. CSCF v2027 expected July 2026. <strong>Action:</strong> confirm architecture type, scope expanded perimeter, book assessors early.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🇦🇺</span>
+            <h4>Australian ISM 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>ASD published the <strong>June 2026 ISM release</strong> (June 9), continuing the quarterly update cadence. The release includes the updated ISM PDF, a June 2026 changes document, and refreshed System Security Plan annex and cloud controls matrix templates. Organisations preparing for IRAP assessments should rebaseline against the June release before finalising SSP annexes.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🌐</span>
+            <h4>NIS2 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>Transposition remains incomplete in several Member States, with Commission infringement actions continuing. The <strong>Digital Omnibus</strong> proposes targeted NIS2 amendments including simplification of incident-reporting obligations across NIS2, GDPR, and DORA — proposals only. For entities in transposed jurisdictions, supervisory activity is increasing, with <strong>Art. 20 management-body accountability</strong> and <strong>Art. 23 reporting timelines</strong> the most common early findings.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" alt="CA" style="height:1em;width:auto;vertical-align:middle;border-radius:2px;"></span>
+            <h4>CCPA / CPRA 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>California's CPPA regulations — <strong>effective January 1, 2026</strong> — are now fully operational. Businesses must complete a <strong>risk assessment before any "significant risk" processing</strong> (produce within 30 days on request); pre-2026 activities must be assessed by December 31, 2027 with first attestations due <strong>April 1, 2028</strong>. <strong>ADMT obligations begin January 1, 2027.</strong> The CPPA has signalled a "new era" of intensified enforcement. <strong>Action:</strong> inventory ADMT use, map significant-risk processing, stand up the risk-assessment programme now.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/itar.jpg" alt="ITAR" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>ITAR 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>No significant DDTC rulemaking this month. The USML, registration, and licensing frameworks under 22 CFR Parts 120–130 are unchanged. Enforcement and voluntary disclosure activity continues at a steady pace; exporters should maintain TCP discipline for foreign-national access and keep screening current against consolidated lists.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/lgpd-brazil.svg" alt="LGPD" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>LGPD (Brazil) 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>No new ANPD regulations or major enforcement milestones this month. The ANPD continues to mature its supervisory programme under the existing sanction and international-transfer frameworks. Organisations with Brazilian data subjects should keep RIPDs current and ensure the <strong>3-working-day breach notification workflow</strong> remains tested — Brazil's deadline is materially shorter than GDPR's 72 hours.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/csrd-eu.svg" alt="CSRD" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>CSRD 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p><strong>Omnibus I (Directive (EU) 2026/470)</strong> entered into force March 2026, cutting CSRD scope to companies with <strong>more than 1,000 employees</strong> (descoping ~42,000 companies). The <strong>Commission's simplified ESRS delegated act — with datapoints cut ~60–70% — is expected this month</strong>, following EFRAG's December 2025 advice. Member States must transpose by March 2027. <strong>Action:</strong> re-run scope analysis and track the final ESRS delegated act closely.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/CIS logo.png" alt="CIS Controls" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>CIS Controls v8 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>CIS Controls v8.1 remains the current release, with no v9 announced. The 18 controls, safeguard structure, and Implementation Group framework are unchanged. CIS continues to refresh Benchmarks and companion guides on its normal cadence; organisations should confirm they are referencing <strong>v8.1</strong> (which added the Govern function alignment and refined asset classes) rather than the original v8.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/EAR logo.webp" alt="EAR" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>EAR 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>The <strong>Affiliates Rule suspension remains in effect</strong> (November 10, 2025 – November 9, 2026) under the US–China trade arrangement, meaning the 50%-ownership extension of Entity List/MEU List restrictions is currently not operative — but scheduled to snap back in November 2026. Entity List additions and removals continue on a rolling basis. <strong>Action:</strong> maintain screening workflows so reinstatement does not catch transactions mid-flight.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/NIST SP 800-53 logo.webp" alt="NIST SP 800-53" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>NIST SP 800-53 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>Rev 5 continues to evolve through NIST's incremental "patch release" model (Release 5.2.x) via the Cybersecurity and Privacy Reference Tool. The bigger story is downstream: <strong>FedRAMP CR26</strong> changes how Rev 5 baselines are packaged (Certification Classes, machine-readable rules), and the <strong>September 2026 FedRAMP OSCAL mandate</strong> is now a quarter away — SSP and assessment tooling should be OSCAL-ready.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon"><img src="assets/Logos/Euro AI act logo.jpg" alt="EU AI Act" style="height:1.25em;width:auto;vertical-align:middle;object-fit:contain;"></span>
+            <h4>EU AI Act 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p><strong>The August 2, 2026 high-risk deadline is being deferred.</strong> The <strong>Digital Omnibus on AI</strong> (May 7 political agreement) moves <strong>Annex III obligations to December 2, 2027</strong> and <strong>Annex I to August 2, 2028</strong>. Two new Art. 5 prohibitions added: AI-generated non-consensual intimate imagery and CSAM. <strong>Critical caveat:</strong> until the Omnibus is formally published in the Official Journal, August 2, 2026 remains the legally operative deadline. Art. 5 and GPAI obligations in force are unaffected.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">♿</span>
+            <h4>Section 508 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>The Revised 508 Standards are unchanged, but DOJ's <strong>Interim Final Rule (April 20, 2026)</strong> extended ADA Title II web accessibility deadlines by one year — large public entities (≥50,000 population) now until <strong>April 26, 2027</strong>; smaller entities until <strong>April 26, 2028</strong>. Federal 508 obligations are unaffected. Vendors serving both federal and state/local markets should treat the extension as schedule relief, not a pause.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">♿</span>
+            <h4>WCAG 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>WCAG 2.2 remains the current W3C Recommendation, with WCAG 3.0 still in exploratory working-draft stage. In the EU, <strong>European Accessibility Act</strong> enforcement approaches its first anniversary (June 28) with national market-surveillance activity increasing against EN 301 549. Conformance targets are unchanged — WCAG 2.1 AA remains the legal floor in most jurisdictions, with 2.2 AA the recommended target.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🇳🇿</span>
+            <h4>NZISM 🟢</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>No new NZISM version was released this month; GCSB/NCSC NZ continues its periodic update cadence. Certification &amp; Accreditation processes, classification framework, and control sections are unchanged. Agencies and suppliers should continue referencing the current published version on the NCSC NZ site when scoping C&amp;A work.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🇻🇳</span>
+            <h4>VN-PDPL (Vietnam) 🟡</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>Vietnam's PDPL (Law 91/2025) completes its <strong>first six months in force</strong>. Organisations that began processing on or after January 1 should have filed <strong>cross-border transfer impact assessments within the 60-day window</strong> (Art. 20) and completed domestic DPIAs (Art. 21). The Ministry of Public Security is building supervisory practice under Decree 356/2025, with the finance sector's <strong>dual-notification breach regime</strong> (authority + data subjects within 72 hours) an early focus. Expect early enforcement signals in H2 2026.</p>
+          </div>
+        </div>
+
+        <div class="wnf-card">
+          <div class="wnf-card-header">
+            <span class="wnf-icon">🇪🇺</span>
+            <h4>EU CRA 🔴</h4>
+          </div>
+          <div class="wnf-card-body">
+            <p>Two CRA milestones converge this month. <strong>From June 11, 2026, the notified-body framework applies</strong> — Member States can formally designate conformity assessment bodies for Class II and critical products. And the <strong>September 11, 2026 reporting deadline is under three months away</strong>: manufacturers must report actively exploited vulnerabilities (24-hour early warning, 72-hour notification) via the <strong>ENISA Single Reporting Platform</strong>, in pre-launch testing. <strong>Action:</strong> stand up SBOM monitoring, define the 24/72-hour escalation runbook, and register for SRP testing.</p>
+          </div>
+        </div>
+
+      </div><!-- /whats-new-grid -->
+    </div><!-- /June 2026 -->
+
+    <!-- ── Older months (collapsed) ── -->
+    <details class="whats-new-archive">
+      <summary>📁 Older Updates</summary>
+
+    <!-- ── May 2026 ── -->
+    <div class="whats-new-month" id="whats-new-2026-05" style="padding: 1rem 1.25rem 0.5rem;">
+      <div class="whats-new-month-header">
+        <h3>🗓️ May 2026</h3>
         <p class="whats-new-published">Published: May 3, 2026</p>
       </div>
 
@@ -1842,10 +2159,6 @@ layout: null
 
       </div><!-- /whats-new-grid -->
     </div><!-- /May 2026 -->
-
-    <!-- ── Older months (collapsed) ── -->
-    <details class="whats-new-archive">
-      <summary>📁 Older Updates</summary>
 
     <!-- ── April 2026 ── -->
     <div class="whats-new-month" id="whats-new-2026-04" style="padding: 1rem 1.25rem 0.5rem;">
