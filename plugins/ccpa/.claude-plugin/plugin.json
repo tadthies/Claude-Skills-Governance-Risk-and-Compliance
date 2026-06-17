@@ -7,7 +7,6 @@
     "email": "hemant.naik@gmail.com"
   },
   "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
-  "category": "compliance",
   "keywords": [
     "ccpa",
     "cpra",
@@ -17,11 +16,5 @@
     "sensitive-personal-information",
     "cppa",
     "grc"
-  ],
-  "skills": [
-    {
-      "name": "ccpa",
-      "path": "skills/ccpa"
-    }
   ]
 }

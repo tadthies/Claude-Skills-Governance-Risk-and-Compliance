@@ -606,7 +606,10 @@
       "source": "./plugins/vn-pdpl",
       "description": "Expert Vietnam Personal Data Protection Law (PDPL) compliance advisor for Law No. 91/2025/QH15 and Decree 356/2025/ND-CP. Covers gap analysis, data subject rights, cross-border transfer impact assessments, DPIA, breach notification, and sector-specific rules.",
       "version": "1.0.0",
-      "author": "Hemant Naik",
+      "author": {
+        "name": "Hemant Naik",
+        "email": "hemant.naik@gmail.com"
+      },
       "license": "MIT",
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
@@ -626,7 +629,10 @@
       "source": "./plugins/eu-cra",
       "description": "Expert EU Cyber Resilience Act (CRA) advisor for Regulation (EU) 2024/2847. Covers product classification, Annex I essential requirements, conformity assessment, CE marking, SBOM, vulnerability handling, ENISA reporting, and support period obligations.",
       "version": "1.0.0",
-      "author": "Hemant Naik",
+      "author": {
+        "name": "Hemant Naik",
+        "email": "hemant.naik@gmail.com"
+      },
       "license": "MIT",
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",

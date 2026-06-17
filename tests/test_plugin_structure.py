@@ -246,6 +246,45 @@ class TestPluginDirectory:
             f"{plugin_dir.name}: non-.md files found in references/: {non_md}"
         )
 
+    def test_plugin_json_author_is_object(self, plugin_dir):
+        """
+        author in plugin.json must be an object with 'name' and 'email' keys,
+        not a plain string.  A bare string causes 'Invalid input: expected object,
+        received string' from claude plugin validate.
+        """
+        plugin_json = plugin_dir / ".claude-plugin" / "plugin.json"
+        if not plugin_json.exists():
+            pytest.skip("plugin.json missing — covered by test_plugin_json_exists")
+        data = json.loads(plugin_json.read_text())
+        author = data.get("author")
+        if author is None:
+            return  # author is optional at the plugin.json level
+        assert isinstance(author, dict), (
+            f"{plugin_dir.name}: plugin.json 'author' must be an object "
+            f"{{\"name\": ..., \"email\": ...}}, got string: {author!r}"
+        )
+        for key in ("name", "email"):
+            assert key in author, (
+                f"{plugin_dir.name}: plugin.json 'author' object is missing '{key}' key"
+            )
+
+    def test_plugin_json_skills_key_absent_or_omitted(self, plugin_dir):
+        """
+        plugin.json must NOT contain a 'skills' key.  Claude Code auto-discovers
+        skills from the skills/ subdirectory; an explicit 'skills' array (especially
+        one containing objects with 'name'/'path' keys) causes schema validation
+        errors: 'skills: Invalid input'.
+        """
+        plugin_json = plugin_dir / ".claude-plugin" / "plugin.json"
+        if not plugin_json.exists():
+            pytest.skip("plugin.json missing — covered by test_plugin_json_exists")
+        data = json.loads(plugin_json.read_text())
+        assert "skills" not in data, (
+            f"{plugin_dir.name}: plugin.json must not contain a 'skills' key — "
+            "Claude Code auto-discovers skills from the skills/ directory. "
+            "Remove the 'skills' array entirely."
+        )
+
 
 # ---------------------------------------------------------------------------
 # Inventory sanity checks
@@ -331,3 +370,43 @@ def test_all_marketplace_plugins_have_directories():
         assert name in found_plugin_names, (
             f"marketplace.json references plugin '{name}' but plugins/{name}/ does not exist"
         )
+
+
+def test_marketplace_entry_author_is_object():
+    """
+    Every entry in marketplace.json that has an 'author' field must set it to
+    an object {\"name\": ..., \"email\": ...}, not a plain string.
+
+    A bare string causes the misleading error
+    'This plugin uses a source type your Claude Code version does not support'
+    during `claude plugin install`, and is flagged as
+    'Invalid input: expected object, received string' by `claude plugin validate`.
+    """
+    if not MARKETPLACE_JSON.exists():
+        pytest.skip("marketplace.json missing")
+    data = json.loads(MARKETPLACE_JSON.read_text())
+    entries = data.get("plugins", []) if isinstance(data, dict) else data
+
+    bad = []
+    for entry in entries:
+        name = entry.get("name", "<unknown>")
+        author = entry.get("author")
+        if author is None:
+            continue  # author is optional in a marketplace entry
+        if not isinstance(author, dict):
+            bad.append(
+                f"  {name}: 'author' is {type(author).__name__} {author!r} "
+                f"— must be {{\"name\": ..., \"email\": ...}}"
+            )
+        else:
+            for key in ("name", "email"):
+                if key not in author:
+                    bad.append(
+                        f"  {name}: 'author' object is missing '{key}' key"
+                    )
+
+    assert not bad, (
+        "marketplace.json entries have invalid 'author' fields "
+        "(fix: replace string values with {{\"name\": ..., \"email\": ...}} objects):\n"
+        + "\n".join(bad)
+    )

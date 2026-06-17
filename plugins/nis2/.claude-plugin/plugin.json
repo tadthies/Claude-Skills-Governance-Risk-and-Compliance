@@ -7,7 +7,6 @@
     "email": "hemant.naik@gmail.com"
   },
   "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
-  "category": "compliance",
   "keywords": [
     "nis2",
     "eu-2022-2555",
@@ -17,11 +16,5 @@
     "incident-reporting",
     "supply-chain-security",
     "grc"
-  ],
-  "skills": [
-    {
-      "name": "nis2",
-      "path": "skills/nis2"
-    }
   ]
 }
