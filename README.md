@@ -1,7 +1,7 @@
 # Claude Skills for Governance, Risk & Compliance (GRC)
 Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), Australian Information Security Manual (ISM), EU NIS2 Directive, CCPA/CPRA California Privacy, ITAR (International Traffic in Arms Regulations), Brazil's LGPD (Lei Geral de Proteção de Dados), EU CSRD (Corporate Sustainability Reporting Directive), CIS Controls v8 (CIS Top 18), EAR (Export Administration Regulations), NIST SP 800-53 (Security and Privacy Controls for Federal Systems), EU AI Act (Regulation (EU) 2024/1689), Section 508 (US Federal ICT Accessibility), WCAG (Web Content Accessibility Guidelines), NZISM (New Zealand Information Security Manual), Vietnam PDPL (Law on Personal Data Protection No. 91/2025/QH15), and EU CRA (Cyber Resilience Act, Regulation (EU) 2024/2847) — powered by Claude Skills.
 
-Benchmarked across 150 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **96%** vs a baseline of **81%** across 675 total assertions.
+Benchmarked across 151 test cases using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **97%** vs a baseline of **81%** across 680 total assertions.
 
 [![Release: v1.2.0](https://img.shields.io/badge/Release-v1.2.0-brightgreen.svg)](../../releases/tag/v1.2.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -920,13 +920,13 @@ Teams can pre-wire the marketplace in `.claude/settings.json` so every developer
 
 ## Skill Evaluation
 
-These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **150 realistic test cases** were run across all 30 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
+These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **151 realistic test cases** were run across all 30 skills — 5 per framework (6 for NIS2) — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
 
 | Configuration | Pass Rate | Assertions Passed |
 |---------------|-----------|-------------------|
-| **With GRC Skills installed** | **96%** | **651 / 675** |
-| Without skills (baseline Claude) | 81% | 547 / 675 |
-| **Delta** | **+15 points** | **+104 assertions** |
+| **With GRC Skills installed** | **97%** | **660 / 680** |
+| Without skills (baseline Claude) | 81% | 551 / 680 |
+| **Delta** | **+16 points** | **+109 assertions** |
 
 ### Per-Skill Results
 
@@ -948,7 +948,7 @@ These skills were benchmarked using the [Claude Skill Creator](https://claude.ai
 | NIST AI RMF | 5 | **92%** | 76% | +16% | Four functions overview; Hiring AI risk assessment; Credit scoring risk register; EU AI Act mapping; GOVERN gap assessment |
 | SWIFT CSP | 5 | **100%** | 48% | +52% | Architecture scoping (A1/A2/A3/A4/B); MFA hardware token requirement; CSCF v2025 gap assessment; KYC-SA attestation process; Incident response obligations |
 | ISM [Australia] | 5 | **96%** | 52% | +44% | OS control scoping and authorisation; IRAP assessment preparation; Chapter 13 system hardening; Essential Eight to ISM mapping; Supply chain cloud provider obligations |
-| NIS2 [EU] | 5 | **96%** | 80% | +16% | Energy company EE/IE classification; SaaS provider Art. 21 obligations; Ransomware Art. 23 reporting workflow; ISO 27001 vs NIS2 gap analysis; DORA lex specialis interaction |
+| NIS2 [EU] | 6 | **100%** | 83% | +17% | Energy company EE/IE classification; SaaS provider Art. 21 obligations; Ransomware Art. 23 reporting workflow; ISO 27001 vs NIS2 gap analysis; DORA lex specialis interaction; Implementing Regulation (EU) 2024/2690 technical sub-requirements & incident thresholds |
 | CCPA/CPRA [California] | 5 | **100%** | 96% | +4% | E-commerce threshold analysis; Combined right-to-know and delete workflow; Ad tech sale vs sharing classification; GDPR-to-CCPA gap analysis; SPI classification for mobile app |
 | ITAR [US] | 5 | **100%** | 100% | 0% | USML jurisdiction analysis for military laptops; Deemed export for German engineer; DSP-73 temporary export for trade show; Violation and VSD process; TAA mandatory clauses for India |
 | LGPD [Brazil] | 5 | **100%** | 80% | +20% | Extraterritorial scope for US SaaS with Brazilian customers; Data deletion request across CRM/email/analytics; Sensitive health data marketing restrictions; Breach notification timelines (3 working days vs GDPR 72h); International transfer mechanisms to the US |
