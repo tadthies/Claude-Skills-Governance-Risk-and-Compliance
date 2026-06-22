@@ -820,7 +820,7 @@ layout: null
   </div>
 
   <div class="badges">
-    <img src="https://img.shields.io/badge/Release-v1.2.0-brightgreen.svg" alt="Release v1.2.0" />
+    <img src="https://img.shields.io/badge/Release-v1.3.0-brightgreen.svg" alt="Release v1.3.0" />
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
     <img src="https://img.shields.io/badge/Skills-30-green.svg" alt="30 Skills" />
     <img src="https://img.shields.io/badge/Built%20with-Claude-orange.svg" alt="Built with Claude" />
@@ -2388,14 +2388,29 @@ layout: null
     <hr />
 
     <h2>Release Notes</h2>
-    <p>Full changelog for all public releases. Latest release: <strong>v1.2.0</strong>.</p>
+    <p>Full changelog for all public releases. Latest release: <strong>v1.3.0</strong>.</p>
+
+    <!-- v1.3.0 -->
+    <div class="release current">
+      <div class="release-header">
+        <span class="tag">v1.3.0</span>
+        <span class="date">21 Jun 2026</span>
+        <span class="whats-new-current-badge">Latest</span>
+      </div>
+      <ul>
+        <li><span class="release-badge badge-improve">Improved</span> <strong>NIS2</strong> updated with Implementing Regulation (EU) 2024/2690 — new reference file covering all 13 Annex sections with audit-level sub-points, scope limited to DNS/cloud/datacentre/MSP/MSSP/trust-service entities, significant-incident thresholds (€500k or 5% of annual turnover); SKILL.md description, Key Articles, and Gap Assessment workflow updated; plugin bumped to v1.1.0 <em>(#52, h/t @klausagnoletti)</em></li>
+        <li><span class="release-badge badge-fix">Fix</span> <strong>Plugin validation</strong> errors resolved for four plugins — <code>nis2</code> and <code>ccpa</code> had invalid <code>skills</code> array and stray <code>category</code> key in plugin.json; <code>vn-pdpl</code> and <code>eu-cra</code> marketplace entries had bare-string author instead of <code>{name, email}</code> object; three regression tests added to <code>tests/test_plugin_structure.py</code> to catch recurrence <em>(#54)</em></li>
+        <li><span class="release-badge badge-improve">Improved</span> <strong>Monthly GRC Updates</strong> expanded to all 30 frameworks (was 24 in May); June 2026 edition flags seven major changes: FedRAMP CR26, GDPR Digital Omnibus, HIPAA timeline reversal, CSRD ESRS delegated act, SWIFT CSCF v2026, CCPA enforcement, EU CRA notified-body framework; May 2026 moved to archive; change-indicator legend added</li>
+        <li><span class="release-badge badge-fix">Fix</span> <strong>Eval stat inconsistencies</strong> corrected across all three locations (grc-skills-eval-results.html, index.html, README.md) — GDPR updated to post-rerun results (100%/96%/+4%, was 88%/88%/±0%); SWIFT CSP baseline corrected (44%/+56%, was 48%/+52%); LGPD baseline corrected (76%/+24%, was 80%/+20%); EU AI Act README updated (76%/+24%, was 88%/+12%); DPDPA accordion header corrected (96%/80%/+16%, was 100%/83%/+17%)</li>
+        <li><span class="release-badge badge-new">New</span> <strong>Eval consistency tests</strong> — <code>tests/test_eval_consistency.py</code> adds 10 automated checks enforcing cross-file stat parity, accordion-vs-summary-table parity, delta arithmetic, skill count (30), and a no-regression guard; CI workflow added at <code>.github/workflows/eval-consistency.yml</code></li>
+      </ul>
+    </div>
 
     <!-- v1.2.0 -->
-    <div class="release current">
+    <div class="release">
       <div class="release-header">
         <span class="tag">v1.2.0</span>
         <span class="date">31 May 2026</span>
-        <span class="whats-new-current-badge">Latest</span>
       </div>
       <ul>
         <li><span class="release-badge badge-improve">Improved</span> <strong>EU AI Act</strong> updated for <strong>AI Omnibus (7 May 2026)</strong> — Annex III deadline → 2 Dec 2027; Annex I → 2 Aug 2028; 9th prohibited practice (nudification/CSAM, 2 Dec 2026); 10²³ FLOPs GPAI classification threshold; full GPAI Code of Practice (July 2025, signatories: Anthropic, Google, Microsoft, OpenAI, Mistral, Amazon, IBM); AI Office guidance suite (Art. 5 guidelines, GPAI scope, Art. 50 consultation)</li>
@@ -2408,6 +2423,9 @@ layout: null
       </ul>
     </div>
 
+    <details class="releases-archive">
+      <summary>▸ Show older releases (v0.1.0 – v1.1.0)</summary>
+      <div class="releases-archive-body">
     <!-- v1.1.0 -->
     <div class="release">
       <div class="release-header">
@@ -2437,9 +2455,6 @@ layout: null
       </ul>
     </div>
 
-    <details class="releases-archive">
-      <summary>▸ Show older releases (v0.1.0 – v0.9.0)</summary>
-      <div class="releases-archive-body">
     <!-- v0.9.0 -->
     <div class="release">
       <div class="release-header">
