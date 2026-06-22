@@ -1,0 +1,45 @@
+name: Eval Results Consistency
+
+# Prevents the three locations that publish per-skill eval stats from
+# diverging from each other:
+#   • grc-skills-eval-results.html  (ground truth summary table + accordion headers)
+#   • index.html                     (#evaluation Per-Skill Results table)
+#   • README.md                      (#skill-evaluation markdown table)
+#
+# The test also catches delta arithmetic errors and negative-delta regressions.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "grc-skills-eval-results.html"
+      - "index.html"
+      - "README.md"
+      - "tests/test_eval_consistency.py"
+  pull_request:
+    paths:
+      - "grc-skills-eval-results.html"
+      - "index.html"
+      - "README.md"
+      - "tests/test_eval_consistency.py"
+  workflow_dispatch:   # allow manual runs from the GitHub UI
+
+jobs:
+  eval-consistency:
+    name: Check eval stats are consistent across all three locations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run eval consistency tests
+        run: pytest tests/test_eval_consistency.py -v --tb=short
