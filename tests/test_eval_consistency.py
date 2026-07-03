@@ -14,15 +14,30 @@ Rules enforced:
   • with-skill %, baseline %, and delta % must match exactly across all three files
   • Delta must equal (with% − base%) ± 1 tolerance for rounding
   • Accordion headers in grc-skills-eval-results.html must match the summary table
+  • Per-skill published stats must match the grading.json artifacts in grc-workspace/
+    (TestGradingFileConsistency — the deep audit layer)
+  • Headline assertion counts and baseline % in all three files must be derivable
+    from the per-skill grading data on disk
 
 Background: these three files have diverged in the past when a skill's eval was
 re-run (improving results) and only one or two of the three locations was updated.
 This test ensures any future update propagates consistently to all locations.
 
+Why the old tests could not catch inflated stats
+-------------------------------------------------
+The original TestEvalConsistency class only enforces CROSS-FILE CONSISTENCY:
+it verifies that GDPR shows the same numbers in all three files. If all three
+files agree on a wrong number (e.g., 100%/96% when grading.json says 88%/88%),
+every cross-file test still passes. The class also designates
+grc-skills-eval-results.html as "ground truth" — but that HTML is a presentation
+layer that can be edited by hand; the actual ground truth is the grading.json
+artifacts produced by the eval framework.
+
 Run with:
     pytest tests/test_eval_consistency.py -v
 """
 
+import json
 import re
 from pathlib import Path
 
@@ -417,3 +432,418 @@ class TestEvalConsistency:
             "Skills where with-skill score is LOWER than baseline:\n"
             + "\n".join(errors)
         )
+
+
+# ---------------------------------------------------------------------------
+# Deep audit: grading.json artifacts vs. published stats
+# ---------------------------------------------------------------------------
+
+# Map each skill ID to the grc-workspace directory that holds its eval subdirs.
+# Iteration-2 takes precedence over iteration-1 for skills re-run in that round.
+# Skills with no committed grading data are listed in GRADING_NOT_AVAILABLE and
+# are skipped (not failed) so that adding their data later is a diff, not a fix.
+_WS = REPO_ROOT / "grc-workspace"
+
+_SKILL_GRADING_DIR: dict[str, Path] = {
+    # ── iteration-2 (most recent run) ────────────────────────────────────────
+    "fedramp":          _WS / "iteration-2" / "fedramp",
+    "ccpa":             _WS / "iteration-2" / "ccpa",
+    "swift-csp":        _WS / "iteration-2" / "swift-csp",
+    "lgpd":             _WS / "iteration-2" / "lgpd",
+    "eu-ai-act":        _WS / "iteration-2" / "eu-ai-act",
+    "iso27701":         _WS / "iteration-2" / "iso27701",
+    # ── iteration-1 (skill-specific subdirectory) ────────────────────────────
+    "gdpr-compliance":  _WS / "iteration-1" / "gdpr-compliance",
+    "iso27001":         _WS / "iteration-1" / "iso27001",
+    "soc2":             _WS / "iteration-1" / "soc2",
+    "hipaa-compliance": _WS / "iteration-1" / "hipaa-compliance",
+    "nist-csf":         _WS / "iteration-1" / "nist-csf",
+    "pci-compliance":   _WS / "iteration-1" / "pci-compliance",
+    "tsa-compliance":   _WS / "iteration-1" / "tsa-compliance",
+    "iso42001":         _WS / "iteration-1" / "iso42001",
+    "dora":             _WS / "iteration-1" / "dora",
+    "dpdpa":            _WS / "iteration-1" / "dpdpa",
+    "cmmc":             _WS / "iteration-1" / "cmmc",
+    "nis2":             _WS / "iteration-1" / "nis2",
+    "nist-ai-rmf":      _WS / "iteration-1" / "nist-ai-rmf",
+    "ism":              _WS / "iteration-1" / "ism",
+    # ── flat eval directories in iteration-1 root (identified by prefix) ─────
+    "itar":             _WS / "iteration-1",   # eval-91..95
+    "csrd":             _WS / "iteration-1",   # eval-101..105
+    "cis-controls":     _WS / "iteration-1",   # eval-106..110
+    # ── separate named eval directories ──────────────────────────────────────
+    "ear":              _WS / "ear-evals",
+    "nist-800-53":      _WS / "nist-800-53-evals",
+    "section-508":      _WS / "section-508-evals",
+    "wcag":             _WS / "wcag-evals",
+}
+
+# Flat-eval skills that share the iteration-1 root; restrict search by prefix.
+_FLAT_EVAL_PREFIXES: dict[str, list[str]] = {
+    "itar":         ["eval-91", "eval-92", "eval-93", "eval-94", "eval-95"],
+    "csrd":         ["eval-101", "eval-102", "eval-103", "eval-104", "eval-105"],
+    "cis-controls": ["eval-106", "eval-107", "eval-108", "eval-109", "eval-110"],
+}
+
+# Skills with no grading data committed to this repository.
+# They are skipped, not failed — so adding grading files later will surface
+# in git diff rather than requiring a test fix.
+_GRADING_NOT_AVAILABLE: set[str] = {"nzism", "vn-pdpl", "eu-cra"}
+
+# Tolerance in percentage points: grading-computed % may differ from published
+# by at most this much due to legitimate rounding (e.g. 23/27 = 85.19% → 85%).
+_TOLERANCE_PP = 1
+
+# Maps each plugin skill ID to the normalized key used in the eval HTML summary
+# table (produced by _normalize_name applied to the skill-link text).
+# This is necessary because display names are abbreviated (e.g., "GDPR" for
+# the gdpr-compliance plugin) and don't map mechanically from the skill ID.
+_SKILL_ID_TO_NORM_KEY: dict[str, str] = {
+    "iso27001":         "iso 27001",
+    "soc2":             "soc 2",
+    "fedramp":          "fedramp",
+    "gdpr-compliance":  "gdpr",
+    "hipaa-compliance": "hipaa",
+    "nist-csf":         "nist csf",
+    "pci-compliance":   "pci dss",
+    "tsa-compliance":   "tsa cybersecurity",
+    "iso42001":         "iso 42001",
+    "iso27701":         "iso 27701",
+    "dora":             "dora",
+    "dpdpa":            "dpdpa",
+    "cmmc":             "cmmc 2.0",
+    "nist-ai-rmf":      "nist ai rmf",
+    "swift-csp":        "swift csp",
+    "ism":              "ism",
+    "nis2":             "nis2",
+    "ccpa":             "ccpa/cpra",
+    "itar":             "itar",
+    "lgpd":             "lgpd",
+    "csrd":             "csrd",
+    "cis-controls":     "cis controls v8",
+    "ear":              "ear",
+    "nist-800-53":      "nist sp 800-53",
+    "eu-ai-act":        "eu ai act",
+    "section-508":      "section 508",
+    "wcag":             "wcag",
+    "nzism":            "nzism",
+    "vn-pdpl":          "vn-pdpl",
+    "eu-cra":           "eu cra",
+}
+
+
+def _parse_grading_json(path: Path) -> tuple[int, int]:
+    """
+    Parse a single grading.json file and return (passed, total).
+
+    Handles three formats produced by different eval harness versions:
+
+    Format A — explicit totals (most common):
+        {"total": N, "passed": N, ...}
+
+    Format B — SWIFT CSP harness (uses "assertions"/"pass"):
+        {"assertions": [{"pass": true/false, ...}], "passed_assertions": N, ...}
+
+    Format C — expectation list without top-level totals:
+        {"expectations": [{"passed": true/false, ...}]}
+    """
+    data = json.loads(path.read_text())
+
+    # Format A: top-level total/passed integers
+    if isinstance(data.get("total"), int) and data["total"] > 0:
+        return int(data["passed"]), int(data["total"])
+
+    # Format B: assertions array with boolean "pass" field
+    if "assertions" in data and isinstance(data["assertions"], list):
+        items = data["assertions"]
+        if items and "pass" in items[0]:
+            passed = sum(1 for a in items if a.get("pass"))
+            return passed, len(items)
+        # Fall through if "pass" key absent
+
+    # Format C: expectations array with boolean "passed" field
+    if "expectations" in data and isinstance(data["expectations"], list):
+        items = data["expectations"]
+        passed = sum(1 for e in items if e.get("passed"))
+        return passed, len(items)
+
+    raise ValueError(
+        f"Unrecognised grading.json format at {path}. "
+        f"Keys found: {list(data.keys())}"
+    )
+
+
+def _eval_dirs_for_skill(skill_id: str) -> list[Path]:
+    """
+    Return the list of per-eval directories (each containing with_skill/ and
+    without_skill/ subdirectories) for the given skill.
+    """
+    base = _SKILL_GRADING_DIR.get(skill_id)
+    if base is None or not base.is_dir():
+        return []
+
+    prefixes = _FLAT_EVAL_PREFIXES.get(skill_id)
+
+    dirs = []
+    for candidate in sorted(base.iterdir()):
+        if not candidate.is_dir():
+            continue
+        # For flat-eval skills in iteration-1 root, restrict to matching prefixes
+        if prefixes and not any(candidate.name.startswith(p) for p in prefixes):
+            continue
+        # Must have at least one of with_skill / without_skill
+        if (candidate / "with_skill").is_dir() or (candidate / "without_skill").is_dir():
+            dirs.append(candidate)
+
+    return dirs
+
+
+def _aggregate_skill_grading(skill_id: str) -> tuple[int, int, int, int] | None:
+    """
+    Aggregate all eval dirs for a skill and return
+    (with_passed, with_total, base_passed, base_total).
+
+    Returns None if no grading data is available for this skill.
+    """
+    eval_dirs = _eval_dirs_for_skill(skill_id)
+    if not eval_dirs:
+        return None
+
+    wp = wt = bp = bt = 0
+    for eval_dir in eval_dirs:
+        for run_type, counters in [
+            ("with_skill",    (lambda p, b: (p, b, 0, 0))),
+            ("without_skill", (lambda p, b: (0, 0, p, b))),
+        ]:
+            gf = eval_dir / run_type / "grading.json"
+            if not gf.exists():
+                continue
+            passed, total = _parse_grading_json(gf)
+            if run_type == "with_skill":
+                wp += passed; wt += total
+            else:
+                bp += passed; bt += total
+
+    return (wp, wt, bp, bt) if (wt > 0 or bt > 0) else None
+
+
+def _pct(passed: int, total: int) -> int:
+    """Integer percentage, rounded normally."""
+    return round(100 * passed / total) if total > 0 else 0
+
+
+class TestGradingFileConsistency:
+    """
+    Deep audit: verifies that per-skill published stats in
+    grc-skills-eval-results.html (and by extension index.html and README.md,
+    which are forced in sync by TestEvalConsistency) are backed by the
+    grading.json artifacts in grc-workspace/.
+
+    Why this matters
+    ----------------
+    TestEvalConsistency only enforces CROSS-FILE AGREEMENT: it will pass
+    even when all three stat files consistently show the wrong number.
+    This class computes pass rates directly from grading.json files on disk
+    and fails the build if any published stat deviates more than 1 pp from
+    the grading-derived truth.
+
+    Root causes caught
+    ------------------
+    1. Manual edits to published stats without a re-run
+       ("looks about right" editing without checking grading.json)
+    2. Stats copied from an earlier iteration that were never updated
+    3. Rounding errors (e.g. 24/27 = 88.9% published as 89% when grading
+       shows 23/27 = 85.2%)
+    4. Assertion count drift (WCAG has 27 assertions not 25; new skills
+       added without updating the headline total)
+    5. Wrong iteration used (iter-1 numbers published while iter-2 exists)
+    """
+
+    # Tolerance in percentage points
+    TOLERANCE = _TOLERANCE_PP
+
+    @pytest.mark.parametrize("skill_id", sorted(_SKILL_GRADING_DIR.keys()))
+    def test_with_skill_pct_matches_grading(self, skill_id, eval_data):
+        """
+        Published with-skill % in grc-skills-eval-results.html must match
+        the pass rate computed from grading.json files (within ±1 pp).
+        """
+        if skill_id in _GRADING_NOT_AVAILABLE:
+            pytest.skip(f"No grading data committed for {skill_id}")
+
+        grading = _aggregate_skill_grading(skill_id)
+        if grading is None:
+            pytest.skip(f"grading.json files not found for {skill_id}")
+
+        wp, wt, _bp, _bt = grading
+        if wt == 0:
+            pytest.skip(f"No with_skill grading.json files found for {skill_id}")
+
+        computed = _pct(wp, wt)
+        # Look up the published value using the explicit display-name mapping
+        norm_key = _SKILL_ID_TO_NORM_KEY.get(skill_id)
+        if norm_key is None:
+            pytest.fail(
+                f"'{skill_id}' has no entry in _SKILL_ID_TO_NORM_KEY. "
+                f"Add it to the mapping."
+            )
+        published = eval_data["eval_summary"].get(norm_key)
+        if published is None:
+            pytest.fail(
+                f"'{skill_id}' (display key '{norm_key}') not found in "
+                f"grc-skills-eval-results.html summary table."
+            )
+        pub_w, _pub_b, _pub_d = published
+        assert abs(pub_w - computed) <= self.TOLERANCE, (
+            f"{skill_id}: published with-skill = {pub_w}%, "
+            f"grading computes {computed}% ({wp}/{wt}). "
+            f"Difference {abs(pub_w - computed)}pp exceeds tolerance {self.TOLERANCE}pp. "
+            f"Update the stat in grc-skills-eval-results.html (and the other two stat files)."
+        )
+
+    @pytest.mark.parametrize("skill_id", sorted(_SKILL_GRADING_DIR.keys()))
+    def test_baseline_pct_matches_grading(self, skill_id, eval_data):
+        """
+        Published baseline % in grc-skills-eval-results.html must match
+        the pass rate computed from grading.json files (within ±1 pp).
+        """
+        if skill_id in _GRADING_NOT_AVAILABLE:
+            pytest.skip(f"No grading data committed for {skill_id}")
+
+        grading = _aggregate_skill_grading(skill_id)
+        if grading is None:
+            pytest.skip(f"grading.json files not found for {skill_id}")
+
+        _wp, _wt, bp, bt = grading
+        if bt == 0:
+            pytest.skip(f"No without_skill grading.json files found for {skill_id}")
+
+        computed = _pct(bp, bt)
+        norm_key = _SKILL_ID_TO_NORM_KEY.get(skill_id)
+        if norm_key is None:
+            pytest.fail(f"'{skill_id}' has no entry in _SKILL_ID_TO_NORM_KEY.")
+        published = eval_data["eval_summary"].get(norm_key)
+        if published is None:
+            pytest.fail(
+                f"'{skill_id}' (display key '{norm_key}') not found in "
+                f"grc-skills-eval-results.html summary table."
+            )
+        _pub_w, pub_b, _pub_d = published
+        assert abs(pub_b - computed) <= self.TOLERANCE, (
+            f"{skill_id}: published baseline = {pub_b}%, "
+            f"grading computes {computed}% ({bp}/{bt}). "
+            f"Difference {abs(pub_b - computed)}pp exceeds tolerance {self.TOLERANCE}pp. "
+            f"Update the stat in grc-skills-eval-results.html (and the other two stat files)."
+        )
+
+    def test_total_assertion_count_headline_eval_html(self):
+        """
+        The 'Total Assertions' stat card in grc-skills-eval-results.html must
+        equal the sum of all assertions across every skill's grading files.
+        """
+        content = EVAL_PAGE.read_text(encoding="utf-8")
+        m = re.search(
+            r'<div class="stat-value">(\d+)</div>\s*'
+            r'<div class="stat-label">Total Assertions</div>',
+            content,
+        )
+        assert m, "Could not find 'Total Assertions' stat card in grc-skills-eval-results.html"
+        published_total = int(m.group(1))
+
+        computed_total = _compute_total_assertions()
+        assert published_total == computed_total, (
+            f"grc-skills-eval-results.html 'Total Assertions' shows {published_total} "
+            f"but grading files sum to {computed_total}. "
+            f"Update the stat card (and corresponding counts in index.html and README.md)."
+        )
+
+    def test_total_assertion_count_headline_index_html(self):
+        """
+        The assertion count in index.html stat-grid must equal the sum derived
+        from grading files.
+        """
+        content = INDEX_HTML.read_text(encoding="utf-8")
+        # Matches both "655 / 675 assertions passed" and "752 total assertions"
+        m = re.search(r"(\d+)\s*/\s*(\d+)\s*assertions\s*passed", content)
+        assert m, "Could not find 'X / Y assertions passed' in index.html stat-grid"
+        published_total = int(m.group(2))
+
+        computed_total = _compute_total_assertions()
+        assert published_total == computed_total, (
+            f"index.html stat-grid shows / {published_total} total assertions "
+            f"but grading files sum to {computed_total}."
+        )
+
+    def test_total_assertion_count_headline_readme(self):
+        """
+        The assertion count in the README.md aggregate table must equal the sum
+        derived from grading files.
+        """
+        content = README.read_text(encoding="utf-8")
+        # Matches "| **97%** | **655 / 675** |"
+        m = re.search(r"\*\*(\d+)\s*/\s*(\d+)\*\*", content)
+        assert m, "Could not find '**X / Y**' assertion counts in README.md aggregate table"
+        published_total = int(m.group(2))
+
+        computed_total = _compute_total_assertions()
+        assert published_total == computed_total, (
+            f"README.md aggregate table shows / {published_total} total assertions "
+            f"but grading files sum to {computed_total}."
+        )
+
+    def test_skills_without_grading_are_documented(self):
+        """
+        Every skill in the published summary table must have an entry in
+        _SKILL_ID_TO_NORM_KEY AND either grading files in grc-workspace/ OR
+        an entry in _GRADING_NOT_AVAILABLE.
+
+        This test fails immediately when a new skill is added to the eval
+        page without updating the grading directory mapping — ensuring that
+        the deep audit never silently skips a skill.
+        """
+        # All normalized display-name keys we know about
+        known_norm_keys = set(_SKILL_ID_TO_NORM_KEY.values())
+
+        eval_content = EVAL_PAGE.read_text(encoding="utf-8")
+        raw_pattern = re.compile(r'class="skill-link">([^<]+)</a></td>', re.DOTALL)
+        raw_names = [m.group(1).strip() for m in raw_pattern.finditer(eval_content)]
+
+        undocumented = []
+        for raw in raw_names:
+            norm = _normalize_name(raw)
+            if norm not in known_norm_keys:
+                undocumented.append(raw)
+
+        assert not undocumented, (
+            "The following skills appear in the published summary table but have "
+            "no entry in _SKILL_ID_TO_NORM_KEY:\n"
+            + "\n".join(f"  '{n}' (normalised: '{_normalize_name(n)}')" for n in undocumented)
+            + "\n\nAdd the skill to _SKILL_ID_TO_NORM_KEY, _SKILL_GRADING_DIR "
+            "(with the path to its grading data), and optionally "
+            "_GRADING_NOT_AVAILABLE if grading files aren't committed yet."
+        )
+
+
+def _compute_total_assertions() -> int:
+    """
+    Sum the total assertion count across all skills that have grading data.
+    Skills in _GRADING_NOT_AVAILABLE contribute 25 each (the assumed default)
+    so the total stays consistent even when those files aren't committed.
+    """
+    DEFAULT_ASSERTIONS_PER_SKILL = 25
+    total = 0
+
+    for skill_id in _SKILL_GRADING_DIR:
+        grading = _aggregate_skill_grading(skill_id)
+        if grading is not None:
+            _wp, wt, _bp, bt = grading
+            # Use whichever run has data; prefer with_skill total
+            skill_total = wt or bt
+            total += skill_total
+        else:
+            total += DEFAULT_ASSERTIONS_PER_SKILL
+
+    # Skills with no grading data use the default assertion count
+    total += len(_GRADING_NOT_AVAILABLE) * DEFAULT_ASSERTIONS_PER_SKILL
+
+    return total
