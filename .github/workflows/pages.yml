@@ -45,6 +45,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    # Allow the deploy-pages action to run under the new Node 24 default runner.
+    # Remove once actions/deploy-pages ships a Node-24-native release.
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
