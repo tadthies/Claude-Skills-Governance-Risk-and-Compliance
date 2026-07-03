@@ -3,7 +3,7 @@ Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIS
 
 Benchmarked across 150 test cases using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **97%** vs a baseline of **81%** across 675 total assertions.
 
-[![Release: v1.3.0](https://img.shields.io/badge/Release-v1.3.0-brightgreen.svg)](../../releases/tag/v1.3.0)
+[![Release: v1.4.0](https://img.shields.io/badge/Release-v1.4.0-brightgreen.svg)](../../releases/tag/v1.4.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills: 30](https://img.shields.io/badge/Skills-30-green.svg)](#the-skills)
 [![Built with Claude](https://img.shields.io/badge/Built%20with-Claude-orange.svg)](https://claude.ai)
