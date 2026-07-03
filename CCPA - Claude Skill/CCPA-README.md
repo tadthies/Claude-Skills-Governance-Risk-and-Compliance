@@ -25,7 +25,7 @@ The skill also provides a **CCPA/GDPR comparative analysis**, enabling global pr
 
 ---
 
-## 2. What's New in Version 1.1.0 (July 2026)
+## 2. What's New in Version 1.4.0 (July 2026)
 
 | Update | Detail |
 |--------|--------|
@@ -224,4 +224,4 @@ ccpa/
 **Hemant Naik**
 [LinkedIn](https://www.linkedin.com/in/tanaji-naik/) · [hemant.naik@gmail.com](mailto:hemant.naik@gmail.com)
 
-Skill version: 1.1.0 — July 2026
+Skill version: 1.4.0 — July 2026

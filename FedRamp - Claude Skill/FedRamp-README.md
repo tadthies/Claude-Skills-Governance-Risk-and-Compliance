@@ -196,7 +196,7 @@ The skill was authored using the **Claude Skill Creator** framework, which struc
 
 | Version | Date | Changes |
 |---|---|---|
-| **1.1.0** | July 2026 | CR26 update: Certification Classes A–D, FedRAMP 20x as primary pathway, FedRAMP Ready retirement (July 28, 2026), OSCAL mandate (September 30, 2026), JAB P-ATO retirement |
+| **1.4.0** | July 2026 | CR26 update: Certification Classes A–D, FedRAMP 20x as primary pathway, FedRAMP Ready retirement (July 28, 2026), OSCAL mandate (September 30, 2026), JAB P-ATO retirement |
 | **1.0.0** | March 2026 | Initial release with Rev 5 baseline, ConMon guidance, OSCAL awareness |
 
 ---

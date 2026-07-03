@@ -1,7 +1,7 @@
 {
   "name": "swift-csp",
-  "description": "SWIFT CSP / CSCF v2026 expert covering all 31 controls (24 mandatory + 7 advisory), including Control 2.4 now mandatory (back-office data flow security). Architecture types A1–A4/B, KYC-SA attestation (window July 1–Dec 31, 2026), independent assessment, gap analysis, fraud prevention, and cross-framework mapping.",
-  "version": "1.1.0",
+  "description": "SWIFT CSP / CSCF v2026 expert covering all 31 controls (24 mandatory + 7 advisory), including Control 2.4 now mandatory (back-office data flow security). Architecture types A1\u2013A4/B, KYC-SA attestation (window July 1\u2013Dec 31, 2026), independent assessment, gap analysis, fraud prevention, and cross-framework mapping.",
+  "version": "1.4.0",
   "author": {
     "name": "Hemant Naik",
     "email": "hemant.naik@gmail.com"
@@ -9,5 +9,14 @@
   "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
   "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
   "license": "MIT",
-  "keywords": ["swift", "csp", "cscf", "swift-security", "kyc-sa", "payment-security", "grc", "v2026"]
+  "keywords": [
+    "swift",
+    "csp",
+    "cscf",
+    "swift-security",
+    "kyc-sa",
+    "payment-security",
+    "grc",
+    "v2026"
+  ]
 }
