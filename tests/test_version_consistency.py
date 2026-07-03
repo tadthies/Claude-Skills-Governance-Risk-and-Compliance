@@ -165,3 +165,48 @@ class TestVersionUniqueness:
         assert not bad, (
             f"marketplace.json entries with stale versions: {bad}"
         )
+
+
+# ---------------------------------------------------------------------------
+# Tests: _config.yml Jekyll exclusions
+# ---------------------------------------------------------------------------
+
+class TestJekyllConfig:
+    """
+    Every standalone skill folder must appear in _config.yml's exclude list
+    so Jekyll never tries to process binary .skill ZIP files — which bloats
+    the Pages artifact and can cause deployment failures.
+    """
+
+    def _load_excluded(self) -> set:
+        import yaml  # PyYAML is available in the test env
+        with open(REPO / "_config.yml") as f:
+            config = yaml.safe_load(f)
+        return set(config.get("exclude", []))
+
+    def _standalone_skill_dirs(self) -> list:
+        """Return folder names that contain a .skill ZIP (standalone skill dirs)."""
+        skip = {"plugins", "tests", "grc-workspace", "assets", ".github", ".git",
+                "__pycache__", "_site"}
+        dirs = []
+        for d in REPO.iterdir():
+            if d.is_dir() and d.name not in skip and not d.name.startswith("."):
+                if list(d.glob("*.skill")):
+                    dirs.append(d.name)
+        return sorted(dirs)
+
+    @pytest.mark.parametrize("folder", _standalone_skill_dirs(None), ids=lambda f: f)
+    def test_standalone_skill_folder_excluded_from_jekyll(self, folder: str):
+        excluded = self._load_excluded()
+        assert folder in excluded, (
+            f"'{folder}' contains .skill ZIP files but is NOT in _config.yml exclude list. "
+            f"Jekyll will try to process its binary files, bloating the Pages artifact. "
+            f"Add  - \"{folder}\"  to the exclude list in _config.yml."
+        )
+
+    def test_plugins_dir_excluded_from_jekyll(self):
+        excluded = self._load_excluded()
+        assert "plugins" in excluded, (
+            "The 'plugins' directory is not excluded in _config.yml. "
+            "Jekyll will crawl all SKILL.md files and reference docs unnecessarily."
+        )
