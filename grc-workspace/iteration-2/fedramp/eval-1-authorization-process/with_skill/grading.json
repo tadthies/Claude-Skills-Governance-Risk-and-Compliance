@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains the difference between Agency ATO and JAB P-ATO",
+      "passed": true,
+      "evidence": "Response dedicates a full section comparing Agency ATO and JAB P-ATO, explaining issuer, scope, timeline, and notes that JAB P-ATO is fully suspended under CR26."
+    },
+    {
+      "text": "Mentions the role of a 3PAO (Third Party Assessment Organization)",
+      "passed": true,
+      "evidence": "Response explains 3PAO role in detail: prepares SAP, conducts independent security assessment, produces SAR, and advises engaging one early."
+    },
+    {
+      "text": "Lists the core FedRAMP documentation: SSP, SAP, SAR, POA&M",
+      "passed": true,
+      "evidence": "Response presents the full authorization package structure listing SSP + Appendices A-Q, SAP + Appendices A-D, SAR + Appendices A-F, and POA&M."
+    },
+    {
+      "text": "Explains FedRAMP Ready designation as a precursor step",
+      "passed": true,
+      "evidence": "Response explains FedRAMP Ready and its retirement on July 28, 2026, noting CSPs pursuing it should pivot to FedRAMP 20x — substantively addresses the designation and its current status."
+    },
+    {
+      "text": "Addresses continuous monitoring (ConMom) requirements post-authorization",
+      "passed": true,
+      "evidence": "Response includes a dedicated Phase 4 section on ConMon covering monthly requirements (vulnerability scans, POA&M updates, inventory updates) and annual requirements (3PAO assessment, updated SSP, tested IRP/CP)."
+    }
+  ]
+}

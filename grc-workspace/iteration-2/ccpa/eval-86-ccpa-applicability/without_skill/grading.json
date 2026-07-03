@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Confirms the company IS subject to CCPA/CPRA because it meets the $25M annual gross revenue threshold — even though it falls short of the 100,000 consumer/household threshold",
+      "passed": true,
+      "evidence": "Baseline response confirms coverage via $30M revenue exceeding $25M threshold, and notes the 80,000-consumer figure does not meet the 100,000-threshold but that the revenue threshold alone is sufficient."
+    },
+    {
+      "text": "Explains that meeting ANY ONE of the three thresholds (revenue, data volume, monetization) triggers CCPA/CPRA applicability",
+      "passed": true,
+      "evidence": "Response explains all three thresholds and that satisfying any single one triggers compliance obligations."
+    },
+    {
+      "text": "Lists core compliance obligations including privacy notice at collection, comprehensive privacy policy, and the consumer rights program (right to know, delete, correct, opt-out, non-discrimination)",
+      "passed": true,
+      "evidence": "Response covers privacy notice at collection, annual privacy policy disclosures, and six consumer rights including Know, Delete, Correct (CPRA-new), Opt-Out, Limit SPI, and Non-Discrimination."
+    },
+    {
+      "text": "Explains the 'Do Not Sell or Share My Personal Information' opt-out link requirement and GPC signal obligation",
+      "passed": true,
+      "evidence": "Response mentions both the 'Do Not Sell or Share' homepage link requirement and the mandatory Global Privacy Control (GPC) browser signal honoring."
+    },
+    {
+      "text": "Mentions response deadlines: 45 days for access/delete/correct requests, with a possible 45-day extension",
+      "passed": true,
+      "evidence": "Response specifies 45 calendar days with a possible 45-day extension (90 days total) for Know/Delete/Correct requests."
+    }
+  ]
+}

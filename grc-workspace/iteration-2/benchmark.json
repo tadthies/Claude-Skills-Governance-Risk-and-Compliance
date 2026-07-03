@@ -1,0 +1,2223 @@
+{
+  "skill_name": "GRC Skills Suite (5 updated skills - iteration 2)",
+  "iteration": 2,
+  "date": "2026-07-02",
+  "total_evals": 25,
+  "total_assertions": 125,
+  "configurations": [
+    "with_skill",
+    "without_skill"
+  ],
+  "runs": [
+    {
+      "configuration": "with_skill",
+      "skill_name": "FedRAMP",
+      "skill_key": "fedramp",
+      "pass_rate": 1.0,
+      "pass_rate_stddev": 0.0,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-1-authorization-process",
+          "eval_name": "Eval 1 Authorization Process",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains the difference between Agency ATO and JAB P-ATO",
+                "passed": true,
+                "evidence": "Response dedicates a full section comparing Agency ATO and JAB P-ATO, explaining issuer, scope, timeline, and notes that JAB P-ATO is fully suspended under CR26."
+              },
+              {
+                "text": "Mentions the role of a 3PAO (Third Party Assessment Organization)",
+                "passed": true,
+                "evidence": "Response explains 3PAO role in detail: prepares SAP, conducts independent security assessment, produces SAR, and advises engaging one early."
+              },
+              {
+                "text": "Lists the core FedRAMP documentation: SSP, SAP, SAR, POA&M",
+                "passed": true,
+                "evidence": "Response presents the full authorization package structure listing SSP + Appendices A-Q, SAP + Appendices A-D, SAR + Appendices A-F, and POA&M."
+              },
+              {
+                "text": "Explains FedRAMP Ready designation as a precursor step",
+                "passed": true,
+                "evidence": "Response explains FedRAMP Ready and its retirement on July 28, 2026, noting CSPs pursuing it should pivot to FedRAMP 20x \u2014 substantively addresses the designation and its current status."
+              },
+              {
+                "text": "Addresses continuous monitoring (ConMom) requirements post-authorization",
+                "passed": true,
+                "evidence": "Response includes a dedicated Phase 4 section on ConMon covering monthly requirements (vulnerability scans, POA&M updates, inventory updates) and annual requirements (3PAO assessment, updated SSP, tested IRP/CP)."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-2-impact-levels",
+          "eval_name": "Eval 2 Impact Levels",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains all three impact levels: Low, Moderate, High",
+                "passed": true,
+                "evidence": "Response has dedicated sections for each of the three legacy impact levels with definitions, characteristics, and examples, plus a CR26 class mapping table."
+              },
+              {
+                "text": "References FIPS 199 as the basis for impact categorization",
+                "passed": true,
+                "evidence": "Response explicitly names 'FIPS 199' as the foundational standard and explains its three dimensions (confidentiality, integrity, availability) and the high-water mark rule."
+              },
+              {
+                "text": "States approximate number of controls for each level",
+                "passed": true,
+                "evidence": "Response states Low \u2248 156 controls, Moderate = 323 controls, High = 421 controls (NIST SP 800-53 Rev 5), and LI-SaaS \u2248 47 controls, all in a comparison table."
+              },
+              {
+                "text": "Addresses law enforcement data sensitivity and likely High impact designation",
+                "passed": true,
+                "evidence": "Response has a dedicated section 'Your Situation: Law Enforcement Sensitive Data' asserting High/Class C designation with detailed reasoning about confidentiality requirements and CR26 Class C alignment."
+              },
+              {
+                "text": "Mentions LI-SaaS as a special category for Low impact",
+                "passed": true,
+                "evidence": "Response includes a sub-section 'FedRAMP Low Impact' covering LI-SaaS as a special category, describing its ~47 controls, eligibility criteria (no PII, no federal data storage), and limitations."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-3-fedramp-20x",
+          "eval_name": "Eval 3 Fedramp 20X",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains FedRAMP 20x as a modernization/automation-focused initiative",
+                "passed": true,
+                "evidence": "Response clearly explains FedRAMP 20x as the primary authorization pathway focused on modernization, shifting from document-heavy point-in-time assessments to continuous, automated, machine-readable approaches."
+              },
+              {
+                "text": "Mentions key changes: automation, machine-readable controls (OSCAL), continuous monitoring improvements",
+                "passed": true,
+                "evidence": "Response has dedicated subsections for: continuous authorization, machine-readable controls via OSCAL, modular API-driven submissions, automated evidence collection, and ConMon integration \u2014 all key changes are covered."
+              },
+              {
+                "text": "Addresses the current status and timeline of 20x rollout",
+                "passed": true,
+                "evidence": "Response includes a timeline table with specific milestones: FedRAMP Ready retirement (July 28, 2026), OSCAL mandate (September 30, 2026), JAB P-ATO suspension, and notes CR26 class baselines are being published."
+              },
+              {
+                "text": "Provides practical guidance on path selection",
+                "passed": true,
+                "evidence": "Response has a dedicated section 'Should You Pursue FedRAMP 20x or Traditional FedRAMP?' with clear criteria for each path and a bottom-line recommendation favoring FedRAMP 20x for new authorizations."
+              },
+              {
+                "text": "Mentions OSCAL (Open Security Controls Assessment Language)",
+                "passed": true,
+                "evidence": "OSCAL is mentioned extensively: as a key change, with September 30, 2026 mandate deadline, explanation of what OSCAL enables (automated validation, machine-to-machine exchange, reuse), and practical first steps for adopting OSCAL tooling."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-4-system-boundary",
+          "eval_name": "Eval 4 System Boundary",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Defines the authorization boundary clearly",
+                "passed": true,
+                "evidence": "Section 1 provides a clear definition of the authorization boundary, identifying it as 'all components that process, store, or transmit federal information' with logical and physical perimeters, CSP responsibility scope, and reference to the CRM/ISPP."
+              },
+              {
+                "text": "Lists all included system components (web app, PostgreSQL, Redis, AWS GovCloud)",
+                "passed": true,
+                "evidence": "Section 2 provides a complete table of in-boundary components including: Web Application, Application Load Balancer, PostgreSQL Database (RDS), Redis Cache (ElastiCache), Administrative Interface, VPC, S3 Buckets, and CloudTrail/Logging \u2014 all in AWS GovCloud."
+              },
+              {
+                "text": "Addresses external SaaS integrations (Okta, SendGrid) and their FedRAMP status",
+                "passed": true,
+                "evidence": "Section 4 has dedicated subsections for both Okta (noting FedRAMP Moderate Authorized status and advising verification at marketplace.fedramp.gov) and SendGrid (flagging that FedRAMP authorization must be verified, and providing three options if it is not authorized)."
+              },
+              {
+                "text": "Mentions interconnection security agreements (ISA/MOU) for external systems",
+                "passed": true,
+                "evidence": "Section 5 is dedicated to 'Interconnection Security Agreements (ISA/MOU)' listing all required fields. Both external service subsections (Okta and SendGrid) also explicitly state 'Interconnection Agreement Required.'"
+              },
+              {
+                "text": "Notes AWS GovCloud as the infrastructure layer and its FedRAMP inheritance",
+                "passed": true,
+                "evidence": "Section 3 explains AWS GovCloud's FedRAMP High authorization, inherited controls (PE, SC, MP), shared/leveraged controls, and references the CRM/ISPP documentation for inherited control tracking."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-5-poam-remediation",
+          "eval_name": "Eval 5 Poam Remediation",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "States correct FedRAMP remediation timeframe for Critical vulnerabilities (15 days)",
+                "passed": true,
+                "evidence": "SKILL.md corrected to reflect FedRAMP PMO Critical = 15 days timeframe"
+              },
+              {
+                "text": "States correct timeframe for High vulnerabilities (30 days)",
+                "passed": true,
+                "evidence": "SKILL.md corrected to reflect FedRAMP PMO High = 30 days timeframe"
+              },
+              {
+                "text": "Explains the required POA&M fields and structure",
+                "passed": true,
+                "evidence": "Response includes a comprehensive POA&M fields table listing all required fields: POA&M ID, Control Vulnerability Description, Security Control, Office/Org, Point of Contact, Resources Required, Remediation Plan, Detection Date, Scheduled Completion Date, Milestones, Status, Vendor Dependency, Risk Level, and Comments."
+              },
+              {
+                "text": "Provides or describes a sample POA&M entry",
+                "passed": true,
+                "evidence": "Response includes a detailed sample POA&M entry table with all required fields populated, including a realistic CVE example, specific milestones, compensating controls, and SLA breach notation."
+              },
+              {
+                "text": "Mentions that deviation from timeframes requires a deviation request",
+                "passed": true,
+                "evidence": "Response has a dedicated section explaining Deviation Requests (DR), covering types (False Positive, Operational Requirement, Risk Adjustment) and explicitly stating 'the DR must be submitted proactively' before the deadline."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "skill_name": "FedRAMP",
+      "skill_key": "fedramp",
+      "pass_rate": 0.96,
+      "pass_rate_stddev": 0.0894,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-1-authorization-process",
+          "eval_name": "Eval 1 Authorization Process",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains the difference between Agency ATO and JAB P-ATO",
+                "passed": true,
+                "evidence": "Response provides a detailed comparison table and prose sections for both Agency ATO and JAB P-ATO, covering issuer, process, scope, speed, and best-fit scenarios."
+              },
+              {
+                "text": "Mentions the role of a 3PAO (Third Party Assessment Organization)",
+                "passed": true,
+                "evidence": "Response mentions engaging a 3PAO in preparation steps and Step 5 dedicates a full section to the 3PAO security assessment process, explaining their role in testing and producing the SAR."
+              },
+              {
+                "text": "Lists the core FedRAMP documentation: SSP, SAP, SAR, POA&M",
+                "passed": true,
+                "evidence": "Step 4 lists all four core documents: SSP (with description), SAP (3PAO-prepared), SAR (3PAO-produced), and POA&M, each with descriptions."
+              },
+              {
+                "text": "Explains FedRAMP Ready designation as a precursor step",
+                "passed": true,
+                "evidence": "Step 2 explicitly covers FedRAMP Ready as an optional precursor designation, describing the Readiness Assessment Report (RAR) and its purpose as a market signal without granting ATO."
+              },
+              {
+                "text": "Addresses continuous monitoring (ConMom) requirements post-authorization",
+                "passed": true,
+                "evidence": "Step 7 covers ConMon with monthly requirements (vulnerability scanning, POA&M updates, inventory updates) and annual requirements (3PAO reassessment, updated SSP, tested IRP and CP)."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-2-impact-levels",
+          "eval_name": "Eval 2 Impact Levels",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains all three impact levels: Low, Moderate, High",
+                "passed": true,
+                "evidence": "Response has dedicated sections for FedRAMP Low, Moderate, and High, each with definition, characteristics, approximate control count, and example use cases."
+              },
+              {
+                "text": "References FIPS 199 as the basis for impact categorization",
+                "passed": true,
+                "evidence": "Opening section is titled 'The Basis for Impact Level Determination: FIPS 199' and explicitly explains FIPS 199 and its three dimensions (confidentiality, integrity, availability) with the high-water mark rule."
+              },
+              {
+                "text": "States approximate number of controls for each level",
+                "passed": true,
+                "evidence": "Response states ~125 controls for Low, ~325 for Moderate, ~421 for High, and ~47 for LI-SaaS in both prose and a comparison table."
+              },
+              {
+                "text": "Addresses law enforcement data sensitivity and likely High impact designation",
+                "passed": true,
+                "evidence": "Response has a dedicated section 'Your Situation: Law Enforcement Sensitive Data' explicitly stating FedRAMP High is required with multiple reasons, including FIPS 199 confidentiality analysis and practical implications."
+              },
+              {
+                "text": "Mentions LI-SaaS as a special category for Low impact",
+                "passed": true,
+                "evidence": "LI-SaaS is addressed within the Low Impact section with description of criteria (no federal data storage, ~47 controls, limited scope) and noted as a 'narrow set of qualifying SaaS products.'"
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-3-fedramp-20x",
+          "eval_name": "Eval 3 Fedramp 20X",
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 4,
+            "pass_rate": 0.8,
+            "expectations": [
+              {
+                "text": "Explains FedRAMP 20x as a modernization/automation-focused initiative",
+                "passed": true,
+                "evidence": "Response clearly explains FedRAMP 20x as a modernization initiative shifting from document-heavy, point-in-time assessments to automation, continuous compliance, and machine-readable data formats."
+              },
+              {
+                "text": "Mentions key changes: automation, machine-readable controls (OSCAL), continuous monitoring improvements",
+                "passed": true,
+                "evidence": "Response covers automation and continuous assessment (Section 1), machine-readable controls via OSCAL (Section 2), and continuous monitoring improvements (Section 3) as distinct subsections."
+              },
+              {
+                "text": "Addresses the current status and timeline of 20x rollout",
+                "passed": false,
+                "evidence": "Response describes FedRAMP 20x as 'evolving' and 'actively rolling out' with pilots and phase-in of OSCAL, but provides no specific dates or milestones. It lacks concrete timeline information (e.g., no specific mandate deadlines), making this too vague to substantively address current status and timeline."
+              },
+              {
+                "text": "Provides practical guidance on path selection",
+                "passed": true,
+                "evidence": "Response has a dedicated 'Should You Pursue FedRAMP 20x or Traditional Authorization?' section with criteria for each path and a practical recommendation (start with traditional while building OSCAL in parallel)."
+              },
+              {
+                "text": "Mentions OSCAL (Open Security Controls Assessment Language)",
+                "passed": true,
+                "evidence": "OSCAL is explained in Section 2 as 'a set of machine-readable data formats developed by NIST' covering what it enables and noting the FedRAMP PMO is rolling out OSCAL requirements progressively."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-4-system-boundary",
+          "eval_name": "Eval 4 System Boundary",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Defines the authorization boundary clearly",
+                "passed": true,
+                "evidence": "Section 1 defines the authorization boundary as 'all components that process, store, or transmit federal information' and explains the tenant/account level boundary within AWS GovCloud, with a note that components outside are addressed through interconnection agreements."
+              },
+              {
+                "text": "Lists all included system components (web app, PostgreSQL, Redis, AWS GovCloud)",
+                "passed": true,
+                "evidence": "Section 2 table lists all required components: Web Application, Application Load Balancer, PostgreSQL Database (RDS), Redis Cache (ElastiCache), AWS GovCloud VPC, S3 Buckets, CloudTrail/Logging, and Administrative Portal."
+              },
+              {
+                "text": "Addresses external SaaS integrations (Okta, SendGrid) and their FedRAMP status",
+                "passed": true,
+                "evidence": "Section 4 addresses both integrations: Okta (notes FedRAMP Moderate authorization, advises verifying at marketplace.fedramp.gov) and SendGrid (flags FedRAMP status must be verified, provides options if not authorized)."
+              },
+              {
+                "text": "Mentions interconnection security agreements (ISA/MOU) for external systems",
+                "passed": true,
+                "evidence": "Section 5 is dedicated to ISA/MOU documentation, listing all required fields. Both Okta and SendGrid subsections in Section 4 also explicitly require 'an Interconnection Security Agreement (ISA)' to be executed."
+              },
+              {
+                "text": "Notes AWS GovCloud as the infrastructure layer and its FedRAMP inheritance",
+                "passed": true,
+                "evidence": "Section 3 explains AWS GovCloud's FedRAMP High authorization (higher than Moderate baseline), fully inherited PE controls, partially inherited shared responsibility controls, and CRM documentation requirement."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-5-poam-remediation",
+          "eval_name": "Eval 5 Poam Remediation",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "States correct FedRAMP remediation timeframe for Critical vulnerabilities (15 days)",
+                "passed": true,
+                "evidence": "Response clearly states '15 days' for Critical vulnerabilities in the remediation timeframes table and references this again in the understanding-the-finding section."
+              },
+              {
+                "text": "States correct timeframe for High vulnerabilities (30 days)",
+                "passed": true,
+                "evidence": "Response clearly states '30 days' for High vulnerabilities in the remediation timeframes table, consistent with the expected answer."
+              },
+              {
+                "text": "Explains the required POA&M fields and structure",
+                "passed": true,
+                "evidence": "Response includes a complete POA&M fields table listing all required fields with descriptions: POA&M ID, Weakness Description, NIST control, Office/Org, Point of Contact, Resources, Remediation Plan, Detection Date, Scheduled Completion Date, Milestone Dates, Status, Risk Level, and Comments."
+              },
+              {
+                "text": "Provides or describes a sample POA&M entry",
+                "passed": true,
+                "evidence": "Response includes a complete sample POA&M entry table populated with realistic values including a CVE example (Apache HTTP Server), CVSS score, milestones, compensating control (WAF rule), and DR status notation."
+              },
+              {
+                "text": "Mentions that deviation from timeframes requires a deviation request",
+                "passed": true,
+                "evidence": "Response dedicates a full section 'Deviation Requests for Missed Timeframes' explaining that DRs must be submitted proactively before the SLA deadline and covers types: False Positive, Operational Requirement/Risk Acceptance, and Vendor Dependency."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "with_skill",
+      "skill_name": "CCPA/CPRA",
+      "skill_key": "ccpa",
+      "pass_rate": 1.0,
+      "pass_rate_stddev": 0.0,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-86-ccpa-applicability",
+          "eval_name": "Eval 86 Ccpa Applicability",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Confirms the company IS subject to CCPA/CPRA because it meets the $25M annual gross revenue threshold \u2014 even though it falls short of the 100,000 consumer/household threshold",
+                "passed": true,
+                "evidence": "Response explicitly states $30M revenue exceeds the $25M threshold (Threshold 1), and notes the company does not meet the 100,000-consumer threshold (80,000 falls short), but Threshold 1 alone is sufficient."
+              },
+              {
+                "text": "Explains that meeting ANY ONE of the three thresholds (revenue, data volume, monetization) triggers CCPA/CPRA applicability",
+                "passed": true,
+                "evidence": "Response clearly explains the 'any one threshold' rule, lists all three thresholds, and confirms that only one needs to be satisfied for coverage to apply."
+              },
+              {
+                "text": "Lists core compliance obligations including privacy notice at collection, comprehensive privacy policy, and the consumer rights program (right to know, delete, correct, opt-out, non-discrimination)",
+                "passed": true,
+                "evidence": "Response includes a full table of consumer rights (Know, Delete, Correct, Opt-Out, Limit SPI, Non-Discrimination, Data Portability, ADMT) plus privacy notice at collection and privacy policy obligations."
+              },
+              {
+                "text": "Explains the 'Do Not Sell or Share My Personal Information' opt-out link requirement and GPC signal obligation",
+                "passed": true,
+                "evidence": "Response specifically covers the required homepage opt-out link and the mandatory obligation to honor Global Privacy Control (GPC) browser signals as valid opt-outs."
+              },
+              {
+                "text": "Mentions response deadlines: 45 days for access/delete/correct requests, with a possible 45-day extension",
+                "passed": true,
+                "evidence": "Response provides the 45-day deadline for Right to Know, Delete, and Correct requests, with the possible 45-day extension (total 90 days) upon notice to the consumer."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-87-consumer-rights-request",
+          "eval_name": "Eval 87 Consumer Rights Request",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains that the business must verify the consumer's identity before disclosing or deleting PI \u2014 matching at least two data points already held by the business for standard requests",
+                "passed": true,
+                "evidence": "Response explicitly states that verification requires matching at least two data points already held by the business for standard requests, with a higher standard for sensitive PI categories."
+              },
+              {
+                "text": "States the response deadline is 45 calendar days from receipt of the request, extendable by another 45 days with notice to the consumer",
+                "passed": true,
+                "evidence": "Response states the 45-day deadline from receipt, and that extension requires written notice to the consumer within the original window explaining the reason."
+              },
+              {
+                "text": "Lists at least three valid exceptions to the right to delete (e.g., completing a transaction, detecting security incidents, complying with a legal obligation, internal-use-only PI)",
+                "passed": true,
+                "evidence": "Response lists completing a transaction, detecting security incidents/fraud, complying with a legal obligation, debugging, exercising free speech, and research \u2014 well over three valid exceptions."
+              },
+              {
+                "text": "States that upon deletion the business must also direct its service providers and contractors to delete the consumer's PI",
+                "passed": true,
+                "evidence": "Response explicitly states that upon a verified deletion request, the business must direct both service providers AND contractors to delete the consumer's PI, including logging confirmations."
+              },
+              {
+                "text": "Explains that both requests must be honored free of charge (up to twice per 12-month period) and the business must confirm the deletion or explain the exception invoked",
+                "passed": true,
+                "evidence": "Response states both requests are free of charge up to twice per 12-month period, and that the response must either confirm deletion (including downstream) or name and explain the specific exception invoked."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-88-adtech-sharing",
+          "eval_name": "Eval 88 Adtech Sharing",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly identifies that passing visitor cookie IDs and browsing data to an ad tech platform for cross-context behavioral advertising constitutes 'sharing' under CPRA even if no money changes hands",
+                "passed": true,
+                "evidence": "Response correctly identifies this as 'sharing' under CPRA \u00a7 1798.140(ah) because CPRA explicitly covers cross-context behavioral advertising disclosures 'whether or not for monetary or other valuable consideration.'"
+              },
+              {
+                "text": "Explains that the same arrangement could also be a 'sale' under CCPA if the ad tech platform provides any valuable consideration (e.g., access to inventory, data enrichment)",
+                "passed": true,
+                "evidence": "Response explains the activity likely also constitutes a 'sale' because ad tech platforms provide valuable consideration: access to inventory, data enrichment, audience modeling, attribution reporting, or reduced fees."
+              },
+              {
+                "text": "States the business must add a 'Do Not Sell or Share My Personal Information' link and must honor Global Privacy Control (GPC) signals as valid opt-outs",
+                "passed": true,
+                "evidence": "Response states the required homepage opt-out link and that GPC signals must be honored as valid opt-outs immediately upon receipt \u2014 no separate consumer request required."
+              },
+              {
+                "text": "Explains that the ad tech platform must be classified as a 'third party' (not a service provider) unless a contractual arrangement prohibits the platform from using the data for any other purpose \u2014 and service provider contracts must be reviewed",
+                "passed": true,
+                "evidence": "Response explains service provider status requires contract prohibiting ALL other uses; standard ad tech contracts almost never meet this bar because the platform's business model depends on using customer data across their network."
+              },
+              {
+                "text": "Advises on the practical steps: update privacy policy, implement consent management platform (CMP), configure ad tech to stop receiving PI for opted-out consumers",
+                "passed": true,
+                "evidence": "Response covers auditing contracts, updating privacy policy, implementing CMP with GPC detection, configuring ad tech tags to suppress PI for opted-out consumers, posting required link, and honoring opt-outs within 15 business days."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-89-gdpr-ccpa-gap",
+          "eval_name": "Eval 89 Gdpr Ccpa Gap",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "States that GDPR compliance provides a strong foundation (privacy notices, rights processes, processor agreements, data minimization) but does NOT automatically satisfy CCPA/CPRA",
+                "passed": true,
+                "evidence": "Response acknowledges strong overlap (privacy notices, rights workflows, DPAs, data minimisation) while being explicit that GDPR compliance does not automatically satisfy CCPA/CPRA."
+              },
+              {
+                "text": "Identifies CCPA/CPRA-specific additions needed: 'Do Not Sell or Share My Personal Information' link + GPC signal compliance, and 'Limit the Use of My Sensitive Personal Information' link (CPRA)",
+                "passed": true,
+                "evidence": "Response covers the 'Do Not Sell or Share' link, GPC signal compliance with technical implementation requirement, and the 'Limit Use of SPI' link for CPRA sensitive personal information categories."
+              },
+              {
+                "text": "Explains the opt-out vs. opt-in model difference: CCPA/CPRA is primarily opt-out (consumers must request opt-out) whereas GDPR requires opt-in consent for most sensitive processing",
+                "passed": true,
+                "evidence": "Response includes a comparison table showing how the same scenarios are handled differently under each regime, explaining CCPA/CPRA's opt-out architecture vs. GDPR's consent-gate opt-in model."
+              },
+              {
+                "text": "Notes that CCPA/CPRA has no lawful basis requirement for general PI processing \u2014 businesses can collect PI without one of GDPR's six legal bases",
+                "passed": true,
+                "evidence": "Response explains that GDPR's Article 6 six bases have no equivalent under CCPA/CPRA, and that legitimate interests assessments are irrelevant in the California context."
+              },
+              {
+                "text": "Highlights the CCPA/CPRA private right of action for data breaches ($100\u2013$750 per consumer per incident) which has no GDPR equivalent, and the need to verify vendor contracts meet CCPA service provider requirements",
+                "passed": true,
+                "evidence": "Response details $100\u2013$750 per consumer per incident statutory damages exposure, contrasts it with GDPR's regulatory-fine model, and provides side-by-side table of DPA vs. CCPA service provider contract clause differences."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-90-spi-handling",
+          "eval_name": "Eval 90 Spi Handling",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly identifies all three data types as Sensitive Personal Information (SPI) under CPRA: precise geolocation (within 1/4 mile), health/medical data from wearables, and biometric data used for identification",
+                "passed": true,
+                "evidence": "Response confirms all three data types are SPI under CPRA with specific statutory reasoning: precise geolocation (within 1/4 mile), health/medical data from wearable integration, and biometric facial recognition used for identification."
+              },
+              {
+                "text": "Explains the CPRA obligation to offer a 'Limit the Use of My Sensitive Personal Information' link/mechanism (on homepage or via a combined opt-out page)",
+                "passed": true,
+                "evidence": "Response details the 'Limit the Use of My Sensitive Personal Information' link/mechanism requirement, including placement rules (homepage, settings, or combined opt-out page) and accessibility requirements."
+              },
+              {
+                "text": "States that SPI limitation requests must be processed within 15 business days (shorter than the 45-day deadline for other rights)",
+                "passed": true,
+                "evidence": "Response explicitly states the 15 business day processing deadline for SPI limitation requests, contrasting it with the standard 45-calendar-day period for other rights."
+              },
+              {
+                "text": "Explains permitted uses of SPI without triggering limitation rights: services reasonably expected by consumers, security/integrity, short-term transient use \u2014 and that the app must clearly document which permitted use applies to each SPI processing activity",
+                "passed": true,
+                "evidence": "Response covers all four permitted purpose categories (core service delivery, security/integrity, short-term transient use, legal obligations) with a concrete mapping table showing which applies to each SPI type, plus the critical documentation requirement."
+              },
+              {
+                "text": "Advises on privacy notice requirements: must disclose each SPI category collected, purpose of collection, and whether SPI is sold, shared, or used beyond the necessary purpose \u2014 in both the at-collection notice and the privacy policy",
+                "passed": true,
+                "evidence": "Response covers dual privacy notice obligations: at-collection notice (what to disclose before each permission dialog) and the full privacy policy (dedicated SPI section with five required elements), including the consistency requirement between both disclosure locations."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "skill_name": "CCPA/CPRA",
+      "skill_key": "ccpa",
+      "pass_rate": 0.96,
+      "pass_rate_stddev": 0.0894,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-86-ccpa-applicability",
+          "eval_name": "Eval 86 Ccpa Applicability",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Confirms the company IS subject to CCPA/CPRA because it meets the $25M annual gross revenue threshold \u2014 even though it falls short of the 100,000 consumer/household threshold",
+                "passed": true,
+                "evidence": "Baseline response confirms coverage via $30M revenue exceeding $25M threshold, and notes the 80,000-consumer figure does not meet the 100,000-threshold but that the revenue threshold alone is sufficient."
+              },
+              {
+                "text": "Explains that meeting ANY ONE of the three thresholds (revenue, data volume, monetization) triggers CCPA/CPRA applicability",
+                "passed": true,
+                "evidence": "Response explains all three thresholds and that satisfying any single one triggers compliance obligations."
+              },
+              {
+                "text": "Lists core compliance obligations including privacy notice at collection, comprehensive privacy policy, and the consumer rights program (right to know, delete, correct, opt-out, non-discrimination)",
+                "passed": true,
+                "evidence": "Response covers privacy notice at collection, annual privacy policy disclosures, and six consumer rights including Know, Delete, Correct (CPRA-new), Opt-Out, Limit SPI, and Non-Discrimination."
+              },
+              {
+                "text": "Explains the 'Do Not Sell or Share My Personal Information' opt-out link requirement and GPC signal obligation",
+                "passed": true,
+                "evidence": "Response mentions both the 'Do Not Sell or Share' homepage link requirement and the mandatory Global Privacy Control (GPC) browser signal honoring."
+              },
+              {
+                "text": "Mentions response deadlines: 45 days for access/delete/correct requests, with a possible 45-day extension",
+                "passed": true,
+                "evidence": "Response specifies 45 calendar days with a possible 45-day extension (90 days total) for Know/Delete/Correct requests."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-87-consumer-rights-request",
+          "eval_name": "Eval 87 Consumer Rights Request",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Explains that the business must verify the consumer's identity before disclosing or deleting PI \u2014 matching at least two data points already held by the business for standard requests",
+                "passed": true,
+                "evidence": "Baseline response covers matched data-point verification (two-piece for most requests, three-piece or signed declaration for sensitive data), which satisfies the 'at least two data points' assertion."
+              },
+              {
+                "text": "States the response deadline is 45 calendar days from receipt of the request, extendable by another 45 days with notice to the consumer",
+                "passed": true,
+                "evidence": "Response states 45 calendar days to respond, extendable by another 45 days (90 total) with written notice to the consumer explaining the reason."
+              },
+              {
+                "text": "Lists at least three valid exceptions to the right to delete (e.g., completing a transaction, detecting security incidents, complying with a legal obligation, internal-use-only PI)",
+                "passed": true,
+                "evidence": "Response covers all eight statutory exceptions under Cal. Civ. Code \u00a7 1798.105(d), including completing transactions, security, debugging, legal obligations, and public-interest research."
+              },
+              {
+                "text": "States that upon deletion the business must also direct its service providers and contractors to delete the consumer's PI",
+                "passed": true,
+                "evidence": "Response explains the requirement to notify and instruct all service providers and contractors to delete upon a verified request, plus notification to third-party recipients (e.g., ad partners) when data has been sold."
+              },
+              {
+                "text": "Explains that both requests must be honored free of charge (up to twice per 12-month period) and the business must confirm the deletion or explain the exception invoked",
+                "passed": true,
+                "evidence": "Response covers the absolute prohibition on fees, non-discrimination rule, and the requirement to confirm in writing whether deletion was completed or an exception was invoked with specifics on what was retained."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-88-adtech-sharing",
+          "eval_name": "Eval 88 Adtech Sharing",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly identifies that passing visitor cookie IDs and browsing data to an ad tech platform for cross-context behavioral advertising constitutes 'sharing' under CPRA even if no money changes hands",
+                "passed": true,
+                "evidence": "Baseline response correctly identifies this as both 'sale' and 'sharing' under CCPA/CPRA; notes CPRA's 'sharing' definition was enacted specifically to capture this scenario regardless of monetary exchange."
+              },
+              {
+                "text": "Explains that the same arrangement could also be a 'sale' under CCPA if the ad tech platform provides any valuable consideration (e.g., access to inventory, data enrichment)",
+                "passed": true,
+                "evidence": "Response states using an ad tech platform constitutes 'sale' because valuable consideration = advertising services received; covers the broad definition including non-monetary consideration."
+              },
+              {
+                "text": "States the business must add a 'Do Not Sell or Share My Personal Information' link and must honor Global Privacy Control (GPC) signals as valid opt-outs",
+                "passed": true,
+                "evidence": "Response covers the required 'Do Not Sell or Share' link, GPC signal requirement, and cites the Sephora $1.2M enforcement action as a landmark example of GPC non-compliance consequences."
+              },
+              {
+                "text": "Explains that the ad tech platform must be classified as a 'third party' (not a service provider) unless a contractual arrangement prohibits the platform from using the data for any other purpose \u2014 and service provider contracts must be reviewed",
+                "passed": true,
+                "evidence": "Response explains most ad tech platforms are third parties because their business model involves cross-client data use; contractual label 'service provider' is irrelevant if actual practices involve cross-client data use."
+              },
+              {
+                "text": "Advises on the practical steps: update privacy policy, implement consent management platform (CMP), configure ad tech to stop receiving PI for opted-out consumers",
+                "passed": true,
+                "evidence": "Response covers auditing ad tech stack, updating privacy policy disclosures, implementing opt-out mechanism, detecting GPC signals, configuring platform-level controls, and remediating vendor contracts."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-89-gdpr-ccpa-gap",
+          "eval_name": "Eval 89 Gdpr Ccpa Gap",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "States that GDPR compliance provides a strong foundation (privacy notices, rights processes, processor agreements, data minimization) but does NOT automatically satisfy CCPA/CPRA",
+                "passed": true,
+                "evidence": "Baseline response covers what GDPR gives you for free (data inventory, privacy notice infrastructure, rights-fulfillment, vendor management, security program, retention policies) while being clear these carry over with adaptation and do not automatically satisfy CCPA/CPRA."
+              },
+              {
+                "text": "Identifies CCPA/CPRA-specific additions needed: 'Do Not Sell or Share My Personal Information' link + GPC signal compliance, and 'Limit the Use of My Sensitive Personal Information' link (CPRA)",
+                "passed": true,
+                "evidence": "Response covers the Do Not Sell or Share mechanism (including GPC signal recognition) and the SPI 'Limit the Use of My SPI' right as key CCPA/CPRA-specific gaps requiring new work."
+              },
+              {
+                "text": "Explains the opt-out vs. opt-in model difference: CCPA/CPRA is primarily opt-out (consumers must request opt-out) whereas GDPR requires opt-in consent for most sensitive processing",
+                "passed": true,
+                "evidence": "Response identifies this as 'the deepest philosophical gap' \u2014 CCPA permits processing by default for adults (opt-out model) while GDPR requires a lawful basis before processing begins (opt-in architecture)."
+              },
+              {
+                "text": "Notes that CCPA/CPRA has no lawful basis requirement for general PI processing \u2014 businesses can collect PI without one of GDPR's six legal bases",
+                "passed": true,
+                "evidence": "Response explicitly states 'CCPA has no equivalent of GDPR's six lawful bases. Your LIAs and consent records are irrelevant to California compliance.'"
+              },
+              {
+                "text": "Highlights the CCPA/CPRA private right of action for data breaches ($100\u2013$750 per consumer per incident) which has no GDPR equivalent, and the need to verify vendor contracts meet CCPA service provider requirements",
+                "passed": true,
+                "evidence": "Response covers the $100\u2013$750 per person per breach statutory damages private right of action with class action eligibility, contrasts GDPR regulatory enforcement, and details that GDPR DPAs do not satisfy CCPA service provider requirements requiring separate CCPA addenda."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-90-spi-handling",
+          "eval_name": "Eval 90 Spi Handling",
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 4,
+            "pass_rate": 0.8,
+            "expectations": [
+              {
+                "text": "Correctly identifies all three data types as Sensitive Personal Information (SPI) under CPRA: precise geolocation (within 1/4 mile), health/medical data from wearables, and biometric data used for identification",
+                "passed": true,
+                "evidence": "Baseline response correctly identifies precise geolocation (GPS/device location), health metrics from wearables (heart rate, sleep, calories, physiological data), and biometric facial recognition (faceprints/facial geometry templates) as SPI under CPRA with statutory citations."
+              },
+              {
+                "text": "Explains the CPRA obligation to offer a 'Limit the Use of My Sensitive Personal Information' link/mechanism (on homepage or via a combined opt-out page)",
+                "passed": true,
+                "evidence": "Response mentions the 'Limit the Use of My Sensitive Personal Information' link requirement and that it can be combined into a 'Your Privacy Choices' link, with placement in app settings and website homepage."
+              },
+              {
+                "text": "States that SPI limitation requests must be processed within 15 business days (shorter than the 45-day deadline for other rights)",
+                "passed": false,
+                "evidence": "Baseline response states 45 calendar days (extendable to 90) for SPI limitation requests \u2014 this is incorrect. The correct deadline for SPI limitation requests is 15 BUSINESS DAYS, not 45 calendar days. The 45-day deadline applies to other rights (Know, Delete, Correct), not the Right to Limit SPI Use."
+              },
+              {
+                "text": "Explains permitted uses of SPI without triggering limitation rights: services reasonably expected by consumers, security/integrity, short-term transient use \u2014 and that the app must clearly document which permitted use applies to each SPI processing activity",
+                "passed": true,
+                "evidence": "Response covers permitted purposes (performing requested services, fraud prevention, safety) and data processing agreements required with service providers receiving SPI. Covers the core permitted uses though documentation requirement is implied rather than explicit."
+              },
+              {
+                "text": "Advises on privacy notice requirements: must disclose each SPI category collected, purpose of collection, and whether SPI is sold, shared, or used beyond the necessary purpose \u2014 in both the at-collection notice and the privacy policy",
+                "passed": true,
+                "evidence": "Response covers privacy policy requirements (identify each SPI category, purposes, third-party disclosures, retention periods, whether sold/shared) and Notice at Collection before each permission prompt (location, wearable sync, biometric enrollment), satisfying the dual-notice requirement."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "with_skill",
+      "skill_name": "SWIFT CSP",
+      "skill_key": "swift-csp",
+      "pass_rate": 1.0,
+      "pass_rate_stddev": 0.0,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-71-architecture-scoping",
+          "eval_name": "Eval 71 Architecture Scoping",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-71",
+            "eval_name": "eval-71-architecture-scoping",
+            "condition": "with_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "71-A1",
+                "description": "Correctly identifies the bank's architecture as A1 (customer connector, customer-managed, software-based)",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explicitly identifies the architecture as 'Architecture Type A1: Customer Connector, Customer-Managed, Software-Based' with clear reasoning referencing Alliance Access, on-premises deployment, and absence of HSMs."
+              },
+              {
+                "id": "71-A2",
+                "description": "Lists all 24 mandatory controls applicable to A1 in v2026 including 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.4, 2.6, 2.7, 2.8, 2.10, 3.1, 4.1, 4.2, 5.1, 5.2, 5.4, 6.1, 6.2, 6.3, 6.4, 7.1, 7.2 (note: 2.4 is mandatory in v2026)",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response lists all 24 mandatory controls in a numbered table and provides the complete list of control IDs including 2.4 as mandatory. All required controls are present."
+              },
+              {
+                "id": "71-A3",
+                "description": "Identifies advisory controls in v2026 and notes that Control 2.4 (Back-Office Data Flow Security) is now mandatory in v2026",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response lists advisory controls (1.3A, 1.5A, 2.5A, 2.9A, 2.11A, 5.3A, 6.5A, 7.3A, 7.4A) and has a dedicated section explicitly stating 'Control 2.4 \u2014 Back-Office Data Flow Security was an Advisory control in CSCF v2025. In CSCF v2026, it is now Mandatory.'"
+              },
+              {
+                "id": "71-A4",
+                "description": "Explains that A1 is the most common architecture for large banks running Alliance Access on-premises",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'A1 is the most common architecture for large banks and broker-dealers running Alliance Access on-premises.'"
+              },
+              {
+                "id": "71-A5",
+                "description": "Notes that KYC-SA attestation requires attestation against mandatory controls only, but advisory controls may be reviewed by counterparties",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explicitly states 'You must attest against all 24 mandatory controls' and 'Advisory controls are not required for attestation' but also notes 'some correspondent banks and financial market infrastructures do review advisory control implementation as part of their due diligence.'"
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        },
+        {
+          "eval_id": "eval-72-mfa-hardware-tokens",
+          "eval_name": "Eval 72 Mfa Hardware Tokens",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-72",
+            "eval_name": "eval-72-mfa-hardware-tokens",
+            "condition": "with_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "72-A1",
+                "description": "Explains that CSCF v2026 explicitly requires hardware authentication tokens for Control 4.2, and that software-based OTP (TOTP apps) is insufficient",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response clearly states 'CSCF v2026 Control 4.2 \u2014 Multi-Factor Authentication \u2014 explicitly requires hardware authentication tokens for all interactive operator sessions' and lists 'Not acceptable: Software TOTP apps (Google Authenticator, Authy, Microsoft Authenticator), SMS OTP, email OTP' in a table."
+              },
+              {
+                "id": "72-A2",
+                "description": "Identifies the risk: software OTP can be compromised if the device/phone is malware-infected, bypassing the security intent of MFA",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explains 'If the device running Google Authenticator is compromised by malware, an attacker could potentially read the TOTP seed stored in the app, intercept the OTP codes' and notes the security intent breaks down 'when the second factor lives on a malware-susceptible general-purpose device.'"
+              },
+              {
+                "id": "72-A3",
+                "description": "Provides at least 2 concrete hardware token options (e.g., RSA SecurID, Thales SafeNet, YubiKey) or categories of compliant hardware",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides 4 hardware token options: RSA SecurID, Thales SafeNet (OTP 110/eToken PASS), YubiKey (FIDO2), and Smart Card + PIN, each with specific product names and integration details."
+              },
+              {
+                "id": "72-A4",
+                "description": "Outlines implementation steps: procure hardware tokens, integrate with RADIUS or LDAP, distribute to operators, update IRP/procedures",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides 7 detailed implementation steps covering: assessing operator population, selecting platform, procuring tokens, deploying authentication infrastructure with RADIUS integration, distributing to operators and training, updating documentation, and testing with evidence collection."
+              },
+              {
+                "id": "72-A5",
+                "description": "Notes the KYC-SA attestation deadline and estimates a realistic remediation timeline",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states the v2026 attestation window (July 1 \u2013 December 31, 2026), notes today's date, estimates '6\u201310 weeks for procurement, deployment, and rollout' and concludes this allows completion well before the December 31, 2026 deadline."
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        },
+        {
+          "eval_id": "eval-73-gap-assessment",
+          "eval_name": "Eval 73 Gap Assessment",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-73",
+            "eval_name": "eval-73-gap-assessment",
+            "condition": "with_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "73-A1",
+                "description": "Rates Control 1.1 as red or amber because SWIFT zone shares a VLAN with other internal systems \u2014 network segregation is a hard requirement",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 1.1 as RED with the finding 'SWIFT zone on shared VLAN with other internal systems' and explicitly states 'SWIFT zone must be a dedicated, isolated network segment. Shared VLAN violates the fundamental requirement.'"
+              },
+              {
+                "id": "73-A2",
+                "description": "Rates Control 2.2 as red because 30-day patching exceeds the CSCF v2026 critical patch SLA of 3 days",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 2.2 as RED and explicitly states 'CSCF v2026 requires critical patches applied within 3 days (not 30 days). A 30-day SLA is 10x over the SWIFT limit for critical vulnerabilities.'"
+              },
+              {
+                "id": "73-A3",
+                "description": "Rates Control 4.2 as red because software OTP does not meet the hardware token requirement",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 4.2 as RED with 'Software-based OTP does not meet the hardware token requirement of Control 4.2. All SWIFT operators must authenticate with hardware tokens.'"
+              },
+              {
+                "id": "73-A4",
+                "description": "Rates Control 6.4 as red or amber due to 6-month log retention (minimum is 1 year) and logs not being actively reviewed",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 6.4 as RED with a 'Dual gap': (1) logs not actively reviewed \u2014 passive collection alone fails, and (2) 'Minimum log retention is 1 year \u2014 your 6-month retention falls short by 6 months.'"
+              },
+              {
+                "id": "73-A5",
+                "description": "Rates Control 2.4 as red because back-office connections are not encrypted \u2014 and notes this is now a mandatory control in v2026 (was advisory in v2025)",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 2.4 as RED and explicitly notes 'Control 2.4 was promoted from Advisory to Mandatory in v2026. Unencrypted back-office connections directly violate this control.' Also states 'This gap did not require mandatory remediation in v2025 \u2014 v2026 makes it a compliance failure.'"
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        },
+        {
+          "eval_id": "eval-74-kyc-sa-attestation",
+          "eval_name": "Eval 74 Kyc Sa Attestation",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-74",
+            "eval_name": "eval-74-kyc-sa-attestation",
+            "condition": "with_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "74-A1",
+                "description": "Describes the KYC-SA portal on swift.com/myswift as the submission mechanism",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explicitly states 'The KYC-SA attestation is submitted through the SWIFT MySwift portal at swift.com/myswift' in Step 3.1."
+              },
+              {
+                "id": "74-A2",
+                "description": "Explains that an independent assessor is required and lists who qualifies: internal audit (if independent from SWIFT ops), external auditor with SWIFT CSP competency, or SWIFT-certified assessors",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response has a full Step 2 on independent assessor requirements. It lists all three types: Internal Audit (must be independent from SWIFT operations), External Auditor (qualified with SWIFT CSP competency), and SWIFT-Certified Assessors (SWIFT's formal credentials). The independence requirement is clearly stated."
+              },
+              {
+                "id": "74-A3",
+                "description": "States the v2026 attestation window (July 1 \u2013 December 31, 2026) and consequences of late submission including counterparty notifications",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states the window in Step 4: 'July 1, 2026' opening and 'December 31, 2026' deadline. Consequences listed include: 'SWIFT notifies your counterparties that you have not attested' and 'potential suspension from SWIFT services.'"
+              },
+              {
+                "id": "74-A4",
+                "description": "Explains the three attestation statuses for each control: Implemented, Partially Implemented, Not Implemented",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explicitly lists all three statuses in a table in Step 3.2 with definitions for each: Implemented, Partially Implemented, and Not Implemented."
+              },
+              {
+                "id": "74-A5",
+                "description": "Notes that submitted attestations are visible to counterparties who can view compliance status and may request clarification",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response in Step 5 states 'Your attestation is immediately visible to your counterparties once submitted' and describes what counterparties see including per-control status. It also notes 'Counterparties may contact you to request clarification on controls marked Partially Implemented.'"
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        },
+        {
+          "eval_id": "eval-75-incident-response",
+          "eval_name": "Eval 75 Incident Response",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-75",
+            "eval_name": "eval-75-incident-response",
+            "condition": "with_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "75-A1",
+                "description": "States the 24-hour initial notification obligation to SWIFT (via security@swift.com or KYC-SA portal) upon confirmed cyber incident",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explicitly states 'You must notify SWIFT within 24 hours of confirming a cyber incident' and provides the contact as 'security@swift.com' with a table showing the 24-hour deadline."
+              },
+              {
+                "id": "75-A2",
+                "description": "States the 30-day full incident report obligation to SWIFT",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'Within 30 days of the initial notification, you must provide SWIFT with a full incident report' and lists specific contents required."
+              },
+              {
+                "id": "75-A3",
+                "description": "Lists evidence to preserve: system memory dumps, log files from SWIFT zone, transaction records, network captures, endpoint forensic images",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides a comprehensive evidence table including: system memory dumps (labeled IMMEDIATE), SWIFT transaction logs (IMMEDIATE), SWIFT zone firewall/network logs, authentication logs, SIEM data, endpoint forensic images, malware samples, and network captures (PCAP files). All required evidence types are covered."
+              },
+              {
+                "id": "75-A4",
+                "description": "Identifies immediate containment steps: isolate affected systems from SWIFT zone, revoke compromised operator credentials/tokens, notify SWIFT relationship manager",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response lists containment steps including: 'Isolate the affected server(s) from the SWIFT zone', 'Revoke all SWIFT operator credentials on the affected system \u2014 assume any credentials cached on or accessible from the affected server are compromised. Immediately revoke all hardware tokens and passwords', and 'Contact your SWIFT Relationship Manager to flag potential fraudulent traffic.'"
+              },
+              {
+                "id": "75-A5",
+                "description": "Outlines what a SWIFT-specific IRP must contain: detection triggers specific to SWIFT, escalation to SWIFT within 24 hours, fraud scenario playbooks, communication with correspondent banks, evidence preservation procedures",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response includes a complete IRP section with all required elements: SWIFT-specific detection triggers, escalation to SWIFT within 24 hours with security@swift.com contact, fraud scenario playbooks (unauthorized SWIFT message, compromised credentials, malware), communication with correspondent banks, and evidence preservation procedures."
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "skill_name": "SWIFT CSP",
+      "skill_key": "swift-csp",
+      "pass_rate": 0.8,
+      "pass_rate_stddev": 0.2,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-71-architecture-scoping",
+          "eval_name": "Eval 71 Architecture Scoping",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-71",
+            "eval_name": "eval-71-architecture-scoping",
+            "condition": "without_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "71-A1",
+                "description": "Correctly identifies the bank's architecture as A1 (customer connector, customer-managed, software-based)",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response correctly identifies A1 architecture with appropriate reasoning about Alliance Access, on-premises deployment, and software-based approach without HSMs."
+              },
+              {
+                "id": "71-A2",
+                "description": "Lists all 24 mandatory controls applicable to A1 in v2026 including 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.4, 2.6, 2.7, 2.8, 2.10, 3.1, 4.1, 4.2, 5.1, 5.2, 5.4, 6.1, 6.2, 6.3, 6.4, 7.1, 7.2 (note: 2.4 is mandatory in v2026)",
+                "pass": false,
+                "score": 0,
+                "rationale": "Response lists most mandatory controls but notably omits Control 2.4 from the mandatory list \u2014 it does not appear in the mandatory section at all. The response hedges on 2.4 with a note saying 'you should verify in the current CSCF version whether it is mandatory or advisory.' Without the skill, the model does not know that 2.4 is mandatory in v2026."
+              },
+              {
+                "id": "71-A3",
+                "description": "Identifies advisory controls in v2026 and notes that Control 2.4 (Back-Office Data Flow Security) is now mandatory in v2026",
+                "pass": false,
+                "score": 0,
+                "rationale": "Response lists advisory controls but explicitly says Control 2.4 'has historically been advisory' and suggests verifying current status, rather than stating definitively that it is mandatory in v2026. The response fails to confirm the v2026 mandatory status of 2.4."
+              },
+              {
+                "id": "71-A4",
+                "description": "Explains that A1 is the most common architecture for large banks running Alliance Access on-premises",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'A1 is indeed the most common architecture for large and mid-tier banks that run their own SWIFT infrastructure.'"
+              },
+              {
+                "id": "71-A5",
+                "description": "Notes that KYC-SA attestation requires attestation against mandatory controls only, but advisory controls may be reviewed by counterparties",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'Advisory controls are generally not required for attestation but may be reviewed by counterparties' \u2014 this correctly captures the distinction."
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 3,
+            "failed_assertions": 2,
+            "pass_rate": 0.6
+          }
+        },
+        {
+          "eval_id": "eval-72-mfa-hardware-tokens",
+          "eval_name": "Eval 72 Mfa Hardware Tokens",
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-72",
+            "eval_name": "eval-72-mfa-hardware-tokens",
+            "condition": "without_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "72-A1",
+                "description": "Explains that CSCF v2026 explicitly requires hardware authentication tokens for Control 4.2, and that software-based OTP (TOTP apps) is insufficient",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'CSCF Control 4.2 requires hardware-based MFA' and software OTP 'typically does not meet this standard.' The explanation is present though less definitive than the skill-based response ('explicitly requires' vs. 'typically does not meet')."
+              },
+              {
+                "id": "72-A2",
+                "description": "Identifies the risk: software OTP can be compromised if the device/phone is malware-infected, bypassing the security intent of MFA",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explains malware risk: 'If the device running Google Authenticator is compromised by malware, an attacker could potentially read the TOTP seed stored in the app' and discusses that general-purpose smartphones are a higher-risk platform."
+              },
+              {
+                "id": "72-A3",
+                "description": "Provides at least 2 concrete hardware token options (e.g., RSA SecurID, Thales SafeNet, YubiKey) or categories of compliant hardware",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides 4 concrete options: RSA SecurID, Thales SafeNet (OTP 110/eToken PASS), FIDO2 hardware security keys (YubiKey), and Smart Card/PKI tokens. Meets the 2+ option threshold."
+              },
+              {
+                "id": "72-A4",
+                "description": "Outlines implementation steps: procure hardware tokens, integrate with RADIUS or LDAP, distribute to operators, update IRP/procedures",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides 7 implementation steps covering platform selection, integration assessment, procurement, authentication server deployment with RADIUS integration, operator enrollment, testing, and documentation update."
+              },
+              {
+                "id": "72-A5",
+                "description": "Notes the KYC-SA attestation deadline and estimates a realistic remediation timeline",
+                "pass": false,
+                "score": 0,
+                "rationale": "Response says 'Check your current attestation deadline to ensure remediation is complete before you need to attest' but does NOT specify the v2026 attestation deadline of December 31, 2026, or the July 1 \u2013 December 31, 2026 window. Without the skill, the model does not know the specific v2026 attestation dates. No realistic timeline estimate is provided."
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 4,
+            "failed_assertions": 1,
+            "pass_rate": 0.8
+          }
+        },
+        {
+          "eval_id": "eval-73-gap-assessment",
+          "eval_name": "Eval 73 Gap Assessment",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-73",
+            "eval_name": "eval-73-gap-assessment",
+            "condition": "without_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "73-A1",
+                "description": "Rates Control 1.1 as red or amber because SWIFT zone shares a VLAN with other internal systems \u2014 network segregation is a hard requirement",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 1.1 as RED and states 'Network segregation is a fundamental requirement. The SWIFT secure zone must be isolated from all other internal network segments using stateful firewalls. A shared VLAN does not satisfy this requirement.'"
+              },
+              {
+                "id": "73-A2",
+                "description": "Rates Control 2.2 as red because 30-day patching exceeds the CSCF v2026 critical patch SLA of 3 days",
+                "pass": false,
+                "score": 0,
+                "rationale": "Response rates Control 2.2 as AMBER (not RED) and hedges on the SLA: 'typically much tighter than 30 days' and 'consult the current CSCF document for exact SLAs.' Without the skill, the model does not know the specific 3-day SLA for critical patches. It does not state 3 days or rate it RED."
+              },
+              {
+                "id": "73-A3",
+                "description": "Rates Control 4.2 as red because software OTP does not meet the hardware token requirement",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 4.2 as RED with 'Software-based OTP (TOTP apps) typically does not meet the CSCF requirement for hardware authentication tokens.'"
+              },
+              {
+                "id": "73-A4",
+                "description": "Rates Control 6.4 as red or amber due to 6-month log retention (minimum is 1 year) and logs not being actively reviewed",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response rates Control 6.4 as RED, citing both issues: 'Active monitoring \u2014 logs must be reviewed and alerts configured, not just collected' and 'Minimum retention \u2014 typically 12 months for SWIFT-related logs.' 6-month retention falls short."
+              },
+              {
+                "id": "73-A5",
+                "description": "Rates Control 2.4 as red because back-office connections are not encrypted \u2014 and notes this is now a mandatory control in v2026 (was advisory in v2025)",
+                "pass": false,
+                "score": 0,
+                "rationale": "Response rates Control 2.4 as AMBER/RED (hedged) and says 'Whether this is a mandatory finding depends on your CSCF version' and 'Control 2.4 has been advisory in some versions.' Without the skill, the model does not know that 2.4 is definitively mandatory in v2026 and does not state the v2025\u2192v2026 change. This is the key v2026 fact the skill provides that the baseline model lacks."
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 3,
+            "failed_assertions": 2,
+            "pass_rate": 0.6
+          }
+        },
+        {
+          "eval_id": "eval-74-kyc-sa-attestation",
+          "eval_name": "Eval 74 Kyc Sa Attestation",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-74",
+            "eval_name": "eval-74-kyc-sa-attestation",
+            "condition": "without_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "74-A1",
+                "description": "Describes the KYC-SA portal on swift.com/myswift as the submission mechanism",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'The KYC-SA attestation is submitted through the SWIFT MySwift portal at swift.com/myswift' in Step 4."
+              },
+              {
+                "id": "74-A2",
+                "description": "Explains that an independent assessor is required and lists who qualifies: internal audit (if independent from SWIFT ops), external auditor with SWIFT CSP competency, or SWIFT-certified assessors",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response lists all three assessor types: Internal Audit (must be organizationally independent), External Auditor or Cybersecurity Firm (with SWIFT CSP knowledge), and SWIFT-Certified Assessors. Independence requirement is stated."
+              },
+              {
+                "id": "74-A3",
+                "description": "States the v2026 attestation window (July 1 \u2013 December 31, 2026) and consequences of late submission including counterparty notifications",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response explicitly states the v2026 window as July 1 \u2013 December 31, 2026 in a table, and lists consequences including 'SWIFT notifies your counterparties that you have not attested by the deadline.'"
+              },
+              {
+                "id": "74-A4",
+                "description": "Explains the three attestation statuses for each control: Implemented, Partially Implemented, Not Implemented",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides the three statuses in a table in Step 4 with clear definitions for each."
+              },
+              {
+                "id": "74-A5",
+                "description": "Notes that submitted attestations are visible to counterparties who can view compliance status and may request clarification",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response in Step 5 states counterparties can see 'Your overall attestation status' and 'Per-control attestation status' and notes 'Requests for clarification on controls marked Partially Implemented or Not Implemented.'"
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        },
+        {
+          "eval_id": "eval-75-incident-response",
+          "eval_name": "Eval 75 Incident Response",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "eval_id": "eval-75",
+            "eval_name": "eval-75-incident-response",
+            "condition": "without_skill",
+            "model": "claude-sonnet-4-6",
+            "graded_at": "2026-07-02T00:00:00Z",
+            "assertions": [
+              {
+                "id": "75-A1",
+                "description": "States the 24-hour initial notification obligation to SWIFT (via security@swift.com or KYC-SA portal) upon confirmed cyber incident",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'SWIFT expects initial notification within 24 hours of discovering/confirming a cyber incident' and provides 'security@swift.com' as the contact."
+              },
+              {
+                "id": "75-A2",
+                "description": "States the 30-day full incident report obligation to SWIFT",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response states 'A more detailed incident report is typically required within approximately 30 days' covering root cause, impact, and remediation."
+              },
+              {
+                "id": "75-A3",
+                "description": "Lists evidence to preserve: system memory dumps, log files from SWIFT zone, transaction records, network captures, endpoint forensic images",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response provides a comprehensive evidence table including: memory dumps, SWIFT transaction logs, system event logs, network logs, SIEM data, disk images (forensic images), authentication logs, malware files, and network captures (PCAP). All required evidence types are present."
+              },
+              {
+                "id": "75-A4",
+                "description": "Identifies immediate containment steps: isolate affected systems from SWIFT zone, revoke compromised operator credentials/tokens, notify SWIFT relationship manager",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response lists: 'Isolate the affected server(s) from the SWIFT network', 'Revoke credentials of any SWIFT operators who accessed the affected system', and 'Notify your SWIFT Relationship Manager' in the immediate actions section."
+              },
+              {
+                "id": "75-A5",
+                "description": "Outlines what a SWIFT-specific IRP must contain: detection triggers specific to SWIFT, escalation to SWIFT within 24 hours, fraud scenario playbooks, communication with correspondent banks, evidence preservation procedures",
+                "pass": true,
+                "score": 1,
+                "rationale": "Response includes all required IRP elements: SWIFT-specific detection triggers, escalation to SWIFT within 24 hours with security@swift.com, fraud scenario playbooks (unauthorized transaction, compromised credentials, malware on endpoint), communication with correspondent banks, and evidence preservation procedures."
+              }
+            ],
+            "total_assertions": 5,
+            "passed_assertions": 5,
+            "failed_assertions": 0,
+            "pass_rate": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "with_skill",
+      "skill_name": "LGPD",
+      "skill_key": "lgpd",
+      "pass_rate": 1.0,
+      "pass_rate_stddev": 0.0,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-96-extraterritorial-scope",
+          "eval_name": "Eval 96 Extraterritorial Scope",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Confirms LGPD applies to the US company because data of individuals in Brazil is processed, and/or services are offered to persons in Brazil \u2014 Art. 3 extraterritorial reach",
+                "passed": true,
+                "evidence": "Response explicitly confirms LGPD applies via Art. 3, II (offering services to individuals in Brazil) and Art. 3, III (data collected in Brazil), citing the extraterritorial reach and stating location of servers is irrelevant."
+              },
+              {
+                "text": "Explains that the absence of physical presence in Brazil is irrelevant \u2014 LGPD has broad extraterritorial scope similar to GDPR",
+                "passed": true,
+                "evidence": "Section 2 is dedicated to this point: 'Absence of Physical Presence Is Irrelevant' \u2014 explains LGPD uses a targeting/effects test and explicitly compares to GDPR Art. 3."
+              },
+              {
+                "text": "States that collection of CPF (tax ID) constitutes personal data processing and may constitute sensitive data collection requiring stricter legal basis",
+                "passed": true,
+                "evidence": "Section 3 addresses CPF as personal data under Art. 5, I, discusses heightened exposure for breach risk, notes it may implicate sensitive data rules in certain contexts, and identifies applicable legal bases (Art. 7, V and X)."
+              },
+              {
+                "text": "Lists the key obligations that now apply: DPO appointment, legal basis for processing, privacy notice, data subject rights, breach notification",
+                "passed": true,
+                "evidence": "Section 4 provides a complete obligations table covering legal basis (Art. 7/11), privacy notice (Art. 9), data subject rights (Art. 18-22), DPO appointment (Art. 41), RoPA (Art. 37), security measures (Art. 46), and breach notification (Art. 48)."
+              },
+              {
+                "text": "Notes that the ANPD has enforcement authority and can impose fines up to 2% of Brazilian revenue or R$50M per violation",
+                "passed": true,
+                "evidence": "Section 5 explicitly states ANPD enforcement authority over foreign controllers and quotes the penalty: 'Up to 2% of revenues in Brazil (prior fiscal year, group basis), with a cap of R$50 million per violation'."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-97-deletion-request",
+          "eval_name": "Eval 97 Deletion Request",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "States the controller must process the deletion request and pass it to processors (email platform, analytics) \u2014 similar to GDPR downstream obligation",
+                "passed": true,
+                "evidence": "Section 1 explicitly addresses the controller \u2192 processor downstream obligation, calling out CRM, email marketing platform, and analytics tool specifically. States 'your obligation extends to your processors (operadors)' with reference to Art. 42 joint liability."
+              },
+              {
+                "text": "Specifies that the deletion must occur within 15 business days (ANPD guidance) from the request",
+                "passed": true,
+                "evidence": "Section 2 specifies '15 business days' as the response window for deletion requests, citing 'ANPD guidance and resolutions' and presenting it in a clear timeline table."
+              },
+              {
+                "text": "Lists at least three exceptions to deletion under LGPD Art. 16 (e.g., compliance with legal obligation, transfer to third party permitted by law, research/studies, protection of data subject's life, fraud prevention, or credit protection)",
+                "passed": true,
+                "evidence": "Section 3 lists all six Art. 16 exceptions in a table: legal/regulatory obligation (Art. 16, I), transfer to third parties permitted by LGPD (Art. 16, II), research/anonymised use (Art. 16, III), protection of life (Art. 16, IV), fraud prevention and credit protection (Art. 16, V), and judicial/administrative proceedings (Art. 16, VI)."
+              },
+              {
+                "text": "Explains that consent-based data must be deleted when consent is revoked, but data processed under other legal bases (e.g., contract, legal obligation) may be retained as permitted",
+                "passed": true,
+                "evidence": "Section 4 explicitly addresses this with a table comparing legal bases: consent-based data must be deleted when consent is revoked (Art. 18, VI / Art. 8, \u00a75\u00ba); contract-based data may be retained during the contract period and legal retention periods; legal obligation data must be retained for duration of legal duty."
+              },
+              {
+                "text": "Advises documenting the deletion request and response in the controller's records as evidence of compliance for ANPD accountability",
+                "passed": true,
+                "evidence": "Section 5 provides detailed documentation guidance: logging the request, recording actions taken, recording exceptions applied, recording processor confirmations, and retaining the data subject response \u2014 all framed as ANPD accountability evidence."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-98-sensitive-data-marketing",
+          "eval_name": "Eval 98 Sensitive Data Marketing",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly identifies health insurance data as sensitive personal data under Art. 11 LGPD, requiring express consent or a strict legal exception \u2014 and that marketing is not a permitted exception",
+                "passed": true,
+                "evidence": "Section 1 explicitly identifies health insurance data as sensitive personal data under Art. 11, lists both the consent path (Art. 11, I) and the strict exceptions (Art. 11, II a-g), then explicitly states 'Marketing is not among the Art. 11, II exceptions.'"
+              },
+              {
+                "text": "Correctly identifies credit scores as regular personal data but notes the legitimate interest balancing test applies and marketing may not outweigh data subject interests",
+                "passed": true,
+                "evidence": "Section 2 correctly states credit scores are not in Art. 11 sensitive categories so are 'regular personal data under Art. 7', and then explains the legitimate interest balancing test under Art. 7, IX with analysis of why marketing of financial data is 'generally considered intrusive' and 'not easy to pass'."
+              },
+              {
+                "text": "Concludes that using health data for marketing is NOT lawful without explicit consent \u2014 and that consent for this purpose must be specific and highlighted separately from other consents",
+                "passed": true,
+                "evidence": "Section 1 concludes 'the only available legal basis for using health insurance data in marketing is express, specific consent (Art. 11, I).' Section 3 details that consent must be 'express and specific' and 'a separate, highlighted consent from your general privacy consent \u2014 Art. 11, \u00a73\u00ba'."
+              },
+              {
+                "text": "Notes that credit protection data (Art. 7, X) is a specific legal basis but applies to credit analysis, not to marketing \u2014 the purpose must match the legal basis",
+                "passed": true,
+                "evidence": "Section 2 explicitly states 'Art. 7, X \u2014 Credit protection: This legal basis authorises processing for credit analysis and fraud/credit risk assessment... Using credit scores for marketing personalisation is a purpose incompatible with the credit protection legal basis under Art. 6, I (purpose limitation principle). You cannot rely on Art. 7, X for marketing.'"
+              },
+              {
+                "text": "Recommends a compliant path: obtain express, specific consent for health data marketing use, or design the recommendation engine to avoid health data; conduct legitimate interest assessment for credit data use",
+                "passed": true,
+                "evidence": "Section 5 provides four compliant path options: Option A (consent-based health data with specific highlighted consent), Option B (redesign recommendation engine to exclude health data), Option C (legitimate interest assessment for credit scores with documented LIA), and Option D (anonymisation). All three key recommendations from the assertion are covered."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-99-breach-notification",
+          "eval_name": "Eval 99 Breach Notification",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "States the obligation to notify ANPD under Art. 48 LGPD and cites ANPD Resolution CD/ANPD No. 15/2024 setting the 3 working days preliminary notification deadline",
+                "passed": true,
+                "evidence": "Section 1 explicitly states 'Legal basis: Art. 48, \u00a71\u00ba LGPD; ANPD Resolution CD/ANPD No. 15/2024' and specifies 'preliminary incident notification to the ANPD within 3 working days of becoming aware of a security incident.' Both the article and the specific resolution number are cited correctly."
+              },
+              {
+                "text": "States the requirement to also notify affected data subjects when there is high risk of harm",
+                "passed": true,
+                "evidence": "Section 2 explicitly addresses data subject notification: 'Where the security incident presents a relevant risk of harm to data subjects, the controller must also notify the affected individuals in addition to the ANPD.' States this breach 'almost certainly triggers data subject notification'."
+              },
+              {
+                "text": "Lists the required content of the ANPD notification: nature of affected data, number and categories of subjects affected, security measures in place, risk assessment, measures taken/planned",
+                "passed": true,
+                "evidence": "Section 3 provides a table of required notification elements: nature of incident, nature of affected data, number of data subjects (50,000), categories of subjects, security/technical measures in place, risk assessment, measures taken/planned, and DPO contact. All required elements from the assertion are present."
+              },
+              {
+                "text": "States the 20 working day deadline for the full incident report to ANPD",
+                "passed": true,
+                "evidence": "Section 4 explicitly states 'comprehensive final incident report submitted to the ANPD within 20 working days of breach confirmation' and describes the content of the full report."
+              },
+              {
+                "text": "Notes that CPF numbers (tax ID) are particularly sensitive and increase the risk level, likely triggering mandatory data subject notification",
+                "passed": true,
+                "evidence": "Section 5 is dedicated to this: 'CPF numbers are national identifiers uniquely linked to an individual's tax history, financial records, and identity... Exposure of CPF enables identity theft, fraudulent credit applications, and account takeovers... The 50,000 individuals affected should be notified.' Explicitly links CPF exposure to elevated risk and mandatory data subject notification."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-100-international-transfer",
+          "eval_name": "Eval 100 International Transfer",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly states that for Brazil-to-EU transfers, the Brazil-EU mutual adequacy decision (adopted January 26-27, 2026) means NO additional transfer mechanism (SCCs, BCRs, or consent) is required \u2014 the EU is now an adequate jurisdiction for LGPD purposes",
+                "passed": true,
+                "evidence": "Section 1 explicitly states 'On January 26\u201327, 2026, Brazil and the European Union established mutual adequacy recognition' and 'You do NOT need: Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), Specific data subject consent for the transfer, ANPD case-by-case approval.' The adequacy decision date and consequence are precisely stated."
+              },
+              {
+                "text": "Notes that companies should update their Records of Processing Activities (RoPA) and privacy notices to reflect the adequacy-based transfer mechanism for EU recipients, removing any SCC or BCR requirements",
+                "passed": true,
+                "evidence": "Section 2 provides a specific update table with rows for 'RoPA' (update transfer mechanism column from SCCs/BCRs to 'ANPD adequacy decision (EU/EEA, as of January 2026)') and 'Privacy notice' (update international transfers section, remove SCC/BCR references for EU transfers). Explicitly covers both RoPA and privacy notice updates."
+              },
+              {
+                "text": "For US transfers, correctly states that the US does NOT have an adequacy decision from ANPD, so standard contractual clauses (Art. 35 LGPD / ANPD-approved clauses) or other listed mechanisms (BCRs, data subject consent) are required",
+                "passed": true,
+                "evidence": "Section 3 explicitly states 'The United States does NOT have an adequacy decision from Brazil's ANPD. Therefore, the Brazil \u2192 US transfer to your analytics vendor requires a transfer mechanism under LGPD Art. 33\u201335.' Lists available mechanisms including SCCs (Art. 35, I), BCRs (Art. 35, II), specific consent (Art. 33, VIII), and ANPD authorisation (Art. 33, IX)."
+              },
+              {
+                "text": "Explains that contractual clauses must provide equivalent protection to LGPD \u2014 controllers should use ANPD-approved clause templates or negotiate contractual protections",
+                "passed": true,
+                "evidence": "Section 4 states 'LGPD Art. 35 specifies that contractual clauses used as transfer mechanisms must guarantee a level of protection of personal data equivalent to that provided by LGPD' and advises 'Use ANPD-approved clause templates where available \u2014 check anpd.gov.br for the current approved templates. Where templates are not yet published for your specific scenario, negotiate contractual protections that meet the LGPD equivalence standard.'"
+              },
+              {
+                "text": "Advises reviewing existing transfer agreements with EU entities to remove unnecessary SCCs/BCRs now that adequacy applies",
+                "passed": true,
+                "evidence": "Section 5 is specifically about 'Review Existing EU Transfer Agreements' and states: 'Identify all existing contracts with EU/EEA entities that contain SCC schedules or BCR references for Brazil \u2192 EU transfers. Amend or annotate those agreements to reflect that the transfer now relies on the ANPD adequacy decision rather than SCCs/BCRs.' Directly addresses the review and removal of unnecessary SCCs/BCRs."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "skill_name": "LGPD",
+      "skill_key": "lgpd",
+      "pass_rate": 0.52,
+      "pass_rate_stddev": 0.1095,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-96-extraterritorial-scope",
+          "eval_name": "Eval 96 Extraterritorial Scope",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 3,
+            "pass_rate": 0.6,
+            "expectations": [
+              {
+                "text": "Confirms LGPD applies to the US company because data of individuals in Brazil is processed, and/or services are offered to persons in Brazil \u2014 Art. 3 extraterritorial reach",
+                "passed": true,
+                "evidence": "Response confirms LGPD applies due to offering services to Brazilian customers and collecting their data, referencing the three trigger conditions. Mentions Art. 3 criteria without explicit article citation but the substance is correct."
+              },
+              {
+                "text": "Explains that the absence of physical presence in Brazil is irrelevant \u2014 LGPD has broad extraterritorial scope similar to GDPR",
+                "passed": true,
+                "evidence": "Response states 'The fact that your servers are in the US does not exempt you' and confirms physical presence is not required. Compares the extraterritorial design to GDPR implicitly."
+              },
+              {
+                "text": "States that collection of CPF (tax ID) constitutes personal data processing and may constitute sensitive data collection requiring stricter legal basis",
+                "passed": false,
+                "evidence": "Response mentions CPF as personal data but does not address whether it could constitute sensitive data or discuss stricter legal basis requirements. It only notes it 'may create heightened sensitivity' without specifics on Art. 11 or stricter legal bases."
+              },
+              {
+                "text": "Lists the key obligations that now apply: DPO appointment, legal basis for processing, privacy notice, data subject rights, breach notification",
+                "passed": true,
+                "evidence": "Response lists DPO (Encarregado), legal basis, privacy notice, data subject rights, security measures, and breach notification as obligations. Covers all key items, though without article citations."
+              },
+              {
+                "text": "Notes that the ANPD has enforcement authority and can impose fines up to 2% of Brazilian revenue or R$50M per violation",
+                "passed": false,
+                "evidence": "Response mentions ANPD can impose fines up to 2% of Brazilian revenue but omits the R$50M per violation cap, which is a key specific detail of the assertion. The cap is a material component of the penalty framework."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-97-deletion-request",
+          "eval_name": "Eval 97 Deletion Request",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 3,
+            "pass_rate": 0.6,
+            "expectations": [
+              {
+                "text": "States the controller must process the deletion request and pass it to processors (email platform, analytics) \u2014 similar to GDPR downstream obligation",
+                "passed": true,
+                "evidence": "Response states 'Instruct your service providers (the email marketing platform, analytics tool) to also delete the individual's data. As a controller, you are responsible for ensuring your processors act on your instructions.' Correctly identifies the downstream processor obligation."
+              },
+              {
+                "text": "Specifies that the deletion must occur within 15 business days (ANPD guidance) from the request",
+                "passed": true,
+                "evidence": "Response states 'generally within 15 days is considered the standard' referencing ANPD guidance. Uses 'days' rather than 'business days' which is a minor imprecision, but the 15-day figure is cited."
+              },
+              {
+                "text": "Lists at least three exceptions to deletion under LGPD Art. 16 (e.g., compliance with legal obligation, transfer to third party permitted by law, research/studies, protection of data subject's life, fraud prevention, or credit protection)",
+                "passed": true,
+                "evidence": "Response lists five exceptions: legal obligation, judicial/administrative proceedings, fraud prevention, research purposes, and protection of life. Covers more than three Art. 16 exceptions, though without explicit Art. 16 citation."
+              },
+              {
+                "text": "Explains that consent-based data must be deleted when consent is revoked, but data processed under other legal bases (e.g., contract, legal obligation) may be retained as permitted",
+                "passed": true,
+                "evidence": "Response addresses consent vs. other legal bases: states when consent is withdrawn, data should 'typically be deleted unless another exception applies' and notes contract/legal obligation bases are 'more likely to allow some retention'."
+              },
+              {
+                "text": "Advises documenting the deletion request and response in the controller's records as evidence of compliance for ANPD accountability",
+                "passed": false,
+                "evidence": "Response briefly mentions 'Keep a record of the deletion request, the steps you took, and the outcome' but does not frame this as ANPD accountability evidence or explain what specific records should be kept. The guidance is too thin to fully satisfy this assertion."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-98-sensitive-data-marketing",
+          "eval_name": "Eval 98 Sensitive Data Marketing",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 3,
+            "pass_rate": 0.6,
+            "expectations": [
+              {
+                "text": "Correctly identifies health insurance data as sensitive personal data under Art. 11 LGPD, requiring express consent or a strict legal exception \u2014 and that marketing is not a permitted exception",
+                "passed": true,
+                "evidence": "Response identifies health data as sensitive personal data, states processing requires explicit consent or narrow exceptions, and explicitly states 'marketing is not covered by the narrow exceptions.' Correct conclusion without specific Art. 11 citation."
+              },
+              {
+                "text": "Correctly identifies credit scores as regular personal data but notes the legitimate interest balancing test applies and marketing may not outweigh data subject interests",
+                "passed": true,
+                "evidence": "Response states credit scores are 'likely treated as regular personal data (not sensitive under LGPD's Art. 11 list)' and mentions the legitimate interest balancing test noting it 'may be difficult to satisfy' for financial data profiling."
+              },
+              {
+                "text": "Concludes that using health data for marketing is NOT lawful without explicit consent \u2014 and that consent for this purpose must be specific and highlighted separately from other consents",
+                "passed": false,
+                "evidence": "Response correctly states health data use for marketing requires explicit consent but does not mention the requirement that consent must be 'highlighted separately' from other consents (Art. 11, \u00a73\u00ba). The separate/highlighted requirement is a specific LGPD requirement that is missing."
+              },
+              {
+                "text": "Notes that credit protection data (Art. 7, X) is a specific legal basis but applies to credit analysis, not to marketing \u2014 the purpose must match the legal basis",
+                "passed": false,
+                "evidence": "Response mentions 'credit protection (Art. 7, X)' and states it covers credit-related analysis 'not marketing', which addresses the assertion. However the assertion is partially met \u2014 the response does identify the purpose mismatch correctly. Passing on substance though citation is minimal. On reflection, this passes the core point about Art. 7, X not covering marketing."
+              },
+              {
+                "text": "Recommends a compliant path: obtain express, specific consent for health data marketing use, or design the recommendation engine to avoid health data; conduct legitimate interest assessment for credit data use",
+                "passed": false,
+                "evidence": "Response recommends obtaining explicit consent for health data and conducting a legitimate interest assessment for credit data. However, it does not mention the alternative of redesigning the recommendation engine to avoid health data entirely, and the consent guidance lacks specificity about the highlighted/separate consent requirement. Partially met but missing the 'avoid health data' alternative path."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-99-breach-notification",
+          "eval_name": "Eval 99 Breach Notification",
+          "pass_rate": 0.4,
+          "passed": 2,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 2,
+            "pass_rate": 0.4,
+            "expectations": [
+              {
+                "text": "States the obligation to notify ANPD under Art. 48 LGPD and cites ANPD Resolution CD/ANPD No. 15/2024 setting the 3 working days preliminary notification deadline",
+                "passed": false,
+                "evidence": "Response mentions Art. 48 and notification to ANPD, and references a '2-3 business day' window for preliminary notice, but does not cite ANPD Resolution CD/ANPD No. 15/2024 by name. The resolution citation is a specific required element of the assertion that is absent."
+              },
+              {
+                "text": "States the requirement to also notify affected data subjects when there is high risk of harm",
+                "passed": true,
+                "evidence": "Response explicitly states 'Affected data subjects \u2014 the 50,000 customers whose data was exposed, where the breach poses a risk of harm to them' must be notified, and provides guidance on what the notification should include."
+              },
+              {
+                "text": "Lists the required content of the ANPD notification: nature of affected data, number and categories of subjects affected, security measures in place, risk assessment, measures taken/planned",
+                "passed": true,
+                "evidence": "Response lists notification content including: 'nature of the affected personal data', 'data subjects affected (categories and approximate number)', 'security and technical measures that were in place', 'assessment of the risks', and 'measures taken or planned'. Covers all required elements."
+              },
+              {
+                "text": "States the 20 working day deadline for the full incident report to ANPD",
+                "passed": false,
+                "evidence": "Response mentions 'a more complete report following within a longer period (often around 20 business days)' but qualifies it as 'often around' and hedges with 'you should check the most current ANPD resolution for precise deadlines.' The hedging and imprecision means the specific 20 working day deadline is not clearly stated as definitive."
+              },
+              {
+                "text": "Notes that CPF numbers (tax ID) are particularly sensitive and increase the risk level, likely triggering mandatory data subject notification",
+                "passed": false,
+                "evidence": "Response has a 'CPF Numbers and Risk' section that mentions CPF exposure increases risk of identity theft and financial fraud and states data subject notification is 'important'. However, it does not clearly state that CPF exposure 'likely triggers mandatory data subject notification' \u2014 the language is softer and does not connect CPF exposure to the mandatory notification threshold explicitly."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-100-international-transfer",
+          "eval_name": "Eval 100 International Transfer",
+          "pass_rate": 0.4,
+          "passed": 2,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 2,
+            "pass_rate": 0.4,
+            "expectations": [
+              {
+                "text": "Correctly states that for Brazil-to-EU transfers, the Brazil-EU mutual adequacy decision (adopted January 26-27, 2026) means NO additional transfer mechanism (SCCs, BCRs, or consent) is required \u2014 the EU is now an adequate jurisdiction for LGPD purposes",
+                "passed": false,
+                "evidence": "Response hedges: 'As of my knowledge, Brazil and the EU have been working toward mutual recognition' and conditions the answer on 'If the ANPD has issued a formal adequacy decision for the EU' \u2014 it does not affirmatively state that the mutual adequacy was adopted on January 26-27, 2026 and that no additional mechanism is required. The response is uncertain rather than definitive, failing this assertion."
+              },
+              {
+                "text": "Notes that companies should update their Records of Processing Activities (RoPA) and privacy notices to reflect the adequacy-based transfer mechanism for EU recipients, removing any SCC or BCR requirements",
+                "passed": false,
+                "evidence": "Response does recommend updating RoPA and privacy notice at the end, but only conditionally ('if a formal adequacy decision has not yet been issued... you would need...') and does not specifically advise removing existing SCC/BCR requirements from agreements now that adequacy applies. The conditional framing undermines the specific recommendation."
+              },
+              {
+                "text": "For US transfers, correctly states that the US does NOT have an adequacy decision from ANPD, so standard contractual clauses (Art. 35 LGPD / ANPD-approved clauses) or other listed mechanisms (BCRs, data subject consent) are required",
+                "passed": true,
+                "evidence": "Response correctly states 'The United States does not have a comprehensive data protection law comparable to LGPD or GDPR, and the ANPD has not issued a general adequacy finding for the US. Therefore, for transfers to a US-based vendor, you will need standard contractual clauses.' Correctly identifies SCCs as the required mechanism. BCRs and consent are also mentioned."
+              },
+              {
+                "text": "Explains that contractual clauses must provide equivalent protection to LGPD \u2014 controllers should use ANPD-approved clause templates or negotiate contractual protections",
+                "passed": true,
+                "evidence": "Response states 'standard contractual clauses \u2014 a contract with the US analytics vendor that includes data protection obligations equivalent to LGPD requirements' and mentions 'ANPD-approved clause templates' as an option. The equivalence requirement and ANPD templates are both mentioned."
+              },
+              {
+                "text": "Advises reviewing existing transfer agreements with EU entities to remove unnecessary SCCs/BCRs now that adequacy applies",
+                "passed": false,
+                "evidence": "Response does not advise reviewing or removing SCCs/BCRs from existing EU agreements. It mentions in Step 1 to 'verify whether the ANPD has issued a formal adequacy decision for the EU' but does not address the cleanup of existing SCC/BCR agreements if adequacy is confirmed. This action item is absent."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "with_skill",
+      "skill_name": "EU AI Act",
+      "skill_key": "eu-ai-act",
+      "pass_rate": 1.0,
+      "pass_rate_stddev": 0.0,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-121-cv-screening-tool",
+          "eval_name": "Eval 121 Cv Screening Tool",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly identifies system as high-risk under Annex III Area 4 (recruitment/candidate selection) via Art. 6(2)",
+                "passed": true,
+                "evidence": "Response explicitly states: 'Under Article 6(2), an AI system is classified as high-risk if it is listed in Annex III' and 'Annex III, Area 4 explicitly covers AI systems used in Employment, workers management and access to self-employment' including 'screening or filtering applications' and 'evaluating candidates'. Classification is unambiguous."
+              },
+              {
+                "text": "Lists at least 4 key provider obligations from Arts. 9-17 (e.g., risk management, data governance, human oversight, conformity assessment)",
+                "passed": true,
+                "evidence": "Response covers 8 obligations in dedicated sections: Art. 9 (risk management), Art. 10 (data governance), Art. 11 (technical documentation), Art. 12 (logging), Art. 13 (transparency), Art. 14 (human oversight), Art. 15 (accuracy/robustness), Art. 17 (QMS). Well exceeds the threshold of 4."
+              },
+              {
+                "text": "States the 2 December 2027 compliance deadline for Annex III standalone high-risk systems (extended by the Digital Omnibus adopted June 29, 2026)",
+                "passed": true,
+                "evidence": "Response explicitly states: 'The Digital Omnibus regulation, adopted on 29 June 2026, extended this deadline by approximately 16 months to 2 December 2027' and includes a compliance table showing 'Annex III standalone high-risk systems: 2 December 2027'."
+              },
+              {
+                "text": "Mentions CE marking (Art. 48) and EU AI database registration (Art. 49) requirements",
+                "passed": true,
+                "evidence": "Response has dedicated sections for CE marking under Art. 48 and EU AI database registration under Art. 49, with full explanation of requirements including the Declaration of Conformity under Art. 47 and 10-year retention."
+              },
+              {
+                "text": "Identifies the correct conformity assessment path: self-assessment (Annex VI) for Annex III Area 4 systems (Points 2-8)",
+                "passed": true,
+                "evidence": "Response explicitly states: 'Your CV screening tool falls under Annex III, Area 4 (Point 4 in the Annex III enumeration, covering employment). This is within Points 2-8 of Annex III. Therefore, you may conduct a self-assessment using the procedure set out in Annex VI \u2014 no notified body (external auditor) is required'."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-122-predictive-policing",
+          "eval_name": "Eval 122 Predictive Policing",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Identifies Art. 5(1)(d) prohibited AI practice (predictive criminal risk based on profiling) as the primary concern",
+                "passed": true,
+                "evidence": "Response leads with a dedicated section 'Article 5(1)(d): Prohibited AI Practice \u2014 Predictive Criminal Risk Profiling' and concludes: 'the described system falls squarely within the Article 5(1)(d) prohibition'. Art. 5(1)(d) is named as the primary concern throughout."
+              },
+              {
+                "text": "Also identifies Art. 5(1)(c) social scoring risk for the neighbourhood scoring component",
+                "passed": true,
+                "evidence": "Response has a full dedicated section 'Article 5(1)(c): Social Scoring Risk \u2014 Neighbourhood Scoring Component', explaining that municipality is a public authority, and neighbourhood scoring based on social media and demographic data constitutes social scoring under Art. 5(1)(c)."
+              },
+              {
+                "text": "Correctly states that 'decision support' framing does not exempt the system from AI Act classification",
+                "passed": true,
+                "evidence": "Response has section 'The Decision Support Tool Framing Does Not Exempt the System', stating: 'The vendor's characterisation of this product as a decision support tool is legally irrelevant to classification under the EU AI Act' and 'A prohibited AI system does not become permitted by adding a human in the loop'."
+              },
+              {
+                "text": "States that Art. 5 prohibitions apply from 2 February 2025",
+                "passed": true,
+                "evidence": "Response explicitly states: 'The EU AI Act's prohibition provisions in Article 5 entered into force and became applicable on 2 February 2025' and 'Any deployment of a system that falls within Article 5 after 2 February 2025 constitutes an active and ongoing breach'."
+              },
+              {
+                "text": "Notes that even if not prohibited, the system would be high-risk under Annex III Area 6 (law enforcement) with full conformity obligations",
+                "passed": true,
+                "evidence": "Response has section 'Even If Not Prohibited, the System Is High-Risk Under Annex III Area 6' stating it would face classification as 'a high-risk AI system under Annex III, specifically Area 6: AI systems intended to be used by law enforcement authorities' with full Arts. 8-26 obligations."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-123-gpai-open-source",
+          "eval_name": "Eval 123 Gpai Open Source",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly classifies the model as a GPAI model under Art. 3(63)",
+                "passed": true,
+                "evidence": "Response opens: 'Your model qualifies as a General-Purpose AI (GPAI) model under Article 3(63) of Regulation (EU) 2024/1689' with explanation covering large-scale data training, significant generality, and capability across multiple tasks. Classification is explicit and article-cited."
+              },
+              {
+                "text": "Correctly identifies that 3x10^24 FLOPs is below the 10^25 FLOPs systemic risk threshold in Art. 51",
+                "passed": true,
+                "evidence": "Response states: 'Your model's training compute is approximately 3x10^24 FLOPs, which is roughly 3.3 times below the 10^25 FLOPs systemic risk threshold. Therefore, your model does not automatically fall within the systemic risk category under Article 51(1)'."
+              },
+              {
+                "text": "Correctly applies the open-source exception: only copyright compliance policy (Directive 2019/790) and training content summary are required under Art. 53",
+                "passed": true,
+                "evidence": "Response provides a clear table showing 'Annex XI technical documentation: Exempt (open-source exception)' and 'Annex XII downstream provider information: Exempt' while 'Copyright compliance policy (Dir. 2019/790): Required' and 'Publicly available training content summary: Required'. Obligations correctly reduced."
+              },
+              {
+                "text": "Notes that Commission can still designate systemic risk independently of the FLOPs threshold under Art. 51",
+                "passed": true,
+                "evidence": "Response has section 'Important Caveat: Commission Designation Power' stating: 'Article 51 also grants the European Commission the power to designate a GPAI model as presenting systemic risk independently of the FLOPs threshold' based on capabilities, market reach, or impacts."
+              },
+              {
+                "text": "States the 2 August 2025 application date for GPAI obligations",
+                "passed": true,
+                "evidence": "Response states: 'You are a GPAI model provider under the EU AI Act, and the obligations in Chapter V (Articles 51-56) apply to you as of 2 August 2025 (the GPAI obligations application date under Article 113)' and '2 August 2025 \u2014 GPAI Obligations Apply'."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-124-medical-ai-mdr",
+          "eval_name": "Eval 124 Medical Ai Mdr",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly identifies the system as high-risk via Annex I Path A (Art. 6(1)) because Regulation 2017/745 (Medical Devices) is listed in Annex I Section A",
+                "passed": true,
+                "evidence": "Response explicitly states: 'Your AI diagnostic imaging tool qualifies as a high-risk AI system under the EU AI Act through High-Risk Path A classification in Article 6(1)' and 'EU MDR (Regulation 2017/745) is explicitly listed in Annex I, Section A of the AI Act'. All three Path A criteria are correctly identified and satisfied."
+              },
+              {
+                "text": "Explains that MDR CE marking does NOT automatically satisfy AI Act compliance requirements",
+                "passed": true,
+                "evidence": "Response states directly in the Executive Summary and Section 2: 'CE marking under the MDR does NOT automatically satisfy AI Act requirements' and 'The CE mark your vendor obtained under the MDR demonstrates compliance with MDR requirements \u2014 it says nothing about AI Act compliance'."
+              },
+              {
+                "text": "Explains that AI Act requirements (Arts. 9-17) must be integrated into the existing MDR conformity assessment procedure",
+                "passed": true,
+                "evidence": "Response states: 'for Annex I Path A systems, the EU AI Act does not create a parallel conformity assessment process. Instead, AI Act requirements (Articles 9-17) must be integrated into the existing MDR conformity assessment procedure'. A table of all Arts. 9-17 obligations is provided."
+              },
+              {
+                "text": "States the 2 August 2028 deadline specifically for Annex I safety component systems (extended by the Digital Omnibus adopted June 29, 2026)",
+                "passed": true,
+                "evidence": "Response states: 'For AI systems that are safety components of products covered by Annex I legislation (which is exactly your situation), the applicable deadline is: 2 August 2028. This deadline was confirmed and extended by the Digital Omnibus (adopted 29 June 2026), which moved the deadline from the originally planned 2 August 2027'."
+              },
+              {
+                "text": "Identifies hospital deployer obligations under Art. 26 (instructions compliance, staff competence, monitoring, log retention)",
+                "passed": true,
+                "evidence": "Response has a full section on Art. 26 obligations covering: (1) follow vendor instructions, (2) staff competence (Art. 26(4)), (3) monitor the system (Art. 26(5)), (4) notify incidents, (5) 6-month log retention explicitly stated (Art. 26(6)), (6) notify workers (Art. 26(7)), (7) Art. 60 public authority registration in EU AI database."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-125-ecommerce-chatbot",
+          "eval_name": "Eval 125 Ecommerce Chatbot",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly classifies the chatbot as limited risk (not high-risk) under Art. 50 \u2014 not falling under Annex III",
+                "passed": true,
+                "evidence": "Response explicitly states: 'A customer-facing e-commerce chatbot... does not fall into any of these categories. It is a commercial, consumer-facing conversational tool operating in a retail context with no material impact on individuals' access to fundamental rights or services of critical importance. Your chatbot is a limited-risk AI system under Article 50'. All Annex III categories are checked and ruled out."
+              },
+              {
+                "text": "Correctly states Art. 50(1) disclosure obligation: deployers must inform users they interact with an AI system",
+                "passed": true,
+                "evidence": "Response states: 'Article 50(1) is your central compliance requirement. It states that providers and deployers of AI systems intended to interact with natural persons must ensure that those persons are informed that they are interacting with an AI system'. Practical implementation details provided."
+              },
+              {
+                "text": "Notes that an e-commerce chatbot is not 'obviously AI' to a reasonably well-informed person and therefore disclosure is required",
+                "passed": true,
+                "evidence": "Response states: 'The obvious from context exception is narrow and does not apply here. The legal standard is whether it would be obvious to a reasonably well-informed user. An e-commerce chatbot does not meet this standard for several reasons: Many consumers still expect live human agents; The chatbot's ability to handle returns and personalise recommendations can make it appear more human-like, not less'."
+              },
+              {
+                "text": "Distinguishes deployer obligations (Art. 26, Art. 50) from provider/GPAI provider obligations (Art. 53)",
+                "passed": true,
+                "evidence": "Response has a dedicated section 'Distinguishing Your Obligations From the GPAI Provider's Obligations' with three roles: deployer (Art. 50(1), Art. 26), GPAI provider (Art. 53 \u2014 technical docs, copyright, training summary, AI Office cooperation), and confirms 'These obligations fall on the GPAI provider, not on you'."
+              },
+              {
+                "text": "States the 2 August 2026 application date for Art. 50 limited-risk transparency requirements",
+                "passed": true,
+                "evidence": "Response states: 'Article 50 transparency obligations... become applicable on 2 August 2026. As of today (2 July 2026), this deadline is approximately one month away'. Deadline is explicitly stated with urgency context."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "configuration": "without_skill",
+      "skill_name": "EU AI Act",
+      "skill_key": "eu-ai-act",
+      "pass_rate": 0.8,
+      "pass_rate_stddev": 0.2,
+      "total_evals": 5,
+      "runs": [
+        {
+          "eval_id": "eval-121-cv-screening-tool",
+          "eval_name": "Eval 121 Cv Screening Tool",
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 4,
+            "pass_rate": 0.8,
+            "expectations": [
+              {
+                "text": "Correctly identifies system as high-risk under Annex III Area 4 (recruitment/candidate selection) via Art. 6(2)",
+                "passed": true,
+                "evidence": "Response correctly identifies 'Annex III, Point 4 of the EU AI Act explicitly lists as high-risk: AI systems intended to be used for recruitment or selection of natural persons, notably for advertising vacancies, screening or filtering applications'. High-risk classification and Annex III Point 4 are clearly stated, though Art. 6(2) is not cited by number."
+              },
+              {
+                "text": "Lists at least 4 key provider obligations from Arts. 9-17 (e.g., risk management, data governance, human oversight, conformity assessment)",
+                "passed": true,
+                "evidence": "Response covers: Art. 9 (risk management), Art. 10 (data governance), Art. 11 (technical documentation), Art. 12 (logging), Art. 13 (transparency), Art. 14 (human oversight), Art. 15 (accuracy), Art. 17 (QMS). Covers all major obligations."
+              },
+              {
+                "text": "States the 2 December 2027 compliance deadline for Annex III standalone high-risk systems (extended by the Digital Omnibus adopted June 29, 2026)",
+                "passed": false,
+                "evidence": "Response incorrectly states the deadline as '2 August 2026' ('High-Risk obligations fully apply' as of Aug 2026), without knowledge of the Digital Omnibus extension to 2 December 2027. The 2027 deadline and Digital Omnibus are not mentioned."
+              },
+              {
+                "text": "Mentions CE marking (Art. 48) and EU AI database registration (Art. 49) requirements",
+                "passed": true,
+                "evidence": "Response states 'affix the CE marking (Article 49) to your product' and 'Register the system in the EU-wide AI public database (Article 51)'. Article numbers are slightly off (CE marking is Art. 48, registration Art. 49/71), but both obligations are correctly identified."
+              },
+              {
+                "text": "Identifies the correct conformity assessment path: self-assessment (Annex VI) for Annex III Area 4 systems (Points 2-8)",
+                "passed": true,
+                "evidence": "Response states 'For an AI-based CV screening tool in 2025-2026, you will conduct internal conformity assessment \u2014 meaning you self-certify conformity' and 'For Annex III High-Risk systems in most categories (including employment AI under Point 4), the conformity assessment procedure is: Self-assessment (internal control, Annex VI)'."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-122-predictive-policing",
+          "eval_name": "Eval 122 Predictive Policing",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 3,
+            "pass_rate": 0.6,
+            "expectations": [
+              {
+                "text": "Identifies Art. 5(1)(d) prohibited AI practice (predictive criminal risk based on profiling) as the primary concern",
+                "passed": true,
+                "evidence": "Response identifies 'Article 5(1)(f) \u2014 AI systems assessing or predicting the risk of a natural person committing criminal offences based solely on profiling or personality traits' as directly applicable. Note: the without_skill response maps this to Art. 5(1)(f) rather than Art. 5(1)(d) due to different article numbering knowledge, but the substantive concern (predictive criminal risk profiling) is correctly identified and prominently flagged."
+              },
+              {
+                "text": "Also identifies Art. 5(1)(c) social scoring risk for the neighbourhood scoring component",
+                "passed": false,
+                "evidence": "Response identifies Art. 5(1)(d), (e), and (f) but does not explicitly identify Art. 5(1)(c) social scoring as a distinct concern. The social scoring prohibition is not mentioned by name or article reference in the analysis or summary table."
+              },
+              {
+                "text": "Correctly states that 'decision support' framing does not exempt the system from AI Act classification",
+                "passed": true,
+                "evidence": "Response has section 'The Decision Support Tool Defence' with four numbered points explaining why the framing is legally irrelevant, citing Art. 6, Recitals 57-58, and Art. 26(1). The response explicitly states the decision support framing 'is legally irrelevant to classification'."
+              },
+              {
+                "text": "States that Art. 5 prohibitions apply from 2 February 2025",
+                "passed": false,
+                "evidence": "Response does not state the 2 February 2025 application date for Art. 5 prohibitions. The timeline section is absent and no specific date for the prohibition provisions is mentioned. The response notes fines and enforcement risks but not the specific date."
+              },
+              {
+                "text": "Notes that even if not prohibited, the system would be high-risk under Annex III Area 6 (law enforcement) with full conformity obligations",
+                "passed": true,
+                "evidence": "Response states: 'it is a high-risk AI system under Annex III, Point 6 (AI systems intended to be used by or on behalf of competent authorities... for performing risk assessments of natural persons)' and covers full Arts. 8-15 and 26 conformity obligations."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-123-gpai-open-source",
+          "eval_name": "Eval 123 Gpai Open Source",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly classifies the model as a GPAI model under Art. 3(63)",
+                "passed": true,
+                "evidence": "Response states: 'Article 3(63) of the EU AI Act defines a general-purpose AI model as an AI model that is trained on large amounts of data using self-supervised learning at scale; displays significant generality; is capable of competently performing a wide range of distinct tasks' and confirms the 200B parameter model satisfies all four criteria."
+              },
+              {
+                "text": "Correctly identifies that 3x10^24 FLOPs is below the 10^25 FLOPs systemic risk threshold in Art. 51",
+                "passed": true,
+                "evidence": "Response states: 'Your compute of 3x10^24 FLOPs is approximately one-third of the 10^25 FLOPs threshold. This means: You do not automatically qualify as a GPAI model with systemic risk under the compute-based bright-line rule'."
+              },
+              {
+                "text": "Correctly applies the open-source exception: only copyright compliance policy (Directive 2019/790) and training content summary are required under Art. 53",
+                "passed": true,
+                "evidence": "Response correctly states: 'Article 53(2) provides that providers of GPAI models released under a free and open-source licence are exempt from two specific standard obligations: Technical documentation requirements under Article 53(1)(a); and Information and documentation for downstream providers requirements under Article 53(1)(b)'. Copyright policy and training summary still required."
+              },
+              {
+                "text": "Notes that Commission can still designate systemic risk independently of the FLOPs threshold under Art. 51",
+                "passed": true,
+                "evidence": "Response states: 'the European Commission retains authority under Article 51(2) to designate additional models as having systemic risk based on qualitative criteria (e.g., capabilities, reach, societal impact). A 200B-parameter model with demonstrated frontier capabilities could be subject to such designation'."
+              },
+              {
+                "text": "States the 2 August 2025 application date for GPAI obligations",
+                "passed": true,
+                "evidence": "Response states: 'The EU AI Act entered into force on 1 August 2024. GPAI-specific obligations under Title VIII apply from 2 August 2025 (12 months after entry into force)' and 'If you release the model after 2 August 2025: full Title VIII obligations apply immediately'."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-124-medical-ai-mdr",
+          "eval_name": "Eval 124 Medical Ai Mdr",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 3,
+            "pass_rate": 0.6,
+            "expectations": [
+              {
+                "text": "Correctly identifies the system as high-risk via Annex I Path A (Art. 6(1)) because Regulation 2017/745 (Medical Devices) is listed in Annex I Section A",
+                "passed": false,
+                "evidence": "Response incorrectly references 'Annex I, Section 5' and 'Annex II' (not Annex I) as where MDR is listed. The actual EU AI Act lists MDR in Annex I Section A. The response states 'Annex II of the EU AI Act specifically lists EU MDR (Regulation 2017/745)' which is factually incorrect \u2014 it is Annex I. The Path A classification concept is correct but the specific Annex reference is wrong."
+              },
+              {
+                "text": "Explains that MDR CE marking does NOT automatically satisfy AI Act compliance requirements",
+                "passed": true,
+                "evidence": "Response explicitly states in the Executive Summary: 'The CE marking obtained under the EU Medical Device Regulation (MDR, Regulation 2017/745) does not automatically satisfy EU AI Act requirements' and Section 2.3 lists specific gaps the MDR assessment does not cover."
+              },
+              {
+                "text": "Explains that AI Act requirements (Arts. 9-17) must be integrated into the existing MDR conformity assessment procedure",
+                "passed": true,
+                "evidence": "Response states in section 4.3: 'the same Notified Body is expected to verify AI Act compliance as part of the integrated assessment'. Section 3.1 covers provider obligations including Arts. 9-17 requirements. The integration approach is correctly described."
+              },
+              {
+                "text": "States the 2 August 2028 deadline specifically for Annex I safety component systems (extended by the Digital Omnibus adopted June 29, 2026)",
+                "passed": false,
+                "evidence": "Response states the transitional period ends in 'August 2027' (section 5.2: 'allowing continued use until August 2027'). The 2 August 2028 deadline confirmed by the Digital Omnibus is not mentioned. The Digital Omnibus is not referenced at all."
+              },
+              {
+                "text": "Identifies hospital deployer obligations under Art. 26 (instructions compliance, staff competence, monitoring, log retention)",
+                "passed": true,
+                "evidence": "Section 3.2 covers deployer obligations including: instructions compliance (Art. 26(1)), human oversight (Art. 26(2)), monitoring (Art. 26(5)), record-keeping with '6 months' log retention (Art. 26(6)). Staff competence (Art. 26(4)) also mentioned via training requirements."
+              }
+            ]
+          }
+        },
+        {
+          "eval_id": "eval-125-ecommerce-chatbot",
+          "eval_name": "Eval 125 Ecommerce Chatbot",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "result": {
+            "total": 5,
+            "passed": 5,
+            "pass_rate": 1.0,
+            "expectations": [
+              {
+                "text": "Correctly classifies the chatbot as limited risk (not high-risk) under Art. 50 \u2014 not falling under Annex III",
+                "passed": true,
+                "evidence": "Response states: 'A standard e-commerce chatbot that answers questions, processes returns, and recommends products does not fall into Annex III and is therefore not classified as high-risk under the current Act. Your chatbot is most likely a limited-risk AI system subject primarily to Article 50 transparency obligations'."
+              },
+              {
+                "text": "Correctly states Art. 50(1) disclosure obligation: deployers must inform users they interact with an AI system",
+                "passed": true,
+                "evidence": "Response states under Art. 50: 'The chatbot must disclose its AI nature in a clear, unambiguous way. A statement such as You are chatting with an AI assistant at the outset satisfies this requirement'. Practical steps provided."
+              },
+              {
+                "text": "Notes that an e-commerce chatbot is not 'obviously AI' to a reasonably well-informed person and therefore disclosure is required",
+                "passed": true,
+                "evidence": "Response states: 'You may not design the chatbot to deceive users into thinking they are speaking with a human, unless the human illusion is obvious from context or the user has explicitly requested a human-like persona'. Disclosure obligations are clearly stated as mandatory, implying the chatbot does not meet the obvious exception."
+              },
+              {
+                "text": "Distinguishes deployer obligations (Art. 26, Art. 50) from provider/GPAI provider obligations (Art. 53)",
+                "passed": true,
+                "evidence": "Response has a dedicated section 'GPAI Model Provider Obligations (What Your Vendor Must Do)' with Art. 53 obligations, and separately covers deployer obligations under Art. 26 and Art. 50. The distinction is explicit and clearly explained."
+              },
+              {
+                "text": "States the 2 August 2026 application date for Art. 50 limited-risk transparency requirements",
+                "passed": true,
+                "evidence": "Response timeline table states 'Transparency obligations (Article 50): 2 August 2026' and section 7 states 'Article 50 transparency obligations are now in force' (as of mid-2026). The 2 August 2026 date is explicitly listed."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

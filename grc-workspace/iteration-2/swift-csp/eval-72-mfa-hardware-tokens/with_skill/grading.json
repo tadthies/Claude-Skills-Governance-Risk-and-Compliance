@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-72",
+  "eval_name": "eval-72-mfa-hardware-tokens",
+  "condition": "with_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "72-A1",
+      "description": "Explains that CSCF v2026 explicitly requires hardware authentication tokens for Control 4.2, and that software-based OTP (TOTP apps) is insufficient",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response clearly states 'CSCF v2026 Control 4.2 — Multi-Factor Authentication — explicitly requires hardware authentication tokens for all interactive operator sessions' and lists 'Not acceptable: Software TOTP apps (Google Authenticator, Authy, Microsoft Authenticator), SMS OTP, email OTP' in a table."
+    },
+    {
+      "id": "72-A2",
+      "description": "Identifies the risk: software OTP can be compromised if the device/phone is malware-infected, bypassing the security intent of MFA",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explains 'If the device running Google Authenticator is compromised by malware, an attacker could potentially read the TOTP seed stored in the app, intercept the OTP codes' and notes the security intent breaks down 'when the second factor lives on a malware-susceptible general-purpose device.'"
+    },
+    {
+      "id": "72-A3",
+      "description": "Provides at least 2 concrete hardware token options (e.g., RSA SecurID, Thales SafeNet, YubiKey) or categories of compliant hardware",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response provides 4 hardware token options: RSA SecurID, Thales SafeNet (OTP 110/eToken PASS), YubiKey (FIDO2), and Smart Card + PIN, each with specific product names and integration details."
+    },
+    {
+      "id": "72-A4",
+      "description": "Outlines implementation steps: procure hardware tokens, integrate with RADIUS or LDAP, distribute to operators, update IRP/procedures",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response provides 7 detailed implementation steps covering: assessing operator population, selecting platform, procuring tokens, deploying authentication infrastructure with RADIUS integration, distributing to operators and training, updating documentation, and testing with evidence collection."
+    },
+    {
+      "id": "72-A5",
+      "description": "Notes the KYC-SA attestation deadline and estimates a realistic remediation timeline",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states the v2026 attestation window (July 1 – December 31, 2026), notes today's date, estimates '6–10 weeks for procurement, deployment, and rollout' and concludes this allows completion well before the December 31, 2026 deadline."
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 5,
+  "failed_assertions": 0,
+  "pass_rate": 1.0
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Confirms the company IS subject to CCPA/CPRA because it meets the $25M annual gross revenue threshold — even though it falls short of the 100,000 consumer/household threshold",
+      "passed": true,
+      "evidence": "Response explicitly states $30M revenue exceeds the $25M threshold (Threshold 1), and notes the company does not meet the 100,000-consumer threshold (80,000 falls short), but Threshold 1 alone is sufficient."
+    },
+    {
+      "text": "Explains that meeting ANY ONE of the three thresholds (revenue, data volume, monetization) triggers CCPA/CPRA applicability",
+      "passed": true,
+      "evidence": "Response clearly explains the 'any one threshold' rule, lists all three thresholds, and confirms that only one needs to be satisfied for coverage to apply."
+    },
+    {
+      "text": "Lists core compliance obligations including privacy notice at collection, comprehensive privacy policy, and the consumer rights program (right to know, delete, correct, opt-out, non-discrimination)",
+      "passed": true,
+      "evidence": "Response includes a full table of consumer rights (Know, Delete, Correct, Opt-Out, Limit SPI, Non-Discrimination, Data Portability, ADMT) plus privacy notice at collection and privacy policy obligations."
+    },
+    {
+      "text": "Explains the 'Do Not Sell or Share My Personal Information' opt-out link requirement and GPC signal obligation",
+      "passed": true,
+      "evidence": "Response specifically covers the required homepage opt-out link and the mandatory obligation to honor Global Privacy Control (GPC) browser signals as valid opt-outs."
+    },
+    {
+      "text": "Mentions response deadlines: 45 days for access/delete/correct requests, with a possible 45-day extension",
+      "passed": true,
+      "evidence": "Response provides the 45-day deadline for Right to Know, Delete, and Correct requests, with the possible 45-day extension (total 90 days) upon notice to the consumer."
+    }
+  ]
+}

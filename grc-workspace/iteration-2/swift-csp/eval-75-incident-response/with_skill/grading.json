@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-75",
+  "eval_name": "eval-75-incident-response",
+  "condition": "with_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "75-A1",
+      "description": "States the 24-hour initial notification obligation to SWIFT (via security@swift.com or KYC-SA portal) upon confirmed cyber incident",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explicitly states 'You must notify SWIFT within 24 hours of confirming a cyber incident' and provides the contact as 'security@swift.com' with a table showing the 24-hour deadline."
+    },
+    {
+      "id": "75-A2",
+      "description": "States the 30-day full incident report obligation to SWIFT",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states 'Within 30 days of the initial notification, you must provide SWIFT with a full incident report' and lists specific contents required."
+    },
+    {
+      "id": "75-A3",
+      "description": "Lists evidence to preserve: system memory dumps, log files from SWIFT zone, transaction records, network captures, endpoint forensic images",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response provides a comprehensive evidence table including: system memory dumps (labeled IMMEDIATE), SWIFT transaction logs (IMMEDIATE), SWIFT zone firewall/network logs, authentication logs, SIEM data, endpoint forensic images, malware samples, and network captures (PCAP files). All required evidence types are covered."
+    },
+    {
+      "id": "75-A4",
+      "description": "Identifies immediate containment steps: isolate affected systems from SWIFT zone, revoke compromised operator credentials/tokens, notify SWIFT relationship manager",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response lists containment steps including: 'Isolate the affected server(s) from the SWIFT zone', 'Revoke all SWIFT operator credentials on the affected system — assume any credentials cached on or accessible from the affected server are compromised. Immediately revoke all hardware tokens and passwords', and 'Contact your SWIFT Relationship Manager to flag potential fraudulent traffic.'"
+    },
+    {
+      "id": "75-A5",
+      "description": "Outlines what a SWIFT-specific IRP must contain: detection triggers specific to SWIFT, escalation to SWIFT within 24 hours, fraud scenario playbooks, communication with correspondent banks, evidence preservation procedures",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response includes a complete IRP section with all required elements: SWIFT-specific detection triggers, escalation to SWIFT within 24 hours with security@swift.com contact, fraud scenario playbooks (unauthorized SWIFT message, compromised credentials, malware), communication with correspondent banks, and evidence preservation procedures."
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 5,
+  "failed_assertions": 0,
+  "pass_rate": 1.0
+}

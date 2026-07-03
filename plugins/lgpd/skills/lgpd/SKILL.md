@@ -1,12 +1,14 @@
 ---
 name: lgpd
 description: >
-  Expert LGPD compliance advisor for Brazil's Lei Geral de Proteção de Dados (Law 13,709/2018).
-  Use this skill whenever a user asks about LGPD, Brazilian data protection, ANPD, personal data
-  processing in Brazil, data subject rights under Brazilian law, legal bases for processing,
-  sensitive data handling, DPO appointment in Brazil, data breach notification to ANPD, LGPD
-  penalties (fines up to 2% of revenue / R$50M), international data transfers from Brazil,
-  LGPD gap assessments, privacy policy drafting for Brazilian operations, DPIA under LGPD,
+  Expert LGPD compliance advisor for Brazil's Lei Geral de Proteção de Dados (Law
+  13,709/2018). Use this skill whenever a user asks about LGPD, Brazilian data
+  protection, ANPD, personal data processing in Brazil, data subject rights under
+  Brazilian law, legal bases for processing, sensitive data handling, DPO appointment
+  in Brazil, data breach notification to ANPD, LGPD penalties (fines up to 2% of
+  revenue / R$50M), international data transfers from Brazil, Brazil-EU mutual adequacy
+  (January 2026 — SCCs/BCRs no longer needed for Brazil-EU transfers), LGPD gap
+  assessments, privacy policy drafting for Brazilian operations, DPIA under LGPD,
   consent management, or comparing LGPD with GDPR. Trigger for any Brazil privacy or
   data protection question even if LGPD is not named explicitly.
 ---
@@ -145,17 +147,25 @@ Valid LGPD consent must be:
 
 ## International Data Transfers (Art. 33–36)
 
-Personal data may only be transferred internationally where:
+> ⚠️ **Major 2026 Update — Brazil-EU Mutual Adequacy:** On **January 26–27, 2026**, Brazil and the European Union established **mutual adequacy recognition**: the European Commission adopted an adequacy decision for Brazil under GDPR Article 45, and Brazil's ANPD simultaneously recognized the EU as an adequate transfer destination. **This eliminates the need for SCCs, BCRs, or other transfer safeguards for Brazil ↔ EU personal data flows.** Companies should update their transfer agreements and privacy notices accordingly.
 
-| Mechanism | Description |
-|-----------|-------------|
-| **Adequacy decision** | ANPD recognised country/international organisation as providing adequate protection |
-| **Contractual clauses** | Standard or specific clauses guaranteeing adequate protection |
-| **Global corporate standards** | Binding corporate rules (BCRs) |
-| **Specific consent** | Data subject explicitly consented, informed of international transfer |
-| **Legal cooperation** | Between public entities for treaty obligations |
-| **Vital interests** | Protection of data subject's life |
-| **ANPD authorisation** | Case-by-case ANPD approval |
+Personal data may only be transferred internationally where one of these mechanisms applies:
+
+| Mechanism | Description | Notes |
+|-----------|-------------|-------|
+| **Adequacy decision** | ANPD recognised country/organisation as providing adequate protection | **EU/EEA: adequate as of January 2026. No SCCs or BCRs needed for Brazil→EU transfers.** |
+| **Contractual clauses** | Standard or specific clauses guaranteeing adequate protection | Still required for non-adequate countries (e.g., US, China) |
+| **Global corporate standards** | Binding corporate rules (BCRs) | Intragroup transfers to non-adequate countries |
+| **Specific consent** | Data subject explicitly consented, informed of international transfer | Consent must be specific to the transfer |
+| **Legal cooperation** | Between public entities for treaty obligations | Government data sharing |
+| **Vital interests** | Protection of data subject's life | Emergency situations only |
+| **ANPD authorisation** | Case-by-case ANPD approval | For transfers not covered by other mechanisms |
+
+**Impact of Brazil-EU adequacy for compliance teams:**
+- Remove SCCs/BCRs from Brazil→EU or EU→Brazil transfer agreements and replace with adequacy reference
+- Update privacy notices and RoPA to reflect adequacy-based transfer mechanism for EU recipients
+- Retain other safeguards for transfers to the US, UK, China, or other non-adequate countries
+- Monitor ANPD adequacy list (expected to grow) at anpd.gov.br
 
 ---
 
@@ -170,7 +180,7 @@ ANPD may issue minimum security standards. Controllers bear responsibility for p
 
 ### Breach Notification (Art. 48)
 Controllers must notify ANPD and data subjects when a security incident may cause **relevant risk or harm**:
-- **Timeframe:** "Reasonable timeframe" — ANPD Resolution CD/ANPD No. 15/2024 sets **3 working days** for preliminary notification
+- **Timeframe:** ANPD Resolution CD/ANPD No. 15/2024 sets **3 working days** for preliminary notification
 - **Content:** Nature of affected data, data subjects concerned, technical/security measures, risks, measures taken/planned
 - **Full report:** Within **20 working days** of confirmation
 
@@ -188,10 +198,6 @@ Controllers must notify ANPD and data subjects when a security incident may caus
 | Deletion | Deletion of personal data related to violation |
 | Suspension | Partial suspension of processing for up to 6 months (extendable) |
 | Prohibition | Complete ban on personal data processing activities |
-
-**Aggravating/mitigating factors (Art. 52, §1º):** Gravity, intent, recurrence, cooperation, adoption of internal controls, proportionality of harm.
-
-**Civil liability (Art. 42–44):** Controllers and processors are liable for damages. Shared/several liability where multiple parties. Exemption only where: did not perform processing; processing not at fault; damage exclusively caused by data subject or third party.
 
 ---
 
@@ -213,7 +219,7 @@ Controllers must notify ANPD and data subjects when a security incident may caus
 5. Check RoPA existence and completeness (Art. 37)
 6. Review privacy notices for Art. 9 elements
 7. Assess security measures (Art. 46)
-8. Review international transfer mechanisms (Art. 33–36)
+8. Review international transfer mechanisms (Art. 33–36) — **note: EU transfers now covered by adequacy (Jan 2026)**
 9. Evaluate breach response readiness (Art. 48)
 10. Produce gap table with priority ratings
 
@@ -225,7 +231,7 @@ Required elements:
 - Legal basis
 - Data subjects' rights and how to exercise them
 - Whether data will be shared and with whom
-- International transfers
+- International transfers (and mechanism — adequacy for EU, SCCs for US/others)
 - Retention period
 - Any profiling/automated decisions
 
@@ -253,7 +259,7 @@ Required elements:
 | DPO | "Encarregado"; always required for controllers (no SME exemption in law) | DPO required only in specific cases |
 | Breach notification | 3 working days preliminary; 20 working days full | 72 hours to supervisory authority |
 | Fines | Up to 2% revenue; max R$50M per violation | Up to 4% global turnover; max €20M |
-| Adequacy | ANPD decides; list not yet published | EC decides; adequate countries list exists |
+| Adequacy | **EU/EEA adequate as of January 2026**; ANPD list growing | EC decides; Brazil adequate as of January 2026 |
 | Children | Parental consent; controller must verify | Parental consent <16 (member state may lower to 13) |
 
 ---

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Confirms LGPD applies to the US company because data of individuals in Brazil is processed, and/or services are offered to persons in Brazil — Art. 3 extraterritorial reach",
+      "passed": true,
+      "evidence": "Response explicitly confirms LGPD applies via Art. 3, II (offering services to individuals in Brazil) and Art. 3, III (data collected in Brazil), citing the extraterritorial reach and stating location of servers is irrelevant."
+    },
+    {
+      "text": "Explains that the absence of physical presence in Brazil is irrelevant — LGPD has broad extraterritorial scope similar to GDPR",
+      "passed": true,
+      "evidence": "Section 2 is dedicated to this point: 'Absence of Physical Presence Is Irrelevant' — explains LGPD uses a targeting/effects test and explicitly compares to GDPR Art. 3."
+    },
+    {
+      "text": "States that collection of CPF (tax ID) constitutes personal data processing and may constitute sensitive data collection requiring stricter legal basis",
+      "passed": true,
+      "evidence": "Section 3 addresses CPF as personal data under Art. 5, I, discusses heightened exposure for breach risk, notes it may implicate sensitive data rules in certain contexts, and identifies applicable legal bases (Art. 7, V and X)."
+    },
+    {
+      "text": "Lists the key obligations that now apply: DPO appointment, legal basis for processing, privacy notice, data subject rights, breach notification",
+      "passed": true,
+      "evidence": "Section 4 provides a complete obligations table covering legal basis (Art. 7/11), privacy notice (Art. 9), data subject rights (Art. 18-22), DPO appointment (Art. 41), RoPA (Art. 37), security measures (Art. 46), and breach notification (Art. 48)."
+    },
+    {
+      "text": "Notes that the ANPD has enforcement authority and can impose fines up to 2% of Brazilian revenue or R$50M per violation",
+      "passed": true,
+      "evidence": "Section 5 explicitly states ANPD enforcement authority over foreign controllers and quotes the penalty: 'Up to 2% of revenues in Brazil (prior fiscal year, group basis), with a cap of R$50 million per violation'."
+    }
+  ]
+}

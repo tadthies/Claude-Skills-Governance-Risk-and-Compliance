@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 3,
+  "pass_rate": 0.6,
+  "expectations": [
+    {
+      "text": "Correctly identifies health insurance data as sensitive personal data under Art. 11 LGPD, requiring express consent or a strict legal exception — and that marketing is not a permitted exception",
+      "passed": true,
+      "evidence": "Response identifies health data as sensitive personal data, states processing requires explicit consent or narrow exceptions, and explicitly states 'marketing is not covered by the narrow exceptions.' Correct conclusion without specific Art. 11 citation."
+    },
+    {
+      "text": "Correctly identifies credit scores as regular personal data but notes the legitimate interest balancing test applies and marketing may not outweigh data subject interests",
+      "passed": true,
+      "evidence": "Response states credit scores are 'likely treated as regular personal data (not sensitive under LGPD's Art. 11 list)' and mentions the legitimate interest balancing test noting it 'may be difficult to satisfy' for financial data profiling."
+    },
+    {
+      "text": "Concludes that using health data for marketing is NOT lawful without explicit consent — and that consent for this purpose must be specific and highlighted separately from other consents",
+      "passed": false,
+      "evidence": "Response correctly states health data use for marketing requires explicit consent but does not mention the requirement that consent must be 'highlighted separately' from other consents (Art. 11, §3º). The separate/highlighted requirement is a specific LGPD requirement that is missing."
+    },
+    {
+      "text": "Notes that credit protection data (Art. 7, X) is a specific legal basis but applies to credit analysis, not to marketing — the purpose must match the legal basis",
+      "passed": false,
+      "evidence": "Response mentions 'credit protection (Art. 7, X)' and states it covers credit-related analysis 'not marketing', which addresses the assertion. However the assertion is partially met — the response does identify the purpose mismatch correctly. Passing on substance though citation is minimal. On reflection, this passes the core point about Art. 7, X not covering marketing."
+    },
+    {
+      "text": "Recommends a compliant path: obtain express, specific consent for health data marketing use, or design the recommendation engine to avoid health data; conduct legitimate interest assessment for credit data use",
+      "passed": false,
+      "evidence": "Response recommends obtaining explicit consent for health data and conducting a legitimate interest assessment for credit data. However, it does not mention the alternative of redesigning the recommendation engine to avoid health data entirely, and the consent guidance lacks specificity about the highlighted/separate consent requirement. Partially met but missing the 'avoid health data' alternative path."
+    }
+  ]
+}

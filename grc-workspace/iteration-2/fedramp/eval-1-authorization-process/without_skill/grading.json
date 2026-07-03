@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains the difference between Agency ATO and JAB P-ATO",
+      "passed": true,
+      "evidence": "Response provides a detailed comparison table and prose sections for both Agency ATO and JAB P-ATO, covering issuer, process, scope, speed, and best-fit scenarios."
+    },
+    {
+      "text": "Mentions the role of a 3PAO (Third Party Assessment Organization)",
+      "passed": true,
+      "evidence": "Response mentions engaging a 3PAO in preparation steps and Step 5 dedicates a full section to the 3PAO security assessment process, explaining their role in testing and producing the SAR."
+    },
+    {
+      "text": "Lists the core FedRAMP documentation: SSP, SAP, SAR, POA&M",
+      "passed": true,
+      "evidence": "Step 4 lists all four core documents: SSP (with description), SAP (3PAO-prepared), SAR (3PAO-produced), and POA&M, each with descriptions."
+    },
+    {
+      "text": "Explains FedRAMP Ready designation as a precursor step",
+      "passed": true,
+      "evidence": "Step 2 explicitly covers FedRAMP Ready as an optional precursor designation, describing the Readiness Assessment Report (RAR) and its purpose as a market signal without granting ATO."
+    },
+    {
+      "text": "Addresses continuous monitoring (ConMom) requirements post-authorization",
+      "passed": true,
+      "evidence": "Step 7 covers ConMon with monthly requirements (vulnerability scanning, POA&M updates, inventory updates) and annual requirements (3PAO reassessment, updated SSP, tested IRP and CP)."
+    }
+  ]
+}

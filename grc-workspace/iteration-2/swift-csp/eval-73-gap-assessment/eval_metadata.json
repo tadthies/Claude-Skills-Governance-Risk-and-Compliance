@@ -1,0 +1,30 @@
+{
+  "eval_id": "eval-73",
+  "eval_name": "eval-73-gap-assessment",
+  "skill": "swift-csp",
+  "framework": "SWIFT CSCF v2026",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "model": "claude-sonnet-4-6",
+  "prompt": "Run a SWIFT CSCF v2026 gap assessment for our organisation. Here is our current state: SWIFT zone exists but is on a shared VLAN with other internal systems. We patch critical vulnerabilities within 30 days. We use software OTP for operator MFA. SWIFT logs are collected but not reviewed and retention is 6 months. We have a general IT incident response plan but no SWIFT-specific plan. We have back-office connections to our core banking system but they are not encrypted.",
+  "total_assertions": 5,
+  "results": {
+    "with_skill": {
+      "passed": 5,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "without_skill": {
+      "passed": 3,
+      "failed": 2,
+      "pass_rate": 0.6
+    }
+  },
+  "delta": 0.4,
+  "key_differentiators": [
+    "With skill: Rates 2.2 as RED and cites specific 3-day critical patch SLA",
+    "Without skill: Rates 2.2 as AMBER and only says SLAs are 'much tighter than 30 days' without specifics",
+    "With skill: Rates 2.4 as RED and explicitly states v2025→v2026 mandatory promotion",
+    "Without skill: Hedges 2.4 as AMBER/RED and says 'depends on your CSCF version' — fails to confirm v2026 mandatory status"
+  ]
+}

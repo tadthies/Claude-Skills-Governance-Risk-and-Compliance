@@ -1,0 +1,20 @@
+{
+  "eval_id": "eval-89",
+  "eval_name": "eval-89-gdpr-ccpa-gap",
+  "skill": "ccpa",
+  "iteration": 2,
+  "prompt": "We already have a GDPR compliance programme. What additional steps do we need to take to comply with CCPA/CPRA? Where do the two laws differ most significantly?",
+  "date_run": "2026-07-02",
+  "model": "claude-sonnet-4-6",
+  "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "without_skill": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "delta": 0.0
+}

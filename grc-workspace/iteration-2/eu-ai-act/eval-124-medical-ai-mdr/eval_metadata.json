@@ -1,0 +1,28 @@
+{
+  "eval_id": "eval-124-medical-ai-mdr",
+  "skill": "eu-ai-act",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "prompt": "We are a hospital deploying an AI diagnostic imaging tool that was CE-marked as a Class IIa medical device under the EU MDR (Regulation 2017/745). The vendor says it is also a safety component for our radiology department. Do we need to do anything extra under the EU AI Act, and does the CE marking under MDR automatically satisfy AI Act requirements?",
+  "assertion_count": 5,
+  "with_skill": {
+    "passed": 5,
+    "total": 5,
+    "pass_rate": 1.0,
+    "output_path": "with_skill/outputs/response.md",
+    "grading_path": "with_skill/grading.json"
+  },
+  "without_skill": {
+    "passed": 3,
+    "total": 5,
+    "pass_rate": 0.6,
+    "output_path": "without_skill/outputs/response.md",
+    "grading_path": "without_skill/grading.json",
+    "failed_assertions": [
+      "Correctly identifies the system as high-risk via Annex I Path A (Art. 6(1)) because Regulation 2017/745 (Medical Devices) is listed in Annex I Section A",
+      "States the 2 August 2028 deadline specifically for Annex I safety component systems (extended by the Digital Omnibus adopted June 29, 2026)"
+    ]
+  },
+  "delta": 0.4,
+  "key_differentiator": "Without-skill response incorrectly referenced 'Annex II' instead of Annex I for MDR listing, and stated an August 2027 transitional deadline rather than the Digital Omnibus-confirmed 2 August 2028. The skill correctly cited Annex I Section A and the extended 2028 deadline."
+}

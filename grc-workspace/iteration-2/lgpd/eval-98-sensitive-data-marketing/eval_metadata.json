@@ -1,0 +1,20 @@
+{
+  "eval_id": "eval-98",
+  "eval_name": "eval-98-sensitive-data-marketing",
+  "skill": "lgpd",
+  "iteration": 2,
+  "date_run": "2026-07-02",
+  "prompt": "We are a São Paulo-based fintech. We want to use customers' health insurance data and credit scores to build personalized product recommendations and target marketing campaigns. Is this lawful under LGPD?",
+  "skill_file": "plugins/lgpd/skills/lgpd/SKILL.md",
+  "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "without_skill": {
+    "pass_rate": 0.6,
+    "passed": 3,
+    "total": 5
+  },
+  "delta": 0.4
+}

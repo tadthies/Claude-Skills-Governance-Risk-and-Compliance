@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly identifies all three data types as Sensitive Personal Information (SPI) under CPRA: precise geolocation (within 1/4 mile), health/medical data from wearables, and biometric data used for identification",
+      "passed": true,
+      "evidence": "Response confirms all three data types are SPI under CPRA with specific statutory reasoning: precise geolocation (within 1/4 mile), health/medical data from wearable integration, and biometric facial recognition used for identification."
+    },
+    {
+      "text": "Explains the CPRA obligation to offer a 'Limit the Use of My Sensitive Personal Information' link/mechanism (on homepage or via a combined opt-out page)",
+      "passed": true,
+      "evidence": "Response details the 'Limit the Use of My Sensitive Personal Information' link/mechanism requirement, including placement rules (homepage, settings, or combined opt-out page) and accessibility requirements."
+    },
+    {
+      "text": "States that SPI limitation requests must be processed within 15 business days (shorter than the 45-day deadline for other rights)",
+      "passed": true,
+      "evidence": "Response explicitly states the 15 business day processing deadline for SPI limitation requests, contrasting it with the standard 45-calendar-day period for other rights."
+    },
+    {
+      "text": "Explains permitted uses of SPI without triggering limitation rights: services reasonably expected by consumers, security/integrity, short-term transient use — and that the app must clearly document which permitted use applies to each SPI processing activity",
+      "passed": true,
+      "evidence": "Response covers all four permitted purpose categories (core service delivery, security/integrity, short-term transient use, legal obligations) with a concrete mapping table showing which applies to each SPI type, plus the critical documentation requirement."
+    },
+    {
+      "text": "Advises on privacy notice requirements: must disclose each SPI category collected, purpose of collection, and whether SPI is sold, shared, or used beyond the necessary purpose — in both the at-collection notice and the privacy policy",
+      "passed": true,
+      "evidence": "Response covers dual privacy notice obligations: at-collection notice (what to disclose before each permission dialog) and the full privacy policy (dedicated SPI section with five required elements), including the consistency requirement between both disclosure locations."
+    }
+  ]
+}

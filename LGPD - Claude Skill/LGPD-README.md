@@ -8,7 +8,9 @@
 
 The LGPD Compliance Skill transforms Claude into an expert Brazilian data protection advisor with comprehensive knowledge of the Lei Geral de Proteção de Dados Pessoais (LGPD) — Law No. 13,709/2018 as amended by Law No. 13,853/2019 — together with all relevant ANPD (Autoridade Nacional de Proteção de Dados) resolutions, including Resolution CD/ANPD No. 15/2024 setting the 3-working-day breach notification requirement.
 
-The skill covers the full LGPD compliance lifecycle. It analyses processing activities against all 10 legal bases for regular personal data (Art. 7) and the stricter bases for sensitive data (Art. 11), guides organisations through data subject rights fulfilment under Arts. 17–22, produces LGPD-compliant privacy notices containing all Art. 9 required elements, and assists with data breach notification workflows under Art. 48. The skill also supports DPO (Encarregado) appointment under Art. 41, Records of Processing Activities (RoPA) under Art. 37, Data Protection Impact Assessments (RIPD/DPIA) under Art. 38, and international data transfer compliance under Arts. 33–36.
+> **2026 Update — Brazil-EU Mutual Adequacy:** On January 26–27, 2026, the European Commission formally adopted an adequacy decision for Brazil under GDPR Article 45, and Brazil's ANPD simultaneously recognised the EU as an adequate transfer destination. This mutual adequacy **eliminates the need for SCCs, BCRs, or other transfer safeguards for Brazil ↔ EU personal data flows**. The skill has been updated (v1.1.0, July 2026) to reflect this change across the international transfers section, the LGPD vs. GDPR comparison table, and the gap assessment workflow.
+
+The skill covers the full LGPD compliance lifecycle. It analyses processing activities against all 10 legal bases for regular personal data (Art. 7) and the stricter bases for sensitive data (Art. 11), guides organisations through data subject rights fulfilment under Arts. 17–22, produces LGPD-compliant privacy notices containing all Art. 9 required elements, and assists with data breach notification workflows under Art. 48. The skill also supports DPO (Encarregado) appointment under Art. 41, Records of Processing Activities (RoPA) under Art. 37, Data Protection Impact Assessments (RIPD/DPIA) under Art. 38, and international data transfer compliance under Arts. 33–36 — including the landmark Brazil-EU adequacy decision of January 2026.
 
 The skill is particularly valuable for organisations operating across both Brazil and the EU, as it explicitly maps LGPD requirements against GDPR equivalents — highlighting key differences including the 10 vs. 6 legal bases, the 3-working-day vs. 72-hour breach notification timelines, the always-mandatory DPO vs. GDPR's conditional DPO obligation, and the R$50 million vs. €20 million penalty caps.
 
@@ -66,8 +68,9 @@ All responses cite the specific LGPD article relevant to the question (for examp
 ### International Transfers
 - "Can we transfer Brazilian customer data to our US parent company?"
 - "What international transfer mechanisms are available under Arts. 33–36?"
+- "Do we still need SCCs for data transfers from Brazil to the EU after the January 2026 adequacy decision?"
 - "Has ANPD issued any adequacy decisions for specific countries?"
-- "What contractual clauses do we need for data transfers from Brazil to Europe?"
+- "What contractual clauses do we need for data transfers from Brazil to the United States?"
 
 ### Penalties and Enforcement
 - "What is our maximum penalty exposure for an LGPD violation under Art. 52?"
@@ -200,6 +203,7 @@ plugins/lgpd/
 `Art. 18 LGPD`, `Art. 48 LGPD`, `encarregado`, `DPO Brazil`, `RIPD`, `DPIA Brazil`,
 `breach notification Brazil`, `3 working days ANPD`, `legitimate interest Brazil`,
 `sensitive data Brazil`, `international transfer Brazil`, `adequacy ANPD`,
+`Brazil EU adequacy`, `Brazil adequacy decision 2026`, `SCCs Brazil EU`,
 `R$50 million fine`, `2% revenue Brazil`, `privacy notice Brazil`, `consent Brazil`,
 `children data Brazil`, `Art. 14 LGPD`, `data protection Brazil`
 
@@ -210,4 +214,4 @@ plugins/lgpd/
 **Hemant Naik**
 [LinkedIn](https://www.linkedin.com/in/tanaji-naik/) · [hemant.naik@gmail.com](mailto:hemant.naik@gmail.com)
 
-Skill version: 1.0.0 — May 2026
+Skill version: 1.1.0 — July 2026

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains that the business must verify the consumer's identity before disclosing or deleting PI — matching at least two data points already held by the business for standard requests",
+      "passed": true,
+      "evidence": "Response explicitly states that verification requires matching at least two data points already held by the business for standard requests, with a higher standard for sensitive PI categories."
+    },
+    {
+      "text": "States the response deadline is 45 calendar days from receipt of the request, extendable by another 45 days with notice to the consumer",
+      "passed": true,
+      "evidence": "Response states the 45-day deadline from receipt, and that extension requires written notice to the consumer within the original window explaining the reason."
+    },
+    {
+      "text": "Lists at least three valid exceptions to the right to delete (e.g., completing a transaction, detecting security incidents, complying with a legal obligation, internal-use-only PI)",
+      "passed": true,
+      "evidence": "Response lists completing a transaction, detecting security incidents/fraud, complying with a legal obligation, debugging, exercising free speech, and research — well over three valid exceptions."
+    },
+    {
+      "text": "States that upon deletion the business must also direct its service providers and contractors to delete the consumer's PI",
+      "passed": true,
+      "evidence": "Response explicitly states that upon a verified deletion request, the business must direct both service providers AND contractors to delete the consumer's PI, including logging confirmations."
+    },
+    {
+      "text": "Explains that both requests must be honored free of charge (up to twice per 12-month period) and the business must confirm the deletion or explain the exception invoked",
+      "passed": true,
+      "evidence": "Response states both requests are free of charge up to twice per 12-month period, and that the response must either confirm deletion (including downstream) or name and explain the specific exception invoked."
+    }
+  ]
+}

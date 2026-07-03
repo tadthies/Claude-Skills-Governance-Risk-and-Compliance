@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly classifies the model as a GPAI model under Art. 3(63)",
+      "passed": true,
+      "evidence": "Response opens: 'Your model qualifies as a General-Purpose AI (GPAI) model under Article 3(63) of Regulation (EU) 2024/1689' with explanation covering large-scale data training, significant generality, and capability across multiple tasks. Classification is explicit and article-cited."
+    },
+    {
+      "text": "Correctly identifies that 3x10^24 FLOPs is below the 10^25 FLOPs systemic risk threshold in Art. 51",
+      "passed": true,
+      "evidence": "Response states: 'Your model's training compute is approximately 3x10^24 FLOPs, which is roughly 3.3 times below the 10^25 FLOPs systemic risk threshold. Therefore, your model does not automatically fall within the systemic risk category under Article 51(1)'."
+    },
+    {
+      "text": "Correctly applies the open-source exception: only copyright compliance policy (Directive 2019/790) and training content summary are required under Art. 53",
+      "passed": true,
+      "evidence": "Response provides a clear table showing 'Annex XI technical documentation: Exempt (open-source exception)' and 'Annex XII downstream provider information: Exempt' while 'Copyright compliance policy (Dir. 2019/790): Required' and 'Publicly available training content summary: Required'. Obligations correctly reduced."
+    },
+    {
+      "text": "Notes that Commission can still designate systemic risk independently of the FLOPs threshold under Art. 51",
+      "passed": true,
+      "evidence": "Response has section 'Important Caveat: Commission Designation Power' stating: 'Article 51 also grants the European Commission the power to designate a GPAI model as presenting systemic risk independently of the FLOPs threshold' based on capabilities, market reach, or impacts."
+    },
+    {
+      "text": "States the 2 August 2025 application date for GPAI obligations",
+      "passed": true,
+      "evidence": "Response states: 'You are a GPAI model provider under the EU AI Act, and the obligations in Chapter V (Articles 51-56) apply to you as of 2 August 2025 (the GPAI obligations application date under Article 113)' and '2 August 2025 — GPAI Obligations Apply'."
+    }
+  ]
+}

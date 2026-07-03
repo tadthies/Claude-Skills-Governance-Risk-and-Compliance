@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 4,
+  "pass_rate": 0.8,
+  "expectations": [
+    {
+      "text": "Explains FedRAMP 20x as a modernization/automation-focused initiative",
+      "passed": true,
+      "evidence": "Response clearly explains FedRAMP 20x as a modernization initiative shifting from document-heavy, point-in-time assessments to automation, continuous compliance, and machine-readable data formats."
+    },
+    {
+      "text": "Mentions key changes: automation, machine-readable controls (OSCAL), continuous monitoring improvements",
+      "passed": true,
+      "evidence": "Response covers automation and continuous assessment (Section 1), machine-readable controls via OSCAL (Section 2), and continuous monitoring improvements (Section 3) as distinct subsections."
+    },
+    {
+      "text": "Addresses the current status and timeline of 20x rollout",
+      "passed": false,
+      "evidence": "Response describes FedRAMP 20x as 'evolving' and 'actively rolling out' with pilots and phase-in of OSCAL, but provides no specific dates or milestones. It lacks concrete timeline information (e.g., no specific mandate deadlines), making this too vague to substantively address current status and timeline."
+    },
+    {
+      "text": "Provides practical guidance on path selection",
+      "passed": true,
+      "evidence": "Response has a dedicated 'Should You Pursue FedRAMP 20x or Traditional Authorization?' section with criteria for each path and a practical recommendation (start with traditional while building OSCAL in parallel)."
+    },
+    {
+      "text": "Mentions OSCAL (Open Security Controls Assessment Language)",
+      "passed": true,
+      "evidence": "OSCAL is explained in Section 2 as 'a set of machine-readable data formats developed by NIST' covering what it enables and noting the FedRAMP PMO is rolling out OSCAL requirements progressively."
+    }
+  ]
+}

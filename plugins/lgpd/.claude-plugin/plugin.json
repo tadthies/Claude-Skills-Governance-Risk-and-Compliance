@@ -1,7 +1,7 @@
 {
   "name": "lgpd",
-  "description": "Brazil LGPD (Lei Geral de Proteção de Dados, Law 13,709/2018) compliance advisor — legal basis analysis (Arts. 7 & 11), data subject rights fulfilment (Art. 18), DPO/Encarregado appointment, ANPD breach notification (3-day preliminary / 20-day full report), DPIA/RIPD drafting, international transfer mechanisms, gap assessments, privacy notice drafting, consent management, penalty exposure analysis (fines up to 2% revenue / R$50M), and LGPD vs. GDPR comparison. Use for any Brazilian data protection or privacy compliance question.",
-  "version": "1.0.0",
+  "description": "Expert LGPD compliance advisor for Brazil's data protection law (Law 13,709/2018). Covers legal bases, data subject rights, ANPD obligations, DPO appointment, breach notification, DPIA, international transfers including Brazil-EU mutual adequacy (January 2026 — no SCCs/BCRs needed for EU transfers), penalties up to 2% revenue / R$50M, gap assessments, and GDPR comparison.",
+  "version": "1.1.0",
   "author": {
     "name": "Hemant Naik",
     "email": "hemant.naik@gmail.com"
@@ -9,14 +9,5 @@
   "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
   "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
   "license": "MIT",
-  "category": "compliance",
-  "keywords": [
-    "lgpd",
-    "brazil-privacy",
-    "anpd",
-    "lei-geral-protecao-dados",
-    "data-protection",
-    "privacy",
-    "grc"
-  ]
+  "keywords": ["lgpd", "brazil", "data-protection", "anpd", "privacy", "grc", "brazil-eu-adequacy"]
 }

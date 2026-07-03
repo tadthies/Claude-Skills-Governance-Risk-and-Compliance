@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "States the controller must process the deletion request and pass it to processors (email platform, analytics) — similar to GDPR downstream obligation",
+      "passed": true,
+      "evidence": "Section 1 explicitly addresses the controller → processor downstream obligation, calling out CRM, email marketing platform, and analytics tool specifically. States 'your obligation extends to your processors (operadors)' with reference to Art. 42 joint liability."
+    },
+    {
+      "text": "Specifies that the deletion must occur within 15 business days (ANPD guidance) from the request",
+      "passed": true,
+      "evidence": "Section 2 specifies '15 business days' as the response window for deletion requests, citing 'ANPD guidance and resolutions' and presenting it in a clear timeline table."
+    },
+    {
+      "text": "Lists at least three exceptions to deletion under LGPD Art. 16 (e.g., compliance with legal obligation, transfer to third party permitted by law, research/studies, protection of data subject's life, fraud prevention, or credit protection)",
+      "passed": true,
+      "evidence": "Section 3 lists all six Art. 16 exceptions in a table: legal/regulatory obligation (Art. 16, I), transfer to third parties permitted by LGPD (Art. 16, II), research/anonymised use (Art. 16, III), protection of life (Art. 16, IV), fraud prevention and credit protection (Art. 16, V), and judicial/administrative proceedings (Art. 16, VI)."
+    },
+    {
+      "text": "Explains that consent-based data must be deleted when consent is revoked, but data processed under other legal bases (e.g., contract, legal obligation) may be retained as permitted",
+      "passed": true,
+      "evidence": "Section 4 explicitly addresses this with a table comparing legal bases: consent-based data must be deleted when consent is revoked (Art. 18, VI / Art. 8, §5º); contract-based data may be retained during the contract period and legal retention periods; legal obligation data must be retained for duration of legal duty."
+    },
+    {
+      "text": "Advises documenting the deletion request and response in the controller's records as evidence of compliance for ANPD accountability",
+      "passed": true,
+      "evidence": "Section 5 provides detailed documentation guidance: logging the request, recording actions taken, recording exceptions applied, recording processor confirmations, and retaining the data subject response — all framed as ANPD accountability evidence."
+    }
+  ]
+}

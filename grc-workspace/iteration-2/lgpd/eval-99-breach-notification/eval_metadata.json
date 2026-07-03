@@ -1,0 +1,20 @@
+{
+  "eval_id": "eval-99",
+  "eval_name": "eval-99-breach-notification",
+  "skill": "lgpd",
+  "iteration": 2,
+  "date_run": "2026-07-02",
+  "prompt": "We experienced a data breach affecting 50,000 Brazilian customers. Names, email addresses, and CPF numbers were exposed. What are our LGPD breach notification obligations, to whom, and within what timeframes?",
+  "skill_file": "plugins/lgpd/skills/lgpd/SKILL.md",
+  "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "without_skill": {
+    "pass_rate": 0.4,
+    "passed": 2,
+    "total": 5
+  },
+  "delta": 0.6
+}

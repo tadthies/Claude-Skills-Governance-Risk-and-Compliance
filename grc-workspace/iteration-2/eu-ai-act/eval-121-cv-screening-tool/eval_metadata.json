@@ -1,0 +1,27 @@
+{
+  "eval_id": "eval-121-cv-screening-tool",
+  "skill": "eu-ai-act",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "prompt": "We are a US SaaS company that sells an AI-powered CV screening and candidate ranking tool to European employers. It filters job applications and ranks candidates based on skills and predicted fit. We plan to launch in Germany and France in Q1 next year. Does this fall under the EU AI Act, and what are our obligations?",
+  "assertion_count": 5,
+  "with_skill": {
+    "passed": 5,
+    "total": 5,
+    "pass_rate": 1.0,
+    "output_path": "with_skill/outputs/response.md",
+    "grading_path": "with_skill/grading.json"
+  },
+  "without_skill": {
+    "passed": 4,
+    "total": 5,
+    "pass_rate": 0.8,
+    "output_path": "without_skill/outputs/response.md",
+    "grading_path": "without_skill/grading.json",
+    "failed_assertions": [
+      "States the 2 December 2027 compliance deadline for Annex III standalone high-risk systems (extended by the Digital Omnibus adopted June 29, 2026)"
+    ]
+  },
+  "delta": 0.2,
+  "key_differentiator": "Without-skill response cited the old August 2, 2026 deadline rather than the Digital Omnibus-extended December 2, 2027 deadline. The skill correctly reflects the June 29, 2026 Digital Omnibus amendment."
+}

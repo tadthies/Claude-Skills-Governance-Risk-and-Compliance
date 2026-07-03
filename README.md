@@ -136,17 +136,17 @@ The SOC 2 skill turns Claude into an expert SOC 2 compliance advisor grounded in
 
 **File:** `FedRamp - Claude Skill/fedramp.skill`
 
-The FedRAMP skill turns Claude into a knowledgeable FedRAMP advisor covering the full authorization lifecycle for Cloud Service Providers (CSPs) under the current **NIST SP 800-53 Rev 5** baseline. It is current as of 2025–2026, incorporating the Rev 5 transition, the September 2026 OSCAL mandate, and December 2024 template updates.
+The FedRAMP skill turns Claude into a knowledgeable FedRAMP advisor covering the full authorization lifecycle for Cloud Service Providers (CSPs) under **NIST SP 800-53 Rev 5** and the new **CR26 (Certification Reform 2026)** framework. Current as of July 2026 — incorporating CR26 Certification Classes A–D (replacing Low/Moderate/High), FedRAMP 20x as the primary pathway, the FedRAMP Ready retirement (July 28, 2026), and the September 2026 OSCAL mandate.
 
 **What it does:**
-- Conducts **readiness and gap assessments** using a 75+ item checklist across 14 security domains
-- Guides authoring of **ATO documentation**: System Security Plans (SSP), POA&Ms, SAPs, SARs, and all required appendices (A–Q)
-- **Maps NIST 800-53 Rev 5 controls** across all 20 control families to specific system implementations
+- Conducts **readiness and gap assessments** using a 75+ item checklist, mapped to CR26 Certification Classes (A/B/C/D)
+- Guides authoring of **ATO documentation**: System Security Plans (SSP), POA&Ms (with correct SLAs: Critical=15d, High=30d, Moderate=90d, Low=365d), SAPs, SARs, and all appendices (A–Q)
+- **Maps NIST 800-53 Rev 5 controls** across all 20 control families; advises on FedRAMP 20x continuous authorization approach
 - Provides **cloud architecture guidance** for AWS GovCloud, Azure Government, and Google Cloud Government
 - Supports **Continuous Monitoring (ConMon)** obligations: monthly deliverables, POA&M SLA management, deviation requests
-- Guides the **Rev 4 → Rev 5 transition**, FIPS 199 impact level scoping, and OSCAL readiness
+- Advises on **OSCAL readiness** for the mandatory September 30, 2026 submission deadline
 
-**Trigger phrases:** `FedRAMP`, `ATO`, `SSP`, `POA&M`, `3PAO`, `NIST 800-53`, `ConMon`, `AWS GovCloud`, `Azure Government`, `impact level`, `OSCAL`
+**Trigger phrases:** `FedRAMP`, `ATO`, `SSP`, `POA&M`, `3PAO`, `NIST 800-53`, `ConMon`, `AWS GovCloud`, `Azure Government`, `CR26`, `FedRAMP 20x`, `OSCAL`, `Certification Class`
 
 ---
 
@@ -369,19 +369,19 @@ The NIST AI RMF skill turns Claude into an expert advisor on the **NIST AI Risk 
 
 **File:** `SWIFT CSP - Claude Skill/swift-csp.skill`
 
-The SWIFT CSP skill turns Claude into an expert advisor on the **SWIFT Customer Security Controls Framework (CSCF) v2025** — the mandatory cybersecurity programme for all SWIFT network participants. It covers all 31 controls (23 mandatory + 8 advisory), all five architecture types (A1/A2/A3/A4/B), the KYC-SA annual attestation process, and complete cross-framework mappings to ISO 27001:2022, PCI DSS v4.0.1, and NIST CSF 2.0.
+The SWIFT CSP skill turns Claude into an expert advisor on the **SWIFT Customer Security Controls Framework (CSCF) v2026** — the mandatory cybersecurity programme for all SWIFT network participants. It covers all 31 controls (**24 mandatory + 7 advisory** — Control 2.4 Back-Office Data Flow Security promoted to mandatory in v2026), all five architecture types (A1/A2/A3/A4/B), the KYC-SA annual attestation process (window July 1 – December 31, 2026), and complete cross-framework mappings to ISO 27001:2022, PCI DSS v4.0.1, and NIST CSF 2.0.
 
 **What it does:**
 - Determines the correct **SWIFT architecture type** (A1/A2/A3/A4/B) from a description of the organisation's SWIFT connectivity and produces the full mandatory/advisory control applicability matrix
-- Conducts structured **CSCF v2025 gap assessments** with 🔴/🟡/🟢 status per control, evidence requirements, and prioritised remediation roadmaps
-- Provides **deep-dive implementation guidance** for all 23 mandatory controls — purpose, requirements, step-by-step implementation, and audit evidence artifacts
+- Conducts structured **CSCF v2026 gap assessments** with 🔴/🟡/🟢 status per control, evidence requirements, and prioritised remediation roadmaps
+- Provides **deep-dive implementation guidance** for all 24 mandatory controls — including **Control 2.4** (Back-Office Data Flow Security, newly mandatory in v2026) with implementation steps and audit evidence
 - Guides the complete **KYC-SA attestation process** — evidence preparation per control, independent assessor qualification criteria, portal submission steps, and post-submission counterparty visibility
-- Advises on the **CSCF v2024 → v2025 changes**: critical patch SLA tightened from 7 to 3 days, hardware MFA token requirement explicitly mandated, log retention clarified (1 year online, 3 years total)
+- Advises on the **CSCF v2025 → v2026 changes**: Control 2.4 promoted from advisory to mandatory; attestation window July 1 – December 31, 2026
 - Provides **SWIFT-specific incident response** guidance — 24-hour initial notification to security@swift.com, 30-day full report, evidence preservation, and IRP content requirements for Control 7.1
 - Explains **Type B (service bureau) responsibilities** — the split between bureau and customer obligations, and how to verify your bureau's KYC-SA attestation
 - **Maps CSCF controls to ISO 27001:2022, PCI DSS v4.0.1, and NIST CSF 2.0** — identifying both synergies and SWIFT-specific additions not covered by existing certifications
 
-**Trigger phrases:** `SWIFT CSP`, `CSCF`, `KYC-SA`, `SWIFT security attestation`, `Alliance Access`, `SWIFT operator MFA`, `SWIFT secure zone`, `SWIFT secure flow zone`, `CSCF v2025`, `Control 4.2 SWIFT`, `Control 6.4 SWIFT`, `Control 7.1 SWIFT`, `SWIFT architecture type A1`, `SWIFT service bureau`, `Type B SWIFT`, `SWIFT incident response`, `SWIFT gap assessment`, `SWIFT mandatory controls`, `SWIFT hardware token`, `SWIFT log retention`
+**Trigger phrases:** `SWIFT CSP`, `CSCF`, `KYC-SA`, `SWIFT security attestation`, `Alliance Access`, `SWIFT operator MFA`, `SWIFT secure zone`, `SWIFT secure flow zone`, `CSCF v2026`, `Control 2.4 SWIFT`, `Control 4.2 SWIFT`, `Control 6.4 SWIFT`, `Control 7.1 SWIFT`, `SWIFT architecture type A1`, `SWIFT service bureau`, `Type B SWIFT`, `SWIFT incident response`, `SWIFT gap assessment`, `SWIFT mandatory controls`, `SWIFT hardware token`, `SWIFT log retention`
 
 ---
 
@@ -768,8 +768,8 @@ The EU CRA skill turns Claude into an expert advisor on **Regulation (EU) 2024/2
 | Assessing bias and fairness of a hiring AI tool (demographic parity, equalized odds, EEOC 4/5ths rule) | NIST AI RMF |
 | Designing a post-deployment AI monitoring programme using MEASURE 3.x and MANAGE 3.x | NIST AI RMF |
 | Integrating NIST AI RMF with an existing NIST CSF programme | NIST AI RMF + NIST CSF |
-| Determining your SWIFT architecture type (A1/A2/A3/A4/B) and getting the full CSCF v2025 control applicability matrix | SWIFT CSP |
-| Running a CSCF v2025 gap assessment for an Alliance Access on-premises deployment | SWIFT CSP |
+| Determining your SWIFT architecture type (A1/A2/A3/A4/B) and getting the full CSCF v2026 control applicability matrix | SWIFT CSP |
+| Running a CSCF v2026 gap assessment for an Alliance Access on-premises deployment (including Control 2.4 now mandatory) | SWIFT CSP |
 | Understanding why software OTP (Google Authenticator) fails Control 4.2 and remediating with hardware tokens before July attestation | SWIFT CSP |
 | Preparing all evidence and completing the annual KYC-SA attestation via swift.com/myswift | SWIFT CSP |
 | Developing a SWIFT-specific incident response plan covering 24-hour SWIFT notification and 30-day report obligations | SWIFT CSP |
@@ -934,7 +934,7 @@ These skills were benchmarked using the [Claude Skill Creator](https://claude.ai
 |-------|-----------|-----------|---------|-------|-----------------|
 | ISO 27001 | 5 | **100%** | 84% | +16% | Gap assessment; Policy drafting; 2013→2022 transition; Risk assessment; Management review CAP |
 | SOC 2 | 5 | **100%** | 84% | +16% | Type 1 vs 2; CC controls checklist; Availability criteria; Access control policy; Audit exception response |
-| FedRAMP [US] | 5 | **84%** | 76% | +8% | Authorization pathways; Impact levels; FedRAMP 20x; System boundary; POA&M remediation timelines |
+| FedRAMP [US] | 5 | **100%** | 96% | +4% | Authorization pathways; CR26 Certification Classes A-D; FedRAMP 20x (primary pathway); OSCAL mandate Sep 2026; POA&M remediation timelines |
 | GDPR [EU] | 5 | **100%** | 96% | +4% | US company checklist; Article 28 DPA; Subject access request; Cookie consent; 72-hour breach notification |
 | HIPAA [US] | 5 | **92%** | 88% | +4% | Covered entity analysis; BAA template; Encryption (addressable vs required); Risk analysis; Workforce violation |
 | NIST CSF | 5 | **96%** | 84% | +12% | CSF 2.0 overview; Ransomware recovery plan; Profile creation; Control mapping; Board reporting |
@@ -946,17 +946,17 @@ These skills were benchmarked using the [Claude Skill Creator](https://claude.ai
 | DPDPA [India] | 5 | **96%** | 80% | +16% | Applicability to foreign entities; Consent vs GDPR; Children's data (18-year threshold); Cross-border transfers; SDF obligations |
 | CMMC 2.0 [US] | 5 | **100%** | 100% | +0% | Level determination; SPRS scoring; CUI scoping; SSP structure; C3PAO assessment readiness |
 | NIST AI RMF | 5 | **92%** | 76% | +16% | Four functions overview; Hiring AI risk assessment; Credit scoring risk register; EU AI Act mapping; GOVERN gap assessment |
-| SWIFT CSP | 5 | **100%** | 44% | +56% | Architecture scoping (A1/A2/A3/A4/B); MFA hardware token requirement; CSCF v2025 gap assessment; KYC-SA attestation process; Incident response obligations |
+| SWIFT CSP | 5 | **100%** | 80% | +20% | Architecture scoping (A1/A2/A3/A4/B); MFA hardware token requirement; CSCF v2026 gap assessment; Control 2.4 now mandatory; KYC-SA attestation; Incident response obligations |
 | ISM [Australia] | 5 | **96%** | 52% | +44% | OS control scoping and authorisation; IRAP assessment preparation; Chapter 13 system hardening; Essential Eight to ISM mapping; Supply chain cloud provider obligations |
 | NIS2 [EU] | 5 | **100%** | 88% | +12% | Energy company EE/IE classification; SaaS provider Art. 21 obligations; Ransomware Art. 23 reporting workflow; ISO 27001 vs NIS2 gap analysis; DORA lex specialis interaction |
 | CCPA/CPRA [California] | 5 | **100%** | 96% | +4% | E-commerce threshold analysis; Combined right-to-know and delete workflow; Ad tech sale vs sharing classification; GDPR-to-CCPA gap analysis; SPI classification for mobile app |
 | ITAR [US] | 5 | **100%** | 100% | 0% | USML jurisdiction analysis for military laptops; Deemed export for German engineer; DSP-73 temporary export for trade show; Violation and VSD process; TAA mandatory clauses for India |
-| LGPD [Brazil] | 5 | **100%** | 76% | +24% | Extraterritorial scope for US SaaS with Brazilian customers; Data deletion request across CRM/email/analytics; Sensitive health data marketing restrictions; Breach notification timelines (3 working days vs GDPR 72h); International transfer mechanisms to the US |
+| LGPD [Brazil] | 5 | **100%** | 52% | +48% | Extraterritorial scope for US SaaS with Brazilian customers; Brazil-EU mutual adequacy (Jan 2026 — no SCCs needed); Data deletion request across CRM/email/analytics; Sensitive health data marketing restrictions; International transfer mechanisms |
 | CSRD [EU] | 5 | **100%** | 72% | +28% | CSRD scope analysis for German listed manufacturer (PIE Wave 1); Double materiality vs GRI/TCFD; Post-DMA disclosure requirements for E1/S1/G1; GRI+TCFD to ESRS gap assessment; Non-EU company (US parent, €200M EU revenue) obligations |
 | CIS Controls v8 | 5 | **100%** | 80% | +20% | Implementation Group determination; Gap assessment for SaaS startup; MFA safeguard scoping (IG2); CIS v8 to NIST CSF 2.0 mapping; Vulnerability management programme with remediation SLAs |
 | EAR [US] | 5 | **100%** | 88% | +12% | RF amplifier ECCN classification for Germany export; Deemed export for Chinese/Australian dual national on 5D002; Entity List re-export violation and VSD process; AES-256 software ENC exception for France/India/Brazil; ECP design for semiconductor equipment company |
 | NIST SP 800-53 | 5 | **92%** | 84% | +8% | FIPS 199 categorization for federal HR system; AC-2(3) OTS finding and POA&M documentation; MFA controls and EO 14028 phishing-resistant MFA; SSP narrative for SC-8(1) Transmission Confidentiality; ISO 27001 to FedRAMP gap analysis and RMF steps |
-| EU AI Act | 5 | **100%** | 76% | +24% | CV screening tool high-risk classification under Annex III Area 4; Predictive policing Art. 5 prohibition analysis; Open-source GPAI model obligations with 3×10²⁴ FLOPs; AI diagnostic imaging tool dual MDR/AI Act regulation; E-commerce chatbot Art. 50(1) disclosure obligations |
+| EU AI Act | 5 | **100%** | 80% | +20% | CV screening high-risk + Annex III Area 4 + Digital Omnibus Dec 2027 deadline; Predictive policing Art. 5 prohibition; Open-source GPAI CoP + 3×10²⁴ FLOPs exception; MDR+AI Act interaction + Aug 2028 Annex I deadline; E-commerce chatbot Art. 50 disclosure |
 | Section 508 [US] | 5 | **100%** | 100% | 0% | VPAT 2.x ACR completion and testing methodology; Keyboard-only navigation failures and WCAG remediation; PDF forms accessibility remediation (200 PDFs); Federal procurement RFP requirements and VPAT evaluation; Undue burden exception process and alternative access obligations |
 | WCAG [International] | 5 | **100%** | 89% | +11% | Colour contrast audit (SC 1.4.3) with replacement suggestions; WCAG 2.2 upgrade criteria from 2.1 AA; React modal ARIA code review with corrected implementation; Legal compliance mapping across US/EU/UK; Accessibility statement for e-commerce site |
 | NZISM [New Zealand] | 5 | **100%** | 88% | +12% | Restricted system C&A gap analysis; AWS Sydney offshore hosting obligations; Access Control Policy with NZISM control IDs; Ransomware supplier incident response; SaaS vendor due diligence and contractual requirements |

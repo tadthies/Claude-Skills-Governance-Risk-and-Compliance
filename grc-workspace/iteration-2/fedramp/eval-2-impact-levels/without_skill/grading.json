@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains all three impact levels: Low, Moderate, High",
+      "passed": true,
+      "evidence": "Response has dedicated sections for FedRAMP Low, Moderate, and High, each with definition, characteristics, approximate control count, and example use cases."
+    },
+    {
+      "text": "References FIPS 199 as the basis for impact categorization",
+      "passed": true,
+      "evidence": "Opening section is titled 'The Basis for Impact Level Determination: FIPS 199' and explicitly explains FIPS 199 and its three dimensions (confidentiality, integrity, availability) with the high-water mark rule."
+    },
+    {
+      "text": "States approximate number of controls for each level",
+      "passed": true,
+      "evidence": "Response states ~125 controls for Low, ~325 for Moderate, ~421 for High, and ~47 for LI-SaaS in both prose and a comparison table."
+    },
+    {
+      "text": "Addresses law enforcement data sensitivity and likely High impact designation",
+      "passed": true,
+      "evidence": "Response has a dedicated section 'Your Situation: Law Enforcement Sensitive Data' explicitly stating FedRAMP High is required with multiple reasons, including FIPS 199 confidentiality analysis and practical implications."
+    },
+    {
+      "text": "Mentions LI-SaaS as a special category for Low impact",
+      "passed": true,
+      "evidence": "LI-SaaS is addressed within the Low Impact section with description of criteria (no federal data storage, ~47 controls, limited scope) and noted as a 'narrow set of qualifying SaaS products.'"
+    }
+  ]
+}

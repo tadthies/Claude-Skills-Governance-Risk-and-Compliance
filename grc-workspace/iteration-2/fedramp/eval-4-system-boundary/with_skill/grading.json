@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Defines the authorization boundary clearly",
+      "passed": true,
+      "evidence": "Section 1 provides a clear definition of the authorization boundary, identifying it as 'all components that process, store, or transmit federal information' with logical and physical perimeters, CSP responsibility scope, and reference to the CRM/ISPP."
+    },
+    {
+      "text": "Lists all included system components (web app, PostgreSQL, Redis, AWS GovCloud)",
+      "passed": true,
+      "evidence": "Section 2 provides a complete table of in-boundary components including: Web Application, Application Load Balancer, PostgreSQL Database (RDS), Redis Cache (ElastiCache), Administrative Interface, VPC, S3 Buckets, and CloudTrail/Logging — all in AWS GovCloud."
+    },
+    {
+      "text": "Addresses external SaaS integrations (Okta, SendGrid) and their FedRAMP status",
+      "passed": true,
+      "evidence": "Section 4 has dedicated subsections for both Okta (noting FedRAMP Moderate Authorized status and advising verification at marketplace.fedramp.gov) and SendGrid (flagging that FedRAMP authorization must be verified, and providing three options if it is not authorized)."
+    },
+    {
+      "text": "Mentions interconnection security agreements (ISA/MOU) for external systems",
+      "passed": true,
+      "evidence": "Section 5 is dedicated to 'Interconnection Security Agreements (ISA/MOU)' listing all required fields. Both external service subsections (Okta and SendGrid) also explicitly state 'Interconnection Agreement Required.'"
+    },
+    {
+      "text": "Notes AWS GovCloud as the infrastructure layer and its FedRAMP inheritance",
+      "passed": true,
+      "evidence": "Section 3 explains AWS GovCloud's FedRAMP High authorization, inherited controls (PE, SC, MP), shared/leveraged controls, and references the CRM/ISPP documentation for inherited control tracking."
+    }
+  ]
+}

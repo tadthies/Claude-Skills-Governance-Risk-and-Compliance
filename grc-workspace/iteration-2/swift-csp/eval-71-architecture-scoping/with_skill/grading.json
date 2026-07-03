@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-71",
+  "eval_name": "eval-71-architecture-scoping",
+  "condition": "with_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "71-A1",
+      "description": "Correctly identifies the bank's architecture as A1 (customer connector, customer-managed, software-based)",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explicitly identifies the architecture as 'Architecture Type A1: Customer Connector, Customer-Managed, Software-Based' with clear reasoning referencing Alliance Access, on-premises deployment, and absence of HSMs."
+    },
+    {
+      "id": "71-A2",
+      "description": "Lists all 24 mandatory controls applicable to A1 in v2026 including 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.4, 2.6, 2.7, 2.8, 2.10, 3.1, 4.1, 4.2, 5.1, 5.2, 5.4, 6.1, 6.2, 6.3, 6.4, 7.1, 7.2 (note: 2.4 is mandatory in v2026)",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response lists all 24 mandatory controls in a numbered table and provides the complete list of control IDs including 2.4 as mandatory. All required controls are present."
+    },
+    {
+      "id": "71-A3",
+      "description": "Identifies advisory controls in v2026 and notes that Control 2.4 (Back-Office Data Flow Security) is now mandatory in v2026",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response lists advisory controls (1.3A, 1.5A, 2.5A, 2.9A, 2.11A, 5.3A, 6.5A, 7.3A, 7.4A) and has a dedicated section explicitly stating 'Control 2.4 — Back-Office Data Flow Security was an Advisory control in CSCF v2025. In CSCF v2026, it is now Mandatory.'"
+    },
+    {
+      "id": "71-A4",
+      "description": "Explains that A1 is the most common architecture for large banks running Alliance Access on-premises",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states 'A1 is the most common architecture for large banks and broker-dealers running Alliance Access on-premises.'"
+    },
+    {
+      "id": "71-A5",
+      "description": "Notes that KYC-SA attestation requires attestation against mandatory controls only, but advisory controls may be reviewed by counterparties",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explicitly states 'You must attest against all 24 mandatory controls' and 'Advisory controls are not required for attestation' but also notes 'some correspondent banks and financial market infrastructures do review advisory control implementation as part of their due diligence.'"
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 5,
+  "failed_assertions": 0,
+  "pass_rate": 1.0
+}

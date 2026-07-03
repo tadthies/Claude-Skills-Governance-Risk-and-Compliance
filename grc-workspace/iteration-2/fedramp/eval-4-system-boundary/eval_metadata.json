@@ -1,0 +1,13 @@
+{
+  "eval_id": 14,
+  "eval_name": "FedRAMP System Boundary",
+  "skill": "fedramp",
+  "prompt": "Draft a System Boundary Description for a FedRAMP Moderate SSP. Our system is a web application hosted on AWS GovCloud with a PostgreSQL database, Redis cache, and integrations with two external SaaS tools (Okta for authentication and SendGrid for email).",
+  "assertions": [
+    "Defines the authorization boundary clearly",
+    "Lists all included system components (web app, PostgreSQL, Redis, AWS GovCloud)",
+    "Addresses external SaaS integrations (Okta, SendGrid) and their FedRAMP status",
+    "Mentions interconnection security agreements (ISA/MOU) for external systems",
+    "Notes AWS GovCloud as the infrastructure layer and its FedRAMP inheritance"
+  ]
+}

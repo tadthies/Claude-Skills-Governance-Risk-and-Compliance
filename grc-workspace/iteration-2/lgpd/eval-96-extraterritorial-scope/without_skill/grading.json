@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 3,
+  "pass_rate": 0.6,
+  "expectations": [
+    {
+      "text": "Confirms LGPD applies to the US company because data of individuals in Brazil is processed, and/or services are offered to persons in Brazil — Art. 3 extraterritorial reach",
+      "passed": true,
+      "evidence": "Response confirms LGPD applies due to offering services to Brazilian customers and collecting their data, referencing the three trigger conditions. Mentions Art. 3 criteria without explicit article citation but the substance is correct."
+    },
+    {
+      "text": "Explains that the absence of physical presence in Brazil is irrelevant — LGPD has broad extraterritorial scope similar to GDPR",
+      "passed": true,
+      "evidence": "Response states 'The fact that your servers are in the US does not exempt you' and confirms physical presence is not required. Compares the extraterritorial design to GDPR implicitly."
+    },
+    {
+      "text": "States that collection of CPF (tax ID) constitutes personal data processing and may constitute sensitive data collection requiring stricter legal basis",
+      "passed": false,
+      "evidence": "Response mentions CPF as personal data but does not address whether it could constitute sensitive data or discuss stricter legal basis requirements. It only notes it 'may create heightened sensitivity' without specifics on Art. 11 or stricter legal bases."
+    },
+    {
+      "text": "Lists the key obligations that now apply: DPO appointment, legal basis for processing, privacy notice, data subject rights, breach notification",
+      "passed": true,
+      "evidence": "Response lists DPO (Encarregado), legal basis, privacy notice, data subject rights, security measures, and breach notification as obligations. Covers all key items, though without article citations."
+    },
+    {
+      "text": "Notes that the ANPD has enforcement authority and can impose fines up to 2% of Brazilian revenue or R$50M per violation",
+      "passed": false,
+      "evidence": "Response mentions ANPD can impose fines up to 2% of Brazilian revenue but omits the R$50M per violation cap, which is a key specific detail of the assertion. The cap is a material component of the penalty framework."
+    }
+  ]
+}

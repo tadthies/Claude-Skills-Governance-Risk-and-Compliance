@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 3,
+  "pass_rate": 0.6,
+  "expectations": [
+    {
+      "text": "Correctly identifies the system as high-risk via Annex I Path A (Art. 6(1)) because Regulation 2017/745 (Medical Devices) is listed in Annex I Section A",
+      "passed": false,
+      "evidence": "Response incorrectly references 'Annex I, Section 5' and 'Annex II' (not Annex I) as where MDR is listed. The actual EU AI Act lists MDR in Annex I Section A. The response states 'Annex II of the EU AI Act specifically lists EU MDR (Regulation 2017/745)' which is factually incorrect — it is Annex I. The Path A classification concept is correct but the specific Annex reference is wrong."
+    },
+    {
+      "text": "Explains that MDR CE marking does NOT automatically satisfy AI Act compliance requirements",
+      "passed": true,
+      "evidence": "Response explicitly states in the Executive Summary: 'The CE marking obtained under the EU Medical Device Regulation (MDR, Regulation 2017/745) does not automatically satisfy EU AI Act requirements' and Section 2.3 lists specific gaps the MDR assessment does not cover."
+    },
+    {
+      "text": "Explains that AI Act requirements (Arts. 9-17) must be integrated into the existing MDR conformity assessment procedure",
+      "passed": true,
+      "evidence": "Response states in section 4.3: 'the same Notified Body is expected to verify AI Act compliance as part of the integrated assessment'. Section 3.1 covers provider obligations including Arts. 9-17 requirements. The integration approach is correctly described."
+    },
+    {
+      "text": "States the 2 August 2028 deadline specifically for Annex I safety component systems (extended by the Digital Omnibus adopted June 29, 2026)",
+      "passed": false,
+      "evidence": "Response states the transitional period ends in 'August 2027' (section 5.2: 'allowing continued use until August 2027'). The 2 August 2028 deadline confirmed by the Digital Omnibus is not mentioned. The Digital Omnibus is not referenced at all."
+    },
+    {
+      "text": "Identifies hospital deployer obligations under Art. 26 (instructions compliance, staff competence, monitoring, log retention)",
+      "passed": true,
+      "evidence": "Section 3.2 covers deployer obligations including: instructions compliance (Art. 26(1)), human oversight (Art. 26(2)), monitoring (Art. 26(5)), record-keeping with '6 months' log retention (Art. 26(6)). Staff competence (Art. 26(4)) also mentioned via training requirements."
+    }
+  ]
+}

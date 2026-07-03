@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-71",
+  "eval_name": "eval-71-architecture-scoping",
+  "condition": "without_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "71-A1",
+      "description": "Correctly identifies the bank's architecture as A1 (customer connector, customer-managed, software-based)",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response correctly identifies A1 architecture with appropriate reasoning about Alliance Access, on-premises deployment, and software-based approach without HSMs."
+    },
+    {
+      "id": "71-A2",
+      "description": "Lists all 24 mandatory controls applicable to A1 in v2026 including 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.4, 2.6, 2.7, 2.8, 2.10, 3.1, 4.1, 4.2, 5.1, 5.2, 5.4, 6.1, 6.2, 6.3, 6.4, 7.1, 7.2 (note: 2.4 is mandatory in v2026)",
+      "pass": false,
+      "score": 0,
+      "rationale": "Response lists most mandatory controls but notably omits Control 2.4 from the mandatory list — it does not appear in the mandatory section at all. The response hedges on 2.4 with a note saying 'you should verify in the current CSCF version whether it is mandatory or advisory.' Without the skill, the model does not know that 2.4 is mandatory in v2026."
+    },
+    {
+      "id": "71-A3",
+      "description": "Identifies advisory controls in v2026 and notes that Control 2.4 (Back-Office Data Flow Security) is now mandatory in v2026",
+      "pass": false,
+      "score": 0,
+      "rationale": "Response lists advisory controls but explicitly says Control 2.4 'has historically been advisory' and suggests verifying current status, rather than stating definitively that it is mandatory in v2026. The response fails to confirm the v2026 mandatory status of 2.4."
+    },
+    {
+      "id": "71-A4",
+      "description": "Explains that A1 is the most common architecture for large banks running Alliance Access on-premises",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states 'A1 is indeed the most common architecture for large and mid-tier banks that run their own SWIFT infrastructure.'"
+    },
+    {
+      "id": "71-A5",
+      "description": "Notes that KYC-SA attestation requires attestation against mandatory controls only, but advisory controls may be reviewed by counterparties",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states 'Advisory controls are generally not required for attestation but may be reviewed by counterparties' — this correctly captures the distinction."
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 3,
+  "failed_assertions": 2,
+  "pass_rate": 0.6
+}

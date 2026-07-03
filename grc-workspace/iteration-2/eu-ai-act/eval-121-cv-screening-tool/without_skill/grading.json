@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 4,
+  "pass_rate": 0.8,
+  "expectations": [
+    {
+      "text": "Correctly identifies system as high-risk under Annex III Area 4 (recruitment/candidate selection) via Art. 6(2)",
+      "passed": true,
+      "evidence": "Response correctly identifies 'Annex III, Point 4 of the EU AI Act explicitly lists as high-risk: AI systems intended to be used for recruitment or selection of natural persons, notably for advertising vacancies, screening or filtering applications'. High-risk classification and Annex III Point 4 are clearly stated, though Art. 6(2) is not cited by number."
+    },
+    {
+      "text": "Lists at least 4 key provider obligations from Arts. 9-17 (e.g., risk management, data governance, human oversight, conformity assessment)",
+      "passed": true,
+      "evidence": "Response covers: Art. 9 (risk management), Art. 10 (data governance), Art. 11 (technical documentation), Art. 12 (logging), Art. 13 (transparency), Art. 14 (human oversight), Art. 15 (accuracy), Art. 17 (QMS). Covers all major obligations."
+    },
+    {
+      "text": "States the 2 December 2027 compliance deadline for Annex III standalone high-risk systems (extended by the Digital Omnibus adopted June 29, 2026)",
+      "passed": false,
+      "evidence": "Response incorrectly states the deadline as '2 August 2026' ('High-Risk obligations fully apply' as of Aug 2026), without knowledge of the Digital Omnibus extension to 2 December 2027. The 2027 deadline and Digital Omnibus are not mentioned."
+    },
+    {
+      "text": "Mentions CE marking (Art. 48) and EU AI database registration (Art. 49) requirements",
+      "passed": true,
+      "evidence": "Response states 'affix the CE marking (Article 49) to your product' and 'Register the system in the EU-wide AI public database (Article 51)'. Article numbers are slightly off (CE marking is Art. 48, registration Art. 49/71), but both obligations are correctly identified."
+    },
+    {
+      "text": "Identifies the correct conformity assessment path: self-assessment (Annex VI) for Annex III Area 4 systems (Points 2-8)",
+      "passed": true,
+      "evidence": "Response states 'For an AI-based CV screening tool in 2025-2026, you will conduct internal conformity assessment — meaning you self-certify conformity' and 'For Annex III High-Risk systems in most categories (including employment AI under Point 4), the conformity assessment procedure is: Self-assessment (internal control, Annex VI)'."
+    }
+  ]
+}

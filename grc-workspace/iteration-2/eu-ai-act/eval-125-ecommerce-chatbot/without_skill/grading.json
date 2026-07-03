@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly classifies the chatbot as limited risk (not high-risk) under Art. 50 — not falling under Annex III",
+      "passed": true,
+      "evidence": "Response states: 'A standard e-commerce chatbot that answers questions, processes returns, and recommends products does not fall into Annex III and is therefore not classified as high-risk under the current Act. Your chatbot is most likely a limited-risk AI system subject primarily to Article 50 transparency obligations'."
+    },
+    {
+      "text": "Correctly states Art. 50(1) disclosure obligation: deployers must inform users they interact with an AI system",
+      "passed": true,
+      "evidence": "Response states under Art. 50: 'The chatbot must disclose its AI nature in a clear, unambiguous way. A statement such as You are chatting with an AI assistant at the outset satisfies this requirement'. Practical steps provided."
+    },
+    {
+      "text": "Notes that an e-commerce chatbot is not 'obviously AI' to a reasonably well-informed person and therefore disclosure is required",
+      "passed": true,
+      "evidence": "Response states: 'You may not design the chatbot to deceive users into thinking they are speaking with a human, unless the human illusion is obvious from context or the user has explicitly requested a human-like persona'. Disclosure obligations are clearly stated as mandatory, implying the chatbot does not meet the obvious exception."
+    },
+    {
+      "text": "Distinguishes deployer obligations (Art. 26, Art. 50) from provider/GPAI provider obligations (Art. 53)",
+      "passed": true,
+      "evidence": "Response has a dedicated section 'GPAI Model Provider Obligations (What Your Vendor Must Do)' with Art. 53 obligations, and separately covers deployer obligations under Art. 26 and Art. 50. The distinction is explicit and clearly explained."
+    },
+    {
+      "text": "States the 2 August 2026 application date for Art. 50 limited-risk transparency requirements",
+      "passed": true,
+      "evidence": "Response timeline table states 'Transparency obligations (Article 50): 2 August 2026' and section 7 states 'Article 50 transparency obligations are now in force' (as of mid-2026). The 2 August 2026 date is explicitly listed."
+    }
+  ]
+}

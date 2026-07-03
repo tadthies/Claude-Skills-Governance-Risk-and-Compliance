@@ -1,0 +1,25 @@
+{
+  "eval_id": "eval-123-gpai-open-source",
+  "skill": "eu-ai-act",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "prompt": "We are developing a large language model (GPT-class, 200 billion parameters, trained on 15 trillion tokens with compute of approximately 3x10^24 FLOPs). We plan to release it under an open-source licence. What are our EU AI Act obligations as a GPAI model provider?",
+  "assertion_count": 5,
+  "with_skill": {
+    "passed": 5,
+    "total": 5,
+    "pass_rate": 1.0,
+    "output_path": "with_skill/outputs/response.md",
+    "grading_path": "with_skill/grading.json"
+  },
+  "without_skill": {
+    "passed": 5,
+    "total": 5,
+    "pass_rate": 1.0,
+    "output_path": "without_skill/outputs/response.md",
+    "grading_path": "without_skill/grading.json",
+    "failed_assertions": []
+  },
+  "delta": 0.0,
+  "key_differentiator": "Both responses performed equally on this eval. GPAI model obligations (Art. 51-55, open-source exception, FLOPs threshold) are well-established in training data and both responses correctly handled all assertions. The without-skill response was notably thorough on Art. 55 systemic risk obligations that would apply if designated."
+}

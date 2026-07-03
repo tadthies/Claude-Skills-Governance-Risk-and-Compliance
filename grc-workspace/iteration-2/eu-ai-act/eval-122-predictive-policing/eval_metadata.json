@@ -1,0 +1,28 @@
+{
+  "eval_id": "eval-122-predictive-policing",
+  "skill": "eu-ai-act",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "prompt": "Our municipality plans to deploy a predictive policing AI tool that scores neighbourhoods by crime risk based on historical arrest data, social media monitoring, and demographic data. The vendor claims it is just a 'decision support tool'. Is this permitted under the EU AI Act? What are the legal risks?",
+  "assertion_count": 5,
+  "with_skill": {
+    "passed": 5,
+    "total": 5,
+    "pass_rate": 1.0,
+    "output_path": "with_skill/outputs/response.md",
+    "grading_path": "with_skill/grading.json"
+  },
+  "without_skill": {
+    "passed": 3,
+    "total": 5,
+    "pass_rate": 0.6,
+    "output_path": "without_skill/outputs/response.md",
+    "grading_path": "without_skill/grading.json",
+    "failed_assertions": [
+      "Also identifies Art. 5(1)(c) social scoring risk for the neighbourhood scoring component",
+      "States that Art. 5 prohibitions apply from 2 February 2025"
+    ]
+  },
+  "delta": 0.4,
+  "key_differentiator": "Without-skill response missed Art. 5(1)(c) social scoring (focusing on 5(1)(d), (e), (f) instead) and did not state the 2 February 2025 application date for Article 5 prohibitions. The skill provided precise article mapping and the correct date."
+}

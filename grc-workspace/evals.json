@@ -946,12 +946,12 @@
       "id": 71,
       "skill": "swift-csp",
       "skill_path": "plugins/swift-csp/skills/swift-csp/SKILL.md",
-      "prompt": "We are a mid-tier regional bank connecting to SWIFT via Alliance Access software running on our own servers on-premises. We have no HSMs and do not use a service bureau or cloud-hosted SWIFT. What is our SWIFT architecture type and which CSCF v2025 controls are mandatory for us versus advisory? Give us the full applicability matrix.",
+      "prompt": "We are a mid-tier regional bank connecting to SWIFT via Alliance Access software running on our own servers on-premises. We have no HSMs and do not use a service bureau or cloud-hosted SWIFT. What is our SWIFT architecture type and which CSCF v2026 controls are mandatory for us versus advisory? Give us the full applicability matrix.",
       "expected_output": "Identification of A1 architecture type, a complete applicability table showing all 31 CSCF controls with mandatory/advisory/not-applicable status for A1, and explanation of what A1 means.",
       "assertions": [
         "Correctly identifies the bank's architecture as A1 (customer connector, customer-managed, software-based)",
         "Lists all 23 mandatory controls applicable to A1 including 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.6, 2.7, 2.8, 2.10, 3.1, 4.1, 4.2, 5.1, 5.2, 5.4, 6.1, 6.2, 6.3, 6.4, 7.1, 7.2",
-        "Identifies the 8 advisory controls (1.3A, 1.5A, 2.4A, 2.5A, 2.9A, 2.11A, 5.3A, 6.5A, 7.3A, 7.4A) and notes they are recommended but not required for attestation",
+        "Identifies 7 advisory controls in v2026 (1.3A, 1.5A, 2.5A, 2.9A, 2.11A, 5.3A, 6.5A, 7.3A, 7.4A) and notes that Control 2.4 (Back-Office Data Flow Security) is now mandatory in v2026",
         "Explains that A1 is the most common architecture for large banks running Alliance Access on-premises",
         "Notes that KYC-SA attestation requires attestation against mandatory controls only, but advisory controls may be reviewed by counterparties"
       ],
@@ -976,7 +976,7 @@
       "id": 73,
       "skill": "swift-csp",
       "skill_path": "plugins/swift-csp/skills/swift-csp/SKILL.md",
-      "prompt": "Run a SWIFT CSCF v2025 gap assessment for our organisation. Here is our current state: SWIFT zone exists but is on a shared VLAN with other internal systems. We patch critical vulnerabilities within 30 days. We use software OTP for operator MFA. SWIFT logs are collected but not reviewed and retention is only 6 months. We have a general IT incident response plan but nothing SWIFT-specific. Operators use named individual accounts. Rate each relevant control and give us a prioritised remediation plan.",
+      "prompt": "Run a SWIFT CSCF v2026 gap assessment for our organisation. Here is our current state: SWIFT zone exists but is on a shared VLAN with other internal systems. We patch critical vulnerabilities within 30 days. We use software OTP for operator MFA. SWIFT logs are collected but not reviewed and retention is only 6 months. We have a general IT incident response plan but nothing SWIFT-specific. Operators use named individual accounts. Rate each relevant control and give us a prioritised remediation plan.",
       "expected_output": "A structured gap assessment table with RAG status for each control based on the described state, plus a prioritised remediation roadmap identifying the highest-risk gaps first.",
       "assertions": [
         "Rates Control 1.1 as red or amber because SWIFT zone shares a VLAN with other internal systems \u2014 network segregation is a hard requirement",
@@ -1536,7 +1536,7 @@
       "assertions": [
         "Correctly identifies system as high-risk under Annex III Area 4 (recruitment/candidate selection) via Art. 6(2)",
         "Lists at least 4 key provider obligations from Arts. 9-17 (e.g., risk management, data governance, human oversight, conformity assessment)",
-        "States the 2 August 2026 compliance deadline for Annex III high-risk systems",
+        "States the 2 December 2027 compliance deadline for Annex III standalone high-risk systems (extended by the Digital Omnibus adopted June 29, 2026)",
         "Mentions CE marking (Art. 48) and EU AI database registration (Art. 49) requirements",
         "Identifies the correct conformity assessment path: self-assessment (Annex VI) for Annex III Area 4 systems (Points 2-8)"
       ],
@@ -1588,7 +1588,7 @@
         "Correctly identifies the system as high-risk via Annex I Path A (Art. 6(1)) because Regulation 2017/745 (Medical Devices) is listed in Annex I Section A",
         "Explains that MDR CE marking does NOT automatically satisfy AI Act compliance requirements",
         "Explains that AI Act requirements (Arts. 9-17) must be integrated into the existing MDR conformity assessment procedure",
-        "States the 2 August 2027 deadline specifically for Annex I safety component systems",
+        "States the 2 August 2028 deadline specifically for Annex I safety component systems (extended by the Digital Omnibus adopted June 29, 2026)",
         "Identifies hospital deployer obligations under Art. 26 (instructions compliance, staff competence, monitoring, log retention)"
       ],
       "with_skill_passed": 5,

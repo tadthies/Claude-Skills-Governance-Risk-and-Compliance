@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly identifies the system as high-risk via Annex I Path A (Art. 6(1)) because Regulation 2017/745 (Medical Devices) is listed in Annex I Section A",
+      "passed": true,
+      "evidence": "Response explicitly states: 'Your AI diagnostic imaging tool qualifies as a high-risk AI system under the EU AI Act through High-Risk Path A classification in Article 6(1)' and 'EU MDR (Regulation 2017/745) is explicitly listed in Annex I, Section A of the AI Act'. All three Path A criteria are correctly identified and satisfied."
+    },
+    {
+      "text": "Explains that MDR CE marking does NOT automatically satisfy AI Act compliance requirements",
+      "passed": true,
+      "evidence": "Response states directly in the Executive Summary and Section 2: 'CE marking under the MDR does NOT automatically satisfy AI Act requirements' and 'The CE mark your vendor obtained under the MDR demonstrates compliance with MDR requirements — it says nothing about AI Act compliance'."
+    },
+    {
+      "text": "Explains that AI Act requirements (Arts. 9-17) must be integrated into the existing MDR conformity assessment procedure",
+      "passed": true,
+      "evidence": "Response states: 'for Annex I Path A systems, the EU AI Act does not create a parallel conformity assessment process. Instead, AI Act requirements (Articles 9-17) must be integrated into the existing MDR conformity assessment procedure'. A table of all Arts. 9-17 obligations is provided."
+    },
+    {
+      "text": "States the 2 August 2028 deadline specifically for Annex I safety component systems (extended by the Digital Omnibus adopted June 29, 2026)",
+      "passed": true,
+      "evidence": "Response states: 'For AI systems that are safety components of products covered by Annex I legislation (which is exactly your situation), the applicable deadline is: 2 August 2028. This deadline was confirmed and extended by the Digital Omnibus (adopted 29 June 2026), which moved the deadline from the originally planned 2 August 2027'."
+    },
+    {
+      "text": "Identifies hospital deployer obligations under Art. 26 (instructions compliance, staff competence, monitoring, log retention)",
+      "passed": true,
+      "evidence": "Response has a full section on Art. 26 obligations covering: (1) follow vendor instructions, (2) staff competence (Art. 26(4)), (3) monitor the system (Art. 26(5)), (4) notify incidents, (5) 6-month log retention explicitly stated (Art. 26(6)), (6) notify workers (Art. 26(7)), (7) Art. 60 public authority registration in EU AI database."
+    }
+  ]
+}

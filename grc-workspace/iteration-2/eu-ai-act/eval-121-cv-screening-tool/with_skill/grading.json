@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly identifies system as high-risk under Annex III Area 4 (recruitment/candidate selection) via Art. 6(2)",
+      "passed": true,
+      "evidence": "Response explicitly states: 'Under Article 6(2), an AI system is classified as high-risk if it is listed in Annex III' and 'Annex III, Area 4 explicitly covers AI systems used in Employment, workers management and access to self-employment' including 'screening or filtering applications' and 'evaluating candidates'. Classification is unambiguous."
+    },
+    {
+      "text": "Lists at least 4 key provider obligations from Arts. 9-17 (e.g., risk management, data governance, human oversight, conformity assessment)",
+      "passed": true,
+      "evidence": "Response covers 8 obligations in dedicated sections: Art. 9 (risk management), Art. 10 (data governance), Art. 11 (technical documentation), Art. 12 (logging), Art. 13 (transparency), Art. 14 (human oversight), Art. 15 (accuracy/robustness), Art. 17 (QMS). Well exceeds the threshold of 4."
+    },
+    {
+      "text": "States the 2 December 2027 compliance deadline for Annex III standalone high-risk systems (extended by the Digital Omnibus adopted June 29, 2026)",
+      "passed": true,
+      "evidence": "Response explicitly states: 'The Digital Omnibus regulation, adopted on 29 June 2026, extended this deadline by approximately 16 months to 2 December 2027' and includes a compliance table showing 'Annex III standalone high-risk systems: 2 December 2027'."
+    },
+    {
+      "text": "Mentions CE marking (Art. 48) and EU AI database registration (Art. 49) requirements",
+      "passed": true,
+      "evidence": "Response has dedicated sections for CE marking under Art. 48 and EU AI database registration under Art. 49, with full explanation of requirements including the Declaration of Conformity under Art. 47 and 10-year retention."
+    },
+    {
+      "text": "Identifies the correct conformity assessment path: self-assessment (Annex VI) for Annex III Area 4 systems (Points 2-8)",
+      "passed": true,
+      "evidence": "Response explicitly states: 'Your CV screening tool falls under Annex III, Area 4 (Point 4 in the Annex III enumeration, covering employment). This is within Points 2-8 of Annex III. Therefore, you may conduct a self-assessment using the procedure set out in Annex VI — no notified body (external auditor) is required'."
+    }
+  ]
+}

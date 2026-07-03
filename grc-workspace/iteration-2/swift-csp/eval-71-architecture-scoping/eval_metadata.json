@@ -1,0 +1,30 @@
+{
+  "eval_id": "eval-71",
+  "eval_name": "eval-71-architecture-scoping",
+  "skill": "swift-csp",
+  "framework": "SWIFT CSCF v2026",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "model": "claude-sonnet-4-6",
+  "prompt": "We are a mid-tier regional bank connecting to SWIFT via Alliance Access software running on our own servers on-premises. We have no HSMs and do not use a service bureau or cloud-hosted SWIFT. What is our SWIFT architecture type and which CSCF v2026 controls are mandatory for us versus advisory? Give us a complete list.",
+  "total_assertions": 5,
+  "results": {
+    "with_skill": {
+      "passed": 5,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "without_skill": {
+      "passed": 3,
+      "failed": 2,
+      "pass_rate": 0.6
+    }
+  },
+  "delta": 0.4,
+  "key_differentiators": [
+    "With skill: Correctly identifies 2.4 as mandatory in v2026 and includes it in the mandatory 24-control list",
+    "Without skill: Omits 2.4 from mandatory list and hedges on its v2026 status",
+    "With skill: Definitively states 2.4 was promoted from Advisory to Mandatory in v2026",
+    "Without skill: Only says to 'verify in the current CSCF version' whether 2.4 is mandatory"
+  ]
+}

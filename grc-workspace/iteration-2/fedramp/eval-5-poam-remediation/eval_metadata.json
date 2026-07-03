@@ -1,0 +1,13 @@
+{
+  "eval_id": 15,
+  "eval_name": "FedRAMP POA&M Remediation",
+  "skill": "fedramp",
+  "prompt": "We received a POA&M item for 'Vulnerability scan findings not remediated within required timeframes for Critical vulnerabilities.' What are the FedRAMP remediation timeframes for Critical, High, and Medium vulnerabilities, and how do we write a proper POA&M entry?",
+  "assertions": [
+    "States correct FedRAMP remediation timeframe for Critical vulnerabilities (15 days)",
+    "States correct timeframe for High vulnerabilities (30 days)",
+    "Explains the required POA&M fields and structure",
+    "Provides or describes a sample POA&M entry",
+    "Mentions that deviation from timeframes requires a deviation request"
+  ]
+}

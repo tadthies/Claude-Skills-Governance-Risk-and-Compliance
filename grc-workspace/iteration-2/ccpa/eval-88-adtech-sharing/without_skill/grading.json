@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly identifies that passing visitor cookie IDs and browsing data to an ad tech platform for cross-context behavioral advertising constitutes 'sharing' under CPRA even if no money changes hands",
+      "passed": true,
+      "evidence": "Baseline response correctly identifies this as both 'sale' and 'sharing' under CCPA/CPRA; notes CPRA's 'sharing' definition was enacted specifically to capture this scenario regardless of monetary exchange."
+    },
+    {
+      "text": "Explains that the same arrangement could also be a 'sale' under CCPA if the ad tech platform provides any valuable consideration (e.g., access to inventory, data enrichment)",
+      "passed": true,
+      "evidence": "Response states using an ad tech platform constitutes 'sale' because valuable consideration = advertising services received; covers the broad definition including non-monetary consideration."
+    },
+    {
+      "text": "States the business must add a 'Do Not Sell or Share My Personal Information' link and must honor Global Privacy Control (GPC) signals as valid opt-outs",
+      "passed": true,
+      "evidence": "Response covers the required 'Do Not Sell or Share' link, GPC signal requirement, and cites the Sephora $1.2M enforcement action as a landmark example of GPC non-compliance consequences."
+    },
+    {
+      "text": "Explains that the ad tech platform must be classified as a 'third party' (not a service provider) unless a contractual arrangement prohibits the platform from using the data for any other purpose — and service provider contracts must be reviewed",
+      "passed": true,
+      "evidence": "Response explains most ad tech platforms are third parties because their business model involves cross-client data use; contractual label 'service provider' is irrelevant if actual practices involve cross-client data use."
+    },
+    {
+      "text": "Advises on the practical steps: update privacy policy, implement consent management platform (CMP), configure ad tech to stop receiving PI for opted-out consumers",
+      "passed": true,
+      "evidence": "Response covers auditing ad tech stack, updating privacy policy disclosures, implementing opt-out mechanism, detecting GPC signals, configuring platform-level controls, and remediating vendor contracts."
+    }
+  ]
+}

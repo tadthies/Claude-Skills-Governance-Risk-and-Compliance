@@ -1,0 +1,13 @@
+{
+  "eval_id": 12,
+  "eval_name": "FedRAMP Impact Levels",
+  "skill": "fedramp",
+  "prompt": "What is the difference between FedRAMP Low, Moderate, and High impact levels? Our product handles law enforcement sensitive data. Which impact level applies to us?",
+  "assertions": [
+    "Explains all three impact levels: Low, Moderate, High",
+    "References FIPS 199 as the basis for impact categorization",
+    "States approximate number of controls for each level",
+    "Addresses law enforcement data sensitivity and likely High impact designation",
+    "Mentions LI-SaaS as a special category for Low impact"
+  ]
+}

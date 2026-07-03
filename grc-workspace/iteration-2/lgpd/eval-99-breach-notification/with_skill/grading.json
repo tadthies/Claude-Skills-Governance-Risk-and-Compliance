@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "States the obligation to notify ANPD under Art. 48 LGPD and cites ANPD Resolution CD/ANPD No. 15/2024 setting the 3 working days preliminary notification deadline",
+      "passed": true,
+      "evidence": "Section 1 explicitly states 'Legal basis: Art. 48, §1º LGPD; ANPD Resolution CD/ANPD No. 15/2024' and specifies 'preliminary incident notification to the ANPD within 3 working days of becoming aware of a security incident.' Both the article and the specific resolution number are cited correctly."
+    },
+    {
+      "text": "States the requirement to also notify affected data subjects when there is high risk of harm",
+      "passed": true,
+      "evidence": "Section 2 explicitly addresses data subject notification: 'Where the security incident presents a relevant risk of harm to data subjects, the controller must also notify the affected individuals in addition to the ANPD.' States this breach 'almost certainly triggers data subject notification'."
+    },
+    {
+      "text": "Lists the required content of the ANPD notification: nature of affected data, number and categories of subjects affected, security measures in place, risk assessment, measures taken/planned",
+      "passed": true,
+      "evidence": "Section 3 provides a table of required notification elements: nature of incident, nature of affected data, number of data subjects (50,000), categories of subjects, security/technical measures in place, risk assessment, measures taken/planned, and DPO contact. All required elements from the assertion are present."
+    },
+    {
+      "text": "States the 20 working day deadline for the full incident report to ANPD",
+      "passed": true,
+      "evidence": "Section 4 explicitly states 'comprehensive final incident report submitted to the ANPD within 20 working days of breach confirmation' and describes the content of the full report."
+    },
+    {
+      "text": "Notes that CPF numbers (tax ID) are particularly sensitive and increase the risk level, likely triggering mandatory data subject notification",
+      "passed": true,
+      "evidence": "Section 5 is dedicated to this: 'CPF numbers are national identifiers uniquely linked to an individual's tax history, financial records, and identity... Exposure of CPF enables identity theft, fraudulent credit applications, and account takeovers... The 50,000 individuals affected should be notified.' Explicitly links CPF exposure to elevated risk and mandatory data subject notification."
+    }
+  ]
+}

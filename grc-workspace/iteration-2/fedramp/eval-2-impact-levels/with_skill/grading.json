@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains all three impact levels: Low, Moderate, High",
+      "passed": true,
+      "evidence": "Response has dedicated sections for each of the three legacy impact levels with definitions, characteristics, and examples, plus a CR26 class mapping table."
+    },
+    {
+      "text": "References FIPS 199 as the basis for impact categorization",
+      "passed": true,
+      "evidence": "Response explicitly names 'FIPS 199' as the foundational standard and explains its three dimensions (confidentiality, integrity, availability) and the high-water mark rule."
+    },
+    {
+      "text": "States approximate number of controls for each level",
+      "passed": true,
+      "evidence": "Response states Low ≈ 156 controls, Moderate = 323 controls, High = 421 controls (NIST SP 800-53 Rev 5), and LI-SaaS ≈ 47 controls, all in a comparison table."
+    },
+    {
+      "text": "Addresses law enforcement data sensitivity and likely High impact designation",
+      "passed": true,
+      "evidence": "Response has a dedicated section 'Your Situation: Law Enforcement Sensitive Data' asserting High/Class C designation with detailed reasoning about confidentiality requirements and CR26 Class C alignment."
+    },
+    {
+      "text": "Mentions LI-SaaS as a special category for Low impact",
+      "passed": true,
+      "evidence": "Response includes a sub-section 'FedRAMP Low Impact' covering LI-SaaS as a special category, describing its ~47 controls, eligibility criteria (no PII, no federal data storage), and limitations."
+    }
+  ]
+}

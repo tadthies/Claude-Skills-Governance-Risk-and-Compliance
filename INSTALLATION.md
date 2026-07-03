@@ -184,11 +184,11 @@ To remove the marketplace entirely:
 |---|---|---|
 | `iso27001` | ISO 27001:2022 | Gap analysis, policy writing, Annex A control guidance, SoA generation, risk registers |
 | `soc2` | SOC 2 | TSC gap analysis, policy drafting, control documentation, audit evidence, vendor risk |
-| `fedramp` | FedRAMP Moderate/High | Readiness assessments, SSP narratives, POA&M, NIST 800-53 control mapping, ConMon |
+| `fedramp` | FedRAMP (CR26) | Readiness assessments under CR26 (Certification Classes A–D), FedRAMP 20x primary pathway, SSP narratives, POA&M with correct remediation SLAs, OSCAL mandate Sep 2026, ConMon |
 | `nist-csf` | NIST CSF 2.0 / 1.1 | Gap assessments, organisational profiles, implementation tiers, roadmaps, cross-framework mapping |
 | `nist-800-53` | NIST SP 800-53 Rev 5 | All 20 control families, FIPS 199/200 categorisation, baseline selection, SSP narratives, RMF |
 | `cmmc` | CMMC 2.0 | CMMC Level 1/2/3 gap analysis, SPRS scoring, POA&M, OSC assessment prep, CUI scoping |
-| `swift-csp` | SWIFT CSP 2025 | CSCF v2025 mandatory/advisory controls, independent assessment prep, KYC/AML integration |
+| `swift-csp` | SWIFT CSP 2026 | CSCF v2026 (31 controls: 24 mandatory + 7 advisory), Control 2.4 back-office data flow now mandatory, architecture scoping (A1/A2/A3/A4/B), independent assessment prep, KYC-SA attestation |
 | `ism` | Australian ISM (ACSC) | ISM control assessment, Essential Eight maturity, system authorisation, ACSC guidance |
 | `nzism` | NZISM (GCSB/NCSC NZ) | NZISM gap analysis, C&A for Restricted+ systems, NZ classification framework, SSP preparation |
 | `cis-controls` | CIS Controls v8 | IG selection, all 153 safeguards, gap assessment, SIEM/log design, cross-framework mapping |
@@ -201,8 +201,8 @@ To remove the marketplace entirely:
 | `hipaa-compliance` | HIPAA | Document generation, technical safeguards for cloud, breach response guidance |
 | `pci-compliance` | PCI DSS v4.0.1 | CDE scoping, SAQ selection, gap assessments, control guidance, QSA audit prep |
 | `dpdpa` | India DPDPA 2023 | Data principal rights, consent management, DPDPB registration, breach notification |
-| `ccpa` | CCPA / CPRA | Consumer rights workflows, opt-out mechanisms, CPPA enforcement, B2B exemptions |
-| `lgpd` | Brazil LGPD | All 10 legal bases, data subject rights, ANPD enforcement, breach notification |
+| `ccpa` | CCPA / CPRA | Consumer rights workflows, ADMT opt-out (regulations effective Jan 2026, deadline Jan 2027), cybersecurity audit/risk assessment obligations, 2026 enforcement precedents (Disney $2.75M, PlayOn $1.1M) |
+| `lgpd` | Brazil LGPD | All 10 legal bases, Brazil-EU mutual adequacy (Jan 2026 — SCCs no longer needed for Brazil↔EU transfers), data subject rights, ANPD enforcement, breach notification |
 | `vn-pdpl` | Vietnam PDPL 2026 | Gap analysis, cross-border transfer impact assessments, DPIAs, breach notification (72h) |
 | `iso27701` | ISO 27701:2019 | PIMS gap analysis, PII controller/processor mapping, GDPR alignment |
 
@@ -221,7 +221,7 @@ To remove the marketplace entirely:
 |---|---|---|
 | `iso42001` | ISO/IEC 42001:2023 | AI Management System gap analysis, AISIA, AI risk assessment, SoA, certification readiness |
 | `nist-ai-rmf` | NIST AI RMF 1.0 | GOVERN/MAP/MEASURE/MANAGE function guidance, AI risk registers, organisational profiles |
-| `eu-ai-act` | EU AI Act 2024/1689 | Risk classification (prohibited/high-risk/limited/minimal), conformity assessment, GPAI obligations |
+| `eu-ai-act` | EU AI Act 2024/1689 | Risk classification (9 prohibited practices, high-risk/limited/minimal), Digital Omnibus (adopted Jun 2026) extended deadlines (Annex III Dec 2027, Annex I Aug 2028), GPAI enforcement active Aug 2, 2026 |
 
 ### Export Controls & Sustainability
 

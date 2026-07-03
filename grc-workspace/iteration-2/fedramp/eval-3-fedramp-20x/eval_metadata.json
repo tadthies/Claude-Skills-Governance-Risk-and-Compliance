@@ -1,0 +1,13 @@
+{
+  "eval_id": 13,
+  "eval_name": "FedRAMP 20x",
+  "skill": "fedramp",
+  "prompt": "What is FedRAMP 20x and how does it change the authorization process? Should we plan for FedRAMP 20x or pursue traditional FedRAMP authorization?",
+  "assertions": [
+    "Explains FedRAMP 20x as a modernization/automation-focused initiative",
+    "Mentions key changes: automation, machine-readable controls (OSCAL), continuous monitoring improvements",
+    "Addresses the current status and timeline of 20x rollout",
+    "Provides practical guidance on path selection",
+    "Mentions OSCAL (Open Security Controls Assessment Language)"
+  ]
+}

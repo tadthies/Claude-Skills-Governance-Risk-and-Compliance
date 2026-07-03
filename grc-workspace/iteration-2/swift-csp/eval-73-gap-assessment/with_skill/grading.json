@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-73",
+  "eval_name": "eval-73-gap-assessment",
+  "condition": "with_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "73-A1",
+      "description": "Rates Control 1.1 as red or amber because SWIFT zone shares a VLAN with other internal systems — network segregation is a hard requirement",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 1.1 as RED with the finding 'SWIFT zone on shared VLAN with other internal systems' and explicitly states 'SWIFT zone must be a dedicated, isolated network segment. Shared VLAN violates the fundamental requirement.'"
+    },
+    {
+      "id": "73-A2",
+      "description": "Rates Control 2.2 as red because 30-day patching exceeds the CSCF v2026 critical patch SLA of 3 days",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 2.2 as RED and explicitly states 'CSCF v2026 requires critical patches applied within 3 days (not 30 days). A 30-day SLA is 10x over the SWIFT limit for critical vulnerabilities.'"
+    },
+    {
+      "id": "73-A3",
+      "description": "Rates Control 4.2 as red because software OTP does not meet the hardware token requirement",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 4.2 as RED with 'Software-based OTP does not meet the hardware token requirement of Control 4.2. All SWIFT operators must authenticate with hardware tokens.'"
+    },
+    {
+      "id": "73-A4",
+      "description": "Rates Control 6.4 as red or amber due to 6-month log retention (minimum is 1 year) and logs not being actively reviewed",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 6.4 as RED with a 'Dual gap': (1) logs not actively reviewed — passive collection alone fails, and (2) 'Minimum log retention is 1 year — your 6-month retention falls short by 6 months.'"
+    },
+    {
+      "id": "73-A5",
+      "description": "Rates Control 2.4 as red because back-office connections are not encrypted — and notes this is now a mandatory control in v2026 (was advisory in v2025)",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 2.4 as RED and explicitly notes 'Control 2.4 was promoted from Advisory to Mandatory in v2026. Unencrypted back-office connections directly violate this control.' Also states 'This gap did not require mandatory remediation in v2025 — v2026 makes it a compliance failure.'"
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 5,
+  "failed_assertions": 0,
+  "pass_rate": 1.0
+}

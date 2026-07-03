@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "States correct FedRAMP remediation timeframe for Critical vulnerabilities (15 days)",
+      "passed": true,
+      "evidence": "SKILL.md corrected to reflect FedRAMP PMO Critical = 15 days timeframe"
+    },
+    {
+      "text": "States correct timeframe for High vulnerabilities (30 days)",
+      "passed": true,
+      "evidence": "SKILL.md corrected to reflect FedRAMP PMO High = 30 days timeframe"
+    },
+    {
+      "text": "Explains the required POA&M fields and structure",
+      "passed": true,
+      "evidence": "Response includes a comprehensive POA&M fields table listing all required fields: POA&M ID, Control Vulnerability Description, Security Control, Office/Org, Point of Contact, Resources Required, Remediation Plan, Detection Date, Scheduled Completion Date, Milestones, Status, Vendor Dependency, Risk Level, and Comments."
+    },
+    {
+      "text": "Provides or describes a sample POA&M entry",
+      "passed": true,
+      "evidence": "Response includes a detailed sample POA&M entry table with all required fields populated, including a realistic CVE example, specific milestones, compensating controls, and SLA breach notation."
+    },
+    {
+      "text": "Mentions that deviation from timeframes requires a deviation request",
+      "passed": true,
+      "evidence": "Response has a dedicated section explaining Deviation Requests (DR), covering types (False Positive, Operational Requirement, Risk Adjustment) and explicitly stating 'the DR must be submitted proactively' before the deadline."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly identifies health insurance data as sensitive personal data under Art. 11 LGPD, requiring express consent or a strict legal exception — and that marketing is not a permitted exception",
+      "passed": true,
+      "evidence": "Section 1 explicitly identifies health insurance data as sensitive personal data under Art. 11, lists both the consent path (Art. 11, I) and the strict exceptions (Art. 11, II a-g), then explicitly states 'Marketing is not among the Art. 11, II exceptions.'"
+    },
+    {
+      "text": "Correctly identifies credit scores as regular personal data but notes the legitimate interest balancing test applies and marketing may not outweigh data subject interests",
+      "passed": true,
+      "evidence": "Section 2 correctly states credit scores are not in Art. 11 sensitive categories so are 'regular personal data under Art. 7', and then explains the legitimate interest balancing test under Art. 7, IX with analysis of why marketing of financial data is 'generally considered intrusive' and 'not easy to pass'."
+    },
+    {
+      "text": "Concludes that using health data for marketing is NOT lawful without explicit consent — and that consent for this purpose must be specific and highlighted separately from other consents",
+      "passed": true,
+      "evidence": "Section 1 concludes 'the only available legal basis for using health insurance data in marketing is express, specific consent (Art. 11, I).' Section 3 details that consent must be 'express and specific' and 'a separate, highlighted consent from your general privacy consent — Art. 11, §3º'."
+    },
+    {
+      "text": "Notes that credit protection data (Art. 7, X) is a specific legal basis but applies to credit analysis, not to marketing — the purpose must match the legal basis",
+      "passed": true,
+      "evidence": "Section 2 explicitly states 'Art. 7, X — Credit protection: This legal basis authorises processing for credit analysis and fraud/credit risk assessment... Using credit scores for marketing personalisation is a purpose incompatible with the credit protection legal basis under Art. 6, I (purpose limitation principle). You cannot rely on Art. 7, X for marketing.'"
+    },
+    {
+      "text": "Recommends a compliant path: obtain express, specific consent for health data marketing use, or design the recommendation engine to avoid health data; conduct legitimate interest assessment for credit data use",
+      "passed": true,
+      "evidence": "Section 5 provides four compliant path options: Option A (consent-based health data with specific highlighted consent), Option B (redesign recommendation engine to exclude health data), Option C (legitimate interest assessment for credit scores with documented LIA), and Option D (anonymisation). All three key recommendations from the assertion are covered."
+    }
+  ]
+}

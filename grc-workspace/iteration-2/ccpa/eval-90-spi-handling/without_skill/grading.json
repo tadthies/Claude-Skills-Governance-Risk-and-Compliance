@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 4,
+  "pass_rate": 0.8,
+  "expectations": [
+    {
+      "text": "Correctly identifies all three data types as Sensitive Personal Information (SPI) under CPRA: precise geolocation (within 1/4 mile), health/medical data from wearables, and biometric data used for identification",
+      "passed": true,
+      "evidence": "Baseline response correctly identifies precise geolocation (GPS/device location), health metrics from wearables (heart rate, sleep, calories, physiological data), and biometric facial recognition (faceprints/facial geometry templates) as SPI under CPRA with statutory citations."
+    },
+    {
+      "text": "Explains the CPRA obligation to offer a 'Limit the Use of My Sensitive Personal Information' link/mechanism (on homepage or via a combined opt-out page)",
+      "passed": true,
+      "evidence": "Response mentions the 'Limit the Use of My Sensitive Personal Information' link requirement and that it can be combined into a 'Your Privacy Choices' link, with placement in app settings and website homepage."
+    },
+    {
+      "text": "States that SPI limitation requests must be processed within 15 business days (shorter than the 45-day deadline for other rights)",
+      "passed": false,
+      "evidence": "Baseline response states 45 calendar days (extendable to 90) for SPI limitation requests — this is incorrect. The correct deadline for SPI limitation requests is 15 BUSINESS DAYS, not 45 calendar days. The 45-day deadline applies to other rights (Know, Delete, Correct), not the Right to Limit SPI Use."
+    },
+    {
+      "text": "Explains permitted uses of SPI without triggering limitation rights: services reasonably expected by consumers, security/integrity, short-term transient use — and that the app must clearly document which permitted use applies to each SPI processing activity",
+      "passed": true,
+      "evidence": "Response covers permitted purposes (performing requested services, fraud prevention, safety) and data processing agreements required with service providers receiving SPI. Covers the core permitted uses though documentation requirement is implied rather than explicit."
+    },
+    {
+      "text": "Advises on privacy notice requirements: must disclose each SPI category collected, purpose of collection, and whether SPI is sold, shared, or used beyond the necessary purpose — in both the at-collection notice and the privacy policy",
+      "passed": true,
+      "evidence": "Response covers privacy policy requirements (identify each SPI category, purposes, third-party disclosures, retention periods, whether sold/shared) and Notice at Collection before each permission prompt (location, wearable sync, biometric enrollment), satisfying the dual-notice requirement."
+    }
+  ]
+}

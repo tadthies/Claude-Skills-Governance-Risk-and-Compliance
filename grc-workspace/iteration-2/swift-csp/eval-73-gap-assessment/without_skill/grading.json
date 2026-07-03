@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-73",
+  "eval_name": "eval-73-gap-assessment",
+  "condition": "without_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "73-A1",
+      "description": "Rates Control 1.1 as red or amber because SWIFT zone shares a VLAN with other internal systems — network segregation is a hard requirement",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 1.1 as RED and states 'Network segregation is a fundamental requirement. The SWIFT secure zone must be isolated from all other internal network segments using stateful firewalls. A shared VLAN does not satisfy this requirement.'"
+    },
+    {
+      "id": "73-A2",
+      "description": "Rates Control 2.2 as red because 30-day patching exceeds the CSCF v2026 critical patch SLA of 3 days",
+      "pass": false,
+      "score": 0,
+      "rationale": "Response rates Control 2.2 as AMBER (not RED) and hedges on the SLA: 'typically much tighter than 30 days' and 'consult the current CSCF document for exact SLAs.' Without the skill, the model does not know the specific 3-day SLA for critical patches. It does not state 3 days or rate it RED."
+    },
+    {
+      "id": "73-A3",
+      "description": "Rates Control 4.2 as red because software OTP does not meet the hardware token requirement",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 4.2 as RED with 'Software-based OTP (TOTP apps) typically does not meet the CSCF requirement for hardware authentication tokens.'"
+    },
+    {
+      "id": "73-A4",
+      "description": "Rates Control 6.4 as red or amber due to 6-month log retention (minimum is 1 year) and logs not being actively reviewed",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response rates Control 6.4 as RED, citing both issues: 'Active monitoring — logs must be reviewed and alerts configured, not just collected' and 'Minimum retention — typically 12 months for SWIFT-related logs.' 6-month retention falls short."
+    },
+    {
+      "id": "73-A5",
+      "description": "Rates Control 2.4 as red because back-office connections are not encrypted — and notes this is now a mandatory control in v2026 (was advisory in v2025)",
+      "pass": false,
+      "score": 0,
+      "rationale": "Response rates Control 2.4 as AMBER/RED (hedged) and says 'Whether this is a mandatory finding depends on your CSCF version' and 'Control 2.4 has been advisory in some versions.' Without the skill, the model does not know that 2.4 is definitively mandatory in v2026 and does not state the v2025→v2026 change. This is the key v2026 fact the skill provides that the baseline model lacks."
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 3,
+  "failed_assertions": 2,
+  "pass_rate": 0.6
+}

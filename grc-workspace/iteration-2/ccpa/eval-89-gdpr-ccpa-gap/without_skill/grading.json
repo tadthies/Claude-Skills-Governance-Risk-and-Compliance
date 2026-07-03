@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "States that GDPR compliance provides a strong foundation (privacy notices, rights processes, processor agreements, data minimization) but does NOT automatically satisfy CCPA/CPRA",
+      "passed": true,
+      "evidence": "Baseline response covers what GDPR gives you for free (data inventory, privacy notice infrastructure, rights-fulfillment, vendor management, security program, retention policies) while being clear these carry over with adaptation and do not automatically satisfy CCPA/CPRA."
+    },
+    {
+      "text": "Identifies CCPA/CPRA-specific additions needed: 'Do Not Sell or Share My Personal Information' link + GPC signal compliance, and 'Limit the Use of My Sensitive Personal Information' link (CPRA)",
+      "passed": true,
+      "evidence": "Response covers the Do Not Sell or Share mechanism (including GPC signal recognition) and the SPI 'Limit the Use of My SPI' right as key CCPA/CPRA-specific gaps requiring new work."
+    },
+    {
+      "text": "Explains the opt-out vs. opt-in model difference: CCPA/CPRA is primarily opt-out (consumers must request opt-out) whereas GDPR requires opt-in consent for most sensitive processing",
+      "passed": true,
+      "evidence": "Response identifies this as 'the deepest philosophical gap' — CCPA permits processing by default for adults (opt-out model) while GDPR requires a lawful basis before processing begins (opt-in architecture)."
+    },
+    {
+      "text": "Notes that CCPA/CPRA has no lawful basis requirement for general PI processing — businesses can collect PI without one of GDPR's six legal bases",
+      "passed": true,
+      "evidence": "Response explicitly states 'CCPA has no equivalent of GDPR's six lawful bases. Your LIAs and consent records are irrelevant to California compliance.'"
+    },
+    {
+      "text": "Highlights the CCPA/CPRA private right of action for data breaches ($100–$750 per consumer per incident) which has no GDPR equivalent, and the need to verify vendor contracts meet CCPA service provider requirements",
+      "passed": true,
+      "evidence": "Response covers the $100–$750 per person per breach statutory damages private right of action with class action eligibility, contrasts GDPR regulatory enforcement, and details that GDPR DPAs do not satisfy CCPA service provider requirements requiring separate CCPA addenda."
+    }
+  ]
+}

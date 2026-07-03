@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly classifies the chatbot as limited risk (not high-risk) under Art. 50 — not falling under Annex III",
+      "passed": true,
+      "evidence": "Response explicitly states: 'A customer-facing e-commerce chatbot... does not fall into any of these categories. It is a commercial, consumer-facing conversational tool operating in a retail context with no material impact on individuals' access to fundamental rights or services of critical importance. Your chatbot is a limited-risk AI system under Article 50'. All Annex III categories are checked and ruled out."
+    },
+    {
+      "text": "Correctly states Art. 50(1) disclosure obligation: deployers must inform users they interact with an AI system",
+      "passed": true,
+      "evidence": "Response states: 'Article 50(1) is your central compliance requirement. It states that providers and deployers of AI systems intended to interact with natural persons must ensure that those persons are informed that they are interacting with an AI system'. Practical implementation details provided."
+    },
+    {
+      "text": "Notes that an e-commerce chatbot is not 'obviously AI' to a reasonably well-informed person and therefore disclosure is required",
+      "passed": true,
+      "evidence": "Response states: 'The obvious from context exception is narrow and does not apply here. The legal standard is whether it would be obvious to a reasonably well-informed user. An e-commerce chatbot does not meet this standard for several reasons: Many consumers still expect live human agents; The chatbot's ability to handle returns and personalise recommendations can make it appear more human-like, not less'."
+    },
+    {
+      "text": "Distinguishes deployer obligations (Art. 26, Art. 50) from provider/GPAI provider obligations (Art. 53)",
+      "passed": true,
+      "evidence": "Response has a dedicated section 'Distinguishing Your Obligations From the GPAI Provider's Obligations' with three roles: deployer (Art. 50(1), Art. 26), GPAI provider (Art. 53 — technical docs, copyright, training summary, AI Office cooperation), and confirms 'These obligations fall on the GPAI provider, not on you'."
+    },
+    {
+      "text": "States the 2 August 2026 application date for Art. 50 limited-risk transparency requirements",
+      "passed": true,
+      "evidence": "Response states: 'Article 50 transparency obligations... become applicable on 2 August 2026. As of today (2 July 2026), this deadline is approximately one month away'. Deadline is explicitly stated with urgency context."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 2,
+  "pass_rate": 0.4,
+  "expectations": [
+    {
+      "text": "States the obligation to notify ANPD under Art. 48 LGPD and cites ANPD Resolution CD/ANPD No. 15/2024 setting the 3 working days preliminary notification deadline",
+      "passed": false,
+      "evidence": "Response mentions Art. 48 and notification to ANPD, and references a '2-3 business day' window for preliminary notice, but does not cite ANPD Resolution CD/ANPD No. 15/2024 by name. The resolution citation is a specific required element of the assertion that is absent."
+    },
+    {
+      "text": "States the requirement to also notify affected data subjects when there is high risk of harm",
+      "passed": true,
+      "evidence": "Response explicitly states 'Affected data subjects — the 50,000 customers whose data was exposed, where the breach poses a risk of harm to them' must be notified, and provides guidance on what the notification should include."
+    },
+    {
+      "text": "Lists the required content of the ANPD notification: nature of affected data, number and categories of subjects affected, security measures in place, risk assessment, measures taken/planned",
+      "passed": true,
+      "evidence": "Response lists notification content including: 'nature of the affected personal data', 'data subjects affected (categories and approximate number)', 'security and technical measures that were in place', 'assessment of the risks', and 'measures taken or planned'. Covers all required elements."
+    },
+    {
+      "text": "States the 20 working day deadline for the full incident report to ANPD",
+      "passed": false,
+      "evidence": "Response mentions 'a more complete report following within a longer period (often around 20 business days)' but qualifies it as 'often around' and hedges with 'you should check the most current ANPD resolution for precise deadlines.' The hedging and imprecision means the specific 20 working day deadline is not clearly stated as definitive."
+    },
+    {
+      "text": "Notes that CPF numbers (tax ID) are particularly sensitive and increase the risk level, likely triggering mandatory data subject notification",
+      "passed": false,
+      "evidence": "Response has a 'CPF Numbers and Risk' section that mentions CPF exposure increases risk of identity theft and financial fraud and states data subject notification is 'important'. However, it does not clearly state that CPF exposure 'likely triggers mandatory data subject notification' — the language is softer and does not connect CPF exposure to the mandatory notification threshold explicitly."
+    }
+  ]
+}

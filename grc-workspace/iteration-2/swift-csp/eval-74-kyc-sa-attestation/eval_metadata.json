@@ -1,0 +1,29 @@
+{
+  "eval_id": "eval-74",
+  "eval_name": "eval-74-kyc-sa-attestation",
+  "skill": "swift-csp",
+  "framework": "SWIFT CSCF v2026",
+  "iteration": 2,
+  "run_date": "2026-07-02",
+  "model": "claude-sonnet-4-6",
+  "prompt": "We need to submit our annual KYC-SA attestation. Walk us through the complete attestation process — what we need to prepare, who can act as our independent assessor, how to complete the KYC-SA form, and what happens to our attestation once submitted. We are an A1 architecture bank. Note: the v2026 attestation window is July 1–December 31, 2026.",
+  "total_assertions": 5,
+  "results": {
+    "with_skill": {
+      "passed": 5,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "without_skill": {
+      "passed": 5,
+      "failed": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "delta": 0.0,
+  "key_differentiators": [
+    "Both conditions perform equally on this eval — the attestation process details are within baseline model knowledge and the prompt itself provided the attestation window dates",
+    "The prompt scaffolded the v2026 attestation window ('Note: the v2026 attestation window is July 1–December 31, 2026'), removing a key differentiator",
+    "KYC-SA portal URL (swift.com/myswift), three status options, and counterparty visibility are all within baseline SWIFT knowledge"
+  ]
+}

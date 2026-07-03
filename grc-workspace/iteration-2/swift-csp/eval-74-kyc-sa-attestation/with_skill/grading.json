@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-74",
+  "eval_name": "eval-74-kyc-sa-attestation",
+  "condition": "with_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "74-A1",
+      "description": "Describes the KYC-SA portal on swift.com/myswift as the submission mechanism",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explicitly states 'The KYC-SA attestation is submitted through the SWIFT MySwift portal at swift.com/myswift' in Step 3.1."
+    },
+    {
+      "id": "74-A2",
+      "description": "Explains that an independent assessor is required and lists who qualifies: internal audit (if independent from SWIFT ops), external auditor with SWIFT CSP competency, or SWIFT-certified assessors",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response has a full Step 2 on independent assessor requirements. It lists all three types: Internal Audit (must be independent from SWIFT operations), External Auditor (qualified with SWIFT CSP competency), and SWIFT-Certified Assessors (SWIFT's formal credentials). The independence requirement is clearly stated."
+    },
+    {
+      "id": "74-A3",
+      "description": "States the v2026 attestation window (July 1 – December 31, 2026) and consequences of late submission including counterparty notifications",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states the window in Step 4: 'July 1, 2026' opening and 'December 31, 2026' deadline. Consequences listed include: 'SWIFT notifies your counterparties that you have not attested' and 'potential suspension from SWIFT services.'"
+    },
+    {
+      "id": "74-A4",
+      "description": "Explains the three attestation statuses for each control: Implemented, Partially Implemented, Not Implemented",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explicitly lists all three statuses in a table in Step 3.2 with definitions for each: Implemented, Partially Implemented, and Not Implemented."
+    },
+    {
+      "id": "74-A5",
+      "description": "Notes that submitted attestations are visible to counterparties who can view compliance status and may request clarification",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response in Step 5 states 'Your attestation is immediately visible to your counterparties once submitted' and describes what counterparties see including per-control status. It also notes 'Counterparties may contact you to request clarification on controls marked Partially Implemented.'"
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 5,
+  "failed_assertions": 0,
+  "pass_rate": 1.0
+}

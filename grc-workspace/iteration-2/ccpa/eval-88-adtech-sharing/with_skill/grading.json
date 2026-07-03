@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly identifies that passing visitor cookie IDs and browsing data to an ad tech platform for cross-context behavioral advertising constitutes 'sharing' under CPRA even if no money changes hands",
+      "passed": true,
+      "evidence": "Response correctly identifies this as 'sharing' under CPRA § 1798.140(ah) because CPRA explicitly covers cross-context behavioral advertising disclosures 'whether or not for monetary or other valuable consideration.'"
+    },
+    {
+      "text": "Explains that the same arrangement could also be a 'sale' under CCPA if the ad tech platform provides any valuable consideration (e.g., access to inventory, data enrichment)",
+      "passed": true,
+      "evidence": "Response explains the activity likely also constitutes a 'sale' because ad tech platforms provide valuable consideration: access to inventory, data enrichment, audience modeling, attribution reporting, or reduced fees."
+    },
+    {
+      "text": "States the business must add a 'Do Not Sell or Share My Personal Information' link and must honor Global Privacy Control (GPC) signals as valid opt-outs",
+      "passed": true,
+      "evidence": "Response states the required homepage opt-out link and that GPC signals must be honored as valid opt-outs immediately upon receipt — no separate consumer request required."
+    },
+    {
+      "text": "Explains that the ad tech platform must be classified as a 'third party' (not a service provider) unless a contractual arrangement prohibits the platform from using the data for any other purpose — and service provider contracts must be reviewed",
+      "passed": true,
+      "evidence": "Response explains service provider status requires contract prohibiting ALL other uses; standard ad tech contracts almost never meet this bar because the platform's business model depends on using customer data across their network."
+    },
+    {
+      "text": "Advises on the practical steps: update privacy policy, implement consent management platform (CMP), configure ad tech to stop receiving PI for opted-out consumers",
+      "passed": true,
+      "evidence": "Response covers auditing contracts, updating privacy policy, implementing CMP with GPC detection, configuring ad tech tags to suppress PI for opted-out consumers, posting required link, and honoring opt-outs within 15 business days."
+    }
+  ]
+}

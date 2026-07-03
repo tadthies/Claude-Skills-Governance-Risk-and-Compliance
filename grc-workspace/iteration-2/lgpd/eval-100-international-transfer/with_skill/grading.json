@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly states that for Brazil-to-EU transfers, the Brazil-EU mutual adequacy decision (adopted January 26-27, 2026) means NO additional transfer mechanism (SCCs, BCRs, or consent) is required — the EU is now an adequate jurisdiction for LGPD purposes",
+      "passed": true,
+      "evidence": "Section 1 explicitly states 'On January 26–27, 2026, Brazil and the European Union established mutual adequacy recognition' and 'You do NOT need: Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), Specific data subject consent for the transfer, ANPD case-by-case approval.' The adequacy decision date and consequence are precisely stated."
+    },
+    {
+      "text": "Notes that companies should update their Records of Processing Activities (RoPA) and privacy notices to reflect the adequacy-based transfer mechanism for EU recipients, removing any SCC or BCR requirements",
+      "passed": true,
+      "evidence": "Section 2 provides a specific update table with rows for 'RoPA' (update transfer mechanism column from SCCs/BCRs to 'ANPD adequacy decision (EU/EEA, as of January 2026)') and 'Privacy notice' (update international transfers section, remove SCC/BCR references for EU transfers). Explicitly covers both RoPA and privacy notice updates."
+    },
+    {
+      "text": "For US transfers, correctly states that the US does NOT have an adequacy decision from ANPD, so standard contractual clauses (Art. 35 LGPD / ANPD-approved clauses) or other listed mechanisms (BCRs, data subject consent) are required",
+      "passed": true,
+      "evidence": "Section 3 explicitly states 'The United States does NOT have an adequacy decision from Brazil's ANPD. Therefore, the Brazil → US transfer to your analytics vendor requires a transfer mechanism under LGPD Art. 33–35.' Lists available mechanisms including SCCs (Art. 35, I), BCRs (Art. 35, II), specific consent (Art. 33, VIII), and ANPD authorisation (Art. 33, IX)."
+    },
+    {
+      "text": "Explains that contractual clauses must provide equivalent protection to LGPD — controllers should use ANPD-approved clause templates or negotiate contractual protections",
+      "passed": true,
+      "evidence": "Section 4 states 'LGPD Art. 35 specifies that contractual clauses used as transfer mechanisms must guarantee a level of protection of personal data equivalent to that provided by LGPD' and advises 'Use ANPD-approved clause templates where available — check anpd.gov.br for the current approved templates. Where templates are not yet published for your specific scenario, negotiate contractual protections that meet the LGPD equivalence standard.'"
+    },
+    {
+      "text": "Advises reviewing existing transfer agreements with EU entities to remove unnecessary SCCs/BCRs now that adequacy applies",
+      "passed": true,
+      "evidence": "Section 5 is specifically about 'Review Existing EU Transfer Agreements' and states: 'Identify all existing contracts with EU/EEA entities that contain SCC schedules or BCR references for Brazil → EU transfers. Amend or annotate those agreements to reflect that the transfer now relies on the ANPD adequacy decision rather than SCCs/BCRs.' Directly addresses the review and removal of unnecessary SCCs/BCRs."
+    }
+  ]
+}

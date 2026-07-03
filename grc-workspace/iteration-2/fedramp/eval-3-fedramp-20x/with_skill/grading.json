@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains FedRAMP 20x as a modernization/automation-focused initiative",
+      "passed": true,
+      "evidence": "Response clearly explains FedRAMP 20x as the primary authorization pathway focused on modernization, shifting from document-heavy point-in-time assessments to continuous, automated, machine-readable approaches."
+    },
+    {
+      "text": "Mentions key changes: automation, machine-readable controls (OSCAL), continuous monitoring improvements",
+      "passed": true,
+      "evidence": "Response has dedicated subsections for: continuous authorization, machine-readable controls via OSCAL, modular API-driven submissions, automated evidence collection, and ConMon integration — all key changes are covered."
+    },
+    {
+      "text": "Addresses the current status and timeline of 20x rollout",
+      "passed": true,
+      "evidence": "Response includes a timeline table with specific milestones: FedRAMP Ready retirement (July 28, 2026), OSCAL mandate (September 30, 2026), JAB P-ATO suspension, and notes CR26 class baselines are being published."
+    },
+    {
+      "text": "Provides practical guidance on path selection",
+      "passed": true,
+      "evidence": "Response has a dedicated section 'Should You Pursue FedRAMP 20x or Traditional FedRAMP?' with clear criteria for each path and a bottom-line recommendation favoring FedRAMP 20x for new authorizations."
+    },
+    {
+      "text": "Mentions OSCAL (Open Security Controls Assessment Language)",
+      "passed": true,
+      "evidence": "OSCAL is mentioned extensively: as a key change, with September 30, 2026 mandate deadline, explanation of what OSCAL enables (automated validation, machine-to-machine exchange, reuse), and practical first steps for adopting OSCAL tooling."
+    }
+  ]
+}

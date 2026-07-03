@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Explains that the business must verify the consumer's identity before disclosing or deleting PI — matching at least two data points already held by the business for standard requests",
+      "passed": true,
+      "evidence": "Baseline response covers matched data-point verification (two-piece for most requests, three-piece or signed declaration for sensitive data), which satisfies the 'at least two data points' assertion."
+    },
+    {
+      "text": "States the response deadline is 45 calendar days from receipt of the request, extendable by another 45 days with notice to the consumer",
+      "passed": true,
+      "evidence": "Response states 45 calendar days to respond, extendable by another 45 days (90 total) with written notice to the consumer explaining the reason."
+    },
+    {
+      "text": "Lists at least three valid exceptions to the right to delete (e.g., completing a transaction, detecting security incidents, complying with a legal obligation, internal-use-only PI)",
+      "passed": true,
+      "evidence": "Response covers all eight statutory exceptions under Cal. Civ. Code § 1798.105(d), including completing transactions, security, debugging, legal obligations, and public-interest research."
+    },
+    {
+      "text": "States that upon deletion the business must also direct its service providers and contractors to delete the consumer's PI",
+      "passed": true,
+      "evidence": "Response explains the requirement to notify and instruct all service providers and contractors to delete upon a verified request, plus notification to third-party recipients (e.g., ad partners) when data has been sold."
+    },
+    {
+      "text": "Explains that both requests must be honored free of charge (up to twice per 12-month period) and the business must confirm the deletion or explain the exception invoked",
+      "passed": true,
+      "evidence": "Response covers the absolute prohibition on fees, non-discrimination rule, and the requirement to confirm in writing whether deletion was completed or an exception was invoked with specifics on what was retained."
+    }
+  ]
+}

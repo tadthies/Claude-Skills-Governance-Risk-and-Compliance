@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Identifies Art. 5(1)(d) prohibited AI practice (predictive criminal risk based on profiling) as the primary concern",
+      "passed": true,
+      "evidence": "Response leads with a dedicated section 'Article 5(1)(d): Prohibited AI Practice — Predictive Criminal Risk Profiling' and concludes: 'the described system falls squarely within the Article 5(1)(d) prohibition'. Art. 5(1)(d) is named as the primary concern throughout."
+    },
+    {
+      "text": "Also identifies Art. 5(1)(c) social scoring risk for the neighbourhood scoring component",
+      "passed": true,
+      "evidence": "Response has a full dedicated section 'Article 5(1)(c): Social Scoring Risk — Neighbourhood Scoring Component', explaining that municipality is a public authority, and neighbourhood scoring based on social media and demographic data constitutes social scoring under Art. 5(1)(c)."
+    },
+    {
+      "text": "Correctly states that 'decision support' framing does not exempt the system from AI Act classification",
+      "passed": true,
+      "evidence": "Response has section 'The Decision Support Tool Framing Does Not Exempt the System', stating: 'The vendor's characterisation of this product as a decision support tool is legally irrelevant to classification under the EU AI Act' and 'A prohibited AI system does not become permitted by adding a human in the loop'."
+    },
+    {
+      "text": "States that Art. 5 prohibitions apply from 2 February 2025",
+      "passed": true,
+      "evidence": "Response explicitly states: 'The EU AI Act's prohibition provisions in Article 5 entered into force and became applicable on 2 February 2025' and 'Any deployment of a system that falls within Article 5 after 2 February 2025 constitutes an active and ongoing breach'."
+    },
+    {
+      "text": "Notes that even if not prohibited, the system would be high-risk under Annex III Area 6 (law enforcement) with full conformity obligations",
+      "passed": true,
+      "evidence": "Response has section 'Even If Not Prohibited, the System Is High-Risk Under Annex III Area 6' stating it would face classification as 'a high-risk AI system under Annex III, specifically Area 6: AI systems intended to be used by law enforcement authorities' with full Arts. 8-26 obligations."
+    }
+  ]
+}

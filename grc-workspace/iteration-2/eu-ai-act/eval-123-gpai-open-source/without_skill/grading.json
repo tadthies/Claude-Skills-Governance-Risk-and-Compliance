@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "Correctly classifies the model as a GPAI model under Art. 3(63)",
+      "passed": true,
+      "evidence": "Response states: 'Article 3(63) of the EU AI Act defines a general-purpose AI model as an AI model that is trained on large amounts of data using self-supervised learning at scale; displays significant generality; is capable of competently performing a wide range of distinct tasks' and confirms the 200B parameter model satisfies all four criteria."
+    },
+    {
+      "text": "Correctly identifies that 3x10^24 FLOPs is below the 10^25 FLOPs systemic risk threshold in Art. 51",
+      "passed": true,
+      "evidence": "Response states: 'Your compute of 3x10^24 FLOPs is approximately one-third of the 10^25 FLOPs threshold. This means: You do not automatically qualify as a GPAI model with systemic risk under the compute-based bright-line rule'."
+    },
+    {
+      "text": "Correctly applies the open-source exception: only copyright compliance policy (Directive 2019/790) and training content summary are required under Art. 53",
+      "passed": true,
+      "evidence": "Response correctly states: 'Article 53(2) provides that providers of GPAI models released under a free and open-source licence are exempt from two specific standard obligations: Technical documentation requirements under Article 53(1)(a); and Information and documentation for downstream providers requirements under Article 53(1)(b)'. Copyright policy and training summary still required."
+    },
+    {
+      "text": "Notes that Commission can still designate systemic risk independently of the FLOPs threshold under Art. 51",
+      "passed": true,
+      "evidence": "Response states: 'the European Commission retains authority under Article 51(2) to designate additional models as having systemic risk based on qualitative criteria (e.g., capabilities, reach, societal impact). A 200B-parameter model with demonstrated frontier capabilities could be subject to such designation'."
+    },
+    {
+      "text": "States the 2 August 2025 application date for GPAI obligations",
+      "passed": true,
+      "evidence": "Response states: 'The EU AI Act entered into force on 1 August 2024. GPAI-specific obligations under Title VIII apply from 2 August 2025 (12 months after entry into force)' and 'If you release the model after 2 August 2025: full Title VIII obligations apply immediately'."
+    }
+  ]
+}

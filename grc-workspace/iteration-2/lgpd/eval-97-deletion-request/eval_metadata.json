@@ -1,0 +1,20 @@
+{
+  "eval_id": "eval-97",
+  "eval_name": "eval-97-deletion-request",
+  "skill": "lgpd",
+  "iteration": 2,
+  "date_run": "2026-07-02",
+  "prompt": "A Brazilian customer has requested deletion of all their personal data from our CRM system, email marketing platform, and analytics tool. How do we handle this under LGPD? Are there any exceptions?",
+  "skill_file": "plugins/lgpd/skills/lgpd/SKILL.md",
+  "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "without_skill": {
+    "pass_rate": 0.6,
+    "passed": 3,
+    "total": 5
+  },
+  "delta": 0.4
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 3,
+  "pass_rate": 0.6,
+  "expectations": [
+    {
+      "text": "Identifies Art. 5(1)(d) prohibited AI practice (predictive criminal risk based on profiling) as the primary concern",
+      "passed": true,
+      "evidence": "Response identifies 'Article 5(1)(f) — AI systems assessing or predicting the risk of a natural person committing criminal offences based solely on profiling or personality traits' as directly applicable. Note: the without_skill response maps this to Art. 5(1)(f) rather than Art. 5(1)(d) due to different article numbering knowledge, but the substantive concern (predictive criminal risk profiling) is correctly identified and prominently flagged."
+    },
+    {
+      "text": "Also identifies Art. 5(1)(c) social scoring risk for the neighbourhood scoring component",
+      "passed": false,
+      "evidence": "Response identifies Art. 5(1)(d), (e), and (f) but does not explicitly identify Art. 5(1)(c) social scoring as a distinct concern. The social scoring prohibition is not mentioned by name or article reference in the analysis or summary table."
+    },
+    {
+      "text": "Correctly states that 'decision support' framing does not exempt the system from AI Act classification",
+      "passed": true,
+      "evidence": "Response has section 'The Decision Support Tool Defence' with four numbered points explaining why the framing is legally irrelevant, citing Art. 6, Recitals 57-58, and Art. 26(1). The response explicitly states the decision support framing 'is legally irrelevant to classification'."
+    },
+    {
+      "text": "States that Art. 5 prohibitions apply from 2 February 2025",
+      "passed": false,
+      "evidence": "Response does not state the 2 February 2025 application date for Art. 5 prohibitions. The timeline section is absent and no specific date for the prohibition provisions is mentioned. The response notes fines and enforcement risks but not the specific date."
+    },
+    {
+      "text": "Notes that even if not prohibited, the system would be high-risk under Annex III Area 6 (law enforcement) with full conformity obligations",
+      "passed": true,
+      "evidence": "Response states: 'it is a high-risk AI system under Annex III, Point 6 (AI systems intended to be used by or on behalf of competent authorities... for performing risk assessments of natural persons)' and covers full Arts. 8-15 and 26 conformity obligations."
+    }
+  ]
+}

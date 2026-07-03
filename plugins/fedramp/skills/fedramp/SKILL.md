@@ -1,15 +1,17 @@
 ---
 name: fedramp
 description: >
-  Expert guidance for FedRAMP certification and compliance. Use this skill whenever
-  a user asks about FedRAMP authorization, ATO (Authority to Operate), cloud security
-  for federal government, NIST SP 800-53 controls, CSP compliance, or any of the core
-  FedRAMP document types: SSP, SAP, SAR, POA&M, CIS/CRM workbooks. Also trigger for
-  questions about FedRAMP impact levels (Low, Moderate, High, LI-SaaS), FedRAMP 20x,
-  OSCAL, 3PAO assessments, continuous monitoring (ConMon), gap assessments, system
-  boundary definition, FedRAMP readiness, or architecture reviews for federal cloud.
-  When in doubt, use this skill — it covers the full FedRAMP lifecycle from readiness
-  through continuous monitoring.
+  Expert guidance for FedRAMP certification and compliance under CR26 (Certification
+  Reform 2026). Use this skill whenever a user asks about FedRAMP authorization, ATO
+  (Authority to Operate), cloud security for federal government, NIST SP 800-53
+  controls, CSP compliance, or any of the core FedRAMP document types: SSP, SAP, SAR,
+  POA&M, CIS/CRM workbooks. Also trigger for questions about FedRAMP Certification
+  Classes (A, B, C, D — replacing old Low/Moderate/High impact levels), FedRAMP 20x
+  (now the primary authorization pathway), OSCAL mandate (September 2026), 3PAO
+  assessments, continuous monitoring (ConMon), gap assessments, system boundary
+  definition, or architecture reviews for federal cloud. FedRAMP Ready retires
+  July 28, 2026. When in doubt, use this skill — it covers the full FedRAMP lifecycle
+  from readiness through continuous monitoring.
 ---
 
 # FedRAMP Certification Skill
@@ -31,27 +33,35 @@ Identify the user's goal and jump to the appropriate section:
 
 ---
 
-## Current FedRAMP State (as of 2025–2026)
+## Current FedRAMP State (as of July 2026 — CR26)
 
-- **Baseline**: NIST SP 800-53 **Rev 5** (approved May 2023, fully in effect)
-- **Control counts** (Rev 5): Low = ~156, Moderate = 323, High = 421
-- **OSCAL mandate**: RFC-0024 requires all CSPs to transition to machine-readable OSCAL packages by **September 2026**
-- **Security Inbox**: As of January 5, 2026, all authorized CSPs must maintain a dedicated Security Inbox for urgent vulnerability directives (no CAPTCHAs or barriers)
-- **FedRAMP 20x**: A modernization initiative in progress; introduces continuous authorization and modular/API-driven submissions. Traditional SSP/SAP/SAR templates remain required for non-20x paths.
-- **Key templates updated**: SSP, SAR, SAP, POA&M, CIS/CRM, IIW, ISCP — all updated to align with Rev 5 (Dec 2024 releases)
+> ⚠️ **CR26 (Certification Reform 2026)**: FedRAMP has restructured its authorization framework. FIPS 199-based impact levels (Low/Moderate/High/LI-SaaS) are being replaced with **Certification Classes A–D**. CSPs already authorized under the old model retain their ATO while transition timelines are confirmed by the FedRAMP PMO.
+
+- **Baseline**: NIST SP 800-53 **Rev 5** (fully in effect)
+- **Control counts** (Rev 5): Low ≈ 156, Moderate = 323, High = 421 (legacy references; CR26 class-based counts being published by PMO)
+- **CR26 Certification Classes**: A (basic/low-impact), B (standard/moderate-impact), C (enhanced/high-impact), D (specialized/critical). The PMO is publishing updated control baselines aligned to each class.
+- **FedRAMP 20x**: Now the **primary authorization pathway** — continuous authorization, modular API-driven submissions, automated evidence collection. Traditional SSP/SAP/SAR templates remain for legacy paths.
+- **FedRAMP Ready** designation: **Retires July 28, 2026**. CSPs currently in FedRAMP Ready status must transition to FedRAMP 20x or initiate a full authorization package. No new FedRAMP Ready designations are being issued.
+- **JAB P-ATO**: Fully suspended; FedRAMP PMO is the sole authorization body.
+- **OSCAL mandate**: RFC-0024 requires all CSPs to submit machine-readable OSCAL packages by **September 30, 2026**.
+- **Security Inbox**: All authorized CSPs must maintain a dedicated Security Inbox (no CAPTCHAs or barriers) for urgent vulnerability directives — effective January 5, 2026.
+- **Key templates updated**: SSP, SAR, SAP, POA&M, CIS/CRM, IIW, ISCP — all updated to align with Rev 5 (Dec 2024 releases).
 
 ---
 
 ## 1. Readiness & Gap Assessment
 
 ### Approach
-1. **Clarify scope** — Ask the user: What is the CSO (Cloud Service Offering)? IaaS/PaaS/SaaS? Target impact level?
-2. **Identify authorization path** — Agency Authorization (sponsor needed) vs. JAB P-ATO (Joint Authorization Board — effectively suspended since 2024; verify current status with FedRAMP PMO) vs. FedRAMP 20x pilot
+1. **Clarify scope** — Ask the user: What is the CSO (Cloud Service Offering)? IaaS/PaaS/SaaS? Target Certification Class under CR26?
+2. **Identify authorization path** — FedRAMP 20x (primary, preferred) vs. legacy Agency Authorization package (still available for complex systems during CR26 transition)
 3. **Run through the readiness checklist** — See `references/readiness-checklist.md`
 4. **Surface gaps** — Map current state to required controls; flag missing documentation, unimplemented controls, and architectural deficiencies
 5. **Prioritize** — Group gaps by: (a) blockers for readiness review, (b) items addressable before 3PAO assessment, (c) POA&M candidates
 
+> **FedRAMP Ready is retiring July 28, 2026.** If a CSP is currently pursuing FedRAMP Ready, advise them to pivot immediately to FedRAMP 20x or begin a full authorization package.
+
 ### Key Readiness Questions to Ask the User
+- Are you targeting FedRAMP 20x (preferred) or a legacy authorization package?
 - What cloud platform (AWS GovCloud, Azure Government, GCP, on-prem hybrid)?
 - Are you leveraging any existing FedRAMP-authorized IaaS/PaaS (e.g., AWS GovCloud FedRAMP High)?
 - Do you have FIPS 140-2/3 validated encryption in place?
@@ -59,11 +69,12 @@ Identify the user's goal and jump to the appropriate section:
 - Do you have a vulnerability scanning program (OS, DB, web app, container)?
 - Are security policies and procedures documented?
 - Do you have an Incident Response Plan (IRP) and Contingency Plan (CP) that have been tested?
+- Are your authorization package artifacts in OSCAL format (mandatory by September 30, 2026)?
 
 ### Output Format
 - Produce a **gap table**: Control Family | Current State | Gap | Priority | Owner
 - Summarize top 5–10 high-priority gaps as prose
-- Recommend whether to pursue Readiness Assessment Report (RAR) first
+- Note the target Certification Class and whether FedRAMP 20x is feasible
 
 ---
 
@@ -79,9 +90,8 @@ Authorization Package
 └── Plan of Action & Milestones (POA&M)  [SSP Appendix O]
 ```
 
-> **Important**: CSPs must use official FedRAMP PMO templates. Reviewers are trained on
-> standardized formats; non-standard submissions risk rejection or delays.
-> Templates: https://www.fedramp.gov/rev5/documents-templates/
+> **Important**: CSPs must use official FedRAMP PMO templates. OSCAL-format submissions are mandatory by September 30, 2026.
+> Templates: https://www.fedramp.gov/documents-templates/
 
 ### Document Guidance
 
@@ -128,28 +138,29 @@ For detailed guidance on each document type, read the appropriate reference file
 | SI | System & Information Integrity | Patching, malware, integrity monitoring |
 | SR | Supply Chain Risk Management | **New family in Rev 5** — SCRM |
 
-### Impact Level Mapping
+### CR26 Certification Class Mapping
 
-When the user describes their system, recommend the impact level:
+Under CR26, the FedRAMP PMO is aligning control baselines to Certification Classes. When users describe their system, map to a class:
 
-- **LI-SaaS** (Low-Impact SaaS): No PII, no sensitive federal data, limited scope — uses a simplified template combining SSP + assessment
-- **Low**: Federal information where loss of CIA has limited adverse effect
-- **Moderate**: Most common — federal information where loss has serious adverse effect; covers the majority of CSPs handling non-classified government data
-- **High**: Federal information where loss has severe or catastrophic effect (e.g., law enforcement, financial, health data)
+- **Class A** (Basic): Cloud-native, low federal data sensitivity; limited scope; aligned to old Low-impact tier
+- **Class B** (Standard): Most common — federal information with serious adverse effect if compromised; aligned to old Moderate-impact tier; covers the majority of CSPs handling non-classified government data
+- **Class C** (Enhanced): Federal information where compromise has severe or catastrophic effect (law enforcement, financial, health data); aligned to old High-impact tier
+- **Class D** (Specialized): Critical/ultra-sensitive systems; new category with additional requirements
+
+> **Legacy references**: Many existing FedRAMP documents still reference Low/Moderate/High/LI-SaaS. These map to Classes A/B/C respectively. A full CR26 class-to-control baseline mapping is being published by the PMO — advise CSPs to check fedramp.gov for the latest.
 
 ### Mapping Workflow
 1. Ask: What types of federal data will the system process/store/transmit?
-2. Run FIPS 199 categorization (Confidentiality / Integrity / Availability × Impact)
-3. Select baseline (Low/Moderate/High) based on high-water mark
+2. Determine target Certification Class (A, B, C, or D) under CR26
+3. Select NIST 800-53 Rev 5 baseline (Low/Moderate/High as proxy until CR26 baselines are final)
 4. Cross-reference with FedRAMP parameter requirements (FedRAMP often sets stricter parameters than base NIST)
 5. For inherited controls, identify which are fully/partially inherited from leveraged FedRAMP IaaS/PaaS and document in CIS/CRM workbook
 
 ### Rev 4 → Rev 5 Key Changes to Highlight
 - **New control families**: PT (Privacy), SR (Supply Chain)
-- **Password controls revised**: No more forced rotation schedules; now requires compromised-password lists and password strength meters (NIST 800-63b alignment)
+- **Password controls revised**: No more forced rotation schedules; requires compromised-password lists and password strength meters (NIST 800-63b alignment)
 - **Privacy integrated**: AT-3 now mandates privacy training; many families have privacy-specific enhancements
-- **Threat-based methodology**: MITRE ATT&CK framework now informs control prioritization
-- **Moved/merged controls**: Some Rev 4 controls were merged — don't assume 1:1 mapping
+- **Threat-based methodology**: MITRE ATT&CK framework informs control prioritization
 
 ---
 
@@ -185,7 +196,7 @@ Key principles:
 - **Immutable infrastructure** — simplifies CM (configuration drift is a common finding)
 - **Centralized logging** — SIEM/log aggregation addresses AU family comprehensively
 - **Automated vulnerability scanning** — Required; must cover OS, DB, web app, and containers (if used)
-- **Container security** — FedRAMP has specific container scanning guidance; image signing and runtime protection are expected
+- **OSCAL-native tooling** — Invest now; OSCAL submission is mandatory September 30, 2026
 
 ### Common Architecture Findings
 - Undocumented external connections leaving the boundary
@@ -194,6 +205,7 @@ Key principles:
 - Missing MFA on privileged accounts
 - Vulnerability scans not covering all boundary components
 - Logging gaps (not all components sending logs to centralized SIEM)
+- Authorization packages not in OSCAL format ahead of September 2026 mandate
 
 ---
 
@@ -217,7 +229,7 @@ Once authorized, CSPs must maintain compliance through ConMon activities:
 - All open findings must have: risk level, owner, milestone dates, remediation plan
 - Vendor Dependencies (VDs): when a finding depends on a third-party fix — document and track
 - Deviation Requests (DRs): false positives and risk adjustments require AO approval
-- SLA for remediation: Critical = 30 days, High = 90 days, Moderate = 180 days, Low = 365 days (FedRAMP standard)
+- SLA for remediation: **Critical = 15 days**, **High = 30 days**, Moderate = 90 days, Low = 365 days (FedRAMP PMO published timeframes)
 
 ---
 

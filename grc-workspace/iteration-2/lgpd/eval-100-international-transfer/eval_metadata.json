@@ -1,0 +1,20 @@
+{
+  "eval_id": "eval-100",
+  "eval_name": "eval-100-international-transfer",
+  "skill": "lgpd",
+  "iteration": 2,
+  "date_run": "2026-07-02",
+  "prompt": "We need to transfer personal data of Brazilian customers to our parent company's servers in the EU (Germany). What transfer mechanism do we need under LGPD? Also, we want to also transfer some data to our US-based analytics vendor. What do we need for that?",
+  "skill_file": "plugins/lgpd/skills/lgpd/SKILL.md",
+  "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "total": 5
+  },
+  "without_skill": {
+    "pass_rate": 0.4,
+    "passed": 2,
+    "total": 5
+  },
+  "delta": 0.6
+}

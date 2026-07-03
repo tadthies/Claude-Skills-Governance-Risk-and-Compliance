@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "States correct FedRAMP remediation timeframe for Critical vulnerabilities (15 days)",
+      "passed": true,
+      "evidence": "Response clearly states '15 days' for Critical vulnerabilities in the remediation timeframes table and references this again in the understanding-the-finding section."
+    },
+    {
+      "text": "States correct timeframe for High vulnerabilities (30 days)",
+      "passed": true,
+      "evidence": "Response clearly states '30 days' for High vulnerabilities in the remediation timeframes table, consistent with the expected answer."
+    },
+    {
+      "text": "Explains the required POA&M fields and structure",
+      "passed": true,
+      "evidence": "Response includes a complete POA&M fields table listing all required fields with descriptions: POA&M ID, Weakness Description, NIST control, Office/Org, Point of Contact, Resources, Remediation Plan, Detection Date, Scheduled Completion Date, Milestone Dates, Status, Risk Level, and Comments."
+    },
+    {
+      "text": "Provides or describes a sample POA&M entry",
+      "passed": true,
+      "evidence": "Response includes a complete sample POA&M entry table populated with realistic values including a CVE example (Apache HTTP Server), CVSS score, milestones, compensating control (WAF rule), and DR status notation."
+    },
+    {
+      "text": "Mentions that deviation from timeframes requires a deviation request",
+      "passed": true,
+      "evidence": "Response dedicates a full section 'Deviation Requests for Missed Timeframes' explaining that DRs must be submitted proactively before the SLA deadline and covers types: False Positive, Operational Requirement/Risk Acceptance, and Vendor Dependency."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "total": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "States that GDPR compliance provides a strong foundation (privacy notices, rights processes, processor agreements, data minimization) but does NOT automatically satisfy CCPA/CPRA",
+      "passed": true,
+      "evidence": "Response acknowledges strong overlap (privacy notices, rights workflows, DPAs, data minimisation) while being explicit that GDPR compliance does not automatically satisfy CCPA/CPRA."
+    },
+    {
+      "text": "Identifies CCPA/CPRA-specific additions needed: 'Do Not Sell or Share My Personal Information' link + GPC signal compliance, and 'Limit the Use of My Sensitive Personal Information' link (CPRA)",
+      "passed": true,
+      "evidence": "Response covers the 'Do Not Sell or Share' link, GPC signal compliance with technical implementation requirement, and the 'Limit Use of SPI' link for CPRA sensitive personal information categories."
+    },
+    {
+      "text": "Explains the opt-out vs. opt-in model difference: CCPA/CPRA is primarily opt-out (consumers must request opt-out) whereas GDPR requires opt-in consent for most sensitive processing",
+      "passed": true,
+      "evidence": "Response includes a comparison table showing how the same scenarios are handled differently under each regime, explaining CCPA/CPRA's opt-out architecture vs. GDPR's consent-gate opt-in model."
+    },
+    {
+      "text": "Notes that CCPA/CPRA has no lawful basis requirement for general PI processing — businesses can collect PI without one of GDPR's six legal bases",
+      "passed": true,
+      "evidence": "Response explains that GDPR's Article 6 six bases have no equivalent under CCPA/CPRA, and that legitimate interests assessments are irrelevant in the California context."
+    },
+    {
+      "text": "Highlights the CCPA/CPRA private right of action for data breaches ($100–$750 per consumer per incident) which has no GDPR equivalent, and the need to verify vendor contracts meet CCPA service provider requirements",
+      "passed": true,
+      "evidence": "Response details $100–$750 per consumer per incident statutory damages exposure, contrasts it with GDPR's regulatory-fine model, and provides side-by-side table of DPA vs. CCPA service provider contract clause differences."
+    }
+  ]
+}

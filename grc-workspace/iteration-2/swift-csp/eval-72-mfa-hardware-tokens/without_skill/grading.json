@@ -1,0 +1,48 @@
+{
+  "eval_id": "eval-72",
+  "eval_name": "eval-72-mfa-hardware-tokens",
+  "condition": "without_skill",
+  "model": "claude-sonnet-4-6",
+  "graded_at": "2026-07-02T00:00:00Z",
+  "assertions": [
+    {
+      "id": "72-A1",
+      "description": "Explains that CSCF v2026 explicitly requires hardware authentication tokens for Control 4.2, and that software-based OTP (TOTP apps) is insufficient",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response states 'CSCF Control 4.2 requires hardware-based MFA' and software OTP 'typically does not meet this standard.' The explanation is present though less definitive than the skill-based response ('explicitly requires' vs. 'typically does not meet')."
+    },
+    {
+      "id": "72-A2",
+      "description": "Identifies the risk: software OTP can be compromised if the device/phone is malware-infected, bypassing the security intent of MFA",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response explains malware risk: 'If the device running Google Authenticator is compromised by malware, an attacker could potentially read the TOTP seed stored in the app' and discusses that general-purpose smartphones are a higher-risk platform."
+    },
+    {
+      "id": "72-A3",
+      "description": "Provides at least 2 concrete hardware token options (e.g., RSA SecurID, Thales SafeNet, YubiKey) or categories of compliant hardware",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response provides 4 concrete options: RSA SecurID, Thales SafeNet (OTP 110/eToken PASS), FIDO2 hardware security keys (YubiKey), and Smart Card/PKI tokens. Meets the 2+ option threshold."
+    },
+    {
+      "id": "72-A4",
+      "description": "Outlines implementation steps: procure hardware tokens, integrate with RADIUS or LDAP, distribute to operators, update IRP/procedures",
+      "pass": true,
+      "score": 1,
+      "rationale": "Response provides 7 implementation steps covering platform selection, integration assessment, procurement, authentication server deployment with RADIUS integration, operator enrollment, testing, and documentation update."
+    },
+    {
+      "id": "72-A5",
+      "description": "Notes the KYC-SA attestation deadline and estimates a realistic remediation timeline",
+      "pass": false,
+      "score": 0,
+      "rationale": "Response says 'Check your current attestation deadline to ensure remediation is complete before you need to attest' but does NOT specify the v2026 attestation deadline of December 31, 2026, or the July 1 – December 31, 2026 window. Without the skill, the model does not know the specific v2026 attestation dates. No realistic timeline estimate is provided."
+    }
+  ],
+  "total_assertions": 5,
+  "passed_assertions": 4,
+  "failed_assertions": 1,
+  "pass_rate": 0.8
+}
