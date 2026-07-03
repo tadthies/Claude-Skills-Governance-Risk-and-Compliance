@@ -3,7 +3,7 @@ Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIS
 
 Benchmarked across 150 test cases using the eval framework — each graded against at least 5 verifiable assertions by independent agents (752 assertions in total). Skills scored **94%** vs a baseline of **81%**.
 
-[![Release: v1.6.1](https://img.shields.io/badge/Release-v1.6.1-brightgreen.svg)](../../releases/tag/v1.6.1)
+[![Release: v1.6.2](https://img.shields.io/badge/Release-v1.6.2-brightgreen.svg)](../../releases/tag/v1.6.2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills: 30](https://img.shields.io/badge/Skills-30-green.svg)](#the-skills)
 [![Built with Claude](https://img.shields.io/badge/Built%20with-Claude-orange.svg)](https://claude.ai)
@@ -573,10 +573,11 @@ The EU AI Act skill turns Claude into an expert EU AI Act compliance advisor cov
 
 **What it does:**
 - **Classifies AI systems** across all four risk tiers — Prohibited (Art. 5), High-Risk (Art. 6 + Annex I/III), Limited Risk (Art. 50), and Minimal/No Risk — using both the Annex I safety component path (Art. 6(1)) and the Annex III listed use case path (Art. 6(2))
-- **Screens for all 8 prohibited practices** (Art. 5, applies from 2 February 2025): subliminal manipulation, vulnerability exploitation, social scoring, predictive criminal assessment, untargeted biometric scraping, workplace/education emotion inference, sensitive-attribute biometric categorisation, and real-time RBI in public spaces by law enforcement
+- **Screens for all **9 prohibited practices** (Art. 5): the original 8 apply from 2 February 2025 — subliminal manipulation, vulnerability exploitation, social scoring, predictive criminal assessment, untargeted biometric scraping, workplace/education emotion inference, sensitive-attribute biometric categorisation, and real-time RBI in public spaces by law enforcement — plus the 9th added by the Digital Omnibus (non-consensual intimate imagery / CSAM generation), applying from 2 December 2026
 - **Walks through all 8 Annex III high-risk use case areas**: biometrics, critical infrastructure, education, employment, essential services, law enforcement, migration/border control, and justice/democracy
 - **Covers provider obligations (Arts. 9–17)**: risk management (5-step process), data governance, Annex IV technical documentation, automatic logging, transparency to deployers, human oversight design, accuracy/robustness/cybersecurity, 12-item provider checklist, and 13-component QMS
 - **Covers deployer obligations (Art. 26)**: instructions compliance, staff competence, monitoring, 6-month log retention, worker notification, public authority registration, and GDPR DPIA
+- **Guides Fundamental Rights Impact Assessments (FRIA, Art. 27)**: who must perform one (public-law bodies, public-service providers, and deployers of credit-scoring and life/health-insurance systems under Annex III 5(b)-(c)), the six required content elements, market-surveillance notification, and how a FRIA builds on a GDPR DPIA
 - **Guides conformity assessment and CE marking**: Annex VI self-assessment (Areas 2–8) vs. Annex VII notified body (Area 1 biometrics), EU Declaration of Conformity (Art. 47, 10-year retention), CE marking (Art. 48), EU AI database registration (Arts. 49/60)
 - **Covers GPAI model obligations (Arts. 53–55, from 2 August 2025)**: universal obligations, open-source exception, systemic risk threshold (10²⁵ FLOPs, Art. 51), and systemic risk additional obligations including adversarial testing and AI Office reporting
 - **Maps to peer frameworks**: ISO 42001:2023, NIST AI RMF 1.0, and GDPR — showing where obligations overlap and where dual compliance is required
@@ -628,6 +629,7 @@ The NZISM skill turns Claude into an expert advisor on the **New Zealand Informa
 - **Certification & Accreditation (C&A)** — step-by-step pathway for Restricted and above: SSP preparation, security risk assessment, independent assessment, POA&M, and Accrediting Authority sign-off
 - **Classification framework** — NZ Government ISCS guidance (Unclassified, In-Confidence, Restricted, Confidential, Secret, Top Secret): how to classify systems, aggregation risk, handling requirements (labelling, transmission, storage, disposal)
 - **Control implementation guidance** — actionable advice for all 18 NZISM sections: governance, physical, personnel, network, access control, cryptography, audit & logging, cloud computing, enterprise mobility, third-party suppliers, incident management, and more
+- **Verified control-ID citations** — cites real NZISM control identifiers (`chapter.section.control.C.nn`, e.g., 16.1.46.C.02, 16.3.5.C.02) from a bundled, source-verified reference — with a strict never-invent-a-CID rule and chapter/section fallback
 - **Policy generation** — complete, NZISM-referenced policies (Access Control, Incident Response, Information Security, Acceptable Use, Business Continuity) with document control blocks and classification markings
 - **Supply chain security** — contractual obligations for SaaS vendors and outsourced suppliers processing government data, offshore processing approvals, right-to-audit clauses, and incident notification requirements
 - **Cloud guidance** — NZ Government Cloud Computing Risk & Resilience Guide alignment, data residency requirements, shared responsibility model documentation

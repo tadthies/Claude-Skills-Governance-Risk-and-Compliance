@@ -195,4 +195,4 @@ plugins/itar/
 **Hemant Naik**
 [LinkedIn](https://www.linkedin.com/in/tanaji-naik/) · [hemant.naik@gmail.com](mailto:hemant.naik@gmail.com)
 
-Skill version: 1.6.1 — July 2026
+Skill version: 1.6.2 — July 2026

@@ -829,7 +829,7 @@ layout: null
   </div>
 
   <div class="badges">
-    <img src="https://img.shields.io/badge/Release-v1.6.1-brightgreen.svg" alt="Release v1.6.1" />
+    <img src="https://img.shields.io/badge/Release-v1.6.2-brightgreen.svg" alt="Release v1.6.2" />
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
     <img src="https://img.shields.io/badge/Skills-30-green.svg" alt="30 Skills" />
     <img src="https://img.shields.io/badge/Built%20with-Claude-orange.svg" alt="Built with Claude" />
@@ -1298,7 +1298,7 @@ layout: null
       <p>Turns Claude into an expert <strong>EU AI Act</strong> compliance advisor covering the full <strong>Regulation (EU) 2024/1689</strong> — the world's first comprehensive horizontal AI regulation, in force from 1 August 2024. Serves AI providers, deployers, importers, and authorised representatives operating in or placing AI systems on the EU market.</p>
       <ul>
         <li>Classifies AI systems across all four risk tiers — <strong>Prohibited (Art. 5), High-Risk (Art. 6), Limited Risk (Art. 50), and Minimal/No Risk</strong> — using both Annex I safety component path (Art. 6(1)) and Annex III listed use case path (Art. 6(2))</li>
-        <li>Screens for all <strong>8 prohibited AI practices</strong> (Art. 5, applies from 2 February 2025): subliminal manipulation, vulnerability exploitation, social scoring, predictive criminal assessment, untargeted biometric scraping, workplace/education emotion inference, sensitive-attribute biometric categorisation, and real-time RBI in public spaces by law enforcement</li>
+        <li>Screens for all <strong>9 prohibited AI practices</strong> (Art. 5): the original 8 apply from 2 February 2025 (subliminal manipulation, vulnerability exploitation, social scoring, predictive criminal assessment, untargeted biometric scraping, workplace/education emotion inference, sensitive-attribute biometric categorisation, real-time RBI in public spaces by law enforcement); the 9th — non-consensual intimate imagery / CSAM generation, added by the Digital Omnibus — applies from 2 December 2026</li><li>Guides <strong>Fundamental Rights Impact Assessments (FRIA, Art. 27)</strong> — who must perform one, required content, market-surveillance notification, and how a FRIA builds on a GDPR DPIA</li>
         <li>Covers all <strong>8 Annex III high-risk use case areas</strong>: biometrics, critical infrastructure, education, employment, essential services, law enforcement, migration/border control, and justice/democracy</li>
         <li>Walks through all <strong>Arts. 9–17 provider obligations</strong>: risk management (5-step lifecycle process), data governance, Annex IV technical documentation, automatic logging, transparency to deployers, human oversight design (stop button, override capability), accuracy/robustness/cybersecurity, 12-item provider checklist, and 13-component Quality Management System</li>
       </ul>
@@ -1337,7 +1337,7 @@ layout: null
       <span class="file-badge">NZISM - Claude Skill/nzism.skill</span>
       <p>Turns Claude into an expert advisor on the <strong>New Zealand Information Security Manual (NZISM)</strong> — the mandatory cybersecurity framework published by the <strong>GCSB / NCSC NZ</strong> for NZ government agencies and their supply chains. Covers the NZ Government Information Classification System (ISCS) from Unclassified through Top Secret, all 18+ control sections, and the full Certification &amp; Accreditation (C&amp;A) lifecycle.</p>
       <ul>
-        <li>Conducts <strong>NZISM gap analyses</strong> across all control domains for any classification level — produces structured tables with status, evidence required, and remediation priority</li>
+        <li>Cites <strong>verified NZISM control IDs</strong> (e.g., 16.1.46.C.02) from a bundled source-verified reference — never invented</li><li>Conducts <strong>NZISM gap analyses</strong> across all control domains for any classification level — produces structured tables with status, evidence required, and remediation priority</li>
         <li>Guides <strong>Certification &amp; Accreditation (C&amp;A)</strong> for Restricted and above — SSP preparation, security risk assessment, independent assessment, POA&amp;M, and Accrediting Authority sign-off</li>
         <li>Generates <strong>NZISM-referenced policies</strong> (Access Control, Incident Response, Information Security) with classification markings and document control blocks</li>
       </ul>
@@ -2685,14 +2685,25 @@ layout: null
     <hr />
 
     <h2>Release Notes</h2>
-    <p>Full changelog for all public releases. Latest release: <strong>v1.6.1</strong>.</p>
+    <p>Full changelog for all public releases. Latest release: <strong>v1.6.2</strong>.</p>
+
+    <!-- v1.6.2 -->
+    <div class="release current">
+      <div class="release-header">
+        <span class="tag">v1.6.2</span>
+        <span class="date">03 Jul 2026</span>
+        <span class="whats-new-current-badge">Latest</span>
+      </div>
+      <ul>
+        <li><span class="release-badge badge-fix">Fix</span> <strong>Documentation drift</strong> — EU AI Act descriptions (README + site) updated from 8 to <strong>9 prohibited practices</strong> (9th: non-consensual intimate imagery / CSAM generation, Digital Omnibus, applies 2 Dec 2026) and now document the <strong>FRIA (Art. 27)</strong> capability added in v1.6.0; NZISM descriptions now document the <strong>verified control-ID citation</strong> capability added in v1.6.1. No skill content changed — docs only</li>
+      </ul>
+    </div>
 
     <!-- v1.6.1 -->
-    <div class="release current">
+    <div class="release">
       <div class="release-header">
         <span class="tag">v1.6.1</span>
         <span class="date">03 Jul 2026</span>
-        <span class="whats-new-current-badge">Latest</span>
       </div>
       <ul>
         <li><span class="release-badge badge-improve">Improved</span> <strong>All four negative-delta skills flipped positive</strong> — each revised against its exact graded failure patterns and re-run with the same primary-source assertions (same harness, both arms, artifacts in <code>grc-workspace/rerun-2026-07c/</code>): CCPA/CPRA <strong>100%</strong> vs 80% (+20, was 72/88); NZISM <strong>96%</strong> vs 64% (+32, was 72/76); NIST AI RMF <strong>92%</strong> vs 84% (+8, was 84/88); CMMC <strong>88%</strong> vs 80% (+8, was 68/76). Suite headline: <strong>94% vs 81% (705/612 of 752, +13pp, +93)</strong>. The known-negative-delta allowance in the consistency tests is now empty</li>
