@@ -1,0 +1,33 @@
+{
+  "eval_id": 13,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Describes FedRAMP 20x as the automation-oriented approach: machine-readable evidence, Key Security Indicators (KSIs), and continuous validation replacing narrative-heavy documentation",
+      "passed": false,
+      "evidence": "Response describes 'modular, API-driven submissions', 'automated evidence collection', and 'continuous authorization' but never mentions 'Key Security Indicators' or 'KSI' anywhere in the text — a specific, named FedRAMP 20x concept the assertion requires is missing."
+    },
+    {
+      "text": "Correctly characterizes the 2026 state: 20x launched via phased implementation starting with Low-baseline pilots in 2025 and expanding; both 20x and Rev5 paths currently exist, and under CR26 a CSP pursues one path or the other",
+      "passed": true,
+      "evidence": "\"it is now the primary and preferred authorization pathway... Traditional SSP/SAP/SAR-based authorization still exists for complex systems and legacy transitions during the CR26 transition window, but it is no longer the default route\" — correctly conveys both paths coexist under CR26 with 20x as primary."
+    },
+    {
+      "text": "Explains concrete differences from traditional authorization (no lengthy SSP narratives, automated/API submission, continuous reporting instead of periodic snapshots)",
+      "passed": true,
+      "evidence": "Comparison table: 'Manual submission of SSP, SAP, SAR as large narrative documents' vs 'Modular, API-driven submissions' and 'Point-in-time authorization... static document package' vs 'Continuous authorization — ongoing validation rather than a one-time snapshot'."
+    },
+    {
+      "text": "Provides a reasoned recommendation matched to the CSP's situation (e.g., cloud-native SaaS suits 20x; complex/legacy or High-baseline systems may need the Rev5 route) rather than a one-size-fits-all answer",
+      "passed": true,
+      "evidence": "\"When traditional/legacy Agency Authorization may still make sense... Highly complex systems where 20x's automated/modular submission model isn't yet mature... Systems clearly targeting Class D (High)\" contrasted against the 20x recommendation for most CSPs — situational, not one-size-fits-all."
+    },
+    {
+      "text": "Does not present FedRAMP Ready as a viable ongoing designation (it is retired/retiring in 2026), and if CR26 classes are mentioned the mapping is correct per NTC-0004 (B=LI-SaaS+Low, C=Moderate, D=High, A=new pilot/transitional)",
+      "passed": true,
+      "evidence": "\"FedRAMP Ready retires on July 28, 2026... Any CSP currently pursuing FedRAMP Ready needs to pivot immediately\" and the class mapping table correctly states A=pilot/transitional, B=LI-SaaS/Low, C=Moderate, D=High."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

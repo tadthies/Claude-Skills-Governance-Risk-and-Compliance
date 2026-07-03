@@ -445,11 +445,13 @@ class TestEvalConsistency:
 _WS = REPO_ROOT / "grc-workspace"
 
 _SKILL_GRADING_DIR: dict[str, Path] = {
-    # ── iteration-2 (most recent run) ────────────────────────────────────────
-    "fedramp":          _WS / "iteration-2" / "fedramp",
+    # ── July 2026 re-run with primary-source assertions (most recent) ────────
+    "fedramp":          _WS / "rerun-2026-07" / "fedramp-evals",
+    "swift-csp":        _WS / "rerun-2026-07" / "swift-csp-evals",
+    "nis2":             _WS / "rerun-2026-07" / "nis2-evals",
+    "lgpd":             _WS / "rerun-2026-07" / "lgpd-evals",
+    # ── iteration-2 (previous run) ───────────────────────────────────────────
     "ccpa":             _WS / "iteration-2" / "ccpa",
-    "swift-csp":        _WS / "iteration-2" / "swift-csp",
-    "lgpd":             _WS / "iteration-2" / "lgpd",
     "eu-ai-act":        _WS / "iteration-2" / "eu-ai-act",
     "iso27701":         _WS / "iteration-2" / "iso27701",
     # ── iteration-1 (skill-specific subdirectory) ────────────────────────────
@@ -464,7 +466,6 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     "dora":             _WS / "iteration-1" / "dora",
     "dpdpa":            _WS / "iteration-1" / "dpdpa",
     "cmmc":             _WS / "iteration-1" / "cmmc",
-    "nis2":             _WS / "iteration-1" / "nis2",
     "nist-ai-rmf":      _WS / "iteration-1" / "nist-ai-rmf",
     "ism":              _WS / "iteration-1" / "ism",
     # ── flat eval directories in iteration-1 root (identified by prefix) ─────

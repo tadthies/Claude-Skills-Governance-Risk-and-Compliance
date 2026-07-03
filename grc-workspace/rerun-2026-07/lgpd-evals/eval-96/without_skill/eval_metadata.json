@@ -1,0 +1,13 @@
+{
+  "eval_id": 96,
+  "eval_name": "extraterritorial-scope-legal-bases",
+  "run_type": "without_skill",
+  "prompt": "We are a US SaaS company with Brazilian customers. Our app collects name, email, CPF, and purchase history. Do we need to comply with LGPD? Which legal bases apply to our processing?",
+  "assertions": [
+    "Confirms LGPD applies extraterritorially via Art. 3 (processing with the purpose of offering goods or services to individuals located in Brazil, or data collected in Brazil), so the US SaaS company must comply",
+    "Maps processing to appropriate legal bases: contract performance (Art. 7, V) for account/service data and purchase history, with consent (Art. 7, I) or legitimate interest (Art. 7, IX — with a documented balancing test) for marketing/analytics uses",
+    "Treats CPF as regular (non-sensitive) personal data — the Art. 5, II sensitive-data list (racial/ethnic origin, religious belief, political opinion, union membership, health, sex life, genetic/biometric data) does not include tax IDs or financial data — while noting it still warrants strong protection",
+    "Identifies core operational obligations: transparent privacy notice (Art. 9), data subject rights handling (Art. 18), and appointing an Encarregado/DPO (Art. 41) — correctly noting ANPD Resolution CD/ANPD 2/2022 exempts small processing agents from formal appointment but still requires a contact channel",
+    "Flags international transfer compliance (Art. 33) since data flows to the US, which has NO ANPD adequacy decision (as of 2026 only the EU/EEA holds mutual adequacy with Brazil), so SCCs or another Art. 33 mechanism is required"
+  ]
+}

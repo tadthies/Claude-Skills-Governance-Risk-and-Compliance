@@ -1,0 +1,33 @@
+{
+  "eval_id": 75,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Gives immediate containment guidance: isolate the affected SWIFT-connected server / disconnect from the SWIFT environment while preserving forensic evidence (disk images, memory captures, logs)",
+      "passed": true,
+      "evidence": "\"Isolate the affected server from the network... preserve volatile memory where possible (see evidence section below)\" and evidence table lists \"Forensic disk/memory images | Full forensic image of the affected server, including volatile memory if malware may be memory-resident\""
+    },
+    {
+      "text": "Advises promptly notifying SWIFT of the security incident and engaging counterparty/correspondent banks immediately to attempt recall or stop of suspected fraudulent payments",
+      "passed": true,
+      "evidence": "\"Deadline: within 24 hours of confirming the cyber incident\" for notifying SWIFT via CISO office/KYC-SA portal, and \"Notify your correspondent banks / counterparties on the receiving end of any suspected fraudulent messages so they can hold or recall payments — this is time-critical\""
+    },
+    {
+      "text": "Mentions notifying law enforcement and/or the local regulator as applicable, alongside internal escalation to senior management",
+      "passed": true,
+      "evidence": "\"Notify your financial regulator and law enforcement per local jurisdictional requirements\" and \"Escalate to senior management / CISO immediately upon confirming the malware and suspected fraud\""
+    },
+    {
+      "text": "Specifies evidence to preserve: SWIFT message/transaction logs (e.g., Alliance journals), authentication and access logs, network logs, and malware samples/images with chain of custody",
+      "passed": true,
+      "evidence": "Evidence table includes \"SWIFT application logs | Alliance Access/Gateway logs...\", \"Network logs | Firewall, IDS/IPS, and SIEM logs...\", \"Authentication logs | Operator login events, MFA/token usage...\", \"Malware sample | Isolated copy of the malware binary/artifact\", and \"Chain of custody documentation\""
+    },
+    {
+      "text": "Describes SWIFT-specific IR plan contents per Control 7.1: defined roles and contacts (including SWIFT and counterparties), SWIFT-zone isolation procedures, recovery/reconnection procedures, and periodic testing/exercises of the plan",
+      "passed": true,
+      "evidence": "\"Notification matrix with named roles and deadlines\" including SWIFT and \"Correspondent banks/counterparties\", \"Containment procedures — including the ability to isolate SWIFT infrastructure\", \"Recovery procedures — rebuild standards, software integrity re-verification (Control 6.2)\", and \"Annual test requirement — the IRP must be tested annually via tabletop exercise or live drill\""
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

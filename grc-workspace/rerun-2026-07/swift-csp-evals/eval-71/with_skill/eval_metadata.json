@@ -1,0 +1,13 @@
+{
+  "eval_id": 71,
+  "eval_name": "architecture-type-applicability",
+  "run_type": "with_skill",
+  "prompt": "We are a mid-tier regional bank connecting to SWIFT via Alliance Access software running on our own servers on-premises. We have no HSMs and do not use a service bureau or cloud-hosted SWIFT. What is our SWIFT architecture type and which CSCF v2026 controls are mandatory for us versus advisory? Give us the full applicability matrix.",
+  "assertions": [
+    "Correctly identifies the bank as Architecture Type A1 (messaging interface/connector owned and managed on-premises by the user — Alliance Access on own servers)",
+    "States the correct CSCF v2026 framework composition: 32 controls total — 25 mandatory and 7 advisory",
+    "States that Control 2.4 (Back-Office Data Flow Security) is mandatory in v2026 (newly promoted from advisory; it was advisory through v2025)",
+    "Provides an applicability matrix or structured list organized by the three objectives (Secure Your Environment / Know and Limit Access / Detect and Respond) naming specific controls applicable to A1 (e.g., 1.1 secure zone, 2.2 security updates, 4.2 MFA, 6.4 logging, 7.1 incident response)",
+    "Notes that annual attestation via KYC-SA requires an independent assessment (CSP Independent Assessment Framework — self-attestation alone is no longer accepted)"
+  ]
+}

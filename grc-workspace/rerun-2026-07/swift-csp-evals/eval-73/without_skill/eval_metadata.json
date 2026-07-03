@@ -1,0 +1,13 @@
+{
+  "eval_id": 73,
+  "eval_name": "cscf-gap-assessment",
+  "run_type": "without_skill",
+  "prompt": "Run a SWIFT CSCF v2026 gap assessment for our organisation. Here is our current state: SWIFT zone exists but is on a shared VLAN with other internal systems. We patch critical vulnerabilities within 30 days. We use software OTP for operator MFA. SWIFT logs are collected but not reviewed and retention is only 6 months. We have a general IT incident response plan but nothing SWIFT-specific. Operators use named individual accounts. Rate each relevant control and give us a prioritised remediation plan.",
+  "assertions": [
+    "Flags the shared VLAN as non-compliance with Control 1.1 (SWIFT Environment Protection — dedicated secure zone segregated from general IT)",
+    "Flags software OTP as a gap against Control 4.2 (MFA) and flags the logging state against Control 6.4 (no log review; 6-month retention is insufficient — SWIFT guidance expects at least 12 months)",
+    "Flags the absence of a SWIFT-specific incident response plan as a gap against Control 7.1 (Cyber Incident Response Planning)",
+    "Correctly recognizes named individual operator accounts as compliant with Control 5.1 (Logical Access Control) rather than flagging them as a gap",
+    "Delivers a prioritized remediation plan (severity/priority ordering with concrete actions and rough sequencing), consistent with the requested gap-assessment format"
+  ]
+}

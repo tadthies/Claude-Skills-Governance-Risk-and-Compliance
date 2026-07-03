@@ -137,7 +137,7 @@ Personal data may only transfer internationally to:
 ANPD evaluates: rule of law; protection of human rights; independence of supervisory body; effective remedies; reciprocity; international conventions ratified by Brazil.
 
 ### Art. 35 — Contractual Clauses and BCRs
-Specific or standard contractual clauses must provide adequate protection level. BCRs authorised by ANPD. ANPD may publish standard contractual clauses (not yet done as of 2025).
+Specific or standard contractual clauses must provide adequate protection level. BCRs authorised by ANPD. **ANPD published its standard contractual clauses in Resolution CD/ANPD No. 19/2024 (International Data Transfer Regulation, August 2024)** — the SCCs must be adopted as published, without modification; pre-existing contracts had 12 months to incorporate them.
 
 ### Art. 36 — Complementary Transfers
 Even where Art. 33 applies, ANPD may impose additional requirements for sensitive data or large-scale transfers.

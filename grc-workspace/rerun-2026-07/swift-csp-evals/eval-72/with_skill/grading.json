@@ -1,0 +1,33 @@
+{
+  "eval_id": 72,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Explains that Control 4.2 requires multi-factor authentication for operator access to SWIFT-related components/applications",
+      "passed": true,
+      "evidence": "\"Control 4.2 — Multi-Factor Authentication is Mandatory across all architecture types (A1, A2, A3, A4, B)... MFA mandatory for all interactive logins to SWIFT applications (Alliance Access, Alliance Gateway, SWIFT GUI); mandatory for remote administrative access to SWIFT systems\""
+    },
+    {
+      "text": "Explains the security rationale for the finding in terms of factor independence / channel separation (a software token on a general-purpose or shared device is exposed to the same compromise path as the credentials and workstation it is meant to protect)",
+      "passed": true,
+      "evidence": "\"A phone running Google Authenticator is a general-purpose, shared device — it runs other apps, connects to the internet, and can be compromised by malware, SIM-swap, or phishing (real-time OTP relay/MITM attacks) in a way a dedicated hardware token cannot... MFA on a shared, network-connected device does not provide the same assurance as a dedicated, non-networked authentication factor.\""
+    },
+    {
+      "text": "Offers at least two concrete compliant remediation options (e.g., hardware OTP tokens, smart cards/PKI, FIDO2 hardware security keys, or properly isolated out-of-band factors on hardened dedicated devices)",
+      "passed": true,
+      "evidence": "\"Option 1 — Deploy hardware OTP tokens... or FIDO2 hardware keys\" and \"Option 2 — Smart cards with PIN\" — three distinct compliant options given (hardware OTP, FIDO2, smart cards with PIN)."
+    },
+    {
+      "text": "Addresses the attestation timeline options honestly: remediate before attesting, or attest as non-compliant with a remediation plan — and the consequences of a non-compliant attestation (counterparty visibility in KYC-SA, possible reporting to supervisors)",
+      "passed": true,
+      "evidence": "\"Do not attempt to attest Control 4.2 as 'Implemented' while software OTP remains in place... misrepresents your control status on a document visible to your counterparties\" and \"Expect it to still show as Partially Implemented on the KYC-SA form\" — covers both remediate-before-attesting and documented-exception/non-compliant paths plus counterparty visibility consequence, though it does not mention possible reporting to supervisors."
+    },
+    {
+      "text": "Does not misstate the framework composition (v2026 has 32 controls, 25 mandatory + 7 advisory; Control 2.4 was advisory in v2025 and is mandatory in v2026)",
+      "passed": true,
+      "evidence": "Response does not state any control counts or mandatory/advisory totals, and does not mention Control 2.4 at all, so no misstatement of framework composition occurs (only a general note that v2026 attestation window opens July 1, 2026)."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 73,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Flags the shared VLAN as non-compliance with Control 1.1 (SWIFT Environment Protection — dedicated secure zone segregated from general IT)",
+      "passed": true,
+      "evidence": "\"1.1 SWIFT Environment Protection — Mandatory ... Rating: Non-Compliant (NC) ... A shared VLAN with other internal systems does not constitute segregation.\""
+    },
+    {
+      "text": "Flags software OTP as a gap against Control 4.2 (MFA) and flags the logging state against Control 6.4 (no log review; 6-month retention is insufficient — SWIFT guidance expects at least 12 months)",
+      "passed": true,
+      "evidence": "\"4.2 Multi-Factor Authentication ... Rating: Partially Compliant (PC) ... it is weaker than hardware-token MFA...\" and \"6.4 Logging and Monitoring ... Rating: Non-Compliant (NC) ... logs are collected but not reviewed... 6-month retention falls short of the ~12-month (or greater) expectation...\""
+    },
+    {
+      "text": "Flags the absence of a SWIFT-specific incident response plan as a gap against Control 7.1 (Cyber Incident Response Planning)",
+      "passed": true,
+      "evidence": "\"7.1 Cyber Incident Response Planning ... Rating: Non-Compliant (NC) ... A general IT incident response plan is a good foundation but does not satisfy this control, which specifically requires SWIFT-relevant scenarios and procedures...\""
+    },
+    {
+      "text": "Correctly recognizes named individual operator accounts as compliant with Control 5.1 (Logical Access Control) rather than flagging them as a gap",
+      "passed": true,
+      "evidence": "\"5.1 Logical Access Control — Mandatory ... Rating: Compliant (C) — provisionally ... Named individual accounts is exactly what this control requires and is a genuine strength.\""
+    },
+    {
+      "text": "Delivers a prioritized remediation plan (severity/priority ordering with concrete actions and rough sequencing), consistent with the requested gap-assessment format",
+      "passed": true,
+      "evidence": "\"4. Prioritised Remediation Plan\" with \"Priority 1 — Critical (target: 0–30 days...)\", \"Priority 2 — High (target: 30–90 days)\", \"Priority 3 — Medium (target: 90–180 days)\", each with lettered sub-actions (P1-A, P1-B, P2-A, P2-B, P3-A, P3-B), owners implied, and rationale (\"Why first\")."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -6,8 +6,8 @@ description: >
   CSCF controls, SWIFT security attestation, KYC-SA portal, SWIFT architecture types
   (A1/A2/A3/A4/B), mandatory vs advisory controls, independent assessment, SWIFT secure
   zone, secure flow zone, MFA for operators, SWIFT messaging security, payment fraud
-  prevention on SWIFT, gap analysis for CSCF, or compliance with SWIFT's 31 controls
-  (24 mandatory, 7 advisory in v2026) across the three objectives: Secure Your
+  prevention on SWIFT, gap analysis for CSCF, or compliance with SWIFT's 32 controls
+  (25 mandatory, 7 advisory in v2026) across the three objectives: Secure Your
   Environment, Know and Limit Access, Detect and Respond. Control 2.4 (Back-Office
   Data Flow Security) is now mandatory in v2026. v2026 attestation window is July 1–
   December 31, 2026. Trigger for any SWIFT CSP or CSCF compliance question.
@@ -15,7 +15,7 @@ description: >
 
 # SWIFT Customer Security Programme (CSP) — CSCF v2026
 
-You are an expert advisor on the **SWIFT Customer Security Programme (CSP)** and the **Customer Security Controls Framework (CSCF) v2026**. You help financial institutions, custodians, brokers, and service bureaux achieve and maintain mandatory compliance with SWIFT's 31 security controls across the global payment network.
+You are an expert advisor on the **SWIFT Customer Security Programme (CSP)** and the **Customer Security Controls Framework (CSCF) v2026**. You help financial institutions, custodians, brokers, and service bureaux achieve and maintain mandatory compliance with SWIFT's 32 security controls across the global payment network.
 
 ---
 
@@ -25,7 +25,7 @@ You are an expert advisor on the **SWIFT Customer Security Programme (CSP)** and
 |-----------|--------|
 | **Framework name** | SWIFT Customer Security Controls Framework (CSCF) |
 | **Current version** | v2026 (effective July 2026; v2025 valid until June 2026) |
-| **Total controls** | 31 — **24 Mandatory + 7 Advisory** |
+| **Total controls** | 32 — **25 Mandatory + 7 Advisory** |
 | **Key v2026 change** | Control 2.4 (Back-Office Data Flow Security) promoted from Advisory → **Mandatory** |
 | **Attestation** | Annual — submitted via KYC Security Attestation (KYC-SA) portal |
 | **v2026 attestation window** | July 1 – December 31, 2026 |
@@ -200,5 +200,5 @@ The following controls are the **highest-risk** and most commonly cited in SWIFT
 ## Reference Files
 
 For deeper content, read these files as needed:
-- **references/swift-controls.md** — All 31 controls with full implementation requirements, evidence artifacts, and architecture applicability by type (A1/A2/A3/A4/B); includes v2025→v2026 change summary
+- **references/swift-controls.md** — All 32 controls with full implementation requirements, evidence artifacts, and architecture applicability by type (A1/A2/A3/A4/B); includes v2025→v2026 change summary
 - **references/swift-assessment.md** — KYC-SA attestation process, independent assessor requirements, cross-framework mapping (ISO 27001, PCI DSS, NIST CSF), and SWIFT-specific incident reporting obligations

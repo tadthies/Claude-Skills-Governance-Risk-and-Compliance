@@ -1,0 +1,13 @@
+{
+  "eval_id": 82,
+  "eval_name": "saas-provider-scope-obligations",
+  "run_type": "without_skill",
+  "prompt": "Our SaaS company provides B2B cloud-based HR software. We have 75 employees and €15M annual revenue. A customer just told us we need to be NIS2 compliant. Are we directly subject to NIS2, and if so what do we need to do to comply with Article 21?",
+  "assertions": [
+    "Analyzes whether B2B SaaS qualifies as a 'cloud computing service' under Annex I (digital infrastructure) and concludes the company is likely directly in scope, since at 75 employees / €15M it meets the Art. 2(1) size threshold (medium-sized: 50+ employees or >€10M turnover)",
+    "Classifies the company as an IMPORTANT entity (medium-sized digital-infrastructure provider below the large-enterprise ceiling, and not one of the Art. 3(1) always-essential categories like TLD registries, DNS providers, or qualified trust service providers)",
+    "Walks through the Art. 21(2)(a)–(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+    "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+    "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)"
+  ]
+}

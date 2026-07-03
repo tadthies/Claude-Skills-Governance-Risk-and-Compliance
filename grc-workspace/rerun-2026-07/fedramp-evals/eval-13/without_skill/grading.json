@@ -1,0 +1,33 @@
+{
+  "eval_id": 13,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Describes FedRAMP 20x as the automation-oriented approach: machine-readable evidence, Key Security Indicators (KSIs), and continuous validation replacing narrative-heavy documentation",
+      "passed": true,
+      "evidence": "\"Machine-readable, automated evidence over narrative documents... 'Key Security Indicators' (KSIs) instead of exhaustive control-by-control narratives... Continuous validation / continuous monitoring baked in from the start\" — covers all three required elements explicitly."
+    },
+    {
+      "text": "Correctly characterizes the 2026 state: 20x launched via phased implementation starting with Low-baseline pilots in 2025 and expanding; both 20x and Rev5 paths currently exist, and under CR26 a CSP pursues one path or the other",
+      "passed": false,
+      "evidence": "Response describes 20x as 'Still evolving / not fully settled... has not fully replaced the traditional Rev5 program — it is being layered in, tested with volunteer CSPs' and frames it as an ongoing pilot program rather than a formally available parallel pathway. It never mentions CR26 or that a CSP now formally chooses one path or the other; this understates 20x's 2026 maturity/status."
+    },
+    {
+      "text": "Explains concrete differences from traditional authorization (no lengthy SSP narratives, automated/API submission, continuous reporting instead of periodic snapshots)",
+      "passed": true,
+      "evidence": "Comparison table: 'Long-form SSP, SAP, SAR, POA&M documents' vs 'Machine-readable OSCAL data, automated evidence, KSIs' and 'Point-in-time initial assessment + annual assessment' vs 'Continuous validation model'."
+    },
+    {
+      "text": "Provides a reasoned recommendation matched to the CSP's situation (e.g., cloud-native SaaS suits 20x; complex/legacy or High-baseline systems may need the Rev5 route) rather than a one-size-fits-all answer",
+      "passed": true,
+      "evidence": "\"Lean toward traditional FedRAMP (Rev5)... You need a High impact level authorization\" vs \"Lean toward... FedRAMP 20x if: You are targeting Low or Moderate impact SaaS\" — situational guidance provided."
+    },
+    {
+      "text": "Does not present FedRAMP Ready as a viable ongoing designation (it is retired/retiring in 2026), and if CR26 classes are mentioned the mapping is correct per NTC-0004 (B=LI-SaaS+Low, C=Moderate, D=High, A=new pilot/transitional)",
+      "passed": true,
+      "evidence": "FedRAMP Ready is never mentioned in the response (so it is not presented as viable), and CR26 Certification Classes are never mentioned either, so the conditional mapping check does not trigger — passes by the 'PASS if classes are not mentioned at all' rule."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

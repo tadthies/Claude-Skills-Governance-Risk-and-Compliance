@@ -1,0 +1,33 @@
+{
+  "eval_id": 72,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Explains that Control 4.2 requires multi-factor authentication for operator access to SWIFT-related components/applications",
+      "passed": true,
+      "evidence": "\"Control 4.2 ('Multi-Factor Authentication') in CSCF 2025 requires multi-factor authentication for all interactive access to the SWIFT-related operator PCs, Alliance Access/Entry (or equivalent messaging interface), and any GUI or component within the secure zone\""
+    },
+    {
+      "text": "Explains the security rationale for the finding in terms of factor independence / channel separation (a software token on a general-purpose or shared device is exposed to the same compromise path as the credentials and workstation it is meant to protect)",
+      "passed": true,
+      "evidence": "\"A software TOTP app installed on the same general-purpose device... that is used for email, browsing, or other non-SWIFT activity does not provide independence between the authentication factor and the platform that could be compromised... the 'something you know' (password) and the 'something you have' (the app on the same machine) are not truly isolated.\""
+    },
+    {
+      "text": "Offers at least two concrete compliant remediation options (e.g., hardware OTP tokens, smart cards/PKI, FIDO2 hardware security keys, or properly isolated out-of-band factors on hardened dedicated devices)",
+      "passed": true,
+      "evidence": "\"Deploy FIPS-validated or vendor-certified hardware OTP tokens... issue hardware security keys (e.g., YubiKey 5 series)... Evaluate PKI-based smart card or certificate-based authentication\" — multiple compliant options offered."
+    },
+    {
+      "text": "Addresses the attestation timeline options honestly: remediate before attesting, or attest as non-compliant with a remediation plan — and the consequences of a non-compliant attestation (counterparty visibility in KYC-SA, possible reporting to supervisors)",
+      "passed": false,
+      "evidence": "Response says to \"Report the finding transparently in your KYC-SA... attest 'in progress'... Do not misattest full compliance if the control gap remains\" but never states any concrete consequence of a non-compliant attestation (no mention of counterparty visibility or possible supervisor reporting) — only generic honesty advice without explaining what results from disclosure."
+    },
+    {
+      "text": "Does not misstate the framework composition (v2026 has 32 controls, 25 mandatory + 7 advisory; Control 2.4 was advisory in v2025 and is mandatory in v2026)",
+      "passed": true,
+      "evidence": "Response does not state any control counts, mandatory/advisory totals, or mention Control 2.4 at all, so no misstatement occurs."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

@@ -1,7 +1,7 @@
 ---
 name: nis2
 description: >
-  EU NIS2 Directive (Directive (EU) 2022/2555) compliance advisor for essential and important entities: entity classification, Art. 21 risk management measures, Art. 23 incident reporting timelines (24h/72h/1 month), Art. 20 governance obligations, supply chain security (Art. 26), gap assessments, policy drafting, ISO 27001 alignment, and penalty exposure analysis. Also covers Commission Implementing Regulation (EU) 2024/2690, the technical/methodological sub-requirements for Art. 21(2) and the significant-incident thresholds binding on DNS/cloud/data-centre/MSP/MSSP/trust-service and other digital entities. Use for NIS2 readiness, transposition questions, ENISA technical implementation guidance, significant-incident thresholds, supervisory differences between essential and important entities, and cross-border coordination.
+  EU NIS2 Directive (Directive (EU) 2022/2555) compliance advisor for essential and important entities: entity classification, Art. 21 risk management measures, Art. 23 incident reporting timelines (24h/72h/1 month), Art. 20 governance obligations, supply chain security (Art. 21(2)(d); coordinated risk assessments Art. 22), gap assessments, policy drafting, ISO 27001 alignment, and penalty exposure analysis. Also covers Commission Implementing Regulation (EU) 2024/2690, the technical/methodological sub-requirements for Art. 21(2) and the significant-incident thresholds binding on DNS/cloud/data-centre/MSP/MSSP/trust-service and other digital entities. Use for NIS2 readiness, transposition questions, ENISA technical implementation guidance, significant-incident thresholds, supervisory differences between essential and important entities, and cross-border coordination.
 ---
 
 # NIS2 Directive Compliance Advisor
@@ -40,7 +40,7 @@ For DNS, TLD registries, cloud, data centres, CDN, MSP, MSSP, online marketplace
 - **72 hours:** Incident notification — initial assessment (severity, impact, indicators of compromise)
 - **1 month:** Final report — detailed description, type of threat, root cause, applied/ongoing mitigations, cross-border impact
 
-**Art. 26 — Supply Chain:** Member States and ENISA coordinate targeted risk assessments of critical ICT supply chains. Entities must address supply chain risks as part of Art. 21 measures.
+**Art. 22 — Coordinated supply chain risk assessments:** Member States, the Cooperation Group, the Commission, and ENISA coordinate targeted risk assessments of critical ICT supply chains. Entities must address supply chain risks as part of Art. 21(2)(d) measures. (Note: Art. 26 concerns jurisdiction and territoriality.)
 
 **Art. 32/33 — Supervision:**
 - EE: Proactive (ex-ante) supervision including on-site inspections, security audits, targeted scans

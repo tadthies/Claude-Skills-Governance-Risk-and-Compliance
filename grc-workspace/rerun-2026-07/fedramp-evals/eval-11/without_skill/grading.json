@@ -1,0 +1,33 @@
+{
+  "eval_id": 11,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States that the JAB P-ATO path no longer exists — the JAB was dissolved in the 2024 FedRAMP restructuring (FedRAMP Authorization Act / OMB M-24-15) — rather than presenting JAB P-ATO as a currently available option",
+      "passed": false,
+      "evidence": "Response presents JAB P-ATO as a live, currently obtainable path throughout: 'the JAB selects a very limited number of CSPs per year (historically single digits to low tens)' and 'Treat JAB P-ATO as a longer-term goal to pursue once you have multiple agencies interested.' No mention that JAB was dissolved."
+    },
+    {
+      "text": "Describes the currently available path(s): FedRAMP 20x and/or Rev5 agency-sponsored authorization, consistent with the post-2024 program (single 'FedRAMP Certification' label per notice NTC-0004)",
+      "passed": false,
+      "evidence": "FedRAMP 20x is mentioned only once in passing ('Consider whether FedRAMP's newer \"FedRAMP 20x\" pilot pathways...') and NTC-0004/Certification Class terminology is entirely absent; the response frames Agency ATO vs JAB P-ATO as the two live paths, which is inaccurate post-2024."
+    },
+    {
+      "text": "Explains the core package artifacts or phases: SSP, independent 3PAO assessment (SAP/SAR), POA&M, and the agency authorization decision",
+      "passed": true,
+      "evidence": "Phase 2-4 describe SSP, 3PAO SAP/SAR assessment, POA&M, and the AO's authorization decision in detail."
+    },
+    {
+      "text": "Mentions continuous monitoring obligations after authorization (monthly vulnerability scanning / POA&M updates, annual assessment)",
+      "passed": true,
+      "evidence": "Phase 5 'Continuous Monitoring (ConMon)': 'monthly vulnerability scans, monthly POA&M updates, annual assessments by a 3PAO, annual penetration testing.'"
+    },
+    {
+      "text": "Gives a concrete recommendation for a first-time CSP appropriate to 2026 (e.g., FedRAMP 20x or agency partnership), without recommending the defunct JAB route",
+      "passed": false,
+      "evidence": "Recommends Agency ATO as the starting point but explicitly frames JAB P-ATO as a legitimate future goal: 'Bottom line: Start with Agency ATO... Treat JAB P-ATO as a longer-term goal to pursue only once you have multiple agencies interested' — this recommends the defunct JAB route as part of the CSP's path."
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 81,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+      "passed": true,
+      "evidence": "'Energy — specifically electricity, including electricity distribution — is an Annex I sector under NIS2. Electricity distribution system operators (DSOs) are explicitly captured in the energy subsector' and concludes 'Yes, you fall under NIS2'."
+    },
+    {
+      "text": "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the medium-size ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+      "passed": false,
+      "evidence": "The response states: 'NIS2's default size-cap rule brings all \"medium and large\" entities in-scope automatically: Medium+ = ≥50 employees OR ≥€10M annual turnover... You have 200 employees and €50M turnover — well above both thresholds... entities meeting the medium/large size threshold are generally classified as Essential Entities, not Important Entities.' This misapplies the size test: it uses the medium-enterprise threshold (which only determines whether the company is in scope at all) to conclude Essential status, rather than applying the actual large-enterprise ceiling (250+ employees or >€50M turnover AND >€43M balance sheet) that separates important from essential. At 200 employees / €50M turnover the company does not clear that ceiling and should default to Important. The response only mentions Member-State designation (KRITIS) as an aside ('may also independently qualify'), not as the actual basis for the essential conclusion — the essential conclusion is already asserted from the flawed size-cap reasoning. This is exactly the FAIL condition: essential concluded from sector/size-cap without the correct ceiling analysis."
+    },
+    {
+      "text": "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+      "passed": true,
+      "evidence": "Section '2. Risk Management Measures — 10 measures under Art. 21' lists all 10 measures (risk analysis, incident handling, business continuity, supply chain security, secure development/vulnerability handling, effectiveness assessment policies, cyber hygiene/training, cryptography, HR security/access control, MFA/secure comms)."
+    },
+    {
+      "text": "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+      "passed": true,
+      "evidence": "'24 hours — Early warning to Germany's CSIRT/BSI... 72 hours — Incident notification... 1 month — Final report: root cause, threat type, applied and ongoing mitigations, cross-border impact.'"
+    },
+    {
+      "text": "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)",
+      "passed": true,
+      "evidence": "'1. Governance (Art. 20) - Your management body... must formally approve the cybersecurity risk management measures. Management must oversee implementation and complete regular cybersecurity training. Personal liability for management body members applies...' plus references to BSI registration under NIS2UmsuCG."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

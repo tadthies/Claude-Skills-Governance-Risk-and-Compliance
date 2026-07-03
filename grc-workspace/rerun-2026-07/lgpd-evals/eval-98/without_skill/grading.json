@@ -1,0 +1,33 @@
+{
+  "eval_id": 98,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Classifies health insurance data as SENSITIVE personal data under Art. 5, II, processable only under the Art. 11 bases — and states that marketing is NOT among the Art. 11, II exceptions, so specific and highlighted (destacado) consent under Art. 11, I is required",
+      "passed": true,
+      "evidence": "\"Health insurance data \\u2192 'dado pessoal sensível' (sensitive personal data), Art. 5º, II\" and 'LGPD Art. 11 provides an exhaustive (closed) list of legal bases... Marketing personalized financial products is not on this list... That leaves specific, highlighted, opt-in consent (Art. 11, I c/c Art. 8, §4º) as essentially the only realistic path.'"
+    },
+    {
+      "text": "Cites the Art. 11 §4º/§5º restriction on communication or shared use of sensitive health data between controllers for economic advantage (a statutory red flag for monetizing health data), and/or the Art. 6, IX non-discrimination principle against uses that create abusive or unlawful discrimination",
+      "passed": true,
+      "evidence": "\"Non-discrimination principle (Art. 6º, IX): LGPD explicitly prohibits processing for 'unlawful or abusive discriminatory purposes.' Using health status to steer people toward or away from financial products... risks being seen as discriminatory.\""
+    },
+    {
+      "text": "Treats credit scores as regular (non-sensitive) personal data and notes the credit-protection basis (Art. 7, X) covers credit analysis/protection — NOT marketing — so marketing personalization needs consent or a documented legitimate-interest balancing (Art. 7, IX with Art. 10)",
+      "passed": false,
+      "evidence": "Response correctly treats credit score as regular/non-sensitive data and correctly concludes marketing needs consent or a documented legitimate-interest balancing test (Art. 7º, IX), but never once mentions Art. 7, X or the 'credit protection' legal basis anywhere in the response — the specific required citation distinguishing the credit-protection basis (which covers analysis/risk, not marketing) from the marketing use case is entirely absent."
+    },
+    {
+      "text": "Recommends concrete safeguards: separate, specific, highlighted consent flows; granular opt-out; data minimization; and a RIPD/DPIA (Art. 38) given sensitive data and profiling",
+      "passed": true,
+      "evidence": "Safeguards list includes 'Specific, granular, opt-in consent' (item 2), 'Data Protection Impact Assessment (Relatório de Impacto à Proteção de Dados Pessoais, Art. 38)' (item 3), 'Right to object / easy opt-out from marketing processing at any time' (item 6), and 'Data minimization: Use the minimum data/derived features necessary' (item 9)."
+    },
+    {
+      "text": "Mentions enforcement exposure: ANPD sanctions under Art. 52 (fines up to 2% of Brazil-sourced revenue capped at R$50M per violation, plus blocking or deletion of the data involved)",
+      "passed": false,
+      "evidence": "No mention of Art. 52, ANPD sanctions, fines, the 2% revenue cap, R$50M cap, or blocking/deletion penalties anywhere in the response. Enforcement exposure is entirely absent."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

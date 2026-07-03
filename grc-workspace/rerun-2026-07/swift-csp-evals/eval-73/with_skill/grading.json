@@ -1,0 +1,33 @@
+{
+  "eval_id": 73,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Flags the shared VLAN as non-compliance with Control 1.1 (SWIFT Environment Protection — dedicated secure zone segregated from general IT)",
+      "passed": true,
+      "evidence": "\"1.1 | SWIFT Environment Protection | 🔴 Not Implemented | ... | SWIFT zone exists but sits on a shared VLAN with other internal systems — this is dual-homing/lack of isolation, a direct breach of the core requirement that the Secure Zone be isolated by deny-by-default firewalls.\""
+    },
+    {
+      "text": "Flags software OTP as a gap against Control 4.2 (MFA) and flags the logging state against Control 6.4 (no log review; 6-month retention is insufficient — SWIFT guidance expects at least 12 months)",
+      "passed": true,
+      "evidence": "\"4.2 | Multi-Factor Authentication | 🔴 Not Implemented | ... Software-based OTP (authenticator app) is in use. Per CSCF v2026, software OTP does not satisfy this control...\" and \"6.4 | Log and Monitoring | 🔴 Not Implemented | ... (1) retention is 6 months, vs. the required minimum of 1 year online / 3 years total; (2) logs are collected but not reviewed...\""
+    },
+    {
+      "text": "Flags the absence of a SWIFT-specific incident response plan as a gap against Control 7.1 (Cyber Incident Response Planning)",
+      "passed": true,
+      "evidence": "\"7.1 | Cyber Incident Response Planning | 🔴 Not Implemented | ... A general IT incident response plan exists, but there is no SWIFT-specific IRP. The control requires explicit coverage of SWIFT notification obligations...\""
+    },
+    {
+      "text": "Correctly recognizes named individual operator accounts as compliant with Control 5.1 (Logical Access Control) rather than flagging them as a gap",
+      "passed": true,
+      "evidence": "\"Named individual operator accounts (no shared accounts) is a genuine strength and satisfies the core anti-repudiation requirement.\" — the specific fact given is credited as satisfying the requirement, not flagged as a gap (the overall control is rated Partial only due to other unprovided sub-elements like access reviews, not due to the named-accounts practice itself)."
+    },
+    {
+      "text": "Delivers a prioritized remediation plan (severity/priority ordering with concrete actions and rough sequencing), consistent with the requested gap-assessment format",
+      "passed": true,
+      "evidence": "\"Part 3 — Prioritised Remediation Plan\" with \"Priority 1 — Critical (target: 30 days)\", \"Priority 2 — High (target: 60–90 days)\", \"Priority 3 — Medium (target: 90–120 days...)\", \"Priority 4 — Attestation Readiness\", each with numbered actions, owners, and rationale."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

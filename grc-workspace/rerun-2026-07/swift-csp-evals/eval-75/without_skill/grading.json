@@ -1,0 +1,33 @@
+{
+  "eval_id": 75,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Gives immediate containment guidance: isolate the affected SWIFT-connected server / disconnect from the SWIFT environment while preserving forensic evidence (disk images, memory captures, logs)",
+      "passed": true,
+      "evidence": "\"Contain the threat — isolate the affected server(s) from the network (including from the SWIFT secure zone, jump servers, HSMs/tokens, and messaging interfaces) without destroying volatile evidence. Do not simply wipe/reimage before evidence capture.\""
+    },
+    {
+      "text": "Advises promptly notifying SWIFT of the security incident and engaging counterparty/correspondent banks immediately to attempt recall or stop of suspected fraudulent payments",
+      "passed": true,
+      "evidence": "\"you are expected to notify your SWIFT Customer Support / Financial Crime Team as soon as possible — SWIFT's guidance is generally within 24 hours\" and \"Notify immediately (within hours) — request they place a hold on any suspect payment messages... and attempt recall via MT192/MT292 or gpi Stop and Recall\""
+    },
+    {
+      "text": "Mentions notifying law enforcement and/or the local regulator as applicable, alongside internal escalation to senior management",
+      "passed": true,
+      "evidence": "\"Your home regulator/central bank... typically require notification\", \"Financial Intelligence Unit / law enforcement — suspected fraud typically triggers a Suspicious Activity Report (SAR)\", and \"Board/senior management and internal audit should be notified per your incident severity matrix, typically within 24 hours\""
+    },
+    {
+      "text": "Specifies evidence to preserve: SWIFT message/transaction logs (e.g., Alliance journals), authentication and access logs, network logs, and malware samples/images with chain of custody",
+      "passed": true,
+      "evidence": "\"SWIFT application logs: Alliance Access/Entry logs, SWIFTNet Link logs, RMA logs, message audit trails\", \"Authentication/access logs: operator login records, HSM/token usage logs...\", \"Network logs: firewall, IDS/IPS, proxy, DNS, and netflow data\", \"Malware artifacts: samples of the malware binary/hashes...\", and \"Chain of custody documentation for all collected evidence\""
+    },
+    {
+      "text": "Describes SWIFT-specific IR plan contents per Control 7.1: defined roles and contacts (including SWIFT and counterparties), SWIFT-zone isolation procedures, recovery/reconnection procedures, and periodic testing/exercises of the plan",
+      "passed": true,
+      "evidence": "\"Roles and responsibilities — a named incident response team... plus 24/7 contact list\", \"a 'kill switch' procedure to disconnect from SWIFTNet if necessary\", \"validated clean rebuild process for SWIFT infrastructure, re-attestation of integrity before reconnecting to SWIFTNet\", and \"the plan must be tested at least annually (tabletop exercises or simulations)\""
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

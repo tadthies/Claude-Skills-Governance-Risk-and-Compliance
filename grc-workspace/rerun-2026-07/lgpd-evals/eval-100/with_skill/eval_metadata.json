@@ -1,0 +1,13 @@
+{
+  "eval_id": 100,
+  "eval_name": "international-transfer-us-parent",
+  "run_type": "with_skill",
+  "prompt": "We are expanding our Brazilian operations and want to transfer customer data to our parent company servers in the United States. The US has no LGPD adequacy decision. What transfer mechanisms are available and what do we need to implement?",
+  "assertions": [
+    "Frames the analysis in the Art. 33 transfer mechanisms and confirms the US has no ANPD adequacy decision (as of 2026, only the EU/EEA holds mutual adequacy with Brazil via Resolution CD/ANPD 32/2026), so adequacy is unavailable for this transfer",
+    "Identifies ANPD Resolution CD/ANPD 19/2024 (the International Data Transfer Regulation) as the operative rulebook, with the ANPD's standard contractual clauses (SCCs) as the primary practical mechanism for an intragroup transfer to the US",
+    "Mentions alternatives with correct caveats: binding corporate rules / global corporate standards (suited to intragroup transfers but require ANPD approval) and specific, highlighted consent (Art. 33, VIII) noting its fragility (withdrawable, high UX cost)",
+    "Notes implementation duties: adopt the ANPD SCCs without modification (they must be incorporated as published), update the privacy notice and records of processing to disclose the international transfer, and document a transfer risk assessment",
+    "Gives practical intragroup guidance: execute the SCC-based agreement between the Brazilian entity and the US parent, address onward transfers and government access, and align security/retention with Art. 46 obligations"
+  ]
+}

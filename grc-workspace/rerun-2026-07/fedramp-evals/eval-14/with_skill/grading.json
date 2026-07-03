@@ -1,0 +1,33 @@
+{
+  "eval_id": 14,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Includes all named in-boundary components: the web application, PostgreSQL database, and Redis cache, hosted in AWS GovCloud",
+      "passed": true,
+      "evidence": "Section 7.1 lists 'Application tier', 'Data tier: A PostgreSQL database (Amazon RDS for PostgreSQL, GovCloud region)', 'Caching tier: A Redis in-memory cache (Amazon ElastiCache for Redis, GovCloud region)', all hosted within AWS GovCloud (US)."
+    },
+    {
+      "text": "Treats Okta and SendGrid as external services/interconnections: identifies that federal data or metadata flows to them and that their FedRAMP authorization status must be verified and documented (FedRAMP boundary guidance for external services)",
+      "passed": true,
+      "evidence": "Section 7.3 External Connections table: both marked 'External — outside boundary' with a 'FedRAMP Status' column requiring verification, and 'Action item for CSP: Confirm and document the exact FedRAMP authorization status... for both Okta and SendGrid'."
+    },
+    {
+      "text": "Mentions inherited controls / leveraged authorization from AWS GovCloud (e.g., physical and environmental controls inherited, documented via CRM/CIS)",
+      "passed": true,
+      "evidence": "Section 7.2 'Leveraged Authorization (Inherited Controls)': 'Physical & Environmental (PE) controls and a substantial portion of System & Communications Protection (SC) controls are inherited... documented in detail in Appendix I (CIS/CRM Workbook)'."
+    },
+    {
+      "text": "References the requirement for an authorization boundary diagram and data flow diagram consistent with FedRAMP SSP requirements",
+      "passed": true,
+      "evidence": "Section 7.5 'Network / Data Flow Diagram (Placeholder)' specifies what the diagram must depict (VPC boundary, ingress paths, data flows, external connections) and must match Section 7.3."
+    },
+    {
+      "text": "Written as usable SSP content: clearly describes what is inside vs outside the boundary and addresses connection security for the external integrations (ports/protocols/TLS, API connections)",
+      "passed": true,
+      "evidence": "Section 7.6 'Boundary Exclusions' plus the 7.4 Ports/Protocols/Services table specifying TLS 1.2+, ports (443, 5432, 6379), and encryption for each connection including Okta and SendGrid."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

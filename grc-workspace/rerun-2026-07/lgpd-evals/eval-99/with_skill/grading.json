@@ -1,0 +1,33 @@
+{
+  "eval_id": 99,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States the ANPD notification deadline correctly: 3 WORKING days from becoming aware, per ANPD Resolution CD/ANPD 15/2024 (not a GDPR-style 72 clock-hours), with the complete/supplementary report within 20 working days",
+      "passed": true,
+      "evidence": "\"Preliminary ANPD notification | 3 working days from awareness of the incident\" and \"note the important distinction: LGPD's clock is 3 working days, not 72 calendar hours (that's the GDPR standard)\" and \"Full incident report to ANPD | 20 working days from confirmation.\" Explicitly cites ANPD Resolution CD/ANPD No. 15/2024."
+    },
+    {
+      "text": "Applies the Art. 48 trigger analysis: notification is required when the incident may cause relevant risk or damage to data subjects — weighing data types (names + emails exposed; passwords encrypted/hashed is a mitigating factor), scale (50,000 subjects), and potential harm (credential stuffing, phishing)",
+      "passed": true,
+      "evidence": "Section 1 table weighs 'Data types exposed', 'Encryption status' (encrypted passwords reduces but does not eliminate risk), 'Volume' (50,000 data subjects), and 'Likely harm' (credential-stuffing, phishing), concluding 'very likely a notifiable incident under Art. 48.'"
+    },
+    {
+      "text": "Requires notifying affected data subjects when relevant risk/damage exists (Art. 48), with practical content: what happened, what data was affected, measures taken, and user recommendations such as password resets",
+      "passed": true,
+      "evidence": "\"Draft data subject notification (plain language) — likely required given email/credential exposure; should include what happened, data involved, recommended actions (password reset, monitor for phishing), and contact channel (DPO).\""
+    },
+    {
+      "text": "Specifies ANPD notification content aligned with Art. 48 §1º: nature of the affected data, data subjects involved, technical and security measures used, risks, and measures taken or planned to mitigate",
+      "passed": true,
+      "evidence": "Lists: 'Nature and category of affected data', 'Number/categories of data subjects affected', 'Technical and security measures used to protect the data', 'Risks related to the incident', 'Measures taken or planned to reverse/mitigate the effects', plus 'Reason for any delay.'"
+    },
+    {
+      "text": "The 72-hour action plan includes containment/eradication, forensic evidence preservation, forced credential invalidation/password resets, and documenting the incident internally even if assessed as non-notifiable (accountability principle; Res. 15/2024 record-keeping duty)",
+      "passed": true,
+      "evidence": "Plan includes 'Contain — isolate affected database/systems, revoke compromised credentials, patch the exploited vulnerability, preserve forensic evidence', 'Force password resets for all 50,000 affected accounts', and 'Open incident record — start the accountability documentation required by Art. 6, X and Art. 47.' The response concludes the incident is very likely notifiable, so the 'even if non-notifiable' condition is not triggered; general documentation practice is still advised regardless."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

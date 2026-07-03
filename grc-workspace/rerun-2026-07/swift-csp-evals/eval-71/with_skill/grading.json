@@ -1,0 +1,33 @@
+{
+  "eval_id": 71,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Correctly identifies the bank as Architecture Type A1 (messaging interface/connector owned and managed on-premises by the user — Alliance Access on own servers)",
+      "passed": true,
+      "evidence": "Response states: 'you are **Architecture Type A1 (Customer connector, customer-managed, software-based)**' and explicitly rules out A2/A3/A4/B with correct reasoning tied to on-premises, self-managed, no HSM, no service bureau."
+    },
+    {
+      "text": "States the correct CSCF v2026 framework composition: 32 controls total — 25 mandatory and 7 advisory",
+      "passed": true,
+      "evidence": "Response states: '25 Mandatory + 7 Advisory controls, all applicable to A1' and 'Totals for A1: 25 Mandatory, 7 Advisory (the full 32-control set applies to you).'"
+    },
+    {
+      "text": "States that Control 2.4 (Back-Office Data Flow Security) is mandatory in v2026 (newly promoted from advisory; it was advisory through v2025)",
+      "passed": true,
+      "evidence": "Table row: '2.4 | Back-Office Data Flow Security | Mandatory — NEW in v2026 (was Advisory in v2025)'. Also a dedicated section: 'Control 2.4 — Back-Office Data Flow Security moved from Advisory to Mandatory in CSCF v2026.'"
+    },
+    {
+      "text": "Provides an applicability matrix or structured list organized by the three objectives (Secure Your Environment / Know and Limit Access / Detect and Respond) naming specific controls applicable to A1 (e.g., 1.1 secure zone, 2.2 security updates, 4.2 MFA, 6.4 logging, 7.1 incident response)",
+      "passed": true,
+      "evidence": "Table column 'Objective' labels rows as '1 — Secure Your Environment', '2 — Know and Limit Access', '3 — Detect and Respond', with named controls including 1.1, 2.2, 4.2, 6.4, and 7.1 all present in the matrix."
+    },
+    {
+      "text": "Notes that annual attestation via KYC-SA requires an independent assessment (CSP Independent Assessment Framework — self-attestation alone is no longer accepted)",
+      "passed": true,
+      "evidence": "Response states: 'you'll need an independent assessment (internal audit function with appropriate independence, or external assessor) covering all 25 mandatory controls, submitted via the KYC-SA portal' and the timeline table notes 'self-attestation alone is generally no longer sufficient.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

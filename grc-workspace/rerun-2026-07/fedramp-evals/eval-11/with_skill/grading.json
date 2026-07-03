@@ -1,0 +1,33 @@
+{
+  "eval_id": 11,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States that the JAB P-ATO path no longer exists — the JAB was dissolved in the 2024 FedRAMP restructuring (FedRAMP Authorization Act / OMB M-24-15) — rather than presenting JAB P-ATO as a currently available option",
+      "passed": true,
+      "evidence": "\"JAB P-ATO is fully suspended. The FedRAMP PMO is now the sole authorization body. There is no longer a 'JAB path' to choose\" and \"Bottom line: the JAB P-ATO path no longer exists.\""
+    },
+    {
+      "text": "Describes the currently available path(s): FedRAMP 20x and/or Rev5 agency-sponsored authorization, consistent with the post-2024 program (single 'FedRAMP Certification' label per notice NTC-0004)",
+      "passed": true,
+      "evidence": "Describes 'FedRAMP 20x (preferred/primary path)' and 'Legacy Agency Authorization package' as the two live options, and frames baselines under 'CR26 Certification Class' terminology tied to NTC-0004 (Class A-D)."
+    },
+    {
+      "text": "Explains the core package artifacts or phases: SSP, independent 3PAO assessment (SAP/SAR), POA&M, and the agency authorization decision",
+      "passed": true,
+      "evidence": "Step 6 'Authorization Package Assembly' lists SSP, SAP, SAR, POA&M explicitly, and Step 7 'Authorization Decision' describes the agency AO issuing an Agency ATO."
+    },
+    {
+      "text": "Mentions continuous monitoring obligations after authorization (monthly vulnerability scanning / POA&M updates, annual assessment)",
+      "passed": true,
+      "evidence": "Step 8 'Continuous Monitoring (ConMon)': 'Monthly: vulnerability scan submissions, POA&M updates... Annually: full 3PAO reassessment...'"
+    },
+    {
+      "text": "Gives a concrete recommendation for a first-time CSP appropriate to 2026 (e.g., FedRAMP 20x or agency partnership), without recommending the defunct JAB route",
+      "passed": true,
+      "evidence": "\"Primary recommendation: Pursue FedRAMP 20x\" with concrete next steps, and explicitly lists 'Do NOT pursue: ... JAB P-ATO — fully suspended; not obtainable.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

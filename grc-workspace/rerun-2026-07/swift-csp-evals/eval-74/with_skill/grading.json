@@ -1,0 +1,33 @@
+{
+  "eval_id": 74,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Describes the KYC-SA (Know Your Customer – Security Attestation) application on swift.com as the submission channel and explains the annual attestation cycle",
+      "passed": true,
+      "evidence": "\"Submission is via the SWIFT portal at **swift.com/myswift**.\" Also discusses the annual cycle: \"Under CSCF v2026, SWIFT has opened an extended attestation window: July 1 – December 31, 2026\" and \"Next cycle | CSCF v2027 is expected to be published July 2026 — plan for a fresh control review ahead of the following attestation cycle\"."
+    },
+    {
+      "text": "States the independent assessment requirement: the attestation must be supported by an independent assessment performed by either an external assessment provider or an independent internal function (e.g., second/third line of defence), per the CSP Independent Assessment Framework",
+      "passed": true,
+      "evidence": "\"Since CSCF v2020, self-attestation is no longer sufficient — an independent assessment is mandatory for all users, including A1 institutions... Eligible assessors: Your internal audit team — permitted, but only if sufficiently independent... An external audit firm with demonstrated SWIFT CSP assessment competency... SWIFT-certified assessors listed on SWIFT's KYC Registry.\" This covers external or independent internal function, though it does not name the 'CSP Independent Assessment Framework' explicitly."
+    },
+    {
+      "text": "Notes assessor independence and competence requirements (assessors must not have implemented or operated the controls they assess; relevant security assessment experience/certifications)",
+      "passed": true,
+      "evidence": "\"The assessor must not have operational responsibility for the SWIFT environment being assessed. If your internal audit function reports into the same chain as SWIFT operations, or has previously configured/managed SWIFT infrastructure, they are disqualified\" plus references to 'demonstrated SWIFT CSP assessment competency' and 'SWIFT-certified assessors'."
+    },
+    {
+      "text": "Describes preparation: confirming scope for architecture type A1, collecting evidence per control, and completing control-by-control compliance status in the KYC-SA form",
+      "passed": true,
+      "evidence": "\"Confirm A1 architecture scope with your SWIFT relationship manager/internal architecture owner\" plus a full per-control evidence checklist table and \"Per-control attestation: For each of the mandatory controls applicable to A1, attest one of: Implemented / Partially Implemented / Not Implemented\"."
+    },
+    {
+      "text": "Explains post-submission consequences: counterparties can request and view attestation data via KYC-SA for counterparty risk decisions, and SWIFT may report non-compliant or non-attesting users to local financial supervisors",
+      "passed": false,
+      "evidence": "Response states counterparty visibility (\"your correspondent banks and counterparties can view your attestation status right away\") but never states that SWIFT itself reports non-compliant or non-attesting users to local financial supervisors — it only vaguely notes 'regulators may reference your attestation status' and ties compliance to general supervisory expectations (DORA, NY DFS, MAS TRM), which is not the same specific claim."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

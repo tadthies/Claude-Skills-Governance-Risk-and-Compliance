@@ -1,0 +1,33 @@
+{
+  "eval_id": 15,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States documented FedRAMP ConMon remediation timeframes including High-severity = 30 days and Moderate = 90 days from identification (Low = 180 days); any Critical-specific figure given must be 30 days or less",
+      "passed": false,
+      "evidence": "Response's primary table states Critical=30, High=90, Moderate=180, Low=365 days, and explicitly instructs the reader to disregard the correct 15/30/90/180 table as an 'older/alternate framing': '...this reflects an older/alternate framing of FedRAMP timeframes. The table above (30/90/180/365 days) is the one to use.' This directly contradicts the required High=30/Moderate=90/Low=180 progression."
+    },
+    {
+      "text": "Explains that findings past their SLA must be tracked as POA&M items with milestones — not silently closed — and that overdue items affect ConMon standing with the agency/PMO",
+      "passed": true,
+      "evidence": "\"You are already past SLA — this needs to be transparently disclosed in your next monthly ConMon submission, not hidden. Late Critical findings draw AO scrutiny and, if patterns persist, can jeopardize ATO status.\" plus 'Milestone Changes' field and log example."
+    },
+    {
+      "text": "Provides a proper POA&M entry structure including at minimum: finding description and source (scan ID/tool), severity/risk rating, point of contact/owner, milestones with scheduled completion dates, and status",
+      "passed": true,
+      "evidence": "Full field table includes Weakness Description with 'scan tool/source', Point of Contact, Risk Rating (Original), Scheduled Completion Date, Milestone Changes, and Status; example row cites 'Qualys' as the scan tool."
+    },
+    {
+      "text": "Mentions the Deviation Request process (false positive / risk adjustment / operational requirement) and/or Vendor Dependency handling where remediation depends on a third party",
+      "passed": true,
+      "evidence": "\"If you believe the SLA doesn't apply (false positive or the risk is genuinely lower) — that requires a formal Deviation Request with AO approval\" and Status field lists 'Vendor Dependency' as an option."
+    },
+    {
+      "text": "Advises documenting remediation evidence and closure validation (e.g., rescan to confirm the fix) rather than just marking the item complete",
+      "passed": true,
+      "evidence": "\"validate remediation via authenticated rescan within 48 hours; update POA&M with evidence upon closure\" in the Overall Remediation Plan example."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

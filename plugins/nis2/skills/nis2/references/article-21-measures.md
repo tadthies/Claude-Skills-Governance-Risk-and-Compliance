@@ -58,7 +58,7 @@ Directive (EU) 2022/2555, Art. 21 requires essential and important entities to t
 - Perform pre-onboarding security assessments (questionnaires, certifications, audits)
 - Include NIS2/security requirements as contractual obligations (right-to-audit, incident notification SLAs, minimum security baselines)
 - Assess supply chain risks as part of the annual risk assessment
-- Monitor ENISA and national authority supply chain risk assessments (Art. 26 coordinated risk assessments)
+- Monitor ENISA and national authority supply chain risk assessments (Art. 22 coordinated risk assessments)
 - Apply enhanced due diligence to high-risk ICT vendors identified by Member States
 
 ---

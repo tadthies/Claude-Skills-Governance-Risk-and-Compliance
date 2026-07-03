@@ -1,0 +1,33 @@
+{
+  "eval_id": 98,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Classifies health insurance data as SENSITIVE personal data under Art. 5, II, processable only under the Art. 11 bases — and states that marketing is NOT among the Art. 11, II exceptions, so specific and highlighted (destacado) consent under Art. 11, I is required",
+      "passed": true,
+      "evidence": "\"Health data is explicitly listed as sensitive personal data under Art. 5, II. Under Art. 11, sensitive data may only be processed on one of these grounds\" — table enumerates all Art. 11 bases showing marketing is not covered by any, concluding 'The only lawful basis for using health insurance data in marketing is express, specific, and highlighted consent (Art. 11, I, read with Art. 8).'"
+    },
+    {
+      "text": "Cites the Art. 11 §4º/§5º restriction on communication or shared use of sensitive health data between controllers for economic advantage (a statutory red flag for monetizing health data), and/or the Art. 6, IX non-discrimination principle against uses that create abusive or unlawful discrimination",
+      "passed": true,
+      "evidence": "\"Art. 6, IX (Non-discrimination principle): Processing cannot be carried out for unlawful or abusive discriminatory purposes. Using health data ... to target or exclude customers from financial products/pricing raises serious non-discrimination exposure.\""
+    },
+    {
+      "text": "Treats credit scores as regular (non-sensitive) personal data and notes the credit-protection basis (Art. 7, X) covers credit analysis/protection — NOT marketing — so marketing personalization needs consent or a documented legitimate-interest balancing (Art. 7, IX with Art. 10)",
+      "passed": true,
+      "evidence": "\"Credit score data is regular (non-sensitive) personal data, and Art. 7, X gives you a specific basis — 'credit protection, including credit analysis and risk of default'. However: This basis is scoped to credit risk/underwriting purposes, not to marketing... Legitimate interest (Art. 7, IX) is theoretically available for marketing of non-sensitive data such as credit scores... but only if a documented balancing test is conducted (Art. 10).\""
+    },
+    {
+      "text": "Recommends concrete safeguards: separate, specific, highlighted consent flows; granular opt-out; data minimization; and a RIPD/DPIA (Art. 38) given sensitive data and profiling",
+      "passed": true,
+      "evidence": "Safeguards table includes 'Separate, granular consent for health data marketing use' (Art. 11,I/Art.8), 'Consent withdrawal must not degrade core banking/insurance service' (opt-out), 'DPIA / RIPD before launch' (Art. 38 — mandatory given sensitive data + profiling), and data minimisation ('less sensitive proxies... aligns with the necessity and data minimisation principles')."
+    },
+    {
+      "text": "Mentions enforcement exposure: ANPD sanctions under Art. 52 (fines up to 2% of Brazil-sourced revenue capped at R$50M per violation, plus blocking or deletion of the data involved)",
+      "passed": false,
+      "evidence": "No mention of Art. 52, ANPD sanctions, fines, the 2% revenue cap, R$50M cap, or blocking/deletion penalties anywhere in the response. Enforcement exposure is entirely absent."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 14,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Includes all named in-boundary components: the web application, PostgreSQL database, and Redis cache, hosted in AWS GovCloud",
+      "passed": true,
+      "evidence": "Section 4.3-4.4 lists 'Web/application servers', 'PostgreSQL database (e.g., Amazon RDS for PostgreSQL, Multi-AZ)', and 'Redis cache (e.g., Amazon ElastiCache for Redis)', all within AWS GovCloud (US)."
+    },
+    {
+      "text": "Treats Okta and SendGrid as external services/interconnections: identifies that federal data or metadata flows to them and that their FedRAMP authorization status must be verified and documented (FedRAMP boundary guidance for external services)",
+      "passed": true,
+      "evidence": "Section 5 'External Services and Interconnections': both are marked external to the boundary, with data exchanged specified, and 'Okta's own compliance posture (e.g., FedRAMP authorization status, if applicable) must be documented' plus open item to 'Confirm and document Okta's/SendGrid's FedRAMP authorization status'."
+    },
+    {
+      "text": "Mentions inherited controls / leveraged authorization from AWS GovCloud (e.g., physical and environmental controls inherited, documented via CRM/CIS)",
+      "passed": true,
+      "evidence": "Section 4.1: 'Physical/environmental controls, hypervisor security, and foundational network controls are inherited from the AWS GovCloud FedRAMP authorization; the CRM identifies AWS's shared responsibilities.'"
+    },
+    {
+      "text": "References the requirement for an authorization boundary diagram and data flow diagram consistent with FedRAMP SSP requirements",
+      "passed": true,
+      "evidence": "Section 3 'Authorization Boundary Diagram' placeholder specifies required content (boundary lines, data flow direction, network zones), and Section 7 'Data Flow Summary' walks through the flow narrative."
+    },
+    {
+      "text": "Written as usable SSP content: clearly describes what is inside vs outside the boundary and addresses connection security for the external integrations (ports/protocols/TLS, API connections)",
+      "passed": true,
+      "evidence": "Section 8 'Boundary Determination Rationale' explicitly separates Included vs Excluded/leveraged, and Section 5.3 Interconnection Table specifies 'HTTPS/443 (SAML/OIDC)' and 'HTTPS/443 (API)' with TLS noted in the narrative for both Okta and SendGrid."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

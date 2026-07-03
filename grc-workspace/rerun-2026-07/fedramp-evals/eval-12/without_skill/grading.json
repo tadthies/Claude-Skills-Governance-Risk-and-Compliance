@@ -1,0 +1,33 @@
+{
+  "eval_id": 12,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Explains that FedRAMP baselines derive from FIPS 199 impact categorization: Low = limited adverse effect, Moderate = serious adverse effect, High = severe or catastrophic adverse effect",
+      "passed": true,
+      "evidence": "\"FedRAMP impact levels are derived from FIPS 199 / NIST SP 800-60...\" with Low 'Limited adverse effect', Moderate 'Serious adverse effect (this is the most common FedRAMP baseline)', High 'Severe or catastrophic adverse effect'."
+    },
+    {
+      "text": "States or implies the correct baseline rigor progression (approx. 156 controls Low, 323 Moderate, 421 High under NIST 800-53 Rev 5, or an equivalent statement that control count and assessment rigor increase with level)",
+      "passed": true,
+      "evidence": "Table/summary states ~125-156 controls Low, ~325 Moderate, ~421 High, matching the expected progression."
+    },
+    {
+      "text": "Identifies that law-enforcement-sensitive data typically maps to FedRAMP High (the High baseline was designed for law enforcement, emergency services, financial and health systems) or at minimum Moderate-to-High with a reasoned FIPS 199 analysis",
+      "passed": true,
+      "evidence": "\"Because of this, systems that store, process, or transmit law enforcement sensitive data are almost always categorized as FedRAMP HIGH, not Moderate... FedRAMP's own guidance...explicitly lists 'law enforcement' as an example use case for the High baseline\""
+    },
+    {
+      "text": "If the answer mentions CR26 Certification Classes, the mapping matches official FedRAMP notice NTC-0004: Class A = new pilot/transitional baseline, Class B = LI-SaaS + Low, Class C = Moderate, Class D = High. FAIL if it presents an incorrect mapping (e.g., A=Low, B=Moderate, C=High). PASS if classes are not mentioned at all.",
+      "passed": true,
+      "evidence": "The response never mentions CR26 Certification Classes or NTC-0004; only legacy Low/Moderate/High/LI-SaaS terminology is used, so the conditional assertion passes by default (condition not triggered)."
+    },
+    {
+      "text": "Notes that the final security categorization / risk acceptance decision rests with the authorizing agency (per RMF and NTC-0004: a FedRAMP certification is not itself an agency risk acceptance)",
+      "passed": true,
+      "evidence": "\"Confirm with your sponsoring agency. The agency's own data owner/Authorizing Official (AO) makes the final categorization decision using FIPS 199 / NIST SP 800-60, in consultation with your team.\""
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

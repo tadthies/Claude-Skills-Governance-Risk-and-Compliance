@@ -3,7 +3,7 @@
 ISO/IEC 27001:2022 certification provides strong evidence of NIS2 compliance for many Art. 21 measures. However, ISO 27001 certification does NOT substitute NIS2 obligations — entities remain responsible for meeting Art. 21, Art. 20, and Art. 23 requirements directly.
 
 Key gaps where NIS2 goes beyond ISO 27001:
-- **Art. 21(2)(d)**: NIS2 explicitly mandates supply chain security obligations tied to ENISA coordinated risk assessments (Art. 26)
+- **Art. 21(2)(d)**: NIS2 explicitly mandates supply chain security obligations tied to ENISA coordinated risk assessments (Art. 22)
 - **Art. 21(2)(j)**: NIS2 explicitly mandates MFA — ISO 27001 Annex A.8.5 covers authentication but MFA is not universally required
 - **Art. 20**: Management body personal liability has no ISO 27001 equivalent
 - **Art. 23**: Incident reporting timelines (24h/72h/1 month) are more prescriptive than ISO 27001's general incident management controls
@@ -51,7 +51,7 @@ The following ISO 27001:2022 Annex A controls are important for overall security
 | Art. 23 — 24h early warning | ISO 27001 A.5.24–5.26 cover incident management but not specific timelines | Pre-drafted CSIRT notification templates; automated alerting workflows |
 | Art. 23 — 72h notification | Same as above | Incident triage runbooks with timeline checkpoints |
 | Art. 23 — 1-month final report | Same as above | Post-incident review template with all Art. 23(4) required fields |
-| Art. 26 — ENISA supply chain risk assessments | ISO 27001 A.5.19–5.23 cover supplier security generally | Monitor ENISA and national authority supply chain advisories; integrate into supplier risk register |
+| Art. 22 — ENISA supply chain risk assessments | ISO 27001 A.5.19–5.23 cover supplier security generally | Monitor ENISA and national authority supply chain advisories; integrate into supplier risk register |
 | Art. 21(2)(j) — MFA mandate | ISO 27001 A.8.5 covers authentication; MFA not universal | Deploy MFA for remote access, privileged accounts, cloud consoles as minimum |
 
 ---

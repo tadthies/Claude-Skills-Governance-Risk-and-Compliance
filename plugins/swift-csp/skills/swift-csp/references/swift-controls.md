@@ -1,6 +1,8 @@
-# SWIFT CSCF v2025 — Full Control Reference
+# SWIFT CSCF v2026 — Full Control Reference
 
-All 31 controls across 3 objectives. Architecture applicability: ✅ = Mandatory | 🔶 = Advisory | ➖ = Not Applicable
+All 32 controls (25 mandatory, 7 advisory) across 3 objectives. Architecture applicability: ✅ = Mandatory | 🔶 = Advisory | ➖ = Not Applicable
+
+> ⚠️ **Verify against the official CSCF v2026** (swift.com Knowledge Centre, requires login) before relying on per-control applicability — SWIFT adjusts control status and architecture-type applicability each cycle. Key v2026 change reflected below: **Control 2.4 promoted Advisory → Mandatory.**
 
 ---
 
@@ -16,7 +18,7 @@ All 31 controls across 3 objectives. Architecture applicability: ✅ = Mandatory
 | 2.1 Internal Data Flow Security | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2.2 Security Updates | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2.3 System Hardening | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2.4A Back-Office Data Flow Security | 🔶 | 🔶 | 🔶 | 🔶 | 🔶 |
+| 2.4 Back-Office Data Flow Security *(promoted to Mandatory in v2026)* | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2.5A External Transmission Data Protection | 🔶 | 🔶 | 🔶 | 🔶 | 🔶 |
 | 2.6 Operator Session Confidentiality | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2.7 Vulnerability Scanning | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -190,9 +192,11 @@ All 31 controls across 3 objectives. Architecture applicability: ✅ = Mandatory
 
 ---
 
-### Control 2.4A — Back-Office Data Flow Security (Advisory)
+### Control 2.4 — Back-Office Data Flow Security (Mandatory — promoted from Advisory in v2026)
 
 **Purpose:** Protect SWIFT transaction data as it flows between SWIFT components and back-office / ERP systems.
+
+**v2026 scope notes:** Encryption is required between the general IT environment and the secure SWIFT infrastructure, including flows via a bridging server. Phased application: legacy direct connections and flows from a bridging server to the back-office first hops are **not yet mandatory** (SWIFT has signalled v2028 for these).
 
 ---
 

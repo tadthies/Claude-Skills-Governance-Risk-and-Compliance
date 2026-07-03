@@ -1,0 +1,33 @@
+{
+  "eval_id": 83,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Specifies the 24-hour early warning to the CSIRT or competent authority, indicating whether the incident is suspected to be caused by unlawful/malicious acts and whether it could have cross-border impact (Art. 23(4)(a))",
+      "passed": true,
+      "evidence": "'Early warning — within 24 hours of becoming aware (T0 + 24h)... Content required: indicate whether the incident is suspected to be caused by unlawful or malicious action, and whether it could have a cross-border impact.'"
+    },
+    {
+      "text": "Specifies the 72-hour incident notification updating the early warning with an initial assessment of severity and impact and available indicators of compromise (Art. 23(4)(b))",
+      "passed": true,
+      "evidence": "'Incident notification — within 72 hours of becoming aware (T0 + 72h)... Content required: an assessment of the incident including severity, impact, and indicators of compromise (IoCs) where available.'"
+    },
+    {
+      "text": "Specifies the final report within one month containing a detailed description, threat type / root cause, applied and ongoing mitigation, and any cross-border impact (Art. 23(4)(d)) — including the progress-report rule if the incident is still ongoing at the one-month mark",
+      "passed": true,
+      "evidence": "'Final report... Must include: A detailed description of the incident... The type of threat or root cause... Applied and ongoing mitigation measures. Where applicable, the cross-border impact... If the incident is still ongoing at the one-month mark, you submit a progress report at that point and the final report is due one month after you handle the incident.'"
+    },
+    {
+      "text": "Explains why this qualifies as a 'significant incident' (Art. 23(3): severe operational disruption or financial loss / considerable damage to others) and mentions intermediate status updates upon authority request (Art. 23(4)(c))",
+      "passed": false,
+      "evidence": "The response explains the significant-incident qualification ('this meets the NIS2 bar of causing or being capable of causing severe operational disruption or financial loss, or affecting other persons through considerable material/non-material damage'), but nowhere mentions intermediate status updates that the competent authority/CSIRT can request between notification stages (Art. 23(4)(c)). No language about authority-requested interim updates appears in the response."
+    },
+    {
+      "text": "Mentions parallel duties: informing recipients of services where relevant (Art. 23(1)-(2)) and the separate GDPR 72-hour personal data breach notification if personal data is affected",
+      "passed": true,
+      "evidence": "'Recipients of your service (your customers) — you must inform service recipients of the significant incident without undue delay, where the incident is likely to adversely affect the provision of that service.' And: 'GDPR (Article 33/34) — if personal data was encrypted/exfiltrated/compromised, you may have a separate 72-hour breach notification duty to your Data Protection Authority.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

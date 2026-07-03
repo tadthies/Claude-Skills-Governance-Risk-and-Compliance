@@ -1,0 +1,261 @@
+{
+  "skill_name": "grc-rerun-fedramp-swift-nis2-lgpd",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "pass_rate": 0.85,
+      "passed": 85,
+      "total": 100,
+      "evals": [
+        {
+          "eval_id": 11,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 12,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 13,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 14,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 15,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 100,
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5
+        },
+        {
+          "eval_id": 96,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 97,
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5
+        },
+        {
+          "eval_id": 98,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 99,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 81,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 82,
+          "pass_rate": 0.2,
+          "passed": 1,
+          "total": 5
+        },
+        {
+          "eval_id": 83,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 84,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 85,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 71,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 72,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 73,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 74,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 75,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "name": "without_skill",
+      "pass_rate": 0.76,
+      "passed": 76,
+      "total": 100,
+      "evals": [
+        {
+          "eval_id": 11,
+          "pass_rate": 0.4,
+          "passed": 2,
+          "total": 5
+        },
+        {
+          "eval_id": 12,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 13,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 14,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 15,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 100,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 96,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 97,
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5
+        },
+        {
+          "eval_id": 98,
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5
+        },
+        {
+          "eval_id": 99,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 81,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 82,
+          "pass_rate": 0.0,
+          "passed": 0,
+          "total": 5
+        },
+        {
+          "eval_id": 83,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 84,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 85,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 71,
+          "pass_rate": 0.4,
+          "passed": 2,
+          "total": 5
+        },
+        {
+          "eval_id": 72,
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5
+        },
+        {
+          "eval_id": 73,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        },
+        {
+          "eval_id": 74,
+          "pass_rate": 0.4,
+          "passed": 2,
+          "total": 5
+        },
+        {
+          "eval_id": 75,
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "description": "Phase 2 re-run (July 2026) for FedRAMP, SWIFT CSP, NIS2, LGPD. Assertions authored independently from PRIMARY SOURCES (FedRAMP NTC-0004 / OMB M-24-15 / FedRAMP ConMon-POA&M guides; SWIFT CSCF v2026; Directive (EU) 2022/2555 text; LGPD Law 13.709/2018 + ANPD Resolutions 2/2022, 15/2024, 19/2024, 32/2026) — NOT from skill content.",
+  "grading_note": "Authoritative post-cutoff facts are embedded in assertion text so graders do not rely on model memory.",
+  "evals": [
+    {
+      "id": 11,
+      "skill": "fedramp",
+      "eval_name": "authorization-pathways-first-ato",
+      "prompt": "We are a cloud software vendor interested in selling to US federal agencies. Explain the FedRAMP authorization process from start to finish, the difference between Agency ATO and JAB P-ATO, and which path we should consider for a first authorization.",
+      "assertions": [
+        "States that the JAB P-ATO path no longer exists — the JAB was dissolved in the 2024 FedRAMP restructuring (FedRAMP Authorization Act / OMB M-24-15) — rather than presenting JAB P-ATO as a currently available option",
+        "Describes the currently available path(s): FedRAMP 20x and/or Rev5 agency-sponsored authorization, consistent with the post-2024 program (single 'FedRAMP Certification' label per notice NTC-0004)",
+        "Explains the core package artifacts or phases: SSP, independent 3PAO assessment (SAP/SAR), POA&M, and the agency authorization decision",
+        "Mentions continuous monitoring obligations after authorization (monthly vulnerability scanning / POA&M updates, annual assessment)",
+        "Gives a concrete recommendation for a first-time CSP appropriate to 2026 (e.g., FedRAMP 20x or agency partnership), without recommending the defunct JAB route"
+      ]
+    },
+    {
+      "id": 12,
+      "skill": "fedramp",
+      "eval_name": "impact-levels-law-enforcement-data",
+      "prompt": "What is the difference between FedRAMP Low, Moderate, and High impact levels? Our product handles law enforcement sensitive data. Which impact level applies to us?",
+      "assertions": [
+        "Explains that FedRAMP baselines derive from FIPS 199 impact categorization: Low = limited adverse effect, Moderate = serious adverse effect, High = severe or catastrophic adverse effect",
+        "States or implies the correct baseline rigor progression (approx. 156 controls Low, 323 Moderate, 421 High under NIST 800-53 Rev 5, or an equivalent statement that control count and assessment rigor increase with level)",
+        "Identifies that law-enforcement-sensitive data typically maps to FedRAMP High (the High baseline was designed for law enforcement, emergency services, financial and health systems) or at minimum Moderate-to-High with a reasoned FIPS 199 analysis",
+        "If the answer mentions CR26 Certification Classes, the mapping matches official FedRAMP notice NTC-0004: Class A = new pilot/transitional baseline, Class B = LI-SaaS + Low, Class C = Moderate, Class D = High. FAIL if it presents an incorrect mapping (e.g., A=Low, B=Moderate, C=High). PASS if classes are not mentioned at all.",
+        "Notes that the final security categorization / risk acceptance decision rests with the authorizing agency (per RMF and NTC-0004: a FedRAMP certification is not itself an agency risk acceptance)"
+      ]
+    },
+    {
+      "id": 13,
+      "skill": "fedramp",
+      "eval_name": "fedramp-20x-vs-traditional",
+      "prompt": "What is FedRAMP 20x and how does it change the authorization process? Should we plan for FedRAMP 20x or pursue traditional FedRAMP authorization?",
+      "assertions": [
+        "Describes FedRAMP 20x as the automation-oriented approach: machine-readable evidence, Key Security Indicators (KSIs), and continuous validation replacing narrative-heavy documentation",
+        "Correctly characterizes the 2026 state: 20x launched via phased implementation starting with Low-baseline pilots in 2025 and expanding; both 20x and Rev5 paths currently exist, and under CR26 a CSP pursues one path or the other",
+        "Explains concrete differences from traditional authorization (no lengthy SSP narratives, automated/API submission, continuous reporting instead of periodic snapshots)",
+        "Provides a reasoned recommendation matched to the CSP's situation (e.g., cloud-native SaaS suits 20x; complex/legacy or High-baseline systems may need the Rev5 route) rather than a one-size-fits-all answer",
+        "Does not present FedRAMP Ready as a viable ongoing designation (it is retired/retiring in 2026), and if CR26 classes are mentioned the mapping is correct per NTC-0004 (B=LI-SaaS+Low, C=Moderate, D=High, A=new pilot/transitional)"
+      ]
+    },
+    {
+      "id": 14,
+      "skill": "fedramp",
+      "eval_name": "ssp-system-boundary-description",
+      "prompt": "Draft a System Boundary Description for a FedRAMP Moderate SSP. Our system is a web application hosted on AWS GovCloud with a PostgreSQL database, Redis cache, and integrations with two external SaaS tools (Okta for authentication and SendGrid for email).",
+      "assertions": [
+        "Includes all named in-boundary components: the web application, PostgreSQL database, and Redis cache, hosted in AWS GovCloud",
+        "Treats Okta and SendGrid as external services/interconnections: identifies that federal data or metadata flows to them and that their FedRAMP authorization status must be verified and documented (FedRAMP boundary guidance for external services)",
+        "Mentions inherited controls / leveraged authorization from AWS GovCloud (e.g., physical and environmental controls inherited, documented via CRM/CIS)",
+        "References the requirement for an authorization boundary diagram and data flow diagram consistent with FedRAMP SSP requirements",
+        "Written as usable SSP content: clearly describes what is inside vs outside the boundary and addresses connection security for the external integrations (ports/protocols/TLS, API connections)"
+      ]
+    },
+    {
+      "id": 15,
+      "skill": "fedramp",
+      "eval_name": "poam-remediation-timeframes",
+      "prompt": "We received a POA&M item for 'Vulnerability scan findings not remediated within required timeframes for Critical vulnerabilities.' What are the FedRAMP remediation timeframes for Critical, High, and Medium vulnerabilities, and how do we write a proper POA&M entry?",
+      "assertions": [
+        "States documented FedRAMP ConMon remediation timeframes including High-severity = 30 days and Moderate = 90 days from identification (Low = 180 days); any Critical-specific figure given must be 30 days or less",
+        "Explains that findings past their SLA must be tracked as POA&M items with milestones — not silently closed — and that overdue items affect ConMon standing with the agency/PMO",
+        "Provides a proper POA&M entry structure including at minimum: finding description and source (scan ID/tool), severity/risk rating, point of contact/owner, milestones with scheduled completion dates, and status",
+        "Mentions the Deviation Request process (false positive / risk adjustment / operational requirement) and/or Vendor Dependency handling where remediation depends on a third party",
+        "Advises documenting remediation evidence and closure validation (e.g., rescan to confirm the fix) rather than just marking the item complete"
+      ]
+    },
+    {
+      "id": 71,
+      "skill": "swift-csp",
+      "eval_name": "architecture-type-applicability",
+      "prompt": "We are a mid-tier regional bank connecting to SWIFT via Alliance Access software running on our own servers on-premises. We have no HSMs and do not use a service bureau or cloud-hosted SWIFT. What is our SWIFT architecture type and which CSCF v2026 controls are mandatory for us versus advisory? Give us the full applicability matrix.",
+      "assertions": [
+        "Correctly identifies the bank as Architecture Type A1 (messaging interface/connector owned and managed on-premises by the user — Alliance Access on own servers)",
+        "States the correct CSCF v2026 framework composition: 32 controls total — 25 mandatory and 7 advisory",
+        "States that Control 2.4 (Back-Office Data Flow Security) is mandatory in v2026 (newly promoted from advisory; it was advisory through v2025)",
+        "Provides an applicability matrix or structured list organized by the three objectives (Secure Your Environment / Know and Limit Access / Detect and Respond) naming specific controls applicable to A1 (e.g., 1.1 secure zone, 2.2 security updates, 4.2 MFA, 6.4 logging, 7.1 incident response)",
+        "Notes that annual attestation via KYC-SA requires an independent assessment (CSP Independent Assessment Framework — self-attestation alone is no longer accepted)"
+      ]
+    },
+    {
+      "id": 72,
+      "skill": "swift-csp",
+      "eval_name": "mfa-software-otp-finding",
+      "prompt": "We currently use Google Authenticator (software-based TOTP) for our SWIFT operators to authenticate to Alliance Access. Our SWIFT assessor has flagged this as a finding against Control 4.2. Why is software OTP not sufficient, what exactly does CSCF v2025 require, and what are our options to remediate this finding before our July attestation deadline?",
+      "assertions": [
+        "Explains that Control 4.2 requires multi-factor authentication for operator access to SWIFT-related components/applications",
+        "Explains the security rationale for the finding in terms of factor independence / channel separation (a software token on a general-purpose or shared device is exposed to the same compromise path as the credentials and workstation it is meant to protect)",
+        "Offers at least two concrete compliant remediation options (e.g., hardware OTP tokens, smart cards/PKI, FIDO2 hardware security keys, or properly isolated out-of-band factors on hardened dedicated devices)",
+        "Addresses the attestation timeline options honestly: remediate before attesting, or attest as non-compliant with a remediation plan — and the consequences of a non-compliant attestation (counterparty visibility in KYC-SA, possible reporting to supervisors)",
+        "Does not misstate the framework composition (v2026 has 32 controls, 25 mandatory + 7 advisory; Control 2.4 was advisory in v2025 and is mandatory in v2026)"
+      ]
+    },
+    {
+      "id": 73,
+      "skill": "swift-csp",
+      "eval_name": "cscf-gap-assessment",
+      "prompt": "Run a SWIFT CSCF v2026 gap assessment for our organisation. Here is our current state: SWIFT zone exists but is on a shared VLAN with other internal systems. We patch critical vulnerabilities within 30 days. We use software OTP for operator MFA. SWIFT logs are collected but not reviewed and retention is only 6 months. We have a general IT incident response plan but nothing SWIFT-specific. Operators use named individual accounts. Rate each relevant control and give us a prioritised remediation plan.",
+      "assertions": [
+        "Flags the shared VLAN as non-compliance with Control 1.1 (SWIFT Environment Protection — dedicated secure zone segregated from general IT)",
+        "Flags software OTP as a gap against Control 4.2 (MFA) and flags the logging state against Control 6.4 (no log review; 6-month retention is insufficient — SWIFT guidance expects at least 12 months)",
+        "Flags the absence of a SWIFT-specific incident response plan as a gap against Control 7.1 (Cyber Incident Response Planning)",
+        "Correctly recognizes named individual operator accounts as compliant with Control 5.1 (Logical Access Control) rather than flagging them as a gap",
+        "Delivers a prioritized remediation plan (severity/priority ordering with concrete actions and rough sequencing), consistent with the requested gap-assessment format"
+      ]
+    },
+    {
+      "id": 74,
+      "skill": "swift-csp",
+      "eval_name": "kyc-sa-attestation-process",
+      "prompt": "We need to submit our annual KYC-SA attestation by July 31. Walk us through the complete attestation process — what we need to prepare, who can act as our independent assessor, how to complete the KYC-SA form, and what happens to our attestation once submitted. We are an A1 architecture bank.",
+      "assertions": [
+        "Describes the KYC-SA (Know Your Customer – Security Attestation) application on swift.com as the submission channel and explains the annual attestation cycle",
+        "States the independent assessment requirement: the attestation must be supported by an independent assessment performed by either an external assessment provider or an independent internal function (e.g., second/third line of defence), per the CSP Independent Assessment Framework",
+        "Notes assessor independence and competence requirements (assessors must not have implemented or operated the controls they assess; relevant security assessment experience/certifications)",
+        "Describes preparation: confirming scope for architecture type A1, collecting evidence per control, and completing control-by-control compliance status in the KYC-SA form",
+        "Explains post-submission consequences: counterparties can request and view attestation data via KYC-SA for counterparty risk decisions, and SWIFT may report non-compliant or non-attesting users to local financial supervisors"
+      ]
+    },
+    {
+      "id": 75,
+      "skill": "swift-csp",
+      "eval_name": "incident-response-malware-fraud",
+      "prompt": "We discovered that malware was found on one of our SWIFT-connected servers and we suspect fraudulent transactions may have been sent. What are our immediate incident response obligations under SWIFT CSP Control 7.1? Who do we notify, by when, and what evidence should we preserve? Also, what should our SWIFT-specific incident response plan contain to be compliant with CSCF v2025?",
+      "assertions": [
+        "Gives immediate containment guidance: isolate the affected SWIFT-connected server / disconnect from the SWIFT environment while preserving forensic evidence (disk images, memory captures, logs)",
+        "Advises promptly notifying SWIFT of the security incident and engaging counterparty/correspondent banks immediately to attempt recall or stop of suspected fraudulent payments",
+        "Mentions notifying law enforcement and/or the local regulator as applicable, alongside internal escalation to senior management",
+        "Specifies evidence to preserve: SWIFT message/transaction logs (e.g., Alliance journals), authentication and access logs, network logs, and malware samples/images with chain of custody",
+        "Describes SWIFT-specific IR plan contents per Control 7.1: defined roles and contacts (including SWIFT and counterparties), SWIFT-zone isolation procedures, recovery/reconnection procedures, and periodic testing/exercises of the plan"
+      ]
+    },
+    {
+      "id": 81,
+      "skill": "nis2",
+      "eval_name": "energy-entity-classification",
+      "prompt": "We are a mid-size European energy company with 200 employees and €50M annual turnover, operating electricity distribution networks in Germany. Do we fall under the NIS2 Directive? If so, as what type of entity, and what are our key obligations?",
+      "assertions": [
+        "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+        "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the medium-size ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+        "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+        "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+        "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)"
+      ]
+    },
+    {
+      "id": 82,
+      "skill": "nis2",
+      "eval_name": "saas-provider-scope-obligations",
+      "prompt": "Our SaaS company provides B2B cloud-based HR software. We have 75 employees and €15M annual revenue. A customer just told us we need to be NIS2 compliant. Are we directly subject to NIS2, and if so what do we need to do to comply with Article 21?",
+      "assertions": [
+        "Analyzes whether B2B SaaS qualifies as a 'cloud computing service' under Annex I (digital infrastructure) and concludes the company is likely directly in scope, since at 75 employees / €15M it meets the Art. 2(1) size threshold (medium-sized: 50+ employees or >€10M turnover)",
+        "Classifies the company as an IMPORTANT entity (medium-sized digital-infrastructure provider below the large-enterprise ceiling, and not one of the Art. 3(1) always-essential categories like TLD registries, DNS providers, or qualified trust service providers)",
+        "Walks through the Art. 21(2)(a)–(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+        "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+        "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)"
+      ]
+    },
+    {
+      "id": 83,
+      "skill": "nis2",
+      "eval_name": "ransomware-reporting-workflow",
+      "prompt": "We suffered a ransomware attack at 09:00 Monday morning that encrypted our core operational systems. Walk me through exactly what we need to report, to whom, and by when under NIS2.",
+      "assertions": [
+        "Specifies the 24-hour early warning to the CSIRT or competent authority, indicating whether the incident is suspected to be caused by unlawful/malicious acts and whether it could have cross-border impact (Art. 23(4)(a))",
+        "Specifies the 72-hour incident notification updating the early warning with an initial assessment of severity and impact and available indicators of compromise (Art. 23(4)(b))",
+        "Specifies the final report within one month containing a detailed description, threat type / root cause, applied and ongoing mitigation, and any cross-border impact (Art. 23(4)(d)) — including the progress-report rule if the incident is still ongoing at the one-month mark",
+        "Explains why this qualifies as a 'significant incident' (Art. 23(3): severe operational disruption or financial loss / considerable damage to others) and mentions intermediate status updates upon authority request (Art. 23(4)(c))",
+        "Mentions parallel duties: informing recipients of services where relevant (Art. 23(1)-(2)) and the separate GDPR 72-hour personal data breach notification if personal data is affected"
+      ]
+    },
+    {
+      "id": 84,
+      "skill": "nis2",
+      "eval_name": "iso27001-vs-nis2-gaps",
+      "prompt": "We already hold ISO 27001:2022 certification. Does this mean we are NIS2 compliant? What gaps might still exist between our ISO 27001 ISMS and full NIS2 compliance?",
+      "assertions": [
+        "Clearly states that ISO 27001 certification does NOT equal NIS2 compliance (a strong foundation but not a safe harbor — legal obligations remain directly on the entity)",
+        "Identifies the incident-reporting gap: NIS2 Art. 23 prescribes 24h / 72h / 1-month reporting timelines to CSIRTs/authorities that ISO 27001 does not require",
+        "Identifies the governance gap: Art. 20 management-body approval, oversight, mandatory training, and personal accountability go beyond ISO 27001's management commitment clauses",
+        "Discusses supply chain security under Art. 21(2)(d) — and if it cites the EU-level coordinated supply chain risk assessments, attributes them to Art. 22 / the Cooperation Group with ENISA. FAIL this assertion if coordinated supply-chain risk assessments are attributed to Art. 26 (which concerns jurisdiction and territoriality).",
+        "Names at least one further concrete delta: e.g., measures ISO doesn't universally mandate (MFA under Art. 21(2)(j), cryptography policy under 21(2)(h)), sector-specific rules (Implementing Regulation 2024/2690), registration duties, or penalty exposure (Art. 34: up to €10M/2% for essential, €7M/1.4% for important entities)"
+      ]
+    },
+    {
+      "id": 85,
+      "skill": "nis2",
+      "eval_name": "dora-nis2-interaction-bank",
+      "prompt": "We are the CISO of a large European bank. Our regulator has told us NIS2 applies to us alongside DORA. How do the two regulations interact, and which takes precedence? Do we need two separate compliance programmes?",
+      "assertions": [
+        "States the lex specialis principle: under NIS2 Art. 4, sector-specific Union legal acts with at-least-equivalent effect take precedence, and DORA (Regulation (EU) 2022/2554) is that act for financial entities including credit institutions",
+        "Specifies WHICH provisions are displaced: DORA applies instead of NIS2 Art. 21 (cybersecurity risk-management measures) and Art. 23 (incident reporting) for banks",
+        "Notes what remains relevant from NIS2 despite DORA precedence (e.g., banks remain listed entities / national registration and information-sharing frameworks may still apply; supervision of ICT risk sits with financial authorities under DORA)",
+        "Recommends a single integrated programme built on DORA's requirements (ICT risk management framework, incident classification and reporting, digital operational resilience testing including TLPT, ICT third-party risk, information sharing) mapped against NIS2 for residual obligations — not two separate programmes",
+        "Any incident-reporting specifics given match DORA's regime (major ICT-related incidents reported to the financial competent authority with initial/intermediate/final reports) rather than NIS2 CSIRT reporting"
+      ]
+    },
+    {
+      "id": 96,
+      "skill": "lgpd",
+      "eval_name": "extraterritorial-scope-legal-bases",
+      "prompt": "We are a US SaaS company with Brazilian customers. Our app collects name, email, CPF, and purchase history. Do we need to comply with LGPD? Which legal bases apply to our processing?",
+      "assertions": [
+        "Confirms LGPD applies extraterritorially via Art. 3 (processing with the purpose of offering goods or services to individuals located in Brazil, or data collected in Brazil), so the US SaaS company must comply",
+        "Maps processing to appropriate legal bases: contract performance (Art. 7, V) for account/service data and purchase history, with consent (Art. 7, I) or legitimate interest (Art. 7, IX — with a documented balancing test) for marketing/analytics uses",
+        "Treats CPF as regular (non-sensitive) personal data — the Art. 5, II sensitive-data list (racial/ethnic origin, religious belief, political opinion, union membership, health, sex life, genetic/biometric data) does not include tax IDs or financial data — while noting it still warrants strong protection",
+        "Identifies core operational obligations: transparent privacy notice (Art. 9), data subject rights handling (Art. 18), and appointing an Encarregado/DPO (Art. 41) — correctly noting ANPD Resolution CD/ANPD 2/2022 exempts small processing agents from formal appointment but still requires a contact channel",
+        "Flags international transfer compliance (Art. 33) since data flows to the US, which has NO ANPD adequacy decision (as of 2026 only the EU/EEA holds mutual adequacy with Brazil), so SCCs or another Art. 33 mechanism is required"
+      ]
+    },
+    {
+      "id": 97,
+      "skill": "lgpd",
+      "eval_name": "deletion-request-workflow",
+      "prompt": "A Brazilian user emailed us requesting deletion of all their personal data. We store their data in our CRM, email platform, and analytics tool. How do we handle this under LGPD?",
+      "assertions": [
+        "Grounds the deletion right in Art. 18 (item V — anonymization, blocking or deletion of unnecessary/excessive/noncompliant data; item VI — deletion of data processed based on consent) rather than inventing rights",
+        "Includes identity verification of the requester before acting on the request",
+        "Covers deletion across all three named systems (CRM, email platform, analytics tool) plus backups, and notifying processors/sub-processors so the deletion is replicated",
+        "States lawful retention exceptions under Art. 16 (compliance with legal/regulatory obligation such as tax and transaction records, research with anonymization where possible, transfer per legal requirements, or exclusive non-shared controller use) and advises telling the user what was retained and why",
+        "Gives a response timeframe consistent with LGPD/ANPD practice (15 days is the Art. 19 reference for the full access report; deletion 'without undue delay') and does NOT invent a statutory 24/48/72-hour deletion deadline; advises logging the request and outcome for accountability"
+      ]
+    },
+    {
+      "id": 98,
+      "skill": "lgpd",
+      "eval_name": "sensitive-health-data-marketing",
+      "prompt": "Our fintech startup in São Paulo processes customers health insurance data and credit scores. We want to use this data for marketing personalised financial products. Is this allowed under LGPD? What legal bases and safeguards apply?",
+      "assertions": [
+        "Classifies health insurance data as SENSITIVE personal data under Art. 5, II, processable only under the Art. 11 bases — and states that marketing is NOT among the Art. 11, II exceptions, so specific and highlighted (destacado) consent under Art. 11, I is required",
+        "Cites the Art. 11 §4º/§5º restriction on communication or shared use of sensitive health data between controllers for economic advantage (a statutory red flag for monetizing health data), and/or the Art. 6, IX non-discrimination principle against uses that create abusive or unlawful discrimination",
+        "Treats credit scores as regular (non-sensitive) personal data and notes the credit-protection basis (Art. 7, X) covers credit analysis/protection — NOT marketing — so marketing personalization needs consent or a documented legitimate-interest balancing (Art. 7, IX with Art. 10)",
+        "Recommends concrete safeguards: separate, specific, highlighted consent flows; granular opt-out; data minimization; and a RIPD/DPIA (Art. 38) given sensitive data and profiling",
+        "Mentions enforcement exposure: ANPD sanctions under Art. 52 (fines up to 2% of Brazil-sourced revenue capped at R$50M per violation, plus blocking or deletion of the data involved)"
+      ]
+    },
+    {
+      "id": 99,
+      "skill": "lgpd",
+      "eval_name": "breach-notification-72h-plan",
+      "prompt": "We discovered a database breach exposing 50,000 Brazilian customers names, emails, and encrypted passwords. What are our LGPD notification obligations and what should we do in the next 72 hours?",
+      "assertions": [
+        "States the ANPD notification deadline correctly: 3 WORKING days from becoming aware, per ANPD Resolution CD/ANPD 15/2024 (not a GDPR-style 72 clock-hours), with the complete/supplementary report within 20 working days",
+        "Applies the Art. 48 trigger analysis: notification is required when the incident may cause relevant risk or damage to data subjects — weighing data types (names + emails exposed; passwords encrypted/hashed is a mitigating factor), scale (50,000 subjects), and potential harm (credential stuffing, phishing)",
+        "Requires notifying affected data subjects when relevant risk/damage exists (Art. 48), with practical content: what happened, what data was affected, measures taken, and user recommendations such as password resets",
+        "Specifies ANPD notification content aligned with Art. 48 §1º: nature of the affected data, data subjects involved, technical and security measures used, risks, and measures taken or planned to mitigate",
+        "The 72-hour action plan includes containment/eradication, forensic evidence preservation, forced credential invalidation/password resets, and documenting the incident internally even if assessed as non-notifiable (accountability principle; Res. 15/2024 record-keeping duty)"
+      ]
+    },
+    {
+      "id": 100,
+      "skill": "lgpd",
+      "eval_name": "international-transfer-us-parent",
+      "prompt": "We are expanding our Brazilian operations and want to transfer customer data to our parent company servers in the United States. The US has no LGPD adequacy decision. What transfer mechanisms are available and what do we need to implement?",
+      "assertions": [
+        "Frames the analysis in the Art. 33 transfer mechanisms and confirms the US has no ANPD adequacy decision (as of 2026, only the EU/EEA holds mutual adequacy with Brazil via Resolution CD/ANPD 32/2026), so adequacy is unavailable for this transfer",
+        "Identifies ANPD Resolution CD/ANPD 19/2024 (the International Data Transfer Regulation) as the operative rulebook, with the ANPD's standard contractual clauses (SCCs) as the primary practical mechanism for an intragroup transfer to the US",
+        "Mentions alternatives with correct caveats: binding corporate rules / global corporate standards (suited to intragroup transfers but require ANPD approval) and specific, highlighted consent (Art. 33, VIII) noting its fragility (withdrawable, high UX cost)",
+        "Notes implementation duties: adopt the ANPD SCCs without modification (they must be incorporated as published), update the privacy notice and records of processing to disclose the international transfer, and document a transfer risk assessment",
+        "Gives practical intragroup guidance: execute the SCC-based agreement between the Brazilian entity and the US parent, address onward transfers and government access, and align security/retention with Art. 46 obligations"
+      ]
+    }
+  ]
+}

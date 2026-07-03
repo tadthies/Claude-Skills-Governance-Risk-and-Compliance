@@ -1,0 +1,13 @@
+{
+  "eval_id": 97,
+  "eval_name": "deletion-request-workflow",
+  "run_type": "with_skill",
+  "prompt": "A Brazilian user emailed us requesting deletion of all their personal data. We store their data in our CRM, email platform, and analytics tool. How do we handle this under LGPD?",
+  "assertions": [
+    "Grounds the deletion right in Art. 18 (item V — anonymization, blocking or deletion of unnecessary/excessive/noncompliant data; item VI — deletion of data processed based on consent) rather than inventing rights",
+    "Includes identity verification of the requester before acting on the request",
+    "Covers deletion across all three named systems (CRM, email platform, analytics tool) plus backups, and notifying processors/sub-processors so the deletion is replicated",
+    "States lawful retention exceptions under Art. 16 (compliance with legal/regulatory obligation such as tax and transaction records, research with anonymization where possible, transfer per legal requirements, or exclusive non-shared controller use) and advises telling the user what was retained and why",
+    "Gives a response timeframe consistent with LGPD/ANPD practice (15 days is the Art. 19 reference for the full access report; deletion 'without undue delay') and does NOT invent a statutory 24/48/72-hour deletion deadline; advises logging the request and outcome for accountability"
+  ]
+}

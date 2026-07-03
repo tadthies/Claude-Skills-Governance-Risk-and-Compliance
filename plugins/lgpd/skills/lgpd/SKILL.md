@@ -154,7 +154,7 @@ Personal data may only be transferred internationally where one of these mechani
 | Mechanism | Description | Notes |
 |-----------|-------------|-------|
 | **Adequacy decision** | ANPD recognised country/organisation as providing adequate protection | **EU/EEA: adequate as of January 2026. No SCCs or BCRs needed for Brazil→EU transfers.** |
-| **Contractual clauses** | Standard or specific clauses guaranteeing adequate protection | Still required for non-adequate countries (e.g., US, China) |
+| **Contractual clauses** | ANPD standard contractual clauses (Resolution CD/ANPD 19/2024 — must be adopted without modification) or ANPD-approved specific clauses | Primary mechanism for non-adequate countries (e.g., US, China) |
 | **Global corporate standards** | Binding corporate rules (BCRs) | Intragroup transfers to non-adequate countries |
 | **Specific consent** | Data subject explicitly consented, informed of international transfer | Consent must be specific to the transfer |
 | **Legal cooperation** | Between public entities for treaty obligations | Government data sharing |
@@ -206,7 +206,7 @@ Controllers must notify ANPD and data subjects when a security incident may caus
 ### 1. Legal Basis Determination
 1. Identify type of data (regular vs. sensitive vs. children's)
 2. For sensitive data → apply Art. 11 bases exclusively
-3. For children (<18) → parental/guardian consent required (Art. 14)
+3. For crianças (<12) → specific parental/guardian consent required (Art. 14, §1º); for adolescents (12–17) → processing must observe their best interest (Art. 14 caput; ANPD Enunciado 1/2023)
 4. Map each processing activity to one Art. 7 basis
 5. Document basis in RoPA and privacy notice
 6. If using legitimate interest → conduct balancing test; document
@@ -256,11 +256,11 @@ Required elements:
 | Topic | LGPD | GDPR |
 |-------|------|------|
 | Legal bases | 10 bases (Art. 7); includes credit protection | 6 bases (Art. 6 GDPR) |
-| DPO | "Encarregado"; always required for controllers (no SME exemption in law) | DPO required only in specific cases |
+| DPO | "Encarregado" required for controllers; ANPD Res. CD/ANPD 2/2022 exempts small-scale agents from appointment (contact channel still required) | DPO required only in specific cases |
 | Breach notification | 3 working days preliminary; 20 working days full | 72 hours to supervisory authority |
-| Fines | Up to 2% revenue; max R$50M per violation | Up to 4% global turnover; max €20M |
+| Fines | Up to 2% revenue in Brazil; max R$50M per violation | Up to €20M or 4% global turnover, **whichever is higher** (Art. 83(5)) |
 | Adequacy | **EU/EEA adequate as of January 2026**; ANPD list growing | EC decides; Brazil adequate as of January 2026 |
-| Children | Parental consent; controller must verify | Parental consent <16 (member state may lower to 13) |
+| Children | Parental consent for crianças (<12, Art. 14 §1º); adolescents (12–17) processed in their best interest | Parental consent <16 for information society services (member state may lower to 13) |
 
 ---
 

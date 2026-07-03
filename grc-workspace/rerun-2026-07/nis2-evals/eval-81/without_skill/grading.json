@@ -1,0 +1,33 @@
+{
+  "eval_id": 81,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+      "passed": true,
+      "evidence": "'Energy — and specifically electricity — is an Annex I \"highly critical\" sector... Electricity distribution system operators (DSOs) are specifically and explicitly listed as an entity type in Annex I.' Concludes 'Yes, you fall under NIS2.'"
+    },
+    {
+      "text": "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the medium-size ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+      "passed": false,
+      "evidence": "The response invents a categorical, size-independent exemption: 'electricity undertakings performing the function of distribution... are covered regardless of their size... unlike most sectors where you need to hit 50+ employees AND €10M+ turnover to be in scope, electricity DSOs are captured even if they are small or micro enterprises.' It then asserts 'As a distribution system operator, you are classified as an Essential Entity (EE)... This is one of the categories where the Directive designates the entity type as \"essential\" outright — largely independent of the normal size-based EE/IE split.' This never applies the actual Art. 3 essential/important ceiling test (250+ employees or >€50M turnover AND >€43M balance sheet) and instead fabricates a blanket always-essential carve-out for all DSOs regardless of size, which is not how Art. 3 works for ordinary (non size-agnostic-category) DSOs. This squarely trips the explicit FAIL condition — essential is concluded from sector/entity-type alone, without the correct size-ceiling analysis, and is arguably more wrong than a simple omission since it affirmatively asserts a false categorical rule."
+    },
+    {
+      "text": "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+      "passed": true,
+      "evidence": "Section 'a. Cybersecurity risk-management measures (Article 21)' lists all 10 measures in full (risk analysis, incident handling, business continuity, supply chain security, secure acquisition/development, effectiveness assessment, cyber hygiene/training, cryptography, HR/access control, MFA)."
+    },
+    {
+      "text": "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+      "passed": true,
+      "evidence": "'Early warning within 24 hours... Incident notification within 72 hours... Final report within one month of the incident notification (or a progress report if the incident is ongoing).'"
+    },
+    {
+      "text": "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)",
+      "passed": true,
+      "evidence": "'Management bodies (your board/executive leadership) must approve these risk-management measures, oversee implementation, and can be held personally liable for non-compliance. Management must also undergo specific cybersecurity training.' Plus a dedicated section 'f. Germany-specific transposition' referencing NIS2UmsuCG and BSIG."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

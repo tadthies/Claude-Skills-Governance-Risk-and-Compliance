@@ -1,0 +1,33 @@
+{
+  "eval_id": 99,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the ANPD notification deadline correctly: 3 WORKING days from becoming aware, per ANPD Resolution CD/ANPD 15/2024 (not a GDPR-style 72 clock-hours), with the complete/supplementary report within 20 working days",
+      "passed": false,
+      "evidence": "Response conflates the two standards: \"ANPD Resolution CD/ANPD No. 15/2024 ... sets an expectation of notifying the ANPD within 3 business days (72 hours) ... Treat 72 hours as your operative internal deadline even if the letter of the law says 'reasonable.'\" This incorrectly equates 3 working days with 72 clock-hours and tells the reader to treat it as a 72-hour deadline, which the assertion's ground truth explicitly says is wrong. The response also never mentions the 20-working-day supplementary/complete report deadline anywhere."
+    },
+    {
+      "text": "Applies the Art. 48 trigger analysis: notification is required when the incident may cause relevant risk or damage to data subjects — weighing data types (names + emails exposed; passwords encrypted/hashed is a mitigating factor), scale (50,000 subjects), and potential harm (credential stuffing, phishing)",
+      "passed": true,
+      "evidence": "\"Threshold/materiality test... A breach of names, emails, and passwords (even encrypted) for 50,000 individuals almost certainly meets this threshold because: Emails + names enable phishing/credential-stuffing... Encrypted passwords are not risk-free... Scale (50,000 individuals) itself is an aggravating factor.\""
+    },
+    {
+      "text": "Requires notifying affected data subjects when relevant risk/damage exists (Art. 48), with practical content: what happened, what data was affected, measures taken, and user recommendations such as password resets",
+      "passed": true,
+      "evidence": "\"Send direct notice to affected individuals in plain language: what happened, what data was involved, what you've done, what they should do (reset passwords, enable MFA, watch for phishing, avoid reusing the exposed password elsewhere), and a contact point/support channel.\""
+    },
+    {
+      "text": "Specifies ANPD notification content aligned with Art. 48 §1º: nature of the affected data, data subjects involved, technical and security measures used, risks, and measures taken or planned to mitigate",
+      "passed": true,
+      "evidence": "Lists all required elements: 'Description of the nature and category of personal data affected', 'The data subjects involved', 'The technical and security measures used to protect the data', 'The risks related to the incident', 'Measures that were or will be adopted to reverse or mitigate the effects.'"
+    },
+    {
+      "text": "The 72-hour action plan includes containment/eradication, forensic evidence preservation, forced credential invalidation/password resets, and documenting the incident internally even if assessed as non-notifiable (accountability principle; Res. 15/2024 record-keeping duty)",
+      "passed": true,
+      "evidence": "\"Contain the breach: revoke exposed credentials/access, patch the vulnerability, isolate affected systems\", \"Preserve forensic evidence (logs, snapshots) before remediating\", \"Force a password reset for all 50,000 affected accounts\", and \"Log every action, decision, and timestamp.\" The response concludes notification is very likely required, so the 'even if non-notifiable' condition is not triggered."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

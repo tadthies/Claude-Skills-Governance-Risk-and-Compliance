@@ -8,7 +8,7 @@
 
 This skill turns Claude into an expert advisor on the **SWIFT Customer Security Programme (CSP)** and the **Customer Security Controls Framework (CSCF) v2026**. It provides structured, actionable guidance to financial institutions, custodians, brokers, corporates, and service bureaux that must achieve and maintain mandatory compliance with SWIFT's security controls across the global payment network.
 
-The skill is grounded in **CSCF v2026** (effective July 2026), which defines 31 security controls — **24 mandatory and 7 advisory** — organised across three objectives: Secure Your Environment, Know and Limit Access, and Detect and Respond. The most significant change in v2026 is that **Control 2.4 (Back-Office Data Flow Security) has been promoted from Advisory to Mandatory**, meaning institutions with back-office connections to SWIFT that previously opted out must now implement this control before their 2026 attestation.
+The skill is grounded in **CSCF v2026** (effective July 2026), which defines 32 security controls — **25 mandatory and 7 advisory** — organised across three objectives: Secure Your Environment, Know and Limit Access, and Detect and Respond. The most significant change in v2026 is that **Control 2.4 (Back-Office Data Flow Security) has been promoted from Advisory to Mandatory**, meaning institutions with back-office connections to SWIFT that previously opted out must now implement this control before their 2026 attestation.
 
 The skill covers all five SWIFT connectivity architecture types (A1, A2, A3, A4, B), enabling precise scoping of which controls are mandatory or advisory for a given institution's infrastructure footprint. Rather than generic cybersecurity advice, the skill produces control-specific output keyed to CSCF control numbers: gap assessments with per-control evidence requirements, architecture scoping matrices, KYC-SA attestation preparation checklists, implementation guidance with concrete evidence artifacts, incident response procedures aligned to SWIFT notification obligations, and cross-framework mappings to ISO 27001:2022, PCI DSS v4.0.1, and NIST CSF 2.0.
 
@@ -34,7 +34,7 @@ The skill covers the annual attestation lifecycle — from independent assessmen
 
 ### Gap Analysis and Attestation Readiness
 
-- Assess our SWIFT environment against all 24 mandatory CSCF v2026 controls for an A1 architecture
+- Assess our SWIFT environment against all 25 mandatory CSCF v2026 controls for an A1 architecture
 - Produce a gap report with red/amber/green status, evidence availability, and remediation actions
 - What changed between CSCF v2025 and v2026 and how does it affect our current attestation?
 - We're submitting our KYC-SA before December 31 — give me a pre-submission checklist
@@ -44,7 +44,7 @@ The skill covers the annual attestation lifecycle — from independent assessmen
 
 - We use Alliance Access on-premises — which controls apply to us and which are not applicable?
 - We switched from a service bureau to a direct A1 connection — how does our control scope change?
-- Map all 31 controls to each architecture type (A1/A2/A3/A4/B) in a single reference table
+- Map all 32 controls to each architecture type (A1/A2/A3/A4/B) in a single reference table
 - Our cloud team wants to move SWIFT connectivity to the SWIFT Cloud (A4) — what new controls apply?
 
 ### Control Deep-Dives and Implementation
@@ -57,7 +57,7 @@ The skill covers the annual attestation lifecycle — from independent assessmen
 
 ### KYC-SA Attestation Preparation
 
-- Generate a KYC-SA attestation checklist for all 24 mandatory controls with evidence pointers
+- Generate a KYC-SA attestation checklist for all 25 mandatory controls with evidence pointers
 - Walk me through the independent assessment requirements for CSCF v2026 — who qualifies as an assessor?
 - What does "Partially Implemented" mean in the KYC-SA portal and when should we use it?
 - Our counterparty is asking about our attestation status — what do they see on the KYC Registry?
@@ -111,7 +111,7 @@ advisory), and we have no SWIFT-specific incident response plan."
 ```
 
 ```
-"We are a Type B user (service bureau). Which of the 24 mandatory 
+"We are a Type B user (service bureau). Which of the 25 mandatory 
 controls do we attest to ourselves versus relying on our bureau's 
 attestation? Produce a responsibility assignment table."
 ```
@@ -123,7 +123,7 @@ detection triggers, internal escalation, SWIFT notification obligations
 ```
 
 ```
-"Produce a KYC-SA attestation preparation checklist for all 24 mandatory 
+"Produce a KYC-SA attestation preparation checklist for all 25 mandatory 
 CSCF v2026 controls. For each control, list: the attestation status options, 
 minimum evidence required, and common findings that result in 'Partially 
 Implemented' attestation."
@@ -144,13 +144,13 @@ and would require additional controls beyond our ISMS."
 ```
 plugins/swift-csp/skills/swift-csp/
 ├── SKILL.md                        # Main skill: framework overview, architecture types,
-│                                   # all 31 controls summary table (v2026 with 2.4 mandatory),
+│                                   # all 32 controls summary table (v2026 with 2.4 mandatory),
 │                                   # Control 2.4 deep-dive, response format routing,
 │                                   # key implementation priorities, attestation timeline,
 │                                   # common findings and remediation
 └── references/
     ├── swift-controls.md           # Full control reference: architecture applicability
-    │                               # matrix, all 31 controls with purpose, requirements,
+    │                               # matrix, all 32 controls with purpose, requirements,
     │                               # implementation steps, evidence artifacts; v2025→v2026
     │                               # change summary including Control 2.4 mandatory upgrade
     └── swift-assessment.md         # KYC-SA attestation process, independent assessor
@@ -168,10 +168,10 @@ SWIFT CSP - Claude Skill/
 ### What's in SKILL.md
 
 - **YAML frontmatter** with skill name, description, and auto-trigger phrases (updated for v2026)
-- **Framework overview table** — CSCF v2026 version, 24 mandatory + 7 advisory controls, attestation window, upcoming v2027
+- **Framework overview table** — CSCF v2026 version, 25 mandatory + 7 advisory controls, attestation window, upcoming v2027
 - **Architecture types reference** — A1, A2, A3, A4, B with descriptions and typical users
 - **Three security objectives** — Secure Your Environment (1.x, 2.x, 3.x), Know and Limit Access (4.x, 5.x), Detect and Respond (6.x, 7.x)
-- **Control summary table** — all 31 controls with control number, name, mandatory/advisory status (v2026), and objective; Control 2.4 highlighted as newly mandatory
+- **Control summary table** — all 32 controls with control number, name, mandatory/advisory status (v2026), and objective; Control 2.4 highlighted as newly mandatory
 - **Control 2.4 deep-dive** — detailed remediation guidance for the most significant v2026 change
 - **Response format routing** — task type to output format mapping including v2025→v2026 gap task
 - **Key implementation priorities** — 8 highest-risk controls with Control 2.4 elevated to #2
@@ -183,7 +183,7 @@ SWIFT CSP - Claude Skill/
 
 | File | Contents |
 |------|----------|
-| `references/swift-controls.md` | Architecture applicability matrix (all 31 controls × 5 architecture types); full implementation details for all mandatory controls including Control 2.4 (Back-Office Data Flow Security, now mandatory), 1.1, 1.2, 1.4, 2.1–2.10, 3.1, 4.1–4.2, 5.1–5.2, 5.4, 6.1–6.4, 7.1–7.2 with purpose, requirements, implementation steps, and evidence artifacts; v2025→v2026 change summary |
+| `references/swift-controls.md` | Architecture applicability matrix (all 32 controls × 5 architecture types); full implementation details for all mandatory controls including Control 2.4 (Back-Office Data Flow Security, now mandatory), 1.1, 1.2, 1.4, 2.1–2.10, 3.1, 4.1–4.2, 5.1–5.2, 5.4, 6.1–6.4, 7.1–7.2 with purpose, requirements, implementation steps, and evidence artifacts; v2025→v2026 change summary |
 | `references/swift-assessment.md` | KYC-SA attestation workflow (5-step process); independent assessor qualification requirements; CSCF v2025→v2026 change table (Control 2.4 mandatory promotion); v2026 attestation window (July 1–December 31, 2026); SWIFT incident notification obligations with deadlines; service bureau (Type B) responsibility split table; CSCF↔ISO 27001:2022 mapping; CSCF↔PCI DSS v4.0.1 mapping; CSCF↔NIST CSF 2.0 mapping; regulatory context (EU DORA, US FFIEC/NY DFS, UK PRA, MAS TRM, HKMA CFI, APRA CPS 234); gap assessment checklist template; common non-compliance patterns |
 
 ### Inputs used to build the skill
@@ -211,6 +211,7 @@ SWIFT CSP - Claude Skill/
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **1.5.0** | July 2026 | Corrected framework composition to 32 controls (25 mandatory + 7 advisory); reference matrix updated — Control 2.4 marked Mandatory across architecture types with v2026 phased-scope notes; control reference retitled v2025→v2026; benchmark re-run with primary-source assertions: 96% with skill vs 72% baseline |
 | **1.4.0** | July 2026 | Updated to CSCF v2026: Control 2.4 (Back-Office Data Flow Security) promoted from Advisory to Mandatory; updated control counts to 24 mandatory + 7 advisory; updated attestation window to July 1–December 31, 2026; added Control 2.4 deep-dive section; added v2025→v2026 gap analysis task type |
 | 1.0.0 | 2026 | Initial release covering CSCF v2025 (23 mandatory + 8 advisory) |
 

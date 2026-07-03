@@ -1,12 +1,13 @@
 ---
 name: fedramp
 description: >
-  Expert guidance for FedRAMP certification and compliance under CR26 (Certification
-  Reform 2026). Use this skill whenever a user asks about FedRAMP authorization, ATO
-  (Authority to Operate), cloud security for federal government, NIST SP 800-53
-  controls, CSP compliance, or any of the core FedRAMP document types: SSP, SAP, SAR,
-  POA&M, CIS/CRM workbooks. Also trigger for questions about FedRAMP Certification
-  Classes (A, B, C, D — replacing old Low/Moderate/High impact levels), FedRAMP 20x
+  Expert guidance for FedRAMP certification and compliance under CR26 (FedRAMP
+  Consolidated Rules for 2026). Use this skill whenever a user asks about FedRAMP
+  authorization, ATO (Authority to Operate), cloud security for federal government,
+  NIST SP 800-53 controls, CSP compliance, or any of the core FedRAMP document types:
+  SSP, SAP, SAR, POA&M, CIS/CRM workbooks. Also trigger for questions about FedRAMP
+  Certification Classes (A, B, C, D — new baseline labels: A = pilot/transitional,
+  B = LI-SaaS/Low, C = Moderate, D = High, per NTC-0004), FedRAMP 20x
   (now the primary authorization pathway), OSCAL mandate (September 2026), 3PAO
   assessments, continuous monitoring (ConMon), gap assessments, system boundary
   definition, or architecture reviews for federal cloud. FedRAMP Ready retires
@@ -35,11 +36,11 @@ Identify the user's goal and jump to the appropriate section:
 
 ## Current FedRAMP State (as of July 2026 — CR26)
 
-> ⚠️ **CR26 (Certification Reform 2026)**: FedRAMP has restructured its authorization framework. FIPS 199-based impact levels (Low/Moderate/High/LI-SaaS) are being replaced with **Certification Classes A–D**. CSPs already authorized under the old model retain their ATO while transition timelines are confirmed by the FedRAMP PMO.
+> ⚠️ **CR26 (FedRAMP Consolidated Rules for 2026)**: FedRAMP has restructured its authorization framework. FIPS 199-based baseline labels (Low/Moderate/High/LI-SaaS) are replaced with **Certification Classes A–D** (per notice NTC-0004; CR26 rules valid through December 31, 2028). Class labels change the *names* of the baselines, not their requirements. CSPs already authorized under the old labels retain their authorization through a transition period in which old and new labels are linked.
 
 - **Baseline**: NIST SP 800-53 **Rev 5** (fully in effect)
 - **Control counts** (Rev 5): Low ≈ 156, Moderate = 323, High = 421 (legacy references; CR26 class-based counts being published by PMO)
-- **CR26 Certification Classes**: A (basic/low-impact), B (standard/moderate-impact), C (enhanced/high-impact), D (specialized/critical). The PMO is publishing updated control baselines aligned to each class.
+- **CR26 Certification Classes** (official mapping, NTC-0004): **A** = new pilot/transitional baseline (entry via external frameworks such as SOC 2 Type II through Program Certification; holders have a 2-year window to obtain B/C/D), **B** = current **LI-SaaS + Low** baselines, **C** = current **Moderate** baseline (majority of federal deployments, incl. CUI), **D** = current **High** baseline.
 - **FedRAMP 20x**: Now the **primary authorization pathway** — continuous authorization, modular API-driven submissions, automated evidence collection. Traditional SSP/SAP/SAR templates remain for legacy paths.
 - **FedRAMP Ready** designation: **Retires July 28, 2026**. CSPs currently in FedRAMP Ready status must transition to FedRAMP 20x or initiate a full authorization package. No new FedRAMP Ready designations are being issued.
 - **JAB P-ATO**: Fully suspended; FedRAMP PMO is the sole authorization body.
@@ -142,17 +143,17 @@ For detailed guidance on each document type, read the appropriate reference file
 
 Under CR26, the FedRAMP PMO is aligning control baselines to Certification Classes. When users describe their system, map to a class:
 
-- **Class A** (Basic): Cloud-native, low federal data sensitivity; limited scope; aligned to old Low-impact tier
-- **Class B** (Standard): Most common — federal information with serious adverse effect if compromised; aligned to old Moderate-impact tier; covers the majority of CSPs handling non-classified government data
-- **Class C** (Enhanced): Federal information where compromise has severe or catastrophic effect (law enforcement, financial, health data); aligned to old High-impact tier
-- **Class D** (Specialized): Critical/ultra-sensitive systems; new category with additional requirements
+- **Class A** (Pilot/Transitional): New baseline introduced under 20x — entry into the federal market via external frameworks (initially SOC 2 Type II) through Program Certification; Class A holders have a **2-year window** to obtain a Class B, C, or D certification through full assessment
+- **Class B** (replaces LI-SaaS + Low): Systems handling non-sensitive federal information where a breach would cause limited harm
+- **Class C** (replaces Moderate): Most common — the majority of federal cloud deployments, including systems handling CUI
+- **Class D** (replaces High): Federal information where compromise has severe or catastrophic effect (e.g., law enforcement, financial, health data)
 
-> **Legacy references**: Many existing FedRAMP documents still reference Low/Moderate/High/LI-SaaS. These map to Classes A/B/C respectively. A full CR26 class-to-control baseline mapping is being published by the PMO — advise CSPs to check fedramp.gov for the latest.
+> **Legacy references**: Many existing FedRAMP documents still reference Low/Moderate/High/LI-SaaS. These map to **LI-SaaS/Low → Class B, Moderate → Class C, High → Class D** (Class A is new — it has no legacy equivalent). During the CR26 transition, old and new labels are linked. Advise CSPs to check fedramp.gov for the latest.
 
 ### Mapping Workflow
 1. Ask: What types of federal data will the system process/store/transmit?
 2. Determine target Certification Class (A, B, C, or D) under CR26
-3. Select NIST 800-53 Rev 5 baseline (Low/Moderate/High as proxy until CR26 baselines are final)
+3. Select NIST 800-53 Rev 5 baseline using the class mapping (B ↔ Low, C ↔ Moderate, D ↔ High)
 4. Cross-reference with FedRAMP parameter requirements (FedRAMP often sets stricter parameters than base NIST)
 5. For inherited controls, identify which are fully/partially inherited from leveraged FedRAMP IaaS/PaaS and document in CIS/CRM workbook
 
@@ -229,7 +230,7 @@ Once authorized, CSPs must maintain compliance through ConMon activities:
 - All open findings must have: risk level, owner, milestone dates, remediation plan
 - Vendor Dependencies (VDs): when a finding depends on a third-party fix — document and track
 - Deviation Requests (DRs): false positives and risk adjustments require AO approval
-- SLA for remediation: **Critical = 15 days**, **High = 30 days**, Moderate = 90 days, Low = 365 days (FedRAMP PMO published timeframes)
+- SLA for remediation (FedRAMP ConMon Performance Management Guide): **High = 30 days**, **Moderate = 90 days**, **Low = 180 days** from identification. Where Critical is distinguished from High (e.g., scanner ratings), treat it as High-or-stricter (≤30 days, prioritized immediately)
 
 ---
 

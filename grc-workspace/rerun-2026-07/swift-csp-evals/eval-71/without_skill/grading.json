@@ -1,0 +1,33 @@
+{
+  "eval_id": 71,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Correctly identifies the bank as Architecture Type A1 (messaging interface/connector owned and managed on-premises by the user — Alliance Access on own servers)",
+      "passed": true,
+      "evidence": "Response states: 'Your architecture type: A1 (on-premises, self-managed, direct SWIFT connection).' though its description of A1 vs A2 differs from the with_skill response's HSM-based distinction (this response instead describes A2 as a 'lite connectivity model')."
+    },
+    {
+      "text": "States the correct CSCF v2026 framework composition: 32 controls total — 25 mandatory and 7 advisory",
+      "passed": false,
+      "evidence": "Response never states a total control count or a 25/7 mandatory/advisory split. It only vaguely says 'the large majority of the ~30+ controls applicable to A1 are Mandatory' — no exact figures given, and this is an approximation, not the specific 25/7/32 breakdown required."
+    },
+    {
+      "text": "States that Control 2.4 (Back-Office Data Flow Security) is mandatory in v2026 (newly promoted from advisory; it was advisory through v2025)",
+      "passed": false,
+      "evidence": "The matrix lists '2.4A | Back-Office Data Flow Security | Mandatory' but never notes this control was newly promoted from advisory to mandatory in v2026, nor that it was advisory through v2025 — the assertion requires stating the change/promotion, which is absent."
+    },
+    {
+      "text": "Provides an applicability matrix or structured list organized by the three objectives (Secure Your Environment / Know and Limit Access / Detect and Respond) naming specific controls applicable to A1 (e.g., 1.1 secure zone, 2.2 security updates, 4.2 MFA, 6.4 logging, 7.1 incident response)",
+      "passed": false,
+      "evidence": "Response organizes the matrix by seven objectives with generic titles ('Restrict Internet Access...', 'Reduce Attack Surface...', 'Physically Secure the Environment', 'Prevent Compromise of Credentials', 'Manage Identities...', 'Detect Anomalous Activity', 'Plan for Incident Response...') — none of which match the three-objective structure named in the assertion (Secure Your Environment / Know and Limit Access / Detect and Respond). The specific named objective structure is missing even though individual controls (1.1, 2.2, 4.2, 6.4, 7.1) are present."
+    },
+    {
+      "text": "Notes that annual attestation via KYC-SA requires an independent assessment (CSP Independent Assessment Framework — self-attestation alone is no longer accepted)",
+      "passed": true,
+      "evidence": "Response states: 'Complete your Independent Assessment (many CSCF versions require an independent internal audit or external assessor review of your self-attestation, especially for Mandatory controls) before submitting your KYC-SA attestation.'"
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}

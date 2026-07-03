@@ -1,0 +1,13 @@
+{
+  "eval_id": 75,
+  "eval_name": "incident-response-malware-fraud",
+  "run_type": "with_skill",
+  "prompt": "We discovered that malware was found on one of our SWIFT-connected servers and we suspect fraudulent transactions may have been sent. What are our immediate incident response obligations under SWIFT CSP Control 7.1? Who do we notify, by when, and what evidence should we preserve? Also, what should our SWIFT-specific incident response plan contain to be compliant with CSCF v2025?",
+  "assertions": [
+    "Gives immediate containment guidance: isolate the affected SWIFT-connected server / disconnect from the SWIFT environment while preserving forensic evidence (disk images, memory captures, logs)",
+    "Advises promptly notifying SWIFT of the security incident and engaging counterparty/correspondent banks immediately to attempt recall or stop of suspected fraudulent payments",
+    "Mentions notifying law enforcement and/or the local regulator as applicable, alongside internal escalation to senior management",
+    "Specifies evidence to preserve: SWIFT message/transaction logs (e.g., Alliance journals), authentication and access logs, network logs, and malware samples/images with chain of custody",
+    "Describes SWIFT-specific IR plan contents per Control 7.1: defined roles and contacts (including SWIFT and counterparties), SWIFT-zone isolation procedures, recovery/reconnection procedures, and periodic testing/exercises of the plan"
+  ]
+}

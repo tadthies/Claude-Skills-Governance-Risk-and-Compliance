@@ -1,0 +1,33 @@
+{
+  "eval_id": 100,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Frames the analysis in the Art. 33 transfer mechanisms and confirms the US has no ANPD adequacy decision (as of 2026, only the EU/EEA holds mutual adequacy with Brazil via Resolution CD/ANPD 32/2026), so adequacy is unavailable for this transfer",
+      "passed": true,
+      "evidence": "\"This is an 'international data transfer' under... Articles 33-36. Since the US has no LGPD adequacy decision from the ANPD, you cannot rely on adequacy and must use one of the alternative legal mechanisms.\" Correctly frames the analysis under Art. 33 and confirms adequacy unavailability for the US, though it does not separately mention that the EU/EEA holds mutual adequacy."
+    },
+    {
+      "text": "Identifies ANPD Resolution CD/ANPD 19/2024 (the International Data Transfer Regulation) as the operative rulebook, with the ANPD's standard contractual clauses (SCCs) as the primary practical mechanism for an intragroup transfer to the US",
+      "passed": true,
+      "evidence": "\"The ANPD published its own Standard Contractual Clauses (approved via Resolução CD/ANPD in 2024). These are the LGPD equivalent of the EU's SCCs and are the most practical route for a US-based parent company... Must use the ANPD's official template/clauses.\" Correctly identifies ANPD SCCs (2024) as existing and as the primary practical mechanism, though it does not cite the exact resolution number 19/2024."
+    },
+    {
+      "text": "Mentions alternatives with correct caveats: binding corporate rules / global corporate standards (suited to intragroup transfers but require ANPD approval) and specific, highlighted consent (Art. 33, VIII) noting its fragility (withdrawable, high UX cost)",
+      "passed": true,
+      "evidence": "\"Binding Corporate Rules / Global Corporate Rules (Art. 33, V)... Requires ANPD approval before use — plan for lead time\" and \"Consent (Art. 33, VIII)... generally a weak/fallback mechanism... Data subjects can withdraw consent at any time, which is operationally fragile for infrastructure-level transfers.\""
+    },
+    {
+      "text": "Notes implementation duties: adopt the ANPD SCCs without modification (they must be incorporated as published), update the privacy notice and records of processing to disclose the international transfer, and document a transfer risk assessment",
+      "passed": true,
+      "evidence": "\"Must use the ANPD's official template/clauses — you cannot simply reuse EU SCCs\" (adopting the official template), plus 'Update your privacy notice to disclose... international transfers' and 'Conduct/update a Data Protection Impact Assessment (RIPD) for the transfer' and 'Maintain a Record of Processing Activities (ROPA) that documents the international transfer.'"
+    },
+    {
+      "text": "Gives practical intragroup guidance: execute the SCC-based agreement between the Brazilian entity and the US parent, address onward transfers and government access, and align security/retention with Art. 46 obligations",
+      "passed": true,
+      "evidence": "\"Clauses must be signed by both the Brazilian entity (exporter) and the US parent (importer)\" and \"Assess and document U.S. government access risks (similar to Schrems II-style analysis under GDPR)... evaluate whether US surveillance laws (e.g., FISA 702) could affect the data and whether supplementary technical measures... are warranted\" and security/retention controls (encryption, access controls, data minimization, audit logging). Onward transfers specifically are not addressed, but the agreement execution, government-access analysis, and security/retention elements are all present and notably detailed."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

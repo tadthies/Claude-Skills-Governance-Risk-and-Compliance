@@ -1,0 +1,13 @@
+{
+  "eval_id": 98,
+  "eval_name": "sensitive-health-data-marketing",
+  "run_type": "without_skill",
+  "prompt": "Our fintech startup in São Paulo processes customers health insurance data and credit scores. We want to use this data for marketing personalised financial products. Is this allowed under LGPD? What legal bases and safeguards apply?",
+  "assertions": [
+    "Classifies health insurance data as SENSITIVE personal data under Art. 5, II, processable only under the Art. 11 bases — and states that marketing is NOT among the Art. 11, II exceptions, so specific and highlighted (destacado) consent under Art. 11, I is required",
+    "Cites the Art. 11 §4º/§5º restriction on communication or shared use of sensitive health data between controllers for economic advantage (a statutory red flag for monetizing health data), and/or the Art. 6, IX non-discrimination principle against uses that create abusive or unlawful discrimination",
+    "Treats credit scores as regular (non-sensitive) personal data and notes the credit-protection basis (Art. 7, X) covers credit analysis/protection — NOT marketing — so marketing personalization needs consent or a documented legitimate-interest balancing (Art. 7, IX with Art. 10)",
+    "Recommends concrete safeguards: separate, specific, highlighted consent flows; granular opt-out; data minimization; and a RIPD/DPIA (Art. 38) given sensitive data and profiling",
+    "Mentions enforcement exposure: ANPD sanctions under Art. 52 (fines up to 2% of Brazil-sourced revenue capped at R$50M per violation, plus blocking or deletion of the data involved)"
+  ]
+}

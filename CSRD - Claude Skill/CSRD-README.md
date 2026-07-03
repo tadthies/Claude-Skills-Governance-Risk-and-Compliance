@@ -192,4 +192,4 @@ csrd/
 **Hemant Naik**
 [LinkedIn](https://www.linkedin.com/in/tanaji-naik/) · [hemant.naik@gmail.com](mailto:hemant.naik@gmail.com)
 
-Skill version: 1.0.0 — May 2026
+Skill version: 1.5.0 — July 2026

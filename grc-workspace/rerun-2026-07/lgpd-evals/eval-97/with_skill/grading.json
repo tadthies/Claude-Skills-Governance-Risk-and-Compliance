@@ -1,0 +1,33 @@
+{
+  "eval_id": 97,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Grounds the deletion right in Art. 18 (item V — anonymization, blocking or deletion of unnecessary/excessive/noncompliant data; item VI — deletion of data processed based on consent) rather than inventing rights",
+      "passed": false,
+      "evidence": "Response repeatedly cites 'Art. 18, IV — deletion of unnecessary, excessive, or non-compliant data' (lines 3, 16, 56, 74) instead of the correct item V per the assertion's ground truth; item VI for consent-based deletion is cited correctly. The right is not invented, but the specific article item number for the anonymization/blocking/deletion right is wrong (IV instead of V)."
+    },
+    {
+      "text": "Includes identity verification of the requester before acting on the request",
+      "passed": true,
+      "evidence": "\"Step 1 — Verify Identity: Before acting on the request, confirm the requestor is who they claim to be (e.g., verify via the email address on file, or request additional confirmation such as a login/account verification).\""
+    },
+    {
+      "text": "Covers deletion across all three named systems (CRM, email platform, analytics tool) plus backups, and notifying processors/sub-processors so the deletion is replicated",
+      "passed": false,
+      "evidence": "Response covers CRM, email platform, and analytics tool in a table (Step 4) and instructs notifying processors/sub-processors (Art. 39, Step 5), but the word 'backup' never appears anywhere in the response — the backups requirement is entirely omitted."
+    },
+    {
+      "text": "States lawful retention exceptions under Art. 16 (compliance with legal/regulatory obligation such as tax and transaction records, research with anonymization where possible, transfer per legal requirements, or exclusive non-shared controller use) and advises telling the user what was retained and why",
+      "passed": true,
+      "evidence": "Step 3 lists all four Art. 16 exceptions correctly: 'Art. 16, I — compliance with a legal or regulatory obligation', 'Art. 16, II — study by a research body (with anonymisation where possible)', 'Art. 16, III — transfer to a third party, provided LGPD data protection requirements are respected', 'Art. 16, IV — exclusive use of the controller, access by third parties barred, and the data is anonymised.' Step 6 advises telling the user 'Any data retained under an Art. 16 exception, and the specific legal basis for retention.'"
+    },
+    {
+      "text": "Gives a response timeframe consistent with LGPD/ANPD practice (15 days is the Art. 19 reference for the full access report; deletion 'without undue delay') and does NOT invent a statutory 24/48/72-hour deletion deadline; advises logging the request and outcome for accountability",
+      "passed": true,
+      "evidence": "\"LGPD requires response \\\"without undue delay\\\" for deletion requests (Art. 18, IV/VI). ANPD guidance and practice generally treat this consistently with the 15-day benchmark set for full access reports (Art. 19)...\" No invented short (24/48/72h) deadline. Step 7 explicitly instructs logging the request, verification method, actions taken, and outcome for accountability (Art. 6, X)."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

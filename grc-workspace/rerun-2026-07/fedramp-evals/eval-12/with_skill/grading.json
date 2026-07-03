@@ -1,0 +1,33 @@
+{
+  "eval_id": 12,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Explains that FedRAMP baselines derive from FIPS 199 impact categorization: Low = limited adverse effect, Moderate = serious adverse effect, High = severe or catastrophic adverse effect",
+      "passed": true,
+      "evidence": "\"The levels are based on the potential impact... a FIPS 199 categorization ('limited,' 'serious,' or 'severe/catastrophic' harm)\" with per-level breakdowns: Low 'Limited adverse effect', Moderate 'Serious adverse effect', High 'Severe or catastrophic effect'."
+    },
+    {
+      "text": "States or implies the correct baseline rigor progression (approx. 156 controls Low, 323 Moderate, 421 High under NIST 800-53 Rev 5, or an equivalent statement that control count and assessment rigor increase with level)",
+      "passed": true,
+      "evidence": "Table states ~156 controls for Low, 323 for Moderate, 421 for High, matching the expected progression exactly."
+    },
+    {
+      "text": "Identifies that law-enforcement-sensitive data typically maps to FedRAMP High (the High baseline was designed for law enforcement, emergency services, financial and health systems) or at minimum Moderate-to-High with a reasoned FIPS 199 analysis",
+      "passed": true,
+      "evidence": "\"Which level applies to you: Law Enforcement Sensitive (LES) data → High / Class D... this points squarely at the High impact level... Law enforcement data is explicitly called out as a category where a confidentiality, integrity, or availability compromise would have a severe or catastrophic effect\""
+    },
+    {
+      "text": "If the answer mentions CR26 Certification Classes, the mapping matches official FedRAMP notice NTC-0004: Class A = new pilot/transitional baseline, Class B = LI-SaaS + Low, Class C = Moderate, Class D = High. FAIL if it presents an incorrect mapping (e.g., A=Low, B=Moderate, C=High). PASS if classes are not mentioned at all.",
+      "passed": true,
+      "evidence": "Table maps LI-SaaS/Low -> Class B, Moderate -> Class C, High -> Class D, and Class A as the new pilot/transitional entry — matches NTC-0004 exactly."
+    },
+    {
+      "text": "Notes that the final security categorization / risk acceptance decision rests with the authorizing agency (per RMF and NTC-0004: a FedRAMP certification is not itself an agency risk acceptance)",
+      "passed": true,
+      "evidence": "\"don't rely solely on 'law enforcement sensitive' as a label; work through a FIPS 199 categorization exercise... with your ISSO or a 3PAO to validate High/Class D is correct\" and closing note: \"this guidance should inform, not replace, formal categorization performed with your Authorizing Official (AO) or 3PAO\" — names the AO as the party performing/validating the formal categorization."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

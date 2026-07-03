@@ -1,0 +1,13 @@
+{
+  "eval_id": 74,
+  "eval_name": "kyc-sa-attestation-process",
+  "run_type": "without_skill",
+  "prompt": "We need to submit our annual KYC-SA attestation by July 31. Walk us through the complete attestation process — what we need to prepare, who can act as our independent assessor, how to complete the KYC-SA form, and what happens to our attestation once submitted. We are an A1 architecture bank.",
+  "assertions": [
+    "Describes the KYC-SA (Know Your Customer – Security Attestation) application on swift.com as the submission channel and explains the annual attestation cycle",
+    "States the independent assessment requirement: the attestation must be supported by an independent assessment performed by either an external assessment provider or an independent internal function (e.g., second/third line of defence), per the CSP Independent Assessment Framework",
+    "Notes assessor independence and competence requirements (assessors must not have implemented or operated the controls they assess; relevant security assessment experience/certifications)",
+    "Describes preparation: confirming scope for architecture type A1, collecting evidence per control, and completing control-by-control compliance status in the KYC-SA form",
+    "Explains post-submission consequences: counterparties can request and view attestation data via KYC-SA for counterparty risk decisions, and SWIFT may report non-compliant or non-attesting users to local financial supervisors"
+  ]
+}

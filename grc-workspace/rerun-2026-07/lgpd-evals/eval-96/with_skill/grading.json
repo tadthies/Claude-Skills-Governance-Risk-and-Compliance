@@ -1,0 +1,33 @@
+{
+  "eval_id": 96,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Confirms LGPD applies extraterritorially via Art. 3 (processing with the purpose of offering goods or services to individuals located in Brazil, or data collected in Brazil), so the US SaaS company must comply",
+      "passed": true,
+      "evidence": "\"Under Art. 3, LGPD applies to any processing of personal data of individuals located in Brazil, regardless of where the controller is established... The purpose is to offer goods/services to individuals in Brazil... Personal data was collected in Brazil... Bottom line: As a foreign company targeting/serving Brazilian users, you are subject to LGPD.\""
+    },
+    {
+      "text": "Maps processing to appropriate legal bases: contract performance (Art. 7, V) for account/service data and purchase history, with consent (Art. 7, I) or legitimate interest (Art. 7, IX — with a documented balancing test) for marketing/analytics uses",
+      "passed": true,
+      "evidence": "Response maps name/email/purchase history to Contract Art. 7,V; provides Art. 7,IX legitimate interest 'for ancillary purposes only' requiring a documented balancing test/LIA; and Art. 7,I consent 'only where processing exceeds contract necessity' e.g. marketing/product recommendations. Full mapping table included."
+    },
+    {
+      "text": "Treats CPF as regular (non-sensitive) personal data — the Art. 5, II sensitive-data list (racial/ethnic origin, religious belief, political opinion, union membership, health, sex life, genetic/biometric data) does not include tax IDs or financial data — while noting it still warrants strong protection",
+      "passed": true,
+      "evidence": "\"CPF ... Regular personal data (a unique national identifier — treat with heightened care operationally, but it is not \\\"sensitive data\\\"...)\" and \"LGPD's sensitive data category (Art. 11) is limited to racial/ethnic origin, religion, political opinion, trade union membership, health/sexual life data, and genetic/biometric data. CPF and purchase history don't fall into that list... That said, CPF is a high-value identifier for fraud/identity theft, so it merits strong security controls.\""
+    },
+    {
+      "text": "Identifies core operational obligations: transparent privacy notice (Art. 9), data subject rights handling (Art. 18), and appointing an Encarregado/DPO (Art. 41) — correctly noting ANPD Resolution CD/ANPD 2/2022 exempts small processing agents from formal appointment but still requires a contact channel",
+      "passed": false,
+      "evidence": "Response covers privacy notice (Art. 9, mentioned twice) and DPO/Encarregado with the correct ANPD Resolution CD/ANPD 2/2022 exemption ('Small-scale operators may be exempt from formal appointment under ANPD Resolution CD/ANPD 2/2022 but must still provide a contact channel'), but never mentions Art. 18 or data subject rights handling anywhere in the response — this required element is entirely absent."
+    },
+    {
+      "text": "Flags international transfer compliance (Art. 33) since data flows to the US, which has NO ANPD adequacy decision (as of 2026 only the EU/EEA holds mutual adequacy with Brazil), so SCCs or another Art. 33 mechanism is required",
+      "passed": true,
+      "evidence": "\"Confirm international transfer mechanism (Art. 33–36) — since you're a US company, personal data flowing from Brazil to your US infrastructure is an international transfer to a non-adequate country (the January 2026 Brazil-EU mutual adequacy decision does not cover the US). You'll need standard contractual clauses (SCCs) or another Art. 33 mechanism.\""
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

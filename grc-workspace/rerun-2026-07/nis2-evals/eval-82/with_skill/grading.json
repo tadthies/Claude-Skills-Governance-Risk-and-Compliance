@@ -1,0 +1,33 @@
+{
+  "eval_id": 82,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Analyzes whether B2B SaaS qualifies as a 'cloud computing service' under Annex I (digital infrastructure) and concludes the company is likely directly in scope, since at 75 employees / €15M it meets the Art. 2(1) size threshold (medium-sized: 50+ employees or >€10M turnover)",
+      "passed": false,
+      "evidence": "The response does analyze the cloud-computing-service question in depth, correctly noting the size threshold is cleared ('Size threshold — you clear it... At 75 employees and €15M revenue, you exceed both thresholds'), but concludes the opposite of what the assertion requires: 'a generic B2B HR SaaS platform does not fit the Annex I/II sector definitions and is very likely out of direct scope of NIS2' and the bottom line states 'Direct NIS2 obligation: unlikely, based on sector.' The assertion requires a conclusion of likely direct in-scope status; this response reaches 'likely out of scope,' so it fails."
+    },
+    {
+      "text": "Classifies the company as an IMPORTANT entity (medium-sized digital-infrastructure provider below the large-enterprise ceiling, and not one of the Art. 3(1) always-essential categories like TLD registries, DNS providers, or qualified trust service providers)",
+      "passed": false,
+      "evidence": "Because the response concludes the company is likely out of direct scope, it never reaches or states an IMPORTANT entity classification anywhere in the text. No sentence classifies the company as an important entity."
+    },
+    {
+      "text": "Walks through the Art. 21(2)(a)–(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+      "passed": true,
+      "evidence": "Section 3 provides a table mapping all 10 Art. 21(2) measures to concrete practices sized for a 75-person SaaS company (e.g., 'Encrypt HR/PII data at rest (AES-256) and in transit (TLS 1.2+)', 'MFA on all admin/privileged accounts', 'RBAC with quarterly access reviews')."
+    },
+    {
+      "text": "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+      "passed": false,
+      "evidence": "No mention of Implementing Regulation (EU) 2024/2690 or any equivalent implementing regulation anywhere in the response."
+    },
+    {
+      "text": "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)",
+      "passed": false,
+      "evidence": "The response only vaguely gestures at 'Member State transposition variance' and advises confirming with counsel in the specific Member State(s) where established, but never mentions the main-establishment rule (Art. 26), entity registration requirements, or the ex-post/reactive supervision regime for important entities."
+    }
+  ],
+  "total": 5,
+  "passed": 1
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 72,
+  "eval_name": "mfa-software-otp-finding",
+  "run_type": "with_skill",
+  "prompt": "We currently use Google Authenticator (software-based TOTP) for our SWIFT operators to authenticate to Alliance Access. Our SWIFT assessor has flagged this as a finding against Control 4.2. Why is software OTP not sufficient, what exactly does CSCF v2025 require, and what are our options to remediate this finding before our July attestation deadline?",
+  "assertions": [
+    "Explains that Control 4.2 requires multi-factor authentication for operator access to SWIFT-related components/applications",
+    "Explains the security rationale for the finding in terms of factor independence / channel separation (a software token on a general-purpose or shared device is exposed to the same compromise path as the credentials and workstation it is meant to protect)",
+    "Offers at least two concrete compliant remediation options (e.g., hardware OTP tokens, smart cards/PKI, FIDO2 hardware security keys, or properly isolated out-of-band factors on hardened dedicated devices)",
+    "Addresses the attestation timeline options honestly: remediate before attesting, or attest as non-compliant with a remediation plan — and the consequences of a non-compliant attestation (counterparty visibility in KYC-SA, possible reporting to supervisors)",
+    "Does not misstate the framework composition (v2026 has 32 controls, 25 mandatory + 7 advisory; Control 2.4 was advisory in v2025 and is mandatory in v2026)"
+  ]
+}

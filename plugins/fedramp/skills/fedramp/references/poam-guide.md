@@ -35,14 +35,14 @@ document — updated monthly during continuous monitoring.
 
 ## FedRAMP Remediation SLAs
 
-| Risk Rating | Remediation Deadline |
+| Risk Rating | Remediation Deadline (from identification) |
 |---|---|
-| Critical | 30 calendar days |
-| High | 90 calendar days |
-| Moderate | 180 calendar days |
-| Low | 365 calendar days |
+| Critical (where distinguished from High) | ≤ 30 calendar days — prioritize immediately |
+| High | 30 calendar days |
+| Moderate | 90 calendar days |
+| Low | 180 calendar days |
 
-Missing SLAs is one of the most common ConMon findings. Track carefully.
+Source: FedRAMP Continuous Monitoring Performance Management Guide. Missing SLAs is one of the most common ConMon findings. Track carefully.
 
 ---
 

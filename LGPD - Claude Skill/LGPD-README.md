@@ -8,7 +8,7 @@
 
 The LGPD Compliance Skill transforms Claude into an expert Brazilian data protection advisor with comprehensive knowledge of the Lei Geral de Proteção de Dados Pessoais (LGPD) — Law No. 13,709/2018 as amended by Law No. 13,853/2019 — together with all relevant ANPD (Autoridade Nacional de Proteção de Dados) resolutions, including Resolution CD/ANPD No. 15/2024 setting the 3-working-day breach notification requirement.
 
-> **2026 Update — Brazil-EU Mutual Adequacy:** On January 26–27, 2026, the European Commission formally adopted an adequacy decision for Brazil under GDPR Article 45, and Brazil's ANPD simultaneously recognised the EU as an adequate transfer destination. This mutual adequacy **eliminates the need for SCCs, BCRs, or other transfer safeguards for Brazil ↔ EU personal data flows**. The skill has been updated (v1.4.0, July 2026) to reflect this change across the international transfers section, the LGPD vs. GDPR comparison table, and the gap assessment workflow.
+> **2026 Update — Brazil-EU Mutual Adequacy:** On January 26–27, 2026, the European Commission formally adopted an adequacy decision for Brazil under GDPR Article 45, and Brazil's ANPD simultaneously recognised the EU as an adequate transfer destination. This mutual adequacy **eliminates the need for SCCs, BCRs, or other transfer safeguards for Brazil ↔ EU personal data flows**. The skill has been updated (v1.5.0, July 2026) to reflect this change across the international transfers section, the LGPD vs. GDPR comparison table, and the gap assessment workflow.
 
 The skill covers the full LGPD compliance lifecycle. It analyses processing activities against all 10 legal bases for regular personal data (Art. 7) and the stricter bases for sensitive data (Art. 11), guides organisations through data subject rights fulfilment under Arts. 17–22, produces LGPD-compliant privacy notices containing all Art. 9 required elements, and assists with data breach notification workflows under Art. 48. The skill also supports DPO (Encarregado) appointment under Art. 41, Records of Processing Activities (RoPA) under Art. 37, Data Protection Impact Assessments (RIPD/DPIA) under Art. 38, and international data transfer compliance under Arts. 33–36 — including the landmark Brazil-EU adequacy decision of January 2026.
 
@@ -214,4 +214,4 @@ plugins/lgpd/
 **Hemant Naik**
 [LinkedIn](https://www.linkedin.com/in/tanaji-naik/) · [hemant.naik@gmail.com](mailto:hemant.naik@gmail.com)
 
-Skill version: 1.4.0 — July 2026
+Skill version: 1.5.0 — July 2026

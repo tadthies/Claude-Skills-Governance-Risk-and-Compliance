@@ -1,0 +1,33 @@
+{
+  "eval_id": 96,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Confirms LGPD applies extraterritorially via Art. 3 (processing with the purpose of offering goods or services to individuals located in Brazil, or data collected in Brazil), so the US SaaS company must comply",
+      "passed": true,
+      "evidence": "\"Under Article 3, LGPD applies to any processing operation: carried out in Brazil, or where the purpose of the processing is to offer or supply goods or services to individuals located in Brazil (Art. 3, II), or where the personal data being processed was collected in Brazil (Art. 3, III). Because your app has Brazilian customers... you fall squarely within Art. 3, II and III.\""
+    },
+    {
+      "text": "Maps processing to appropriate legal bases: contract performance (Art. 7, V) for account/service data and purchase history, with consent (Art. 7, I) or legitimate interest (Art. 7, IX — with a documented balancing test) for marketing/analytics uses",
+      "passed": true,
+      "evidence": "Response maps name/email/purchase history to Art. 7,V contract; describes Art. 7,I consent for marketing/behavioral profiling; and Art. 7,IX legitimate interest for fraud prevention/service improvement with Art. 10 balancing test requirement noted. Includes a full mapping table."
+    },
+    {
+      "text": "Treats CPF as regular (non-sensitive) personal data — the Art. 5, II sensitive-data list (racial/ethnic origin, religious belief, political opinion, union membership, health, sex life, genetic/biometric data) does not include tax IDs or financial data — while noting it still warrants strong protection",
+      "passed": true,
+      "evidence": "\"While CPF is not automatically classified as \\\"sensitive personal data\\\" under Art. 5, II (that category is reserved for racial/ethnic origin, religious belief, political opinion, health data, biometric data, genetic data, sexual orientation, union membership, etc.), it is still a high-risk identifier that warrants strong security controls, minimization, and careful legal-basis justification.\""
+    },
+    {
+      "text": "Identifies core operational obligations: transparent privacy notice (Art. 9), data subject rights handling (Art. 18), and appointing an Encarregado/DPO (Art. 41) — correctly noting ANPD Resolution CD/ANPD 2/2022 exempts small processing agents from formal appointment but still requires a contact channel",
+      "passed": false,
+      "evidence": "Response covers privacy notice and Art. 18 data subject rights ('mechanisms to honor data subject rights (Art. 18: confirmation, access, correction...)'), and mentions designating a DPO/Encarregado under Art. 41, but explicitly states 'LGPD does not have a strict numeric/risk threshold, so ANPD guidance should be checked' instead of citing the actual ANPD Resolution CD/ANPD 2/2022 small-processing-agent exemption — the specific regulatory fact required by the assertion is missing/incorrect."
+    },
+    {
+      "text": "Flags international transfer compliance (Art. 33) since data flows to the US, which has NO ANPD adequacy decision (as of 2026 only the EU/EEA holds mutual adequacy with Brazil), so SCCs or another Art. 33 mechanism is required",
+      "passed": true,
+      "evidence": "\"Under Art. 33, this requires one of: an ANPD-recognized adequacy decision for the destination country (the US does not currently have one), standard contractual clauses/ANPD-approved contractual clauses, binding corporate rules, specific consent...\""
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

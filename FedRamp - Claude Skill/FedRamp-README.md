@@ -11,7 +11,7 @@ architecture review, and ongoing continuous monitoring.
 This skill turns Claude into a knowledgeable FedRAMP advisor. It covers the full
 authorization lifecycle for Cloud Service Providers (CSPs) pursuing or maintaining
 FedRAMP certification under the current **NIST SP 800-53 Rev 5** baseline and the
-**CR26 (Certification Reform 2026)** framework.
+**CR26 (FedRAMP Consolidated Rules for 2026)** framework.
 
 At a high level, the skill enables Claude to:
 
@@ -100,7 +100,7 @@ The skill explains the OSCAL mandate (RFC-0024), what machine-readable authoriza
 
 | Change | Details |
 |---|---|
-| **Certification Classes A–D** | Replace FIPS 199 impact levels (Low/Moderate/High/LI-SaaS). Class A ≈ Low, Class B ≈ Moderate, Class C ≈ High, Class D = new specialized tier |
+| **Certification Classes A–D** | Replace FIPS 199 baseline labels (per NTC-0004): Class A = new pilot/transitional baseline (external-framework entry, e.g. SOC 2 Type II), Class B = LI-SaaS + Low, Class C = Moderate, Class D = High |
 | **FedRAMP Ready retires** | July 28, 2026 — no new designations; existing Ready CSPs must transition to FedRAMP 20x or full authorization |
 | **FedRAMP 20x is primary pathway** | Continuous authorization, modular submissions, automated evidence — not just a pilot |
 | **JAB P-ATO retired** | FedRAMP PMO is now the sole authorization body |
@@ -167,7 +167,7 @@ The skill was authored using the **Claude Skill Creator** framework, which struc
 - **Reference files**: Loaded on demand when deeper guidance is needed — keeping the main skill lean and focused
 
 **Inputs used to construct the skill:**
-- FedRAMP CR26 (Certification Reform 2026) documentation and PMO announcements (fedramp.gov)
+- FedRAMP CR26 (Consolidated Rules for 2026) documentation, incl. notice NTC-0004, and PMO announcements (fedramp.gov)
 - FedRAMP Rev 5 baseline documentation and transition guides
 - NIST SP 800-53 Rev 5 control families and parameter requirements
 - FedRAMP CSP Authorization Playbook (v4.2, November 2025)
@@ -196,6 +196,7 @@ The skill was authored using the **Claude Skill Creator** framework, which struc
 
 | Version | Date | Changes |
 |---|---|---|
+| **1.5.0** | July 2026 | Corrected CR26 Certification Class mapping to official NTC-0004 (A = pilot/transitional, B = LI-SaaS + Low, C = Moderate, D = High); CR26 renamed to "Consolidated Rules for 2026"; POA&M remediation SLAs corrected to ConMon Performance Management Guide values (High 30d / Moderate 90d / Low 180d); benchmark re-run with primary-source assertions: 92% with skill vs 84% baseline |
 | **1.4.0** | July 2026 | CR26 update: Certification Classes A–D, FedRAMP 20x as primary pathway, FedRAMP Ready retirement (July 28, 2026), OSCAL mandate (September 30, 2026), JAB P-ATO retirement |
 | **1.0.0** | March 2026 | Initial release with Rev 5 baseline, ConMon guidance, OSCAL awareness |
 

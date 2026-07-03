@@ -1,0 +1,33 @@
+{
+  "eval_id": 82,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Analyzes whether B2B SaaS qualifies as a 'cloud computing service' under Annex I (digital infrastructure) and concludes the company is likely directly in scope, since at 75 employees / €15M it meets the Art. 2(1) size threshold (medium-sized: 50+ employees or >€10M turnover)",
+      "passed": false,
+      "evidence": "The response correctly identifies the size threshold is cleared ('At 75 employees and €15M revenue, you would exceed the medium-enterprise threshold') but concludes on the sector question that 'you are very likely out of scope for direct NIS2 designation' and 'Almost certainly not directly subject to NIS2.' This is the opposite conclusion from what the assertion requires (likely directly in scope), so it fails."
+    },
+    {
+      "text": "Classifies the company as an IMPORTANT entity (medium-sized digital-infrastructure provider below the large-enterprise ceiling, and not one of the Art. 3(1) always-essential categories like TLD registries, DNS providers, or qualified trust service providers)",
+      "passed": false,
+      "evidence": "The response never classifies the company as an important entity; it concludes the company is out of direct scope entirely and thus never reaches an EE/IE classification."
+    },
+    {
+      "text": "Walks through the Art. 21(2)(a)–(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+      "passed": false,
+      "evidence": "Section 3 lists the 10 Art. 21 measure categories but only with the Directive's own generic descriptive language (e.g., '5. Security in network and information systems acquisition... including vulnerability handling and disclosure'), not concrete, company-sized implementation guidance (no specifics like encryption standards, MFA scope, patch SLAs, or access-review cadence as seen in the with_skill run). This is a bare recitation of the statutory list rather than a walk-through with concrete guidance."
+    },
+    {
+      "text": "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+      "passed": false,
+      "evidence": "No mention of Implementing Regulation (EU) 2024/2690 or any equivalent implementing regulation anywhere in the response."
+    },
+    {
+      "text": "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)",
+      "passed": false,
+      "evidence": "The response mentions generic 'national registration requirements' in the next-steps list ('Watch for national registration requirements — some member states require in-scope... entities to register') but never cites the main-establishment rule (Art. 26) or discusses the ex-post/reactive supervision regime for important entities."
+    }
+  ],
+  "total": 5,
+  "passed": 0
+}
