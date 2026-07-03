@@ -1,0 +1,33 @@
+{
+  "eval_id": 142,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Flags the default password against Annex I Part I secure-by-default requirements (products must be made available with secure default configurations; universal default credentials are the canonical violation)",
+      "passed": true,
+      "evidence": "Part I table row 3: 'Products shall be delivered with a secure by default configuration...Default password \"admin\" violates this directly | Critical gap — hard-coded/default weak credentials are explicitly called out in Annex I as unacceptable | Critical'."
+    },
+    {
+      "text": "Flags the missing update mechanism against Annex I Part I (security updates must be possible, and by default installed automatically or with user consent) and the exposed telnet service against attack-surface minimisation requirements",
+      "passed": true,
+      "evidence": "Row 10: 'Minimize attack surface, including external interfaces | Telnet enabled by default...direct violation of \"minimize attack surface\"'. Row 13: 'Provide the possibility to remediate vulnerabilities through security updates, including automatic updates...No automatic update mechanism at all | Critical, explicit gap'."
+    },
+    {
+      "text": "Flags the missing coordinated vulnerability disclosure policy against Annex I Part II (vulnerability handling requirements: CVD policy, contact point, SBOM, remediation without delay, free security updates)",
+      "passed": true,
+      "evidence": "Part II rows 4-6 explicitly flag public disclosure, 'coordinated vulnerability disclosure policy...No vulnerability disclosure policy exists | Direct, explicit gap', and contact address; row 1 flags SBOM, rows 7-8 flag free/timely security update dissemination."
+    },
+    {
+      "text": "Assesses the 2-year support commitment against the CRA support-period rule: must reflect the expected product lifetime — for a consumer router, 2 years is very likely insufficient versus the 5-year reference period; requires justification or extension",
+      "passed": true,
+      "evidence": "Part II row 9: '2-year support commitment stated...points to a minimum baseline of 5 years unless a shorter period is objectively justified...2 years is short for a home networking device with a typical expected life of 5+ years; you will need to document objective justification if you keep this, or extend it.'"
+    },
+    {
+      "text": "Outputs a prioritised remediation table mapping each gap to the specific Annex I requirement area, with pre-market blockers (defaults, updates) distinguished from process gaps (CVD, SBOM)",
+      "passed": false,
+      "evidence": "The 'Prioritized Remediation Roadmap' groups by severity ('Immediate/Critical', 'High priority', 'Medium priority') but does not separate pre-market blockers from process gaps as the assertion requires — the CVD policy (a process gap) is placed in the same 'Immediate/Critical' tier as the default password and telnet (pre-market blockers), while SBOM is split off into a different 'High priority' tier rather than being grouped with CVD as parallel process gaps. The specific blocker-vs-process distinction is not drawn."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

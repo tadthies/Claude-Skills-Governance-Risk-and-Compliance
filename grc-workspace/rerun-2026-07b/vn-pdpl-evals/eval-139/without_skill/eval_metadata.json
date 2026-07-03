@@ -1,0 +1,13 @@
+{
+  "eval_id": 139,
+  "eval_name": "consent-mechanism-design",
+  "run_type": "without_skill",
+  "prompt": "Design a PDPL-compliant consent mechanism for our Vietnamese e-commerce app. What forms of consent are valid, and what practices are prohibited?",
+  "assertions": [
+    "States validity requirements: consent must be voluntary, informed, explicit, and given by a clear affirmative act, with the data subject knowing the data types, purposes, recipients, and their rights before consenting",
+    "Lists valid forms consistent with Vietnamese rules: written, electronic (app/website action, verifiable formats), voice/recorded, SMS/syntax-based — provided the act is affirmative and verifiable",
+    "Lists prohibited/invalid practices: silence or inaction as consent, pre-ticked boxes, bundled consent covering unrelated purposes, and making consent conditions misleading",
+    "Requires purpose granularity and separate consent for distinct purposes (e.g., order fulfilment vs marketing vs sharing with partners), plus special handling for sensitive data (explicit notice that the data is sensitive)",
+    "Covers lifecycle mechanics: burden of proof on the controller (retain consent records), easy withdrawal channel that is as accessible as giving consent, and re-consent when purposes change"
+  ]
+}

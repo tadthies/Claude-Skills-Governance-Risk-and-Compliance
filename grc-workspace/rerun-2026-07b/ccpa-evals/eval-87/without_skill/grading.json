@@ -1,0 +1,33 @@
+{
+  "eval_id": 87,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Sets out the timeline correctly: confirm receipt within 10 business days; substantive response within 45 calendar days, extendable by a further 45 days with notice",
+      "passed": true,
+      "evidence": "'Confirm receipt within 10 business days, describing your verification process and expected timeline.' and 'You have 45 calendar days from receipt to substantively respond (extendable once by an additional 45 days if reasonably necessary, with notice to the consumer explaining the delay).'"
+    },
+    {
+      "text": "Explains tiered identity verification (reasonable degree vs reasonably high degree depending on sensitivity; specific-pieces requests require higher assurance) and that unverifiable delete requests may be treated as opt-out where applicable",
+      "passed": true,
+      "evidence": "'this is considered a higher-risk request requiring a reasonably high degree of certainty' for specific-pieces requests, and 'For the Request to Delete: you may deny it if identity cannot be verified, but you should still offer the consumer the opt-out/do-not-sell right, which does not require verification' — directly addresses treating an unverifiable delete request as an opportunity for opt-out."
+    },
+    {
+      "text": "Right to know: covers categories AND specific pieces, sources, purposes, third parties — with the 12-month lookback default (and the CPRA extension beyond 12 months where feasible on request)",
+      "passed": true,
+      "evidence": "Covers specific pieces, categories of sources, purposes, third parties. States: 'Compile the specific pieces of PI collected in the past 12 months (or since your applicable lookback period)...' — correctly frames 12 months as the default lookback with room for extension, consistent with the assertion."
+    },
+    {
+      "text": "Deletion: instructs flowing the deletion to service providers/contractors, and cites legitimate statutory exceptions (e.g., complete the transaction, security/fraud, legal compliance, internal uses compatible with expectations) rather than inventing exceptions",
+      "passed": true,
+      "evidence": "Lists 9 statutory exceptions (complete transaction, security, debug, free speech, CalECPA, research, internal use compatible with expectations, legal compliance, internal lawful use) and 'Instruct all service providers and contractors to delete the consumer's PI from their records.'"
+    },
+    {
+      "text": "Advises maintaining request records (24-month record-keeping) and responding even when denying (state the reason and the exception relied on)",
+      "passed": true,
+      "evidence": "'Keep records of the request and your response for 24 months' and 'Send a written response confirming: (a) what specific-pieces information was disclosed (or why it was denied/redacted), and (b) confirmation of deletion, including which categories were deleted vs. retained under an exception and why.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

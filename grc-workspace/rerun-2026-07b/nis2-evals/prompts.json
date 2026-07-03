@@ -1,0 +1,25 @@
+{
+  "skill": "nis2",
+  "prompts": [
+    {
+      "id": 81,
+      "prompt": "We are a mid-size European energy company with 200 employees and €50M annual turnover, operating electricity distribution networks in Germany. Do we fall under the NIS2 Directive? If so, as what type of entity, and what are our key obligations?"
+    },
+    {
+      "id": 82,
+      "prompt": "Our SaaS company provides B2B cloud-based HR software. We have 75 employees and €15M annual revenue. A customer just told us we need to be NIS2 compliant. Are we directly subject to NIS2, and if so what do we need to do to comply with Article 21?"
+    },
+    {
+      "id": 83,
+      "prompt": "We suffered a ransomware attack at 09:00 Monday morning that encrypted our core operational systems. Walk me through exactly what we need to report, to whom, and by when under NIS2."
+    },
+    {
+      "id": 84,
+      "prompt": "We already hold ISO 27001:2022 certification. Does this mean we are NIS2 compliant? What gaps might still exist between our ISO 27001 ISMS and full NIS2 compliance?"
+    },
+    {
+      "id": 85,
+      "prompt": "We are the CISO of a large European bank. Our regulator has told us NIS2 applies to us alongside DORA. How do the two regulations interact, and which takes precedence? Do we need two separate compliance programmes?"
+    }
+  ]
+}

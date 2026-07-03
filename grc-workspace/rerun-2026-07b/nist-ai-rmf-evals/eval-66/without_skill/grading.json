@@ -1,0 +1,33 @@
+{
+  "eval_id": 66,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Describes all four functions faithfully to NIST AI 100-1: GOVERN (cross-cutting culture, policies, roles, risk tolerance), MAP (context, categorization, capabilities/limitations, impacts), MEASURE (TEVV — analyze, assess, track risks with metrics), MANAGE (prioritize, treat, respond, recover)",
+      "passed": true,
+      "evidence": "GOVERN described as culture/policy/roles/accountability/risk tolerance; MAP covers intended purpose, stakeholder identification, categorization, capabilities/data/components; MEASURE described as 'quantitative, qualitative, or mixed-method tools... to analyze, assess, benchmark, and monitor' with metrics tracking (substance of TEVV, though the acronym itself is never used); MANAGE covers prioritizing, response decisions, incident response/recovery."
+    },
+    {
+      "text": "States the structural relationship correctly: GOVERN is the cross-cutting foundation feeding the other three; MAP informs MEASURE which informs MANAGE, iteratively across the AI lifecycle",
+      "passed": true,
+      "evidence": "\"GOVERN wraps around everything... while MAP → MEASURE → MANAGE form a cycle that typically flows in that order... but loops back continuously as systems change... A system might cycle through MAP-MEASURE-MANAGE multiple times across its lifecycle.\""
+    },
+    {
+      "text": "Recommends starting with GOVERN (policies, accountability, inventory, risk tolerance) — the canonical NIST guidance for organizations beginning adoption",
+      "passed": true,
+      "evidence": "\"For an organization just starting out, start with GOVERN, specifically: 1. Establish executive sponsorship and accountability... 2. Define your organization's AI risk tolerance... 3. Create an AI inventory/use-case register... 4. Draft initial AI policies.\""
+    },
+    {
+      "text": "Mentions that the framework is voluntary and outcome-based (not a compliance checklist), organized into categories/subcategories with a companion Playbook",
+      "passed": false,
+      "evidence": "Response never states the framework is voluntary, never uses 'outcome-based' or 'checklist' framing, and never mentions the companion AI RMF Playbook (it does mention the separate Generative AI Profile, NIST AI 600-1, but that is a different document)."
+    },
+    {
+      "text": "References the seven trustworthiness characteristics (valid & reliable, safe, secure & resilient, accountable & transparent, explainable & interpretable, privacy-enhanced, fair with harmful bias managed) as the risk lens the functions operationalize",
+      "passed": true,
+      "evidence": "Under MEASURE: \"Testing for trustworthiness characteristics: validity/reliability, safety, security/resilience, accountability/transparency, explainability/interpretability, privacy, and fairness (bias management)\" — all seven listed explicitly."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

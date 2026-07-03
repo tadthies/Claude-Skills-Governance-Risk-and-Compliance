@@ -1,0 +1,25 @@
+{
+  "skill": "vn-pdpl",
+  "prompts": [
+    {
+      "id": 136,
+      "prompt": "We are a Singapore-based SaaS company with customers in Vietnam. Run a gap analysis against Vietnam's PDPL: we collect names, emails, payment data; consent is via a pre-ticked checkbox; data is stored in Singapore; we have no DPO; and we have never done an impact assessment."
+    },
+    {
+      "id": 137,
+      "prompt": "We are a fintech in Ho Chi Minh City and just discovered a breach of customer personal data. Walk us through the breach notification workflow under Vietnam's data protection rules — who do we notify and by when?"
+    },
+    {
+      "id": 138,
+      "prompt": "We are a 15-person startup in Hanoi. Do Vietnam PDPL obligations like the impact assessment and data protection officer apply to us, or are there exemptions for small businesses?"
+    },
+    {
+      "id": 139,
+      "prompt": "Design a PDPL-compliant consent mechanism for our Vietnamese e-commerce app. What forms of consent are valid, and what practices are prohibited?"
+    },
+    {
+      "id": 140,
+      "prompt": "A Vietnamese customer wants to withdraw consent. What does the PDPL and its implementing decree require — process, timeframes, and consequences of withdrawal?"
+    }
+  ]
+}

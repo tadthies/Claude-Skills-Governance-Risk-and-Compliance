@@ -1,0 +1,33 @@
+{
+  "eval_id": 143,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Names the recipients correctly: the designated CSIRT coordinator and ENISA, via the single reporting platform (Art. 14/16)",
+      "passed": true,
+      "evidence": "'Who you report to' names 'ENISA (via the future single reporting platform...)' and 'the CSIRT designated as coordinator for your Member State' — correctly names both entities and even references the single reporting platform explicitly."
+    },
+    {
+      "text": "States the actively-exploited-vulnerability timeline correctly: early warning within 24 HOURS of awareness; full vulnerability notification within 72 HOURS; final report within 14 DAYS after a corrective/mitigating measure is available",
+      "passed": true,
+      "evidence": "'Early warning — within 24 hours', 'Vulnerability/incident notification — within 72 hours', 'Final report — within 14 days after a corrective/mitigating measure becomes available' — matches exactly."
+    },
+    {
+      "text": "Distinguishes the severe-incident track (incidents impacting product security: 24h early warning / 72h notification / 1 MONTH final report) from the vulnerability track, applying the right one to these facts",
+      "passed": false,
+      "evidence": "The response's parenthetical note says: 'for severe incidents affecting the product's security, there is an analogous obligation with an additional intermediate progress report if resolution is not achieved within the initial timeframes' — this does not state the correct 1-month final report deadline for the severe-incident track at all, substituting an inaccurate description ('additional intermediate progress report') instead of the ground-truth 1-month final report figure."
+    },
+    {
+      "text": "Covers user-notification duties: inform impacted users about the vulnerability and available corrective measures/mitigations without undue delay",
+      "passed": true,
+      "evidence": "'Obligation to notify affected users' section: 'the CRA requires manufacturers to inform affected users of the actively exploited vulnerability, without undue delay...including corrective measures the user can take.'"
+    },
+    {
+      "text": "Notes these reporting obligations apply from 11 September 2026 (ahead of the December 2027 main application) and connects to Annex I Part II duties (remediate without delay, free security updates, CVD process)",
+      "passed": false,
+      "evidence": "Opening paragraph states 'These obligations are already in force (applicable since 11 September 2026)' — this is factually wrong given today's date is 3 July 2026 (11 September 2026 is still in the future); the response incorrectly presents the obligation as currently binding rather than upcoming, a temporal error that could seriously mislead the reader about their current compliance posture despite the date figure itself being correct. Annex I Part II connection is otherwise present ('required under Annex I Part II', 'coordinated vulnerability disclosure (CVD) process')."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

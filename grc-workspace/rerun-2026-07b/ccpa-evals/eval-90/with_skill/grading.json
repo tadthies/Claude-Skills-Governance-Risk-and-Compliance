@@ -1,0 +1,33 @@
+{
+  "eval_id": 90,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+      "passed": false,
+      "evidence": "Correctly classifies all three as SPI, but the geolocation precision radius is stated as 'within 1/4 mile' rather than the statutory ~1,850 feet (1/3 mile). 1/4 mile is approximately 1,320 feet, a materially different (and incorrect) figure from the assertion's required ~1,850 ft standard. The statutory citation §1798.140(ae) is also never mentioned."
+    },
+    {
+      "text": "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+      "passed": true,
+      "evidence": "'Consumers have the right to restrict your use of this SPI to only the \"permitted purposes\"... Provide a \"Limit the Use of My Sensitive Personal Information\" link' with full list of permitted purposes."
+    },
+    {
+      "text": "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+      "passed": true,
+      "evidence": "'if facial recognition is used only for the authentication feature the consumer opted into... a consumer's \"limit\" request may not change much operationally — you're likely already within the permitted-purpose exceptions for the core use case.'"
+    },
+    {
+      "text": "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+      "passed": true,
+      "evidence": "Consolidated checklist requires disclosure of: category collected, specific purposes, whether sold/shared with third parties, and retention period/criteria for each SPI category."
+    },
+    {
+      "text": "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable",
+      "passed": true,
+      "evidence": "Flags the combination as 'significant risk' triggering risk-assessment/cybersecurity-audit obligations, and Priority Action Items include conducting/documenting a risk assessment. Data minimization is implied through retention-limit guidance but the specific §1798.100(c) purpose-limitation duty is not explicitly cited as a distinct obligation, though the substance (minimize to necessary purpose) is present via the SPI-limitation discussion."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

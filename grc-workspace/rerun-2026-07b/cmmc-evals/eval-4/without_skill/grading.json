@@ -1,0 +1,33 @@
+{
+  "eval_id": 4,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Explains conditional certification: possible only if the assessment score is at least 88 (0.8 x 110) AND every NOT MET practice is POA&M-eligible",
+      "passed": true,
+      "evidence": "'Minimum score to be eligible for conditional certification (POA&M path): 88 points ... If your score is below 88, you are not eligible for conditional certification regardless of which practices are open.' Combined with the separate POA&M-eligibility gate described in section 3, both conditions (score >= 88 AND POA&M-eligible practices) are stated."
+    },
+    {
+      "text": "States POA&M eligibility rules correctly: only practices worth 1 point may be on a POA&M (no 5-point items; 3-point items excluded except limited partial-credit cases), and names non-POA&M-eligible critical examples (e.g., SC.L2-3.13.11 FIPS crypto, AC.L2-3.1.3, IA.L2-3.5.3)",
+      "passed": false,
+      "evidence": "Response correctly excludes 5-point items from POA&M eligibility ('All 5-point weighted practices are treated as ineligible for POA&M'), but incorrectly states '3-point and 1-point weighted practices are generally POA&M-eligible' — this contradicts the ground-truth rule that 3-point items are excluded except in limited partial-credit cases. It also never names any specific non-POA&M-eligible practice IDs (no mention of SC.L2-3.13.11, AC.L2-3.1.3, or IA.L2-3.5.3 by name) — the eligibility rule and the required named examples are both missing/incorrect."
+    },
+    {
+      "text": "States the closeout: POA&M items must be remediated and verified by a closeout assessment within 180 days, or the conditional certification lapses",
+      "passed": true,
+      "evidence": "'You will be issued a conditional Level 2 certification, valid for 180 days ... undergo a POA&M closeout assessment ... If the POA&M items are not closed out ... within the 180-day window, the conditional certification lapses/expires.'"
+    },
+    {
+      "text": "Explains the consequence math for THIS scenario: 8 NOT MET practices are compatible with conditional certification only if all 8 are 1-point items and the score floor holds — otherwise remediate and re-assess",
+      "passed": false,
+      "evidence": "Response asks the user to check point weights of the 8 findings and calculate the score, and states the two gates generically in the Bottom Line ('hinges on two gates: (1) your SPRS score must be ≥88 points, and (2) none of your 8 NOT MET practices can be a non-POA&M-eligible (typically 5-point) practice'), but this framing is inconsistent with the eligibility rule it stated earlier (which wrongly allows 3-point items) and never explicitly concludes that all 8 would need to be 1-point items specifically — it stops at 'not a 5-point practice,' which is a looser and less accurate bar than the ground truth requires."
+    },
+    {
+      "text": "Mentions the annual senior-official affirmation in SPRS and that a lapsed conditional status affects contract eligibility",
+      "passed": false,
+      "evidence": "Response mentions 'annual self-affirmations' once in passing (Section 1, describing the C3PAO cycle generally) but never ties this to SPRS specifically or to a senior company official signing it, and never re-raises it in the context of this 8-practice scenario. It does state the contract-eligibility consequence clearly ('losing conditional status before closeout could jeopardize contract eligibility, award decisions, or option period exercises'), but the assertion requires both halves (SPRS senior-official affirmation AND contract-eligibility impact) — the affirmation half is too vague/generic to count as stating the specific requirement."
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}

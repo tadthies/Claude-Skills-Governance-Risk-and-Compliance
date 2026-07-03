@@ -1,0 +1,13 @@
+{
+  "eval_id": 89,
+  "eval_name": "gdpr-to-ccpa-gap",
+  "run_type": "without_skill",
+  "prompt": "We already have a GDPR compliance programme. What additional steps do we need to take to comply with CCPA/CPRA? Where do the two laws differ most significantly?",
+  "assertions": [
+    "Identifies the consent-model difference: CCPA is opt-out (sale/sharing) vs GDPR opt-in lawful basis; no CCPA requirement for a processing legal basis",
+    "Identifies CCPA-specific mechanics GDPR programmes lack: 'Do Not Sell or Share' link, GPC honoring, right to limit sensitive PI use, notice at collection specifics, service provider/contractor contract terms under §1798.100(d)/.140",
+    "Notes scope differences: CCPA covers households, has revenue/volume applicability thresholds, and its 'sale' concept is broader than anything in GDPR",
+    "Notes rights differences accurately (e.g., CCPA has no full GDPR-style portability/objection regime; correction was added by CPRA; statutory damages private right of action only for data breaches, $100-$750 per consumer per incident)",
+    "Provides a concrete delta-plan (map data flows for sale/sharing, implement opt-out signals, update notices, remediate vendor contracts, train request-handling to CCPA deadlines)"
+  ]
+}

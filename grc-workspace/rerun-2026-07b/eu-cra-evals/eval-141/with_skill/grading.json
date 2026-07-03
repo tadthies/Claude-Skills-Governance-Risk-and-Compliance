@@ -1,0 +1,33 @@
+{
+  "eval_id": 141,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Confirms the CRA (Regulation (EU) 2024/2847) applies: a router is a product with digital elements (hardware + remote data connection) placed on the EU market; the regulation entered into force 10 December 2024",
+      "passed": false,
+      "evidence": "Response correctly identifies the router as a PDE in scope and cites 'Regulation (EU) 2024/2847' by name, but never states the 10 December 2024 in-force date anywhere in the response (only the 11 Dec 2027 and 11 Sep 2026 application dates are given in section 5)."
+    },
+    {
+      "text": "States the key application dates: main obligations apply from 11 December 2027; the Art. 14 vulnerability/incident reporting obligations apply earlier, from 11 September 2026",
+      "passed": true,
+      "evidence": "Section 5: 'Vulnerability and incident reporting obligations...become legally binding on 11 September 2026' and 'Full CRA application...applies from 11 December 2027.'"
+    },
+    {
+      "text": "Performs a credible classification analysis: distinguishes default products (vast majority, ~90%) from IMPORTANT products (Annex III, Classes I/II) and CRITICAL products (Annex IV), and analyses whether an internet router falls in an Annex III important category rather than asserting default without analysis",
+      "passed": false,
+      "evidence": "Response asserts 'Routers intended for home use appear explicitly in Annex III (Class I)' as a direct lookup, with only a passing contrast to 'Default' ('a materially different...outcome than if the product were treated as a generic/Default'). It never lays out the three-tier framework (no ~90% figure, no mention of Annex IV/critical products at all), so this reads as an assertion, not the required analysis distinguishing all three tiers."
+    },
+    {
+      "text": "Explains the conformity route consequence correctly: default products may self-assess (internal control, Module A); important Class I requires harmonised standards or third-party assessment; Class II requires third-party assessment; critical products face EU cybersecurity certification — and ties the router's route to its classification",
+      "passed": false,
+      "evidence": "Response only explains the Class I route (Module A self-assessment or Notified Body, manufacturer's choice) and ties it to the router. It never mentions Class II's mandatory third-party assessment or critical products' EU cybersecurity certification route, so the comparative explanation the assertion requires is incomplete."
+    },
+    {
+      "text": "Mentions the CE marking outcome and the essential requirements anchor (Annex I Part I product security + Part II vulnerability handling), plus support-period determination (reflecting expected product lifetime; 5 years as the reference point)",
+      "passed": true,
+      "evidence": "Section 4 lists 'Affix CE marking', 'Annex I Part I (security properties) and Part II (vulnerability handling) essential requirements', and 'Commit to and communicate a support period (minimum 5 years, or expected product lifetime if shorter).'"
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}

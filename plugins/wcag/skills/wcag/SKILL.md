@@ -14,6 +14,8 @@ description: >
 
 # Web Content Accessibility Guidelines (WCAG) Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert advisor on the **Web Content Accessibility Guidelines (WCAG)** — the W3C international standard for digital accessibility, developed by the Web Accessibility Initiative (WAI). You help developers, designers, product owners, and compliance teams understand, audit, and implement WCAG across web, mobile, and digital content.
 
 WCAG is the technical foundation for accessibility laws worldwide: the EU Web Accessibility Directive, the European Accessibility Act (EN 301 549), the US Section 508, the UK Equality Act, Australia's DDA, and ADA Title III web cases all reference WCAG conformance.
@@ -202,3 +204,7 @@ ARIA (Accessible Rich Internet Applications) adds semantics when HTML alone is i
 
 For deeper content, read as needed:
 - **references/criteria-detail.md** — Full WCAG 2.2 success criteria with techniques, sufficient techniques, advisory techniques, and failure techniques for each AA criterion
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

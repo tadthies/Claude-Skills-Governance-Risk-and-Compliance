@@ -1,0 +1,13 @@
+{
+  "eval_id": 134,
+  "eval_name": "supplier-ransomware-incident",
+  "run_type": "without_skill",
+  "prompt": "One of our suppliers has been hit by ransomware and they hold our agency's data. Walk us through our NZISM-aligned incident response obligations, including who we must notify in New Zealand.",
+  "assertions": [
+    "Treats this correctly as the agency's incident too: activate the agency IR plan, establish what agency data/classification the supplier holds, and demand supplier containment/forensics status under the contract",
+    "Names the right NZ notification channel for cyber incidents: report to the NCSC (GCSB) — noting CERT NZ's functions are now within the NCSC — plus NZ Police for the criminal act where appropriate",
+    "Identifies the Privacy Act 2020 obligation: if personal information is involved and the breach is notifiable (serious harm threshold), notify the Office of the Privacy Commissioner and affected individuals",
+    "Covers evidence preservation and reporting discipline: preserve logs/artifacts, document a timeline, and conduct a post-incident review feeding lessons back into supplier controls",
+    "Addresses the supplier-contract dimension: invoke incident-notification clauses, require remediation evidence, reassess the supplier's certification/assurance status, and update the agency risk register"
+  ]
+}

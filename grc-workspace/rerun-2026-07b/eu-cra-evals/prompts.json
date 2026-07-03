@@ -1,0 +1,25 @@
+{
+  "skill": "eu-cra",
+  "prompts": [
+    {
+      "id": 141,
+      "prompt": "Our company manufactures a consumer smart-home IoT router sold in the EU. Does the Cyber Resilience Act apply, what product class are we in, and what conformity assessment route applies?"
+    },
+    {
+      "id": 142,
+      "prompt": "Run an Annex I gap assessment for our consumer IoT router against the CRA essential requirements. Current state: ships with default password 'admin'; no automatic update mechanism; telnet management port open by default; no vulnerability disclosure policy; support commitment is 2 years."
+    },
+    {
+      "id": 143,
+      "prompt": "We discovered an actively exploited vulnerability in one of our products. What are our reporting obligations under the CRA — to whom, and by when?"
+    },
+    {
+      "id": 144,
+      "prompt": "Design an SBOM programme for our products to meet CRA requirements. What must the SBOM contain and how does it fit vulnerability handling?"
+    },
+    {
+      "id": 145,
+      "prompt": "We import and distribute connected devices manufactured in Asia into the EU. What are our obligations as importer/distributor under the CRA versus the manufacturer's obligations?"
+    }
+  ]
+}

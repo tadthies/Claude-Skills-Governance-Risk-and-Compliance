@@ -1,0 +1,13 @@
+{
+  "eval_id": 143,
+  "eval_name": "exploited-vulnerability-reporting",
+  "run_type": "with_skill",
+  "prompt": "We discovered an actively exploited vulnerability in one of our products. What are our reporting obligations under the CRA — to whom, and by when?",
+  "assertions": [
+    "Names the recipients correctly: the designated CSIRT coordinator and ENISA, via the single reporting platform (Art. 14/16)",
+    "States the actively-exploited-vulnerability timeline correctly: early warning within 24 HOURS of awareness; full vulnerability notification within 72 HOURS; final report within 14 DAYS after a corrective/mitigating measure is available",
+    "Distinguishes the severe-incident track (incidents impacting product security: 24h early warning / 72h notification / 1 MONTH final report) from the vulnerability track, applying the right one to these facts",
+    "Covers user-notification duties: inform impacted users about the vulnerability and available corrective measures/mitigations without undue delay",
+    "Notes these reporting obligations apply from 11 September 2026 (ahead of the December 2027 main application) and connects to Annex I Part II duties (remediate without delay, free security updates, CVD process)"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 3,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the requirement accurately: multifactor authentication for local and network access to privileged accounts, and network access to non-privileged accounts (IA.L2-3.5.3)",
+      "passed": true,
+      "evidence": "Practice Statement field: 'Use multifactor authentication (MFA) for local and network access to privileged accounts and for network access to non-privileged accounts.' Also restated in the Discussion section broken into three numbered requirements."
+    },
+    {
+      "text": "Describes implementation per named component: Entra ID MFA (conditional access) for M365 GCC High, Duo for VPN, and explicitly addresses the on-prem AD legacy CAD workstations — the local-access-to-privileged-accounts gap most environments miss",
+      "passed": true,
+      "evidence": "Section A covers Entra ID Conditional Access for GCC High in detail, Section B covers Duo MFA for VPN, and Section C explicitly covers 'On-Premises Active Directory — Legacy CAD Workstations (Gap Area)' calling out that 'Local access to privileged accounts (local admin / Domain Admin accounts used at or from CAD workstations)' is a gap."
+    },
+    {
+      "text": "Written in SSP style: describes what IS implemented (not aspirational), names responsible roles, and covers each assessment objective (who/what/where MFA is enforced)",
+      "passed": true,
+      "evidence": "Present-tense implementation descriptions with specific policy names (e.g., 'CA001-Require-MFA-AllUsers'), a Responsible Role field naming specific roles, and an explicit 'Assessment Objectives' table breaking out 3.5.3[a]-[d] with per-objective status and evidence."
+    },
+    {
+      "text": "Identifies remaining gaps honestly and routes them to a POA&M entry rather than papering over (e.g., local admin access on legacy workstations pending smart card/Windows Hello deployment)",
+      "passed": true,
+      "evidence": "Section C explicitly states 'Current state: ... relies on password-only (single-factor) authentication. This is a gap' and provides a full 'POA&M Note' table with POA&M Item ID, weakness description, risk rating, remediation actions (including 'Evaluate Windows Hello for Business / PIV smart card authentication'), milestones, responsible party, and scheduled completion date."
+    },
+    {
+      "text": "Includes evidence pointers an assessor would ask for (conditional access policy exports, Duo policy config, screenshots/logs demonstrating enforcement)",
+      "passed": true,
+      "evidence": "Assessment Objectives table cites specific evidence per objective, and the closing note states the status should be updated 'only after ... validated and evidenced (screenshots, policy exports, test logon records).'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

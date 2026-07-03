@@ -1,0 +1,33 @@
+{
+  "eval_id": 2,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Flags MFA scope gap against IA.L2-3.5.3 (MFA required for local and network access to privileged accounts and network access to non-privileged accounts — cloud email alone is insufficient)",
+      "passed": true,
+      "evidence": "Section 3.2: 'IA.L2-3.5.3 | Multifactor authentication for local and network access to privileged accounts and for network access to non-privileged accounts | Not Met' with rationale explaining MFA is only on cloud email, not VPN/servers/admin consoles."
+    },
+    {
+      "text": "Flags FIPS-validated cryptography gap (SC.L2-3.13.11 requires FIPS-validated cryptography to protect CUI confidentiality) and the flat-network/shared-drive state against scoping and SC.L2-3.13.1/AC.L2-3.1.3 (boundary protection / control CUI flow), recommending segmentation or an enclave",
+      "passed": true,
+      "evidence": "Section 3.3 flags SC.L2-3.13.11 and SC.L2-3.13.1 (boundary protection) as Not Met, and section 3.1 flags AC.L2-3.1.3. Remediation Phase 2 item 8: 'Design and begin network segmentation ... consider a managed GCC High / CUI enclave / dedicated CMMC boundary approach.'"
+    },
+    {
+      "text": "Flags untested IR plan against IR.L2-3.6.3 (test incident response capability) and the stale SSP against CA.L2-3.12.4 (SSP must be current)",
+      "passed": true,
+      "evidence": "Section 3.6: 'IR.L2-3.6.3 | Test the organizational incident response capability | Not Met.' Section 3.9: 'An SSP from 2022 is 4 years stale as of July 2026 ... likely inaccurate ... Recommend full SSP rewrite.' (References the SSP currency requirement, though does not cite the CA.L2-3.12.4 control ID by name.)"
+    },
+    {
+      "text": "Correctly credits compliant items (awareness training AT.L2-3.2.1/.2; personnel screening PS.L2-3.9.1) instead of marking everything deficient",
+      "passed": true,
+      "evidence": "Section 3.7: 'AT.L2-3.2.1 ... Met' and Section 3.8: 'PS.L2-3.9.1 | Screen individuals prior to authorizing access to systems containing CUI | Met.'"
+    },
+    {
+      "text": "Explains SPRS scoring impact using the DoD methodology: score starts from 110 with weighted deductions (5/3/1 points; MFA and FIPS crypto are 5-point/partial-credit items), and prioritises remediation by point value and POA&M eligibility",
+      "passed": false,
+      "evidence": "Response describes the correct weighting mechanics (Weight 5/3/1 deduction table, MFA and FIPS crypto correctly assigned Weight 5) but then contradicts the '110-point starting, deduction' methodology by asserting the score can go deeply negative: 'Estimated current SPRS score: approximately -30 to -45 (out of a possible 110)' and 'Realistic full-scope estimate: SPRS score in the -35 to -50 range.' This misstates how the DoD scoring methodology actually resolves (deductions from 110 do not produce these compounding negative ranges from only ~10-15 assessed practices) and could mislead the reader about actual scoring mechanics, even though POA&M eligibility discussion is otherwise reasonable."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 5,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the flow-down rule: DFARS 252.204-7021 flows down to subcontractors at all tiers where they process, store, or transmit FCI/CUI; subs handling CUI need CMMC Level 2, subs with FCI only need Level 1",
+      "passed": true,
+      "evidence": "'Flow down the CMMC requirement to subcontractors \"at all tiers\" ... if a sub (or a sub's sub) will process, store, or transmit CUI ... the CMMC requirement flows down to them' and explicitly: 'Subs handling only Federal Contract Information (FCI) generally need CMMC Level 1 (self-assessment). Subs handling CUI generally need CMMC Level 2.'"
+    },
+    {
+      "text": "States the prime's duty: verify subcontractor CMMC status (via SPRS or certificate evidence) BEFORE awarding/continuing subcontract performance involving CUI",
+      "passed": true,
+      "evidence": "Section 3 'Your obligation to verify — SPRS and beyond' explicitly instructs to 'Check SPRS for the subcontractor's CAGE code to confirm a current, valid ... assessment or certification is on file' and 'Request written confirmation/attestation from each subcontractor' — framed as required before/for continued award."
+    },
+    {
+      "text": "Gives concrete remediation options: stop CUI flow to the uncertified subs (rescope what they receive), move them to FCI-only scope, sponsor an enclave approach, or replace them — with interim risk documentation",
+      "passed": false,
+      "evidence": "Response offers 'Suspend or restrict the subs' access to CUI systems/data' and 'Route CUI-related tasks temporarily to a certified sub or in-house team' with a 'risk-based rationale' documentation requirement — this covers stopping CUI flow and replacing/rerouting, but never mentions moving subs to FCI-only scope or sponsoring an enclave approach as options. Partial coverage of the required options menu, missing two of the four specific remediation paths."
+    },
+    {
+      "text": "Notes the related DFARS clauses working together: 252.204-7012 (safeguarding + 72-hour reporting), 7019/7020 (SPRS posting and assessment access) alongside 7021",
+      "passed": false,
+      "evidence": "Response discusses SPRS posting/verification extensively but never cites DFARS 252.204-7012, 7019, or 7020 by clause number anywhere in the text — only 252.204-7021 is named. The specific related-clause citations required by the assertion are absent."
+    },
+    {
+      "text": "Warns about misrepresentation risk (False Claims Act exposure for affirming compliance while knowingly flowing CUI to non-compliant subs) and advises documenting corrective action",
+      "passed": true,
+      "evidence": "Dedicated 'False Claims Act (FCA) exposure' section: 'knowingly misrepresenting your (or your supply chain's) cybersecurity compliance status ... can constitute a false certification giving rise to FCA liability (treble damages + per-claim penalties)' plus repeated instructions to 'document everything' as corrective action evidence."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

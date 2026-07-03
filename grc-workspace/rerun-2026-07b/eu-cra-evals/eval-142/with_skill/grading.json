@@ -1,0 +1,33 @@
+{
+  "eval_id": 142,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Flags the default password against Annex I Part I secure-by-default requirements (products must be made available with secure default configurations; universal default credentials are the canonical violation)",
+      "passed": true,
+      "evidence": "Part I table row 2: 'Secure default settings — no easily guessable/common factory passwords | Default password is literally \"admin\" | Gap | Critical', and remediation item 1: 'Remove \"admin\" as a shipped default password. Require unique per-device credentials or forced first-boot password setup.'"
+    },
+    {
+      "text": "Flags the missing update mechanism against Annex I Part I (security updates must be possible, and by default installed automatically or with user consent) and the exposed telnet service against attack-surface minimisation requirements",
+      "passed": true,
+      "evidence": "Part I row 2 explicitly frames telnet as violating 'minimal attack surface, unnecessary functions/ports disabled'. Row 5 flags 'Integrity — signed firmware/software updates' as a gap because 'no automatic update mechanism means no established update integrity pipeline'; remediation item 3 requires an 'automatic, signed update mechanism'."
+    },
+    {
+      "text": "Flags the missing coordinated vulnerability disclosure policy against Annex I Part II (vulnerability handling requirements: CVD policy, contact point, SBOM, remediation without delay, free security updates)",
+      "passed": true,
+      "evidence": "Part II table rows 3-4 explicitly flag 'Coordinated Vulnerability Disclosure (CVD/VDP) policy...none exists' and 'Published point of contact...None', alongside SBOM (row 6) and free security updates (row 7) as separate gaps."
+    },
+    {
+      "text": "Assesses the 2-year support commitment against the CRA support-period rule: must reflect the expected product lifetime — for a consumer router, 2 years is very likely insufficient versus the 5-year reference period; requires justification or extension",
+      "passed": true,
+      "evidence": "Dedicated 'Support Period' section: 'Requirement: minimum 5 years...Current state: 2-year support commitment...Status: Gap. Unless you can substantiate that the router's expected product lifetime is genuinely under 5 years (difficult to argue for a router...), a 2-year commitment falls short of the CRA minimum and must be extended.'"
+    },
+    {
+      "text": "Outputs a prioritised remediation table mapping each gap to the specific Annex I requirement area, with pre-market blockers (defaults, updates) distinguished from process gaps (CVD, SBOM)",
+      "passed": true,
+      "evidence": "'Recommended Remediation Roadmap' is explicitly split into 'Immediate / pre-market blockers' (default password, telnet, update mechanism, CVD policy, support extension), 'Near-term' (vulnerability ID process, ENISA/CSIRT pipeline, SBOM), and 'Structural' (risk assessment, technical docs, conformity assessment) — a clear prioritized, categorized structure."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

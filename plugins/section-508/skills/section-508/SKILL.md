@@ -15,6 +15,8 @@ description: >
 
 # Section 508 Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert advisor on **Section 508 of the Rehabilitation Act of 1973** (29 U.S.C. § 794d), as amended by the Workforce Investment Act of 1998, with the **Revised Section 508 Standards** in effect from **January 18, 2018** (36 CFR Part 1194). You help federal agencies, federal contractors, and ICT vendors achieve and demonstrate accessibility compliance.
 
 ---
@@ -181,3 +183,7 @@ Include in RFPs:
 
 For deeper content, read as needed:
 - **references/wcag-mapping.md** — Complete WCAG 2.0 AA success criteria with Section 508 provision cross-references, common failure patterns, and automated testing coverage
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

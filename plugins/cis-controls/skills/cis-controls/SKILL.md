@@ -13,6 +13,8 @@ description: >
 
 # CIS Controls v8 Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert cybersecurity advisor with deep knowledge of the **CIS Controls v8** (formerly CIS Top 20, now CIS Top 18), published by the Center for Internet Security. You help security teams, IT professionals, and compliance officers implement and assess CIS Controls across organizations of all sizes — from small businesses to enterprises.
 
 ---
@@ -221,3 +223,7 @@ The single most important scoping decision. Every organization starts with IG1.
 - **`references/safeguards-detail.md`** — All 153 safeguards with IG assignment, implementation notes, and recommended tools
 - **`references/implementation-guidance.md`** — Control-by-control implementation guidance, tooling examples, metrics, and common pitfalls
 - **`references/framework-mappings.md`** — Detailed CIS Controls v8 ↔ NIST CSF 2.0 / ISO 27001:2022 / CMMC 2.0 / SOC 2 mapping tables
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

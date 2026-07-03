@@ -1,0 +1,13 @@
+{
+  "eval_id": 81,
+  "eval_name": "energy-entity-classification",
+  "run_type": "without_skill",
+  "prompt": "We are a mid-size European energy company with 200 employees and €50M annual turnover, operating electricity distribution networks in Germany. Do we fall under the NIS2 Directive? If so, as what type of entity, and what are our key obligations?",
+  "assertions": [
+    "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+    "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the large-enterprise ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+    "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+    "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+    "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)"
+  ]
+}

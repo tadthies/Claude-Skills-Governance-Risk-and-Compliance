@@ -1,0 +1,33 @@
+{
+  "eval_id": 140,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the core rule: data subjects may withdraw consent at any time; withdrawal must be as easy to execute as giving consent, and the controller must confirm/act on the request",
+      "passed": true,
+      "evidence": "\"withdrawal must be as easy as giving consent\" in the first place, and process step: \"Acknowledge the request promptly.\" The right to withdraw is framed as a standing/core data subject right available at any time."
+    },
+    {
+      "text": "Explains consequences accurately: processing based on that consent must cease upon withdrawal (absent another lawful ground under the PDPL), and withdrawal does not affect the lawfulness of processing already performed — the data subject should be informed of the consequences before completing withdrawal",
+      "passed": false,
+      "evidence": "\"Withdrawal is not retroactive — it does not invalidate processing that occurred lawfully before withdrawal, but it does require you to stop new/continued processing based on that consent basis\" and lawful-basis-continuation is covered. However, like the with_skill response, it never states the data subject should be informed of the consequences BEFORE withdrawal is completed — communication to the customer is only described as happening once features/services change, not as a pre-withdrawal disclosure step."
+    },
+    {
+      "text": "Covers propagation: the controller must notify processors and third parties that received the data to stop processing/delete accordingly",
+      "passed": true,
+      "evidence": "\"**Propagate the withdrawal** across systems and to any third parties/processors you've shared the data with for that purpose, where feasible\" and again in the consequences section: \"If data was shared with third parties/processors under that consent, the business is generally expected to notify those parties of the withdrawal so they can also cease relevant processing.\""
+    },
+    {
+      "text": "Addresses timeframes honestly: commits to acting without undue delay within the timeframes set by the implementing decree, and does NOT invent a fabricated statutory deadline where none is established (a stated 72-hour deadline is acceptable ONLY if attributed to the implementing decree's data-subject-request rules)",
+      "passed": true,
+      "evidence": "The response explicitly avoids inventing a precise statutory deadline: \"commonly benchmarked in practice against a short window... though the PDPL's implementing decree may specify a more precise deadline\" and the closing caveat: \"The PDPL's implementing decree may specify a precise statutory deadline for acting on withdrawal requests... confirm the exact timeframe... with Vietnamese legal counsel.\" No deadline is fabricated as settled fact."
+    },
+    {
+      "text": "Provides an operational workflow: verify identity, log the request, execute cessation/deletion across systems and backups policy, retain evidence of compliance, and handle retention exceptions (legal obligations) transparently",
+      "passed": false,
+      "evidence": "Checklist covers identity verification (\"Verify identity proportionately\"), logging (\"Log the withdrawal\"), scope determination, cessation across systems/third parties (\"Propagate the withdrawal across systems\"), and lawful-basis/retention exceptions (\"Check for an alternate lawful basis... e.g., legal obligation for tax/accounting records\"). However, backups specifically are never mentioned anywhere in the response — the assertion's 'across systems and backups policy' element is only half-addressed (systems yes, backups no)."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

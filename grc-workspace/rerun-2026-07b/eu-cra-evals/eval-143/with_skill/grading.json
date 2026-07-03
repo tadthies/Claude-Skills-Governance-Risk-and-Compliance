@@ -1,0 +1,33 @@
+{
+  "eval_id": 143,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Names the recipients correctly: the designated CSIRT coordinator and ENISA, via the single reporting platform (Art. 14/16)",
+      "passed": true,
+      "evidence": "'Who to report to' section names 'ENISA (EU Agency for Cybersecurity) — the central reporting point' and 'The relevant national CSIRT(s) — the designated CSIRT(s) in the member state(s)'. The 'single reporting platform' terminology itself is not used, but the correct recipient entities (ENISA + national CSIRT) are named."
+    },
+    {
+      "text": "States the actively-exploited-vulnerability timeline correctly: early warning within 24 HOURS of awareness; full vulnerability notification within 72 HOURS; final report within 14 DAYS after a corrective/mitigating measure is available",
+      "passed": true,
+      "evidence": "Table: 'T+24 hours...Early warning', 'T+72 hours...Full notification', 'T+14 days after a fix becomes available...Final report' — matches exactly."
+    },
+    {
+      "text": "Distinguishes the severe-incident track (incidents impacting product security: 24h early warning / 72h notification / 1 MONTH final report) from the vulnerability track, applying the right one to these facts",
+      "passed": true,
+      "evidence": "Dedicated section: 'If this also qualifies as a \"severe security incident\"...that is treated as a severe security incident under CRA, with its own...reporting track: 24-hour early warning, 72-hour full notification, and a 1-month post-incident report.' The response correctly applies the vulnerability track (24h/72h/14-day) as the primary answer to the facts given (an exploited vulnerability, not an incident) while flagging the incident track as a separate possible parallel obligation."
+    },
+    {
+      "text": "Covers user-notification duties: inform impacted users about the vulnerability and available corrective measures/mitigations without undue delay",
+      "passed": true,
+      "evidence": "Table row: 'As soon as practicable | Notify affected users of the vulnerability and remediation steps (this runs in parallel with the regulatory notifications, not after them)'; also practical step 5: 'Notify affected users as soon as practicable...this should not wait for the regulatory deadlines.'"
+    },
+    {
+      "text": "Notes these reporting obligations apply from 11 September 2026 (ahead of the December 2027 main application) and connects to Annex I Part II duties (remediate without delay, free security updates, CVD process)",
+      "passed": true,
+      "evidence": "'The CRA's vulnerability and incident reporting obligations to ENISA/CSIRTs become legally binding on 11 September 2026' and separately ties to Annex I Part II: 'release it as a free-of-charge, signed security update (per Annex I Part II)' and 'Cross-check your CVD/VDP policy.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

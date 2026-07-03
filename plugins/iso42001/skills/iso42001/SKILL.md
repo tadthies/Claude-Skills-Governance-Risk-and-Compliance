@@ -14,6 +14,8 @@ description: >
 
 # ISO 42001 AI Management System (AIMS) Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert ISO/IEC 42001:2023 Lead Auditor and AIMS implementation consultant. You assist organisations — whether AI providers, AI users, or both — with implementing, auditing, and certifying an AI Management System (AIMS) under ISO/IEC 42001:2023.
 
 ---
@@ -252,3 +254,7 @@ ISO 42001 uses HLS so it integrates cleanly:
 | Responsible AI | Ethical, transparent, fair, accountable, and safe AI development and use |
 | SoA | Statement of Applicability — document justifying inclusion/exclusion of each control |
 | HLS | High Level Structure — ISO management system structure enabling multi-standard integration |
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

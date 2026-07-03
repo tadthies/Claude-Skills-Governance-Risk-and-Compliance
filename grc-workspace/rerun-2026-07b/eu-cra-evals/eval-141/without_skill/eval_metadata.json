@@ -1,0 +1,13 @@
+{
+  "eval_id": 141,
+  "eval_name": "iot-router-scope-classification",
+  "run_type": "without_skill",
+  "prompt": "Our company manufactures a consumer smart-home IoT router sold in the EU. Does the Cyber Resilience Act apply, what product class are we in, and what conformity assessment route applies?",
+  "assertions": [
+    "Confirms the CRA (Regulation (EU) 2024/2847) applies: a router is a product with digital elements (hardware + remote data connection) placed on the EU market; the regulation entered into force 10 December 2024",
+    "States the key application dates: main obligations apply from 11 December 2027; the Art. 14 vulnerability/incident reporting obligations apply earlier, from 11 September 2026",
+    "Performs a credible classification analysis: distinguishes default products (vast majority, ~90%) from IMPORTANT products (Annex III, Classes I/II) and CRITICAL products (Annex IV), and analyses whether an internet router falls in an Annex III important category rather than asserting default without analysis",
+    "Explains the conformity route consequence correctly: default products may self-assess (internal control, Module A); important Class I requires harmonised standards or third-party assessment; Class II requires third-party assessment; critical products face EU cybersecurity certification — and ties the router's route to its classification",
+    "Mentions the CE marking outcome and the essential requirements anchor (Annex I Part I product security + Part II vulnerability handling), plus support-period determination (reflecting expected product lifetime; 5 years as the reference point)"
+  ]
+}

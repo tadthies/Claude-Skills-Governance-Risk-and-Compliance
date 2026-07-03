@@ -1,0 +1,33 @@
+{
+  "eval_id": 139,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States validity requirements: consent must be voluntary, informed, explicit, and given by a clear affirmative act, with the data subject knowing the data types, purposes, recipients, and their rights before consenting",
+      "passed": true,
+      "evidence": "Response states consent must be 'Voluntary — never made a mandatory condition...', 'Explicit — a clear affirmative action', 'Specific — separate consent for each distinct purpose', 'Informed — the user must understand exactly what they're consenting to', 'Recorded'. It also states 'Consent must specify: the type of personal data, the purpose of processing, the identity of the organisation processing it, and the data subject's rights.' Covers types, purposes, and rights explicitly; recipients is only implicit (via 'identity of the organisation' and the bundling example mentioning 'data sharing with partners'), but the core voluntary/informed/explicit/affirmative-act framing is fully and correctly stated."
+    },
+    {
+      "text": "Lists valid forms consistent with Vietnamese rules: written, electronic (app/website action, verifiable formats), voice/recorded, SMS/syntax-based — provided the act is affirmative and verifiable",
+      "passed": true,
+      "evidence": "Section 'Valid Consent Methods (Decree 356 Article 6)' lists: 'Website/application form' (checkboxes/confirmation flows), 'Email', 'SMS/text message — specific consent syntax from the user's registered mobile number', 'Written/electronic signature', 'Recorded telephone call', and 'Any other electronic format that lets you verifiably identify the data subject and the specific consent given.' This matches all the Vietnam-specific categories named in the assertion."
+    },
+    {
+      "text": "Lists prohibited/invalid practices: silence or inaction as consent, pre-ticked boxes, bundled consent covering unrelated purposes, and making consent conditions misleading",
+      "passed": true,
+      "evidence": "Section 'Practices That Are Prohibited' explicitly lists: 'Silence or inaction — e.g., \"if you don't opt out within 7 days, we assume consent\"', 'Pre-ticked checkboxes — any box that defaults to checked', 'Bundled consent — combining consent for unrelated purposes (e.g., ... as a single checkbox)', and 'Consent obtained through deception, coercion, or undue influence — e.g., dark patterns, confusing toggle labels...' covering misleading conditions."
+    },
+    {
+      "text": "Requires purpose granularity and separate consent for distinct purposes (e.g., order fulfilment vs marketing vs sharing with partners), plus special handling for sensitive data (explicit notice that the data is sensitive)",
+      "passed": true,
+      "evidence": "The 'Recommended Consent Architecture' table splits consent into distinct purpose-specific layers (account registration, payment, marketing, loyalty, cookies, profiling), each with 'Notes' emphasizing separation (e.g., 'Must be revocable independently of transactional consent'). A dedicated section 'Sensitive Data — Extra Requirements (Article 10)' states payment/financial data is 'classified as sensitive personal data' requiring 'explicit, separate consent distinct from your general consent' and to 'Clearly label and visually separate the sensitive-data consent request.'"
+    },
+    {
+      "text": "Covers lifecycle mechanics: burden of proof on the controller (retain consent records), easy withdrawal channel that is as accessible as giving consent, and re-consent when purposes change",
+      "passed": false,
+      "evidence": "The response covers recordkeeping ('For each consent event, log at minimum: user identifier, purpose consented to... This is your evidence in the event of a dispute, audit, or Ministry of Public Security inquiry') and withdrawal ('Users must be able to withdraw consent at any time, as easily as they gave it... Provide a self-service settings page... demonstrates \"as easy to withdraw as to give\"'). However, the response never mentions re-consent or a requirement to re-obtain consent when processing purposes change materially — this element of the compound assertion is entirely absent from the document (checklist, withdrawal section, and recordkeeping section all omit it)."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

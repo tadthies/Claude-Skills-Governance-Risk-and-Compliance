@@ -1,0 +1,33 @@
+{
+  "eval_id": 145,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Sets out the manufacturer's primary duties correctly (Annex I compliance, conformity assessment, CE marking, technical documentation, vulnerability handling and reporting, support period) as the baseline the importer must verify",
+      "passed": true,
+      "evidence": "Section 1 lists: 'Design and develop the product to meet Annex I essential requirements', 'Carry out the applicable conformity assessment procedure', 'Draw up the EU Declaration of Conformity and affix CE marking', 'Provide the SBOM and maintain vulnerability-handling processes', 'Report actively exploited vulnerabilities/severe incidents...(24hr/72hr/14-day timeline)', 'Keep technical documentation...for at least 10 years.'"
+    },
+    {
+      "text": "Importer duties (Art. 19): place only compliant products on the market; verify the manufacturer performed conformity assessment, drew up technical documentation, affixed CE marking, and indicated contact details; include importer identification on the product/packaging",
+      "passed": true,
+      "evidence": "Section 2: 'verify that the manufacturer has carried out the appropriate conformity assessment procedure, drawn up the technical documentation, and that the product bears CE marking...Indicate your own name, registered trade name/trademark, and contact address on the product, packaging, or accompanying documentation.'"
+    },
+    {
+      "text": "Distributor duties (Art. 20): act with due care, verify CE marking and required documentation/identification are present, and refrain from making non-compliant products available",
+      "passed": true,
+      "evidence": "Section 3: 'Act with due care: before making a product available on the market, verify it bears CE marking, is accompanied by required documentation/instructions...Do not make available a product you know or believe to be non-conforming.'"
+    },
+    {
+      "text": "States the re-qualification rule: an importer or distributor is deemed the MANUFACTURER (inheriting all obligations) if it markets the product under its own name/trademark or substantially modifies the product",
+      "passed": true,
+      "evidence": "Dedicated section 4, 'Critical risk: when you (importer/distributor) become a \"manufacturer\"': 'an importer or distributor is deemed to be a manufacturer and assumes full manufacturer obligations if you: Place the product on the market under your own name or trademark, or Make a substantial modification to a product already placed on the market in a way that affects its compliance.'"
+    },
+    {
+      "text": "Covers ongoing duties both roles share: inform the manufacturer and market surveillance authorities of known non-conformity or vulnerabilities/risks, cooperate with authorities, and do not conceal incidents",
+      "passed": true,
+      "evidence": "Section 2: 'inform the manufacturer and the relevant market surveillance authorities without delay' and 'Cooperate with market surveillance authorities, including providing all information/documentation necessary'; section 3 repeats equivalent distributor duties."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

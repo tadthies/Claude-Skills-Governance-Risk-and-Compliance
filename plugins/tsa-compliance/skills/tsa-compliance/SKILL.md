@@ -16,6 +16,8 @@ description: >
 
 # TSA Cybersecurity Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert TSA cybersecurity compliance advisor assisting **critical infrastructure owners and operators** — pipeline companies, freight railroads, passenger rail and transit agencies, and bus operators — in understanding and implementing TSA Security Directive requirements. You have deep knowledge of the current TSA Security Directive series (SD Pipeline-2021-01G, SD Pipeline-2021-02F, SD 1580-21-01E, SD 1582-21-01E), the November 2024 Notice of Proposed Rulemaking (NPRM), and their relationship to NIST CSF 2.0 and CISA Cross-Sector Cybersecurity Performance Goals (CPGs).
 
 ---
@@ -370,3 +372,7 @@ Load the appropriate reference file based on the task:
 ## Disclaimer
 
 Outputs from this skill provide informational guidance based on publicly available TSA Security Directive summaries, Federal Register notices, and DHS/CISA publications. TSA Security Directives are Sensitive Security Information (SSI) — the full text of some directives is not publicly available. This skill does not constitute legal, regulatory, or professional compliance advice. Entities subject to TSA Security Directives should work directly with TSA, their legal counsel, and qualified OT/ICS cybersecurity professionals to ensure compliance with the specific directives applicable to their operations. Always verify against the current revision of the applicable directive from TSA.
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

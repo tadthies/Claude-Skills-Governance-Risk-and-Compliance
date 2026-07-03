@@ -1,0 +1,33 @@
+{
+  "eval_id": 69,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States the fundamental difference correctly: AI RMF is voluntary risk guidance; the EU AI Act is binding law with penalties, conformity assessment, and CE marking — RMF alignment alone never satisfies the AI Act",
+      "passed": true,
+      "evidence": "\"the EU AI Act is mandatory law for in-scope providers/deployers; the NIST AI RMF is a voluntary methodology... it does not automatically make you compliant.\" Conformity assessment, CE marking, and penalties are each detailed later in the gaps section (items 2 and 9)."
+    },
+    {
+      "text": "Provides sensible construct mappings: GOVERN ↔ QMS Art. 17 / accountability; MAP ↔ risk classification + intended-purpose documentation; MEASURE ↔ Art. 15 accuracy/robustness testing + Art. 9 risk management evidence; MANAGE ↔ Art. 9 lifecycle risk management + post-market monitoring Art. 72",
+      "passed": true,
+      "evidence": "Function-Level Mapping table: GOVERN 1→Art. 9 risk management system, GOVERN 2/3→Art. 16/26 accountability; MAP 1/3→Art. 9(2) intended/foreseeable misuse and stakeholder risk identification; MEASURE 2→Art. 10/Art. 15 accuracy-robustness-cybersecurity; MANAGE 3→Art. 72 post-market monitoring, Art. 73 incident reporting. Reasonable construct mapping for all four functions, though GOVERN is anchored to Art. 9 rather than Art. 17 QMS specifically."
+    },
+    {
+      "text": "Identifies concrete AI Act obligations with no RMF equivalent: conformity assessment/CE marking, EU database registration, technical documentation per Annex IV, serious-incident reporting, FRIA (Art. 27) where applicable, prohibited-practice screening",
+      "passed": true,
+      "evidence": "Numbered gap list covers: risk-tiering/prohibited-use determination (item 1), conformity assessment and CE marking (item 2), EU database registration Art. 71 (item 3), FRIA Art. 27 (item 4), Annex IX technical documentation format (item 5), serious incident reporting Art. 73 (item 6)."
+    },
+    {
+      "text": "Notes risk-tiering difference: AI Act's fixed legal tiers (prohibited/high/limited/minimal + GPAI) vs RMF's contextual risk assessment",
+      "passed": true,
+      "evidence": "\"unacceptable risk (prohibited), high-risk (Annex III), limited risk (transparency obligations), and minimal risk... You must run a separate classification exercise... this determines which Act obligations even apply\"; GPAI covered separately in item 8; contrasted against 'the generic AI RMF scoring model' in item 9."
+    },
+    {
+      "text": "Recommends a practical integration: use RMF processes as the management-system engine, then overlay AI Act artifact requirements — one programme, two outputs",
+      "passed": true,
+      "evidence": "\"Use AI RMF as your operational risk management engine... Layer EU AI Act legal requirements on top as a compliance overlay... Build one unified technical documentation package per high-risk system that satisfies both AI RMF MEASURE 2.6 documentation and Annex IV's specific content requirements, so you're not maintaining duplicate artifacts.\""
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -1,0 +1,185 @@
+{
+  "description": "v1.6.0 re-run part 1 (eu-ai-act, ccpa, cmmc, nist-ai-rmf). Assertions authored from primary sources: Regulation (EU) 2024/1689 + verified Digital Omnibus (Council final adoption 29 June 2026), Cal. Civ. Code 1798.100 et seq. + CPPA regulations, 32 CFR Part 170 + NIST SP 800-171 Rev 2, NIST AI 100-1.",
+  "evals": [
+    {"id": 121, "skill": "eu-ai-act", "eval_name": "cv-screening-high-risk",
+     "prompt": "We are building an AI-powered CV screening tool that ranks job applicants for employers in the EU. Is this high-risk under the EU AI Act? Which Annex III area applies, what deadline do we need to comply by, and what are our main obligations as the provider?",
+     "assertions": [
+       "Classifies the CV screening/ranking tool as HIGH-RISK under Annex III point 4(a) (employment: recruitment or selection, incl. placing targeted job ads, analysing and filtering applications, evaluating candidates)",
+       "States the compliance deadline for Annex III standalone high-risk systems as 2 December 2027 (as amended by the Digital Omnibus, adopted June 2026; originally 2 August 2026). Any deadline stated must be 2 Dec 2027, not Aug 2026.",
+       "Walks through core provider obligations citing Arts. 9-17 (risk management, data governance, technical documentation, logging, transparency to deployers, human oversight, accuracy/robustness/cybersecurity, QMS)",
+       "Mentions conformity assessment and registration: self-assessment per Annex VI for Annex III point 4 systems, EU declaration of conformity (Art. 47), CE marking (Art. 48), EU database registration (Art. 49)",
+       "Notes the Art. 6(3) derogation exists but explains it is narrow and does not apply where the system profiles natural persons / materially influences hiring decisions (profiling is always high-risk)"
+     ]},
+    {"id": 122, "skill": "eu-ai-act", "eval_name": "predictive-policing-prohibition",
+     "prompt": "A national police force wants to procure our AI system that predicts the likelihood of individuals committing future criminal offences based on personality traits and past behaviour. Is this permitted under the EU AI Act?",
+     "assertions": [
+       "Identifies this as a PROHIBITED practice under Art. 5(1)(d): AI systems making risk assessments of natural persons to assess or predict the risk of committing a criminal offence based solely on profiling or on assessing personality traits and characteristics",
+       "States the prohibition has applied since 2 February 2025 (prohibitions were the first obligations to take effect)",
+       "Explains the carve-out accurately: Art. 5(1)(d) does not cover AI used to SUPPORT a human assessment already based on objective and verifiable facts directly linked to a criminal activity — and assesses whether the described system (personality traits + past behaviour) fits the prohibition (it does, to the extent based on profiling/traits)",
+       "States penalty exposure for prohibited practices: up to €35M or 7% of worldwide annual turnover (Art. 99(3))",
+       "Advises concretely: do not place on the EU market for this use; discusses redesign options (e.g., objective-facts-based decision support with human assessment) or declining the procurement"
+     ]},
+    {"id": 123, "skill": "eu-ai-act", "eval_name": "open-source-gpai-cop",
+     "prompt": "We release an open-source LLM (weights, architecture and usage documentation publicly available, free license). It was trained with about 8 x 10^23 FLOPs. What GPAI obligations apply to us, and does the GPAI Code of Practice help?",
+     "assertions": [
+       "Identifies the model as a GPAI model subject to Chapter V, and correctly applies the open-source exemption: free & open-source GPAI providers are exempt from the Art. 53(1)(a)-(b) technical documentation duties BUT must still comply with the copyright policy (Art. 53(1)(c)) and publish the public training-content summary (Art. 53(1)(d))",
+       "Correctly assesses systemic risk: 8x10^23 FLOPs is below the 10^25 FLOPs presumption threshold (Art. 51), so no systemic-risk obligations (Art. 55) absent a Commission designation — and notes the open-source exemption does NOT apply to systemic-risk models",
+       "States GPAI obligations have applied since 2 August 2025",
+       "Describes the GPAI Code of Practice (published July 2025) as a voluntary compliance pathway with chapters on transparency, copyright, and safety/security, and explains adherence eases demonstrating compliance",
+       "Mentions AI Office enforcement powers over GPAI providers activating 2 August 2026 (fines possible from that date)"
+     ]},
+    {"id": 124, "skill": "eu-ai-act", "eval_name": "mdr-interaction-deadline",
+     "prompt": "Our AI-based software is a safety component of a medical device that requires notified-body conformity assessment under the MDR. How does the EU AI Act interact with MDR for us, and what is our compliance deadline?",
+     "assertions": [
+       "Classifies the system as high-risk via the Art. 6(1) path: safety component of a product covered by Annex I Union harmonisation legislation (MDR) that undergoes third-party conformity assessment",
+       "States the compliance deadline for Annex I embedded high-risk systems as 2 August 2028 (as amended by the Digital Omnibus; originally 2 August 2027). Any deadline stated must be Aug 2028.",
+       "Explains the integrated conformity route: AI Act requirements are assessed within the existing MDR notified-body procedure (Art. 43(3)) rather than a separate parallel assessment, with a single set of technical documentation permitted",
+       "Identifies the dual-regulator reality: notified body under MDR plus AI Act requirements (Arts. 9-15) folded into the MDR QMS/technical documentation",
+       "Gives practical sequencing advice (align AI Act risk management with ISO 14971 processes, update technical file, involve the notified body early)"
+     ]},
+    {"id": 125, "skill": "eu-ai-act", "eval_name": "chatbot-art50-transparency",
+     "prompt": "We run an e-commerce site with a customer service chatbot and AI-generated product images. What transparency obligations under Article 50 of the EU AI Act apply, and from when?",
+     "assertions": [
+       "Chatbot: Art. 50(1) requires informing users they are interacting with an AI system, unless obvious to a reasonably well-informed person",
+       "AI-generated images: Art. 50(2) requires providers to ensure outputs are marked in a machine-readable format and detectable as artificially generated",
+       "Correctly distinguishes provider duties (50(1)-(2)) from deployer duties (50(4) disclosure applies to deep fakes / image, audio or video content depicting real persons or events — and assesses whether ordinary product images trigger it)",
+       "States the application date: Art. 50 transparency obligations apply from 2 August 2026 for new systems (with the machine-readable-marking grace period for pre-existing systems until 2 December 2026 under the Digital Omnibus)",
+       "Notes penalty exposure for transparency violations (up to €15M or 3% under Art. 99(4)) and gives practical implementation steps (visible chatbot labelling, metadata/watermarking for generated images)"
+     ]},
+    {"id": 86, "skill": "ccpa", "eval_name": "applicability-thresholds",
+     "prompt": "We are a US-based e-commerce company with $30M annual revenue. We collect personal information from about 80,000 California customers per year. Are we subject to CCPA/CPRA? If so, what are our core obligations?",
+     "assertions": [
+       "Applies the three business thresholds correctly (any ONE suffices): annual gross revenue above the $25M threshold (as CPI-adjusted); buying/selling/sharing PI of 100,000+ consumers or households (CPRA raised this from 50,000); or 50%+ of revenue from selling/sharing PI — and concludes the company IS subject via the revenue threshold ($30M > $25M) even though 80,000 < 100,000",
+       "Notes the 'doing business in California' element (for-profit, collects CA residents' PI, determines purposes/means) — being US-based outside California does not avoid the law",
+       "Lists core obligations: notice at collection, privacy policy, consumer request handling (know/delete/correct/opt-out/limit), verifiable request processes, service-provider contracts, non-discrimination",
+       "Mentions the 45-day response deadline for consumer requests with a possible 45-day extension",
+       "Mentions opt-out of sale/sharing mechanics: 'Do Not Sell or Share My Personal Information' link and honoring opt-out preference signals such as GPC"
+     ]},
+    {"id": 87, "skill": "ccpa", "eval_name": "know-delete-workflow",
+     "prompt": "A California resident has submitted a request to know exactly what personal information we hold about them, and also wants it all deleted. Walk me through how to handle both requests, including identity verification and any exceptions we can invoke.",
+     "assertions": [
+       "Sets out the timeline correctly: confirm receipt within 10 business days; substantive response within 45 calendar days, extendable by a further 45 days with notice",
+       "Explains tiered identity verification (reasonable degree vs reasonably high degree depending on sensitivity; specific-pieces requests require higher assurance) and that unverifiable delete requests may be treated as opt-out where applicable",
+       "Right to know: covers categories AND specific pieces, sources, purposes, third parties — with the 12-month lookback default (and the CPRA extension beyond 12 months where feasible on request)",
+       "Deletion: instructs flowing the deletion to service providers/contractors, and cites legitimate statutory exceptions (e.g., complete the transaction, security/fraud, legal compliance, internal uses compatible with expectations) rather than inventing exceptions",
+       "Advises maintaining request records (24-month record-keeping) and responding even when denying (state the reason and the exception relied on)"
+     ]},
+    {"id": 88, "skill": "ccpa", "eval_name": "adtech-sale-vs-sharing",
+     "prompt": "We use an ad tech platform that receives our website visitors' cookie IDs and browsing data to serve targeted ads. Does this constitute a 'sale' or 'sharing' under CCPA/CPRA? What do we need to do?",
+     "assertions": [
+       "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+       "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+       "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+       "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+       "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days"
+     ]},
+    {"id": 89, "skill": "ccpa", "eval_name": "gdpr-to-ccpa-gap",
+     "prompt": "We already have a GDPR compliance programme. What additional steps do we need to take to comply with CCPA/CPRA? Where do the two laws differ most significantly?",
+     "assertions": [
+       "Identifies the consent-model difference: CCPA is opt-out (sale/sharing) vs GDPR opt-in lawful basis; no CCPA requirement for a processing legal basis",
+       "Identifies CCPA-specific mechanics GDPR programmes lack: 'Do Not Sell or Share' link, GPC honoring, right to limit sensitive PI use, notice at collection specifics, service provider/contractor contract terms under §1798.100(d)/.140",
+       "Notes scope differences: CCPA covers households, has revenue/volume applicability thresholds, and its 'sale' concept is broader than anything in GDPR",
+       "Notes rights differences accurately (e.g., CCPA has no full GDPR-style portability/objection regime; correction was added by CPRA; statutory damages private right of action only for data breaches, $100-$750 per consumer per incident)",
+       "Provides a concrete delta-plan (map data flows for sale/sharing, implement opt-out signals, update notices, remediate vendor contracts, train request-handling to CCPA deadlines)"
+     ]},
+    {"id": 90, "skill": "ccpa", "eval_name": "sensitive-pi-mobile-app",
+     "prompt": "Our mobile app collects precise geolocation, health metrics from wearable integration, and biometric facial recognition for authentication. How does CPRA classify this data, what special obligations apply, and what do we need to disclose?",
+     "assertions": [
+       "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+       "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+       "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+       "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+       "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable"
+     ]},
+    {"id": 1, "skill": "cmmc", "eval_name": "level2-plain-english-intro",
+     "prompt": "We are a 45-person aerospace engineering firm that recently won our first DoD contract. The contract contains DFARS 252.204-7021 requiring CMMC Level 2. We have never heard of CMMC before. Give us a plain-English explanation of what CMMC Level 2 means for us, what we need to do, and roughly how long it will take to get certified.",
+     "assertions": [
+       "Explains CMMC Level 2 correctly: 110 security requirements drawn from NIST SP 800-171 (Rev 2) protecting Controlled Unclassified Information (CUI), codified in the 32 CFR Part 170 program rule",
+       "Distinguishes the two Level 2 assessment tracks: self-assessment (for select non-critical contracts) vs third-party C3PAO certification assessment (most CUI contracts), with triennial certification plus annual affirmation by a senior official",
+       "Explains prerequisite mechanics: SPRS score submission (Basic Assessment against 800-171), SSP requirement, and that DFARS 252.204-7012 obligations (incl. 72-hour DIBNET incident reporting) continue to apply",
+       "Gives a realistic readiness timeline for a first-timer (commonly 9-18 months of remediation before assessment) rather than promising quick certification",
+       "Recommends concrete first steps: scope where CUI lives, consider an enclave, gap-assess against 800-171, build SSP and POA&M, then schedule a C3PAO"
+     ]},
+    {"id": 2, "skill": "cmmc", "eval_name": "level2-gap-assessment",
+     "prompt": "Perform a CMMC Level 2 gap assessment. Our current state: MFA only on cloud email; no FIPS-validated encryption for CUI at rest; SSP last updated in 2022; incident response plan exists but never tested; flat network with CUI on shared drives; annual security awareness training in place; background screening for all staff. Rate the relevant practice areas and give us a prioritised remediation plan with SPRS score impact.",
+     "assertions": [
+       "Flags MFA scope gap against IA.L2-3.5.3 (MFA required for local and network access to privileged accounts and network access to non-privileged accounts — cloud email alone is insufficient)",
+       "Flags FIPS-validated cryptography gap (SC.L2-3.13.11 requires FIPS-validated cryptography to protect CUI confidentiality) and the flat-network/shared-drive state against scoping and SC.L2-3.13.1/AC.L2-3.1.3 (boundary protection / control CUI flow), recommending segmentation or an enclave",
+       "Flags untested IR plan against IR.L2-3.6.3 (test incident response capability) and the stale SSP against CA.L2-3.12.4 (SSP must be current)",
+       "Correctly credits compliant items (awareness training AT.L2-3.2.1/.2; personnel screening PS.L2-3.9.1) instead of marking everything deficient",
+       "Explains SPRS scoring impact using the DoD methodology: score starts from 110 with weighted deductions (5/3/1 points; MFA and FIPS crypto are 5-point/partial-credit items), and prioritises remediation by point value and POA&M eligibility"
+     ]},
+    {"id": 3, "skill": "cmmc", "eval_name": "ssp-mfa-practice-section",
+     "prompt": "Draft a System Security Plan section for CMMC practice IA.L2-3.5.3 (multifactor authentication). Our environment: Microsoft 365 GCC High with Entra ID, Duo MFA for VPN, and on-prem Active Directory for legacy CAD workstations.",
+     "assertions": [
+       "States the requirement accurately: multifactor authentication for local and network access to privileged accounts, and network access to non-privileged accounts (IA.L2-3.5.3)",
+       "Describes implementation per named component: Entra ID MFA (conditional access) for M365 GCC High, Duo for VPN, and explicitly addresses the on-prem AD legacy CAD workstations — the local-access-to-privileged-accounts gap most environments miss",
+       "Written in SSP style: describes what IS implemented (not aspirational), names responsible roles, and covers each assessment objective (who/what/where MFA is enforced)",
+       "Identifies remaining gaps honestly and routes them to a POA&M entry rather than papering over (e.g., local admin access on legacy workstations pending smart card/Windows Hello deployment)",
+       "Includes evidence pointers an assessor would ask for (conditional access policy exports, Duo policy config, screenshots/logs demonstrating enforcement)"
+     ]},
+    {"id": 4, "skill": "cmmc", "eval_name": "poam-conditional-certification",
+     "prompt": "Our C3PAO assessment found 8 practices NOT MET. Can we still get certified? Explain conditional certification, which practices are POA&M-eligible, the minimum score requirement, and the closeout timeline.",
+     "assertions": [
+       "Explains conditional certification: possible only if the assessment score is at least 88 (0.8 x 110) AND every NOT MET practice is POA&M-eligible",
+       "States POA&M eligibility rules correctly: only practices worth 1 point may be on a POA&M (no 5-point items; 3-point items excluded except limited partial-credit cases), and names non-POA&M-eligible critical examples (e.g., SC.L2-3.13.11 FIPS crypto, AC.L2-3.1.3, IA.L2-3.5.3)",
+       "States the closeout: POA&M items must be remediated and verified by a closeout assessment within 180 days, or the conditional certification lapses",
+       "Explains the consequence math for THIS scenario: 8 NOT MET practices are compatible with conditional certification only if all 8 are 1-point items and the score floor holds — otherwise remediate and re-assess",
+       "Mentions the annual senior-official affirmation in SPRS and that a lapsed conditional status affects contract eligibility"
+     ]},
+    {"id": 5, "skill": "cmmc", "eval_name": "subcontractor-flowdown",
+     "prompt": "We are a prime contractor and discovered that two of our subcontractors handling CUI have no CMMC certification. What are our flow-down obligations under DFARS 252.204-7021, and what should we do before the next option period?",
+     "assertions": [
+       "States the flow-down rule: DFARS 252.204-7021 flows down to subcontractors at all tiers where they process, store, or transmit FCI/CUI; subs handling CUI need CMMC Level 2, subs with FCI only need Level 1",
+       "States the prime's duty: verify subcontractor CMMC status (via SPRS or certificate evidence) BEFORE awarding/continuing subcontract performance involving CUI",
+       "Gives concrete remediation options: stop CUI flow to the uncertified subs (rescope what they receive), move them to FCI-only scope, sponsor an enclave approach, or replace them — with interim risk documentation",
+       "Notes the related DFARS clauses working together: 252.204-7012 (safeguarding + 72-hour reporting), 7019/7020 (SPRS posting and assessment access) alongside 7021",
+       "Warns about misrepresentation risk (False Claims Act exposure for affirming compliance while knowingly flowing CUI to non-compliant subs) and advises documenting corrective action"
+     ]},
+    {"id": 66, "skill": "nist-ai-rmf", "eval_name": "four-functions-overview",
+     "prompt": "Our company is starting to deploy AI systems and wants to use the NIST AI RMF. Can you explain the four core functions — GOVERN, MAP, MEASURE, and MANAGE — and how they relate to each other? What should we implement first?",
+     "assertions": [
+       "Describes all four functions faithfully to NIST AI 100-1: GOVERN (cross-cutting culture, policies, roles, risk tolerance), MAP (context, categorization, capabilities/limitations, impacts), MEASURE (TEVV — analyze, assess, track risks with metrics), MANAGE (prioritize, treat, respond, recover)",
+       "States the structural relationship correctly: GOVERN is the cross-cutting foundation feeding the other three; MAP informs MEASURE which informs MANAGE, iteratively across the AI lifecycle",
+       "Recommends starting with GOVERN (policies, accountability, inventory, risk tolerance) — the canonical NIST guidance for organizations beginning adoption",
+       "Mentions that the framework is voluntary and outcome-based (not a compliance checklist), organized into categories/subcategories with a companion Playbook",
+       "References the seven trustworthiness characteristics (valid & reliable, safe, secure & resilient, accountable & transparent, explainable & interpretable, privacy-enhanced, fair with harmful bias managed) as the risk lens the functions operationalize"
+     ]},
+    {"id": 67, "skill": "nist-ai-rmf", "eval_name": "hiring-ai-risk-assessment",
+     "prompt": "We have an AI hiring tool that screens resumes and ranks candidates. Using the NIST AI RMF, what are the key risks we need to assess, which trustworthiness properties are most relevant, and what specific MEASURE-function actions should we take before deploying it?",
+     "assertions": [
+       "Identifies the core risks: harmful bias/disparate impact on protected groups, validity/job-relatedness of rankings, transparency to candidates, privacy of applicant data, drift over time",
+       "Maps to the right trustworthiness characteristics: fair with harmful bias managed, valid & reliable, accountable & transparent, explainable & interpretable, privacy-enhanced",
+       "Prescribes concrete MEASURE-function actions: pre-deployment disparate-impact testing across demographic groups, validity testing against job performance criteria, documented TEVV with defined metrics, and ongoing monitoring cadence",
+       "Brings in MAP context work (intended use, affected communities, failure impacts) and MANAGE treatments (human review of rankings, thresholds for suspension, feedback channels)",
+       "Flags the regulatory overlay accurately (e.g., EEOC/Title VII exposure, NYC Local Law 144 bias audits, EU AI Act Annex III employment high-risk if EU-facing) without inventing requirements"
+     ]},
+    {"id": 68, "skill": "nist-ai-rmf", "eval_name": "credit-scoring-risk-register",
+     "prompt": "Build me an AI risk register template for a financial services firm deploying a credit scoring model. Include the AI RMF categories each risk maps to, and suggest treatment options.",
+     "assertions": [
+       "Delivers an actual register template with sensible columns (risk ID/description, lifecycle stage, AI RMF function/category mapping, trustworthiness characteristic, likelihood/impact, treatment, owner, status)",
+       "Populates credit-scoring-specific risks: disparate impact/fair lending, model validity/population drift, explainability of adverse-action reasons, data quality/privacy, third-party model dependencies, security/adversarial manipulation",
+       "Maps risks to plausible AI RMF functions/categories (e.g., bias testing under MEASURE 2.x, context/impact identification under MAP, treatment decisions under MANAGE 1.x/2.x, oversight under GOVERN) without inventing nonexistent category IDs",
+       "Treatment options are concrete and financial-services-appropriate: fairness constraints/reweighting, challenger models, human review bands, adverse action reason-code validation, model risk management (SR 11-7-style) integration",
+       "Flags applicable regulatory context accurately: ECOA/Reg B adverse action notices, FCRA, fair lending exams — treatments tied to those obligations"
+     ]},
+    {"id": 69, "skill": "nist-ai-rmf", "eval_name": "eu-ai-act-mapping",
+     "prompt": "We are subject to the EU AI Act and also want to align with NIST AI RMF. How do these two frameworks map to each other? Are there gaps we need to fill if we implement AI RMF but still need to comply with the EU AI Act?",
+     "assertions": [
+       "States the fundamental difference correctly: AI RMF is voluntary risk guidance; the EU AI Act is binding law with penalties, conformity assessment, and CE marking — RMF alignment alone never satisfies the AI Act",
+       "Provides sensible construct mappings: GOVERN ↔ QMS Art. 17 / accountability; MAP ↔ risk classification + intended-purpose documentation; MEASURE ↔ Art. 15 accuracy/robustness testing + Art. 9 risk management evidence; MANAGE ↔ Art. 9 lifecycle risk management + post-market monitoring Art. 72",
+       "Identifies concrete AI Act obligations with no RMF equivalent: conformity assessment/CE marking, EU database registration, technical documentation per Annex IV, serious-incident reporting, FRIA (Art. 27) where applicable, prohibited-practice screening",
+       "Notes risk-tiering difference: AI Act's fixed legal tiers (prohibited/high/limited/minimal + GPAI) vs RMF's contextual risk assessment",
+       "Recommends a practical integration: use RMF processes as the management-system engine, then overlay AI Act artifact requirements — one programme, two outputs"
+     ]},
+    {"id": 70, "skill": "nist-ai-rmf", "eval_name": "govern-gap-assessment",
+     "prompt": "Conduct a GOVERN gap assessment for our organization. We have an AI ethics statement but no formal AI risk policy, no cross-functional AI team, no defined risk tolerance for AI, and our legal team is not involved in AI deployments. Rate each GOVERN category and give us a prioritised remediation plan.",
+     "assertions": [
+       "Structures the assessment around the GOVERN categories (policies/processes; accountability structures; workforce diversity/culture; organizational engagement; third-party risk; monitoring/inventory-type categories) with a rating per area — consistent with the six GOVERN categories of AI RMF 1.0",
+       "Correctly rates the described state: ethics statement = partial credit on culture/policy, while missing risk policy, missing cross-functional team, undefined risk tolerance, and absent legal involvement are each flagged as specific gaps against specific GOVERN areas",
+       "Flags undefined risk tolerance as a foundational gap (GOVERN 1.x expects documented risk tolerance informing all downstream MAP/MEASURE/MANAGE work)",
+       "Remediation plan is prioritised and sequenced (policy + accountability + tolerance first; team formation and legal integration next; inventory and third-party processes after) with owners/timeframes",
+       "Deliverables are concrete: AI risk policy outline, RACI or committee charter, risk tolerance statement examples, AI system inventory — not just abstract advice"
+     ]}
+  ]
+}

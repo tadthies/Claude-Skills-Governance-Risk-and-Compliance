@@ -242,6 +242,19 @@ To remove the marketplace entirely:
 
 ## Troubleshooting
 
+**"SKILL.md file must be in the top-level folder, not nested deeper" (claude.ai upload)**
+Every published `.skill` file already has the correct structure (`<skill-name>/SKILL.md`, exactly one folder deep) — this error means the file was repackaged or downloaded incorrectly. Checklist:
+
+1. **Download the `.skill` file itself**, via the repository's Releases page or by opening the file on GitHub and clicking **Download raw file** (the ⬇ icon). Do not use "Download ZIP" on the repository or folder — that wraps everything in extra folders.
+2. **Do not unzip and re-zip the `.skill` file.** If you must repackage (e.g., after editing), zip from the folder's *parent* so the archive contains exactly one top-level folder with `SKILL.md` directly inside it:
+   ```bash
+   cd "NIS2 - Claude Skill" && unzip nis2.skill -d /tmp/skill && cd /tmp/skill && zip -r nis2.skill nis2
+   ```
+   Zipping the folder that *contains* the skill folder produces `something/nis2/SKILL.md` (two levels deep) → this exact error. macOS Finder's "Compress" also adds `__MACOSX` entries; prefer the `zip` command.
+3. **Verify before uploading**: `unzip -l nis2.skill` should list `nis2/SKILL.md` — one folder, then the file.
+
+Our CI (`tests/test_skill_installability.py`) verifies every shipped `.skill` for one-level nesting, valid frontmatter (name format, description ≤1024 chars), no junk archive entries, and that bundled content matches the source tree — so a correctly downloaded file always installs.
+
 **Marketplace not found after adding**
 Run `/plugin marketplace list` to confirm it was registered. If it's missing, check that your Git credentials allow access and retry.
 

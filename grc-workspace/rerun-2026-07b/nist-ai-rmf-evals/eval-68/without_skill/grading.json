@@ -1,0 +1,33 @@
+{
+  "eval_id": 68,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Delivers an actual register template with sensible columns (risk ID/description, lifecycle stage, AI RMF function/category mapping, trustworthiness characteristic, likelihood/impact, treatment, owner, status)",
+      "passed": true,
+      "evidence": "Register Structure table defines Risk ID, Risk Description, AI RMF Function, AI RMF Category, Trustworthiness Characteristic, Likelihood, Impact, Inherent Risk Rating, Existing Controls, Treatment Option, Residual Risk Rating, Owner, Target Date, Status — covers every requested column and more, then populates 10 fully worked risk entries (CS-001 to CS-010)."
+    },
+    {
+      "text": "Populates credit-scoring-specific risks: disparate impact/fair lending, model validity/population drift, explainability of adverse-action reasons, data quality/privacy, third-party model dependencies, security/adversarial manipulation",
+      "passed": true,
+      "evidence": "CS-001 (fair lending/disparate impact), CS-002 (adverse action/explainability), CS-003 (model drift/validity), CS-004 (Third-Party/Vendor Model Risk — fully populated with its own owner, controls, and treatment), CS-005 (data privacy), CS-007 (model security/adversarial manipulation) — all six required categories populated as distinct, fully worked risk entries."
+    },
+    {
+      "text": "Maps risks to plausible AI RMF functions/categories (e.g., bias testing under MEASURE 2.x, context/impact identification under MAP, treatment decisions under MANAGE 1.x/2.x, oversight under GOVERN) without inventing nonexistent category IDs",
+      "passed": true,
+      "evidence": "Uses MEASURE 2.11, 2.9, 2.5, 2.10, 2.7; MAP 1.1, 1.2, 1.5, 2.1; GOVERN 1.1, 1.2, 3.2, 4.1, 6.1; MANAGE 2.2, 4.1, 4.2, 4.3 — all plausible subcategory numbers, no obviously invented IDs."
+    },
+    {
+      "text": "Treatment options are concrete and financial-services-appropriate: fairness constraints/reweighting, challenger models, human review bands, adverse action reason-code validation, model risk management (SR 11-7-style) integration",
+      "passed": true,
+      "evidence": "Explicitly includes 'champion-challenger model framework' (CS-003), 'fairness constraints to model training' (CS-001), human review/override tracking (CS-006), reason-code validation against model drivers (CS-002), and dedicated risk entry CS-008 tying documentation directly to 'SR 11-7 model risk management guidance.' All five example treatment types present by name."
+    },
+    {
+      "text": "Flags applicable regulatory context accurately: ECOA/Reg B adverse action notices, FCRA, fair lending exams — treatments tied to those obligations",
+      "passed": true,
+      "evidence": "CS-002 ties explainability treatment directly to 'ECOA/Reg B (adverse action notices) and FCRA'; CS-005 ties privacy treatment to 'FCRA/GLBA'; CS-008 ties documentation treatment to regulatory exam requirements (OCC, Fed, CFPB, state regulators); governance cadence section notes refresh 'whenever ECOA/Reg B, FCRA, or state AI lending laws change.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

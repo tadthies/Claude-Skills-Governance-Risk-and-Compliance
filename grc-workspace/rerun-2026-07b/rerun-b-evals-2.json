@@ -1,0 +1,185 @@
+{
+  "description": "v1.6.0 re-run part 2 (nis2 after expansion; nzism, vn-pdpl, eu-cra newly authored). Assertions from primary sources: Directive (EU) 2022/2555; NZISM (GCSB/NCSC NZ) + NZ PSR + Privacy Act 2020; Vietnam Law No. 91/2025/QH15 + implementing decree; Regulation (EU) 2024/2847 (CRA). NIS2 set carries over the July 2026 primary-source assertions with eval-82 assertion 1 reworded to reward analysis over conclusion (grader feedback).",
+  "evals": [
+    {"id": 81, "skill": "nis2", "eval_name": "energy-entity-classification",
+     "prompt": "We are a mid-size European energy company with 200 employees and €50M annual turnover, operating electricity distribution networks in Germany. Do we fall under the NIS2 Directive? If so, as what type of entity, and what are our key obligations?",
+     "assertions": [
+       "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+       "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the large-enterprise ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+       "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+       "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+       "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)"
+     ]},
+    {"id": 82, "skill": "nis2", "eval_name": "saas-provider-scope-obligations",
+     "prompt": "Our SaaS company provides B2B cloud-based HR software. We have 75 employees and €15M annual revenue. A customer just told us we need to be NIS2 compliant. Are we directly subject to NIS2, and if so what do we need to do to comply with Article 21?",
+     "assertions": [
+       "Engages the decisive legal question: whether B2B SaaS qualifies as a 'cloud computing service' (Annex I digital infrastructure) under the Art. 6(30) definition (on-demand administration, broad remote access, scalable and elastic pool of shareable computing resources) — and reaches a REASONED conclusion. PASS for a well-argued conclusion either way that applies the definition to the facts; FAIL if the cloud-computing-service question is not analysed at all.",
+       "Applies the size threshold correctly: at 75 employees / €15M the company meets the Art. 2(1) medium-size threshold, so IF it qualifies as a cloud computing service it is in scope; and classifies the in-scope outcome as IMPORTANT entity (medium-sized, not in the Art. 3(1) always-essential categories). PASS if the EE/IE size-cap logic is correctly explained even under an out-of-scope conclusion.",
+       "Walks through the Art. 21(2)(a)-(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+       "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+       "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)"
+     ]},
+    {"id": 83, "skill": "nis2", "eval_name": "ransomware-reporting-workflow",
+     "prompt": "We suffered a ransomware attack at 09:00 Monday morning that encrypted our core operational systems. Walk me through exactly what we need to report, to whom, and by when under NIS2.",
+     "assertions": [
+       "Specifies the 24-hour early warning to the CSIRT or competent authority, indicating whether the incident is suspected to be caused by unlawful/malicious acts and whether it could have cross-border impact (Art. 23(4)(a))",
+       "Specifies the 72-hour incident notification updating the early warning with an initial assessment of severity and impact and available indicators of compromise (Art. 23(4)(b))",
+       "Specifies the final report within one month containing a detailed description, threat type / root cause, applied and ongoing mitigation, and any cross-border impact (Art. 23(4)(d)) — including the progress-report rule if the incident is still ongoing at the one-month mark",
+       "Explains why this qualifies as a 'significant incident' (Art. 23(3): severe operational disruption or financial loss / considerable damage to others) and mentions intermediate status updates upon authority request (Art. 23(4)(c))",
+       "Mentions parallel duties: informing recipients of services where relevant (Art. 23(1)-(2)) and the separate GDPR 72-hour personal data breach notification if personal data is affected"
+     ]},
+    {"id": 84, "skill": "nis2", "eval_name": "iso27001-vs-nis2-gaps",
+     "prompt": "We already hold ISO 27001:2022 certification. Does this mean we are NIS2 compliant? What gaps might still exist between our ISO 27001 ISMS and full NIS2 compliance?",
+     "assertions": [
+       "Clearly states that ISO 27001 certification does NOT equal NIS2 compliance (a strong foundation but not a safe harbor — legal obligations remain directly on the entity)",
+       "Identifies the incident-reporting gap: NIS2 Art. 23 prescribes 24h / 72h / 1-month reporting timelines to CSIRTs/authorities that ISO 27001 does not require",
+       "Identifies the governance gap: Art. 20 management-body approval, oversight, mandatory training, and personal accountability go beyond ISO 27001's management commitment clauses",
+       "Discusses supply chain security under Art. 21(2)(d) — and if it cites the EU-level coordinated supply chain risk assessments, attributes them to Art. 22 / the Cooperation Group with ENISA. FAIL this assertion if coordinated supply-chain risk assessments are attributed to Art. 26 (which concerns jurisdiction and territoriality).",
+       "Names at least one further concrete delta: e.g., measures ISO doesn't universally mandate (MFA under Art. 21(2)(j), cryptography policy under 21(2)(h)), sector-specific rules (Implementing Regulation 2024/2690), registration duties, or penalty exposure (Art. 34: up to €10M/2% for essential, €7M/1.4% for important entities)"
+     ]},
+    {"id": 85, "skill": "nis2", "eval_name": "dora-nis2-interaction-bank",
+     "prompt": "We are the CISO of a large European bank. Our regulator has told us NIS2 applies to us alongside DORA. How do the two regulations interact, and which takes precedence? Do we need two separate compliance programmes?",
+     "assertions": [
+       "States the lex specialis principle: under NIS2 Art. 4, sector-specific Union legal acts with at-least-equivalent effect take precedence, and DORA (Regulation (EU) 2022/2554) is that act for financial entities including credit institutions",
+       "Specifies WHICH provisions are displaced: DORA applies instead of NIS2 Art. 21 (cybersecurity risk-management measures) and Art. 23 (incident reporting) for banks",
+       "Notes what remains relevant from NIS2 despite DORA precedence (e.g., banks remain listed entities / national registration and information-sharing frameworks may still apply; supervision of ICT risk sits with financial authorities under DORA)",
+       "Recommends a single integrated programme built on DORA's requirements (ICT risk management framework, incident classification and reporting, digital operational resilience testing including TLPT, ICT third-party risk, information sharing) mapped against NIS2 for residual obligations — not two separate programmes",
+       "Any incident-reporting specifics given match DORA's regime (major ICT-related incidents reported to the financial competent authority with initial/intermediate/final reports) rather than NIS2 CSIRT reporting"
+     ]},
+    {"id": 131, "skill": "nzism", "eval_name": "restricted-ca-gap-analysis",
+     "prompt": "Our NZ government agency is preparing a RESTRICTED system for certification and accreditation. Run a C&A gap analysis: we have a draft System Security Plan, no Security Risk Management Plan, controls partially implemented with no validation testing, and no ITSM sign-off yet. What does the NZISM C&A process require and where are our gaps?",
+     "assertions": [
+       "Explains the two distinct stages correctly: CERTIFICATION = technical assessment that NZISM controls are implemented and effective; ACCREDITATION = formal acceptance of residual risk by the Accreditation Authority allowing the system to operate",
+       "Identifies the missing Security Risk Management Plan (SRMP) as a core gap — C&A requires documented risk assessment/management artifacts alongside the SSP/SecPlan",
+       "Flags the absence of control validation testing as blocking certification (controls must be verified as implemented and effective, not just documented), and the missing ITSM/security-practitioner sign-off in the certification chain",
+       "Correctly frames NZISM authorship/authority: issued by the GCSB (NCSC NZ) as the NZ government information security manual, with MUST/SHOULD compliance requirements tied to classification (RESTRICTED here), and notes essential/baseline controls cannot simply be waived without formal risk acceptance",
+       "Produces a usable gap table/plan with prioritised remediation (SRMP first, control validation, certification review, then accreditation decision) rather than generic advice"
+     ]},
+    {"id": 132, "skill": "nzism", "eval_name": "offshore-cloud-hosting",
+     "prompt": "Can our NZ public sector agency host RESTRICTED data in AWS Sydney (offshore)? What does the NZISM and NZ government cloud policy require before we can do this?",
+     "assertions": [
+       "Does not give a flat yes/no: explains offshore hosting of NZ government data is a risk-based decision requiring a formal cloud risk assessment and agency-level approval (accreditation/risk acceptance by the responsible authority), not a prohibition",
+       "References the NZ Government cloud framework accurately: cloud-first policy with security requirements, the government cloud risk assessment process, and Protective Security Requirements (PSR) obligations alongside the NZISM",
+       "Addresses jurisdiction and sovereignty risk explicitly: offshore hosting means Australian jurisdiction over the data; assess legal access regimes, data residency commitments, and exit strategy",
+       "Requires classification-appropriate controls for RESTRICTED: encryption at rest and in transit with agency-controlled keys where feasible, access controls limited to cleared personnel, logging/monitoring, and supplier assurance evidence (e.g., IRAP/independent assessments of the AWS region)",
+       "Sets out the approval chain: documented risk assessment, CISO/ITSM review, and formal risk acceptance by the accreditation authority/agency head before go-live, with the decision recorded"
+     ]},
+    {"id": 133, "skill": "nzism", "eval_name": "access-control-policy",
+     "prompt": "Draft an Access Control Policy for our agency aligned to the NZISM, citing the relevant NZISM sections/controls for identification, authentication, authorisation, and privileged access.",
+     "assertions": [
+       "Delivers an actual policy document (purpose, scope, roles, policy statements, compliance) — not just a discussion of access control",
+       "Covers the four requested domains with NZISM-consistent requirements: unique identification of users, authentication strength (MFA for privileged and remote access), least-privilege authorisation, and privileged access management (separate admin accounts, logging, periodic review)",
+       "Cites NZISM structure credibly: references NZISM chapters/sections and control identifiers (CIDs) for access control and uses MUST/SHOULD compliance language consistent with the manual's convention",
+       "Includes joiner-mover-leaver / access review lifecycle requirements (timely revocation, periodic recertification of access rights)",
+       "Includes policy governance: owner, review cycle, exceptions process requiring documented risk acceptance"
+     ]},
+    {"id": 134, "skill": "nzism", "eval_name": "supplier-ransomware-incident",
+     "prompt": "One of our suppliers has been hit by ransomware and they hold our agency's data. Walk us through our NZISM-aligned incident response obligations, including who we must notify in New Zealand.",
+     "assertions": [
+       "Treats this correctly as the agency's incident too: activate the agency IR plan, establish what agency data/classification the supplier holds, and demand supplier containment/forensics status under the contract",
+       "Names the right NZ notification channel for cyber incidents: report to the NCSC (GCSB) — noting CERT NZ's functions are now within the NCSC — plus NZ Police for the criminal act where appropriate",
+       "Identifies the Privacy Act 2020 obligation: if personal information is involved and the breach is notifiable (serious harm threshold), notify the Office of the Privacy Commissioner and affected individuals",
+       "Covers evidence preservation and reporting discipline: preserve logs/artifacts, document a timeline, and conduct a post-incident review feeding lessons back into supplier controls",
+       "Addresses the supplier-contract dimension: invoke incident-notification clauses, require remediation evidence, reassess the supplier's certification/assurance status, and update the agency risk register"
+     ]},
+    {"id": 135, "skill": "nzism", "eval_name": "saas-vendor-due-diligence",
+     "prompt": "We are procuring a SaaS product for agency use. What NZISM-aligned due diligence and contractual security requirements should we impose on the vendor?",
+     "assertions": [
+       "Requires classification-driven scoping first: what data (classification level) will the SaaS hold, which determines applicable NZISM controls and whether offshore hosting/risk assessment rules are triggered",
+       "Due diligence checklist includes independent assurance evidence: recognised certifications/assessments (e.g., ISO 27001, SOC 2, IRAP or equivalent), penetration test results, and the vendor's security architecture (tenancy isolation, encryption, key management)",
+       "Contractual requirements include: incident notification SLAs to the agency, right to audit/assurance evidence, data residency/jurisdiction terms, data return and secure deletion on exit, and subcontractor/fourth-party disclosure",
+       "Covers identity and access integration: SSO/MFA support, role-based access, logging/audit trail availability to the agency",
+       "Requires ongoing assurance, not point-in-time: annual reassessment, monitoring of vendor advisories, and inclusion in the agency's supplier risk register with a formal risk acceptance for residual gaps"
+     ]},
+    {"id": 136, "skill": "vn-pdpl", "eval_name": "saas-gap-analysis",
+     "prompt": "We are a Singapore-based SaaS company with customers in Vietnam. Run a gap analysis against Vietnam's PDPL: we collect names, emails, payment data; consent is via a pre-ticked checkbox; data is stored in Singapore; we have no DPO; and we have never done an impact assessment.",
+     "assertions": [
+       "Confirms extraterritorial applicability: Vietnam's Law on Personal Data Protection No. 91/2025/QH15 (passed 26 June 2025, effective 1 January 2026) applies to foreign organisations processing Vietnamese individuals' personal data, so the Singapore SaaS is in scope",
+       "Flags the pre-ticked checkbox as INVALID consent: consent must be an explicit, affirmative act — silence, inaction, and pre-ticked boxes do not constitute consent under Vietnamese data protection rules",
+       "Flags the cross-border gap: storing/processing Vietnamese personal data offshore triggers cross-border transfer obligations including a transfer impact assessment dossier for the Ministry of Public Security (MPS/A05), the supervising authority",
+       "Flags the missing processing impact assessment as a gap: controllers must prepare and maintain an impact assessment dossier available to MPS, and identifies the DPO/data-protection-personnel question (noting exemptions exist for small/micro enterprises for an initial period, which a scaled SaaS with Vietnamese customers should not assume applies)",
+       "Delivers a structured gap table with prioritised remediation (fix consent UX, prepare DPIA and transfer dossiers, designate responsible personnel, update privacy notice in Vietnamese-law-compliant terms)"
+     ]},
+    {"id": 137, "skill": "vn-pdpl", "eval_name": "fintech-breach-workflow",
+     "prompt": "We are a fintech in Ho Chi Minh City and just discovered a breach of customer personal data. Walk us through the breach notification workflow under Vietnam's data protection rules — who do we notify and by when?",
+     "assertions": [
+       "States the regulator and deadline correctly: notify the Ministry of Public Security (A05 — Department of Cybersecurity and Hi-tech Crime Prevention) within 72 HOURS of detecting the violation/breach",
+       "Describes notification content: nature of the incident, data and subjects affected, time of detection, measures taken, contact point — and that late notification requires explaining the delay",
+       "Covers immediate response steps alongside notification: contain and eradicate, preserve forensic evidence, assess scope and harm to data subjects",
+       "Addresses data subject and sectoral dimensions: informing affected customers where harm is likely, and the fintech overlay (State Bank of Vietnam expectations for financial institutions, contractual counterparty notices) without inventing specific SBV deadlines",
+       "Requires documentation and follow-up: incident record for accountability, root-cause remediation, and updating the impact assessment dossier where the incident changes the risk picture"
+     ]},
+    {"id": 138, "skill": "vn-pdpl", "eval_name": "micro-enterprise-exemptions",
+     "prompt": "We are a 15-person startup in Hanoi. Do Vietnam PDPL obligations like the impact assessment and data protection officer apply to us, or are there exemptions for small businesses?",
+     "assertions": [
+       "States the exemption accurately: the PDPL grants small and micro enterprises (and startups) relief from certain obligations — notably DPO appointment and impact-assessment duties — for an initial period (5 years from the law's effectivity), by election",
+       "States the exemption's limits correctly: it does NOT apply to entities that process sensitive personal data, process data at large scale, or are themselves in the business of personal data processing services — the startup must check these disqualifiers",
+       "Correctly notes what is NOT exempted: core duties still apply — valid consent, security measures, breach notification, data subject rights, and cross-border transfer rules",
+       "Explains the strategic consideration: electing the exemption doesn't freeze obligations forever; plan for full compliance before the window closes or before scaling into a disqualifying category",
+       "Gives the startup a concrete minimal-compliance checklist (consent flows, privacy notice, security baseline, breach playbook, records of processing) sized to its stage"
+     ]},
+    {"id": 139, "skill": "vn-pdpl", "eval_name": "consent-mechanism-design",
+     "prompt": "Design a PDPL-compliant consent mechanism for our Vietnamese e-commerce app. What forms of consent are valid, and what practices are prohibited?",
+     "assertions": [
+       "States validity requirements: consent must be voluntary, informed, explicit, and given by a clear affirmative act, with the data subject knowing the data types, purposes, recipients, and their rights before consenting",
+       "Lists valid forms consistent with Vietnamese rules: written, electronic (app/website action, verifiable formats), voice/recorded, SMS/syntax-based — provided the act is affirmative and verifiable",
+       "Lists prohibited/invalid practices: silence or inaction as consent, pre-ticked boxes, bundled consent covering unrelated purposes, and making consent conditions misleading",
+       "Requires purpose granularity and separate consent for distinct purposes (e.g., order fulfilment vs marketing vs sharing with partners), plus special handling for sensitive data (explicit notice that the data is sensitive)",
+       "Covers lifecycle mechanics: burden of proof on the controller (retain consent records), easy withdrawal channel that is as accessible as giving consent, and re-consent when purposes change"
+     ]},
+    {"id": 140, "skill": "vn-pdpl", "eval_name": "consent-withdrawal",
+     "prompt": "A Vietnamese customer wants to withdraw consent. What does the PDPL and its implementing decree require — process, timeframes, and consequences of withdrawal?",
+     "assertions": [
+       "States the core rule: data subjects may withdraw consent at any time; withdrawal must be as easy to execute as giving consent, and the controller must confirm/act on the request",
+       "Explains consequences accurately: processing based on that consent must cease upon withdrawal (absent another lawful ground under the PDPL), and withdrawal does not affect the lawfulness of processing already performed — the data subject should be informed of the consequences before completing withdrawal",
+       "Covers propagation: the controller must notify processors and third parties that received the data to stop processing/delete accordingly",
+       "Addresses timeframes honestly: commits to acting without undue delay within the timeframes set by the implementing decree, and does NOT invent a fabricated statutory deadline where none is established (a stated 72-hour deadline is acceptable ONLY if attributed to the implementing decree's data-subject-request rules)",
+       "Provides an operational workflow: verify identity, log the request, execute cessation/deletion across systems and backups policy, retain evidence of compliance, and handle retention exceptions (legal obligations) transparently"
+     ]},
+    {"id": 141, "skill": "eu-cra", "eval_name": "iot-router-scope-classification",
+     "prompt": "Our company manufactures a consumer smart-home IoT router sold in the EU. Does the Cyber Resilience Act apply, what product class are we in, and what conformity assessment route applies?",
+     "assertions": [
+       "Confirms the CRA (Regulation (EU) 2024/2847) applies: a router is a product with digital elements (hardware + remote data connection) placed on the EU market; the regulation entered into force 10 December 2024",
+       "States the key application dates: main obligations apply from 11 December 2027; the Art. 14 vulnerability/incident reporting obligations apply earlier, from 11 September 2026",
+       "Performs a credible classification analysis: distinguishes default products (vast majority, ~90%) from IMPORTANT products (Annex III, Classes I/II) and CRITICAL products (Annex IV), and analyses whether an internet router falls in an Annex III important category rather than asserting default without analysis",
+       "Explains the conformity route consequence correctly: default products may self-assess (internal control, Module A); important Class I requires harmonised standards or third-party assessment; Class II requires third-party assessment; critical products face EU cybersecurity certification — and ties the router's route to its classification",
+       "Mentions the CE marking outcome and the essential requirements anchor (Annex I Part I product security + Part II vulnerability handling), plus support-period determination (reflecting expected product lifetime; 5 years as the reference point)"
+     ]},
+    {"id": 142, "skill": "eu-cra", "eval_name": "annex-i-gap-assessment",
+     "prompt": "Run an Annex I gap assessment for our consumer IoT router against the CRA essential requirements. Current state: ships with default password 'admin'; no automatic update mechanism; telnet management port open by default; no vulnerability disclosure policy; support commitment is 2 years.",
+     "assertions": [
+       "Flags the default password against Annex I Part I secure-by-default requirements (products must be made available with secure default configurations; universal default credentials are the canonical violation)",
+       "Flags the missing update mechanism against Annex I Part I (security updates must be possible, and by default installed automatically or with user consent) and the exposed telnet service against attack-surface minimisation requirements",
+       "Flags the missing coordinated vulnerability disclosure policy against Annex I Part II (vulnerability handling requirements: CVD policy, contact point, SBOM, remediation without delay, free security updates)",
+       "Assesses the 2-year support commitment against the CRA support-period rule: must reflect the expected product lifetime — for a consumer router, 2 years is very likely insufficient versus the 5-year reference period; requires justification or extension",
+       "Outputs a prioritised remediation table mapping each gap to the specific Annex I requirement area, with pre-market blockers (defaults, updates) distinguished from process gaps (CVD, SBOM)"
+     ]},
+    {"id": 143, "skill": "eu-cra", "eval_name": "exploited-vulnerability-reporting",
+     "prompt": "We discovered an actively exploited vulnerability in one of our products. What are our reporting obligations under the CRA — to whom, and by when?",
+     "assertions": [
+       "Names the recipients correctly: the designated CSIRT coordinator and ENISA, via the single reporting platform (Art. 14/16)",
+       "States the actively-exploited-vulnerability timeline correctly: early warning within 24 HOURS of awareness; full vulnerability notification within 72 HOURS; final report within 14 DAYS after a corrective/mitigating measure is available",
+       "Distinguishes the severe-incident track (incidents impacting product security: 24h early warning / 72h notification / 1 MONTH final report) from the vulnerability track, applying the right one to these facts",
+       "Covers user-notification duties: inform impacted users about the vulnerability and available corrective measures/mitigations without undue delay",
+       "Notes these reporting obligations apply from 11 September 2026 (ahead of the December 2027 main application) and connects to Annex I Part II duties (remediate without delay, free security updates, CVD process)"
+     ]},
+    {"id": 144, "skill": "eu-cra", "eval_name": "sbom-programme",
+     "prompt": "Design an SBOM programme for our products to meet CRA requirements. What must the SBOM contain and how does it fit vulnerability handling?",
+     "assertions": [
+       "Grounds the SBOM duty correctly: Annex I Part II requires manufacturers to identify and document components including by drawing up an SBOM in a commonly used, machine-readable format, covering at the very least the top-level dependencies",
+       "Notes the SBOM is documentation for authorities (part of technical documentation, available to market surveillance authorities on request) — the CRA does not require publishing it to the public",
+       "Designs a real programme: format choice (e.g., SPDX/CycloneDX), generation integrated into CI/build pipeline, per-release versioning, coverage of third-party/open-source components",
+       "Connects SBOM to vulnerability handling: continuous monitoring of components against vulnerability feeds, triage/remediation without delay, feeding the CVD process and Art. 14 reporting when actively exploited",
+       "Addresses governance: ownership, accuracy audits, supplier data requirements for sourced components, retention aligned with the support period and 10-year technical-documentation obligations"
+     ]},
+    {"id": 145, "skill": "eu-cra", "eval_name": "importer-distributor-obligations",
+     "prompt": "We import and distribute connected devices manufactured in Asia into the EU. What are our obligations as importer/distributor under the CRA versus the manufacturer's obligations?",
+     "assertions": [
+       "Sets out the manufacturer's primary duties correctly (Annex I compliance, conformity assessment, CE marking, technical documentation, vulnerability handling and reporting, support period) as the baseline the importer must verify",
+       "Importer duties (Art. 19): place only compliant products on the market; verify the manufacturer performed conformity assessment, drew up technical documentation, affixed CE marking, and indicated contact details; include importer identification on the product/packaging",
+       "Distributor duties (Art. 20): act with due care, verify CE marking and required documentation/identification are present, and refrain from making non-compliant products available",
+       "States the re-qualification rule: an importer or distributor is deemed the MANUFACTURER (inheriting all obligations) if it markets the product under its own name/trademark or substantially modifies the product",
+       "Covers ongoing duties both roles share: inform the manufacturer and market surveillance authorities of known non-conformity or vulnerabilities/risks, cooperate with authorities, and do not conceal incidents"
+     ]}
+  ]
+}

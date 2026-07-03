@@ -1,0 +1,33 @@
+{
+  "eval_id": 145,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Sets out the manufacturer's primary duties correctly (Annex I compliance, conformity assessment, CE marking, technical documentation, vulnerability handling and reporting, support period) as the baseline the importer must verify",
+      "passed": true,
+      "evidence": "'Manufacturer's Obligations (Article 13)' lists all 12 items including 'Designing...to meet all Annex I essential requirements', 'Conducting the conformity assessment', 'Affixing CE marking', 'Preparing and retaining Technical Documentation', 'Operating the ongoing vulnerability handling programme', 'Reporting actively exploited vulnerabilities'."
+    },
+    {
+      "text": "Importer duties (Art. 19): place only compliant products on the market; verify the manufacturer performed conformity assessment, drew up technical documentation, affixed CE marking, and indicated contact details; include importer identification on the product/packaging",
+      "passed": true,
+      "evidence": "'Your Obligations as Importer' lists: 'Only place on the EU market products accompanied by a valid Declaration of Conformity and technical documentation', 'Verify CE marking is affixed and legible', 'Verify the manufacturer is identified on the product', 'Add your own name...to the product, packaging, or accompanying documentation.'"
+    },
+    {
+      "text": "Distributor duties (Art. 20): act with due care, verify CE marking and required documentation/identification are present, and refrain from making non-compliant products available",
+      "passed": true,
+      "evidence": "'Your Obligations as Distributor' lists: 'Verify CE marking, DoC availability, and that instructions/information are provided in a Union language before making the product available', 'Not make available products you know are non-compliant.'"
+    },
+    {
+      "text": "States the re-qualification rule: an importer or distributor is deemed the MANUFACTURER (inheriting all obligations) if it markets the product under its own name/trademark or substantially modifies the product",
+      "passed": false,
+      "evidence": "No mention anywhere in the response of the re-qualification/deemed-manufacturer rule for private-labeling or substantial modification — this is a significant omission given the response otherwise thoroughly covers manufacturer, importer, and distributor obligations."
+    },
+    {
+      "text": "Covers ongoing duties both roles share: inform the manufacturer and market surveillance authorities of known non-conformity or vulnerabilities/risks, cooperate with authorities, and do not conceal incidents",
+      "passed": true,
+      "evidence": "Importer section: 'Notify the manufacturer and the relevant market surveillance authority if you believe or have reason to believe a product poses a cybersecurity risk' and 'Cooperate with market surveillance authorities on request'; distributor section repeats 'Notify the manufacturer and market surveillance authority of any risk' and 'Cooperate with market surveillance authorities on request.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

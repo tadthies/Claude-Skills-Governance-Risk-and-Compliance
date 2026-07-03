@@ -1,0 +1,33 @@
+{
+  "eval_id": 83,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Specifies the 24-hour early warning to the CSIRT or competent authority, indicating whether the incident is suspected to be caused by unlawful/malicious acts and whether it could have cross-border impact (Art. 23(4)(a))",
+      "passed": true,
+      "evidence": "'Stage 1: Early Warning — Within 24 Hours... What to include: Whether the incident is suspected of being caused by unlawful or malicious action (yes, in this case — ransomware); Whether it could have a cross-border impact.'"
+    },
+    {
+      "text": "Specifies the 72-hour incident notification updating the early warning with an initial assessment of severity and impact and available indicators of compromise (Art. 23(4)(b))",
+      "passed": true,
+      "evidence": "'Stage 2: Incident Notification — Within 72 Hours... An initial assessment of the incident, including its severity and impact; Indicators of compromise (IoCs) where available — file hashes, ransomware variant/family if identified, C2 infrastructure, TTPs observed.'"
+    },
+    {
+      "text": "Specifies the final report within one month containing a detailed description, threat type / root cause, applied and ongoing mitigation, and any cross-border impact (Art. 23(4)(d)) — including the progress-report rule if the incident is still ongoing at the one-month mark",
+      "passed": true,
+      "evidence": "'Stage 4: Final Report... A detailed description...; The type of threat or root cause...; Mitigation measures applied and ongoing; Where applicable, the cross-border impact.' Plus: 'If the incident is still ongoing at the one-month mark, you submit a progress report at that point and a final report once it is actually resolved.'"
+    },
+    {
+      "text": "Explains why this qualifies as a 'significant incident' (Art. 23(3): severe operational disruption or financial loss / considerable damage to others) and mentions intermediate status updates upon authority request (Art. 23(4)(c))",
+      "passed": true,
+      "evidence": "'Step 0' quotes both prongs of the significant-incident test and applies them ('A ransomware attack that has encrypted your core operational systems almost certainly meets this threshold'); 'Stage 3: Intermediate Report (If Requested)... If the competent authority or CSIRT requests it... you may need to provide a status update.'"
+    },
+    {
+      "text": "Mentions parallel duties: informing recipients of services where relevant (Art. 23(1)-(2)) and the separate GDPR 72-hour personal data breach notification if personal data is affected",
+      "passed": true,
+      "evidence": "'Article 23(1) also requires that, where appropriate, you notify the recipients of your services of significant incidents likely to adversely affect the provision of that service'; and under Parallel Obligations: 'GDPR (Article 33/34): If any personal data was encrypted, exfiltrated, or otherwise compromised... you likely have a separate 72-hour breach notification obligation to your Data Protection Authority.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 85,
+  "eval_name": "dora-nis2-interaction-bank",
+  "run_type": "with_skill",
+  "prompt": "We are the CISO of a large European bank. Our regulator has told us NIS2 applies to us alongside DORA. How do the two regulations interact, and which takes precedence? Do we need two separate compliance programmes?",
+  "assertions": [
+    "States the lex specialis principle: under NIS2 Art. 4, sector-specific Union legal acts with at-least-equivalent effect take precedence, and DORA (Regulation (EU) 2022/2554) is that act for financial entities including credit institutions",
+    "Specifies WHICH provisions are displaced: DORA applies instead of NIS2 Art. 21 (cybersecurity risk-management measures) and Art. 23 (incident reporting) for banks",
+    "Notes what remains relevant from NIS2 despite DORA precedence (e.g., banks remain listed entities / national registration and information-sharing frameworks may still apply; supervision of ICT risk sits with financial authorities under DORA)",
+    "Recommends a single integrated programme built on DORA's requirements (ICT risk management framework, incident classification and reporting, digital operational resilience testing including TLPT, ICT third-party risk, information sharing) mapped against NIS2 for residual obligations — not two separate programmes",
+    "Any incident-reporting specifics given match DORA's regime (major ICT-related incidents reported to the financial competent authority with initial/intermediate/final reports) rather than NIS2 CSIRT reporting"
+  ]
+}

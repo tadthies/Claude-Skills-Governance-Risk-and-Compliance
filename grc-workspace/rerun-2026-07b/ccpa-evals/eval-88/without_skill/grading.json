@@ -1,0 +1,33 @@
+{
+  "eval_id": 88,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+      "passed": true,
+      "evidence": "'Very likely yes — this almost certainly qualifies as \"sharing\" (and potentially also a \"sale\") under CPRA.' Explains sale applies to 'monetary or other valuable consideration' interpreted broadly, and sharing applies 'whether or not for monetary consideration.'"
+    },
+    {
+      "text": "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+      "passed": true,
+      "evidence": "'CPRA introduced \"sharing\" specifically to close a loophole: many ad tech arrangements didn't involve a traditional \"sale\"... but still resulted in cross-context tracking.'"
+    },
+    {
+      "text": "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+      "passed": true,
+      "evidence": "Section 2 requires the 'Do Not Sell or Share My Personal Information' link; Section 3 requires honoring GPC signals 'automatically, without requiring additional steps'; Section 1 requires updating the privacy policy."
+    },
+    {
+      "text": "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+      "passed": false,
+      "evidence": "Discusses the service-provider exception as a fact-specific determination ('If the ad tech vendor is acting strictly as your service provider... then the transfer might not count as a sale/share') and concludes most ad tech networks fail this test in practice due to their business model, but never states the categorical CPPA position that cross-context behavioral advertising disclosures cannot be service-provider activity as a matter of law. Same gap as the with_skill response."
+    },
+    {
+      "text": "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days",
+      "passed": false,
+      "evidence": "No mention of any enforcement precedent (Sephora, Disney, or otherwise), penalties, or a specific opt-out honoring timeframe (e.g., 15 business days) anywhere in the response. The GPC section requires real-time suppression but does not state a numeric compliance window."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

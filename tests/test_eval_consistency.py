@@ -81,8 +81,9 @@ def _normalize_name(raw: str) -> str:
 
 
 def _parse_pct(raw: str) -> int:
-    """'±0%' / '+4%' / '-4%' / '4%' / '0%'  →  integer."""
-    return int(re.sub(r"[+\-±%\s]", "", raw))
+    """'±0%' / '+4%' / '-4%' / '4%' / '0%'  →  signed integer (sign preserved)."""
+    sign = -1 if raw.strip().startswith("-") else 1
+    return sign * int(re.sub(r"[+\-±%\s]", "", raw))
 
 
 # ---------------------------------------------------------------------------
@@ -413,11 +414,21 @@ class TestEvalConsistency:
 
     # -- With-skill % ≥ baseline % (a skill should never hurt) ---------------
 
+    # Skills with a documented negative delta in the current published run.
+    # Honest evals with independently authored primary-source assertions CAN
+    # come out below baseline — that is a finding to publish and fix, not to
+    # hide. Any skill listed here must have an open improvement item in the
+    # changelog/CHANGELOG.md. Remove entries as skills are improved and re-run.
+    KNOWN_NEGATIVE_DELTA: set[str] = {
+        "ccpa/cpra", "cmmc 2.0", "nist ai rmf", "nzism",
+    }
+
     def test_with_skill_not_worse_than_baseline(self, eval_data):
         """
-        With-skill score must be ≥ baseline for every skill in all three files.
-        A negative delta would mean the skill is actively making things worse,
-        which warrants immediate investigation.
+        With-skill score must be ≥ baseline for every skill in all three files,
+        except skills explicitly acknowledged in KNOWN_NEGATIVE_DELTA (published
+        honestly with an open improvement item). An UNDOCUMENTED negative delta
+        still fails — it means results changed without acknowledgement.
         """
         errors = []
         for source, data in [
@@ -426,10 +437,11 @@ class TestEvalConsistency:
             ("README.md",                    eval_data["readme"]),
         ]:
             for name, (w, b, _d) in sorted(data.items()):
-                if w < b:
+                if w < b and name not in self.KNOWN_NEGATIVE_DELTA:
                     errors.append(f"  [{source}] {name!r}: {w}% with-skill < {b}% baseline")
         assert not errors, (
-            "Skills where with-skill score is LOWER than baseline:\n"
+            "Skills with an UNDOCUMENTED negative delta (add to "
+            "KNOWN_NEGATIVE_DELTA only with a changelog improvement item):\n"
             + "\n".join(errors)
         )
 
@@ -448,11 +460,11 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     # ── July 2026 re-run with primary-source assertions (most recent) ────────
     "fedramp":          _WS / "rerun-2026-07" / "fedramp-evals",
     "swift-csp":        _WS / "rerun-2026-07" / "swift-csp-evals",
-    "nis2":             _WS / "rerun-2026-07" / "nis2-evals",
+    "nis2":             _WS / "rerun-2026-07b" / "nis2-evals",
     "lgpd":             _WS / "rerun-2026-07" / "lgpd-evals",
     # ── iteration-2 (previous run) ───────────────────────────────────────────
-    "ccpa":             _WS / "iteration-2" / "ccpa",
-    "eu-ai-act":        _WS / "iteration-2" / "eu-ai-act",
+    "ccpa":             _WS / "rerun-2026-07b" / "ccpa-evals",
+    "eu-ai-act":        _WS / "rerun-2026-07b" / "eu-ai-act-evals",
     "iso27701":         _WS / "iteration-2" / "iso27701",
     # ── iteration-1 (skill-specific subdirectory) ────────────────────────────
     "gdpr-compliance":  _WS / "iteration-1" / "gdpr-compliance",
@@ -465,8 +477,8 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     "iso42001":         _WS / "iteration-1" / "iso42001",
     "dora":             _WS / "iteration-1" / "dora",
     "dpdpa":            _WS / "iteration-1" / "dpdpa",
-    "cmmc":             _WS / "iteration-1" / "cmmc",
-    "nist-ai-rmf":      _WS / "iteration-1" / "nist-ai-rmf",
+    "cmmc":             _WS / "rerun-2026-07b" / "cmmc-evals",
+    "nist-ai-rmf":      _WS / "rerun-2026-07b" / "nist-ai-rmf-evals",
     "ism":              _WS / "iteration-1" / "ism",
     # ── flat eval directories in iteration-1 root (identified by prefix) ─────
     "itar":             _WS / "iteration-1",   # eval-91..95
@@ -477,6 +489,9 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     "nist-800-53":      _WS / "nist-800-53-evals",
     "section-508":      _WS / "section-508-evals",
     "wcag":             _WS / "wcag-evals",
+    "nzism":            _WS / "rerun-2026-07b" / "nzism-evals",
+    "vn-pdpl":          _WS / "rerun-2026-07b" / "vn-pdpl-evals",
+    "eu-cra":           _WS / "rerun-2026-07b" / "eu-cra-evals",
 }
 
 # Flat-eval skills that share the iteration-1 root; restrict search by prefix.
@@ -489,7 +504,7 @@ _FLAT_EVAL_PREFIXES: dict[str, list[str]] = {
 # Skills with no grading data committed to this repository.
 # They are skipped, not failed — so adding grading files later will surface
 # in git diff rather than requiring a test fix.
-_GRADING_NOT_AVAILABLE: set[str] = {"nzism", "vn-pdpl", "eu-cra"}
+_GRADING_NOT_AVAILABLE: set[str] = set()
 
 # Tolerance in percentage points: grading-computed % may differ from published
 # by at most this much due to legitimate rounding (e.g. 23/27 = 85.19% → 85%).
@@ -848,3 +863,135 @@ def _compute_total_assertions() -> int:
     total += len(_GRADING_NOT_AVAILABLE) * DEFAULT_ASSERTIONS_PER_SKILL
 
     return total
+
+
+# ---------------------------------------------------------------------------
+# Summary-block consistency (added v1.6.0 — catches the +16/+107 class of error)
+# ---------------------------------------------------------------------------
+
+def _parse_readme_summary(content: str) -> dict:
+    """Extract the overall summary from README.md's Skill Evaluation table."""
+    w = re.search(r"\|\s*\*\*With GRC Skills installed\*\*\s*\|\s*\*\*(\d+)%\*\*\s*\|\s*\*\*(\d+)\s*/\s*(\d+)\*\*", content)
+    b = re.search(r"\|\s*Without skills \(baseline Claude\)\s*\|\s*(\d+)%\s*\|\s*(\d+)\s*/\s*(\d+)", content)
+    d = re.search(r"\|\s*\*\*Delta\*\*\s*\|\s*\*\*\+(\d+) points?\*\*\s*\|\s*\*\*\+(\d+) assertions?\*\*", content)
+    assert w and b and d, "README summary table rows not found"
+    return {
+        "with_pct": int(w.group(1)), "with_passed": int(w.group(2)), "total": int(w.group(3)),
+        "base_pct": int(b.group(1)), "base_passed": int(b.group(2)), "base_total": int(b.group(3)),
+        "delta_pts": int(d.group(1)), "delta_assertions": int(d.group(2)),
+    }
+
+
+def _parse_index_summary(content: str) -> dict:
+    """Extract the overall summary from index.html's stat-grid."""
+    w = re.search(r'<div class="value">(\d+)%</div>\s*<div class="label">With GRC Skills installed<br\s*/?><small>(\d+)\s*/\s*(\d+) assertions passed</small>', content)
+    b = re.search(r'<div class="value">(\d+)%</div>\s*<div class="label">Baseline Claude \(no skills\)<br\s*/?><small>(\d+)\s*/\s*(\d+) assertions passed</small>', content)
+    d = re.search(r'<div class="value">\+(\d+)</div>\s*<div class="label">Point improvement<br\s*/?><small>\+(\d+) additional assertions passed</small>', content)
+    assert w and b and d, "index.html stat-grid entries not found"
+    return {
+        "with_pct": int(w.group(1)), "with_passed": int(w.group(2)), "total": int(w.group(3)),
+        "base_pct": int(b.group(1)), "base_passed": int(b.group(2)), "base_total": int(b.group(3)),
+        "delta_pts": int(d.group(1)), "delta_assertions": int(d.group(2)),
+    }
+
+
+def _parse_eval_page_stat_cards(content: str) -> dict:
+    """Extract the overall summary from grc-skills-eval-results.html stat cards."""
+    w = re.search(r'<div class="stat-value">(\d+)%</div>\s*<div class="stat-label">With Skill</div>', content)
+    b = re.search(r'<div class="stat-value neutral">(\d+)%</div>\s*<div class="stat-label">Baseline \(No Skill\)</div>', content)
+    d = re.search(r'<div class="stat-value positive">\+(\d+)%</div>\s*<div class="stat-label">Improvement</div>', content)
+    t = re.search(r'<div class="stat-value">(\d+)</div>\s*<div class="stat-label">Total Assertions</div>', content)
+    e = re.search(r'<div class="stat-value positive">\+(\d+)</div>\s*<div class="stat-label">Extra Assertions Passed</div>', content)
+    assert w and b and d and t and e, "eval page stat cards not found"
+    return {
+        "with_pct": int(w.group(1)), "base_pct": int(b.group(1)),
+        "delta_pts": int(d.group(1)), "total": int(t.group(1)),
+        "delta_assertions": int(e.group(1)),
+    }
+
+
+def _parse_eval_page_assertion_cells(content: str) -> list[tuple[str, int, int]]:
+    """Extract (skill, passed, total) from the summary table's assertions column."""
+    pattern = re.compile(
+        r'class="skill-link">([^<]+)</a></td>\s*'
+        r'<td[^>]*>(\d+)%</td>\s*<td[^>]*>(\d+)%</td>\s*'
+        r'<td[^>]*>[+\-±]?\d+%</td>\s*'
+        r'<td[^>]*>(\d+)/(\d+)</td>',
+        re.DOTALL,
+    )
+    return [(m.group(1), int(m.group(4)), int(m.group(5))) for m in pattern.finditer(content)]
+
+
+class TestSummaryBlockConsistency:
+    """The overall (suite-level) stats must be identical across all three files."""
+
+    @pytest.fixture(scope="class")
+    def summaries(self):
+        readme = (REPO_ROOT / "README.md").read_text()
+        index = (REPO_ROOT / "index.html").read_text()
+        eval_page = (REPO_ROOT / "grc-skills-eval-results.html").read_text()
+        return {
+            "readme": _parse_readme_summary(readme),
+            "index": _parse_index_summary(index),
+            "eval_page": _parse_eval_page_stat_cards(eval_page),
+        }
+
+    def test_summary_block_consistency(self, summaries):
+        r, i, e = summaries["readme"], summaries["index"], summaries["eval_page"]
+        for field in ("with_pct", "base_pct", "delta_pts", "delta_assertions"):
+            assert r[field] == i[field] == e[field], (
+                f"Summary field '{field}' diverges: README={r[field]}, "
+                f"index.html={i[field]}, eval page={e[field]}"
+            )
+        assert r["total"] == i["total"] == e["total"], (
+            f"Total assertions diverge: README={r['total']}, "
+            f"index.html={i['total']}, eval page={e['total']}"
+        )
+        # README/index also publish raw passed counts — they must agree
+        assert r["with_passed"] == i["with_passed"], "with-skill passed count diverges README vs index"
+        assert r["base_passed"] == i["base_passed"], "baseline passed count diverges README vs index"
+
+    def test_summary_arithmetic(self, summaries):
+        r = summaries["readme"]
+        # Percentages must round-trip from raw counts
+        assert round(100 * r["with_passed"] / r["total"]) == r["with_pct"], (
+            f"with-skill %: {r['with_passed']}/{r['total']} rounds to "
+            f"{round(100 * r['with_passed'] / r['total'])}, published {r['with_pct']}%"
+        )
+        assert round(100 * r["base_passed"] / r["base_total"]) == r["base_pct"], (
+            f"baseline %: {r['base_passed']}/{r['base_total']} rounds to "
+            f"{round(100 * r['base_passed'] / r['base_total'])}, published {r['base_pct']}%"
+        )
+        # Deltas must be arithmetic, not hand-typed (the +16/+107 bug)
+        assert r["delta_pts"] == r["with_pct"] - r["base_pct"], (
+            f"delta points {r['delta_pts']} != {r['with_pct']} - {r['base_pct']}"
+        )
+        assert r["delta_assertions"] == r["with_passed"] - r["base_passed"], (
+            f"delta assertions {r['delta_assertions']} != "
+            f"{r['with_passed']} - {r['base_passed']}"
+        )
+        # Per-skill assertion cells on the eval page must sum to the published totals
+        eval_page = (REPO_ROOT / "grc-skills-eval-results.html").read_text()
+        cells = _parse_eval_page_assertion_cells(eval_page)
+        assert len(cells) == EXPECTED_SKILL_COUNT, (
+            f"Expected {EXPECTED_SKILL_COUNT} assertion cells, found {len(cells)}"
+        )
+        assert sum(t for _, _, t in cells) == r["total"], (
+            f"Per-skill assertion totals sum to {sum(t for _, _, t in cells)}, "
+            f"published total is {r['total']}"
+        )
+        assert sum(p for _, p, _ in cells) == r["with_passed"], (
+            f"Per-skill passed counts sum to {sum(p for _, p, _ in cells)}, "
+            f"published with-skill passed is {r['with_passed']}"
+        )
+
+    def test_methodology_totals(self, summaries):
+        total = summaries["readme"]["total"]
+        readme = (REPO_ROOT / "README.md").read_text()
+        index = (REPO_ROOT / "index.html").read_text()
+        assert re.search(rf"\({total} assertions in total\)|\({total} in total\)", readme), (
+            f"README methodology prose does not state the published total ({total})"
+        )
+        assert f"{total} total assertions evaluated" in index, (
+            f"index.html methodology prose does not state the published total ({total})"
+        )

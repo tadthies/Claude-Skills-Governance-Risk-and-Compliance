@@ -1,0 +1,13 @@
+{
+  "eval_id": 145,
+  "eval_name": "importer-distributor-obligations",
+  "run_type": "with_skill",
+  "prompt": "We import and distribute connected devices manufactured in Asia into the EU. What are our obligations as importer/distributor under the CRA versus the manufacturer's obligations?",
+  "assertions": [
+    "Sets out the manufacturer's primary duties correctly (Annex I compliance, conformity assessment, CE marking, technical documentation, vulnerability handling and reporting, support period) as the baseline the importer must verify",
+    "Importer duties (Art. 19): place only compliant products on the market; verify the manufacturer performed conformity assessment, drew up technical documentation, affixed CE marking, and indicated contact details; include importer identification on the product/packaging",
+    "Distributor duties (Art. 20): act with due care, verify CE marking and required documentation/identification are present, and refrain from making non-compliant products available",
+    "States the re-qualification rule: an importer or distributor is deemed the MANUFACTURER (inheriting all obligations) if it markets the product under its own name/trademark or substantially modifies the product",
+    "Covers ongoing duties both roles share: inform the manufacturer and market surveillance authorities of known non-conformity or vulnerabilities/risks, cooperate with authorities, and do not conceal incidents"
+  ]
+}

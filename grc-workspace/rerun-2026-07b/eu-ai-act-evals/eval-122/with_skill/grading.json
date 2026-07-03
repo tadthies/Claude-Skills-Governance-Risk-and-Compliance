@@ -1,0 +1,33 @@
+{
+  "eval_id": 122,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Identifies this as a PROHIBITED practice under Art. 5(1)(d): AI systems making risk assessments of natural persons to assess or predict the risk of committing a criminal offence based solely on profiling or on assessing personality traits and characteristics",
+      "passed": true,
+      "evidence": "Response states: 'It falls directly within a Prohibited AI Practice under Article 5(1)(d)... AI systems assessing the risk of natural persons committing criminal offences based solely on profiling or the assessment of personality traits and characteristics.'"
+    },
+    {
+      "text": "States the prohibition has applied since 2 February 2025 (prohibitions were the first obligations to take effect)",
+      "passed": true,
+      "evidence": "Response states: 'This prohibition has applied since 2 February 2025 — it is already fully in force, well before today's date of 3 July 2026.'"
+    },
+    {
+      "text": "Explains the carve-out accurately: Art. 5(1)(d) does not cover AI used to SUPPORT a human assessment already based on objective and verifiable facts directly linked to a criminal activity — and assesses whether the described system (personality traits + past behaviour) fits the prohibition (it does, to the extent based on profiling/traits)",
+      "passed": true,
+      "evidence": "Response describes 'systems that support a human assessment based on objective, verifiable facts directly linked to a criminal activity are not prohibited' then explains why it doesn't apply here: 'inputs are personality traits and past behaviour — not objective, verifiable facts tied to a specific, already-occurring criminal activity... Conclusion: the exception does not apply.'"
+    },
+    {
+      "text": "States penalty exposure for prohibited practices: up to €35M or 7% of worldwide annual turnover (Art. 99(3))",
+      "passed": true,
+      "evidence": "Response states: 'Up to €35,000,000 or 7% of total worldwide annual turnover, whichever is higher' under section '4. Penalties Exposure (Art. 99)'."
+    },
+    {
+      "text": "Advises concretely: do not place on the EU market for this use; discusses redesign options (e.g., objective-facts-based decision support with human assessment) or declining the procurement",
+      "passed": true,
+      "evidence": "Bottom Line states 'Do not proceed with procurement or deployment of the system as described' and section 5 discusses redesign around 'objective, verifiable, offence-specific facts' with human assessment support as the only viable path forward."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

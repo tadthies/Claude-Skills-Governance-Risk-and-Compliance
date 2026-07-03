@@ -1,0 +1,33 @@
+{
+  "eval_id": 133,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Delivers an actual policy document (purpose, scope, roles, policy statements, compliance) — not just a discussion of access control",
+      "passed": true,
+      "evidence": "Full policy structure present: Purpose (1), Scope (2), Policy Statements (3.1-3.7), Roles and Responsibilities (4), Exceptions (5), NZISM Reference Areas (6), Policy Review (7), plus header with owner/effective date/review cycle and an approval signature block."
+    },
+    {
+      "text": "Covers the four requested domains with NZISM-consistent requirements: unique identification of users, authentication strength (MFA for privileged and remote access), least-privilege authorisation, and privileged access management (separate admin accounts, logging, periodic review)",
+      "passed": true,
+      "evidence": "3.1 Identification requires unique identifiers and prohibits shared accounts; 3.2 Authentication mandates MFA for 'remote access', 'RESTRICTED or higher' systems, and 'all privileged/administrative accounts'; 3.3 Authorisation requires least-privilege/need-to-know and RBAC; 3.4 Privileged Access requires separate accounts, MFA, quarterly review, and full audit logging."
+    },
+    {
+      "text": "Cites NZISM structure credibly: references NZISM chapters/sections and control identifiers (CIDs) for access control and uses MUST/SHOULD compliance language consistent with the manual's convention",
+      "passed": false,
+      "evidence": "Uses mandatory 'must' language 30 times (consistent with NZISM convention), but only vaguely references 'NZISM Chapter on Access Control / Identification and Authentication controls' once, and explicitly disclaims precision: 'Specific NZISM chapter/control numbers should be cross-referenced against the current published version of the NZISM ... as section numbering and control identifiers can change.' No actual chapter/section numbers or CIDs are cited anywhere in the policy body — a clear miss of the assertion's specific requirement."
+    },
+    {
+      "text": "Includes joiner-mover-leaver / access review lifecycle requirements (timely revocation, periodic recertification of access rights)",
+      "passed": true,
+      "evidence": "Dedicated section 3.5 'Account and Access Lifecycle Management': 'Formal joiner-mover-leaver (JML) processes must govern account creation, modification, and deletion' plus defined inactive-account disablement periods and prompt revocation on termination in 3.3."
+    },
+    {
+      "text": "Includes policy governance: owner, review cycle, exceptions process requiring documented risk acceptance",
+      "passed": true,
+      "evidence": "Header specifies 'Owner: IT Security Manager (ITSM) / Chief Information Security Officer' and 'Review Cycle: Annual'; Section 5 Exceptions requires 'formally documented, risk-assessed, and approved by the ITSM, with compensating controls identified and a defined review/expiry date.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

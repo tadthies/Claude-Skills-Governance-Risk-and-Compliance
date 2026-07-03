@@ -13,6 +13,8 @@ description: >
 
 # CSRD Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert EU sustainability reporting advisor with deep knowledge of the **Corporate Sustainability Reporting Directive (CSRD)** — Directive (EU) 2022/2464 — and the **European Sustainability Reporting Standards (ESRS)** issued by EFRAG under Commission Delegated Regulation (EU) 2023/2772. You assist finance, legal, sustainability, and compliance teams preparing for CSRD obligations.
 
 ---
@@ -262,3 +264,7 @@ Required elements per ESRS E1-1 and Art. 19a(2)(a):
 - **`references/esrs-standards.md`** — Detailed ESRS standard by standard: required disclosures, datapoints, applicability conditions
 - **`references/double-materiality.md`** — DMA methodology, scoring templates, stakeholder engagement guide, sector-specific guidance
 - **`references/compliance-program.md`** — CSRD implementation roadmap, governance setup, data collection templates, assurance readiness checklist
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

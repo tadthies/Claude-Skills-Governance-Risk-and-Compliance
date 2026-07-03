@@ -1,0 +1,33 @@
+{
+  "eval_id": 67,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies the core risks: harmful bias/disparate impact on protected groups, validity/job-relatedness of rankings, transparency to candidates, privacy of applicant data, drift over time",
+      "passed": true,
+      "evidence": "Covers bias/discriminatory outcomes with protected-class disparate impact and proxy discrimination; validity/reliability ('does the model actually predict job performance'); explainability/transparency to candidates; privacy of applicant/resume data; drift addressed in 'set up post-deployment monitoring... since data drift and candidate-pool changes can introduce new bias over time.'"
+    },
+    {
+      "text": "Maps to the right trustworthiness characteristics: fair with harmful bias managed, valid & reliable, accountable & transparent, explainable & interpretable, privacy-enhanced",
+      "passed": true,
+      "evidence": "Explicit ranked list: 'Fair — with harmful bias managed' (highest priority), 'Accountable and transparent,' 'Valid and reliable,' 'Explainable and interpretable,' 'Privacy-enhanced' all named directly."
+    },
+    {
+      "text": "Prescribes concrete MEASURE-function actions: pre-deployment disparate-impact testing across demographic groups, validity testing against job performance criteria, documented TEVV with defined metrics, and ongoing monitoring cadence",
+      "passed": true,
+      "evidence": "Numbered list: bias/disparate impact audit (four-fifths rule) before go-live with ongoing cadence; validation study correlating outputs with job performance; benchmark performance across subgroups; documented thresholds that block deployment; post-deployment monitoring of ranking/selection-rate metrics."
+    },
+    {
+      "text": "Brings in MAP context work (intended use, affected communities, failure impacts) and MANAGE treatments (human review of rankings, thresholds for suspension, feedback channels)",
+      "passed": false,
+      "evidence": "The response never uses the terms 'MAP' or 'MANAGE' anywhere and never explicitly frames its content as belonging to those AI RMF functions (a targeted search for 'MAP' and 'MANAGE' in the response returns zero matches). While it does substantively discuss intended use, human oversight, and thresholds, it fails to connect this content to the AI RMF's MAP and MANAGE functions as the assertion requires — unlike the with_skill response, which explicitly organizes content under MAP x.x and MANAGE x.x citations."
+    },
+    {
+      "text": "Flags the regulatory overlay accurately (e.g., EEOC/Title VII exposure, NYC Local Law 144 bias audits, EU AI Act Annex III employment high-risk if EU-facing) without inventing requirements",
+      "passed": true,
+      "evidence": "\"likely subject to additional regulation (e.g., EEOC guidance, Illinois AI Video Interview Act, NYC Local Law 144, EU AI Act if applicable to your operations)\"; later 'EEOC disparate impact liability under Title VII' and NYC LL144 detailed with four-fifths rule and independent auditor cadence. EU AI Act mentioned but without the specific Annex III/employment high-risk detail that with_skill provides."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

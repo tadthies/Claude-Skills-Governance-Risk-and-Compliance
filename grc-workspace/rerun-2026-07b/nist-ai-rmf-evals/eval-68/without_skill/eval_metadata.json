@@ -1,0 +1,13 @@
+{
+  "eval_id": 68,
+  "eval_name": "credit-scoring-risk-register",
+  "run_type": "without_skill",
+  "prompt": "Build me an AI risk register template for a financial services firm deploying a credit scoring model. Include the AI RMF categories each risk maps to, and suggest treatment options.",
+  "assertions": [
+    "Delivers an actual register template with sensible columns (risk ID/description, lifecycle stage, AI RMF function/category mapping, trustworthiness characteristic, likelihood/impact, treatment, owner, status)",
+    "Populates credit-scoring-specific risks: disparate impact/fair lending, model validity/population drift, explainability of adverse-action reasons, data quality/privacy, third-party model dependencies, security/adversarial manipulation",
+    "Maps risks to plausible AI RMF functions/categories (e.g., bias testing under MEASURE 2.x, context/impact identification under MAP, treatment decisions under MANAGE 1.x/2.x, oversight under GOVERN) without inventing nonexistent category IDs",
+    "Treatment options are concrete and financial-services-appropriate: fairness constraints/reweighting, challenger models, human review bands, adverse action reason-code validation, model risk management (SR 11-7-style) integration",
+    "Flags applicable regulatory context accurately: ECOA/Reg B adverse action notices, FCRA, fair lending exams — treatments tied to those obligations"
+  ]
+}

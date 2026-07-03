@@ -1,0 +1,33 @@
+{
+  "eval_id": 132,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Does not give a flat yes/no: explains offshore hosting of NZ government data is a risk-based decision requiring a formal cloud risk assessment and agency-level approval (accreditation/risk acceptance by the responsible authority), not a prohibition",
+      "passed": true,
+      "evidence": "'Short answer: it may be possible, but not by default, and not without formal approval. The NZISM treats offshore hosting of Restricted-and-above information as an exception that requires explicit risk acceptance, not a routine architecture choice.'"
+    },
+    {
+      "text": "References the NZ Government cloud framework accurately: cloud-first policy with security requirements, the government cloud risk assessment process, and Protective Security Requirements (PSR) obligations alongside the NZISM",
+      "passed": false,
+      "evidence": "Mentions the 'NZ Government Cloud Computing Risk & Resilience Guide' and a cloud risk assessment, but never mentions the government's cloud-first policy or the Protective Security Requirements (PSR) at all — both specifically named in the assertion."
+    },
+    {
+      "text": "Addresses jurisdiction and sovereignty risk explicitly: offshore hosting means Australian jurisdiction over the data; assess legal access regimes, data residency commitments, and exit strategy",
+      "passed": true,
+      "evidence": "'Jurisdictional exposure: AWS Sydney is subject to Australian law, and AWS as a US company may also be subject to US legal instruments (e.g., CLOUD Act)...' plus an explicit 'Exit strategy / data portability and secure deletion terms' checklist row."
+    },
+    {
+      "text": "Requires classification-appropriate controls for RESTRICTED: encryption at rest and in transit with agency-controlled keys where feasible, access controls limited to cleared personnel, logging/monitoring, and supplier assurance evidence (e.g., IRAP/independent assessments of the AWS region)",
+      "passed": false,
+      "evidence": "Covers encryption at rest/in transit (TLS 1.2+) and generic 'recognised security certification (e.g., ISO 27001 or equivalent)', but never discusses agency-controlled key management, never restricts access to 'cleared personnel', never mentions logging/monitoring requirements, and never references IRAP or any independent assessment of the specific AWS region — most of the assertion's specific sub-requirements are absent."
+    },
+    {
+      "text": "Sets out the approval chain: documented risk assessment, CISO/ITSM review, and formal risk acceptance by the accreditation authority/agency head before go-live, with the decision recorded",
+      "passed": false,
+      "evidence": "Covers documented risk assessment and formal, documented Accrediting Authority approval repeatedly, but never mentions a CISO/ITSM review step anywhere in the response — the approval chain as described skips directly from risk assessment to Accrediting Authority, omitting the specific ITSM/CISO review link the assertion requires."
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}

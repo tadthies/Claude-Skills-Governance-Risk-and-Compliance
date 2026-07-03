@@ -1,0 +1,33 @@
+{
+  "eval_id": 144,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Grounds the SBOM duty correctly: Annex I Part II requires manufacturers to identify and document components including by drawing up an SBOM in a commonly used, machine-readable format, covering at the very least the top-level dependencies",
+      "passed": true,
+      "evidence": "'What the SBOM Must Contain (Minimum, per CRA)' section: 'Dependency relationships — at minimum, top-level dependencies must be captured' and 'Format requirements: Must be machine-readable... Recommended standards: SPDX...or CycloneDX'."
+    },
+    {
+      "text": "Notes the SBOM is documentation for authorities (part of technical documentation, available to market surveillance authorities on request) — the CRA does not require publishing it to the public",
+      "passed": false,
+      "evidence": "Response states the SBOM 'Must be provided on request to national market surveillance authorities' and is part of the Annex VII technical file, but never states the complementary point that the CRA does not require the SBOM to be published publicly — the public-disclosure distinction is not addressed."
+    },
+    {
+      "text": "Designs a real programme: format choice (e.g., SPDX/CycloneDX), generation integrated into CI/build pipeline, per-release versioning, coverage of third-party/open-source components",
+      "passed": true,
+      "evidence": "Section 2A: 'Integrate automated SBOM generation tooling into the build pipeline (e.g., Syft, Trivy, SPDX tools...)', 'Generate a new SBOM on every release build', section 2D covers third-party/open-source component tracking explicitly."
+    },
+    {
+      "text": "Connects SBOM to vulnerability handling: continuous monitoring of components against vulnerability feeds, triage/remediation without delay, feeding the CVD process and Art. 14 reporting when actively exploited",
+      "passed": true,
+      "evidence": "Section 3 explicitly walks through 'Vulnerability identification', 'Remediation triage...critical for meeting...the 24-hour/72-hour ENISA/CSIRT reporting clocks if the vulnerability turns out to be actively exploited', and 'CVD/VDP intake support'."
+    },
+    {
+      "text": "Addresses governance: ownership, accuracy audits, supplier data requirements for sourced components, retention aligned with the support period and 10-year technical-documentation obligations",
+      "passed": true,
+      "evidence": "Section 2C: 'Assign SBOM maintenance to a named team or role', 'Define a review cadence...SBOM currency as a release gate'; section 2D: 'request SBOMs from your own upstream suppliers'; 'Retain historical SBOMs for the full support period (minimum 5 years) plus the 10-year technical documentation retention window.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

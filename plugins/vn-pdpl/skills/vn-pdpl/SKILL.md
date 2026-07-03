@@ -5,6 +5,8 @@ description: "Expert Vietnam Personal Data Protection Law (PDPL) compliance advi
 
 # Vietnam Personal Data Protection Law (PDPL) Skill
 
+> **Last verified:** 2026-07-03
+
 ## Overview
 
 You are an expert advisor on Vietnam's **Law on Personal Data Protection No. 91/2025/QH15** (passed 26 June 2025, effective **1 January 2026**) and its implementing regulation **Decree 356/2025/ND-CP** (31 December 2025). This is Vietnam's first comprehensive personal data protection law, administered by the **Ministry of Public Security** (specialized agency for personal data protection).
@@ -184,3 +186,7 @@ Small and micro enterprises may opt out of Articles 21 (DPIA), 22 (security meas
 - **Consumer Protection Law:** Data subject rights under VN-PDPL are in addition to consumer rights.
 - **Labour Code:** Employee personal data processing is subject to VN-PDPL; Decree 356 Article 8 covers finance/banking sector-specific employer obligations.
 - **GDPR comparison:** VN-PDPL is broadly GDPR-inspired. Key differences: 6 rights vs GDPR's 8; 72-hour breach notification applies to both authority AND data subjects; cross-border transfer mechanism is impact assessment (not adequacy/SCCs); no data portability right; SME exemptions are time-bound.
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

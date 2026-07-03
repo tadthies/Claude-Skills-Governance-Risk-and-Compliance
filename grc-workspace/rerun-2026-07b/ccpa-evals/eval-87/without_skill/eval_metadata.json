@@ -1,0 +1,13 @@
+{
+  "eval_id": 87,
+  "eval_name": "know-delete-workflow",
+  "run_type": "without_skill",
+  "prompt": "A California resident has submitted a request to know exactly what personal information we hold about them, and also wants it all deleted. Walk me through how to handle both requests, including identity verification and any exceptions we can invoke.",
+  "assertions": [
+    "Sets out the timeline correctly: confirm receipt within 10 business days; substantive response within 45 calendar days, extendable by a further 45 days with notice",
+    "Explains tiered identity verification (reasonable degree vs reasonably high degree depending on sensitivity; specific-pieces requests require higher assurance) and that unverifiable delete requests may be treated as opt-out where applicable",
+    "Right to know: covers categories AND specific pieces, sources, purposes, third parties — with the 12-month lookback default (and the CPRA extension beyond 12 months where feasible on request)",
+    "Deletion: instructs flowing the deletion to service providers/contractors, and cites legitimate statutory exceptions (e.g., complete the transaction, security/fraud, legal compliance, internal uses compatible with expectations) rather than inventing exceptions",
+    "Advises maintaining request records (24-month record-keeping) and responding even when denying (state the reason and the exception relied on)"
+  ]
+}

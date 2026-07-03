@@ -1,0 +1,33 @@
+{
+  "eval_id": 131,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Explains the two distinct stages correctly: CERTIFICATION = technical assessment that NZISM controls are implemented and effective; ACCREDITATION = formal acceptance of residual risk by the Accreditation Authority allowing the system to operate",
+      "passed": true,
+      "evidence": "'Certification — ... confirming that the system, as built and operated, meets the security requirements documented in the SSP/SRMP. This is a technical statement of assurance, not a risk-acceptance decision.' and 'Accreditation — A formal, documented decision by the agency's Accreditation Authority ... to accept the residual risk and authorise the system to operate.'"
+    },
+    {
+      "text": "Identifies the missing Security Risk Management Plan (SRMP) as a core gap — C&A requires documented risk assessment/management artifacts alongside the SSP/SecPlan",
+      "passed": true,
+      "evidence": "Gap table: 'Security Risk Management Plan | Does not exist | Critical gap — no formal risk assessment underpinning the SSP's control selections | ... accreditation cannot proceed without this.' Also named as the #1 immediate priority in the remediation path."
+    },
+    {
+      "text": "Flags the absence of control validation testing as blocking certification (controls must be verified as implemented and effective, not just documented), and the missing ITSM/security-practitioner sign-off in the certification chain",
+      "passed": true,
+      "evidence": "'Control Validation/Testing | None performed | Critical gap — no evidence controls operate as intended | Certification cannot be granted without independent validation.' 'ITSM Sign-off | Not obtained | No endorsement from IT Security Manager | Accreditation Authority typically will not (and should not) accept a system without ITSM recommendation.'"
+    },
+    {
+      "text": "Correctly frames NZISM authorship/authority: issued by the GCSB (NCSC NZ) as the NZ government information security manual, with MUST/SHOULD compliance requirements tied to classification (RESTRICTED here), and notes essential/baseline controls cannot simply be waived without formal risk acceptance",
+      "passed": false,
+      "evidence": "Footer note only says 'consult the current published NZISM (via the NZ GCSB/NCSC)' — a citation hint, not an authorship/authority statement in the body. No use of MUST/SHOULD compliance terminology, and no discussion that essential/baseline controls cannot be waived without formal risk acceptance. Assertion's specific requirements are not met."
+    },
+    {
+      "text": "Produces a usable gap table/plan with prioritised remediation (SRMP first, control validation, certification review, then accreditation decision) rather than generic advice",
+      "passed": true,
+      "evidence": "Contains a gap-analysis table plus a numbered 'Priority Remediation Path' (1. Develop SRMP immediately, 2. Finalise SSP, 3. Complete implementation, 4. Commission validation testing, 5. ITSM sign-off, 6. Submit for certification, 7. accreditation/do-not-operate warning) — concrete and correctly sequenced."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

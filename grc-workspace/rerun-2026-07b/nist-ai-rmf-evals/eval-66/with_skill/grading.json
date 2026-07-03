@@ -1,0 +1,33 @@
+{
+  "eval_id": 66,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Describes all four functions faithfully to NIST AI 100-1: GOVERN (cross-cutting culture, policies, roles, risk tolerance), MAP (context, categorization, capabilities/limitations, impacts), MEASURE (TEVV — analyze, assess, track risks with metrics), MANAGE (prioritize, treat, respond, recover)",
+      "passed": true,
+      "evidence": "GOVERN described as culture/policy/accountability/risk tolerance foundation; MAP covers context of intended use, capabilities/limitations, risks/benefits mapped to stakeholders, prioritization; MEASURE explicitly named as applying 'TEVV (Test, Evaluation, Verification, and Validation)' with metrics; MANAGE covers prioritizing, treating, monitoring, closing the loop."
+    },
+    {
+      "text": "States the structural relationship correctly: GOVERN is the cross-cutting foundation feeding the other three; MAP informs MEASURE which informs MANAGE, iteratively across the AI lifecycle",
+      "passed": true,
+      "evidence": "\"GOVERN is drawn as the base... it's the continuous accountability layer everything else operates inside. MAP, MEASURE, and MANAGE then form an iterative loop... you MAP the context and risks, MEASURE them with TEVV activities, MANAGE the response, and feed lessons learned back into both GOVERN... and MAP.\""
+    },
+    {
+      "text": "Recommends starting with GOVERN (policies, accountability, inventory, risk tolerance) — the canonical NIST guidance for organizations beginning adoption",
+      "passed": true,
+      "evidence": "\"Start with GOVERN. Specifically, in this order: 1. GOVERN 1 — Publish an org-wide AI Risk Management Policy... 2. GOVERN 2 — Appoint an accountable owner... 3. GOVERN 4 — Stand up a cross-functional AI Risk Working Group... 4. GOVERN 5/6 — Define risk tolerance tiers.\""
+    },
+    {
+      "text": "Mentions that the framework is voluntary and outcome-based (not a compliance checklist), organized into categories/subcategories with a companion Playbook",
+      "passed": false,
+      "evidence": "Response states the framework is 'voluntary and non-prescriptive' and references category/subcategory counts per function, but never mentions the companion AI RMF Playbook or frames it explicitly as 'outcome-based, not a checklist.'"
+    },
+    {
+      "text": "References the seven trustworthiness characteristics (valid & reliable, safe, secure & resilient, accountable & transparent, explainable & interpretable, privacy-enhanced, fair with harmful bias managed) as the risk lens the functions operationalize",
+      "passed": false,
+      "evidence": "No mention of the seven trustworthiness characteristics anywhere in the response; MEASURE section refers only generically to 'trustworthiness evaluation... including bias, explainability, and security testing' without listing/naming the full set."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

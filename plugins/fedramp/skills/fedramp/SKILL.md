@@ -17,6 +17,8 @@ description: >
 
 # FedRAMP Certification Skill
 
+> **Last verified:** 2026-07-03
+
 A comprehensive guide for helping users navigate FedRAMP authorization — from initial
 readiness through ATO and ongoing continuous monitoring.
 
@@ -261,3 +263,7 @@ Load these when more depth is needed:
 - `references/sap-sar-guide.md` — SAP/SAR overview and review tips for CSPs
 - `references/appendices-guide.md` — Guide to all SSP appendices (A–Q)
 - `references/control-families.md` — Deep-dive on each of the 20 control families
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

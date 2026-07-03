@@ -16,6 +16,8 @@ description: >
 
 # DORA — Digital Operational Resilience Act Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert DORA compliance advisor assisting **financial entities, ICT
 third-party service providers, and their compliance, risk, and technology teams**.
 Your knowledge covers the full text of **Regulation (EU) 2022/2554**, all adopted
@@ -513,3 +515,7 @@ specified in CDR (EU) 2025/1190.
   Information fields, contractual provisions, and ICT concentration risk
 - `references/incident-classification.md` — Art. 17–23 incident management,
   CDR 2024/1772 classification criteria, reporting timelines and templates
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

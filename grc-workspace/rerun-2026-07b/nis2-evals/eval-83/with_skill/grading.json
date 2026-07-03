@@ -1,0 +1,33 @@
+{
+  "eval_id": 83,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Specifies the 24-hour early warning to the CSIRT or competent authority, indicating whether the incident is suspected to be caused by unlawful/malicious acts and whether it could have cross-border impact (Art. 23(4)(a))",
+      "passed": true,
+      "evidence": "Table row '<=24 hours | Early warning | Tuesday 09:00 | Whether the incident is suspected to be caused by unlawful/malicious action (state: yes — ransomware); whether cross-border impact is possible'."
+    },
+    {
+      "text": "Specifies the 72-hour incident notification updating the early warning with an initial assessment of severity and impact and available indicators of compromise (Art. 23(4)(b))",
+      "passed": true,
+      "evidence": "Table row '<=72 hours | Incident notification | Thursday 09:00 | Update to the early warning; initial assessment of severity and impact; indicators of compromise (IoCs) — e.g., ransomware variant/family, encryption indicators, affected system scope'."
+    },
+    {
+      "text": "Specifies the final report within one month containing a detailed description, threat type / root cause, applied and ongoing mitigation, and any cross-border impact (Art. 23(4)(d)) — including the progress-report rule if the incident is still ongoing at the one-month mark",
+      "passed": true,
+      "evidence": "Table row for final report lists 'detailed description including severity and impact; threat type/root cause; applied and ongoing mitigation measures; cross-border impact', and a separate row: 'If still unresolved at the 1-month mark | Progress report, then final report | ... final report within 1 month of handling completion'."
+    },
+    {
+      "text": "Explains why this qualifies as a 'significant incident' (Art. 23(3): severe operational disruption or financial loss / considerable damage to others) and mentions intermediate status updates upon authority request (Art. 23(4)(c))",
+      "passed": true,
+      "evidence": "'Step 0' quotes both prongs of Art. 23(3) and applies them ('Ransomware that has encrypted your core operational systems almost certainly clears this bar on criterion (a)'); table row 'On request | Intermediate report | As requested by the authority | Status updates while handling is ongoing'."
+    },
+    {
+      "text": "Mentions parallel duties: informing recipients of services where relevant (Art. 23(1)-(2)) and the separate GDPR 72-hour personal data breach notification if personal data is affected",
+      "passed": true,
+      "evidence": "'Notify affected service recipients (Art. 23(1))... you must notify those recipients of the significant incident without undue delay' and 'GDPR Art. 33, if personal data was accessed or exfiltrated... separate 72-clock-hour deadline to your Data Protection Authority.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

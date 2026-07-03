@@ -1,0 +1,33 @@
+{
+  "eval_id": 137,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the regulator and deadline correctly: notify the Ministry of Public Security (A05 — Department of Cybersecurity and Hi-tech Crime Prevention) within 72 HOURS of detecting the violation/breach",
+      "passed": true,
+      "evidence": "'Who: The Ministry of Public Security (specifically its Cybersecurity and Hi-Tech Crime Prevention unit, A05, which has traditionally been the enforcement body for Vietnam's data protection rules) is the primary authority to notify... reported informally within 72 hours is the benchmark practitioners use.' This names MPS, A05, and the Cybersecurity and Hi-Tech Crime Prevention unit explicitly, plus the 72-hour figure, though it hedges the deadline as a 'benchmark' rather than a firm hard deadline."
+    },
+    {
+      "text": "Describes notification content: nature of the incident, data and subjects affected, time of detection, measures taken, contact point — and that late notification requires explaining the delay",
+      "passed": false,
+      "evidence": "Response lists: 'Description of the breach (nature, categories and approximate number of data subjects/records affected); Contact point...; Likely consequences...; Measures taken or proposed...; Timeline of discovery and response.' This covers nature, data/subjects affected, time of detection, measures taken, and contact point — but nowhere does the response state that late/delayed notification requires explaining the delay, which is an explicit required element of this assertion."
+    },
+    {
+      "text": "Covers immediate response steps alongside notification: contain and eradicate, preserve forensic evidence, assess scope and harm to data subjects",
+      "passed": true,
+      "evidence": "'Step 1: Internal Triage... Contain the breach (isolate affected systems, revoke compromised credentials, patch the vulnerability)... Begin a breach log capturing: discovery time, nature of the incident, systems/data affected, and actions taken' and 'Step 2: Assess Scope and Severity... Estimate number of data subjects affected, whether data was exfiltrated vs. merely exposed, and likely harm.' This covers containment and scope/harm assessment; forensic evidence preservation is implied via the breach log but not explicitly named as 'forensic evidence.'"
+    },
+    {
+      "text": "Addresses data subject and sectoral dimensions: informing affected customers where harm is likely, and the fintech overlay (State Bank of Vietnam expectations for financial institutions, contractual counterparty notices) without inventing specific SBV deadlines",
+      "passed": true,
+      "evidence": "'Step 5: Sector Regulator Coordination (Fintech-Specific) — As a fintech in Vietnam, you likely also fall under State Bank of Vietnam (SBV) oversight... SBV may have its own incident reporting obligations that run in parallel... check your SBV licensing conditions for breach/incident reporting timelines, as these are often stricter (sometimes same-day or 24-hour reporting for serious incidents).' This correctly flags the SBV overlay without asserting a fixed invented deadline, hedging appropriately with 'may,' 'check your licensing conditions,' and 'sometimes.' Data subject notification is also covered in Step 4. Contractual counterparty notices are not explicitly mentioned, but the core sectoral requirement is met without fabricating specific SBV deadlines."
+    },
+    {
+      "text": "Requires documentation and follow-up: incident record for accountability, root-cause remediation, and updating the impact assessment dossier where the incident changes the risk picture",
+      "passed": true,
+      "evidence": "'Step 6: Document Everything — Maintain a full incident record...' and 'Step 7: Post-Incident Remediation and Review — Implement corrective actions... Update your DPIA/risk assessment to reflect lessons learned.' This directly covers incident record, root-cause remediation, and DPIA/impact-assessment dossier updates."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

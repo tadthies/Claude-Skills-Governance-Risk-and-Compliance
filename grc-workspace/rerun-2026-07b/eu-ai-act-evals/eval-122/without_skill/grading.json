@@ -1,0 +1,33 @@
+{
+  "eval_id": 122,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies this as a PROHIBITED practice under Art. 5(1)(d): AI systems making risk assessments of natural persons to assess or predict the risk of committing a criminal offence based solely on profiling or on assessing personality traits and characteristics",
+      "passed": true,
+      "evidence": "Response states: 'Article 5(1)(d) prohibits... AI system for making risk assessments of natural persons in order to assess or predict the risk of a natural person committing a criminal offence, when that assessment is based solely on profiling of a natural person or on assessing their personality traits and characteristics.' and matches the described system to it 'almost exactly'."
+    },
+    {
+      "text": "States the prohibition has applied since 2 February 2025 (prohibitions were the first obligations to take effect)",
+      "passed": true,
+      "evidence": "Response states: 'This prohibition has applied since 2 February 2025 (six months after entry into force), so it is already in full legal effect as of today (July 2026).'"
+    },
+    {
+      "text": "Explains the carve-out accurately: Art. 5(1)(d) does not cover AI used to SUPPORT a human assessment already based on objective and verifiable facts directly linked to a criminal activity — and assesses whether the described system (personality traits + past behaviour) fits the prohibition (it does, to the extent based on profiling/traits)",
+      "passed": true,
+      "evidence": "Response explains: 'the prohibition does not apply to AI systems used to support the human assessment of the involvement of a person in a criminal activity that is already based on objective and verifiable facts directly linked to a criminal activity' then assesses: 'Your described use case does not fit this exception because... It is a predictive/actuarial risk score about future offending... explicitly relies on personality traits and past behaviour profiling.'"
+    },
+    {
+      "text": "States penalty exposure for prohibited practices: up to €35M or 7% of worldwide annual turnover (Art. 99(3))",
+      "passed": true,
+      "evidence": "Response states: 'fines of up to €35 million or 7% of total worldwide annual turnover for the preceding financial year, whichever is higher (Article 99).'"
+    },
+    {
+      "text": "Advises concretely: do not place on the EU market for this use; discusses redesign options (e.g., objective-facts-based decision support with human assessment) or declining the procurement",
+      "passed": true,
+      "evidence": "Recommendation section states 'Do not proceed with development/sale of this specific product for this use case' and 'consider redesigning the tool to support human analysts in linking objective, verifiable facts to specific known criminal activity, rather than producing predictive risk scores based on personality/behavioural profiling'."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

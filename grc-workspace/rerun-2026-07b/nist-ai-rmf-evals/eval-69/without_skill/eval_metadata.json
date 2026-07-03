@@ -1,0 +1,13 @@
+{
+  "eval_id": 69,
+  "eval_name": "eu-ai-act-mapping",
+  "run_type": "without_skill",
+  "prompt": "We are subject to the EU AI Act and also want to align with NIST AI RMF. How do these two frameworks map to each other? Are there gaps we need to fill if we implement AI RMF but still need to comply with the EU AI Act?",
+  "assertions": [
+    "States the fundamental difference correctly: AI RMF is voluntary risk guidance; the EU AI Act is binding law with penalties, conformity assessment, and CE marking — RMF alignment alone never satisfies the AI Act",
+    "Provides sensible construct mappings: GOVERN ↔ QMS Art. 17 / accountability; MAP ↔ risk classification + intended-purpose documentation; MEASURE ↔ Art. 15 accuracy/robustness testing + Art. 9 risk management evidence; MANAGE ↔ Art. 9 lifecycle risk management + post-market monitoring Art. 72",
+    "Identifies concrete AI Act obligations with no RMF equivalent: conformity assessment/CE marking, EU database registration, technical documentation per Annex IV, serious-incident reporting, FRIA (Art. 27) where applicable, prohibited-practice screening",
+    "Notes risk-tiering difference: AI Act's fixed legal tiers (prohibited/high/limited/minimal + GPAI) vs RMF's contextual risk assessment",
+    "Recommends a practical integration: use RMF processes as the management-system engine, then overlay AI Act artifact requirements — one programme, two outputs"
+  ]
+}

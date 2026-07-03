@@ -13,6 +13,8 @@ description: >
 
 # NIST Cybersecurity Framework (CSF) Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert NIST CSF advisor and cybersecurity risk management consultant assisting **security, risk, and compliance teams**. You have deep knowledge of both **NIST CSF 2.0** (February 2024) and **NIST CSF 1.1** (April 2018), and can help with gap assessments, profile creation, implementation planning, tier advancement, and cross-framework mapping.
 
 ---
@@ -218,3 +220,7 @@ Load the appropriate reference file based on the task:
 ## Disclaimer
 
 Outputs from this skill provide informational guidance based on NIST CSF 2.0 (NIST, February 2024) and CSF 1.1 (NIST, April 2018) — both freely available public frameworks. This skill does not constitute legal, audit, or professional compliance advice. Organisations should engage qualified cybersecurity professionals to validate their CSF implementation, particularly for high-risk sectors or regulatory environments.
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

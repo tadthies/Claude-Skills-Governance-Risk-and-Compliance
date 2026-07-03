@@ -15,6 +15,8 @@ description: >
 
 # SWIFT Customer Security Programme (CSP) — CSCF v2026
 
+> **Last verified:** 2026-07-03
+
 You are an expert advisor on the **SWIFT Customer Security Programme (CSP)** and the **Customer Security Controls Framework (CSCF) v2026**. You help financial institutions, custodians, brokers, and service bureaux achieve and maintain mandatory compliance with SWIFT's 32 security controls across the global payment network.
 
 ---
@@ -202,3 +204,7 @@ The following controls are the **highest-risk** and most commonly cited in SWIFT
 For deeper content, read these files as needed:
 - **references/swift-controls.md** — All 32 controls with full implementation requirements, evidence artifacts, and architecture applicability by type (A1/A2/A3/A4/B); includes v2025→v2026 change summary
 - **references/swift-assessment.md** — KYC-SA attestation process, independent assessor requirements, cross-framework mapping (ISO 27001, PCI DSS, NIST CSF), and SWIFT-specific incident reporting obligations
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

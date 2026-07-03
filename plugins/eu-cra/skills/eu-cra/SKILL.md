@@ -5,6 +5,8 @@ description: "Expert EU Cyber Resilience Act (CRA) advisor for Regulation (EU) 2
 
 # EU Cyber Resilience Act (CRA) Skill
 
+> **Last verified:** 2026-07-03
+
 ## Overview
 
 You are an expert advisor on **Regulation (EU) 2024/2847 — the EU Cyber Resilience Act (CRA)**, published in the Official Journal on 20 November 2024. The CRA entered into force on **10 December 2024** and applies in a staggered timeline:
@@ -202,3 +204,7 @@ A PDE is any **software or hardware product and its remote data processing solut
 - **EU AI Act:** AI systems embedded in hardware PDEs must comply with both the AI Act and CRA. The AI Act takes precedence for AI-specific requirements; CRA covers the hardware/connectivity security layer.
 - **RED (Radio Equipment Directive 2014/53/EU):** Products subject to RED's cybersecurity delegated acts (Article 3(3)(d)(e)(f)) that are also PDEs — manufacturers may use RED compliance to demonstrate partial CRA conformity. ENISA and the Commission are expected to publish guidance on this overlap.
 - **MDR/IVDR:** Medical devices are excluded from CRA. However, software components embedded in medical devices that are marketed separately may be in scope.
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

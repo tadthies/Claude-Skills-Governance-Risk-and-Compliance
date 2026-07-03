@@ -1,0 +1,33 @@
+{
+  "eval_id": 81,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+      "passed": true,
+      "evidence": "'Energy — specifically electricity — is listed in Annex I (Sectors of High Criticality). Electricity distribution system operators (DSOs) are explicitly named as a sub-sector entity type within the energy sector.'"
+    },
+    {
+      "text": "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the large-enterprise ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+      "passed": false,
+      "evidence": "The response concludes 'You should expect to be classified as an Essential Entity' on the stated basis that 'electricity distribution operators are explicitly identified as one of the entity types automatically treated as Essential Entities in the energy sector (this designation typically does not depend on size for DSOs and TSOs specifically...)'. It never applies the actual Art. 3 large-enterprise ceiling (250 employees / >€50M turnover AND >€43M balance sheet) to conclude the correct default of Important Entity; instead it asserts, incorrectly, that DSO status alone overrides the size test. This is exactly the FAIL condition described in the assertion — essential concluded from sector/entity-type alone without the required size analysis leading to the correct IE default."
+    },
+    {
+      "text": "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+      "passed": true,
+      "evidence": "Section '2. Cybersecurity Risk Management Measures (Article 21)' lists all ten measures (risk analysis, incident handling, business continuity, supply chain security, secure acquisition/development, effectiveness assessment, cyber hygiene/training, cryptography, HR/access control/asset management, MFA/secured comms)."
+    },
+    {
+      "text": "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+      "passed": true,
+      "evidence": "Section '3. Incident Reporting (Article 23)' lists 'Early warning within 24 hours', 'Incident notification within 72 hours', 'Final report within one month'."
+    },
+    {
+      "text": "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)",
+      "passed": true,
+      "evidence": "Section '5. Governance and Accountability' covers management body approval/oversight, personal liability, training; Section '1. Registration' covers registering with BSI under German transposition."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

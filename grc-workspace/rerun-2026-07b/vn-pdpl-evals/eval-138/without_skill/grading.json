@@ -1,0 +1,33 @@
+{
+  "eval_id": 138,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the exemption accurately: the PDPL grants small and micro enterprises (and startups) relief from certain obligations — notably DPO appointment and impact-assessment duties — for an initial period (5 years from the law's effectivity), by election",
+      "passed": false,
+      "evidence": "The response explicitly denies the existence of a defined, election-based SME exemption: 'There is no blanket \"small business exemption\" from Vietnam's Personal Data Protection Law (PDPL) itself' and frames DPIA/DPO applicability as purely 'Risk-based, not headcount-based.' It never mentions a 5-year time-bound exemption or an election mechanism at all. This fails to state the actual PDPL exemption accurately."
+    },
+    {
+      "text": "States the exemption's limits correctly: it does NOT apply to entities that process sensitive personal data, process data at large scale, or are themselves in the business of personal data processing services — the startup must check these disqualifiers",
+      "passed": false,
+      "evidence": "Since the response denies a specific SME exemption exists, it cannot correctly state that exemption's limits. It discusses sensitive data and scale only as general risk factors that trigger DPIA/DPO obligations ('If you process personal data at meaningful scale, process sensitive personal data... a DPIA is likely required'), not as disqualifiers to a defined 5-year opt-out. It never mentions the disqualifier for entities in the business of personal data processing services."
+    },
+    {
+      "text": "Correctly notes what is NOT exempted: core duties still apply — valid consent, security measures, breach notification, data subject rights, and cross-border transfer rules",
+      "passed": false,
+      "evidence": "The response lists baseline obligations that 'likely still apply': lawful basis/consent, privacy notice, data subject rights, 'reasonable security safeguards', and records of processing. It does not mention breach notification at all, and does not mention cross-border transfer rules. Two of the five required items (breach notification, cross-border transfer) are missing, so the specific list required by the assertion is not adequately covered."
+    },
+    {
+      "text": "Explains the strategic consideration: electing the exemption doesn't freeze obligations forever; plan for full compliance before the window closes or before scaling into a disqualifying category",
+      "passed": false,
+      "evidence": "Because the response denies that a formal, time-bound elective exemption exists, it cannot and does not discuss planning for a window closing or an election lapsing. It does say 'Revisit thresholds as you scale — obligations that don't strictly apply today may apply as your user base or data sensitivity grows,' which touches on growth-driven disqualification, but omits any mention of a time-limited window that requires proactive planning regardless of growth. This partial, generic risk-scaling statement does not satisfy the specific strategic consideration the assertion demands (which is premised on an elected, time-bound exemption)."
+    },
+    {
+      "text": "Gives the startup a concrete minimal-compliance checklist (consent flows, privacy notice, security baseline, breach playbook, records of processing) sized to its stage",
+      "passed": false,
+      "evidence": "The response provides a 'Bottom Line for Your Startup' checklist: map data, identify sensitive categories, 'fix consent/notice basics', designate a responsible person, do a lightweight risk assessment, revisit thresholds when scaling. This covers consent and notice but omits a security baseline, a breach playbook/breach notification process, and records of processing as concrete checklist items, so it does not fully meet the specific minimal-compliance checklist the assertion requires."
+    }
+  ],
+  "total": 5,
+  "passed": 0
+}

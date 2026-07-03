@@ -1,0 +1,33 @@
+{
+  "eval_id": 82,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Engages the decisive legal question: whether B2B SaaS qualifies as a 'cloud computing service' (Annex I digital infrastructure) under the Art. 6(30) definition (on-demand administration, broad remote access, scalable and elastic pool of shareable computing resources) — and reaches a REASONED conclusion. PASS for a well-argued conclusion either way that applies the definition to the facts; FAIL if the cloud-computing-service question is not analysed at all.",
+      "passed": true,
+      "evidence": "Step 1 quotes the Art. 6(30) definition elements directly ('on-demand administration and broad remote access to a scalable and elastic pool of shareable computing resources') and applies them to the facts (multi-tenant/elastic, remotely accessed, centrally administered), reaching a reasoned conclusion that the company is in scope, with an explicit caveat about single-tenant/fixed-capacity architectures being different."
+    },
+    {
+      "text": "Applies the size threshold correctly: at 75 employees / €15M the company meets the Art. 2(1) medium-size threshold, so IF it qualifies as a cloud computing service it is in scope; and classifies the in-scope outcome as IMPORTANT entity (medium-sized, not in the Art. 3(1) always-essential categories). PASS if the EE/IE size-cap logic is correctly explained even under an out-of-scope conclusion.",
+      "passed": true,
+      "evidence": "Step 2 confirms medium-size threshold is exceeded (75 employees, €15M). Step 3 correctly explains EE requires the large-enterprise ceiling or automatic categories (qualified trust service providers, TLD/DNS, public electronic comms networks, CER-designated) — none of which the company meets — and concludes 'Important Entity (IE)'."
+    },
+    {
+      "text": "Walks through the Art. 21(2)(a)-(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+      "passed": true,
+      "evidence": "A 10-row table maps each Art. 21(2)(a)-(j) measure to concrete HR-SaaS-specific guidance (e.g., 'MFA is explicitly required — enforce it on customer-facing admin consoles...', 'Encryption at rest and in transit for HR/employee data')."
+    },
+    {
+      "text": "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+      "passed": true,
+      "evidence": "'Additional binding technical layer: because you likely qualify as a cloud computing service provider, Commission Implementing Regulation (EU) 2024/2690 applies directly to you... sets quantitative \"significant incident\" thresholds (baseline: direct financial loss above €500,000 or 5% of annual turnover, whichever is lower).'"
+    },
+    {
+      "text": "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)",
+      "passed": true,
+      "evidence": "'Jurisdiction (Art. 26): cloud, data centre, CDN, MSP/MSSP, DNS, TLD... entities are governed by the Member State of their main establishment'; 'Registration (Art. 27)...'; and 'Conclusion: Important Entity (IE), subject to reactive (ex-post) supervision rather than proactive audits.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

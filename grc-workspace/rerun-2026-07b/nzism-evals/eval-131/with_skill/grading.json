@@ -1,0 +1,33 @@
+{
+  "eval_id": 131,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Explains the two distinct stages correctly: CERTIFICATION = technical assessment that NZISM controls are implemented and effective; ACCREDITATION = formal acceptance of residual risk by the Accreditation Authority allowing the system to operate",
+      "passed": true,
+      "evidence": "'Security Assessment (Certification) — independent technical review/testing that validates controls actually work as documented' and 'Accreditation Decision (ATO) — the Accrediting Authority formally reviews residual risk and grants Authorisation to Operate' — matches both halves of the definition."
+    },
+    {
+      "text": "Identifies the missing Security Risk Management Plan (SRMP) as a core gap — C&A requires documented risk assessment/management artifacts alongside the SSP/SecPlan",
+      "passed": true,
+      "evidence": "Gap table marks 'Security Risk Assessment / SRMP' as ❌ Not Implemented with note 'This is a critical gap — the SRMP is a mandatory C&A artefact and a prerequisite for a meaningful Security Assessment.' Also listed as #1 priority gap."
+    },
+    {
+      "text": "Flags the absence of control validation testing as blocking certification (controls must be verified as implemented and effective, not just documented), and the missing ITSM/security-practitioner sign-off in the certification chain",
+      "passed": true,
+      "evidence": "'Control Validation Testing ... No validation testing means there is no assurance evidence. This blocks the Security Assessment stage entirely — an assessor cannot certify controls that haven't been tested.' Also flags 'No ITSM/Accrediting Authority engagement ... sign-off has not even begun, meaning no ATO exists.'"
+    },
+    {
+      "text": "Correctly frames NZISM authorship/authority: issued by the GCSB (NCSC NZ) as the NZ government information security manual, with MUST/SHOULD compliance requirements tied to classification (RESTRICTED here), and notes essential/baseline controls cannot simply be waived without formal risk acceptance",
+      "passed": false,
+      "evidence": "Only mention of GCSB/NCSC NZ is a generic footer disclaimer ('Verify current requirements against official NZISM/NCSC NZ guidance') — no statement that GCSB/NCSC NZ issues the manual, no MUST/SHOULD compliance terminology used anywhere in the body, and no discussion of essential/baseline controls requiring formal risk acceptance to waive. The specific authorship/authority framing required by the assertion is absent."
+    },
+    {
+      "text": "Produces a usable gap table/plan with prioritised remediation (SRMP first, control validation, certification review, then accreditation decision) rather than generic advice",
+      "passed": true,
+      "evidence": "Contains a full gap-analysis table plus a 'Summary of Critical Gaps' priority list (1. SRMP, 2. control validation, 3. SSP, 4. ITSM/Accrediting Authority) and a phased 'Recommended Remediation Roadmap' table (Prepare→Certify→Remediate→Accredit→Monitor), correctly sequenced with SRMP first."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

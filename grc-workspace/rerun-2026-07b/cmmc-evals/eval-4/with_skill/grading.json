@@ -1,0 +1,33 @@
+{
+  "eval_id": 4,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Explains conditional certification: possible only if the assessment score is at least 88 (0.8 x 110) AND every NOT MET practice is POA&M-eligible",
+      "passed": false,
+      "evidence": "Response discusses the score requirement only vaguely: 'Estimate your resulting score by mapping each of the 8 findings to its point value ... a low score combined with a large POA&M is a weaker certification package.' It never states the specific 88-point minimum score threshold anywhere in the response, despite an entire 'Step 3: Minimum Score Requirement' section dedicated to this topic. This is the core numeric fact the assertion requires and it is missing."
+    },
+    {
+      "text": "States POA&M eligibility rules correctly: only practices worth 1 point may be on a POA&M (no 5-point items; 3-point items excluded except limited partial-credit cases), and names non-POA&M-eligible critical examples (e.g., SC.L2-3.13.11 FIPS crypto, AC.L2-3.1.3, IA.L2-3.5.3)",
+      "passed": true,
+      "evidence": "Response lists a 'critical practices' table naming AC.L2-3.1.3, IA.L2-3.5.3, SC.L2-3.13.11, SC.L2-3.13.8, SI.L2-3.14.6, AU.L2-3.3.1, IR.L2-3.6.1 as never POA&M-eligible, directly matching the required named examples (AC.L2-3.1.3, IA.L2-3.5.3, SC.L2-3.13.11)."
+    },
+    {
+      "text": "States the closeout: POA&M items must be remediated and verified by a closeout assessment within 180 days, or the conditional certification lapses",
+      "passed": true,
+      "evidence": "'180-day clock starts on the certification date. All POA&M items must be fully remediated, with evidence, within that window ... Failure to close out within 180 days triggers certification revocation — this is a hard deadline, not a target.'"
+    },
+    {
+      "text": "Explains the consequence math for THIS scenario: 8 NOT MET practices are compatible with conditional certification only if all 8 are 1-point items and the score floor holds — otherwise remediate and re-assess",
+      "passed": false,
+      "evidence": "Response tells the user to 'map each of the 8 NOT MET items against the critical-practice list' and check point values, but never connects this to the specific numeric conclusion that all 8 would need to be 1-point items for conditional certification to be viable, nor does it state or apply the 88-point floor to the 8-practice scenario. The consequence math specific to this scenario is not spelled out."
+    },
+    {
+      "text": "Mentions the annual senior-official affirmation in SPRS and that a lapsed conditional status affects contract eligibility",
+      "passed": false,
+      "evidence": "Response does not mention SPRS or an annual senior-official affirmation anywhere. It does state that failure to close out triggers 'certification revocation' but does not connect this to contract eligibility impact or SPRS affirmation obligations."
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}

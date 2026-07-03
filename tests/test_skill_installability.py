@@ -372,3 +372,100 @@ def test_plugin_skill_names_match_canonical():
         "Plugin-bundled .skill files with incorrect names:\n"
         + "\n".join(f"  {w}" for w in wrong)
     )
+
+
+# ---------------------------------------------------------------------------
+# Installer-constraint checks (added v1.6.x)
+#
+# The claude.ai skill installer rejects archives for reasons beyond nesting:
+# frontmatter name format/length, description length, junk archive entries.
+# Users have reported "SKILL.md file must be in the top-level folder, not
+# nested deeper" — the nesting rule is covered above; these tests pin down
+# every other known rejection cause so no artifact can ship that fails
+# installation.
+# ---------------------------------------------------------------------------
+
+import re as _re
+
+try:
+    import yaml as _yaml
+except ImportError:  # pragma: no cover
+    _yaml = None
+
+_NAME_PATTERN = _re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+_MAX_NAME_LEN = 64
+_MAX_DESC_LEN = 1024
+_JUNK_MARKERS = ("__MACOSX", ".DS_Store", "Thumbs.db")
+
+
+def _all_skill_zips():
+    zips = sorted(REPO_ROOT.glob("plugins/*/*.skill"))
+    zips += [p for p in sorted(REPO_ROOT.glob("*/*.skill"))
+             if "plugins" not in p.parts]
+    return zips
+
+
+def _frontmatter_of(zip_path):
+    import zipfile
+    with zipfile.ZipFile(zip_path) as zf:
+        skill_md = [n for n in zf.namelist()
+                    if n.endswith("SKILL.md") and n.count("/") == 1][0]
+        text = zf.read(skill_md).decode("utf-8")
+    m = _re.match(r"^---\n(.*?)\n---\n", text, _re.DOTALL)
+    assert m, f"{zip_path.name}: SKILL.md has no YAML frontmatter"
+    assert _yaml is not None, "pyyaml required for installability tests"
+    return _yaml.safe_load(m.group(1)), skill_md.split("/")[0]
+
+
+class TestInstallerConstraints:
+    @pytest.mark.parametrize("zip_path", _all_skill_zips(), ids=lambda p: p.name)
+    def test_no_junk_archive_entries(self, zip_path):
+        """__MACOSX/.DS_Store entries break or pollute installs (a re-zip on
+        macOS Finder adds them); our build pipeline must never ship them."""
+        import zipfile
+        with zipfile.ZipFile(zip_path) as zf:
+            junk = [n for n in zf.namelist()
+                    if any(j in n for j in _JUNK_MARKERS) or n.startswith(".")]
+        assert not junk, f"{zip_path.name}: junk entries {junk}"
+
+    @pytest.mark.parametrize("zip_path", _all_skill_zips(), ids=lambda p: p.name)
+    def test_frontmatter_name_valid(self, zip_path):
+        """Installer requires: name present, lowercase alphanumeric+hyphens,
+        ≤64 chars, and matching the archive's top-level folder."""
+        fm, top = _frontmatter_of(zip_path)
+        name = fm.get("name", "")
+        assert name, f"{zip_path.name}: frontmatter 'name' missing"
+        assert _NAME_PATTERN.fullmatch(name), (
+            f"{zip_path.name}: name {name!r} is not lowercase-hyphen format"
+        )
+        assert len(name) <= _MAX_NAME_LEN, f"{zip_path.name}: name >64 chars"
+        assert name == top, (
+            f"{zip_path.name}: top-level folder {top!r} != frontmatter name {name!r}"
+        )
+
+    @pytest.mark.parametrize("zip_path", _all_skill_zips(), ids=lambda p: p.name)
+    def test_frontmatter_description_within_limit(self, zip_path):
+        """Installer rejects descriptions over 1024 characters."""
+        fm, _ = _frontmatter_of(zip_path)
+        desc = fm.get("description", "") or ""
+        assert desc, f"{zip_path.name}: frontmatter 'description' missing"
+        assert len(desc) <= _MAX_DESC_LEN, (
+            f"{zip_path.name}: description is {len(desc)} chars "
+            f"(installer limit {_MAX_DESC_LEN}). Trim the trigger text."
+        )
+
+    @pytest.mark.parametrize("zip_path", _all_skill_zips(), ids=lambda p: p.name)
+    def test_zip_matches_source_skill_md(self, zip_path):
+        """The bundled SKILL.md must be byte-identical to the source tree —
+        a stale ZIP is the classic way an already-fixed install bug returns."""
+        import zipfile
+        with zipfile.ZipFile(zip_path) as zf:
+            inner = [n for n in zf.namelist()
+                     if n.endswith("SKILL.md") and n.count("/") == 1][0]
+            bundled = zf.read(inner)
+        name = inner.split("/")[0]
+        source = REPO_ROOT / "plugins" / name / "skills" / name / "SKILL.md"
+        assert source.exists(), f"{zip_path.name}: no source at {source}"
+        assert bundled == source.read_bytes(), (
+            f"{zip_path.name}: bundled SKILL.md differs from source — rebuild the ZIP"
+        )

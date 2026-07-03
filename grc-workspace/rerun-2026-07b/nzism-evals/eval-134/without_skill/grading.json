@@ -1,0 +1,33 @@
+{
+  "eval_id": 134,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Treats this correctly as the agency's incident too: activate the agency IR plan, establish what agency data/classification the supplier holds, and demand supplier containment/forensics status under the contract",
+      "passed": true,
+      "evidence": "'Activate your incident response plan ... Contain and assess ... The classification of the data involved ... Preserve evidence ... Review your contract with the supplier ... invoke these immediately.'"
+    },
+    {
+      "text": "Names the right NZ notification channel for cyber incidents: report to the NCSC (GCSB) — noting CERT NZ's functions are now within the NCSC — plus NZ Police for the criminal act where appropriate",
+      "passed": false,
+      "evidence": "Lists NCSC and CERT NZ as two separate, still-active channels: 'report the incident to whichever of NCSC/CERT NZ is the current designated channel for government agency incidents' and checklist items 'NCSC (GCSB) notified' and 'CERT NZ notified (or current equivalent...)' as distinct entries, plus a closing note saying the 'division of responsibilities between NCSC and CERT NZ should be verified.' This hedges/conflates rather than correctly stating that CERT NZ's functions have been absorbed into the NCSC, contradicting the ground truth in the assertion."
+    },
+    {
+      "text": "Identifies the Privacy Act 2020 obligation: if personal information is involved and the breach is notifiable (serious harm threshold), notify the Office of the Privacy Commissioner and affected individuals",
+      "passed": true,
+      "evidence": "'Office of the Privacy Commissioner ... New Zealand's mandatory breach notification regime requires notification to: The Privacy Commissioner, and Affected individuals ... where the breach has caused, or is likely to cause, serious harm.'"
+    },
+    {
+      "text": "Covers evidence preservation and reporting discipline: preserve logs/artifacts, document a timeline, and conduct a post-incident review feeding lessons back into supplier controls",
+      "passed": true,
+      "evidence": "'Preserve evidence — ensure the supplier preserves logs and forensic evidence' and 'Timeline of the incident and when the supplier became aware'; Section 5 'Formal post-incident review ... document root cause, supplier's response adequacy ... Reassess the supplier relationship.'"
+    },
+    {
+      "text": "Addresses the supplier-contract dimension: invoke incident-notification clauses, require remediation evidence, reassess the supplier's certification/assurance status, and update the agency risk register",
+      "passed": true,
+      "evidence": "'Review your contract with the supplier for its incident notification and cooperation obligations ... invoke these immediately' and 'Reassess the supplier relationship — determine whether the supplier's security controls met contractual obligations ... Update your Security Risk Management Plan and vendor risk assessments.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

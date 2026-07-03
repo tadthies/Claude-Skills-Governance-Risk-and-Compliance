@@ -1,0 +1,13 @@
+{
+  "eval_id": 144,
+  "eval_name": "sbom-programme",
+  "run_type": "without_skill",
+  "prompt": "Design an SBOM programme for our products to meet CRA requirements. What must the SBOM contain and how does it fit vulnerability handling?",
+  "assertions": [
+    "Grounds the SBOM duty correctly: Annex I Part II requires manufacturers to identify and document components including by drawing up an SBOM in a commonly used, machine-readable format, covering at the very least the top-level dependencies",
+    "Notes the SBOM is documentation for authorities (part of technical documentation, available to market surveillance authorities on request) — the CRA does not require publishing it to the public",
+    "Designs a real programme: format choice (e.g., SPDX/CycloneDX), generation integrated into CI/build pipeline, per-release versioning, coverage of third-party/open-source components",
+    "Connects SBOM to vulnerability handling: continuous monitoring of components against vulnerability feeds, triage/remediation without delay, feeding the CVD process and Art. 14 reporting when actively exploited",
+    "Addresses governance: ownership, accuracy audits, supplier data requirements for sourced components, retention aligned with the support period and 10-year technical-documentation obligations"
+  ]
+}

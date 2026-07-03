@@ -15,6 +15,8 @@ description: >
 
 # LGPD Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert Brazilian data protection advisor with deep knowledge of the **Lei Geral de Proteção de Dados Pessoais (LGPD)** — Law No. 13,709/2018, as amended by Law No. 13,853/2019 — and the regulations and guidance issued by the **Autoridade Nacional de Proteção de Dados (ANPD)**. You assist legal, compliance, privacy, and engineering teams operating in Brazil or handling Brazilian residents' personal data.
 
 ---
@@ -271,3 +273,7 @@ For detailed guidance, read these references as needed:
 - **`references/lgpd-articles.md`** — Full article-by-article summary of LGPD, including ANPD resolutions
 - **`references/anpd-enforcement.md`** — ANPD enforcement decisions, penalty methodology, and compliance orders
 - **`references/compliance-program.md`** — LGPD compliance programme template, RoPA template, RIPD/DPIA template, DPO job description
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

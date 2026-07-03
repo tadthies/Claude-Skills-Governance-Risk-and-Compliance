@@ -1,0 +1,13 @@
+{
+  "eval_id": 137,
+  "eval_name": "fintech-breach-workflow",
+  "run_type": "with_skill",
+  "prompt": "We are a fintech in Ho Chi Minh City and just discovered a breach of customer personal data. Walk us through the breach notification workflow under Vietnam's data protection rules — who do we notify and by when?",
+  "assertions": [
+    "States the regulator and deadline correctly: notify the Ministry of Public Security (A05 — Department of Cybersecurity and Hi-tech Crime Prevention) within 72 HOURS of detecting the violation/breach",
+    "Describes notification content: nature of the incident, data and subjects affected, time of detection, measures taken, contact point — and that late notification requires explaining the delay",
+    "Covers immediate response steps alongside notification: contain and eradicate, preserve forensic evidence, assess scope and harm to data subjects",
+    "Addresses data subject and sectoral dimensions: informing affected customers where harm is likely, and the fintech overlay (State Bank of Vietnam expectations for financial institutions, contractual counterparty notices) without inventing specific SBV deadlines",
+    "Requires documentation and follow-up: incident record for accountability, root-cause remediation, and updating the impact assessment dossier where the incident changes the risk picture"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 2,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Flags MFA scope gap against IA.L2-3.5.3 (MFA required for local and network access to privileged accounts and network access to non-privileged accounts — cloud email alone is insufficient)",
+      "passed": true,
+      "evidence": "Gap table row: 'IA.L2-3.5.3 | IA | MFA for local/network access to privileged accounts and network access to non-privileged accounts | PARTIAL | ... MFA only on cloud email — no MFA on internal apps, file shares, VPN admin access, or endpoints. This is one of the most commonly failed practices and a critical practice — cannot be POA&M'd at certification.'"
+    },
+    {
+      "text": "Flags FIPS-validated cryptography gap (SC.L2-3.13.11 requires FIPS-validated cryptography to protect CUI confidentiality) and the flat-network/shared-drive state against scoping and SC.L2-3.13.1/AC.L2-3.1.3 (boundary protection / control CUI flow), recommending segmentation or an enclave",
+      "passed": true,
+      "evidence": "Row 'SC.L2-3.13.11 ... NOT MET ... No FIPS-validated encryption for CUI at rest. Critical practice.' and 'AC.L2-3.1.3 | AC | Control the flow of CUI ... NOT MET ... Flat network with CUI on shared drives means CUI flow is effectively uncontrolled.' Remediation Tier 1 item 3: 'Eliminate the flat network. Segment CUI into a dedicated enclave.'"
+    },
+    {
+      "text": "Flags untested IR plan against IR.L2-3.6.3 (test incident response capability) and the stale SSP against CA.L2-3.12.4 (SSP must be current)",
+      "passed": true,
+      "evidence": "Row 'IR.L2-3.6.3 ... NOT MET ... Never tested' and row 'CA.L2-3.12.4 ... NOT MET ... SSP last updated in 2022 — 4 years stale. Must be reviewed/updated at least annually or after significant change.'"
+    },
+    {
+      "text": "Correctly credits compliant items (awareness training AT.L2-3.2.1/.2; personnel screening PS.L2-3.9.1) instead of marking everything deficient",
+      "passed": true,
+      "evidence": "Row 'AT.L2-3.2.1 / 3.2.2 ... MET ... Annual security awareness training in place' and row 'PS.L2-3.9.1 ... MET ... Background screening in place for all staff — good baseline control.'"
+    },
+    {
+      "text": "Explains SPRS scoring impact using the DoD methodology: score starts from 110 with weighted deductions (5/3/1 points; MFA and FIPS crypto are 5-point/partial-credit items), and prioritises remediation by point value and POA&M eligibility",
+      "passed": true,
+      "evidence": "'Starting score: 110. Applying the standard weighted deductions (highest-impact practices lose 5 points each...)' with a deduction table assigning -5 to MFA and FIPS crypto specifically, landing at 'Rough estimated current score: ~85–88 out of 110.' Remediation plan is explicitly tiered by 'highest SPRS point value' and POA&M eligibility ('only non-critical practices are POA&M-eligible')."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

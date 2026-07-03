@@ -1,0 +1,33 @@
+{
+  "eval_id": 137,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States the regulator and deadline correctly: notify the Ministry of Public Security (A05 — Department of Cybersecurity and Hi-tech Crime Prevention) within 72 HOURS of detecting the violation/breach",
+      "passed": false,
+      "evidence": "Response states: 'Notify the Ministry of Public Security (the PDPL authority)... Deadline: within 72 hours of your organisation becoming aware of the breach.' The 72-hour deadline and MPS are correctly stated, but the response never names 'A05' or 'Department of Cybersecurity and Hi-tech Crime Prevention' anywhere in the text — the specific competent unit is omitted, which the assertion requires."
+    },
+    {
+      "text": "Describes notification content: nature of the incident, data and subjects affected, time of detection, measures taken, contact point — and that late notification requires explaining the delay",
+      "passed": false,
+      "evidence": "Response lists notification content: 'Nature/description of the breach; Categories and approximate number of data subjects affected; Categories and approximate number of records affected; Name and contact details of your DPO...; Likely consequences...; Measures taken or proposed.' This covers most content items but omits 'time of detection' as a listed content item, and nowhere does the response state that late/delayed notification requires an explanation of the delay — this specific required fact is absent."
+    },
+    {
+      "text": "Covers immediate response steps alongside notification: contain and eradicate, preserve forensic evidence, assess scope and harm to data subjects",
+      "passed": true,
+      "evidence": "Section '1. Contain (Immediate)': 'Isolate affected systems, revoke compromised credentials, and stop the ongoing exposure... Preserve forensic evidence (logs, timestamps, access records)...' and Section '2. Assess': 'Determine: Scope... Data categories affected... Number of records affected... Root cause.' This directly covers containment, forensic preservation, and scope/harm assessment."
+    },
+    {
+      "text": "Addresses data subject and sectoral dimensions: informing affected customers where harm is likely, and the fintech overlay (State Bank of Vietnam expectations for financial institutions, contractual counterparty notices) without inventing specific SBV deadlines",
+      "passed": true,
+      "evidence": "[AMENDED after verification] Grader failed this solely on the premise that 'Decree 356/2025/ND-CP' was a fabricated instrument. Verified: Decree 356/2025/ND-CP is real (promulgated 31 Dec 2025, effective 1 Jan 2026, replacing Decree 13/2023). The response covered data-subject notification and the fintech overlay without inventing SBV deadlines. | Original: The response fabricates a specific, named legal instrument with invented article numbers: 'Decree 356 Article 8 imposes a stricter, dual-track requirement: you must notify affected data subjects within the same 72-hour window, simultaneously with the authority notification... this is not \"as soon as"
+    },
+    {
+      "text": "Requires documentation and follow-up: incident record for accountability, root-cause remediation, and updating the impact assessment dossier where the incident changes the risk picture",
+      "passed": true,
+      "evidence": "Section '4. Document': 'Maintain (or create immediately if it doesn't exist) an internal breach register... mandatory under Article 23 regardless of whether the breach met the notification threshold.' Section '5. Remediate': 'Patch the root cause...' Section '6. Review' plus line 54 equivalent text: 'Update your breach response plan and DPIA/security documentation to reflect findings.' This covers incident record, root-cause remediation, and DPIA/impact-assessment updates."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

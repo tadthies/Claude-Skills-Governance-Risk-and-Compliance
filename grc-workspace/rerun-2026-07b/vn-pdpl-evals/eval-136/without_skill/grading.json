@@ -1,0 +1,33 @@
+{
+  "eval_id": 136,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Confirms extraterritorial applicability: Vietnam's Law on Personal Data Protection No. 91/2025/QH15 (passed 26 June 2025, effective 1 January 2026) applies to foreign organisations processing Vietnamese individuals' personal data, so the Singapore SaaS is in scope",
+      "passed": true,
+      "evidence": "\"Vietnam's Personal Data Protection Law (PDPL, Law No. 91/2025/QH15, effective 1 January 2026)... Vietnam's data protection framework applies extraterritorially. Because you process personal data of individuals in Vietnam... even though your company is based in Singapore and data is stored in Singapore, you are very likely in scope.\""
+    },
+    {
+      "text": "Flags the pre-ticked checkbox as INVALID consent: consent must be an explicit, affirmative act — silence, inaction, and pre-ticked boxes do not constitute consent under Vietnamese data protection rules",
+      "passed": true,
+      "evidence": "\"Pre-ticked boxes (i.e., default opt-in / passive consent) are not considered valid consent... Silence or inaction also does not constitute consent.\""
+    },
+    {
+      "text": "Flags the cross-border gap: storing/processing Vietnamese personal data offshore triggers cross-border transfer obligations including a transfer impact assessment dossier for the Ministry of Public Security (MPS/A05), the supervising authority",
+      "passed": true,
+      "evidence": "\"Transferring/storing Vietnamese citizens' personal data outside Vietnam is a regulated cross-border transfer... requires a Transfer Impact Assessment (TIA) dossier to be prepared and, in many cases, filed with the Ministry of Public Security within a specified period after processing begins.\""
+    },
+    {
+      "text": "Flags the missing processing impact assessment as a gap: controllers must prepare and maintain an impact assessment dossier available to MPS, and identifies the DPO/data-protection-personnel question (noting exemptions exist for small/micro enterprises for an initial period, which a scaled SaaS with Vietnamese customers should not assume applies)",
+      "passed": false,
+      "evidence": "The response flags the missing DPIA (\"No Data Protection Impact Assessment (DPIA)... Gap.\") and the missing DPO (\"No DPO... Gap... Appoint a DPO or designated data protection contact person\"), but nowhere mentions SME/small-or-micro-enterprise exemptions at all. The assertion specifically requires noting that exemptions exist and should not be assumed to apply for a scaled SaaS — this element is entirely absent from the response, so the DPO/exemption portion of the assertion is not satisfied."
+    },
+    {
+      "text": "Delivers a structured gap table with prioritised remediation (fix consent UX, prepare DPIA and transfer dossiers, designate responsible personnel, update privacy notice in Vietnamese-law-compliant terms)",
+      "passed": true,
+      "evidence": "Contains a 'Summary Table' (Area/Current State/Requirement/Gap Severity) covering consent, sensitive data, cross-border storage, DPO, DPIA, local representative, plus a numbered 'Recommended Immediate Priorities' list: fix consent mechanism, conduct DPIA and transfer impact assessment, classify payment data as sensitive, appoint DPO/representative, build a data inventory."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

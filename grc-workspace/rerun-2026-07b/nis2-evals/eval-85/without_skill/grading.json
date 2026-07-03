@@ -1,0 +1,33 @@
+{
+  "eval_id": 85,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the lex specialis principle: under NIS2 Art. 4, sector-specific Union legal acts with at-least-equivalent effect take precedence, and DORA (Regulation (EU) 2022/2554) is that act for financial entities including credit institutions",
+      "passed": true,
+      "evidence": "'Article 4 of NIS2, headed \"Sector-specific Union legal acts,\" states that where sector-specific Union legal acts require essential or important entities to adopt cybersecurity risk-management measures or to notify significant incidents, and where those requirements are at least equivalent in effect... DORA (Regulation (EU) 2022/2554...) was explicitly designed and negotiated as this \"lex specialis\" for the financial sector.'"
+    },
+    {
+      "text": "Specifies WHICH provisions are displaced: DORA applies instead of NIS2 Art. 21 (cybersecurity risk-management measures) and Art. 23 (incident reporting) for banks",
+      "passed": true,
+      "evidence": "'1. Risk Management: DORA Governs... you do not need to separately satisfy NIS2 Article 21's parallel... list'; '2. Incident Reporting: DORA's Timeline and Channel Apply... supersede NIS2's Article 23 reporting obligations for you as a bank.'"
+    },
+    {
+      "text": "Notes what remains relevant from NIS2 despite DORA precedence (e.g., banks remain listed entities / national registration and information-sharing frameworks may still apply; supervision of ICT risk sits with financial authorities under DORA)",
+      "passed": true,
+      "evidence": "'6. Where NIS2 Still Matters to You... Ecosystem/cross-sector coordination... National transposition edge cases: Some Member States' NIS2 transposition laws retain limited residual obligations or registration touchpoints for financial entities.' Also: 'your day-to-day supervision... runs through your prudential/financial supervisor... not the national NIS2 competent authority/CSIRT.'"
+    },
+    {
+      "text": "Recommends a single integrated programme built on DORA's requirements (ICT risk management framework, incident classification and reporting, digital operational resilience testing including TLPT, ICT third-party risk, information sharing) mapped against NIS2 for residual obligations — not two separate programmes",
+      "passed": true,
+      "evidence": "'No — and you should actively avoid building two parallel programmes... One integrated ICT/cyber risk and operational resilience programme, built to DORA's requirements as the primary framework... A NIS2-awareness layer on top.' Recommendations cover 'risk management framework (Ch. II), incident classification/reporting (Ch. III), resilience testing including TLPT (Ch. IV), and third-party risk management with contractual register (Ch. V).'"
+    },
+    {
+      "text": "Any incident-reporting specifics given match DORA's regime (major ICT-related incidents reported to the financial competent authority with initial/intermediate/final reports) rather than NIS2 CSIRT reporting",
+      "passed": true,
+      "evidence": "'reportable to your financial sector competent authority... DORA's incident classification criteria and reporting deadlines (initial notification, intermediate report, final report...) supersede NIS2's Article 23 reporting obligations for you as a bank.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

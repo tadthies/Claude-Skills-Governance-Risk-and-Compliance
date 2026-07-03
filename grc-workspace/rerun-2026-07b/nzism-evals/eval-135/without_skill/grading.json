@@ -1,0 +1,33 @@
+{
+  "eval_id": 135,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Requires classification-driven scoping first: what data (classification level) will the SaaS hold, which determines applicable NZISM controls and whether offshore hosting/risk assessment rules are triggered",
+      "passed": true,
+      "evidence": "Section 1a 'Data Classification and Risk Assessment — Determine the classification of data that will be stored/processed ... Conduct a cloud risk assessment proportionate to that classification ... the higher the classification, the more rigorous the assessment and approval process required.'"
+    },
+    {
+      "text": "Due diligence checklist includes independent assurance evidence: recognised certifications/assessments (e.g., ISO 27001, SOC 2, IRAP or equivalent), penetration test results, and the vendor's security architecture (tenancy isolation, encryption, key management)",
+      "passed": true,
+      "evidence": "'Request evidence of the vendor's security certifications/attestations (e.g., ISO 27001, SOC 2 Type II...)'; 'Ongoing audit/assurance rights — right to request updated certifications, penetration test summaries...'; 'Assess multi-tenancy risk — how the vendor logically/physically separates your agency's data' plus explicit encryption/key management review. All key sub-elements present (though not IRAP specifically, the rest of the bundle is covered)."
+    },
+    {
+      "text": "Contractual requirements include: incident notification SLAs to the agency, right to audit/assurance evidence, data residency/jurisdiction terms, data return and secure deletion on exit, and subcontractor/fourth-party disclosure",
+      "passed": true,
+      "evidence": "Section 2f Incident Notification (24-72hr), 2j Audit Rights, 2c Data Location and Sovereignty Clauses, 2h Data Return and Deletion, 2i Subcontractor/Subprocessor Management — all five elements explicitly present."
+    },
+    {
+      "text": "Covers identity and access integration: SSO/MFA support, role-based access, logging/audit trail availability to the agency",
+      "passed": true,
+      "evidence": "'authentication (support for MFA/SSO/federated identity)'; 'Support for multi-factor authentication and, ideally, federation with the agency's identity provider (SSO)'; 'Role-based access control within the SaaS product'; logging of administrative access to agency data."
+    },
+    {
+      "text": "Requires ongoing assurance, not point-in-time: annual reassessment, monitoring of vendor advisories, and inclusion in the agency's supplier risk register with a formal risk acceptance for residual gaps",
+      "passed": false,
+      "evidence": "Only vague coverage: 'Ongoing audit/assurance rights ... periodically over the life of the contract' (no annual cadence specified) and 'residual risk ... formally documented and accepted by an appropriately senior/delegated risk owner.' Never mentions inclusion in a supplier/vendor risk register, and never mentions monitoring vendor security advisories — two of the assertion's specific elements are entirely absent, and the cadence given is vague rather than 'annual'."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 131,
+  "eval_name": "restricted-ca-gap-analysis",
+  "run_type": "without_skill",
+  "prompt": "Our NZ government agency is preparing a RESTRICTED system for certification and accreditation. Run a C&A gap analysis: we have a draft System Security Plan, no Security Risk Management Plan, controls partially implemented with no validation testing, and no ITSM sign-off yet. What does the NZISM C&A process require and where are our gaps?",
+  "assertions": [
+    "Explains the two distinct stages correctly: CERTIFICATION = technical assessment that NZISM controls are implemented and effective; ACCREDITATION = formal acceptance of residual risk by the Accreditation Authority allowing the system to operate",
+    "Identifies the missing Security Risk Management Plan (SRMP) as a core gap — C&A requires documented risk assessment/management artifacts alongside the SSP/SecPlan",
+    "Flags the absence of control validation testing as blocking certification (controls must be verified as implemented and effective, not just documented), and the missing ITSM/security-practitioner sign-off in the certification chain",
+    "Correctly frames NZISM authorship/authority: issued by the GCSB (NCSC NZ) as the NZ government information security manual, with MUST/SHOULD compliance requirements tied to classification (RESTRICTED here), and notes essential/baseline controls cannot simply be waived without formal risk acceptance",
+    "Produces a usable gap table/plan with prioritised remediation (SRMP first, control validation, certification review, then accreditation decision) rather than generic advice"
+  ]
+}

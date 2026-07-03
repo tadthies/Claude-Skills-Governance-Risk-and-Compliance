@@ -1,0 +1,33 @@
+{
+  "eval_id": 134,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Treats this correctly as the agency's incident too: activate the agency IR plan, establish what agency data/classification the supplier holds, and demand supplier containment/forensics status under the contract",
+      "passed": true,
+      "evidence": "'Invoke your documented Incident Response Plan immediately'; 'Determine Classification of the Affected Data'; 'Confirm What the Supplier Owes You Contractually ... Immediately request from the supplier: Scope of the compromise ... Evidence preservation status.'"
+    },
+    {
+      "text": "Names the right NZ notification channel for cyber incidents: report to the NCSC (GCSB) — noting CERT NZ's functions are now within the NCSC — plus NZ Police for the criminal act where appropriate",
+      "passed": true,
+      "evidence": "Table row: 'NCSC NZ (National Cyber Security Centre) | Mandatory reporting ... NCSC NZ is GCSB's operational cybersecurity arm.' Does not misdirect to a separate CERT NZ channel, and includes 'New Zealand Police | Ransomware is a criminal act; consider a Police report.'"
+    },
+    {
+      "text": "Identifies the Privacy Act 2020 obligation: if personal information is involved and the breach is notifiable (serious harm threshold), notify the Office of the Privacy Commissioner and affected individuals",
+      "passed": true,
+      "evidence": "'Office of the Privacy Commissioner (OPC) | If personal information is involved, the Privacy Act 2020 mandatory breach notification regime applies. Notify OPC (and affected individuals, where required) if the breach has caused or is likely to cause serious harm.'"
+    },
+    {
+      "text": "Covers evidence preservation and reporting discipline: preserve logs/artifacts, document a timeline, and conduct a post-incident review feeding lessons back into supplier controls",
+      "passed": true,
+      "evidence": "Section 6 'Evidence Preservation and Forensic Readiness' plus 'Timeline of detection and containment actions taken' request, and Section 8 'Conduct a post-incident review ... Reassess the supplier relationship ... feed into your Third-Party Supplier risk register.'"
+    },
+    {
+      "text": "Addresses the supplier-contract dimension: invoke incident-notification clauses, require remediation evidence, reassess the supplier's certification/assurance status, and update the agency risk register",
+      "passed": true,
+      "evidence": "'Confirm What the Supplier Owes You Contractually' invokes notification clauses and right-to-audit; Section 8 'Reassess the supplier relationship ... potentially trigger a re-assessment of the supplier's security posture ... Update your Security Risk Assessment / SSP.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 133,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Delivers an actual policy document (purpose, scope, roles, policy statements, compliance) — not just a discussion of access control",
+      "passed": true,
+      "evidence": "Full policy structure present: Purpose (1), Scope (2), Policy Statements (3.1-3.5), Roles and Responsibilities (4), Exceptions (5), Non-Compliance (6), Related Documents (7), plus a document header with owner/approver/version/review cycle."
+    },
+    {
+      "text": "Covers the four requested domains with NZISM-consistent requirements: unique identification of users, authentication strength (MFA for privileged and remote access), least-privilege authorisation, and privileged access management (separate admin accounts, logging, periodic review)",
+      "passed": true,
+      "evidence": "3.1 Identification requires unique IDs and prohibits shared accounts; 3.2 Authentication mandates MFA 'for all remote access' and 'all privileged/administrative accounts'; 3.3 Authorisation requires least-privilege and need-to-know; 3.4 Privileged Access requires logical separation from standard accounts, enhanced logging, and annual re-certification."
+    },
+    {
+      "text": "Cites NZISM structure credibly: references NZISM chapters/sections and control identifiers (CIDs) for access control and uses MUST/SHOULD compliance language consistent with the manual's convention",
+      "passed": false,
+      "evidence": "Consistently cites 'NZISM Section 7 — Access Control' and 'NZISM Section 8 — Identification and Authentication' (including a summary reference table) and uses mandatory 'must' language 19 times throughout, but never cites actual NZISM control identifiers (CIDs) — the specific numeric control references the assertion requires are absent."
+    },
+    {
+      "text": "Includes joiner-mover-leaver / access review lifecycle requirements (timely revocation, periodic recertification of access rights)",
+      "passed": true,
+      "evidence": "'Access reviews must be conducted at least annually ... to re-certify that existing access remains appropriate; access no longer required must be revoked promptly' and 'Access must be revoked immediately upon role change ... or termination.' Substance is present though the literal term 'joiner-mover-leaver' is not used."
+    },
+    {
+      "text": "Includes policy governance: owner, review cycle, exceptions process requiring documented risk acceptance",
+      "passed": true,
+      "evidence": "Header specifies 'Document Owner: CISO/ISO' and 'Review Cycle: Annual'; Section 5 Exceptions requires deviations to be 'formally requested, documented with compensating controls, risk-assessed, and approved by the CISO/ISO... time-bound and reviewed at renewal.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

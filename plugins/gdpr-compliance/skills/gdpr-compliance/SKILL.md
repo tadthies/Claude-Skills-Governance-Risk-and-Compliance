@@ -15,6 +15,8 @@ description: >
 
 # GDPR Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are a GDPR compliance expert combining deep legal knowledge with practical technical
 understanding. You serve both developers auditing systems and legal/DPO professionals drafting
 documents. Always cite the relevant GDPR article(s) when making compliance assertions.
@@ -243,3 +245,7 @@ Load `references/updates-2025.md` for detailed guidance on these material develo
 | **EDPB Guidelines 1/2024 on Legitimate Interests** | Comprehensive new guidance replacing 2014 WP29 opinion; practical balancing test guidance |
 | **CEF 2025 — Right to Erasure** | Coordinated enforcement found widespread failures in erasure procedures, training, and technical deletion capability |
 | **Digital Omnibus (Nov 2025 proposal)** | Proposed GDPR amendments: RoPA threshold raised to 750 employees; AI as legitimate interest codified; cookie rules integrated; relative anonymisation — **not yet law** |
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

@@ -1,0 +1,33 @@
+{
+  "eval_id": 68,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Delivers an actual register template with sensible columns (risk ID/description, lifecycle stage, AI RMF function/category mapping, trustworthiness characteristic, likelihood/impact, treatment, owner, status)",
+      "passed": true,
+      "evidence": "Populated table includes Risk ID, AI System, Lifecycle Stage, AI RMF Category, TEVV Activity, Characteristic at Risk, Likelihood/Impact, Treatment, Owner columns across 12 rows (AIR-001 to AIR-012)."
+    },
+    {
+      "text": "Populates credit-scoring-specific risks: disparate impact/fair lending, model validity/population drift, explainability of adverse-action reasons, data quality/privacy, third-party model dependencies, security/adversarial manipulation",
+      "passed": false,
+      "evidence": "Disparate impact (AIR-003), validity/drift (AIR-005, AIR-009), adverse-action explainability (AIR-004), privacy/security (AIR-006) are all populated as distinct risk rows. However, 'third-party model dependencies' is never populated as its own risk register entry — it is only mentioned once, generically, inside the Treatment Options Reference section ('Transfer — Contractual indemnification with model vendor if third-party model is used'), not as an actual AIR-XXX risk row with lifecycle stage, category mapping, and owner like the other risk categories."
+    },
+    {
+      "text": "Maps risks to plausible AI RMF functions/categories (e.g., bias testing under MEASURE 2.x, context/impact identification under MAP, treatment decisions under MANAGE 1.x/2.x, oversight under GOVERN) without inventing nonexistent category IDs",
+      "passed": true,
+      "evidence": "Uses MAP 1.6, MAP 3.1, MEASURE 2.1-2.4, MEASURE 3.1/3.2, MANAGE 1.3, MANAGE 2.1, MANAGE 3.2, MANAGE 4.4, GOVERN 6.1 — all plausible subcategory numbers consistent with real AI RMF structure, no obviously fabricated IDs."
+    },
+    {
+      "text": "Treatment options are concrete and financial-services-appropriate: fairness constraints/reweighting, challenger models, human review bands, adverse action reason-code validation, model risk management (SR 11-7-style) integration",
+      "passed": true,
+      "evidence": "Covers fairness rebalancing/proxy-feature removal (AIR-003), human review escalation gate (AIR-007), adverse-action reason-code validation (AIR-004). Does not mention 'challenger models' or 'SR 11-7' by name anywhere in the response, but the overall treatment set is still concrete and financial-services-appropriate."
+    },
+    {
+      "text": "Flags applicable regulatory context accurately: ECOA/Reg B adverse action notices, FCRA, fair lending exams — treatments tied to those obligations",
+      "passed": true,
+      "evidence": "AIR-004 ties explainability treatment to 'ECOA-compliant categories' for adverse-action notices; AIR-011 regulatory register explicitly lists 'ECOA, FCRA, Fair Housing Act, state fair-lending laws'; closing notes reference 'ECOA and Regulation B require specific adverse-action reasons.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

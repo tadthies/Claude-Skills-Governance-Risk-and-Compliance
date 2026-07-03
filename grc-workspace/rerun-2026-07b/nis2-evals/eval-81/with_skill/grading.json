@@ -1,0 +1,33 @@
+{
+  "eval_id": 81,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Correctly places electricity distribution system operators in Annex I (high-criticality 'Energy' sector) of Directive (EU) 2022/2555 and concludes the company is in scope of NIS2",
+      "passed": true,
+      "evidence": "Step 1 states: 'Electricity distribution network operators (DSOs) fall within the energy sector of Annex I (high-criticality sectors)... You are squarely in scope on sector grounds.'"
+    },
+    {
+      "text": "Applies the Art. 3 size-based classification correctly: essential entities are Annex I entities that EXCEED the large-enterprise ceiling (250+ employees, or >€50M turnover and >€43M balance sheet). With 200 employees and €50M turnover the default classification is IMPORTANT entity — the answer must engage with the size test (or cite Member-State designation, e.g., German KRITIS, as the route to essential status). FAIL if it concludes 'essential' purely because the sector is Annex I, without the size analysis.",
+      "passed": true,
+      "evidence": "Step 3 explicitly states the EE ceiling (>=250 employees or turnover >€50M and balance sheet >€43M), applies the 200-employee/€50M figures, and concludes 'Default classification: Important Entity (IE)'. It then correctly notes the only route to Essential is German BSIG/KRITIS designation or CER-Directive designation, which is exactly the required engagement with the size test plus Member-State designation route."
+    },
+    {
+      "text": "Identifies the Art. 21(2) cybersecurity risk-management measures (the 10 measures, or a substantively complete list) as core obligations",
+      "passed": true,
+      "evidence": "Section '2. Risk management measures (Art. 21(2)(a)–(j)) — 10 measures' lists all ten measures individually (risk analysis, incident handling, business continuity, supply chain, secure acquisition/development, effectiveness assessment, cyber hygiene/training, cryptography, HR/access control/asset management, MFA/secured comms)."
+    },
+    {
+      "text": "Identifies Art. 23 incident reporting with the 24-hour early warning / 72-hour notification / 1-month final report cadence",
+      "passed": true,
+      "evidence": "Section '3. Incident reporting (Art. 23)' lists '≤24 hours: early warning', '≤72 hours: incident notification', 'On request: intermediate status reports', '≤1 month ... final report'."
+    },
+    {
+      "text": "Identifies Art. 20 governance duties (management body approval, oversight, training, personal accountability) and/or registration under the German transposition (BSIG / NIS2 implementation act)",
+      "passed": true,
+      "evidence": "Section '1. Governance (Art. 20)' covers management body approval, oversight, training, and personal liability under German law; Step 4 covers Art. 27 registration with BSI."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

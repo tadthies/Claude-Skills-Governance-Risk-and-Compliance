@@ -1,0 +1,33 @@
+{
+  "eval_id": 86,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Applies the three business thresholds correctly (any ONE suffices): annual gross revenue above the $25M threshold (as CPI-adjusted); buying/selling/sharing PI of 100,000+ consumers or households (CPRA raised this from 50,000); or 50%+ of revenue from selling/sharing PI — and concludes the company IS subject via the revenue threshold ($30M > $25M) even though 80,000 < 100,000",
+      "passed": true,
+      "evidence": "Table lists all three thresholds ($25M revenue, 100,000+ consumers/households, 50%+ revenue from sale/sharing) and concludes: 'Because you meet Threshold #1 (revenue), you are a covered business under CCPA/CPRA regardless of the outcome of the other two tests,' explicitly noting 80,000 CA customers is 'No (on its own...)' against the 100K threshold."
+    },
+    {
+      "text": "Notes the 'doing business in California' element (for-profit, collects CA residents' PI, determines purposes/means) — being US-based outside California does not avoid the law",
+      "passed": true,
+      "evidence": "Step 1: 'CCPA/CPRA applies to for-profit businesses doing business in California. As a US-based e-commerce company selling to California customers, you meet this threshold.' This directly addresses that being US-based (not physically in CA) does not avoid the law since the company still does business in CA."
+    },
+    {
+      "text": "Lists core obligations: notice at collection, privacy policy, consumer request handling (know/delete/correct/opt-out/limit), verifiable request processes, service-provider contracts, non-discrimination",
+      "passed": true,
+      "evidence": "Covers Right to Know/Delete/Correct/Opt-Out/Limit SPI/Non-Discrimination, identity verification ('2 data-point match... 3 data points + signed declaration'), privacy notice at collection, privacy policy, and vendor contracts (service provider/contractor terms)."
+    },
+    {
+      "text": "Mentions the 45-day response deadline for consumer requests with a possible 45-day extension",
+      "passed": true,
+      "evidence": "'You must be able to honor, within 45 days (extendable once by 45 days)...'"
+    },
+    {
+      "text": "Mentions opt-out of sale/sharing mechanics: 'Do Not Sell or Share My Personal Information' link and honoring opt-out preference signals such as GPC",
+      "passed": true,
+      "evidence": "'\"Do Not Sell or Share My Personal Information\" link on your homepage... Honor Global Privacy Control (GPC) signals as a valid opt-out.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

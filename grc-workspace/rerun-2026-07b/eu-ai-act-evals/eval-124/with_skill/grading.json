@@ -1,0 +1,33 @@
+{
+  "eval_id": 124,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Classifies the system as high-risk via the Art. 6(1) path: safety component of a product covered by Annex I Union harmonisation legislation (MDR) that undergoes third-party conformity assessment",
+      "passed": true,
+      "evidence": "Response states: 'this is a high-risk AI system under Art. 6(1), Path A — the Annex I \"embedded product safety component\" route' and lists both limbs: safety component of Annex I MDR-covered product, and MDR requires notified-body assessment."
+    },
+    {
+      "text": "States the compliance deadline for Annex I embedded high-risk systems as 2 August 2028 (as amended by the Digital Omnibus; originally 2 August 2027). Any deadline stated must be Aug 2028.",
+      "passed": true,
+      "evidence": "Response states: 'the Digital Omnibus (adopted 29 June 2026) confirmed as: 2 August 2028... This is later than the Annex III standalone-system deadline of 2 December 2027.'"
+    },
+    {
+      "text": "Explains the integrated conformity route: AI Act requirements are assessed within the existing MDR notified-body procedure (Art. 43(3)) rather than a separate parallel assessment, with a single set of technical documentation permitted",
+      "passed": true,
+      "evidence": "Response states: 'Conformity assessment is integrated into the existing MDR procedure. Rather than running a separate AI Act conformity assessment process, the AI Act requirements (Arts. 9–15) are assessed as part of your existing MDR notified-body conformity assessment... you do not go through two entirely separate certification tracks.'"
+    },
+    {
+      "text": "Identifies the dual-regulator reality: notified body under MDR plus AI Act requirements (Arts. 9-15) folded into the MDR QMS/technical documentation",
+      "passed": true,
+      "evidence": "Response states MDR notified body 'needs to be designated/qualified to also assess AI Act requirements' and describes QMS integration: 'Your existing MDR QMS... can be adapted and integrated to cover the AI Act's 13 QMS components' with a table mapping Arts. 9-17 to 'MDR Integration Point'."
+    },
+    {
+      "text": "Gives practical sequencing advice (align AI Act risk management with ISO 14971 processes, update technical file, involve the notified body early)",
+      "passed": true,
+      "evidence": "Response states: 'Your MDR risk management file (ISO 14971) should be extended to explicitly cover the AI Act's 5-step process' and 'Talk to your MDR notified body now about their AI Act assessment capability/designation' and 'Immediate action: Engage your MDR notified body on AI Act assessment scope, and gap-map your existing MDR risk/QMS/PMS documentation against Arts. 9–17.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 140,
+  "eval_name": "consent-withdrawal",
+  "run_type": "without_skill",
+  "prompt": "A Vietnamese customer wants to withdraw consent. What does the PDPL and its implementing decree require — process, timeframes, and consequences of withdrawal?",
+  "assertions": [
+    "States the core rule: data subjects may withdraw consent at any time; withdrawal must be as easy to execute as giving consent, and the controller must confirm/act on the request",
+    "Explains consequences accurately: processing based on that consent must cease upon withdrawal (absent another lawful ground under the PDPL), and withdrawal does not affect the lawfulness of processing already performed — the data subject should be informed of the consequences before completing withdrawal",
+    "Covers propagation: the controller must notify processors and third parties that received the data to stop processing/delete accordingly",
+    "Addresses timeframes honestly: commits to acting without undue delay within the timeframes set by the implementing decree, and does NOT invent a fabricated statutory deadline where none is established (a stated 72-hour deadline is acceptable ONLY if attributed to the implementing decree's data-subject-request rules)",
+    "Provides an operational workflow: verify identity, log the request, execute cessation/deletion across systems and backups policy, retain evidence of compliance, and handle retention exceptions (legal obligations) transparently"
+  ]
+}

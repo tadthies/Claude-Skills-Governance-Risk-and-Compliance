@@ -1,0 +1,13 @@
+{
+  "eval_id": 138,
+  "eval_name": "micro-enterprise-exemptions",
+  "run_type": "with_skill",
+  "prompt": "We are a 15-person startup in Hanoi. Do Vietnam PDPL obligations like the impact assessment and data protection officer apply to us, or are there exemptions for small businesses?",
+  "assertions": [
+    "States the exemption accurately: the PDPL grants small and micro enterprises (and startups) relief from certain obligations — notably DPO appointment and impact-assessment duties — for an initial period (5 years from the law's effectivity), by election",
+    "States the exemption's limits correctly: it does NOT apply to entities that process sensitive personal data, process data at large scale, or are themselves in the business of personal data processing services — the startup must check these disqualifiers",
+    "Correctly notes what is NOT exempted: core duties still apply — valid consent, security measures, breach notification, data subject rights, and cross-border transfer rules",
+    "Explains the strategic consideration: electing the exemption doesn't freeze obligations forever; plan for full compliance before the window closes or before scaling into a disqualifying category",
+    "Gives the startup a concrete minimal-compliance checklist (consent flows, privacy notice, security baseline, breach playbook, records of processing) sized to its stage"
+  ]
+}

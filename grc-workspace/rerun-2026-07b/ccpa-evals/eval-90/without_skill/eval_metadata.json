@@ -1,0 +1,13 @@
+{
+  "eval_id": 90,
+  "eval_name": "sensitive-pi-mobile-app",
+  "run_type": "without_skill",
+  "prompt": "Our mobile app collects precise geolocation, health metrics from wearable integration, and biometric facial recognition for authentication. How does CPRA classify this data, what special obligations apply, and what do we need to disclose?",
+  "assertions": [
+    "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+    "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+    "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+    "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+    "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable"
+  ]
+}

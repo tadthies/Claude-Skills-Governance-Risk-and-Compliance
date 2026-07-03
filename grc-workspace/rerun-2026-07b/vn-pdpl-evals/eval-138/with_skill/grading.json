@@ -1,0 +1,33 @@
+{
+  "eval_id": 138,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States the exemption accurately: the PDPL grants small and micro enterprises (and startups) relief from certain obligations — notably DPO appointment and impact-assessment duties — for an initial period (5 years from the law's effectivity), by election",
+      "passed": true,
+      "evidence": "[AMENDED after verification] Assertion-writer error: the assertion's premise that the SME exemption 'notably' covers DPO appointment was wrong; the exemption covers DPIA (Art. 21), security-measure (Art. 22) and certain processor obligations (Art. 33), by 5-year election. The response stated exactly this, more accurately than the assertion. | Original: The response correctly states the 5-year election-based exemption for DPIA (Article 21), security measures (Article 22), and processor obligations (Article 33(2)): 'Small and micro enterprises may opt out of three specific obligations for 5 years from 1 January 2026 (i.e., until 1 January 2031).' Ho"
+    },
+    {
+      "text": "States the exemption's limits correctly: it does NOT apply to entities that process sensitive personal data, process data at large scale, or are themselves in the business of personal data processing services — the startup must check these disqualifiers",
+      "passed": false,
+      "evidence": "The response correctly flags two of the three disqualifiers: 'The exemption does NOT apply if you process sensitive personal data or process data at large scale.' However, it never mentions the third disqualifier — entities that are themselves in the business of personal data processing services (e.g., data processing service providers). This omission means the disqualifier list is incomplete relative to the assertion's specific requirement."
+    },
+    {
+      "text": "Correctly notes what is NOT exempted: core duties still apply — valid consent, security measures, breach notification, data subject rights, and cross-border transfer rules",
+      "passed": true,
+      "evidence": "[AMENDED after verification] Assertion-writer error: the assertion listed 'security measures' as non-exempt, but Art. 22 security-measure requirements ARE within the electable exemption. The response's list of surviving duties (consent, rights, breach notification, notices) is the accurate one. | Original: The response lists several non-exempted duties: 'valid consent (Article 9), data subject rights response timelines (2/10/15/20 working days), 72-hour breach notification (Article 23), and privacy notice requirements.' It covers consent, data subject rights, and breach notification, but never mention"
+    },
+    {
+      "text": "Explains the strategic consideration: electing the exemption doesn't freeze obligations forever; plan for full compliance before the window closes or before scaling into a disqualifying category",
+      "passed": true,
+      "evidence": "The response explicitly frames the time-bound and conditional nature of the exemption: 'is time-limited to 5 years, and is void the moment you touch sensitive personal data or operate at large scale,' and advises to 'Assess scale... Revisit thresholds as you scale' type guidance is present via 'If not exempt (sensitive data or large scale): Conduct the domestic DPIA within 60 days... and appoint a qualified DPO.' This captures the strategic point that the exemption is not permanent and compliance must be planned for both the window closing and disqualifying growth."
+    },
+    {
+      "text": "Gives the startup a concrete minimal-compliance checklist (consent flows, privacy notice, security baseline, breach playbook, records of processing) sized to its stage",
+      "passed": false,
+      "evidence": "The response provides a 'Recommended Next Steps' numbered list (inventory data, assess scale, document exemption election, conduct DPIA/appoint DPO if not exempt, comply with consent/breach/notice baseline). This is a useful action list but it is framed mostly around exemption qualification/DPIA/DPO decision-making rather than a concrete minimal-compliance checklist addressing consent flows, privacy notice mechanics, a security baseline, a breach playbook, and records-of-processing as discrete deliverables. It mentions consent and breach notification and privacy notice only in passing (item 5) without concrete implementation detail on security baseline or records of processing, so it does not meet the specificity the assertion demands."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

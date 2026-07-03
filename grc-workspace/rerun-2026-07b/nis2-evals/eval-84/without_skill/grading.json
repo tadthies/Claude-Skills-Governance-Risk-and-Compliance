@@ -1,0 +1,33 @@
+{
+  "eval_id": 84,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Clearly states that ISO 27001 certification does NOT equal NIS2 compliance (a strong foundation but not a safe harbor — legal obligations remain directly on the entity)",
+      "passed": true,
+      "evidence": "'No. ISO 27001:2022 certification is an excellent foundation... but it does not automatically make you NIS2 compliant... NIS2 is an EU legal obligation with specific, mandatory requirements — some of which go beyond, or differ in nature from, what ISO 27001 certification verifies.'"
+    },
+    {
+      "text": "Identifies the incident-reporting gap: NIS2 Art. 23 prescribes 24h / 72h / 1-month reporting timelines to CSIRTs/authorities that ISO 27001 does not require",
+      "passed": true,
+      "evidence": "'2. No Direct Legal Reporting Obligation... it does not require — or verify — that you report significant incidents to a government CSIRT/competent authority within 24 hours (early warning), 72 hours (notification), and one month (final report).'"
+    },
+    {
+      "text": "Identifies the governance gap: Art. 20 management-body approval, oversight, mandatory training, and personal accountability go beyond ISO 27001's management commitment clauses",
+      "passed": true,
+      "evidence": "'3. Governance and Management Liability... NIS2 Article 20 imposes direct, personal accountability on management bodies... ISO 27001 requires \"top management commitment\" (Clause 5) but this is far softer than NIS2's statutory personal liability regime.'"
+    },
+    {
+      "text": "Discusses supply chain security under Art. 21(2)(d) — and if it cites the EU-level coordinated supply chain risk assessments, attributes them to Art. 22 / the Cooperation Group with ENISA. FAIL this assertion if coordinated supply-chain risk assessments are attributed to Art. 26 (which concerns jurisdiction and territoriality).",
+      "passed": true,
+      "evidence": "'4. Supply Chain Security — Different Depth... NIS2 supply chain expectations are evolving via ENISA and Cooperation Group guidance and may exceed what a standard ISO 27001 supplier-risk process covers.' Coordinated risk assessments are attributed to ENISA/Cooperation Group without misattributing them to Art. 26, so the explicit FAIL condition is not triggered, and supply chain security is substantively discussed as a gap area."
+    },
+    {
+      "text": "Names at least one further concrete delta: e.g., measures ISO doesn't universally mandate (MFA under Art. 21(2)(j), cryptography policy under 21(2)(h)), sector-specific rules (Implementing Regulation 2024/2690), registration duties, or penalty exposure (Art. 34: up to €10M/2% for essential, €7M/1.4% for important entities)",
+      "passed": true,
+      "evidence": "'5. Registration with National Competent Authority... There is no ISO 27001 equivalent to NIS2's requirement to register with your national competent authority.' Also: 'Failing NIS2 compliance risks statutory administrative fines (up to €10M or 2% of global turnover for Essential Entities; up to €7M or 1.4% for Important Entities).'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

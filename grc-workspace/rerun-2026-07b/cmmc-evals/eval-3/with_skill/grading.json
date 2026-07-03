@@ -1,0 +1,33 @@
+{
+  "eval_id": 3,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States the requirement accurately: multifactor authentication for local and network access to privileged accounts, and network access to non-privileged accounts (IA.L2-3.5.3)",
+      "passed": true,
+      "evidence": "Requirement Statement section: 'Use multifactor authentication (MFA) for local and network access to privileged accounts and for network access to non-privileged accounts.'"
+    },
+    {
+      "text": "Describes implementation per named component: Entra ID MFA (conditional access) for M365 GCC High, Duo for VPN, and explicitly addresses the on-prem AD legacy CAD workstations — the local-access-to-privileged-accounts gap most environments miss",
+      "passed": true,
+      "evidence": "Separate subsections cover 'Cloud identity and productivity environment (Microsoft 365 GCC High / Entra ID)' with Conditional Access detail, 'Remote network access (VPN)' with Duo MFA detail, and 'On-premises Active Directory (legacy CAD workstations)' which explicitly calls out 'Local access to privileged (administrative) accounts on the on-prem AD domain ... this is the practice's most common failure point.'"
+    },
+    {
+      "text": "Written in SSP style: describes what IS implemented (not aspirational), names responsible roles, and covers each assessment objective (who/what/where MFA is enforced)",
+      "passed": true,
+      "evidence": "Uses present-tense implementation language ('[Organization Name] implements...', 'All user access ... is authenticated through...') and includes a 'Responsible Roles' section naming ISSO/ISSM, IT Systems Administrator, Domain Administrator, Security Operations. Covers who (roles), what (MFA mechanism), where (each system) for each access path."
+    },
+    {
+      "text": "Identifies remaining gaps honestly and routes them to a POA&M entry rather than papering over (e.g., local admin access on legacy workstations pending smart card/Windows Hello deployment)",
+      "passed": false,
+      "evidence": "The response includes a 'Gap Note' that flags the on-prem local privileged MFA gap conditionally ('If this control is not yet deployed, see Gap Note below') and recommends it be treated as top priority, but it does NOT create or reference an actual POA&M entry (no POA&M ID, milestones, remediation actions, or completion date) — it only flags the item as an open question/action item, not a routed POA&M as the assertion requires."
+    },
+    {
+      "text": "Includes evidence pointers an assessor would ask for (conditional access policy exports, Duo policy config, screenshots/logs demonstrating enforcement)",
+      "passed": true,
+      "evidence": "Evidence/Artifacts section lists 'Entra ID Conditional Access policy export', 'Duo MFA administration console configuration and enrollment report', 'Screenshot/export of Duo Authentication for Windows Logon policy', 'Active Directory Group Policy Object (GPO) settings', 'MFA enrollment report', and 'Sample access logs demonstrating MFA challenge.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

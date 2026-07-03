@@ -1,0 +1,33 @@
+{
+  "eval_id": 123,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies the model as a GPAI model subject to Chapter V, and correctly applies the open-source exemption: free & open-source GPAI providers are exempt from the Art. 53(1)(a)-(b) technical documentation duties BUT must still comply with the copyright policy (Art. 53(1)(c)) and publish the public training-content summary (Art. 53(1)(d))",
+      "passed": true,
+      "evidence": "Response states exemption from 'Article 53(1)(a) — maintaining technical documentation... and Article 53(1)(b) — providing documentation/information to downstream providers' while 'must still comply with the copyright policy (Article 53(1)(c))' and 'Publish a sufficiently detailed summary of the content used for training... (Article 53(1)(d))... not waived by the open-source exemption.'"
+    },
+    {
+      "text": "Correctly assesses systemic risk: 8x10^23 FLOPs is below the 10^25 FLOPs presumption threshold (Art. 51), so no systemic-risk obligations (Art. 55) absent a Commission designation — and notes the open-source exemption does NOT apply to systemic-risk models",
+      "passed": true,
+      "evidence": "Response states model is 'below the 10^25 FLOPs systemic-risk presumption threshold (by roughly two orders of magnitude)... not be presumed to be a GPAI model with systemic risk' and notes 'cumulative FLOPs approaching 10^25 would trigger systemic-risk obligations... plus you'd lose part of the open-source carve-out.'"
+    },
+    {
+      "text": "States GPAI obligations have applied since 2 August 2025",
+      "passed": true,
+      "evidence": "Response states: 'GPAI obligations (Chapter V) have applied since 2 August 2025, so they are already in force.'"
+    },
+    {
+      "text": "Describes the GPAI Code of Practice (published July 2025) as a voluntary compliance pathway with chapters on transparency, copyright, and safety/security, and explains adherence eases demonstrating compliance",
+      "passed": true,
+      "evidence": "Response states: 'The General-Purpose AI Code of Practice (finalized in 2025...) is designed as a voluntary tool to help providers demonstrate compliance... It has three chapters: Transparency, Copyright, and Safety and Security... Signing/adhering to the Code creates a presumption of conformity.'"
+    },
+    {
+      "text": "Mentions AI Office enforcement powers over GPAI providers activating 2 August 2026 (fines possible from that date)",
+      "passed": false,
+      "evidence": "No mention anywhere in the response of AI Office enforcement powers activating on 2 August 2026, or of any fine/enforcement date beyond the 2 August 2025 GPAI application date. A targeted search of the response for '2026' and 'enforcement' returns no hits."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

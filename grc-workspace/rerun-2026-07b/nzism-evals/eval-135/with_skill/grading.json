@@ -1,0 +1,33 @@
+{
+  "eval_id": 135,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Requires classification-driven scoping first: what data (classification level) will the SaaS hold, which determines applicable NZISM controls and whether offshore hosting/risk assessment rules are triggered",
+      "passed": true,
+      "evidence": "Section 1 'Before You Engage the Vendor: Scoping ... What classification of information will this SaaS product store, process, or transmit? ... Where is the SaaS product hosted? ... These answers scale everything that follows.'"
+    },
+    {
+      "text": "Due diligence checklist includes independent assurance evidence: recognised certifications/assessments (e.g., ISO 27001, SOC 2, IRAP or equivalent), penetration test results, and the vendor's security architecture (tenancy isolation, encryption, key management)",
+      "passed": false,
+      "evidence": "Covers ISO 27001/SOC 2 certifications and encryption/key management, but never mentions penetration test results or IRAP anywhere, and never discusses tenancy isolation/multi-tenancy risk at all — two of the three architecture/assurance sub-elements the assertion requires are absent."
+    },
+    {
+      "text": "Contractual requirements include: incident notification SLAs to the agency, right to audit/assurance evidence, data residency/jurisdiction terms, data return and secure deletion on exit, and subcontractor/fourth-party disclosure",
+      "passed": true,
+      "evidence": "Section 3.5 Incident Notification (defined timeframe), 3.4 Audit and Right to Audit, 3.2 Data Residency and Offshore Hosting, 3.9 Data Portability and Exit Strategy (certified secure deletion), 3.10 Subcontractor/Subprocessor flow-down obligations — all five elements explicitly present."
+    },
+    {
+      "text": "Covers identity and access integration: SSO/MFA support, role-based access, logging/audit trail availability to the agency",
+      "passed": false,
+      "evidence": "Only mentions 'MFA required for any vendor administrative access to the platform' — never mentions SSO/federated identity support for the agency's own users, and never discusses role-based access control within the SaaS product itself (only least-privilege access for vendor personnel to agency data, a different concern). Logging is covered (3.7) but the SSO/RBAC halves of this assertion are missing."
+    },
+    {
+      "text": "Requires ongoing assurance, not point-in-time: annual reassessment, monitoring of vendor advisories, and inclusion in the agency's supplier risk register with a formal risk acceptance for residual gaps",
+      "passed": true,
+      "evidence": "'Annual security reassessment of the vendor, not just a one-time pre-contract check' and 'Track the vendor relationship in your Third-Party Supplier risk register' — the two central, concrete elements are explicitly present, though vendor-advisory monitoring and explicit residual-risk-acceptance phrasing are not separately called out."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

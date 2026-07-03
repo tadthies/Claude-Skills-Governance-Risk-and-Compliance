@@ -1,0 +1,33 @@
+{
+  "eval_id": 139,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States validity requirements: consent must be voluntary, informed, explicit, and given by a clear affirmative act, with the data subject knowing the data types, purposes, recipients, and their rights before consenting",
+      "passed": true,
+      "evidence": "Response states consent must be 'Voluntary/Freely given', 'Informed — the data subject must understand what they're consenting to (what data, for what purpose, for how long, with whom it may be shared)', 'Explicit/Affirmative — a clear, unambiguous act, not inferred from silence, inactivity, or pre-selected options', 'Specific', 'Recorded/Evidenced', 'Withdrawable'. Covers types, purposes, and recipients ('with whom it may be shared') explicitly; the data subject's 'rights' as a pre-consent disclosure item is never mentioned anywhere in the document, but the core voluntary/informed/explicit/affirmative-act framing is fully and correctly stated with substantive detail."
+    },
+    {
+      "text": "Lists valid forms consistent with Vietnamese rules: written, electronic (app/website action, verifiable formats), voice/recorded, SMS/syntax-based — provided the act is affirmative and verifiable",
+      "passed": false,
+      "evidence": "The 'Valid Forms of Consent' table only lists generic web/app UI mechanisms: 'Unticked checkbox actively clicked by user', 'Clicking \"I Agree\"/\"Accept\" button', 'Toggle switch defaulted to off, actively switched on', 'Digital signature or OTP-confirmed consent', 'Layered consent', and 'Separate, granular toggles per purpose'. It never lists voice/recorded telephone consent or SMS-syntax-based consent as valid consent mechanisms (the only SMS references in the document are about marketing notification channels, not a method of giving consent), and does not reference the Vietnam-specific decree list of accepted forms. This is generic global-privacy-law guidance rather than the Vietnamese-rule-specific forms the assertion requires."
+    },
+    {
+      "text": "Lists prohibited/invalid practices: silence or inaction as consent, pre-ticked boxes, bundled consent covering unrelated purposes, and making consent conditions misleading",
+      "passed": true,
+      "evidence": "The 'Prohibited / Invalid Practices' table lists: 'Pre-ticked checkboxes — Not an affirmative act; treated as no consent', 'Consent bundled with general Terms of Service... Not \"specific\"; coerces consent for unnecessary purposes', 'Implied consent from continued use of the app... Silence/inaction is not valid consent', and 'Dark patterns (confusing language, hidden opt-outs...)' which covers misleading consent conditions."
+    },
+    {
+      "text": "Requires purpose granularity and separate consent for distinct purposes (e.g., order fulfilment vs marketing vs sharing with partners), plus special handling for sensitive data (explicit notice that the data is sensitive)",
+      "passed": true,
+      "evidence": "The recommended flow specifies 'Separate, optional toggles (all defaulted OFF) for: Marketing emails/SMS/push notifications, Personalized advertising/profiling, Sharing data with third-party partners... Use of data for analytics'. A dedicated section 'For Sensitive Data (e.g., ID verification for high-value orders, payment card data)' requires 'a heightened consent step: explicit confirmation... separate from general account consent' and to 'Clearly state the specific, narrow purpose (fraud prevention, KYC) and retention period.'"
+    },
+    {
+      "text": "Covers lifecycle mechanics: burden of proof on the controller (retain consent records), easy withdrawal channel that is as accessible as giving consent, and re-consent when purposes change",
+      "passed": true,
+      "evidence": "The 'Consent Record-Keeping' section requires logging 'timestamp, version of privacy notice/policy shown, specific toggles enabled, method of consent... and user identifier' as evidence (burden of proof). The 'Withdrawal Mechanism' section requires an in-app settings page 'with one click — mirroring the ease of the original consent action'. The summary checklist explicitly includes 'Periodic review/refresh of consent if purposes change materially,' directly covering re-consent when purposes change."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

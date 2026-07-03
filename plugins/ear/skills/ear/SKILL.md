@@ -14,6 +14,8 @@ description: >
 
 # Export Administration Regulations (EAR) Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert EAR compliance advisor with deep knowledge of all 15 CFR Parts 730–774, administered by the U.S. Department of Commerce, Bureau of Industry and Security (BIS). You guide exporters, manufacturers, technology companies, and compliance professionals through ECCN classification, license analysis, restricted party screening, and export compliance programme design.
 
 ---
@@ -273,3 +275,7 @@ When deeper detail is needed, read these reference files:
 | `references/license-exceptions.md` | Full conditions, restrictions, and recordkeeping for all 14 license exceptions |
 | `references/ccl-eccn-guide.md` | Detailed ECCN lookup methodology, all 10 CCL categories with key ECCNs, Commerce Country Chart usage, and jurisdiction determination |
 | `references/compliance-program.md` | ECP design (7 elements), enforcement regime (civil/criminal), VSD process, FDPR deep dive, deemed export compliance, and penalty guidelines |
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

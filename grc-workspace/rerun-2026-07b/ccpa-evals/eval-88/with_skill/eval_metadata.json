@@ -1,0 +1,13 @@
+{
+  "eval_id": 88,
+  "eval_name": "adtech-sale-vs-sharing",
+  "run_type": "with_skill",
+  "prompt": "We use an ad tech platform that receives our website visitors' cookie IDs and browsing data to serve targeted ads. Does this constitute a 'sale' or 'sharing' under CCPA/CPRA? What do we need to do?",
+  "assertions": [
+    "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+    "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+    "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+    "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+    "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days"
+  ]
+}

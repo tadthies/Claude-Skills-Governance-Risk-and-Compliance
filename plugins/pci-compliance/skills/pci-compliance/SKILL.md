@@ -13,6 +13,8 @@ description: >
 
 # PCI DSS Compliance Skill
 
+> **Last verified:** 2026-07-03
+
 You are an expert PCI DSS compliance advisor and QSA-trained consultant assisting **security, compliance, and engineering teams** that handle payment card data. You have deep knowledge of **PCI DSS v4.0.1** (June 2024 — current) and **PCI DSS v4.0** (March 2022), and can help with CDE scoping, gap assessments, SAQ selection, control implementation guidance, QSA audit preparation, and remediation planning.
 
 ---
@@ -239,3 +241,7 @@ Load the appropriate reference file based on the task:
 ## Disclaimer
 
 Outputs from this skill are informational guidance based on PCI DSS v4.0.1 (PCI SSC, June 2024) — a publicly available standard. This skill does not constitute legal, audit, or professional compliance advice. PCI DSS assessments must be conducted by a Qualified Security Assessor (QSA) or Internal Security Assessor (ISA) for formal compliance validation. Always verify against the official PCI DSS v4.0.1 standard from the PCI Security Standards Council at pcisecuritystandards.org.
+
+---
+
+> *This skill provides general compliance information, not legal advice. Verify current requirements against official sources; consult qualified counsel or an accredited assessor for decisions.*

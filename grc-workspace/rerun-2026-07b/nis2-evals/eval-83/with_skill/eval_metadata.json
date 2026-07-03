@@ -1,0 +1,13 @@
+{
+  "eval_id": 83,
+  "eval_name": "ransomware-reporting-workflow",
+  "run_type": "with_skill",
+  "prompt": "We suffered a ransomware attack at 09:00 Monday morning that encrypted our core operational systems. Walk me through exactly what we need to report, to whom, and by when under NIS2.",
+  "assertions": [
+    "Specifies the 24-hour early warning to the CSIRT or competent authority, indicating whether the incident is suspected to be caused by unlawful/malicious acts and whether it could have cross-border impact (Art. 23(4)(a))",
+    "Specifies the 72-hour incident notification updating the early warning with an initial assessment of severity and impact and available indicators of compromise (Art. 23(4)(b))",
+    "Specifies the final report within one month containing a detailed description, threat type / root cause, applied and ongoing mitigation, and any cross-border impact (Art. 23(4)(d)) — including the progress-report rule if the incident is still ongoing at the one-month mark",
+    "Explains why this qualifies as a 'significant incident' (Art. 23(3): severe operational disruption or financial loss / considerable damage to others) and mentions intermediate status updates upon authority request (Art. 23(4)(c))",
+    "Mentions parallel duties: informing recipients of services where relevant (Art. 23(1)-(2)) and the separate GDPR 72-hour personal data breach notification if personal data is affected"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 70,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Structures the assessment around the GOVERN categories (policies/processes; accountability structures; workforce diversity/culture; organizational engagement; third-party risk; monitoring/inventory-type categories) with a rating per area — consistent with the six GOVERN categories of AI RMF 1.0",
+      "passed": true,
+      "evidence": "Table with rows GOVERN 1 through GOVERN 6, each given a status rating (🔴 Not Started / 🟡 Partial) with gap notes, plus an overall maturity tier assignment ('Tier 1 (Partial)')."
+    },
+    {
+      "text": "Correctly rates the described state: ethics statement = partial credit on culture/policy, while missing risk policy, missing cross-functional team, undefined risk tolerance, and absent legal involvement are each flagged as specific gaps against specific GOVERN areas",
+      "passed": true,
+      "evidence": "GOVERN 6 rated 🟡 Partial specifically because 'the AI ethics statement suggests some engagement with ethical principles.' GOVERN 1 flags missing risk policy; GOVERN 4 flags 'Explicitly stated: no cross-functional AI team... Legal is not involved in deployments'; GOVERN 5 flags 'Explicitly stated: no defined risk tolerance for AI'; GOVERN 6 also flags absent legal involvement in deployments."
+    },
+    {
+      "text": "Flags undefined risk tolerance as a foundational gap (GOVERN 1.x expects documented risk tolerance informing all downstream MAP/MEASURE/MANAGE work)",
+      "passed": true,
+      "evidence": "GOVERN 5 row: 'Without this, there's no way to make go/no-go deployment decisions (GOVERN 5.3) or set bias/accuracy thresholds for testing.' Reiterated in Critical Path Note: 'without... a defined risk tolerance (GOVERN 5)... you cannot meaningfully prioritize risks in MAP 4, set measurement thresholds in MEASURE 1.'"
+    },
+    {
+      "text": "Remediation plan is prioritised and sequenced (policy + accountability + tolerance first; team formation and legal integration next; inventory and third-party processes after) with owners/timeframes",
+      "passed": true,
+      "evidence": "Sequenced into 'Quick Wins (0-3 months)' — accountable owner, legal gate, risk tolerance draft, ethics-to-policy; 'Medium Term (3-6 months)' — formal policy, cross-functional working group, roles register, escalation path; 'Long Term (6-12 months)' — review cadence, regulatory register, maturity tier progression. Role-level owners implied throughout (e.g., 'CISO, Chief Risk Officer,' 'AI Risk Owner')."
+    },
+    {
+      "text": "Deliverables are concrete: AI risk policy outline, RACI or committee charter, risk tolerance statement examples, AI system inventory — not just abstract advice",
+      "passed": false,
+      "evidence": "Only the risk tolerance statement receives a concrete example ('distinguish low-stakes AI... from high-stakes AI... systems affecting individuals' legal rights, employment, credit, health, safety'). There is no AI risk policy outline (only 'publish a formal AI Risk Management Policy' as an action item, no section breakdown), no RACI matrix or committee charter template, and no AI system inventory is ever mentioned or delivered — a genuine gap versus the assertion's bar of concrete deliverables."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

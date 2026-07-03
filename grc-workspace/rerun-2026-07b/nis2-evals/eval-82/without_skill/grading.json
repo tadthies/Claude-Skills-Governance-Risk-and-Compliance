@@ -1,0 +1,33 @@
+{
+  "eval_id": 82,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Engages the decisive legal question: whether B2B SaaS qualifies as a 'cloud computing service' (Annex I digital infrastructure) under the Art. 6(30) definition (on-demand administration, broad remote access, scalable and elastic pool of shareable computing resources) — and reaches a REASONED conclusion. PASS for a well-argued conclusion either way that applies the definition to the facts; FAIL if the cloud-computing-service question is not analysed at all.",
+      "passed": true,
+      "evidence": "The response explicitly frames this as 'the critical classification question', discusses whether the company operates infrastructure vs. builds on top of AWS/Azure/GCP, references the on-demand/shared-pool definition, and reaches a conclusion: 'you should assume you fall under the cloud computing services entity type in Annex I.' This is a reasoned application of the definition, even though later reasoning about classification is flawed."
+    },
+    {
+      "text": "Applies the size threshold correctly: at 75 employees / €15M the company meets the Art. 2(1) medium-size threshold, so IF it qualifies as a cloud computing service it is in scope; and classifies the in-scope outcome as IMPORTANT entity (medium-sized, not in the Art. 3(1) always-essential categories). PASS if the EE/IE size-cap logic is correctly explained even under an out-of-scope conclusion.",
+      "passed": false,
+      "evidence": "The response correctly identifies the medium-size threshold is met, but then states: 'Cloud computing service providers are one of the entity types that, per Article 3, are classified as Essential Entities regardless of size... digital infrastructure providers (cloud computing services, data centres, DNS, TLD registries, trust service providers, public electronic communication networks/services) are treated as Essential Entities in Annex I when they are medium or large, not merely Important Entities.' This is a factual misstatement of Art. 3(1) — only a narrow list of specific categories (qualified trust service providers, TLD registries, DNS providers, etc.) are always-essential regardless of size; general cloud computing service providers are not. The response concludes 'You are very likely an Essential Entity' rather than the required Important Entity classification, and the EE/IE size-cap logic is misapplied rather than correctly explained."
+    },
+    {
+      "text": "Walks through the Art. 21(2)(a)-(j) measures with concrete implementation guidance (risk policies, incident handling, business continuity/backup, supply chain, secure development/vulnerability handling, effectiveness assessment, hygiene and training, cryptography, HR/access control, MFA)",
+      "passed": true,
+      "evidence": "Ten numbered sections walk through each Art. 21(2) measure with HR-SaaS-specific guidance, e.g., 'Supply Chain Security... your cloud infrastructure provider (AWS/Azure/GCP), any subprocessors, authentication providers, payment processors' and 'Cryptography and Encryption Policies... salaries, performance reviews, sometimes health/disability data.'"
+    },
+    {
+      "text": "Mentions Commission Implementing Regulation (EU) 2024/2690, which lays down the specific technical requirements (and significant-incident thresholds) binding on cloud computing service providers",
+      "passed": false,
+      "evidence": "No mention of Implementing Regulation (EU) 2024/2690 or any sector-specific technical implementing act anywhere in the response."
+    },
+    {
+      "text": "Addresses jurisdiction/registration for digital providers: the main-establishment rule (Art. 26) and/or the entity registration requirement, plus the fact that supervision for important entities is ex-post (reactive)",
+      "passed": false,
+      "evidence": "Only a generic one-line mention of registration ('Register with your national competent authority/CSIRT if confirmed in scope'), with no reference to Art. 26 or the main-establishment rule, and no mention of ex-post/reactive supervision for important entities — consistent with the response's (incorrect) conclusion that the company is an Essential Entity rather than Important."
+    }
+  ],
+  "total": 5,
+  "passed": 2
+}
