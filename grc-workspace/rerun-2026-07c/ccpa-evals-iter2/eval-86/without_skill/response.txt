@@ -1,0 +1,67 @@
+# CCPA/CPRA Applicability and Core Obligations
+
+## Are You Subject to CCPA/CPRA?
+
+The CCPA, as amended by the CPRA, applies to a "business" that does business in California, determines the purposes and means of processing consumers' personal information, and meets **at least one** of the following thresholds:
+
+1. Had annual gross revenues in excess of **$25 million** (as of the preceding calendar year); **or**
+2. Buys, sells, or shares the personal information of **100,000 or more** California consumers or households annually; **or**
+3. Derives **50% or more** of annual revenue from selling or sharing California consumers' personal information.
+
+**Your situation:** With $30M in annual revenue, you exceed the $25M revenue threshold (Criterion 1) on that basis alone. It does not matter that you only collect data on 80,000 California customers (below the 100,000 threshold for Criterion 2) — meeting **any one** criterion is sufficient. Because your revenue exceeds $25M, **you are very likely subject to the CCPA/CPRA**, assuming you also do business in California and determine the purposes/means of processing personal information (which as an e-commerce company selling to California customers, you do).
+
+Note: Confirm the $25M figure is calculated correctly — it's total annual gross revenue of the business (not just California revenue), measured as of January 1 of the calendar year.
+
+## Core Obligations
+
+Once covered, your core CCPA/CPRA obligations include:
+
+### 1. Notice Obligations
+- **Notice at Collection**: Inform consumers, at or before the point of collection, what categories of personal information you collect and for what business/commercial purposes, whether you sell/share it, and retention periods.
+- **Privacy Policy**: Maintain a comprehensive, publicly posted privacy policy updated at least every 12 months, describing consumer rights, categories of PI collected/disclosed/sold/shared in the past 12 months, and how to exercise rights.
+
+### 2. Consumer Rights You Must Honor
+- **Right to Know** what personal information is collected, used, disclosed, and sold/shared
+- **Right to Delete** personal information (subject to exceptions)
+- **Right to Correct** inaccurate personal information
+- **Right to Opt-Out** of sale/sharing of personal information (including a "Do Not Sell or Share My Personal Information" link, or honoring Global Privacy Control signals)
+- **Right to Limit Use of Sensitive Personal Information** (if you collect SPI)
+- **Right to Non-Discrimination** for exercising these rights (can't charge different prices or deny service, though you can offer legitimate financial incentives)
+- **Right to Data Portability**
+
+### 3. Operational Requirements
+- Provide **at least two methods** for submitting requests to know/delete (e.g., toll-free number and website form)
+- Respond to verifiable consumer requests within **45 days** (extendable by another 45 days with notice)
+- Implement **reasonable identity verification** procedures proportionate to the sensitivity of the data
+- Maintain records of consumer requests and how they were handled for at least 24 months
+
+### 4. Contracts with Service Providers/Third Parties
+- Execute CCPA-compliant contracts with any **service providers, contractors, or third parties** that receive personal information, including required data protection clauses (purpose limitation, prohibition on combining data, audit rights, etc.)
+
+### 5. Data Minimization & Purpose Limitation
+- Collect only personal information that is reasonably necessary and proportionate for the disclosed purposes
+- Do not use personal information for materially different purposes without notice
+
+### 6. Security
+- Implement and maintain **reasonable security procedures and practices** appropriate to the nature of the personal information, to protect against unauthorized access, destruction, use, modification, or disclosure.
+
+### 7. Employee Training
+- Ensure individuals responsible for handling consumer inquiries about privacy practices are informed of CCPA requirements.
+
+### 8. Cybersecurity Audits and Risk Assessments (CPRA additions)
+- If your processing presents significant risk to consumer privacy or security, you may need to conduct **annual cybersecurity audits** and submit **risk assessments** to the California Privacy Protection Agency (CPPA), per regulations being phased in.
+
+### 9. California Privacy Protection Agency (CPPA) Oversight
+- The CPPA (created by CPRA) has rulemaking and enforcement authority, alongside the California Attorney General. Since January 2023, the CCPA's prior 30-day cure period for violations was eliminated for most violations, so enforcement risk is more immediate — the CPPA/AG can pursue penalties without giving you a chance to fix the issue first (though they retain discretion to consider cure efforts).
+
+## Practical Next Steps
+1. Confirm applicability calculation (verify $25M threshold basis) and document it.
+2. Map your data flows: what personal information you collect, from whom, why, how long you keep it, and who you share it with.
+3. Determine if you "sell" or "share" personal information (e.g., via advertising pixels/cookies, analytics, ad networks) — this triggers opt-out obligations.
+4. Update your privacy policy and notice-at-collection language.
+5. Stand up a consumer rights request intake and fulfillment process (with identity verification tiers).
+6. Audit and update vendor contracts to include CCPA-required terms.
+7. Implement a "Do Not Sell or Share My Personal Information" link or honor Global Privacy Control (GPC) signals if you engage in selling/sharing.
+8. Conduct a data security review against "reasonable security" expectations.
+
+**Disclaimer**: This is general information, not legal advice. Given the civil penalty exposure and CPPA enforcement activity, I'd recommend confirming your specific applicability analysis and compliance program design with California privacy counsel.

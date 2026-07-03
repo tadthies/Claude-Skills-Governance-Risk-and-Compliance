@@ -1,0 +1,46 @@
+# AI Hiring Tool — NIST AI RMF Risk Assessment
+
+An AI resume-screening and ranking tool is a textbook high-stakes AI use case under the NIST AI RMF (NIST AI 100-1) — it makes or heavily influences decisions about individuals' economic opportunity, which puts it squarely in the "consequential decision" category the framework treats most seriously. Note up front: the AI RMF itself is voluntary and outcome-based, not a compliance checklist — but for hiring AI you're also operating under mandatory external law (EEOC, and in NYC, Local Law 144), so treat the RMF as your risk management *methodology* while checking specific legal thresholds against counsel.
+
+## Key Risks to Assess
+
+Using **MAP 1** (context) and **MAP 3** (stakeholder risk/benefit mapping) as your starting point:
+
+1. **Disparate impact / hiring bias** — the model systematically disadvantages candidates by race, sex, age, disability, or other protected characteristics, even without explicit protected-attribute inputs (proxy discrimination via zip code, school name, employment gaps, etc.)
+2. **Lack of explainability for adverse decisions** — rejected candidates (and your own recruiters) can't understand why a candidate was screened out or ranked low
+3. **Training data bias** — if the model was trained on historical hiring decisions, it can encode and amplify past discriminatory patterns
+4. **Validity/reliability gaps** — the model may not have been validated for your specific role types, industries, or candidate pools; performance may degrade for underrepresented resume formats or non-native English writing
+5. **Over-reliance / inadequate human oversight** — fully automated rejection without meaningful human review, which several jurisdictions restrict or prohibit
+6. **Regulatory exposure** — EEOC disparate impact liability, NYC Local Law 144 (bias audit + candidate notice requirements for automated employment decision tools), and EU AI Act high-risk classification (Annex III) if you have EU candidates or operations
+7. **Third-party/vendor risk** — if the screening tool is vendor-built or vendor-hosted, you inherit risk from a model you don't fully control or see inside (undisclosed retraining, opaque training data, limited audit rights)
+
+## Trustworthiness Properties Most Relevant
+
+Of the seven AI RMF trustworthiness characteristics, three are primary for this use case:
+
+- **Fair with Harmful Bias Managed** — the central risk. Are demographic biases identified, measured, and mitigated? Does disaggregated performance meet the applicable threshold (e.g., EEOC's "4/5ths rule" — disparate impact ratio ≥ 0.8)?
+- **Explainable & Interpretable** — can you produce a reason for any adverse decision, understandable to both a compliance reviewer and the affected candidate?
+- **Accountable & Transparent** — is there a documented model/system card, and can every ranking decision be traced to a responsible party and a defined process?
+
+Secondary but still relevant: **Valid & Reliable** (has it been tested on your actual applicant pool, not just a generic benchmark?) and **Privacy-Enhanced** (resumes contain PII; ensure minimization and lawful handling).
+
+## MEASURE-Function Actions Before Deployment
+
+Concrete TEVV (Test, Evaluation, Verification, and Validation) actions, mapped to MEASURE subcategories:
+
+1. **MEASURE 2.2 — Disaggregated bias/fairness testing.** Run the model against a representative test set and compute disparate impact ratio, demographic parity, and equalized odds across protected classes (race, sex, age, disability status where legally permissible to test). Flag any subgroup below the 4/5ths threshold.
+2. **MEASURE 2.3 — Explainability testing.** Generate SHAP or LIME explanations for a sample of ranking/rejection decisions; confirm you can produce an adverse-action-style explanation for any candidate who requests one.
+3. **MEASURE 2.1 — Pre-deployment technical/safety evaluation.** Validate accuracy and ranking quality specifically on your applicant population and role types — not just the vendor's generic benchmark.
+4. **MEASURE 2.5 — Human oversight validation.** Confirm and test that a human reviewer meaningfully reviews rejections (not a rubber-stamp) before candidates are eliminated, and that the review step is actually exercised in practice, not just documented.
+5. **MEASURE 1.1/1.3 — Define metrics and document measurement gaps.** Identify which fairness/explainability metrics you can compute given available data (e.g., if you don't collect race/gender at application stage, document how you'll estimate disparate impact — proxy analysis, post-hire surveys, etc. — and the limitations of that approach).
+6. **MEASURE 2.6 — Document and share results.** Produce a written pre-deployment evaluation report covering the above, reviewed by legal/HR/compliance before go-live.
+7. **MEASURE 3.1/3.2 — Post-deployment monitoring.** Once live, monitor disaggregated performance and disparate impact ratio on an ongoing basis (not just at launch) — hiring pools and resume patterns shift over time, and model or vendor updates can silently reintroduce bias.
+
+## Recommended Next Steps (MAP → MANAGE)
+
+- **MAP**: Document intended use and bound it explicitly (e.g., "screening/ranking only, not sole basis for rejection") and identify affected populations (applicants, especially those in protected classes) — MAP 1.2/1.4.
+- **MANAGE**: For any subgroup below the 4/5ths threshold, define treatment — retrain with rebalanced data, add/strengthen human review gate, or restrict use for that role type — MANAGE 2.1.
+- Cross-reference **NYC Local Law 144** (requires an independent bias audit published publicly and candidate notice before use) and **EU AI Act** Annex III high-risk classification for employment AI if applicable to your candidate pool.
+
+---
+*This is general compliance information, not legal advice. EEOC, state/local automated-employment-decision-tool laws (e.g., NYC Local Law 144), and EU AI Act obligations should be verified with qualified employment counsel before deployment.*

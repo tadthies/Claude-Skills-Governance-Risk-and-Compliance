@@ -1,0 +1,123 @@
+# Mapping NIST AI RMF to the EU AI Act — and Where the Gaps Are
+
+Short answer: NIST AI RMF and the EU AI Act rhyme conceptually, but they are fundamentally different instruments. Implementing AI RMF well will build most of the *organizational muscle* you need for EU AI Act compliance, but it will **not**, on its own, satisfy the Act's legal obligations. You will need a compliance layer on top. Below is the detail.
+
+---
+
+## 1. Two Different Kinds of Things
+
+| | **NIST AI RMF** | **EU AI Act** |
+|---|---|---|
+| Nature | Voluntary, non-binding risk management framework | Binding EU regulation (directly applicable law in all Member States) |
+| Purpose | Help organizations *think about and manage* AI risk | Set *legal requirements* organizations must meet, with penalties for non-compliance |
+| Structure | Four functions: Govern, Map, Measure, Manage | Risk-tiered legal obligations (unacceptable, high, limited, minimal risk) + GPAI rules |
+| Enforcement | None — it's guidance | Yes — fines up to €35M or 7% of global turnover (prohibited practices); €15M/3% (most high-risk violations); market surveillance authorities, conformity assessment bodies |
+| Scope of "risk" | Broad, sociotechnical, trustworthiness-oriented (validity, safety, security, accountability, transparency, fairness, privacy) | Legally defined risk tiers tied to specific use cases (Annex III) and specific legal rights (safety, fundamental rights) |
+| Flexibility | Adaptable to any org, any AI use case, any sector | Prescriptive: specific documentation, specific processes, specific timelines, specific registration |
+| Output | A risk management *practice/culture* | A compliance *dossier* (technical documentation, conformity assessment, CE marking, registration) |
+
+**Bottom line:** AI RMF is a "how to think" framework; the EU AI Act is a "what you must do, prove, and file" law. You can be excellent at AI RMF and still be non-compliant with the Act if you haven't done the legally-mandated paperwork, assessments, and registrations.
+
+---
+
+## 2. Conceptual Mapping: NIST Functions to EU AI Act Provisions
+
+NIST itself has published crosswalk resources (including an AI RMF Crosswalk mapping to ISO/IEC 23894, OECD, and elements relevant to the EU AI Act) — the mapping below follows that general spirit, applied specifically to the Act's Title III, Chapter 2 requirements for high-risk AI systems (Articles 9–15), plus surrounding obligations.
+
+| NIST AI RMF Function | Sub-elements | Related EU AI Act Provisions |
+|---|---|---|
+| **GOVERN** | Policies, accountability structures, risk culture, roles/responsibilities, third-party risk | Art. 9 (risk management system as ongoing process), Art. 17 (Quality Management System), Art. 4 (AI literacy), provider/deployer role definitions (Art. 3, 16, 26), Art. 25 (authorized representative obligations) |
+| **MAP** | Context establishment, categorizing AI systems, identifying impacted stakeholders, intended use/foreseeable misuse | Art. 6 + Annex III (high-risk classification logic), Art. 5 (prohibited practices screening), Art. 27 (Fundamental Rights Impact Assessment for certain deployers), Art. 10 (data governance — understanding data provenance/context) |
+| **MEASURE** | Metrics, testing, evaluation, monitoring for validity/reliability/bias/safety | Art. 15 (accuracy, robustness, cybersecurity — with specific metrics disclosed in instructions for use), Art. 9(6)-(8) (testing against risk management system), Art. 72 (post-market monitoring plan and system) |
+| **MANAGE** | Risk prioritization, response, resource allocation, incident response, third-party risk management | Art. 9 (risk mitigation measures), Art. 73 (serious incident reporting), Art. 20 (corrective actions), Art. 21 (cooperation with authorities), Art. 16 (provider obligations broadly) |
+
+### Additional mapping for specific Articles
+
+| EU AI Act Requirement (High-Risk Systems) | Nearest NIST AI RMF Analog |
+|---|---|
+| Art. 9 — Risk management system | GOVERN + MAP + MEASURE + MANAGE (the full lifecycle loop) — closest single analog to the entire AI RMF cycle |
+| Art. 10 — Data and data governance | MAP 2.x (data/context characterization); MEASURE (data quality metrics) — but AI RMF doesn't mandate specific data governance controls (bias examination, representativeness, error correction) the way Art. 10 does |
+| Art. 11 — Technical documentation | Loosely reflected in MANAGE 4.x (documentation of risk decisions) — but NIST doesn't specify a document format; EU Act has an Annex IV template |
+| Art. 12 — Record-keeping / logging | MEASURE 2.x, MANAGE 4.x (monitoring/logging as good practice) — Act mandates automatic log retention, minimum periods, specific traceability |
+| Art. 13 — Transparency & instructions for use | MAP 3.x, GOVERN 4.x (documentation for downstream users) — Act requires specific disclosures to deployers |
+| Art. 14 — Human oversight | GOVERN 3.x, MANAGE 2.x (human-AI teaming, oversight mechanisms) — Act requires designed-in oversight measures (stop buttons, override capability) as a legal design requirement, not just a practice |
+| Art. 15 — Accuracy, robustness, cybersecurity | MEASURE 2.5–2.7 (robustness, security) — conceptually aligned but Act ties this to conformity assessment and CE marking, which AI RMF has no equivalent for |
+| Art. 16-27 — Provider/deployer/importer/distributor obligations | Not addressed by AI RMF at all — this is supply-chain legal role allocation unique to product-safety-style regulation |
+| Art. 43 — Conformity assessment | No NIST equivalent — this is a legal certification process |
+| Art. 49 — EU database registration | No NIST equivalent |
+| Art. 72 — Post-market monitoring | MEASURE + MANAGE (continuous monitoring is a RMF theme) but Act requires a formal plan and specific reporting channel to authorities |
+| Art. 73 — Serious incident reporting | MANAGE 4.x (incident response) exists as a practice, but the Act adds legally binding **timelines** (e.g., report serious incidents within 15 days, or 2 days for deaths/critical infrastructure disruption, 10 days for widespread infringement/serious harm to property or environment — exact windows vary by incident severity under the Act and its implementing guidance) |
+
+---
+
+## 3. Where AI RMF Alone Leaves Gaps for EU AI Act Compliance
+
+If you implement NIST AI RMF faithfully and assume you're "covered" for the EU AI Act, here is what's still missing. These are the concrete gaps to close:
+
+### a) Legal classification and prohibited practices screening (Art. 5)
+AI RMF has no equivalent of the Act's **prohibited AI practices list** — e.g., social scoring, manipulative/subliminal techniques causing harm, exploiting vulnerabilities, certain biometric categorization, untargeted facial scraping for recognition databases, emotion recognition in workplace/education (with narrow exceptions), and real-time remote biometric identification in public spaces for law enforcement (with narrow exceptions). You need a **legal screening step** before any risk management even begins — some AI uses simply cannot proceed in the EU regardless of how well-managed the risk is.
+
+### b) Formal conformity assessment and CE marking (Arts. 43, 48)
+High-risk systems generally require a conformity assessment (self-assessment or third-party/notified body assessment depending on the category) and must bear a **CE marking** before being placed on the market. This is a legal certification and labeling regime with no AI RMF counterpart — RMF is about internal risk management, not third-party attestation for market access.
+
+### c) EU database registration (Art. 49, Art. 71)
+Providers (and in some cases deployers, e.g., public authorities) of high-risk AI systems must **register** in the EU-wide database before placing the system on the market or putting it into service. AI RMF has no registration or public-disclosure mechanism.
+
+### d) Prescribed documentation formats (Annex IV, Art. 11)
+The Act mandates technical documentation in a specific structure (Annex IV) covering system description, development process, risk management measures, performance metrics, etc. AI RMF encourages documentation but doesn't specify a template — you'll need to translate your RMF documentation practices into the Act's required format.
+
+### e) Quality Management System (Art. 17)
+Providers of high-risk AI systems must maintain a documented **QMS** covering regulatory compliance strategy, design control, data management, post-market monitoring, and more — similar in spirit to ISO 9001/13485-style QMS obligations in other EU product law. This is an organizational/procedural requirement AI RMF doesn't specify.
+
+### f) GPAI (General-Purpose AI Model) obligations (Arts. 53–55)
+If you develop or fine-tune foundation/general-purpose models, there are separate obligations: technical documentation for downstream providers, copyright/training-data summary disclosure, and — for models with "systemic risk" (based on compute thresholds, currently >10^25 FLOPs presumption) — model evaluation, adversarial testing, incident reporting to the AI Office, and cybersecurity obligations. AI RMF's generative AI profile (NIST AI 600-1) offers useful risk guidance here but does not satisfy these specific legal disclosure and reporting duties.
+
+### g) Designated EU representative (Art. 22)
+Non-EU providers placing high-risk AI systems on the EU market must appoint an **authorized representative established in the EU**. This is a pure legal/administrative requirement with no RMF analog — relevant to you as a non-EU-headquartered organization if that's your situation.
+
+### h) Fundamental Rights Impact Assessment (Art. 27)
+Certain deployers of high-risk AI systems (notably public bodies and private entities providing public services, banking/insurance in specified use cases) must conduct an **FRIA** before deployment — assessing impacts on fundamental rights, affected persons, oversight measures, and complaint mechanisms. This is distinct from and narrower/more legalistic than NIST's broader "map context and impacted stakeholders" activities — it's a specific, sometimes publicly-filed legal assessment.
+
+### i) Serious incident reporting with legal timelines (Art. 73)
+AI RMF's MANAGE function encourages incident response processes, but doesn't impose deadlines. The Act requires providers to report **serious incidents** to market surveillance authorities within legally fixed windows (severity-dependent — as short as 2 days for deaths or serious/irreversible disruption of critical infrastructure), with specific content requirements. You need an operational process capable of meeting these clock-driven obligations, not just a general incident-response capability.
+
+### j) Role-based legal obligations across the value chain (Arts. 16–27)
+The Act imposes different, specific legal duties depending on whether you're a **provider, deployer, importer, distributor,** or a **provider whose system is substantially modified downstream** (which can convert a deployer into a provider). AI RMF doesn't have this legal role taxonomy — you need a separate exercise to determine which hat(s) you wear per system and what obligations attach to each.
+
+### k) Notified body engagement and post-market surveillance system (Arts. 43, 72)
+For certain high-risk categories, a **notified body** (independent conformity assessment body) must be involved. You'll also need a formal, documented **post-market monitoring system** proportionate to the AI system's risks, feeding into your incident reporting obligations. RMF's "Measure" and "Manage" functions support this conceptually but don't require the specific regulatory touchpoints.
+
+### l) Transparency obligations for limited-risk systems (Art. 50)
+Even outside the high-risk tier, systems like chatbots, deepfake generators, and emotion-recognition/biometric-categorization systems have **standalone disclosure obligations** to users (e.g., "you are interacting with AI," labeling of synthetic content). This is a separate, lighter-touch legal track that AI RMF doesn't address as a distinct compliance category.
+
+### m) Penalties, market surveillance, and regulatory engagement
+AI RMF has no equivalent of the Act's enforcement architecture — market surveillance authorities, the EU AI Office (for GPAI), national competent authorities, and tiered administrative fines. Compliance programs need a regulatory-engagement and audit-readiness layer that pure risk management frameworks don't anticipate.
+
+---
+
+## 4. Practical Recommendation
+
+A reasonable approach for an organization in your position:
+
+1. **Use NIST AI RMF as your internal risk management operating system** — Govern/Map/Measure/Manage gives you the organizational scaffolding (policies, roles, risk registers, testing, monitoring, incident response) that regulators generally expect to see evidenced anyway.
+2. **Overlay a legal compliance workstream specific to the EU AI Act**, covering: role determination (provider/deployer/etc.), Annex III classification screening, Art. 5 prohibited-practices screening, Annex IV technical documentation, QMS (Art. 17), conformity assessment and CE marking (Art. 43/48), EU database registration (Art. 49), FRIA where applicable (Art. 27), GPAI obligations if relevant (Arts. 53–55), and incident reporting playbooks with the Act's specific timelines (Art. 73).
+3. **Map your AI RMF artifacts directly into Annex IV documentation** to avoid duplicative work — your risk register, testing results, and monitoring plan under RMF's Measure/Manage functions can largely populate the Act's technical documentation, saving effort.
+4. **Assign clear ownership**: risk management (RMF) can sit with AI governance/data science teams; legal conformity workstreams (classification, conformity assessment, registration, FRIA, incident reporting deadlines) need legal/compliance ownership with regulatory affairs expertise, since these carry statutory liability.
+
+---
+
+## 5. EU AI Act Phased Timeline (for planning purposes)
+
+- **August 1, 2024** — Act enters into force
+- **February 2, 2025** — Prohibited practices (Art. 5) become applicable; AI literacy obligations begin
+- **August 2, 2025** — Governance rules and GPAI model obligations (Arts. 53–55) become applicable; penalty provisions apply; Member States must designate competent authorities
+- **August 2, 2026** — Bulk of the Act applies, including high-risk system obligations for Annex III (Article 6(1)-referenced) use cases and the transparency obligations (Art. 50)
+- **August 2, 2027** — High-risk obligations extend to AI systems embedded as safety components in products covered by Annex I (e.g., machinery, medical devices, toys) under the "Annex I" product-safety route
+
+Some deadlines and secondary/implementing measures (delegated acts, standards from CEN-CENELEC, Commission guidance) were still evolving as of my knowledge cutoff — given today's date is July 2026, you are very close to the August 2026 high-risk compliance deadline for Annex III systems, so I'd treat this as urgent and **verify current status directly against the EU AI Office's published guidance, the official Union register, and any Commission implementing/delegated acts** rather than relying solely on this summary, since implementation details (harmonized standards, notified body capacity, specific FRIA templates, incident-reporting portals) continue to be finalized and may have changed since my training data was current.
+
+---
+
+## 6. Key Takeaway
+
+NIST AI RMF gives you the risk management *engine*; the EU AI Act requires that engine to be bolted onto a specific, auditable, legally-defined *chassis* — classification, documentation formats, conformity assessment, registration, role-based obligations, and hard deadlines. Treat AI RMF as necessary but not sufficient: it's excellent foundational practice, but full EU AI Act compliance requires a dedicated legal/regulatory compliance workstream layered on top, ideally with legal counsel experienced in EU product-safety-style regulation given the Act's CE-marking/conformity-assessment architecture (borrowed from the EU's "New Legislative Framework" used for medical devices, machinery, etc.).

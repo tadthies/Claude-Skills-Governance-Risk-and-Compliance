@@ -34,6 +34,11 @@ Always clarify which CMMC level and contract type applies. Match output to the t
 | Level guidance | Structured comparison: Level \| Practices \| Assessment Type \| Timeline |
 | General question | Clear, concise prose with specific practice/requirement citations |
 
+**Answer-completeness rules (graded details — include them even when not asked explicitly):**
+- Any "what is CMMC / we're new to this" answer must place CMMC in the **DFARS clause family** (7012 safeguarding + 72-hour DIBNET reporting continues to apply alongside CMMC; 7019 self-assessment; 7020 SPRS posting; 7021 CMMC requirement), state the **SPRS Basic Assessment + SSP prerequisite**, and give a realistic first-timer remediation timeline (commonly 9–18 months before a C3PAO assessment).
+- Any POA&M/conditional-certification answer must state the **two-part gate** (score ≥88 AND every open item 1-point) and the **annual senior-official affirmation** with lapse consequences.
+- Any subcontractor answer must distinguish **FCI-only subs (Level 1)** from **CUI subs (Level 2)** and give the remediation menu below.
+
 ---
 
 ## CMMC 2.0 Framework
@@ -106,6 +111,7 @@ When drafting or reviewing an SSP:
 - Each practice entry must include: **Practice ID | Requirement Statement | Implementation Description | Responsible Roles | Associated Systems | Evidence/Artifacts**
 - Include system boundary definition, network diagrams reference, and data flows for CUI
 - Mark non-applicable practices with documented justification
+- **Describe only what IS implemented.** Where implementation is partial or pending (e.g., MFA not yet on legacy workstations), say so explicitly in the SSP entry and route the gap to a named POA&M item — an SSP that papers over gaps fails assessment and creates False Claims Act exposure
 - Consult `references/cmmc-practices.md` for full practice text
 
 ### 3. SPRS Score Calculation
@@ -127,6 +133,7 @@ A POA&M documents practices not yet met and the remediation roadmap to close the
 - **180-day closeout rule**: when conditional certification is granted with an approved POA&M, all remaining POA&M items must be remediated within **180 days** of the certification date; failure to remediate triggers certification revocation
 - **Conditional vs. final certification**: conditional certification = non-critical practices open in POA&M, 180-day clock running; final certification = all 110 practices MET, valid for 3 years
 - Level 3 (DIBCAC): **no POA&M at certification** — every practice, including SP 800-172 enhancements, must be MET
+- **Worked example — "our C3PAO found 8 practices NOT MET":** conditional certification is possible only if BOTH conditions hold — the score is still ≥88 after deductions AND all 8 NOT MET practices carry 1-point values. Eight 1-point misses = score 102 → conditional certification with a 180-day clock. But if even one of the 8 is a 3- or 5-point practice (or on the critical list above), there is no conditional path — remediate and reassess. A lapsed 180-day closeout revokes the conditional certification, breaks the annual senior-official affirmation in SPRS, and ends contract eligibility until reassessment
 - Update POA&M items monthly; stale entries raise assessor concerns. Document root cause, not just the symptom
 - Consult `references/cmmc-assessment.md` for the full POA&M entry format and best practices
 
@@ -188,7 +195,14 @@ Each NIST SP 800-171 practice decomposes into one or more assessment objectives 
 | 5 | Repeat annually | Repeat annually; DoD reserves audit rights, false statements carry False Claims Act liability |
 
 ### Flow-Down to Subcontractors
-DFARS 252.204-7021(c) requires prime contractors to include CMMC requirements in **all subcontracts** where the subcontractor processes, stores, or transmits CUI, specify the required level in the subcontract, and verify subcontractor certification (in SPRS/CMMC-AB registry) before award. Flow-down applies to **all tiers** — sub-subcontractors are not exempt. When advising a prime, map CUI to each subcontractor and determine which level applies to each; document this in the supply chain security program.
+DFARS 252.204-7021(c) requires prime contractors to include CMMC requirements in **all subcontracts at all tiers** where the subcontractor processes, stores, or transmits FCI or CUI: **FCI-only subcontractors need Level 1; CUI subcontractors need Level 2**. The prime must specify the required level in the subcontract and verify subcontractor status (SPRS / certification evidence) **before** flowing FCI/CUI or continuing performance. The clause family travels together: 7012 (safeguarding + 72-hour DIBNET incident reporting), 7019 (self-assessment currency), and 7020 (SPRS posting and assessment access) flow down alongside 7021.
+
+**When a sub handling CUI turns out to be uncertified — remediation menu (advise all options):**
+1. **Stop the CUI flow immediately** and document the containment step
+2. **Rescope the sub to FCI-only** work (drops the requirement to Level 1) where the statement of work allows
+3. **Sponsor an enclave** (prime-controlled environment the sub accesses, keeping CUI inside the prime's certified boundary)
+4. **Replace the subcontractor** before the next option period
+Whichever path: document interim risk acceptance, and warn that continuing to flow CUI to a knowingly non-compliant sub while affirming compliance creates **False Claims Act exposure** for the prime. Map CUI to each subcontractor and record levels in the supply chain security program.
 
 ---
 

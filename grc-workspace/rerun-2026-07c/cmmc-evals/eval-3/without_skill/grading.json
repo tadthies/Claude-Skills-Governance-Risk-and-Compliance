@@ -1,0 +1,33 @@
+{
+  "eval_id": 3,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the requirement accurately: multifactor authentication for local and network access to privileged accounts, and network access to non-privileged accounts (IA.L2-3.5.3)",
+      "passed": true,
+      "evidence": "'Requirement Statement: Use multifactor authentication (MFA) for local and network access to privileged accounts and for network access to non-privileged accounts.'"
+    },
+    {
+      "text": "Describes implementation per named component: Entra ID MFA (conditional access) for M365 GCC High, Duo for VPN, and explicitly addresses the on-prem AD legacy CAD workstations — the local-access-to-privileged-accounts gap most environments miss",
+      "passed": true,
+      "evidence": "Section 2.1 covers Entra ID Conditional Access for M365 GCC High, Section 2.2 covers Duo for VPN, and Section 2.3 'On-Premises Active Directory — Legacy CAD Workstations' explicitly states 'Local (console) logon to CAD workstations currently authenticates using AD username/password only (single factor)... MFA enforcement for local privileged access on these same hosts is not yet fully deployed organization-wide.'"
+    },
+    {
+      "text": "Written in SSP style: describes what IS implemented (not aspirational), names responsible roles, and covers each assessment objective (who/what/where MFA is enforced)",
+      "passed": true,
+      "evidence": "Includes 'Implementation Status: Implemented' framing per sub-environment, a 'Responsible Roles' table (IT Security Manager, Systems Administrator, IAM Lead, ISSO/Compliance Lead), and a dedicated 'Assessment Objectives Mapping' table listing objectives [a], [b], [c] with corresponding evidence."
+    },
+    {
+      "text": "Identifies remaining gaps honestly and routes them to a POA&M entry rather than papering over (e.g., local admin access on legacy workstations pending smart card/Windows Hello deployment)",
+      "passed": true,
+      "evidence": "Section 3 'Gaps and Compensating Controls' explicitly discloses the local-logon gap, and Section 4 provides a POA&M table: 'POA&M-IA-3.5.3-01 | Local logon to legacy CAD workstations lacks MFA | Deploy Windows Hello for Business (or smartcard)...' and 'POA&M-IA-3.5.3-02 | Privileged local logon MFA not fully deployed on legacy hosts...'"
+    },
+    {
+      "text": "Includes evidence pointers an assessor would ask for (conditional access policy exports, Duo policy config, screenshots/logs demonstrating enforcement)",
+      "passed": true,
+      "evidence": "Assessment Objectives Mapping table: 'Entra ID Conditional Access policy export; Duo VPN policy configuration' for objective [a], 'Windows Hello for Business / GPO configuration (partial — see POA&M)' for [b], 'Entra ID Conditional Access \"All Users\" MFA policy; Duo VPN enrollment report' for [c]."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

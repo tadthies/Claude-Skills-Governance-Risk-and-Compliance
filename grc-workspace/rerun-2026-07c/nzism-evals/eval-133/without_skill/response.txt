@@ -1,0 +1,95 @@
+# Access Control Policy
+
+**[Agency Name]**
+**Document Owner:** Chief Information Security Officer (CISO)
+**Effective Date:** 3 July 2026
+**Alignment:** New Zealand Information Security Manual (NZISM)
+**Classification:** UNCLASSIFIED (Policy Document)
+
+## 1. Purpose
+
+This policy establishes the requirements for controlling access to [Agency Name]'s information systems and information, in alignment with the New Zealand Information Security Manual (NZISM). It ensures that access to systems and data is granted only to authorised individuals, based on identified business need, and is managed throughout the access lifecycle.
+
+## 2. Scope
+
+This policy applies to all employees, contractors, and third parties who access [Agency Name]'s systems, networks, applications, or information, at all classification levels handled by the agency (UNCLASSIFIED through RESTRICTED and above, as applicable).
+
+## 3. Policy Statements
+
+### 3.1 Identification
+
+- All users must be uniquely identified before being granted access to agency systems. Shared or generic accounts are prohibited except where explicitly approved and compensating controls (e.g. enhanced logging, physical access restriction) are documented.
+- User identities must be verified and formally registered as part of the onboarding process, consistent with NZISM personnel and identification requirements for account management.
+- Unique identifiers must be maintained for the life of the account and not reused or reassigned to another individual.
+
+*(Aligned to NZISM access control / identification and authentication chapter requirements.)*
+
+### 3.2 Authentication
+
+- Access to all agency systems must be authenticated using mechanisms appropriate to the classification of information involved. Multi-factor authentication (MFA) is required for:
+  - Remote access to agency networks and systems
+  - Access to systems processing RESTRICTED or higher classified information
+  - All privileged/administrative accounts
+- Passwords/passphrases, where used as a factor, must meet minimum complexity, length, and rotation requirements consistent with NZISM password guidance, and must not be shared, written down insecurely, or reused across systems.
+- Authentication credentials must be securely stored (e.g. salted/hashed) and transmitted only over encrypted channels.
+- Default vendor credentials must be changed or disabled prior to system deployment.
+
+*(Aligned to NZISM authentication controls, including multi-factor authentication requirements for remote and privileged access.)*
+
+### 3.3 Authorisation
+
+- Access to systems and information must be granted according to the principle of least privilege — users are given the minimum access necessary to perform their duties.
+- Access must be formally requested, approved by the relevant information/system owner, and recorded prior to provisioning.
+- Role-based access control (RBAC) should be used where practicable to standardise permissions according to job function.
+- Access rights must be reviewed at least annually, and immediately upon role change or termination, to ensure continued business need (access recertification).
+- Segregation of duties must be enforced for sensitive functions (e.g. system administration, financial approval, security configuration) to reduce the risk of fraud or error.
+- Access to information classified RESTRICTED or above additionally requires the user to hold an appropriate security clearance and need-to-know, consistent with NZISM personnel security and information classification handling requirements.
+
+*(Aligned to NZISM authorisation and account management controls, including least privilege, need-to-know, and periodic access review requirements.)*
+
+### 3.4 Privileged Access Management
+
+- Privileged accounts (system administrators, database administrators, security administrators, and similar) must be:
+  - Separate from standard user accounts (no use of privileged accounts for routine business activities such as email or web browsing)
+  - Individually attributable — no shared privileged accounts
+  - Subject to MFA for all access
+  - Approved by the system/business owner and CISO (or delegate) prior to provisioning
+  - Logged and monitored, with privileged session activity subject to enhanced audit logging
+  - Reviewed at a higher frequency than standard accounts (e.g. quarterly) due to elevated risk
+- Use of privileged access must be time-bound and task-justified where practicable (e.g. just-in-time access, break-glass procedures with post-use review for emergency access).
+- Remote privileged access must be via secure, authenticated, and encrypted channels, with additional monitoring controls.
+- All privileged account activity must be logged in a manner that is protected from modification or deletion by the account holder, supporting accountability and incident investigation.
+
+*(Aligned to NZISM privileged access management and system administration control requirements.)*
+
+## 4. Account Lifecycle Management
+
+- **Provisioning:** Access is provisioned only after approval from the relevant owner and completion of required pre-employment/security screening appropriate to the classification of data accessed.
+- **Modification:** Access changes (e.g. role transfer) must be re-approved to reflect the new role's requirements; residual unnecessary access must be removed.
+- **De-provisioning:** Access must be revoked immediately upon termination of employment/contract, and within a defined maximum timeframe (e.g. same business day) for role changes that remove the need for access.
+- **Inactive accounts:** Accounts inactive for a defined period (e.g. 90 days) must be disabled and reviewed.
+
+## 5. Monitoring and Audit
+
+- All authentication and authorisation events, particularly privileged access and access to RESTRICTED information, must be logged.
+- Logs must be protected from unauthorised access or modification and retained in accordance with agency record-keeping and NZISM logging/audit requirements.
+- Access control logs should be reviewed periodically and investigated where anomalies are detected.
+
+## 6. Roles and Responsibilities
+
+- **System/Information Owners:** Approve access requests and conduct periodic access reviews for their systems/information.
+- **CISO / IT Security Manager (ITSM):** Owns this policy, approves privileged access provisioning, and oversees compliance monitoring.
+- **IT Operations:** Implements technical access controls, provisions/de-provisions accounts, and maintains audit logs.
+- **All Staff and Contractors:** Comply with this policy, protect their credentials, and report suspected unauthorised access immediately.
+
+## 7. Exceptions
+
+Any exception to this policy must be documented, risk-assessed, and formally approved by the CISO, with compensating controls identified and a defined review/expiry date.
+
+## 8. Review
+
+This policy will be reviewed at least annually, or upon significant change to the agency's systems, threat environment, or the NZISM.
+
+---
+
+*This policy is drafted as a general template aligned to NZISM access control principles (identification, authentication, authorisation, and privileged access management). It should be reviewed and tailored by the agency's CISO/ITSM against the current NZISM version and the agency's specific systems, classification holdings, and risk profile before formal adoption.*

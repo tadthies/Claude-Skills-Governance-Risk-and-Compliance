@@ -1,0 +1,114 @@
+# System Security Plan — Control Implementation Statement
+
+## IA.L2-3.5.3 — Multifactor Authentication
+
+**CMMC Practice:** IA.L2-3.5.3
+**NIST SP 800-171 Rev 2 Reference:** 3.5.3
+**Requirement Statement:** Use multifactor authentication (MFA) for local and network access to privileged accounts and for network access to non-privileged accounts.
+
+**CMMC Level:** 2
+**Domain:** Identification and Authentication (IA)
+**Control Family (NIST 800-53 mapping):** IA-2(1), IA-2(2)
+
+---
+
+### 1. Control Narrative / Implementation Status
+
+**Implementation Status:** ☒ Implemented ☐ Partially Implemented ☐ Planned ☐ Not Applicable
+
+The organization enforces multifactor authentication for all network access to CUI-processing systems and for all local and network access to privileged accounts, across three distinct authentication environments that compose the organization's CMMC assessment boundary:
+
+1. **Cloud Productivity Environment (Microsoft 365 GCC High / Entra ID)**
+2. **Remote Access / VPN Environment (Duo Security)**
+3. **On-Premises Legacy Environment (Active Directory — CAD Workstations)**
+
+Each environment is described below, followed by a consolidated implementation summary and identified gaps.
+
+---
+
+### 2. Environment-Specific Implementation
+
+#### 2.1 Microsoft 365 GCC High / Entra ID
+
+- All users authenticate to Microsoft 365 GCC High through Entra ID (Azure AD Government), which serves as the primary identity provider for cloud-hosted CUI (email, SharePoint, Teams, OneDrive).
+- **Conditional Access policies** enforce MFA for:
+  - All users on every sign-in (no legacy authentication protocols permitted; legacy auth is blocked tenant-wide).
+  - All access to CUI-hosting workloads (SharePoint/OneDrive sites designated for CUI, Teams channels handling CUI, Exchange Online).
+  - All privileged/administrative roles (Global Administrator, SharePoint Administrator, Exchange Administrator, Security Administrator, etc.), enforced via Conditional Access targeting Entra ID built-in and Privileged Identity Management (PIM)-eligible roles.
+- **MFA method(s):** Microsoft Authenticator (push notification with number matching) is the primary factor; FIDO2 security keys are used for administrative/privileged accounts where available. SMS and voice call are disabled as permitted MFA methods in accordance with NIST SP 800-63B guidance discouraging SMS as an authenticator for CUI-handling accounts.
+- **Privileged access** is further constrained through Entra ID Privileged Identity Management (PIM), requiring just-in-time role activation with MFA re-confirmation at activation.
+- Conditional Access also enforces compliant/managed device requirements in conjunction with MFA (defense-in-depth), and session controls (sign-in frequency) force periodic MFA re-authentication.
+- GCC High tenant configuration aligns with FedRAMP High/DoD IL4/IL5 authentication baselines applicable to the M365 GCC High environment.
+
+#### 2.2 Remote Access / VPN (Duo Security)
+
+- All remote network access to the corporate environment (including access that can reach systems hosting or processing CUI, such as the on-prem AD domain and CAD workstations) is brokered through a VPN gateway integrated with **Duo Security** as the MFA provider.
+- Duo enforces a second factor (Duo Push via the Duo Mobile app; hardware token as backup for users without smartphone access) in addition to Active Directory domain credentials (first factor) for every VPN connection attempt.
+- Duo policy is configured to:
+  - Deny access from out-of-policy or unenrolled devices.
+  - Require MFA on every new VPN session (no "remember me" / trust duration exceeding organizational policy, currently set to require re-authentication each session).
+  - Apply to **all** VPN users, both non-privileged (general remote users) and privileged (IT/domain administrators connecting remotely to manage on-prem infrastructure).
+- This satisfies the "network access" MFA requirement for both privileged and non-privileged accounts reaching the on-premises environment.
+
+#### 2.3 On-Premises Active Directory — Legacy CAD Workstations
+
+- Legacy Computer-Aided Design (CAD) workstations are domain-joined to on-premises Active Directory and, due to engineering software compatibility constraints, cannot currently support endpoint-level MFA agents at local console logon.
+- **Local (console) logon** to CAD workstations currently authenticates using AD username/password only (single factor). This is documented as a **gap** against the strict reading of 3.5.3, which requires MFA for local access to *privileged* accounts (not all local accounts) — see Section 3.
+- **Network access** to these workstations and to the AD domain (e.g., RDP, remote administration, VPN-based remote access) is protected by MFA via the Duo-integrated VPN described in Section 2.2, since all network paths into the on-prem environment traverse the VPN/Duo control point. Direct RDP from the open internet is prohibited by firewall policy; all remote administrative network access is routed through Duo-authenticated VPN.
+- **Privileged local access** (domain administrators logging on locally/interactively to servers or CAD workstations for maintenance) is being migrated to require MFA via Windows Hello for Business or a smartcard/PIV-equivalent solution as part of the POA&M item in Section 4. Until fully implemented, privileged local logons on legacy CAD hosts are restricted through compensating controls (see Section 3.2).
+
+---
+
+### 3. Gaps and Compensating Controls
+
+#### 3.1 Identified Gap
+Local (console) authentication to legacy CAD workstations does not currently enforce a second factor for standard user accounts, and MFA enforcement for **local privileged access** on these same hosts is not yet fully deployed organization-wide.
+
+#### 3.2 Compensating Controls (interim, pending full remediation)
+- CAD workstations are logically segmented on a dedicated VLAN with restricted routing to CUI repositories; access to CUI from these hosts requires re-authentication through Entra ID (MFA-enforced) when reaching M365 GCC High resources.
+- Privileged (domain admin) interactive logon rights on CAD workstations are restricted via Group Policy (Deny log on locally / Restricted Groups) to a minimal named set of administrators, all of whom access these systems through the Duo-MFA-protected VPN/jump host rather than direct console logon where feasible.
+- Enhanced audit logging (Windows Security Event Log, forwarded to the SIEM) is enabled on all CAD workstations to detect anomalous local logon activity, providing detective compensating monitoring in lieu of full preventive MFA coverage.
+- Account lockout, complex password policy, and reduced session timeout are enforced via AD Group Policy Objects (GPO) on all legacy CAD hosts to reduce risk from single-factor local authentication.
+
+### 4. Plan of Action and Milestones (POA&M) Reference
+
+| POA&M ID | Weakness | Milestone | Target Completion | Responsible Party |
+|---|---|---|---|---|
+| POA&M-IA-3.5.3-01 | Local logon to legacy CAD workstations lacks MFA | Deploy Windows Hello for Business (or smartcard) to all CAD workstations; validate CAD software compatibility | [Insert target date] | IT Security / Engineering IT |
+| POA&M-IA-3.5.3-02 | Privileged local logon MFA not fully deployed on legacy hosts | Extend Windows Hello for Business / PIV-equivalent to all domain admin accounts for local interactive logon | [Insert target date] | IT Security |
+
+*(Reference the organization's master POA&M for full tracking, risk rating, and resourcing detail.)*
+
+---
+
+### 5. Supporting Policies and Procedures
+
+- Access Control Policy
+- Identification and Authentication Policy
+- Remote Access Policy (Duo VPN configuration standard)
+- Entra ID Conditional Access Policy Baseline
+- Privileged Access Management Procedure (PIM)
+- Legacy System Risk Acceptance / Compensating Controls Memo (CAD Workstations)
+
+### 6. Responsible Roles
+
+| Role | Responsibility |
+|---|---|
+| IT Security Manager | Owns Conditional Access and Duo policy configuration; reviews MFA exception requests |
+| Systems Administrator (On-Prem) | Manages AD GPOs, CAD workstation local security policy, compensating controls |
+| Identity & Access Management Lead | Manages Entra ID roles, PIM, and MFA method enrollment |
+| ISSO / Compliance Lead | Maintains this SSP section, tracks POA&M items to closure |
+
+---
+
+### 7. Assessment Objectives Mapping (for CMMC Assessor Reference)
+
+| Assessment Objective | Evidence |
+|---|---|
+| [a] Privileged accounts require MFA for network access | Entra ID Conditional Access policy export; Duo VPN policy configuration |
+| [b] Privileged accounts require MFA for local access | Windows Hello for Business / GPO configuration (partial — see POA&M) |
+| [c] Non-privileged accounts require MFA for network access | Entra ID Conditional Access "All Users" MFA policy; Duo VPN enrollment report |
+
+---
+
+*This section is subject to review and update upon completion of POA&M-IA-3.5.3-01 and -02. Last reviewed: 2026-07-03.*

@@ -1,0 +1,33 @@
+{
+  "eval_id": 86,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Applies the three business thresholds correctly (any ONE suffices): annual gross revenue above the $25M threshold (as CPI-adjusted); buying/selling/sharing PI of 100,000+ consumers or households (CPRA raised this from 50,000); or 50%+ of revenue from selling/sharing PI — and concludes the company IS subject via the revenue threshold ($30M > $25M) even though 80,000 < 100,000",
+      "passed": true,
+      "evidence": "Lists all three criteria and concludes: 'With $30M in annual revenue, you exceed the $25M revenue threshold (Criterion 1) on that basis alone. It does not matter that you only collect data on 80,000 California customers (below the 100,000 threshold for Criterion 2) — meeting any one criterion is sufficient.'"
+    },
+    {
+      "text": "Notes the 'doing business in California' element (for-profit, collects CA residents' PI, determines purposes/means) — being US-based outside California does not avoid the law",
+      "passed": true,
+      "evidence": "States CCPA applies to a business that 'does business in California, determines the purposes and means of processing consumers' personal information' and concludes 'you are very likely subject to the CCPA/CPRA, assuming you also do business in California and determine the purposes/means of processing personal information (which as an e-commerce company selling to California customers, you do)' — directly addresses the doing-business element for a non-CA-based company."
+    },
+    {
+      "text": "Lists core obligations: notice at collection, privacy policy, consumer request handling (know/delete/correct/opt-out/limit), verifiable request processes, service-provider contracts, non-discrimination",
+      "passed": true,
+      "evidence": "Covers Notice at Collection, Privacy Policy, Right to Know/Delete/Correct/Opt-Out/Limit, Right to Non-Discrimination, 'reasonable identity verification procedures' (section 3), and contracts with 'service providers, contractors, or third parties' (section 4)."
+    },
+    {
+      "text": "Mentions the 45-day response deadline for consumer requests with a possible 45-day extension",
+      "passed": true,
+      "evidence": "'Respond to verifiable consumer requests within 45 days (extendable by another 45 days with notice)'"
+    },
+    {
+      "text": "Mentions opt-out of sale/sharing mechanics: 'Do Not Sell or Share My Personal Information' link and honoring opt-out preference signals such as GPC",
+      "passed": true,
+      "evidence": "'Right to Opt-Out of Sale/Sharing of personal information (including a \"Do Not Sell or Share My Personal Information\" link, or honoring Global Privacy Control signals)' and step 7 in Practical Next Steps repeats the GPC requirement."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

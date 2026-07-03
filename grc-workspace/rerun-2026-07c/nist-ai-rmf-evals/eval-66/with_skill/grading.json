@@ -1,0 +1,33 @@
+{
+  "eval_id": 66,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Describes all four functions faithfully to NIST AI 100-1: GOVERN (cross-cutting culture, policies, roles, risk tolerance), MAP (context, categorization, capabilities/limitations, impacts), MEASURE (TEVV — analyze, assess, track risks with metrics), MANAGE (prioritize, treat, respond, recover)",
+      "passed": true,
+      "evidence": "GOVERN section covers 'culture, policies, accountability structures, and risk tolerance' with categories GOVERN 1-6; MAP section covers 'intended use, deployment environment, affected stakeholders' and 'scientific understanding of the system's capabilities/limitations'; MEASURE explicitly names 'TEVV (Test, Evaluation, Verification, and Validation)' and covers metrics/tracking; MANAGE covers 'risks are prioritized, assigned owners... Treatment strategies (mitigate, transfer, avoid, accept)... incidents are logged, investigated' — all four functions match faithfully."
+    },
+    {
+      "text": "States the structural relationship correctly: GOVERN is the cross-cutting foundation feeding the other three; MAP informs MEASURE which informs MANAGE, iteratively across the AI lifecycle",
+      "passed": true,
+      "evidence": "Explicit diagram and text: 'GOVERN → MAP → MEASURE → MANAGE isn't a strict waterfall — it's a continuous loop with GOVERN as the always-on foundation underneath the other three' and 'MAP identifies and scopes risk. MEASURE quantifies and tests what MAP identified. MANAGE treats what MEASURE found...' plus feedback loop description."
+    },
+    {
+      "text": "Recommends starting with GOVERN (policies, accountability, inventory, risk tolerance) — the canonical NIST guidance for organizations beginning adoption",
+      "passed": true,
+      "evidence": "'Start with GOVERN. It's the prerequisite, not an optional first module' followed by concrete steps: establish risk tolerance (GOVERN 1.3), name accountable owner (GOVERN 2.1/2.2), build inventory (GOVERN 1.6/6.1), stand up cross-functional group (GOVERN 4.1)."
+    },
+    {
+      "text": "Mentions that the framework is voluntary and outcome-based (not a compliance checklist), organized into categories/subcategories with a companion Playbook",
+      "passed": true,
+      "evidence": "'the AI RMF is voluntary, outcome-based, and not a compliance checklist' and 'The companion AI RMF Playbook is where NIST publishes suggested actions for every category' plus explicit category counts ('6 categories, ~21 subcategories' etc.) throughout."
+    },
+    {
+      "text": "References the seven trustworthiness characteristics (valid & reliable, safe, secure & resilient, accountable & transparent, explainable & interpretable, privacy-enhanced, fair with harmful bias managed) as the risk lens the functions operationalize",
+      "passed": true,
+      "evidence": "'the seven characteristics of trustworthy AI — Valid & Reliable, Safe, Secure & Resilient, Accountable & Transparent, Explainable & Interpretable, Privacy-Enhanced, and Fair with Harmful Bias Managed' explicitly listed and tied to the four functions as 'the operational machinery for making deliberate, documented tradeoffs across those seven properties'."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

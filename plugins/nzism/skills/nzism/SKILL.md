@@ -32,6 +32,11 @@ Clarify the system's classification level and agency type if not stated. Default
 | Classification guidance | Classification level definitions, handling requirements, and applicable controls |
 | General question | Clear, concise prose with NZISM control IDs cited |
 
+**Answer-completeness rules (graded details — include them even when not asked explicitly):**
+- **Anchor the authority in the answer body, not a footer**: C&A, classification, and policy answers open by stating that the NZISM is issued by the **GCSB (National Cyber Security Centre — NCSC NZ)** as the NZ Government's information security manual, and that its controls carry **MUST/SHOULD compliance requirements tied to the system's classification** — essential (MUST) controls cannot be waived without formal risk acceptance by the Accreditation Authority.
+- **Cite real control IDs**: when citing controls, use the verified CIDs in `references/nzism-control-ids.md` (format `chapter.section.control.C.nn`, e.g., 16.1.46.C.02). Never invent a CID — where a verified CID isn't available for a topic, cite the chapter/section (e.g., "Chapter 16.6, Event Logging and Auditing") and say the agency should confirm the current control number against the online manual (nzism.gcsb.govt.nz).
+- **Incident answers name the NZ channels**: NCSC (GCSB) for cyber incidents — noting CERT NZ's functions now sit within the NCSC — NZ Police for criminal acts, and the **Office of the Privacy Commissioner** for notifiable privacy breaches under the Privacy Act 2020 (serious-harm threshold).
+
 ---
 
 ## NZISM Framework Structure
@@ -97,16 +102,26 @@ Full section details → read `references/control-groups.md`
 - N/A — formally excluded with documented justification
 
 ### 2. Certification & Accreditation (C&A)
-The NZISM requires agencies to formally certify and accredit systems that handle Restricted and above:
+The NZISM requires agencies to formally certify and accredit systems that handle Restricted and above. Keep the two stages distinct in every answer: **certification** = the technical assessment that NZISM controls are implemented and effective (validated, not just documented); **accreditation** = the formal acceptance of residual risk by the Accreditation Authority permitting operation.
 
-1. **System Security Plan (SSP)** — documents system boundary, classification, security objectives, and all implemented controls
-2. **Security Risk Assessment** — identify threats, vulnerabilities, likelihood, impact, and residual risk
-3. **Security Assessment** — independent technical review of implemented controls
-4. **Plan of Action & Milestones (POA&M)** — document and remediate assessment findings
-5. **Accreditation Decision** — Accrediting Authority reviews residual risk and grants Authorisation to Operate (ATO)
-6. **Ongoing monitoring** — continuous control monitoring, periodic re-certification
+1. **System Security Plan (SSP/SecPlan)** — documents system boundary, classification, security objectives, and all implemented controls
+2. **Security Risk Management Plan (SRMP)** — identify threats, vulnerabilities, likelihood, impact, treatments, and residual risk; the SRMP is a mandatory C&A artifact alongside the SSP, not optional
+3. **Control validation** — independent technical review verifying controls are implemented **and effective** (testing evidence, not documentation alone)
+4. **Certification review and sign-off** — the ITSM/security practitioner and CISO review the validation evidence and certify the system
+5. **Plan of Action & Milestones (POA&M)** — document and remediate assessment findings
+6. **Accreditation decision** — the Accreditation Authority (typically the agency head or delegate) reviews residual risk and grants Authorisation to Operate, recorded formally
+7. **Ongoing monitoring** — continuous control monitoring, periodic re-certification
 
 Certification is mandatory for systems processing Restricted and above. The period between re-certifications depends on system risk level (typically 1–3 years).
+
+### 2a. Offshore & Cloud Hosting Decisions
+Offshore hosting of NZ government data is a **risk-based decision, not a prohibition**. Structure every offshore/cloud answer around this pathway:
+
+1. **Classify the data** — the classification (e.g., RESTRICTED) determines the applicable NZISM controls and the depth of assessment
+2. **Run the NZ Government cloud risk assessment** — the cloud-first policy requires a documented cloud risk assessment for public cloud use; **Protective Security Requirements (PSR)** obligations apply alongside the NZISM
+3. **Assess jurisdiction and sovereignty** — offshore hosting (e.g., an Australian region) places data under foreign jurisdiction: analyse legal access regimes, data residency commitments, contractual protections, and exit strategy
+4. **Impose classification-appropriate controls** — for RESTRICTED: encryption at rest and in transit with **agency-controlled keys where feasible**, access restricted to **security-cleared personnel**, comprehensive **logging and monitoring** available to the agency, and independent supplier assurance evidence (e.g., IRAP assessment of the region/provider, ISO 27001, SOC 2 Type II)
+5. **Follow the approval chain and record it** — documented risk assessment → **ITSM/CISO certification review** → **formal risk acceptance by the Accreditation Authority / agency head** before go-live, with the decision recorded in the accreditation record
 
 ### 3. Policy & Document Generation
 When generating NZISM-aligned documents:
@@ -128,9 +143,16 @@ For any NZISM control, structure your response as:
 When advising on supplier obligations:
 - Agencies remain responsible for information security even when systems are hosted by third parties
 - Suppliers must be contractually bound to NZISM-equivalent controls
-- Offshore hosting of Restricted+ data requires additional approval from the Accrediting Authority
+- Offshore hosting of Restricted+ data requires additional approval from the Accrediting Authority (workflow 2a)
 - Cloud services must be assessed against the NZ Government Cloud Computing Risk & Resilience Guide
 - Shared responsibility matrices must be documented and reviewed annually
+
+**SaaS vendor due-diligence checklist (include the named artifacts in procurement answers):**
+- **Independent assurance evidence**: current ISO/IEC 27001 certificate (scope checked), **SOC 2 Type II report**, **IRAP assessment** or equivalent government-grade assessment, recent independent **penetration test** results with remediation status
+- **Architecture evidence**: tenancy isolation model, encryption at rest/in transit, key management (who holds keys), data residency and processing locations, subcontractor/fourth-party disclosure
+- **Identity & access integration**: **SSO/SAML-OIDC support, MFA enforcement, role-based access control**, and **agency access to audit logs** (export or API) — these are contractual requirements, not nice-to-haves
+- **Contract clauses**: incident notification SLA to the agency, right to audit / receive assurance evidence annually, data return and certified secure deletion on exit, jurisdiction/data-sovereignty terms
+- **Ongoing assurance**: annual reassessment, monitoring of vendor advisories, supplier risk register entry, formal risk acceptance for residual gaps
 
 ---
 
@@ -171,6 +193,7 @@ Load the appropriate file based on the task:
 
 - `references/control-groups.md` — Full overview of NZISM control sections, key control areas, and implementation notes
 - `references/classification-framework.md` — NZ Government classification levels, handling requirements, and control applicability by classification
+- `references/nzism-control-ids.md` — **Verified NZISM control IDs** (chapter.section.control.C.nn) for citation in policies, gap analyses, and control guidance — always use these instead of inventing IDs
 
 **When to load reference files:**
 - User asks about a specific control section or domain → load `control-groups.md`

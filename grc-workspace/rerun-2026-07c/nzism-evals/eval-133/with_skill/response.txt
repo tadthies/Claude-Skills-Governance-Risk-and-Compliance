@@ -1,0 +1,83 @@
+# Access Control Policy
+
+**Classification:** IN-CONFIDENCE (policy document itself; apply the classification marking of the agency issuing this policy)
+**Framework:** New Zealand Information Security Manual (NZISM)
+
+The NZISM is issued by the **GCSB (National Cyber Security Centre — NCSC NZ)** as the New Zealand Government's mandatory information security manual. Its controls carry **MUST/SHOULD compliance requirements tied to the system's classification level** — essential (MUST) controls in this policy cannot be waived for systems handling Restricted information or above without formal risk acceptance by the Accreditation Authority. This policy is written to be applicable at the RESTRICTED tier by default; agencies operating solely at IN-CONFIDENCE or below may descope the Restricted-tier requirements noted below.
+
+---
+
+## 1. Purpose
+
+This Access Control Policy establishes the requirements for identification, authentication, authorisation, and privileged access management across all agency information systems, in accordance with the NZISM. It ensures access to agency information and systems is limited to authorised individuals with a legitimate business need.
+
+## 2. Scope
+
+This policy applies to all agency employees, contractors, and third parties who access agency ICT systems, and to all systems processing agency information from Unclassified through Restricted (and above, where the agency operates such systems, subject to the additional controls in NZISM Chapters for Confidential/Secret/Top Secret).
+
+## 3. Policy Statements
+
+### 3.1 Identification
+- Every user, service, and device accessing an agency system must be uniquely identified. Shared or generic accounts are prohibited except where formally risk-assessed and approved, with compensating controls (e.g., session recording).
+- Service accounts must use unique, non-shared credentials and be inventoried with a named business owner.
+- *NZISM reference: Chapter 16.1, Identification, Authentication and Passwords — confirm current control numbers against the online manual for identification-specific requirements beyond those cited below.*
+
+### 3.2 Authentication
+- Passwords must meet complexity and minimum-length requirements aligned with NZISM guidance (which follows NIST SP 800-63B principles).
+- **Multi-Factor Authentication (MFA) is mandatory** for all remote access and for all privileged accounts, and is required for all users accessing Restricted information.
+- Account lockout must be enforced after a defined number of failed login attempts.
+- Session timeout and automatic screen lock must be configured on all endpoints accessing agency systems.
+- Inactive or departed-staff accounts must be suspended promptly.
+- *NZISM reference: 16.1.46.C.02 (Suspension of access — disable inactive/departed accounts), and Chapter 16.1 generally for MFA and password requirements. Confirm current v3.9 control numbers for passwordless/phishing-resistant MFA requirements against the online manual, as the NZISM is updated roughly twice a year.*
+
+### 3.3 Authorisation
+- Access is granted strictly on the **principle of least privilege** — the minimum access necessary for the individual's role.
+- **Separation of duties** must be enforced for critical or high-risk functions (e.g., no single individual can both create and approve a privileged account).
+- Access rights must be reviewed and re-certified **at least annually**, with more frequent review for privileged and Restricted-tier access.
+- Temporary or time-limited access must be formally requested, approved, and configured to expire automatically.
+- Access requests, approvals, and revocations must be logged and auditable.
+- *NZISM reference: Chapter 16 (Access Control and Passwords / v3.9: Authentication and Access Controls) generally for least privilege and access review requirements — confirm current control numbers for specific authorisation sub-controls against the online manual.*
+
+### 3.4 Privileged Access
+- Privileged accounts must be **separate from standard user accounts** — no individual should use a privileged account for routine business activity (email, web browsing, document editing).
+- Privileged access is granted on a need-to-use basis and subject to enhanced approval.
+- All privileged account activity must be logged, and logs reviewed periodically for anomalous use.
+- Remote privileged access requires additional controls — jump servers and, where the system handles Restricted+ information, session recording.
+- Privileged accounts must be included in the mandatory annual access review, with more frequent review recommended (e.g., quarterly).
+- *NZISM reference: 16.3.5.C.02 (Use of privileged accounts — restrict, separate, least privilege).*
+
+### 3.5 Access Logging and Monitoring
+- All authentication events (successful and failed logins), privileged actions, and access changes must be logged.
+- Logs must be protected against tampering and retained per NZISM requirements (minimum 90 days online, 12 months archived for Restricted-tier systems; longer for Confidential and above).
+- *NZISM reference: 16.6.6.C.02 (Maintaining system management logs), 16.6.10.C.02 (Additional events to be logged).*
+
+## 4. Roles and Responsibilities
+- **Chief Information Security Officer (CISO):** owns this policy, approves exceptions, reviews compliance annually.
+- **System/Application Owners:** ensure access controls are implemented and reviewed for their systems.
+- **IT Security Manager (ITSM):** validates access control implementation as part of certification activities.
+- **Line Managers:** approve and periodically review access requests for their staff.
+- **All Users:** comply with authentication requirements and report suspected unauthorised access immediately.
+
+## 5. Exceptions
+Any exception to this policy (e.g., use of a shared account, deferral of MFA) requires documented risk assessment and formal approval by the CISO, and — for Restricted-tier systems — acknowledgement by the Accreditation Authority as part of the system's residual risk position.
+
+## 6. Review Cycle
+This policy must be reviewed **at least annually**, or earlier following a significant security incident, major system change, or update to the NZISM.
+
+## 7. Document Control
+
+| Field | Value |
+|---|---|
+| Document Owner | Chief Information Security Officer (CISO) |
+| Classification | [Agency to confirm — recommend IN-CONFIDENCE] |
+| Version | 1.0 |
+| Approved By | [Chief Executive or delegate] |
+| Effective Date | [Agency to insert] |
+| Next Review Date | 12 months from effective date |
+
+| Version | Date | Author | Summary of Changes |
+|---|---|---|---|
+| 1.0 | 2026-07-03 | [Agency to insert] | Initial version aligned to NZISM |
+
+---
+*This policy provides general compliance guidance, not legal advice. Confirm current NZISM control numbering and section titles (Chapter 16 was renamed "Authentication and Access Controls" in NZISM v3.9) against the official manual (nzism.gcsb.govt.nz) before finalising and publishing.*

@@ -1,0 +1,25 @@
+{
+  "skill": "nzism",
+  "prompts": [
+    {
+      "id": 131,
+      "prompt": "Our NZ government agency is preparing a RESTRICTED system for certification and accreditation. Run a C&A gap analysis: we have a draft System Security Plan, no Security Risk Management Plan, controls partially implemented with no validation testing, and no ITSM sign-off yet. What does the NZISM C&A process require and where are our gaps?"
+    },
+    {
+      "id": 132,
+      "prompt": "Can our NZ public sector agency host RESTRICTED data in AWS Sydney (offshore)? What does the NZISM and NZ government cloud policy require before we can do this?"
+    },
+    {
+      "id": 133,
+      "prompt": "Draft an Access Control Policy for our agency aligned to the NZISM, citing the relevant NZISM sections/controls for identification, authentication, authorisation, and privileged access."
+    },
+    {
+      "id": 134,
+      "prompt": "One of our suppliers has been hit by ransomware and they hold our agency's data. Walk us through our NZISM-aligned incident response obligations, including who we must notify in New Zealand."
+    },
+    {
+      "id": 135,
+      "prompt": "We are procuring a SaaS product for agency use. What NZISM-aligned due diligence and contractual security requirements should we impose on the vendor?"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+# CMMC Level 2 Gap Assessment
+
+Based on the current-state facts provided, here is a gap assessment against the relevant NIST SP 800-171 / CMMC Level 2 practices. This is not exhaustive of all 110 practices — it covers the practice areas directly implicated by the facts you gave me. A full certification-ready assessment must evaluate all 110 practices; treat this as the priority subset.
+
+## Gap Table
+
+| Practice ID | Domain | Practice Statement | Status | Evidence Needed | Gap Notes |
+|---|---|---|---|---|---|
+| IA.L2-3.5.3 | IA | MFA for local/network access to privileged accounts and network access to non-privileged accounts | ❌ NOT MET | MFA enrollment reports across all systems | MFA only covers cloud email. VPN, on-prem AD, CAD workstations, file shares, and any privileged accounts elsewhere are not covered. This is a **critical practice — cannot be POA&M'd at certification** and carries a 5-point SPRS deduction. |
+| SC.L2-3.13.11 | SC | Employ FIPS-validated cryptography to protect CUI | ❌ NOT MET | Crypto module validation certificates (FIPS 140-2/3) | No FIPS-validated encryption for CUI at rest. **Critical practice — cannot be POA&M'd**, 5-point deduction. |
+| SC.L2-3.13.16 | SC | Protect CUI at rest | ❌ NOT MET | Encryption configuration on shared drives/servers | Directly related to the above — CUI sits unencrypted on shared drives. |
+| SC.L2-3.13.8 | SC | Cryptographic mechanisms to prevent unauthorized disclosure of CUI in transit (FIPS validated) | 🟡 PARTIAL / Unknown | TLS configuration exports, VPN encryption settings | Not explicitly stated — must be verified. If in-transit encryption is not FIPS-validated, this is also a **critical, non-POA&M-eligible practice** (5-point deduction). Flag as a priority verification item. |
+| CA.L2-3.12.4 | CA | Develop, document, and periodically update SSPs | ❌ NOT MET | Current SSP with revision history | SSP last updated in 2022 — four years stale. Almost certainly does not reflect current systems, CUI flows, or the gaps identified here. An outdated SSP is itself a finding and undermines every other practice's evidence trail. |
+| IR.L2-3.6.1 | IR | Establish an operational incident-handling capability | 🟡 PARTIAL | IR plan document, roles/responsibilities | Plan exists, so the capability is documented, but per the assessment objectives an untested plan is weak evidence of operational capability. This is a **critical practice — must be fully MET (not just documented) to certify.** |
+| IR.L2-3.6.3 | IR | Test the organizational incident response capability | ❌ NOT MET | Tabletop exercise records, after-action reports | Plan "never tested" — explicit gap. Directly weakens the IR.L2-3.6.1 finding above since assessors will ask for test evidence to validate operational capability. |
+| AC.L2-3.1.3 | AC | Control the flow of CUI in accordance with approved authorizations | ❌ NOT MET | Data flow diagrams, access control lists, folder permissions | Flat network with CUI on shared drives = no CUI flow control, no segmentation. This is the **highest-weighted critical practice (5 points)** and cannot be POA&M'd. |
+| AC.L2-3.1.5 | AC | Employ least privilege, including for privileged accounts | 🟡 PARTIAL / Unknown | Access control policy, privileged account inventory | Not explicitly addressed, but a flat network with shared drives strongly suggests broad access rather than least-privilege — flag for verification. |
+| AC.L2-3.1.20 | AC | Verify and control/limit connections to external systems | 🟡 PARTIAL / Unknown | Network diagram, firewall rules | Flat network raises risk that external connections aren't well segmented from CUI; verify. |
+| AT.L2-3.2.1 / 3.2.2 / 3.2.3 | AT | Security awareness training (general, role-based, insider threat) | ✅ MET (general) / 🟡 PARTIAL (insider threat) | Training records/completion logs | Annual awareness training is in place — good baseline. Confirm the insider-threat-specific component (3.2.3) is included; if it's generic awareness only, that sub-element is a gap. |
+| PS.L2-3.9.1 | PS | Screen individuals prior to authorizing CUI access | ✅ MET | Background check records | Background screening for all staff — meets this practice as stated. |
+| PS.L2-3.9.2 | PS | Protect CUI during and after personnel actions | 🟡 PARTIAL / Unknown | Offboarding checklist, access revocation logs | Not addressed directly — verify that account/access deprovisioning is formalized upon termination/transfer, especially given the flat network and shared-drive access model. |
+| MP.L2-3.8.1 / 3.8.2 | MP | Protect and limit access to CUI on system media | ❌ NOT MET | Media protection policy, access logs on shared drives | CUI sitting on shared drives without flow control almost certainly means media protection controls are also absent or inadequate. |
+
+## SPRS Score Impact
+
+Starting from a maximum score of **110**, here is the estimated deduction based on confirmed NOT MET findings (weighted per the DoD Assessment Methodology):
+
+| Practice | Weight | Deduction |
+|---|---|---|
+| IA.L2-3.5.3 (MFA) | 5 pts | −5 |
+| SC.L2-3.13.11 (FIPS crypto) | 5 pts | −5 |
+| AC.L2-3.1.3 (CUI flow control) | 5 pts | −5 |
+| CA.L2-3.12.4 (SSP current) | 1 pt (est.) | −1 |
+| IR.L2-3.6.3 (IR testing) | 1 pt (est.) | −1 |
+| SC.L2-3.13.16 (CUI at rest) | bundled with 3.13.11 finding — no separate published point value; treat as part of the encryption gap | — |
+| MP.L2-3.8.1/3.8.2 (media protection) | 1 pt each (est.) | −2 |
+
+**Estimated score with confirmed gaps only: ~91 out of 110** (110 − 5 − 5 − 5 − 1 − 1 − 2 = 91). This is a rough estimate — exact per-practice point values come from the published DoD Assessment Methodology table, and the several "PARTIAL/Unknown" items above (SC.L2-3.13.8 in-transit encryption, AC.L2-3.1.5 least privilege, AC.L2-3.1.20 external connections, PS.L2-3.9.2 offboarding) are not yet counted — if any of those turn out NOT MET, the real score will be materially lower, potentially below the 88-point conditional-certification floor. **Note that partial implementation still takes the full deduction — there's no partial credit for the IR plan existing-but-untested, for example.**
+
+## Prioritized Remediation Plan
+
+**Tier 1 — Critical practices, must be fully MET before any certification (no POA&M eligibility):**
+1. **AC.L2-3.1.3 — CUI flow control.** Segment the flat network; move CUI off open shared drives into an access-controlled, ideally isolated enclave. This is the highest-value, highest-effort item and should start immediately — it also reduces your assessment scope if done as a dedicated CUI enclave.
+2. **IA.L2-3.5.3 — MFA everywhere.** Extend MFA beyond cloud email to VPN, on-prem AD (including legacy CAD workstations), and all privileged accounts. Legacy CAD workstations on AD may need a bridge solution (e.g., MFA at the VPN/network layer if endpoint-level MFA isn't feasible) — document any compensating control in the SSP.
+3. **SC.L2-3.13.11 / SC.L2-3.13.16 — FIPS-validated encryption for CUI at rest.** Deploy FIPS 140-2/3 validated encryption on the shared drives and any other CUI storage location. "AES-256" alone is not sufficient — the module itself must be FIPS-validated.
+4. **Verify SC.L2-3.13.8** (in-transit encryption) is also FIPS-validated; this is equally critical and non-POA&M-eligible if not.
+5. **IR.L2-3.6.1 — IR capability.** Confirm the plan covers preparation, detection, analysis, containment, recovery, and user response — not just a document, but an operational capability.
+
+**Tier 2 — High-value, POA&M-eligible if not resolved before assessment:**
+6. **IR.L2-3.6.3 — Test the IR plan.** Run a tabletop exercise and document it; this also strengthens evidence for 3.6.1.
+7. **CA.L2-3.12.4 — Rewrite the SSP.** A 2022 SSP predates most of these gaps and the remediation itself; update it to reflect current systems, the new CUI enclave, MFA scope, and encryption approach as each is completed.
+8. **MP.L2-3.8.1/3.8.2 — Media protection policy** covering the shared drives and any removable media.
+
+**Tier 3 — Verify and close:**
+9. Confirm least privilege (AC.L2-3.1.5) and external connection controls (AC.L2-3.1.20) once the network is segmented.
+10. Formalize offboarding/access-revocation procedures (PS.L2-3.9.2).
+11. Confirm insider-threat training content (AT.L2-3.2.3) is explicitly included in the existing annual training.
+
+## Bottom Line
+
+You have three critical, non-negotiable, non-POA&M-eligible gaps (CUI flow control, MFA, FIPS encryption at rest — and likely in transit) that must be fully remediated before certification is possible at all, regardless of your overall score. Even with only the confirmed gaps, your estimated SPRS score (~91) sits below the maximum but likely above the 88-point conditional-certification floor — however, because three of your gaps are on the critical/non-POA&M list, a conditional certification is **not available** until all three are fully MET, independent of the numeric score. Prioritize the Tier 1 items first; everything else can be sequenced around them.
+
+*This is general compliance guidance, not legal advice. Exact SPRS point values should be confirmed against the current published DoD Assessment Methodology, and final readiness should be validated by a qualified CMMC Registered Practitioner or C3PAO pre-assessment.*

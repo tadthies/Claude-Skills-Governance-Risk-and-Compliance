@@ -1,0 +1,33 @@
+{
+  "eval_id": 5,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "States the flow-down rule: DFARS 252.204-7021 flows down to subcontractors at all tiers where they process, store, or transmit FCI/CUI; subs handling CUI need CMMC Level 2, subs with FCI only need Level 1",
+      "passed": true,
+      "evidence": "'Include CMMC requirements in all subcontracts, at all tiers, where the subcontractor processes, stores, or transmits FCI or CUI... FCI-only subcontractors need Level 1... Subcontractors handling CUI need Level 2.'"
+    },
+    {
+      "text": "States the prime's duty: verify subcontractor CMMC status (via SPRS or certificate evidence) BEFORE awarding/continuing subcontract performance involving CUI",
+      "passed": true,
+      "evidence": "'Verify subcontractor status before flowing FCI/CUI or continuing performance — check SPRS for a current self-assessment score or the CMMC-AB registry for an active certification. Verification is a precondition, not a formality done after the fact.'"
+    },
+    {
+      "text": "Gives concrete remediation options: stop CUI flow to the uncertified subs (rescope what they receive), move them to FCI-only scope, sponsor an enclave approach, or replace them — with interim risk documentation",
+      "passed": true,
+      "evidence": "'Remediation Menu' lists: '1. Stop the CUI flow immediately... 2. Rescope the subcontractor to FCI-only work... 3. Sponsor an enclave... 4. Replace the subcontractor...' plus 'Document your interim risk acceptance — the decision to continue any CUI flow during remediation, the compensating controls in place, and who approved it.'"
+    },
+    {
+      "text": "Notes the related DFARS clauses working together: 252.204-7012 (safeguarding + 72-hour reporting), 7019/7020 (SPRS posting and assessment access) alongside 7021",
+      "passed": true,
+      "evidence": "'The related clause family travels with 7021: DFARS 7012 (safeguarding CUI + 72-hour DIBNET incident reporting), 7019 (self-assessment currency), and 7020 (SPRS posting and DoD access to assessment results) all flow down alongside the CMMC requirement itself.'"
+    },
+    {
+      "text": "Warns about misrepresentation risk (False Claims Act exposure for affirming compliance while knowingly flowing CUI to non-compliant subs) and advises documenting corrective action",
+      "passed": true,
+      "evidence": "'Be aware of False Claims Act exposure. Continuing to flow CUI to a subcontractor you know is non-compliant, while your own SPRS score and annual senior-official affirmation are on file... creates False Claims Act risk...' plus explicit instruction to 'Document your interim risk acceptance' and 'document the containment action and date.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

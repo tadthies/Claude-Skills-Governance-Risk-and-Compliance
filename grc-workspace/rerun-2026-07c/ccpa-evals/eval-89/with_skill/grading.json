@@ -1,0 +1,33 @@
+{
+  "eval_id": 89,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Identifies the consent-model difference: CCPA is opt-out (sale/sharing) vs GDPR opt-in lawful basis; no CCPA requirement for a processing legal basis",
+      "passed": true,
+      "evidence": "'CCPA is fundamentally opt-out for sale/sharing of PI; GDPR requires an opt-in lawful basis for processing. In fact, CCPA has no lawful-basis requirement at all... CCPA/CPRA compliance is about disclosure and opt-out rights, not about justifying processing upfront.'"
+    },
+    {
+      "text": "Identifies CCPA-specific mechanics GDPR programmes lack: 'Do Not Sell or Share' link, GPC honoring, right to limit sensitive PI use, notice at collection specifics, service provider/contractor contract terms under §1798.100(d)/.140",
+      "passed": false,
+      "evidence": "Covers the DNS link, GPC honoring, and Limit-SPI link explicitly in 'Concrete Additions Needed' items 1-3, and vendor reclassification as service provider/contractor in item 4 — but never discusses 'notice at collection' as a distinct GDPR-programme gap at all, and never cites §1798.100(d)/.140 for the service-provider contract terms. Two of the five named mechanics are absent from the response."
+    },
+    {
+      "text": "Notes scope differences: CCPA covers households, has revenue/volume applicability thresholds, and its 'sale' concept is broader than anything in GDPR",
+      "passed": true,
+      "evidence": "'CCPA protects consumers and households (not just identified individuals), and only applies to businesses that meet specific applicability thresholds — $25M+ annual revenue, OR 100,000+ consumers/households... \"Sale\" concept: CCPA's \"sale\"... is broader than anything in GDPR.'"
+    },
+    {
+      "text": "Notes rights differences accurately (e.g., CCPA has no full GDPR-style portability/objection regime; correction was added by CPRA; statutory damages private right of action only for data breaches, $100-$750 per consumer per incident)",
+      "passed": true,
+      "evidence": "'Right to correct was only added to California law by CPRA (§1798.106)... CCPA has no GDPR-style right to object and no full portability regime... Private right of action is limited to data breaches caused by failure to implement reasonable security — statutory damages of $100–$750 per consumer per incident.'"
+    },
+    {
+      "text": "Provides a concrete delta-plan (map data flows for sale/sharing, implement opt-out signals, update notices, remediate vendor contracts, train request-handling to CCPA deadlines)",
+      "passed": true,
+      "evidence": "'Recommended Approach' 1-6: applicability assessment, map rights-fulfillment workflow against CCPA deadlines/verification tiers, audit vendor contracts (esp. ad tech), build CCPA-specific consumer mechanisms, extend DPIA to risk assessments, begin ADMT work."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

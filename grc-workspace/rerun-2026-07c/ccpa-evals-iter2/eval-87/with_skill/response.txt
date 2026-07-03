@@ -1,0 +1,87 @@
+# Handling a Combined Right to Know + Right to Delete Request
+
+You've received two simultaneous requests from a California resident: (1) a **Right to Know** request for specific pieces of PI, and (2) a **Right to Delete** request. Handle them as related but distinct workflows — verification and exception analysis differ slightly for each.
+
+## Step 0: Intake & Logging
+Log both requests with a timestamp upon receipt. You must have provided at least two intake channels (§1798.130) — e.g., a web form/email plus a toll-free number where applicable — so confirm which channel was used.
+
+**Acknowledge receipt within 10 business days**, describing your verification process to the consumer (Regs §7021(a)).
+
+## Step 1: Identity Verification — Tiered Standard
+
+Because the consumer is requesting **specific pieces of PI** (not just categories) and **deletion**, use the higher verification tier:
+
+- **Reasonably high degree of certainty** standard applies to: specific-pieces-of-PI requests and deletion of sensitive data. This requires matching **at least 3 data points** the business already holds, **plus a signed declaration under penalty of perjury** that the requestor is the consumer.
+- If the deletion request only concerns non-sensitive PI, the lower **reasonable degree of certainty** standard (2 data points) would suffice for the deletion portion — but since they've also asked for specific pieces of PI, apply the 3-point + declaration standard to cover both requests consistently.
+
+**If verification fails:**
+- A right-to-know request for specific pieces that cannot be verified must be answered with **categories of PI instead** (not denied outright).
+- A **deletion request that cannot be verified is denied as a deletion, but must be treated as an opt-out of sale/sharing** where applicable (Regs §7022(f)) — you cannot simply drop the request.
+
+If the request comes through an authorized agent, require written permission from the consumer plus verification of the agent's identity; you may also require direct verification with the consumer.
+
+## Step 2: Right to Know — Workflow
+
+| Step | Action |
+|---|---|
+| 1 | Receive and log request with timestamp |
+| 2 | Verify identity (3-point match + perjury declaration, per above) |
+| 3 | Search all PI systems (CRM, analytics, ad tech, order history, support tickets, etc.) |
+| 4 | Compile responsive PI — specific pieces, categories, sources, purposes, categories of third parties PI was disclosed/sold/shared to |
+| 5 | Apply exceptions (see below) |
+| 6 | Deliver in a portable, readily usable format within 45 days |
+| 7 | If needed, send extension notice **within the original 45-day window** |
+
+**Scope:** default lookback is 12 months prior to the request, but for PI collected on or after January 1, 2022, the consumer may request information beyond 12 months and you must provide it **unless doing so is impossible or would involve disproportionate effort**.
+
+**Exceptions you may invoke to withhold specific items:**
+- Disclosure would reveal third-party trade secrets
+- Would conflict with federal/state law
+- PI collected for a single one-time transaction and not retained
+- PI used solely for internal operations consistent with the context of collection
+- PI used solely to complete the transaction for which it was collected
+
+## Step 3: Right to Delete — Workflow
+
+| Step | Action |
+|---|---|
+| 1 | Receive and log deletion request |
+| 2 | Verify identity |
+| 3 | Check whether any exception applies; **document your reasoning** if invoking one |
+| 4 | **Execute** — if proceeding, identify all PI records and direct service providers/contractors to delete their copies |
+| 5 | **Confirm** — notify the consumer of deletion (or explain the exception invoked) within 45 days |
+| 6 | Retain deletion-request records as proof of compliance (retaining the request record itself does not contradict the deletion) |
+
+**Exceptions that let you retain PI instead of deleting it:**
+1. Necessary to complete a transaction or perform a contract
+2. Necessary to detect security incidents or protect against malicious/deceptive/fraudulent/illegal activity
+3. Necessary to fix errors impairing intended functionality
+4. Necessary to exercise free speech or ensure another consumer's free-speech right
+5. Necessary to comply with a legal obligation (§1798.145(a))
+6. Necessary for internal purposes compatible with the context of collection (limited CPRA exception)
+7. Necessary for research, journalism, or statistical purposes in the public interest
+
+If you invoke an exception for some but not all data, delete what isn't covered and explain to the consumer which categories were retained and why.
+
+## Step 4: Response Deadlines
+- Substantive response for **both** requests: **45 calendar days**, extendable once by another **45 days** with notice to the consumer sent within the original window.
+- Recent enforcement underscores the stakes here: the CPPA fined **Ford Motor Company $375K** specifically for failing to process access and deletion requests within the required timeframes — missing the 45-day deadline is itself an actionable violation, not a mere technicality.
+
+## Step 5: Cost
+Fulfill both requests **free of charge** — this counts toward the consumer's **two free requests per 12-month period**. A reasonable fee may apply only to additional requests within that window if manifestly unfounded or excessive.
+
+## Step 6: Non-Discrimination
+Regardless of outcome, you cannot deny service, change pricing, or degrade service quality because this consumer exercised their rights (§1798.125).
+
+## Summary Checklist
+- [ ] Acknowledge receipt within 10 business days, describing verification process
+- [ ] Verify identity: 3 data points + signed perjury declaration (specific pieces + deletion)
+- [ ] Search all systems for responsive PI
+- [ ] Evaluate and document any exceptions invoked for know or delete
+- [ ] Deliver right-to-know response in portable format
+- [ ] Execute deletion and propagate to service providers/contractors
+- [ ] Confirm both outcomes to consumer — within 45 days (or 90 with timely extension notice)
+- [ ] No charge (within free-request allowance)
+- [ ] Retain records per your record-keeping policy (mandatory 24-month retention if you handle PI of 10M+ consumers/households)
+
+*This is general compliance information, not legal advice. Consult qualified counsel for case-specific verification or exception decisions.*

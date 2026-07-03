@@ -1,0 +1,61 @@
+# Does Sharing Cookie/Browsing Data with an Ad Tech Platform Count as "Sale" or "Sharing" Under CCPA/CPRA?
+
+## Short Answer
+
+**Almost certainly yes** — this scenario is a textbook example of "sharing" (and potentially also "sale") of personal information under CCPA/CPRA, triggering opt-out and disclosure obligations.
+
+## Why This Is "Sale" and/or "Sharing"
+
+### "Sale" Definition
+Under CCPA, "sale" means selling, renting, releasing, disclosing, disseminating, making available, transferring, or otherwise communicating a consumer's personal information to a third party for **monetary or other valuable consideration**. This is broad — you don't need to receive cash. If you receive advertising services, analytics, better ad rates, or other value in exchange for the data flow, it likely qualifies as a "sale."
+
+### "Sharing" Definition (CPRA addition)
+CPRA introduced "sharing," defined as disclosing personal information to a third party for purposes of **cross-context behavioral advertising** (i.e., targeting ads to a consumer based on their activity across businesses, distinct websites, or apps), **whether or not for monetary consideration**. This category exists specifically to capture the scenario you describe: sending cookie IDs and browsing behavior to an ad tech platform so it can serve targeted/interest-based ads.
+
+**Your scenario**: Sending website visitors' cookie IDs and browsing data to an ad tech platform to serve targeted ads is squarely "sharing" (cross-context behavioral advertising) regardless of whether money changes hands, and it may also be a "sale" if there's consideration involved (which is common with ad tech/RTB arrangements involving bid requests, data co-ops, etc.).
+
+### Key Question: Is the Ad Tech Platform a "Service Provider" Instead?
+
+If the ad tech vendor were acting purely as your **service provider** — processing data only on your behalf, for your business purposes, under a compliant contract, with no independent use of the data — the transfer would NOT be a sale/share. However:
+- Most third-party ad tech/ad exchange platforms (e.g., real-time bidding networks, DSPs/SSPs) use the data for their **own purposes** — building audience profiles, cross-site tracking, ad targeting/optimization for their broader ad network — which disqualifies them from service provider status.
+- If the vendor can use the data for purposes beyond providing the contracted service to you (e.g., improving their own ad products, sharing with other clients), it's a sale/share, not a service-provider relationship.
+- **Programmatic/RTB advertising in particular is widely treated by regulators (including in CPPA guidance and enforcement actions) as "sharing" at minimum**, since bid requests broadcast browsing/device data to numerous ad tech participants who use it for their own targeting purposes.
+
+## What You Need to Do
+
+### 1. Update Your Privacy Policy
+- Disclose that you sell/share personal information (specifically, identifiers like cookie IDs and internet/browsing activity) with third parties (ad tech/advertising category) for cross-context behavioral advertising.
+- List categories of personal information sold/shared and categories of third parties who receive it.
+
+### 2. Provide Opt-Out Mechanisms
+- Post a clear and conspicuous **"Do Not Sell or Share My Personal Information"** link on your homepage (or a combined "Your Privacy Choices" link is acceptable under current CPPA regulations, using the recognized opt-out icon).
+- **Honor Global Privacy Control (GPC) signals** as valid opt-out requests — this is now effectively mandatory; if a browser sends a GPC signal, you must treat it as an opt-out of sale/sharing for that browser/device.
+- Ensure the opt-out actually stops the data flow to the ad tech platform (e.g., disable the tracking pixel/tag, use consent management platform (CMP) signals to block tags until opt-out status is known, or configure server-side controls).
+
+### 3. Notice at Collection
+- At or before collecting the cookie ID/browsing data (e.g., on first site visit before tags fire, or via cookie banner), disclose that this data may be sold/shared, and provide a link to opt out.
+
+### 4. Contracts with the Ad Tech Vendor
+- If you want to argue any part of the relationship is a service-provider arrangement (unlikely for open ad exchanges but possible for narrower vendors like a single-purpose CDP), you need a CCPA-compliant contract restricting the vendor's use of the data.
+- For genuine sale/share relationships, CPRA requires contracts with the third party that:
+  - Specify the limited/specified purpose for which PI is sold/shared
+  - Require the third party to comply with applicable CCPA obligations and provide the same level of privacy protection
+  - Grant you rights to take reasonable steps to ensure the third party uses the data consistently with the CCPA
+  - Allow you to remediate unauthorized use
+
+### 5. Honor Opt-Outs Downstream
+- Once a consumer opts out, you must **not** send their data to the ad tech platform going forward, and you should instruct the platform to stop processing/using previously shared data for its own purposes if feasible.
+
+### 6. Consider Sensitive Data Overlaps
+- If browsing data reveals sensitive categories (e.g., precise geolocation, health-related browsing, sexual orientation inferences), additional "Limit the Use of My Sensitive Personal Information" obligations may also apply.
+
+### 7. Minors
+- If you have actual knowledge that any consumers are under 16, opt-in consent (not just opt-out) is required before selling/sharing their data — relevant if your site could attract minors.
+
+### 8. Vendor Due Diligence
+- Ask the ad tech vendor directly how they use the data — whether they aggregate it into cross-client audience segments, retarget across other clients' properties, or resell it. This determines whether it's "sale," "share," or (rarely) a legitimate service-provider function, and shapes your contract terms and disclosures.
+
+## Bottom Line
+Treat this ad tech integration as a "share" (cross-context behavioral advertising) at minimum, likely also a "sale," and build your compliance program — privacy policy disclosures, opt-out link, GPC honoring, and vendor contract terms — around that classification rather than trying to characterize the ad tech platform as a mere service provider.
+
+**Disclaimer**: This is general guidance, not legal advice. The service-provider vs. third-party/sale-share classification is fact-specific and a frequent area of regulatory scrutiny (including recent CPPA enforcement sweeps targeting undisclosed ad tech data sharing) — confirm your specific ad tech vendor relationship and contract terms with California privacy counsel.

@@ -1,0 +1,33 @@
+{
+  "eval_id": 89,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies the consent-model difference: CCPA is opt-out (sale/sharing) vs GDPR opt-in lawful basis; no CCPA requirement for a processing legal basis",
+      "passed": true,
+      "evidence": "'GDPR: Processing personal data requires a valid lawful basis (Art. 6)... CCPA/CPRA: There is no general \"lawful basis\" requirement to process personal information... the law instead gives consumers opt-out rights for specific activities... rather than requiring opt-in consent up front.'"
+    },
+    {
+      "text": "Identifies CCPA-specific mechanics GDPR programmes lack: 'Do Not Sell or Share' link, GPC honoring, right to limit sensitive PI use, notice at collection specifics, service provider/contractor contract terms under §1798.100(d)/.140",
+      "passed": true,
+      "evidence": "Covers DNS link/GPC (section 4), Limit-SPI link (section 3), 'Notice at Collection' as a distinct, detailed gap item (section 8: 'CCPA requires a specific \"Notice at Collection\" at or before the point of data collection, distinct from your GDPR Art. 13/14 privacy notice'), and service provider/contractor contract structure (section 7: 'Your GDPR-standard DPA template needs a CCPA/CPRA rider... with the specific statutory language required for service provider/contractor status'). No pinpoint cite to §1798.100(d)/.140, but all five named mechanics are substantively addressed."
+    },
+    {
+      "text": "Notes scope differences: CCPA covers households, has revenue/volume applicability thresholds, and its 'sale' concept is broader than anything in GDPR",
+      "passed": true,
+      "evidence": "'CPRA... explicitly includes household-level data'; lists $25M/100,000-consumer/50%-revenue thresholds; 'GDPR has no equivalent \"sale\" concept.'"
+    },
+    {
+      "text": "Notes rights differences accurately (e.g., CCPA has no full GDPR-style portability/objection regime; correction was added by CPRA; statutory damages private right of action only for data breaches, $100-$750 per consumer per incident)",
+      "passed": true,
+      "evidence": "Rights table: 'Correction/Rectification | Yes (Art. 16) | Yes — added by CPRA (new right, wasn't in original CCPA)'; 'Portability | Yes (Art. 20) | Yes, but more limited'; 'Private right of action | ...Yes, but limited — CCPA gives consumers a private right of action only for data breaches... statutory damages $100–$750 per incident.'"
+    },
+    {
+      "text": "Provides a concrete delta-plan (map data flows for sale/sharing, implement opt-out signals, update notices, remediate vendor contracts, train request-handling to CCPA deadlines)",
+      "passed": true,
+      "evidence": "'Practical Action Checklist' 1-10 covers applicability confirmation, opt-out/GPC mechanism, SPI limit flow, notice-at-collection, rights-intake extension to CCPA deadlines/verification tiers, ad-tech vendor/contract audit, PI inventory extension, non-discrimination review, CPPA rulemaking tracking, breach-response updates."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

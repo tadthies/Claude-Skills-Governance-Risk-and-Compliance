@@ -1,0 +1,35 @@
+# Hosting RESTRICTED Data in AWS Sydney (Offshore): What's Required
+
+## Short Answer
+
+It is potentially possible, but **not automatic** — offshoring RESTRICTED information outside New Zealand requires a formal risk assessment, explicit risk acceptance by your agency's Accreditation Authority, and compliance with both the NZISM's offshore/cloud provisions and NZ Government cloud policy (administered by the Government Chief Digital Officer, GCDO, part of the Department of Internal Affairs). It is not a blanket prohibition, but it is treated as a heightened-risk decision that must be actively assessed and approved — you cannot simply provision an AWS Sydney region and start processing RESTRICTED data.
+
+## What the NZISM Requires
+
+1. **Data sovereignty and offshore risk assessment** — The NZISM requires agencies to consider the risks of storing or processing classified information offshore, including the jurisdiction's legal environment (e.g. foreign government access/compulsion laws), the physical and personnel security of the facility, and the ability to maintain NZ government assurance/audit rights over the environment.
+2. **Classification-based controls** — RESTRICTED is the lowest NZ government security classification tier but still requires baseline protections: encryption of data at rest and in transit, strict access control, logging/monitoring, and personnel security (appropriately cleared/vetted administrators).
+3. **Cloud-specific guidance** — The NZISM includes principles for cloud computing covering shared responsibility, provider assurance, data location, incident response coordination with the provider, and exit/portability planning. Agencies must satisfy themselves the cloud service provider (CSP) can meet the confidentiality, integrity, and availability requirements of the classification level.
+4. **Certification and accreditation** — As with any system handling RESTRICTED information, the hosting arrangement (including the offshore element) must be captured in the System Security Plan and Security Risk Management Plan, and the residual risk of offshoring must be explicitly accepted by the agency's Accreditation Authority (typically Chief Executive or delegate, informed by the CISO/ITSM).
+
+## What NZ Government Cloud Policy Requires
+
+1. **Cloud First Policy** — NZ government's Cloud First policy encourages use of cloud services but requires agencies to conduct due diligence, particularly for higher-sensitivity data.
+2. **Government Chief Digital Officer (GCDO) guidance** — The GCDO (within DIA) provides guidance and, historically, a Cloud Risk Assessment process/tooling to help agencies assess cloud service risk, including data sovereignty, jurisdiction, and provider security certifications. Agencies are generally expected to consult this guidance before onboarding a cloud service for anything above UNCLASSIFIED, and certainly for RESTRICTED.
+3. **All-of-Government (AoG) cloud arrangements** — Where an AoG cloud services agreement exists covering a provider (AWS has historically had engagement under NZ government cloud frameworks), agencies should check whether AWS Sydney is an approved/endorsed offering under that arrangement, as this can streamline (but not eliminate) the due diligence and approval steps.
+4. **Data sovereignty considerations** — Even though AWS Sydney is in Australia (not New Zealand), it is still an offshore location relative to NZ. Agencies must specifically assess and document why an NZ-only region isn't used (AWS has historically not had a dedicated NZ region for all services, so many agencies do host in Australian regions), the legal exposure of data being subject to Australian law and any third-country access risk, and any restrictions from data owners or information-sharing agreements that may prohibit offshoring entirely for certain data sets.
+5. **Ministerial/Cabinet direction** — Certain categories of government data (e.g. specific national security, law enforcement, or Māori data considerations) may have additional sovereignty requirements or expectations beyond general RESTRICTED handling — these should be checked against your specific data holdings.
+
+## Practical Pre-Conditions Before Hosting RESTRICTED Data in AWS Sydney
+
+- Conduct a documented risk assessment covering data sovereignty, legal jurisdiction (Australian and any extraterritorial access laws such as the US CLOUD Act, given AWS is a US-headquartered provider), and provider security assurance (e.g. relevant certifications, NZISM control mapping).
+- Confirm AWS's shared responsibility model and ensure your agency retains/implements the customer-side NZISM controls (encryption key management, IAM, logging, network segmentation, etc.).
+- Verify whether AWS Sydney is covered by any existing NZ Government cloud services arrangement or requires a standalone risk assessment submission to GCDO/DIA.
+- Ensure contractual terms with AWS address data location commitments, government/law enforcement access notification, audit rights, incident notification timeframes, and data return/deletion on exit.
+- Document the offshoring decision and residual risk in the SRMP and obtain explicit accreditation sign-off before go-live, rather than treating cloud hosting as a lower-scrutiny "given."
+- Engage your agency's CISO/ITSM and, where relevant, NCSC (National Cyber Security Centre, part of GCSB) for advice, particularly given RESTRICTED classification.
+
+## Bottom Line
+
+RESTRICTED data can potentially be hosted in AWS Sydney, but this is a risk-accepted exception rather than a default — it requires a documented offshore risk assessment, alignment with GCDO/NZ Government cloud policy expectations, explicit customer-side implementation of NZISM controls under the shared responsibility model, and formal accreditation sign-off before the data is placed there. Treat this as a decision requiring active governance, not a routine provisioning task.
+
+*This is general guidance based on NZISM and NZ government cloud policy principles as commonly understood; confirm current GCDO/DIA cloud guidance and any AoG cloud agreements directly, as these are periodically updated.*

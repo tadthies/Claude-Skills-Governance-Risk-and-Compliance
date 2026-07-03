@@ -1,0 +1,44 @@
+# CMMC Level 2 — Plain-English Guide for First-Time DoD Contractors
+
+Congratulations on the contract. Here's what DFARS 252.204-7021 and CMMC Level 2 actually mean for a 45-person aerospace engineering firm.
+
+## What CMMC Is, in Plain English
+
+CMMC (Cybersecurity Maturity Model Certification) is the DoD's way of verifying that contractors who handle sensitive government information actually have the cybersecurity controls they've been claiming to have for years. It isn't a new set of requirements out of nowhere — it's a **verification layer** on top of rules that have technically applied to defense contractors since 2017.
+
+**CMMC sits inside a family of DFARS clauses that all work together:**
+- **DFARS 252.204-7012** — the underlying safeguarding requirement: protect Controlled Unclassified Information (CUI) using NIST SP 800-171, and report any cyber incident to DIBNET within **72 hours** of discovery. This clause continues to apply in full alongside CMMC — CMMC doesn't replace it.
+- **DFARS 252.204-7019** — requires you to have a current NIST SP 800-171 self-assessment score on file.
+- **DFARS 252.204-7020** — requires that score to be posted in SPRS (Supplier Performance Risk System) so DoD contracting officers can see it.
+- **DFARS 252.204-7021** — the clause in your contract — requires you to hold the CMMC certification level specified in the contract before award/option exercise, and to flow the same requirement down to your subcontractors.
+
+**What Level 2 specifically means:** Level 2 ("Advanced") requires implementing all **110 security practices** from NIST SP 800-171 Rev 2 across 14 domains (access control, authentication, incident response, encryption, audit logging, etc.). It applies because your contract involves CUI, not just basic Federal Contract Information (FCI, which would only require the lighter 17-practice Level 1). Depending on whether your program is designated "critical" by DoD, you'll either self-assess against all 110 practices or go through a third-party C3PAO (CMMC Third-Party Assessment Organization) assessment — check Section L/M of your contract or ask your contracting officer which track applies.
+
+## What You Need to Do
+
+1. **Scope your environment** — figure out exactly which systems, networks, and people touch CUI from this contract. Don't let scope creep pull in unrelated business systems; a smaller, well-segmented CUI enclave is much easier and cheaper to secure and assess.
+2. **Run a gap assessment** — evaluate your current controls against all 110 NIST SP 800-171 practices and document status (Met / Partial / Not Met) for each.
+3. **Remediate the gaps** — this is almost always the long pole: MFA everywhere it's required, FIPS-validated encryption for CUI at rest and in transit, centralized logging, incident response plan and testing, access controls, configuration baselines, etc.
+4. **Write the System Security Plan (SSP)** — a formal document describing your system boundary, CUI data flows, and how each of the 110 practices is implemented. This is a required artifact, not optional paperwork — it's the foundation both a self-assessment and a C3PAO assessment are built on.
+5. **Calculate and submit your SPRS Basic Assessment score** — even before final certification, you're expected to submit a self-generated score (out of 110, with weighted deductions for anything not met) at sprs.csd.disa.mil. This is a **prerequisite that has to be in place independent of and generally before your certification assessment** — DoD contracting officers can already see this score today.
+6. **Have a senior company official affirm the score annually** — this affirmation is a legal attestation; false affirmations carry False Claims Act exposure, so don't submit an inflated score.
+7. **Undergo the required assessment** — self-assessment (non-critical programs) or a C3PAO-led third-party assessment (critical programs), per what your contract specifies.
+
+## Realistic Timeline
+
+For a company that has "never heard of CMMC before," a **first-time path to full readiness typically takes 9–18 months**, broken down roughly as:
+- Gap assessment and scoping: 1–2 months
+- Remediation (MFA rollout, encryption, logging, policy writing, SSP drafting, IR plan/testing): 6–12 months — this is where most of the time and budget goes, especially for firms starting from a low security baseline
+- Pre-assessment readiness review / mock assessment: 1 month
+- C3PAO assessment scheduling and execution (if required): 1–3 months, plus C3PAO availability lead time, which can itself run several months given current demand
+
+Because you're brand new to this, budget for **at least 12 months** before you'd be in a position to pass a full assessment, and start immediately given that DFARS 7021 is presumably tied to a current contract or upcoming option period.
+
+## Practical Next Steps This Week
+
+- Confirm with your contracting officer whether your program is "critical" (C3PAO required) or "non-critical" (self-assessment allowed).
+- Identify a qualified CMMC consultant or Registered Practitioner (RP) to help scope and run the gap assessment — most 45-person firms don't have in-house staff who've done this before.
+- Start the SSP now, even in draft form; it will evolve as you remediate.
+- Do not wait for a compliance deadline notice — flowing CUI without a plan in place risks contract eligibility and potential False Claims Act exposure if you misrepresent your posture.
+
+*This is general compliance information, not legal advice. Verify current requirements against official DoD/CMMC-AB sources and consult qualified counsel or an accredited CMMC assessor for decisions specific to your contract.*

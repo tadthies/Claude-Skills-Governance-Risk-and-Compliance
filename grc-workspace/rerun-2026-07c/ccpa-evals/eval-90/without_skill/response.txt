@@ -1,0 +1,69 @@
+# CPRA Classification and Obligations for Geolocation, Health, and Biometric Data
+
+Short answer: all three data types you listed — precise geolocation, wearable-derived health metrics, and facial recognition biometrics — are almost certainly **"Sensitive Personal Information" (SPI)** under the CPRA, and at least two of them (precise geolocation and biometrics used for identification) are named explicitly in the statute. This triggers a distinct, heightened compliance track separate from ordinary "personal information."
+
+## 1. How CPRA Classifies This Data
+
+CPRA amended the CCPA (Cal. Civ. Code § 1798.140) to create a new category, **"sensitive personal information,"** which is a subset of personal information subject to extra rules. The statutory definition (§ 1798.140(ae)) includes, among other things:
+
+- **Precise geolocation** — defined as geolocation identifying a natural person's location within a radius of 1,850 feet (about 1/3 mile). Your app's "precise geolocation" almost certainly meets this threshold (GPS-level accuracy is typically within a few meters to a few hundred feet), so it is SPI, not just ordinary PI.
+- **Biometric information processed for the purpose of uniquely identifying a consumer** — your facial recognition used for *authentication* is a textbook example. Note the qualifier: biometric data is SPI specifically when used for unique identification (e.g., login/authentication, verification). This is exactly your use case.
+- **Health information** — CPRA's SPI definition includes information about a consumer's health, and separately California's Confidentiality of Medical Information Act (CMIA) and, as of 2024, CCPA amendments extending "medical information" concepts to certain consumer health data may also apply if the wearable data reflects physical health status, conditions, or metrics like heart rate, sleep, blood oxygen, menstrual/reproductive health data, etc. Depending on exactly what's collected, this could also implicate the **My Health My Data Act (MHMDA)** — a *Washington* state law, not California, but worth flagging if you operate nationally, since "consumer health data" is separately and more aggressively regulated there. Under CPRA specifically, health information is enumerated as SPI.
+
+So: **precise geolocation = SPI (explicit)**; **biometric info for identification = SPI (explicit)**; **health metrics = SPI (explicit, as "information about health")**. All three should be treated as SPI, and biometric data also independently triggers baseline "personal information" biometric handling requirements even outside the SPI category.
+
+Note also that raw biometric identifiers (like a faceprint/facial geometry template) are themselves listed as biometric information under CCPA's general PI definition (§ 1798.140(v)(1)(E)) — so facial recognition data is doubly covered: as ordinary PI (biometric identifier) and as SPI (because it's used to uniquely identify the consumer for authentication).
+
+## 2. Special Obligations Triggered by SPI Classification
+
+### a. Right to Limit Use and Disclosure of SPI (§ 1798.121)
+Consumers have an affirmative right to direct you to limit use of their SPI to only what's necessary to perform the services/goods reasonably expected by an average consumer, or as otherwise permitted by regulations (e.g., for security, fraud prevention, legally required purposes). If you use SPI beyond these permitted purposes (e.g., for behavioral advertising, profiling, or building consumer profiles based on geolocation/health/biometric data), you must:
+- Provide a clear and conspicuous link titled **"Limit the Use of My Sensitive Personal Information"** (this can be combined with the "Do Not Sell or Share" link if applicable, into a single "Your Privacy Choices" link/toggle interface, per the regs).
+- Honor consumer requests to limit within 15 business days, and propagate the limitation to any third parties/service providers/contractors the SPI was disclosed to.
+- Note: if you *only* use SPI for permitted business purposes under § 1798.121(a) (i.e., the narrow list — providing the service, security, short-term transient use, quality/safety maintenance, employee tasks not for third-party benefit, legally required, non-marketing purposes not for building a profile or de-identification/inferring characteristics) — you are **not required** to offer this link, but you should document that analysis carefully, because for facial recognition authentication and precise geolocation used only to run core app features, you may genuinely fall within the exemption. Health metrics used only to serve the wearable-integration feature likewise may qualify. The moment you use any of this data for advertising, analytics-driven profiling, or cross-context behavioral targeting, the exemption disappears and the opt-out/limit right must be offered.
+
+### b. Purpose Limitation and Necessity/Proportionality
+Under the CPRA regulations (11 CCR § 7002), collection, use, retention, and sharing of personal information — and SPI in particular — must be "reasonably necessary and proportionate" to achieve the purpose for which it was collected or a compatible disclosed purpose. For SPI specifically, this is applied more strictly: regulators expect a tighter, more defensible nexus between the SPI collected and the specific feature it supports (e.g., you likely cannot justify using facial biometric templates collected for login to also train a general facial-recognition model, or use precise geolocation collected for a "find nearby feature" to build advertising location profiles, without additional disclosure/consent and likely triggering the limit-use right).
+
+### c. Notice at Collection (§ 1798.100(a), 11 CCR § 7012)
+At or before the point of collecting SPI, you must provide a notice that:
+- Identifies the categories of SPI to be collected (call out geolocation, biometric, and health information as distinct categories — don't bury them in a generic "personal information" bucket).
+- States the purposes for which each category will be used.
+- Discloses the length of time you intend to retain each category, or the criteria used to determine that period.
+- States whether the SPI is sold or shared (if applicable — likely not typical for this use case, but must be addressed).
+- Is provided in a manner that draws attention to it — given the sensitivity, best practice (and increasingly expected by the CPPA) is a **just-in-time notice** at the specific point of collection (e.g., when prompting for camera access for facial recognition, or when requesting location/HealthKit permissions), not just a link buried in a general privacy policy.
+- For biometric authentication specifically, many practitioners also layer in **BIPA-style consent language** (informed written consent, retention schedule, no sale) even though California doesn't have a BIPA-equivalent private right of action — this reduces multi-state legal risk since you're processing biometrics nationally.
+
+### d. Data Minimization and Retention (11 CCR § 7002, § 7050)
+- Collect only the SPI reasonably necessary for the disclosed purpose (e.g., don't collect continuous background precise geolocation if the feature only needs geolocation at time of use).
+- Set and disclose specific, purpose-linked retention periods for each SPI category — "as long as necessary" is not sufficient; regs require either a defined retention period or the criteria for determining it, and you must actually delete/de-identify SPI once the purpose is fulfilled.
+- For biometric templates specifically, best practice is to store only mathematical representations (not raw images) where feasible, encrypt at rest and in transit, and define a deletion trigger (e.g., account closure, X months of inactivity).
+- Consider whether on-device processing (e.g., on-device Face ID-style matching rather than transmitting biometric templates to your servers) is feasible — this reduces both your regulatory exposure and your risk surface.
+
+### e. Risk Assessments (11 CCR §§ 7150–7157, finalized 2024/effective obligations phasing in through 2026–2028)
+The CPPA's finalized regulations require businesses to conduct and document **risk assessments** before processing personal information that presents "significant risk to consumers' privacy," which explicitly includes:
+- Processing SPI (beyond specified exceptions),
+- Using automated decision-making technology (ADMT) for significant decisions,
+- Processing that involves extensive profiling.
+
+Facial recognition for authentication and combined geolocation + health + biometric processing on a single consumer is a strong candidate for "significant risk" processing requiring a documented risk assessment. The assessment must weigh the benefits of processing against the risks to consumers, identify safeguards, and be retained (not necessarily filed proactively with the CPPA, but subject to submission on request/audit, per the phased-in compliance timeline — initial compliance deadlines run through 2027/2028 depending on final CPPA guidance, so track the current effective dates closely as they've been amended).
+
+### f. Cybersecurity Audits (11 CCR §§ 7120–7124)
+Businesses whose processing of personal information (including SPI) presents significant risk to consumer security — determined by revenue thresholds and processing volume/nature — must conduct **annual independent cybersecurity audits**. Given that you're processing precise geolocation, biometric identifiers, and health data at scale via a mobile app, you should evaluate against the CPPA's revenue/volume thresholds (the regs set specific consumer-count and revenue triggers) to determine if you're in scope. If in scope, the audit must assess elements like access controls, encryption, authentication, vulnerability management, incident response, data retention/disposal, and third-party/vendor risk — all highly relevant to biometric authentication infrastructure and location/health data pipelines.
+
+## 3. What You Need to Disclose (Practical Checklist)
+
+1. **Privacy Policy**: Separately enumerate "precise geolocation," "biometric information," and "health information" (don't lump into generic categories) — state purposes of collection, categories of sources, categories of third parties/service providers receiving each, whether sold/shared (state explicitly if not), and retention periods/criteria for each.
+2. **Notice at Collection**: Just-in-time, layered notices at the point each permission is requested (camera/Face ID, location, HealthKit/Google Fit), specific to that data type and purpose.
+3. **"Limit the Use of My Sensitive Personal Information" link** (or combined "Your Privacy Choices" mechanism) on your homepage/app settings, unless you can fully document that all SPI use falls within the § 1798.121(a) permitted-business-purpose exemption.
+4. **Right to know/access/delete/correct**: Ensure your consumer rights intake process can locate and act on SPI specifically (geolocation logs, biometric templates, health metric records) across all systems, including any wearable-integration third-party APIs.
+5. **Vendor/contract terms**: Confirm your contracts with wearable API providers, cloud/biometric-matching vendors, and any analytics providers include CPRA-required service provider/contractor restrictions (no use of SPI outside specified purposes, no combining across other businesses' data except as permitted).
+6. **Risk assessment documentation**: Prepare (or update) a documented risk assessment covering this processing, ready for CPPA submission on request per the finalized timeline.
+7. **Cybersecurity audit readiness**: Confirm applicability thresholds and, if in scope, begin annual independent audit processes.
+8. **Children's/sensitive-population considerations**: If the app may be used by minors, layer in opt-in consent requirements (CPRA requires opt-in, not opt-out, for sale/sharing of PI of consumers under 16), which is especially relevant if any biometric or health data belongs to minors.
+
+## Bottom Line
+
+Treat this data set as SPI across the board. Build a purpose-limited, minimized data flow; give just-in-time, itemized notices; determine honestly whether you fall inside the narrow "necessary for the service" exemption or need to offer the Limit-Use link; document a risk assessment; and check your cybersecurity-audit applicability given the combination of biometric authentication, health data, and precise geolocation processing at mobile-app scale. This combination is precisely the profile California regulators have flagged as "significant risk" processing, so documentation and defensibility — not just a privacy policy update — should be the priority.
+
+*This is general compliance information, not legal advice. Given the combination of biometric authentication and health data, I'd recommend counsel review specifically for CMIA/health-data overlap and multi-state exposure (e.g., Washington MHMDA, Illinois BIPA if you have Illinois users) before launch.*

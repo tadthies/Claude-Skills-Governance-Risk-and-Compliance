@@ -1,0 +1,33 @@
+{
+  "eval_id": 89,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies the consent-model difference: CCPA is opt-out (sale/sharing) vs GDPR opt-in lawful basis; no CCPA requirement for a processing legal basis",
+      "passed": true,
+      "evidence": "'GDPR relies on identifying a lawful basis... before processing. CCPA/CPRA is largely a notice-and-opt-out model: you can process and even sell/share data by default as long as you disclose it and let consumers opt out' and table row: 'Core mechanism — Lawful basis + data minimization... enforced ex ante' vs 'Notice + opt-out of sale/sharing, enforced ex post.'"
+    },
+    {
+      "text": "Identifies CCPA-specific mechanics GDPR programmes lack: 'Do Not Sell or Share' link, GPC honoring, right to limit sensitive PI use, notice at collection specifics, service provider/contractor contract terms under §1798.100(d)/.140",
+      "passed": false,
+      "evidence": "Covers the Do Not Sell/Share link, GPC honoring, right to limit SPI, and notice-at-collection specifics substantively, and discusses vendor contract requirements needing 'CCPA-specific language' — but never cites the §1798.100(d)/.140 statutory basis anywhere in the response for these contract terms, and the assertion's list of required mechanics is only partially covered without the specific statutory grounding that distinguishes a rigorous answer from a generic one."
+    },
+    {
+      "text": "Notes scope differences: CCPA covers households, has revenue/volume applicability thresholds, and its 'sale' concept is broader than anything in GDPR",
+      "passed": false,
+      "evidence": "Discusses revenue/volume applicability thresholds extensively and notes 'sale'/'sharing' has 'no equivalent' in GDPR, but never mentions that CCPA's protections extend to 'households' in addition to consumers — this specific scope element required by the assertion is absent from the entire response."
+    },
+    {
+      "text": "Notes rights differences accurately (e.g., CCPA has no full GDPR-style portability/objection regime; correction was added by CPRA; statutory damages private right of action only for data breaches, $100-$750 per consumer per incident)",
+      "passed": false,
+      "evidence": "Notes 'Right to Correct (added by CPRA...)' and describes the private right of action as 'Limited private right of action exists for certain data breaches involving nonencrypted/nonredacted PI due to failure to maintain reasonable security' — but never states the specific statutory damages figure of $100-$750 per consumer per incident anywhere in the response, which the assertion explicitly requires. Also does not clearly state CCPA lacks a full GDPR-style objection/portability regime (portability is listed as a CCPA right without noting it's narrower than GDPR Art. 20)."
+    },
+    {
+      "text": "Provides a concrete delta-plan (map data flows for sale/sharing, implement opt-out signals, update notices, remediate vendor contracts, train request-handling to CCPA deadlines)",
+      "passed": true,
+      "evidence": "'Practical Recommendation' section lists a 7-step sequence: confirm applicability, extend data map to flag sale/share and SPI, build CCPA-specific notices, stand up opt-out infrastructure, extend DSAR intake to CCPA rights/timelines/verification tiers, update vendor contracts, monitor CPPA rulemaking."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

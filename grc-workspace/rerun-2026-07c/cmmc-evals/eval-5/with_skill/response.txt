@@ -1,0 +1,44 @@
+# Uncertified Subcontractors Handling CUI — Your Flow-Down Obligations and Next Steps
+
+This is a serious, time-sensitive compliance gap. Here's what DFARS 252.204-7021 requires of you as the prime, and what to do before the next option period.
+
+## Your Flow-Down Obligations Under DFARS 252.204-7021(c)
+
+As the prime, you are required to:
+
+- **Include CMMC requirements in all subcontracts, at all tiers**, where the subcontractor processes, stores, or transmits FCI or CUI — sub-subcontractors are not exempt.
+- **Specify the required CMMC level in the subcontract itself.** The level depends on what the subcontractor handles, not on what your own contract requires:
+  - **FCI-only subcontractors need Level 1** (17 practices, annual self-assessment).
+  - **Subcontractors handling CUI need Level 2** (110 practices, self-assessment or C3PAO assessment depending on program criticality).
+- **Verify subcontractor status before flowing FCI/CUI or continuing performance** — check SPRS for a current self-assessment score or the CMMC-AB registry for an active certification. Verification is a precondition, not a formality done after the fact.
+- **The related clause family travels with 7021**: DFARS 7012 (safeguarding CUI + 72-hour DIBNET incident reporting), 7019 (self-assessment currency), and 7020 (SPRS posting and DoD access to assessment results) all flow down alongside the CMMC requirement itself. Your subcontract language needs to cover this whole family, not just certification level.
+
+Since your two subs handle CUI and have **no certification at all**, they are currently out of compliance with a subcontract requirement you were obligated to impose and verify — this is a live gap, not a future risk.
+
+## Remediation Menu — What You Should Do Now
+
+Advise and evaluate all of the following options; the right one (or combination) depends on the subs' contribution to the work and how fast each can move:
+
+1. **Stop the CUI flow immediately and document the containment step.** This is the first action regardless of which long-term path you choose — continuing to send CUI to a known-uncertified subcontractor while your own compliance posture is on file with DoD is the core exposure here.
+2. **Rescope the subcontractor to FCI-only work**, if the statement of work allows it. This drops their requirement down to Level 1, which is far faster to achieve (17 practices, annual self-assessment, no C3PAO needed) and may be realistic before the next option period if their actual deliverables can be restructured to avoid touching CUI.
+3. **Sponsor an enclave** — bring the CUI-handling work inside a prime-controlled environment (e.g., a segmented enclave you operate and that sits inside your own certified CUI boundary) that the subcontractor accesses without CUI ever residing on their own systems. This can preserve the subcontractor relationship without waiting for them to independently achieve Level 2.
+4. **Replace the subcontractor before the next option period** if neither rescoping nor an enclave is feasible in the time available, and if the sub cannot realistically reach Level 2 (or even Level 1, if that's the fallback) in time.
+
+## Documentation and Risk
+
+Whichever path (or combination) you choose:
+
+- **Document your interim risk acceptance** — the decision to continue any CUI flow during remediation, the compensating controls in place, and who approved it.
+- **Map CUI to each subcontractor and record the applicable level** in your supply chain security program, not just for these two subs — this finding suggests a broader flow-down verification gap may exist across your subcontractor base and is worth auditing now rather than one sub at a time.
+- **Be aware of False Claims Act exposure.** Continuing to flow CUI to a subcontractor you know is non-compliant, while your own SPRS score and annual senior-official affirmation are on file representing your compliance posture, creates False Claims Act risk for your company — this applies even though the deficiency is at the subcontractor level, because the flow-down verification obligation is yours.
+
+## Before the Next Option Period — Priority Sequence
+
+1. Stop CUI flow to both subs today; document the containment action and date.
+2. Determine for each sub, independently: can the work be rescoped to FCI-only, can it be brought into a prime-sponsored enclave, or does it need to be replaced?
+3. If any CUI flow must continue during remediation (e.g., enclave stand-up takes time), document the interim risk acceptance and compensating controls, with executive sign-off.
+4. Update your subcontract language for both subs (and audit the rest of your subcontractor base) to explicitly specify the required CMMC level and the DFARS 7012/7019/7020/7021 clause family.
+5. Verify subcontractor status in SPRS/CMMC-AB registry going forward as a standing precondition before any CUI or FCI flows — not a one-time check.
+6. Loop in your contracts/legal team before the option period decision point, given the False Claims Act exposure if this isn't resolved or properly risk-accepted in writing.
+
+*This is general compliance guidance, not legal advice. Consult your contracts counsel on option-period timing and False Claims Act exposure, and verify current subcontractor certification status directly in SPRS/CMMC-AB before acting.*

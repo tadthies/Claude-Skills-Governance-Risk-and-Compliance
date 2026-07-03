@@ -1,0 +1,13 @@
+{
+  "eval_id": 132,
+  "eval_name": "offshore-cloud-hosting",
+  "run_type": "with_skill",
+  "prompt": "Can our NZ public sector agency host RESTRICTED data in AWS Sydney (offshore)? What does the NZISM and NZ government cloud policy require before we can do this?",
+  "assertions": [
+    "Does not give a flat yes/no: explains offshore hosting of NZ government data is a risk-based decision requiring a formal cloud risk assessment and agency-level approval (accreditation/risk acceptance by the responsible authority), not a prohibition",
+    "References the NZ Government cloud framework accurately: cloud-first policy with security requirements, the government cloud risk assessment process, and Protective Security Requirements (PSR) obligations alongside the NZISM",
+    "Addresses jurisdiction and sovereignty risk explicitly: offshore hosting means Australian jurisdiction over the data; assess legal access regimes, data residency commitments, and exit strategy",
+    "Requires classification-appropriate controls for RESTRICTED: encryption at rest and in transit with agency-controlled keys where feasible, access controls limited to cleared personnel, logging/monitoring, and supplier assurance evidence (e.g., IRAP/independent assessments of the AWS region)",
+    "Sets out the approval chain: documented risk assessment, CISO/ITSM review, and formal risk acceptance by the accreditation authority/agency head before go-live, with the decision recorded"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 5,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "States the flow-down rule: DFARS 252.204-7021 flows down to subcontractors at all tiers where they process, store, or transmit FCI/CUI; subs handling CUI need CMMC Level 2, subs with FCI only need Level 1",
+      "passed": true,
+      "evidence": "'Flow-down is mandatory, not discretionary. The clause must be included in all subcontracts (and lower-tier subcontracts) at every tier where the subcontractor will process, store, or transmit FCI or CUI... Subcontractors handling only FCI generally need CMMC Level 1... subcontractors handling CUI generally need CMMC Level 2.'"
+    },
+    {
+      "text": "States the prime's duty: verify subcontractor CMMC status (via SPRS or certificate evidence) BEFORE awarding/continuing subcontract performance involving CUI",
+      "passed": true,
+      "evidence": "'Certification must be current at the time of award of the subcontract and maintained throughout performance, with the subcontractor's certification status verified... before you flow CUI to them.'"
+    },
+    {
+      "text": "Gives concrete remediation options: stop CUI flow to the uncertified subs (rescope what they receive), move them to FCI-only scope, sponsor an enclave approach, or replace them — with interim risk documentation",
+      "passed": true,
+      "evidence": "Item 6 recommends subcontractors 'cease receiving/processing CUI'; item 8 covers 'restricting CUI transmission until certification, segregating CUI processing to a compliant enclave, or temporarily re-routing CUI-handling scope'; item 13 covers 'Consider whether replacement subcontractors are needed'; item 12 requires documenting 'the discovery, the notice to subcontractors, the remediation timeline, interim mitigations.' Note: explicit rescoping to FCI-only work specifically is not named (no match for 'FCI-only' or 'rescope'), but the response covers 3 of the 4 concrete options plus interim risk documentation, which substantively satisfies the assertion's intent."
+    },
+    {
+      "text": "Notes the related DFARS clauses working together: 252.204-7012 (safeguarding + 72-hour reporting), 7019/7020 (SPRS posting and assessment access) alongside 7021",
+      "passed": false,
+      "evidence": "Response cites DFARS 252.204-7012 explicitly ('carries its own DFARS 252.204-7012 reporting obligations (72-hour DoD Cyber Crime Center reporting)') and references SPRS generically multiple times, but never cites DFARS 252.204-7019 or 252.204-7020 by clause number anywhere in the file (verified via search — no matches for '7019' or '7020')."
+    },
+    {
+      "text": "Warns about misrepresentation risk (False Claims Act exposure for affirming compliance while knowingly flowing CUI to non-compliant subs) and advises documenting corrective action",
+      "passed": true,
+      "evidence": "'False Claims Act / Civil Cyber-Fraud Initiative risk: DOJ's Civil Cyber-Fraud Initiative has pursued primes for knowingly misrepresenting or failing to ensure cybersecurity compliance... You now have actual knowledge — that materially changes your risk posture' and 'Document everything: the discovery, the notice to subcontractors, the remediation timeline, interim mitigations, and any communications with the Contracting Officer.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

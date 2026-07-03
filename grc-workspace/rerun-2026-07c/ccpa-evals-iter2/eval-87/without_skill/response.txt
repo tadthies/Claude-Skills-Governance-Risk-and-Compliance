@@ -1,0 +1,68 @@
+# Handling a Combined CCPA/CPRA Right to Know + Right to Delete Request
+
+When a California resident submits both a **Right to Know** (access) request and a **Right to Delete** request, you need a coordinated process. Here's a step-by-step walkthrough.
+
+## Step 1: Log and Acknowledge the Request
+
+- Record the date received, the requestor's identity/contact info, and which rights are being invoked (know + delete).
+- Confirm receipt within **10 business days**, describing your verification process and expected response timeline.
+- You have **45 calendar days** from receipt to respond substantively (extendable once by another 45 days if reasonably necessary, with notice to the consumer explaining the delay).
+
+## Step 2: Identity Verification
+
+Verification must be reasonable and proportionate to the sensitivity of the data and the risk of harm from improper disclosure/deletion.
+
+- **For a Right to Know (specific pieces of data) request**: Requires a higher standard of verification (e.g., matching 2-3 data points you already hold, such as name, email, account number, plus possibly a signed declaration under penalty of perjury) because disclosing specific personal information to the wrong person is high-risk.
+- **For a Right to Delete request**: Also requires reasonable verification, though if you can't verify the requestor to the standard needed for deletion, you can treat it as a request to opt-out of sale/sharing instead (a lower bar), or ask for additional information.
+- **If using a password-protected account**: You can verify through the existing authentication method (e.g., login + re-authentication), which is often sufficient.
+- **If you cannot verify**: You may deny the request, but must explain why and, where feasible, offer the consumer another way to submit information for verification. Do not require the consumer to pay a fee or create an account they don't already have, just to submit a request.
+- Document your verification decision and rationale for audit purposes.
+
+## Step 3: Handle the Right to Know Request
+
+1. **Search all systems** (CRM, marketing platforms, data warehouses, support tickets, analytics, backups if reasonably accessible, third-party processors acting as service providers) for personal information tied to the verified identity.
+2. Compile a response that includes, for the preceding 12 months (or since collection if you offer more):
+   - Categories of personal information collected
+   - Categories of sources
+   - Business/commercial purposes for collecting/selling/sharing
+   - Categories of third parties with whom you've disclosed, sold, or shared PI
+   - The **specific pieces of personal information** collected about that individual (this is the more detailed "right to know specific pieces" version, distinct from the general categories disclosure required in your privacy policy)
+3. Deliver the response in a **portable, readily usable format** that allows the consumer to transmit the information to another entity without hindrance (commonly a downloadable file, e.g., CSV or PDF), or by mail if requested.
+4. Do not disclose certain sensitive identifiers even in response to a verified request — e.g., **Social Security numbers, driver's license numbers, financial account numbers, health/medical IDs, account passwords/security Q&A** should generally be redacted or not disclosed in full even to the verified consumer, to avoid creating a security risk.
+
+## Step 4: Handle the Right to Delete Request
+
+1. Once identity is verified, delete personal information from your records **and direct service providers/contractors to delete it as well**, unless an exception applies.
+2. **Common exceptions that allow you to retain data** (you may deny deletion, in whole or part, if the data is necessary to):
+   - Complete the transaction, provide a good/service requested, or fulfill a warranty/product recall
+   - Detect security incidents, protect against malicious/fraudulent/illegal activity, or prosecute those responsible
+   - Debug to identify/repair errors that impair existing intended functionality
+   - Exercise free speech, or another consumer's right to free speech
+   - Comply with the California Electronic Communications Privacy Act
+   - Engage in public/peer-reviewed scientific, historical, or statistical research in the public interest (with consent/de-identification safeguards)
+   - Enable solely internal uses reasonably aligned with consumer expectations based on the relationship
+   - Comply with a **legal obligation** (e.g., tax records, financial recordkeeping requirements)
+   - Otherwise use the information internally, lawfully, in a manner compatible with the context in which it was provided
+3. For any data retained under an exception, you should **document which exception applies** and, if practical, tell the consumer which categories were deleted vs. retained and why.
+4. If you sold or shared the personal information with third parties, you must also **notify those third parties** to delete the data, unless doing so is impossible or involves disproportionate effort.
+
+## Step 5: Order of Operations (Know vs. Delete)
+
+Best practice: **process the Right to Know request first (or simultaneously), then process deletion.** If you delete first, you may destroy the very data needed to fulfill the access request. Many companies compile the "know" disclosure package, deliver or finalize it, and then execute deletion — or do both in parallel using a snapshot taken at verification time.
+
+## Step 6: Respond to the Consumer
+
+- Provide a **combined response letter/portal notification** addressing both requests: what was disclosed (attach or link to the data), and what was deleted vs. retained (with exception basis cited for retained data).
+- Confirm deletion has been completed (or will be completed within the applicable timeframe) and that service providers/third parties were instructed accordingly.
+- If you denied all or part of either request, explain why (e.g., failed verification, applicable exception) and inform them of their right to appeal or complain to the CPPA/Attorney General.
+
+## Step 7: Recordkeeping
+
+- Retain records of the request, verification steps, and actions taken for at least 24 months for compliance/audit purposes, but do not retain more personal information than needed for this purpose.
+
+## Practical Tips
+- Use a standardized intake form/workflow (web form, toll-free number, or both, as required) to reduce ad hoc handling.
+- Train customer service staff to recognize and route these requests promptly — mishandled or ignored requests are a common enforcement trigger.
+- If you operate a "right to know" and "right to delete" workflow through a Data Subject Request (DSR) management tool, make sure it covers all your data systems, not just your primary CRM.
+
+**Disclaimer**: This is general guidance, not legal advice. If in doubt about verification standards or exception applicability for a specific request, consult California privacy counsel.

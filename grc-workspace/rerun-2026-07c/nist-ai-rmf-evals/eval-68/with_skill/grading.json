@@ -1,0 +1,33 @@
+{
+  "eval_id": 68,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Delivers an actual register template with sensible columns (risk ID/description, lifecycle stage, AI RMF function/category mapping, trustworthiness characteristic, likelihood/impact, treatment, owner, status)",
+      "passed": true,
+      "evidence": "Table includes Risk ID, AI System, Lifecycle Stage, TEVV Activity (maps to RMF function), Characteristic at Risk, Likelihood/Impact, Treatment, Owner — plus a separate 'AI RMF Category Mapping Summary' table with MAP/MEASURE/MANAGE/GOVERN columns per risk. 'Status' is not an explicit column, but owner is split into treatment owner and residual-risk-acceptance owner, which substitutes for status tracking reasonably well; core sensible columns are present."
+    },
+    {
+      "text": "Populates credit-scoring-specific risks: disparate impact/fair lending, model validity/population drift, explainability of adverse-action reasons, data quality/privacy, third-party model dependencies, security/adversarial manipulation",
+      "passed": true,
+      "evidence": "R-01 disparate impact, R-02 adverse-action explainability, R-03 vendor/third-party dependency, R-04 drift monitoring, R-05 adversarial/security robustness are all present. Data quality/privacy as a distinct standalone risk is thinner — privacy is not separately itemized as its own risk row, though data-quality elements appear via R-03/R-05 discussion. Core specific risks are populated with concrete detail."
+    },
+    {
+      "text": "Maps risks to plausible AI RMF functions/categories (e.g., bias testing under MEASURE 2.x, context/impact identification under MAP, treatment decisions under MANAGE 1.x/2.x, oversight under GOVERN) without inventing nonexistent category IDs",
+      "passed": true,
+      "evidence": "Category mapping summary uses MAP 3, MAP 5, MEASURE 2.2, MEASURE 2.3, MEASURE 2.4, MEASURE 2.5, MEASURE 3.1, MEASURE 3.2, MANAGE 1.3, MANAGE 2.1, MANAGE 2.3, MANAGE 2.4, MANAGE 3.1, GOVERN 1.3, GOVERN 2.1, GOVERN 5.2, GOVERN 6.1, GOVERN 6.2, GOVERN 6.3 — all consistent with the real AI RMF 1.0 subcategory numbering scheme (MEASURE has categories 1-4 each with a handful of subcategories max ~2.13; MAP has 1-5; MANAGE has 1-4; GOVERN has 1-6), no obviously fabricated or out-of-range IDs like MEASURE 2.11 or GOVERN 3.2 appear."
+    },
+    {
+      "text": "Treatment options are concrete and financial-services-appropriate: fairness constraints/reweighting, challenger models, human review bands, adverse action reason-code validation, model risk management (SR 11-7-style) integration",
+      "passed": true,
+      "evidence": "'retrain with rebalanced/reweighted features', 'champion–challenger comparison', 'human review gate for declines', 'SHAP-based reason-code generation... validated against Regulation B requirements', and a dedicated 'Financial-Services Model Risk Alignment (SR 11-7 / OCC 2011-12)' section covering independent validation, champion-challenger, ongoing monitoring, effective challenge."
+    },
+    {
+      "text": "Flags applicable regulatory context accurately: ECOA/Reg B adverse action notices, FCRA, fair lending exams — treatments tied to those obligations",
+      "passed": false,
+      "evidence": "Mentions Regulation B ('reason-code language against Regulation B requirements') and legal/regulatory mapping to 'ECOA, Fair Housing Act, state fair-lending laws' in R-06, and SR 11-7/OCC 2011-12 extensively. However, FCRA (Fair Credit Reporting Act) is never mentioned anywhere in the response, and 'fair lending exams' as a specific regulatory/examination concept is not referenced — only general 'examiner review' language appears without naming fair lending exams specifically. Missing FCRA is a specific, named gap against an explicit assertion requirement."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

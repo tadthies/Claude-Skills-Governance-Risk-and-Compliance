@@ -1,0 +1,33 @@
+{
+  "eval_id": 4,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Explains conditional certification: possible only if the assessment score is at least 88 (0.8 x 110) AND every NOT MET practice is POA&M-eligible",
+      "passed": true,
+      "evidence": "'CMMC Level 2 allows conditional certification when a C3PAO assessment finds some practices NOT MET, but only if both of the following are true simultaneously: 1. Your calculated SPRS score is at least 88 (the 0.8 x 110 threshold), and 2. Every open/unmet item is a 1-point-value practice... Both conditions must hold.'"
+    },
+    {
+      "text": "States POA&M eligibility rules correctly: only practices worth 1 point may be on a POA&M (no 5-point items; 3-point items excluded except limited partial-credit cases), and names non-POA&M-eligible critical examples (e.g., SC.L2-3.13.11 FIPS crypto, AC.L2-3.1.3, IA.L2-3.5.3)",
+      "passed": true,
+      "evidence": "'no 5-point items may be open, and 3-point items are only allowed to remain open in the narrow partial-credit cases the methodology permits.' Named critical list: 'AC.L2-3.1.3 — CUI flow control, IA.L2-3.5.3 — Multifactor authentication, SC.L2-3.13.8..., SC.L2-3.13.11 — FIPS-validated cryptography, SI.L2-3.14.6..., AU.L2-3.3.1..., IR.L2-3.6.1...'"
+    },
+    {
+      "text": "States the closeout: POA&M items must be remediated and verified by a closeout assessment within 180 days, or the conditional certification lapses",
+      "passed": true,
+      "evidence": "'A 180-day closeout clock starts running from the certification date. Every open POA&M item must be fully remediated and evidenced within that window... Failure to close all items within 180 days results in certification revocation.'"
+    },
+    {
+      "text": "Explains the consequence math for THIS scenario: 8 NOT MET practices are compatible with conditional certification only if all 8 are 1-point items and the score floor holds — otherwise remediate and re-assess",
+      "passed": true,
+      "evidence": "'Check the point value of each of the 8. If all 8 are 1-point practices, the maximum possible deduction is 8 points, giving you a score of 102 (110 − 8)... conditional certification is achievable... If even one of the 8 is a 3- or 5-point practice... there is no conditional path... you must remediate and be reassessed.'"
+    },
+    {
+      "text": "Mentions the annual senior-official affirmation in SPRS and that a lapsed conditional status affects contract eligibility",
+      "passed": true,
+      "evidence": "'a senior company official must affirm the accuracy of your assessment/score annually... A lapsed 180-day POA&M closeout revokes the conditional certification, which in turn breaks the annual senior-official affirmation you have on file in SPRS... This ends contract eligibility under DFARS 252.204-7021 until you're reassessed and recertified.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

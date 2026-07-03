@@ -1,0 +1,55 @@
+# From GDPR to CCPA/CPRA — Gap Analysis
+
+## Bottom Line Up Front
+
+GDPR is generally the more demanding law. A well-run GDPR compliance programme already covers most of the substance of CCPA/CPRA — privacy notices, data subject/consumer rights processes, processor agreements, data minimization, retention schedules, and security measures. But CCPA/CPRA has a set of **US-specific, structurally distinct requirements** that a GDPR programme does not automatically satisfy. You need to layer these on rather than assume GDPR coverage extends to them.
+
+## Structural Differences (fundamental — these shape everything else)
+
+- **Consent model**: CCPA is fundamentally **opt-out** for sale/sharing of PI; GDPR requires an **opt-in lawful basis** for processing. In fact, **CCPA has no lawful-basis requirement at all** — a business can generally collect and use PI without needing to establish one of the six GDPR-style bases (consent, contract, legal obligation, vital interests, public task, legitimate interests). This is the single biggest conceptual shift your GDPR-trained team needs to make: CCPA/CPRA compliance is about **disclosure and opt-out rights**, not about justifying processing upfront.
+- **Scope**: CCPA protects **consumers and households** (not just identified individuals), and only applies to businesses that meet specific **applicability thresholds** — $25M+ annual revenue, OR 100,000+ consumers/households of PI annually, OR 50%+ of revenue from selling/sharing PI. GDPR has **no thresholds** — it applies to any controller or processor handling EU personal data regardless of size. You'll need a distinct, separate applicability assessment for CCPA/CPRA; GDPR applicability doesn't imply CCPA/CPRA applicability or vice versa.
+- **"Sale" concept**: CCPA's "sale" — disclosure of PI to a third party for **monetary or other valuable consideration** — is **broader than anything in GDPR**. Many ordinary vendor relationships and ad tech integrations that a GDPR programme treats as routine "processing" may constitute a "sale" or "sharing" under CCPA and require an opt-out mechanism GDPR never demanded.
+
+## What Your GDPR Programme Already Covers
+
+- Privacy notices (at-collection notices and full privacy policy)
+- Data subject/consumer rights fulfillment processes (access, deletion, correction, portability)
+- Processor/vendor agreements (Art. 28 DPAs map conceptually to CCPA service provider/contractor contracts)
+- Data minimization and purpose limitation principles
+- Retention schedules
+- Security measures generally
+
+## Rights Deltas You Need to Reconcile
+
+- **Right to correct** was only added to California law by **CPRA** (§1798.106) — if your GDPR rectification process isn't already extended to a CCPA-labeled workflow with the correct 45-day (not 1-month) deadline, update it.
+- CCPA has **no GDPR-style right to object** and **no full portability regime** — CCPA's "portable format" requirement is folded into the right-to-know response rather than being a freestanding right.
+- GDPR's DPO/DPIA regime **maps only loosely** to CPRA's risk assessment requirements — don't assume your existing DPIA process automatically satisfies CPRA's risk assessment obligations (see below); the triggers, format, and regulator expectations differ.
+- Automated decision-making: GDPR Art. 22 gives a right not to be subject to solely automated decisions with significant/legal effects. CPRA's ADMT regime (regulations effective **January 1, 2026**, opt-out mechanism deadline **January 1, 2027**) is similar in spirit but is a **separate compliance obligation** with its own opt-out mechanism, access-to-logic disclosure, and human-review right — build this as a distinct workstream, not a rebadge of your Art. 22 controls.
+
+## Concrete Additions Needed for CCPA/CPRA Compliance
+
+1. **"Do Not Sell or Share My Personal Information" link** and full opt-out workflow — prominently placed on your homepage, propagated within **15 business days** of a request.
+2. **Honor Global Privacy Control (GPC) signals** as a valid opt-out — the CPPA has confirmed this is mandatory. No GDPR equivalent requires this (ePrivacy Directive browser-signal rules are conceptually adjacent but not the same mechanism).
+3. **"Limit the Use of My Sensitive Personal Information" link** and a **15-business-day** fulfillment workflow — this is narrower than GDPR's special-category consent requirement, since it's an opt-out limitation right rather than an opt-in consent gate.
+4. **Confirm vendor classification maps correctly**: your GDPR "processors" need to be re-classified specifically as CCPA **service providers** or **contractors** (not automatically equivalent) — and any vendor engaged in **cross-context behavioral advertising cannot be a service provider at all** for that activity (CPPA Regs §7050(c) — such a vendor is legally a third party regardless of contract language). Review ad tech vendor contracts specifically; this is a common gap.
+5. **Minors' opt-in requirement**: opt-in consent required for sale/sharing of PI belonging to consumers under 16; parental consent required under 13. This is stricter than a general GDPR age-of-consent provision if your GDPR minors' handling doesn't specifically gate *sale/sharing*.
+6. **Financial incentive / loyalty programme disclosures**, if you run any loyalty or discount programs that exchange value for PI — GDPR has no direct equivalent requirement.
+7. **Annual reconfirmation of the three CCPA/CPRA applicability thresholds** (revenue, data volume, revenue-from-data-sale percentage) — a standalone compliance calendar item with no GDPR analog.
+8. **Cybersecurity audits and risk assessments** — CPRA-specific obligations, **now in effect as of January 1, 2026**, for businesses processing PI that presents significant risk to consumers. Assessments must be available to the CPPA on request. Map which of your existing GDPR DPIAs can be extended/adapted versus which need a fresh CPRA-specific assessment.
+9. **ADMT opt-out mechanism** — implementation deadline **January 1, 2027**. Build this now if you use automated decisioning with legal or similarly significant effects (employment, credit, housing, insurance, education decisions).
+
+## Enforcement & Remedies — Know the Contrast
+
+- **Penalties**: GDPR fines run up to €10M/2% or €20M/4% of global annual turnover, generally with **no formal cure period**. CCPA/CPRA penalties are per-violation: **$2,500 (unintentional)** / **$7,500 (intentional)**, with a **30-day cure period** for AG actions (CPPA administrative actions may not follow the same cure process). The economics of a CCPA violation are usually far less severe per-incident than GDPR, but per-violation stacking across large consumer bases can still produce material exposure — recent CPPA enforcement includes **Disney at $2.75M** (opt-out mechanism and ad tech sharing failures — the largest CCPA fine to date), **PlayOn Sports at $1.1M** (unauthorized third-party sharing), and **Ford at $375K** (missed 45-day deadlines for access/deletion requests).
+- **Private right of action**: CCPA's private right of action is **limited to data breaches** caused by failure to implement reasonable security — statutory damages of **$100–$750 per consumer per incident**, class-action eligible. There is **no general private right of action for privacy violations** under CCPA, unlike GDPR's broader Art. 79/82 remedies. This narrows your litigation exposure relative to GDPR but does not eliminate it — security failures remain a distinct, quantifiable risk.
+
+## Recommended Approach
+
+1. Run a formal CCPA/CPRA applicability assessment (don't assume GDPR-covered = CCPA-covered).
+2. Map your existing GDPR rights-fulfillment workflow against the CCPA 45-day/15-business-day deadlines and identity-verification tiers — timelines and verification thresholds differ from GDPR's 1-month/2-month extension model.
+3. Audit vendor contracts specifically for CCPA service provider/contractor/third-party classification — pay particular attention to any ad tech or cross-context behavioral advertising vendors.
+4. Build the CCPA-specific consumer-facing mechanisms (Do Not Sell/Share link, GPC honoring, SPI limitation link) as net-new UI/workflow additions.
+5. Extend or duplicate your DPIA process to explicitly produce CPRA-compliant risk assessments where required, and confirm your cybersecurity audit program addresses the CPRA scope.
+6. Start ADMT compliance work now given the January 1, 2027 opt-out mechanism deadline.
+
+*This is general compliance guidance, not legal advice. Confirm specific gap-closure priorities with qualified counsel familiar with both frameworks.*

@@ -53,3 +53,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        # Tolerate slow backend processing before declaring failure
+        with:
+          timeout: 900000        # 15 min (default 10)
+          error_count: 15        # status-poll errors tolerated (default 10)
+          reporting_interval: 10000
+
+      # The Pages backend intermittently returns "Deployment failed, try
+      # again later" for perfectly good artifacts. One automatic retry
+      # after a cool-down absorbs the common transient case; a second
+      # consecutive failure is real and still fails the workflow.
+      - name: Wait before retry
+        if: ${{ failure() && steps.deployment.outcome == 'failure' }}
+        run: sleep 60
+
+      - name: Retry deploy (transient Pages failures)
+        if: ${{ failure() && steps.deployment.outcome == 'failure' }}
+        id: deployment-retry
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 900000
+          error_count: 15
+          reporting_interval: 10000

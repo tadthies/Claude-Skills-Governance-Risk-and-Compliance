@@ -1,0 +1,92 @@
+# Are You Subject to CCPA/CPRA?
+
+Short answer: **Almost certainly yes**, but it depends on one fact you haven't specified — how many California *households* or *devices* you collect information from, not just customers. Let me walk through the analysis and then cover your obligations.
+
+## Applicability Analysis
+
+The CCPA (as amended by the CPRA, effective January 1, 2023) applies to a "business" that does business in California, determines the purposes and means of processing consumers' personal information, and meets **at least one** of the following three thresholds:
+
+1. **Revenue threshold**: Had annual gross revenues in excess of **$25,000,000** in the preceding calendar year (this figure adjusts periodically for inflation — it's currently in the $25.6M range, but $30M clears it either way).
+2. **Data volume threshold**: Annually buys, sells, or shares the personal information of **100,000 or more** California consumers or households.
+3. **Revenue-from-data threshold**: Derives **50% or more** of annual revenue from selling or sharing California consumers' personal information.
+
+**Your situation**: With $30M in annual revenue, you exceed the $25M threshold under prong (1) **regardless of how many California consumers you collect data from**. The fact that you only collect data from ~80,000 California customers is irrelevant to applicability — that would only matter if you were trying to qualify (or disqualify) under prong (2), which requires 100,000+. You've already met the bar through revenue alone.
+
+**Conclusion: You are a "business" subject to CCPA/CPRA.**
+
+A few things worth double-checking on your end:
+- Confirm the $30M figure is *gross* revenue (not net), and that it's from the prior calendar year — the threshold is tested annually.
+- Confirm you're doing business in California (selling to CA residents generally counts) — this seems clearly true given you have CA customers.
+- Note the CPRA also technically requires the business to be for-profit and to determine the purposes/means of processing — standard for an e-commerce company.
+
+## Core Obligations
+
+Once covered, here are your primary compliance obligations:
+
+### 1. Notice at Collection
+- Provide a notice **at or before the point of collection** of personal information, disclosing:
+  - Categories of personal information collected
+  - Purposes for which each category will be used
+  - Whether the information is sold or shared (as defined broadly under CPRA — including certain ad-tech/analytics integrations)
+  - Retention period (or the criteria used to determine it) for each category
+  - Whether sensitive personal information is used for purposes beyond what's necessary
+- Common implementation: a layered notice at checkout, account creation, or first data collection point, often linking to the full privacy policy.
+
+### 2. Privacy Policy
+- A comprehensive, publicly posted privacy policy, updated at least every **12 months**, that describes:
+  - Consumers' CCPA rights and how to exercise them
+  - Categories of PI collected, sources, business/commercial purposes, and categories of third parties with whom it's shared/sold
+  - Categories of PI sold or shared in the preceding 12 months (or a statement that you don't sell/share)
+  - Categories of sensitive PI collected and purposes
+  - Data retention practices
+
+### 3. Consumer Rights You Must Honor
+- **Right to Know** — what PI is collected, used, disclosed, sold/shared (look-back typically 12 months, though consumers can request further back for data collected after Jan 1, 2022)
+- **Right to Delete** — with standard exceptions (completing transactions, legal compliance, security, etc.)
+- **Right to Correct** — inaccurate personal information
+- **Right to Opt-Out** of Sale/Sharing** — critical if you use third-party ad pixels, analytics, or retargeting that could constitute "sharing" for cross-context behavioral advertising
+- **Right to Limit Use of Sensitive Personal Information** — if you collect SPI (precise geolocation, financial account info, SSN, etc.)
+- **Right to Non-Discrimination** — can't penalize consumers for exercising rights (though financial incentive programs are permitted with disclosures)
+- **Right to Data Portability**
+- **Right to Opt-In for Minors** — affirmative opt-in required to sell/share data of consumers under 16 (parental consent under 13)
+
+### 4. Consumer Request Mechanisms
+- At least **two designated methods** for submitting requests (e.g., a web form and a toll-free number)
+- If you sell/share PI or use it for cross-context behavioral advertising, you need a **"Do Not Sell or Share My Personal Information"** link (or use the **Global Privacy Control (GPC)** signal — you're required to honor GPC as a valid opt-out preference signal)
+- Verify requester identity using reasonable methods
+- Respond within **45 days** (extendable by another 45 days with notice to the consumer)
+- Free of charge, up to twice in a 12-month period
+
+### 5. Data Minimization
+- CPRA added an explicit data minimization principle: collection, use, retention, and sharing of PI must be **reasonably necessary and proportionate** to the disclosed purpose for which it was collected/processed.
+
+### 6. Service Provider / Contractor / Third-Party Contracts
+- Any vendor processing personal information on your behalf (payment processors, email marketing platforms, analytics providers, fulfillment/shipping vendors, customer support tools, etc.) must be bound by a **CCPA-compliant contract** that:
+  - Restricts use of PI to specified business purposes
+  - Prohibits the vendor from selling/sharing the data or combining it with other data except as permitted
+  - Requires the vendor to assist with consumer rights requests
+  - Includes required CCPA contractual clauses (this is a common gap — many companies use generic DPAs that don't include CCPA-specific language)
+
+### 7. Employee/HR and B2B Data
+- Note that as of January 1, 2023, the CCPA's prior exemptions for **employee/applicant data** and **B2B contact data** expired — these categories are now fully covered. If you have California employees or B2B contacts, they now have the same rights as consumers.
+
+### 8. Risk Assessments and Cybersecurity Audits (Phase-In)
+- The CPRA regulations (finalized by the California Privacy Protection Agency) require **annual cybersecurity audits** and **risk assessments** for businesses whose processing presents "significant risk" to consumer privacy — this generally captures businesses that sell/share PI, process sensitive PI at scale, or use automated decision-making technology. Given your revenue and data volume, you should evaluate whether these apply to you; compliance dates have been phased in through 2027–2028 depending on business size.
+
+### 9. Automated Decision-Making Technology (ADMT) Rules
+- New CPPA regulations (effective 2025–2027 phase-in) impose notice and opt-out/access rights where you use automated decision-making for significant decisions (e.g., certain profiling for advertising, pricing, or fraud scoring). Review whether your marketing/personalization or fraud-detection tools trigger these.
+
+### 10. Internal Governance
+- Employee training for those handling consumer inquiries or PI
+- Data inventory/mapping to know what PI you collect, where it lives, and who it's shared with
+- Breach response readiness — CCPA created a private right of action (with statutory damages of $100–$750 per consumer per incident) specifically for breaches involving nonencrypted, nonredacted personal information caused by a failure to implement reasonable security procedures
+
+## Practical Next Steps
+1. Confirm your exact CA consumer/household count and revenue figures against current CPPA-published thresholds.
+2. Map your data flows — especially any ad tech, analytics, or marketing pixels that could constitute a "sale" or "share" under the broad CPRA definition.
+3. Audit vendor contracts for CCPA-required service provider clauses.
+4. Stand up (or verify) your two-plus consumer rights request channels and GPC honoring.
+5. Refresh your privacy policy and notice at collection if not updated in the last 12 months.
+6. Assess whether the cybersecurity audit / risk assessment / ADMT rules apply given your specific processing activities.
+
+**Disclaimer**: This is general compliance guidance, not legal advice. Given the complexity of CPRA's newer rules (especially risk assessments, cybersecurity audits, and ADMT regulations, which are still being phased in and clarified by the CPPA), I'd recommend confirming your specific obligations with counsel or a privacy professional, particularly around whether your ad-tech stack triggers "sharing" obligations.

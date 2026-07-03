@@ -1,0 +1,78 @@
+# NIST AI RMF: The Four Core Functions
+
+The **NIST AI Risk Management Framework (AI RMF 1.0)**, published January 2023 as NIST AI 100-1, is a great foundation for a company just starting to deploy AI systems. Before diving into the functions, it's worth being clear about what the framework is and isn't: the AI RMF is **voluntary, outcome-based, and not a compliance checklist**. It won't hand you a pass/fail audit — instead it gives you a structured way to reason about AI risk across the lifecycle, and you decide how deep to go based on your context and risk tolerance. The companion **AI RMF Playbook** is where NIST publishes suggested actions for every category, so once you've read this, that's your next stop for implementation detail.
+
+Underlying all four functions is a shared risk lens: the **seven characteristics of trustworthy AI** — Valid & Reliable, Safe, Secure & Resilient, Accountable & Transparent, Explainable & Interpretable, Privacy-Enhanced, and Fair with Harmful Bias Managed. GOVERN, MAP, MEASURE, and MANAGE are essentially the operational machinery for making deliberate, documented tradeoffs across those seven properties — no system is perfectly trustworthy on every dimension at once.
+
+## The Four Functions
+
+### GOVERN — Organizational Accountability (6 categories, ~21 subcategories)
+GOVERN sets the culture, policies, accountability structures, and risk tolerance for AI across the organization. It is drawn as the *base* of the AI RMF diagram in NIST's own visualization because it's cross-cutting — every MAP, MEASURE, and MANAGE activity should operate inside the accountability structures GOVERN establishes. Key categories:
+- **GOVERN 1** — AI risk policies, processes, and risk tolerance are established and integrated into enterprise risk management (ERM)
+- **GOVERN 2** — Accountability structures (who owns AI risk decisions)
+- **GOVERN 3** — Roles and responsibilities across the AI lifecycle, including third-party/vendor roles
+- **GOVERN 4** — Cross-functional collaboration (legal, privacy, security, HR, ethics)
+- **GOVERN 5** — Risk tolerance is communicated and drives go/no-go deployment decisions
+- **GOVERN 6** — Alignment with applicable laws, regulations, and ethical principles (GOVERN 6.1/6.2 also cover third-party AI risk)
+
+### MAP — Risk Identification (5 categories, ~20 subcategories)
+MAP establishes context — intended use, deployment environment, affected stakeholders, and likely risks — *before* you invest in measuring or managing anything. A weak MAP means you'll measure the wrong things later. Key categories:
+- **MAP 1** — Intended use, deployment context, and affected populations are documented (MAP 1.4, MAP 1.5)
+- **MAP 2** — Scientific understanding of the system's capabilities/limitations is applied
+- **MAP 3** — Risks and benefits are mapped to specific stakeholder groups (who benefits vs. who bears risk)
+- **MAP 4** — Risks are prioritized (severity × breadth × reversibility)
+- **MAP 5** — Likelihood and impact of harms are characterized, including systemic/cumulative effects
+
+### MEASURE — Risk Analysis (4 categories, ~16 subcategories)
+MEASURE applies quantitative, qualitative, and mixed-method **TEVV (Test, Evaluation, Verification, and Validation)** activities to the risks MAP identified. Key categories:
+- **MEASURE 1** — Metrics and measurement approaches are defined per risk (e.g., accuracy, demographic parity, adversarial accuracy)
+- **MEASURE 2** — Systems are evaluated for trustworthiness pre-deployment (bias testing, explainability testing, security/privacy assessment, human oversight validation)
+- **MEASURE 3** — Risk is tracked over time; drift and degradation are monitored post-deployment
+- **MEASURE 4** — Measurement results feed decision-makers and update the risk register
+
+### MANAGE — Risk Response (4 categories, ~18 subcategories)
+MANAGE is where risks get treated — and where the loop closes back into GOVERN. Key categories:
+- **MANAGE 1** — Risks are prioritized, assigned owners, and residual risk is formally accepted by an accountable authority
+- **MANAGE 2** — Treatment strategies (mitigate, transfer, avoid, accept) are resourced and implemented, including emergency "kill switch" procedures
+- **MANAGE 3** — Treatments are monitored for effectiveness; AI incidents are logged, investigated, and escalated
+- **MANAGE 4** — Outcomes and lessons learned are reviewed and fed back into GOVERN policy updates
+
+## How They Relate
+
+GOVERN → MAP → MEASURE → MANAGE isn't a strict waterfall — it's a continuous loop with GOVERN as the always-on foundation underneath the other three:
+
+```
+        ┌────────────────────────────────────────┐
+        │                GOVERN                   │
+        │   (continuous — culture, accountability, │
+        │       policy, risk tolerance)             │
+        └───────────────┬──────────────────────────┘
+                         │
+        ┌────────────────▼────────────────┐
+        │   MAP → MEASURE → MANAGE          │
+        │   (cycles per system, per         │
+        │    lifecycle stage, per release)  │
+        └────────────────┬──────────────────┘
+                         │
+              feeds back into GOVERN
+              (MANAGE 4.3, MEASURE 3.3)
+```
+
+- MAP identifies and scopes risk.
+- MEASURE quantifies and tests what MAP identified.
+- MANAGE treats what MEASURE found and monitors treatment effectiveness.
+- Findings from MANAGE (incidents, new risks) and MEASURE (drift, new failure modes) flow back into MAP for re-scoping and into GOVERN for policy updates — this is what makes the framework a continuous risk management cycle rather than a one-time assessment.
+
+## What to Implement First
+
+**Start with GOVERN.** It's the prerequisite, not an optional first module:
+
+1. **GOVERN 1.3** — Establish and document your organizational risk tolerance for AI (what's acceptable, what isn't).
+2. **GOVERN 2.1/2.2** — Name an accountable owner (AI Risk Owner or similar) with clear reporting lines.
+3. **GOVERN 1.6 / GOVERN 6.1** — Build an inventory of AI systems in use or planned, and a regulatory register of applicable laws.
+4. **GOVERN 4.1** — Stand up a cross-functional AI risk group (legal, security, privacy, the business owner) so MAP/MEASURE/MANAGE work later has the right people at the table.
+
+Only after those foundations are in place should you run MAP on your first AI system (starting with your highest-stakes or highest-visibility deployment), then MEASURE it, then MANAGE identified risks. Trying to do MAP/MEASURE/MANAGE without GOVERN is the most common failure pattern — you end up with fragmented, inconsistent risk assessments across teams with nobody accountable for the results.
+
+---
+*This is general compliance information, not legal advice. Verify current requirements against the official NIST AI 100-1 publication and the AI RMF Playbook, and consult qualified counsel for regulatory decisions specific to your organization.*

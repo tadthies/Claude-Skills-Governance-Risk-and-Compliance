@@ -1,0 +1,52 @@
+# NIST AI RMF ↔ EU AI Act: Mapping and Gap Analysis
+
+Short answer: the two frameworks are highly complementary, and NIST AI RMF (NIST AI 100-1, January 2023) is explicitly designed to be usable as the risk management *methodology* that satisfies the EU AI Act's Article 9 "appropriate risk management system" requirement. But they are not equivalent — the AI RMF is **voluntary and outcome-based, not a compliance checklist**, while the EU AI Act is a binding legal regulation with specific mandatory deliverables, deadlines, and penalties. If you implement AI RMF alone, you will build strong risk management *practice* but will still have concrete compliance gaps to fill for legal conformity.
+
+## Framework-to-Article Mapping
+
+| AI RMF Function | EU AI Act Requirement |
+|------------------|------------------------|
+| GOVERN 1 (AI risk policies) | Art. 9 (Risk management system) for high-risk AI |
+| GOVERN 2/3 (Accountability) | Art. 16 (Obligations of high-risk AI providers), Art. 26 (Deployer obligations) |
+| MAP 1 (Intended use) | Art. 9(2) — risk management must cover intended and reasonably foreseeable misuse |
+| MAP 3 (Stakeholder mapping) | Art. 9(2)(b) — identification and analysis of known and foreseeable risks |
+| MEASURE 2 (System evaluation) | Art. 10 (Data governance), Art. 15 (Accuracy, robustness, cybersecurity) |
+| MEASURE 3 (Ongoing monitoring) | Art. 72 (Post-market monitoring), Art. 26(5) — deployer monitoring obligations |
+| MANAGE 3 (Incident response) | Art. 73 (Reporting of serious incidents to market surveillance) |
+| All functions | Annex IX (Technical documentation requirements for high-risk AI systems) |
+
+## Key Structural Difference
+
+| | NIST AI RMF | EU AI Act |
+|---|---|---|
+| Nature | Voluntary, outcome-based framework | Mandatory regulation (Regulation (EU) 2024/1689) |
+| Scope | Any AI system, any organization, self-scoped | Risk-tiered (unacceptable/high-risk/limited/minimal), applies to in-scope providers & deployers with EU nexus |
+| Deliverables | Risk register, profiles, policies — format is your choice | Specific mandated artifacts: conformity assessment, technical documentation (Annex IV), EU database registration, CE marking (for high-risk) |
+| Enforcement | None — self-directed | Market surveillance authorities, fines up to €35M or 7% of global turnover for prohibited-practice violations |
+| Timing | Continuous, iterative | Phased mandatory deadlines (prohibited practices Feb 2025, GPAI obligations Aug 2025, high-risk obligations Aug 2026/2027 depending on annex) |
+
+## Gaps You Need to Fill If You Implement AI RMF Alone
+
+Even with a mature AI RMF program (all four functions operating well), these EU AI Act-specific obligations have **no direct AI RMF equivalent** and must be addressed separately:
+
+1. **Risk-tier classification itself.** AI RMF doesn't tell you whether your system is "high-risk" under Annex III — that's a legal classification exercise you must do against the Act's specific categories (employment, credit, law enforcement, critical infrastructure, etc.). Do this before mapping anything else.
+2. **Conformity assessment procedure (Art. 43).** High-risk systems require either self-assessment or third-party (notified body) conformity assessment before market placement — AI RMF has no equivalent "certification" step.
+3. **CE marking and EU database registration (Art. 48, Art. 71).** Purely regulatory/administrative — high-risk AI systems must be registered in the EU public database before deployment.
+4. **Annex IV technical documentation format.** MEASURE 2.6 and MAP 2 documentation get you most of the content, but the Act specifies a particular structural format (Annex IV) that your existing model/system cards likely won't match without reformatting.
+5. **Fundamental Rights Impact Assessment (Art. 27)** — required specifically for certain deployers (public bodies, and private operators in the specified sectors like banking/insurance) of high-risk systems. MAP 3 (stakeholder risk/benefit mapping) is a strong foundation but doesn't satisfy the Article 27 form and filing requirement on its own.
+6. **Serious incident reporting to market surveillance authorities within mandated timeframes (Art. 73).** MANAGE 3.2 gets you incident logging and investigation, but the Act adds a specific external regulatory notification clock (15 days, shorter for critical infrastructure) that your internal MANAGE process needs to be re-tuned to meet.
+7. **Prohibited practices screening (Art. 5).** AI RMF has no direct equivalent to the Act's specific list of banned AI practices (social scoring, real-time remote biometric identification in public spaces for law enforcement with narrow exceptions, manipulative/subliminal techniques, etc.) — this is a hard legal gate that must be checked independently, ideally as an extension of MAP 1.5 (scoping prohibited/misuse cases).
+8. **General-Purpose AI (GPAI) model obligations (Art. 53-55).** If you build or fine-tune foundation models, there are separate transparency and systemic-risk obligations not covered by the core AI RMF functions.
+9. **Human oversight design requirements (Art. 14).** MEASURE 2.5 tests that human oversight exists and works; Art. 14 additionally mandates specific *design* requirements (the system must be built to enable a human to understand, monitor, and intervene) — this needs to be checked at MAP 1 / system design, not just validated at MEASURE.
+10. **Notified body / authorized representative requirements** for non-EU providers placing high-risk AI on the EU market — a corporate/legal structural requirement with no AI RMF analog at all.
+
+## Recommended Approach
+
+1. Use **AI RMF GOVERN** as your organizational foundation (policy, accountability, risk tolerance) — this satisfies the spirit and much of the substance of Art. 9's "appropriate risk management system."
+2. Run **Art. 5 prohibited-practice screening** and **Annex III risk-tier classification** as an EU AI Act-specific extension of your MAP 1 work, before anything else.
+3. Use **MAP/MEASURE** to generate the technical content, then **reformat into Annex IV structure** for any system classified high-risk.
+4. Add the EU AI Act-specific mandatory artifacts (conformity assessment, CE marking, EU database registration, Fundamental Rights Impact Assessment where applicable) as parallel workstreams — track them in your GOVERN 6.1 regulatory register alongside AI RMF activity so nothing falls through.
+5. Re-tune your **MANAGE 3** incident response timelines to meet the Act's specific external reporting deadlines, not just your internal escalation cadence.
+
+---
+*This is general compliance information, not legal advice. EU AI Act obligations, deadlines, and risk-tier classifications should be verified against the official regulation text and confirmed with qualified EU regulatory counsel, especially given the Act's phased applicability dates through 2027.*

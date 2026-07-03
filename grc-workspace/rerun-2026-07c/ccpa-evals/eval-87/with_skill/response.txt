@@ -1,0 +1,88 @@
+# Handling a Combined Right to Know + Right to Delete Request
+
+A consumer submitting both requests simultaneously is common. Handle them as two parallel workflows sharing a single identity verification step, since deletion requires the *higher* verification standard.
+
+## Step 1: Receive and Log Both Requests
+
+Log the date/time of receipt for each request — this starts your response clocks. Within **10 business days**, confirm receipt and describe your verification process to the consumer.
+
+## Step 2: Identity Verification (Tiered Standard)
+
+Because deletion — especially of any sensitive PI — requires the higher bar, verify to the **"reasonably high degree of certainty"** standard to cover both requests at once:
+
+- Match at least **3 data points** you already hold about the consumer, **plus**
+- Obtain a **signed declaration under penalty of perjury** that the requestor is the consumer
+
+(The lower "reasonable degree of certainty" standard — 2 data points — is sufficient only for categories-of-PI requests or deletion of non-sensitive data. Since you're processing a specific-pieces request to know plus a full deletion request, use the higher standard so one verification step satisfies both.)
+
+**If verification fails:**
+- The right-to-know request cannot be answered with specific pieces of PI, but you must still provide **categories** of PI instead.
+- The deletion request must be **denied as a deletion**, but you must instead treat it as an **opt-out of sale/sharing** where applicable (Regs §7022(f)) — do not simply drop the request.
+
+**If the request comes through an authorized agent:** require written permission (signed authorization) from the consumer, verify the agent's identity, and you may still require direct verification with the consumer as well (this exception for direct verification does not apply to opt-out requests where the agent holds power of attorney — but it does apply here for know/delete).
+
+## Step 3: Right to Know — Fulfillment
+
+Once verified, disclose:
+- Specific pieces of PI collected about the consumer
+- Categories of PI collected
+- Categories of sources the PI came from
+- Business/commercial purposes for collecting, selling, or sharing PI
+- Categories of third parties PI was disclosed to
+- Categories of PI sold or shared, and to whom
+
+**Scope:** default lookback is 12 months prior to the request. For PI collected on or after January 1, 2022, the consumer may request information beyond that 12-month window, and you must provide it **unless doing so is impossible or would require disproportionate effort**.
+
+**Exceptions you may invoke to withhold specific disclosures:**
+- Disclosure would reveal a third party's trade secrets
+- Disclosure would conflict with federal or state law
+- The PI was collected for a single one-time transaction and not retained
+- The PI is used solely for internal operations consistent with the context of collection
+- The PI is used solely to complete the transaction for which it was collected
+
+Compile responsive PI across **all** systems — CRM, order/transaction history, analytics, ad tech, support tickets, etc. — apply any applicable exceptions (documenting your reasoning), and deliver the response in a **portable, readily usable format** within 45 days.
+
+## Step 4: Right to Delete — Fulfillment (Two-Step Workflow)
+
+**Before deleting, check whether any exception lets you retain some or all of the PI:**
+1. Necessary to complete a transaction or perform a contract with the consumer
+2. Necessary to detect security incidents or protect against malicious, deceptive, fraudulent, or illegal activity
+3. Necessary to fix errors that impair existing intended functionality
+4. Necessary to exercise free speech or ensure another consumer's right to free speech
+5. Necessary to comply with a legal obligation (§1798.145(a))
+6. Necessary to use PI solely for internal purposes compatible with the context in which it was collected (limited CPRA exception)
+7. Necessary for research, journalism, or statistical purposes in the public interest
+
+Document your reasoning for any exception invoked — this is critical if the determination is later challenged or audited (the Ford Motor Company $375K CPPA enforcement action centered on deletion/access-request failures, underscoring that documentation and timely execution both matter).
+
+**Two-step execution:**
+1. **Execute** — for the PI not covered by an exception, delete it from your own records **and** propagate deletion instructions to all service providers and contractors who process that PI on your behalf.
+2. **Confirm** — within 45 days, confirm the deletion to the consumer, or explain which exception(s) you invoked and why, for any PI retained.
+
+**Retention of the request record itself:** you may retain a record that the deletion request was made and fulfilled, as evidence of compliance — this does not contradict the deletion.
+
+## Step 5: Interplay Between the Two Requests
+
+- If you disclose PI under the know request *before* executing deletion, do so first, then proceed to delete — order matters operationally but both must land within the 45-day (or extended 90-day) window for their respective request.
+- If verification succeeds for know but a specific piece of sensitive PI can't be matched with confidence, disclose categories only for that piece while proceeding with full deletion (or vice versa) — the two requests are independently evaluated even though verification is shared.
+
+## Step 6: Extensions and Free-of-Charge Rules
+
+- You may extend either or both deadlines once by an additional **45 days**, but you must notify the consumer of the extension **within the original 45-day window** and explain the reason.
+- Both requests must be fulfilled **free of charge**, up to twice per 12-month period per consumer. A reasonable fee may apply beyond that only if the request is manifestly unfounded or excessive.
+
+## Step 7: Record-Keeping
+
+If your business processes PI of **10 million or more** consumers/households, you must retain records of this request, your response, and related disclosures for **24 months**, along with training records evidencing CCPA/CPRA compliance training for staff who handle these requests.
+
+## Summary Timeline
+
+| Milestone | Deadline |
+|---|---|
+| Acknowledge receipt + describe verification process | 10 business days |
+| Verify identity (3 data points + signed declaration) | Before substantive response |
+| Substantive response (disclose PI / execute or explain deletion) | 45 calendar days |
+| Extension notice, if needed | Within the original 45-day window |
+| Extended deadline (if invoked) | +45 additional days (90 total) |
+
+*This is general compliance guidance, not legal advice. Confirm your specific verification and exception determinations with qualified counsel.*

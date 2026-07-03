@@ -1,0 +1,37 @@
+# System Security Plan — Practice Entry
+
+## IA.L2-3.5.3 — Multifactor Authentication
+
+| Field | Content |
+|---|---|
+| **Practice ID** | IA.L2-3.5.3 |
+| **Requirement Statement** | Use multifactor authentication (MFA) for local and network access to privileged accounts and for network access to non-privileged accounts. |
+| **Implementation Description** | Multifactor authentication is implemented across the environment using two distinct mechanisms depending on platform: **(1) Microsoft 365 GCC High / Entra ID** — all user and privileged accounts authenticating to Microsoft 365 GCC High are required to complete MFA via Entra ID Conditional Access policies. Entra ID enforces MFA at sign-in for both cloud application access and any network access routed through Entra ID-integrated services, covering non-privileged network access and privileged account access to cloud-hosted resources. **(2) VPN access** — all remote network access via VPN requires MFA through Duo, applied at the VPN gateway prior to establishing a network session, covering both privileged and non-privileged remote users. |
+| **Responsible Roles** | System Administrator (Entra ID Conditional Access policy configuration and Duo VPN integration); ISSO (MFA policy compliance monitoring and enrollment verification) |
+| **Associated Systems** | Microsoft 365 GCC High (Entra ID); VPN gateway (Duo MFA integration); on-premises Active Directory domain (legacy CAD workstations) |
+| **Evidence/Artifacts** | Entra ID Conditional Access policy export showing MFA enforcement rules; Duo MFA enrollment and authentication logs for VPN sessions; MFA enrollment report showing enrolled user population for Microsoft 365 GCC High and Duo VPN |
+
+### Implementation Gap — On-Premises Active Directory (Legacy CAD Workstations)
+
+Local and network authentication to the on-premises Active Directory domain supporting legacy CAD workstations does **not** currently enforce multifactor authentication. Authentication to these systems relies on single-factor (username/password) credentials through native AD authentication, which does not natively support MFA without an additional identity solution (e.g., an MFA agent for Windows logon, RADIUS integration, or extending Entra ID/Duo coverage to on-prem AD via Entra Connect and Conditional Access or a Duo Authentication Proxy).
+
+Because IA.L2-3.5.3 is a **critical practice** — it cannot remain open in a POA&M at certification and must be fully MET for any conditional or final certification to be issued — this gap must be closed prior to assessment, not deferred.
+
+**This gap is not described as implemented above and is not papered over.** It is tracked as an open POA&M item:
+
+| POA&M Field | Detail |
+|---|---|
+| Practice ID | IA.L2-3.5.3 |
+| Weakness Description | MFA is not enforced for local or network logon to the on-premises Active Directory domain used by legacy CAD workstations; authentication is single-factor. |
+| Remediation Steps | Evaluate and deploy an MFA solution compatible with on-prem AD and legacy CAD workstation OS/hardware constraints — options include extending Duo's on-prem AD integration (Duo Authentication Proxy with RADIUS, or Duo for Windows Logon/RDP) or federating on-prem AD with Entra ID Conditional Access via Entra Connect. Pilot on a non-production CAD workstation before full rollout to validate compatibility with CAD software licensing/dongles and workstation performance. |
+| Milestone(s) | M1: Solution selection and pilot design; M2: Pilot deployment on subset of CAD workstations; M3: Full rollout to all on-prem AD accounts (privileged and non-privileged); M4: Enrollment verification and evidence collection |
+| Scheduled Completion | [Insert target date — must be set with enough lead time to close before any certification assessment, since this practice cannot be left open at certification] |
+| Resources Required | IT/systems administration time; Duo or Entra Connect licensing (confirm current licensing already covers on-prem extension); CAD software vendor compatibility check |
+| Status | Open |
+| Evidence of Closure | Updated Conditional Access / Duo Authentication Proxy configuration export; MFA enrollment report showing 100% coverage of on-prem AD accounts; test authentication logs demonstrating MFA challenge on local and network logon to CAD workstations |
+
+### Note on SSP Accuracy
+
+The SSP entry above describes only the MFA coverage that is currently implemented (Microsoft 365 GCC High/Entra ID and VPN/Duo). The on-prem AD/CAD workstation gap is explicitly disclosed rather than implied as covered, and is routed to the POA&M above. Since IA.L2-3.5.3 is on the critical-practice list, this entry cannot be marked "MET" in the SSP or Findings Report until the on-prem AD gap is closed — presenting it as fully implemented before that point would misrepresent assessment readiness and creates False Claims Act exposure if submitted with an SPRS affirmation.
+
+*This SSP language is a starting draft for your review and technical validation — confirm the actual Conditional Access policy scope and Duo enrollment coverage before finalizing, and have a qualified CMMC Registered Practitioner or your ISSO review before submission.*

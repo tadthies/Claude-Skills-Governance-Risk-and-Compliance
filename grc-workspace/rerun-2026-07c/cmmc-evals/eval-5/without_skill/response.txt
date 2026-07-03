@@ -1,0 +1,64 @@
+# Subcontractor CMMC Non-Compliance Under DFARS 252.204-7021: Flow-Down Obligations and Immediate Actions
+
+## Bottom Line Up Front
+
+If you have subcontractors handling Controlled Unclassified Information (CUI) that lack the required CMMC certification level, you have a **flow-down compliance gap** that creates real risk to your prime contract — including potential False Claims Act exposure, option period non-exercise, and termination for default. This needs to be addressed **before** you exercise or accept the next option period, not after.
+
+---
+
+## 1. What DFARS 252.204-7021 Actually Requires
+
+DFARS 252.204-7021, *Cybersecurity Maturity Model Certification Requirements*, does two things relevant to your situation:
+
+1. **It requires the prime to maintain the CMMC certification level specified in the contract** as a condition of contract award and performance (this is a "go/no-go" condition, not a self-attestation).
+2. **It requires the prime to flow down the same clause to subcontractors** — with the caveat that the required CMMC level for each subcontractor is based on the **type of Federal Contract Information (FCI) or CUI that will flow to that specific subcontractor**, not automatically the same level as the prime.
+
+Key mechanics:
+
+- **Flow-down is mandatory**, not discretionary. The clause must be included in all subcontracts (and lower-tier subcontracts) at every tier where the subcontractor will process, store, or transmit FCI or CUI in performance of the contract, except for subcontracts solely for commercially available off-the-shelf (COTS) items.
+- **Level determination**: Subcontractors handling only FCI generally need CMMC Level 1 (self-assessment); subcontractors handling CUI generally need CMMC Level 2 (self-assessment or third-party certification assessment, depending on contract requirements) — and in some cases Level 3 for the highest-risk CUI programs.
+- **Certification must be current at the time of award of the subcontract and maintained throughout performance**, with the subcontractor's certification status verified in the CMMC eMASS/enterprise mission assurance support service database (or successor system) before you flow CUI to them.
+- **The prime is responsible for ensuring flow-down occurred and for verifying subcontractor compliance** — this is not a "sign the subcontract and forget it" obligation. DoD has been explicit that primes are expected to have a subcontractor management process, not merely a contractual pass-through clause.
+
+## 2. Why This Is Your Problem, Not Just Theirs
+
+Even though the subcontractors are the ones out of compliance, the prime bears meaningful exposure:
+
+- **False Claims Act / Civil Cyber-Fraud Initiative risk**: DOJ's Civil Cyber-Fraud Initiative has pursued primes for knowingly misrepresenting or failing to ensure cybersecurity compliance across the supply chain, including subcontractor non-compliance the prime knew or should have known about. You now have actual knowledge — that materially changes your risk posture and creates an affirmative duty to act.
+- **Contracting Officer remedies**: The Contracting Officer can treat a lack of required CMMC certification (at any tier) as a material failure to comply with contract terms, potentially affecting your ability to have the next option period exercised, triggering a cure notice, or in egregious cases supporting a termination for default or cause.
+- **Certification/representation exposure**: If you have made any representations (e.g., in a SPRS score submission, an option period justification, program status report, or contract modification) that subcontractor compliance was in place, those representations may now be inaccurate and need correction.
+- **CUI spillage/handling risk**: Uncertified subcontractors handling CUI without the required safeguards (NIST SP 800-171 controls underlying CMMC Level 2) increases the likelihood of an actual security incident, which carries its own DFARS 252.204-7012 reporting obligations (72-hour DoD Cyber Crime Center reporting) if a breach occurs.
+
+## 3. Immediate Actions Before the Next Option Period
+
+### A. Contain and Assess (Week 1)
+1. **Confirm the facts**: Verify which subcontractors are non-certified, what CMMC level each requires based on the CUI/FCI they actually handle, and what their current status is (no assessment started, in progress, self-assessment only when Level 2 certification assessment is required, expired certification, etc.).
+2. **Determine actual CUI exposure**: Map exactly what CUI has already flowed to each subcontractor and since when. This determines the scope of potential non-compliant handling and whether a retroactive reporting obligation exists.
+3. **Loop in legal and contracts counsel immediately**. Given FCA exposure, this should not be handled as a purely technical/compliance matter — outside or in-house counsel should be involved before you communicate with the Contracting Officer or subcontractors in writing.
+4. **Check your own prime-level SPRS score and CMMC status** to ensure the subcontractor gap doesn't reflect a broader systemic issue in your supply chain risk management program.
+
+### B. Notify (Week 1–2)
+5. **Assess your disclosure obligation to the Contracting Officer.** Depending on your contract terms, your compliance program obligations, and the materiality of the gap, proactive disclosure is often the lower-risk path compared to staying silent and having it surface during an option period review, CPARS evaluation, or audit. Counsel should make this call, but voluntary, documented remediation is viewed far more favorably than discovery by the government.
+6. **Issue formal notice to the non-compliant subcontractors** citing the flow-down clause, requiring them to (a) confirm current CMMC status, (b) provide a remediation/get-well plan with dates, and (c) in the interim, cease receiving/processing CUI if they are not even minimally compliant with the underlying NIST SP 800-171 controls (a POA&M-supported interim path may be contractually permissible in some cases — check current DoD/CMMC program rules on POA&Ms, which allow limited, time-bound conditional scoring for certain controls but not a blanket waiver).
+
+### C. Remediate (Weeks 2–8, before option period decision)
+7. **Require each subcontractor to produce a Plan of Action and Milestones (POA&M)** and, if using self-assessment, an updated NIST SP 800-171 score in SPRS. Set a hard deadline tied to your internal option-period decision timeline — build in buffer before the government's own deadline.
+8. **Evaluate interim risk-mitigation controls** for CUI already in the affected subcontractors' environments: enhanced monitoring, restricting CUI transmission until certification, segregating CUI processing to a compliant enclave, or temporarily re-routing CUI-handling scope to a certified subcontractor or in-house team.
+9. **Update your subcontractor flow-down and oversight process** — if this gap wasn't caught earlier, your subcontractor management/verification process has a hole. Before the next option period, be prepared to show the Contracting Officer you've fixed the process, not just the two instances.
+10. **Verify certification status through the official CMMC certification database** (not subcontractor self-representation) going forward, and build periodic re-verification into your subcontract administration cadence rather than a one-time award check.
+
+### D. Decide on the Option Period (before exercise/decision date)
+11. **Do not let the option period exercise proceed on autopilot.** Work with contracts/legal to determine whether the option should be exercised contingent on documented subcontractor remediation, whether an interim contract modification or corrective action plan should be submitted to the government first, or whether scope needs to be adjusted to remove the non-compliant subcontractors from CUI-handling tasks.
+12. **Document everything**: the discovery, the notice to subcontractors, the remediation timeline, interim mitigations, and any communications with the Contracting Officer. This record is your primary defense against a later FCA or termination action and demonstrates the "reasonable diligence" standard DOJ and DoD look for.
+13. **Consider whether replacement subcontractors are needed** for the option period scope if remediation cannot realistically be completed and verified in time — better to make that call proactively than to enter the option period out of compliance.
+
+---
+
+## 4. Key Takeaways
+
+- Flow-down under DFARS 252.204-7021 is a mandatory, prime-owned obligation — the clause going into the subcontract is necessary but not sufficient; you must also verify and maintain compliance.
+- You now have actual knowledge of a gap, which raises your legal exposure if you don't act — silence or inaction from this point forward is the highest-risk option.
+- Get legal counsel involved before any external communications (to the government or in writing to subcontractors) given FCA/Civil Cyber-Fraud Initiative exposure.
+- Treat the next option period as a hard deadline for either full remediation, documented interim mitigation with government concurrence, or subcontractor substitution — not as a date to quietly hope the gap goes unnoticed.
+
+*This response is general guidance based on the DFARS 252.204-7021 framework and CMMC program structure as generally understood; it is not a substitute for advice from your company's contracts counsel and facility security/compliance officer, who can evaluate your specific contract clauses, CMMC level requirements, and disclosure obligations.*

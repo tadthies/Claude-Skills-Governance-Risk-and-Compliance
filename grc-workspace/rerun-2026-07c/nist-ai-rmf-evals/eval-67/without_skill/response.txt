@@ -1,0 +1,124 @@
+# AI Hiring Tool: NIST AI RMF Risk Assessment and MEASURE-Function Actions
+
+An AI resume-screening and candidate-ranking tool is one of the highest-scrutiny use cases in AI governance today — it directly affects people's livelihoods, is subject to specific regulation (e.g., NYC Local Law 144, EEOC guidance, EU AI Act "high-risk" classification for employment), and has a well-documented history of bias incidents (e.g., Amazon's scrapped recruiting tool). Applying the NIST AI Risk Management Framework (AI RMF 1.0) is a sound approach. Here's a structured breakdown.
+
+---
+
+## 1. Key Risks to Assess
+
+### Bias and discrimination risks
+- **Historical bias baked into training data** — if the model learns from past hiring decisions, it can replicate and amplify prior discriminatory patterns (e.g., against women, older candidates, racial/ethnic minorities, candidates with employment gaps, non-traditional education).
+- **Proxy discrimination** — variables like zip code, school name, gaps in employment, or even resume formatting/language patterns can act as proxies for protected characteristics (race, sex, age, disability, national origin).
+- **Disparate impact across demographic groups** at each stage: sourcing, screening, ranking, and final recommendation.
+
+### Validity and reliability risks
+- **Construct validity problem** — does "predicted job success" or a ranking score actually measure job-relevant competence, or does it measure something else (e.g., resume-writing skill, keyword-stuffing, applicant tracking system familiarity)?
+- **Performance drift** — model accuracy degrading over time as job requirements, applicant pools, or resume formats change.
+- **Generalization failure** — model trained on one role/department/geography performing poorly when applied to another.
+
+### Transparency and explainability risks
+- **Black-box ranking** — candidates and recruiters may not understand why someone was ranked low or filtered out, undermining due process and trust.
+- **Lack of documentation** — recruiters treating scores as ground truth without understanding model limitations ("automation bias").
+
+### Accountability and human oversight risks
+- **Over-reliance / automation complacency** — human reviewers rubber-stamping AI rankings without meaningful review.
+- **Unclear ownership** — no clear accountability for adverse outcomes (vendor vs. deploying organization).
+
+### Privacy risks
+- **Sensitive data exposure** — resumes often contain proxies for protected class info, and sometimes explicit sensitive data (age via graduation dates, health-related gaps, national origin via names/language).
+- **Data retention and secondary use** — candidate data used beyond the original hiring purpose, or retained longer than necessary.
+- **Scraping/sourcing risk** — if the tool pulls candidate data from external sources (LinkedIn, social media), consent and lawful basis issues arise.
+
+### Security risks
+- **Data poisoning / manipulation** — resumes crafted (or gamed) specifically to exploit scoring weaknesses (keyword stuffing, adversarial formatting, hidden white text).
+- **Model/IP theft or leakage** of proprietary scoring logic.
+- **PII breach** — candidate data is a high-value target.
+
+### Legal and regulatory risk
+- **Non-compliance** with EEOC/Title VII (disparate impact liability), ADA (disability discrimination, reasonable accommodation in AI-driven processes), ADEA (age discrimination), state/local laws (NYC LL144 bias audits, Illinois AI Video Interview Act, Colorado AI Act, EU AI Act Annex III high-risk employment systems), and OFCCP requirements for federal contractors.
+- **Litigation and reputational risk** from adverse impact lawsuits or public bias incidents.
+
+### Third-party/vendor risk
+- If the tool is vendor-supplied, risk of insufficient visibility into training data, model architecture, and validation evidence ("black box" vendor risk).
+
+---
+
+## 2. Most Relevant Trustworthiness Characteristics
+
+All seven AI RMF trustworthiness characteristics matter, but for a hiring tool these are the most critical, roughly in priority order:
+
+1. **Fair – with Harmful Bias Managed** (the central risk for this use case)
+   - Systemic bias (baked into training data/design), statistical/computational bias (sampling, model behavior), and human/cognitive bias (recruiter over-trust in scores) all apply.
+
+2. **Valid and Reliable**
+   - The model must actually predict job-relevant outcomes accurately and consistently across subpopulations, roles, and time — foundational to every other trustworthiness property; an invalid model can't be fair or safe.
+
+3. **Explainable and Interpretable**
+   - Candidates, recruiters, and auditors need to understand the basis for rankings/rejections — both for due process and for bias detection.
+
+4. **Accountable and Transparent**
+   - Clear documentation of how the system works, who is responsible for outcomes, and disclosure to candidates that AI is used in the process (increasingly a legal requirement).
+
+5. **Privacy-Enhanced**
+   - Resumes and candidate data are personal data requiring data minimization, purpose limitation, and appropriate handling of sensitive proxies.
+
+6. **Safe**
+   - "Safe" in this context means avoiding harmful downstream consequences — unjust denial of employment opportunity, economic harm, psychological harm from opaque rejection.
+
+7. **Secure and Resilient**
+   - Protecting the system and data against adversarial manipulation (resume gaming) and breach, and ensuring the system degrades gracefully rather than failing silently.
+
+---
+
+## 3. MEASURE-Function Actions Before Deployment
+
+The MEASURE function is where you analyze, benchmark, and track identified risks using quantitative, qualitative, or mixed-method tools. Below are concrete actions mapped to MEASURE's four categories (Measure 1–4).
+
+### Measure 1: Appropriate methods and metrics are identified and applied
+- Select and document metrics for **fairness** across protected classes:
+  - Disparate/adverse impact ratio (four-fifths rule) by race, sex, age, disability status, and intersectional groups.
+  - Statistical parity difference, equal opportunity difference, false negative rate parity across groups (false negatives are especially harmful here — qualified candidates wrongly filtered out).
+- Select **validity/performance** metrics: precision/recall against actual hiring/performance outcomes, calibration, AUC by subgroup, inter-rater agreement between model and human expert review on a sample.
+- Define **explainability** metrics/methods: feature importance stability, SHAP/LIME-style local explanation consistency, human-comprehension testing of generated explanations.
+- Define **robustness** metrics: performance under adversarial resume manipulation (keyword stuffing, formatting tricks), performance on out-of-distribution resumes (non-traditional career paths, veterans, career changers).
+- Document metric selection rationale, including known limitations and tradeoffs (e.g., fairness metric tensions — you cannot simultaneously satisfy all fairness definitions).
+
+### Measure 2: AI systems are evaluated for trustworthy characteristics
+- **Bias testing / disparate impact analysis**: Run structured bias audits segmented by protected class and intersectional subgroups, before go-live and on a recurring cadence (aligns with laws like NYC LL144 requiring independent bias audits within the last year).
+- **Independent/third-party audit**: Engage an external auditor for the bias audit where feasible or legally required, to avoid conflict of interest.
+- **Red-teaming**: Test for adversarial gaming (resumes engineered to exploit the model), prompt/feature injection if LLM-based, and edge cases (non-English resumes, unconventional formats, career gaps for caregiving/disability/military service).
+- **Human factors evaluation**: Test whether recruiters over-trust or under-trust the tool's output (automation bias/complacency); assess usability of explanations provided to end users.
+- **Privacy evaluation**: Conduct a privacy risk/impact assessment — data minimization check, review of sensitive-proxy variables, review of retention periods.
+- **Validity testing against ground truth**: Compare model rankings to actual downstream job performance/retention data where available, not just to historical hiring decisions (to avoid validating against the very bias you're trying to avoid).
+- **Environmental/contextual testing**: Evaluate performance separately for each job family/role/level, since a single model may not generalize.
+- Benchmark against a **non-AI baseline** (e.g., structured human review) to confirm the tool actually improves outcomes rather than just adding automation.
+
+### Measure 3: Mechanisms for tracking identified risks over time are in place
+- Establish **ongoing monitoring dashboards** tracking adverse impact ratios, selection rates by group, and score distributions on a recurring (e.g., quarterly) basis post-deployment — not just a one-time pre-deployment test.
+- Set **thresholds/triggers** for re-evaluation (e.g., if adverse impact ratio drops below 0.8, automatically flag for human review and possible suspension of automated ranking).
+- Track **model drift** indicators as applicant pools, job descriptions, or labor market conditions change.
+- Maintain **incident logging** — track complaints, appeals, or override decisions by human recruiters as signals of model problems.
+- Log **vendor model updates** — if using a third-party tool, require notification and re-testing whenever the vendor updates the underlying model.
+
+### Measure 4: Feedback about efficacy of measurement is gathered and assessed
+- Establish a **feedback loop** with recruiters, hiring managers, and candidates (e.g., appeals/contest mechanism for candidates who believe they were unfairly screened out, as some laws require).
+- Periodically **reassess whether chosen metrics are still the right ones** — e.g., if a fairness metric was gamed or a new subgroup harm emerges, revise the measurement approach.
+- Conduct **post-deployment validation** comparing predicted vs. actual candidate/employee outcomes to close the loop on whether the tool measured the right construct.
+- Document lessons learned and feed them back into the GOVERN function (update policies) and MAP function (re-examine context/purpose) — MEASURE should not be a one-off gate but a continuous cycle integrated with the other three RMF functions (Govern, Map, Manage).
+
+---
+
+## Practical Pre-Deployment Checklist (Summary)
+
+- [ ] Conduct a documented bias/disparate impact audit across protected classes and intersectional groups
+- [ ] Validate the model against actual job-relevant outcomes, not just historical hiring labels
+- [ ] Test robustness against resume gaming and adversarial manipulation
+- [ ] Implement human-in-the-loop review with meaningful (not rubber-stamp) oversight, especially for adverse decisions
+- [ ] Provide candidate-facing notice and explanation of AI use, consistent with applicable law (e.g., NYC LL144, EU AI Act, state laws)
+- [ ] Complete a privacy/data protection impact assessment covering data minimization and sensitive proxy variables
+- [ ] Define fairness and performance metrics with documented thresholds and escalation triggers
+- [ ] Establish ongoing (not one-time) monitoring, re-audit cadence, and an appeals/complaint mechanism
+- [ ] Clarify accountability — who owns model risk, who can override/suspend the tool, and vendor contractual obligations for transparency and re-testing
+- [ ] Maintain documentation sufficient to demonstrate compliance to regulators, auditors, or in litigation
+
+This MEASURE work should feed directly into the **MANAGE** function (deciding whether/how to deploy, mitigations, and risk acceptance) and be underpinned by **GOVERN** (policies, accountability structures) and **MAP** (understanding context, intended use, and impacted stakeholders) — the four functions are meant to operate iteratively, not as a linear checklist.

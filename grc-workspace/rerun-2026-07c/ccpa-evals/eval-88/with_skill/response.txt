@@ -1,0 +1,66 @@
+# Ad Tech Data Sharing — Is This a "Sale" or "Sharing" Under CCPA/CPRA?
+
+## Short answer: Almost certainly "Sharing" (and likely "Sale" too)
+
+Passing your website visitors' cookie IDs and browsing data to an ad tech platform to serve **targeted ads** falls squarely within CPRA's definition of **"Sharing"**:
+
+> **Sharing** = disclosing PI to a third party for **cross-context behavioral advertising**, even without monetary consideration.
+
+Any pipeline that passes PI — cookie IDs, device fingerprints, hashed emails, IP addresses — to ad exchanges, DMPs, or ad tech partners for cross-context behavioral advertising is "sharing," full stop, regardless of whether money changes hands. Since your stated purpose is serving targeted ads based on browsing data, this is cross-context behavioral advertising by definition.
+
+It may **also** independently qualify as a **"Sale"** if the ad tech platform pays you (directly or via reciprocal value like free/discounted ad services, data-for-data exchanges, or other valuable consideration) — the CCPA "sale" definition is broad and covers **monetary or other valuable consideration**, not just cash payments. Many ad tech relationships involve some form of reciprocal value (e.g., access to the platform's bidding network), which can trigger "sale" in addition to "sharing." You should evaluate your specific commercial terms with the vendor to confirm.
+
+## Why the "We Have a Contract" Argument Doesn't Work Here
+
+A common misconception is that adding restrictive contract language converts an ad tech vendor into a "service provider," exempting the relationship from sale/sharing rules. **This does not work for cross-context behavioral advertising.**
+
+Under CPPA regulations (**Regs §7050(c)**): **a person who contracts with a business to provide cross-context behavioral advertising is legally a third party, not a service provider or contractor, with respect to those services** — no amount of restrictive contract language can convert a CCBA disclosure into service-provider activity. Service providers may still provide *contextual* advertising (based on the current page/session, not cross-context tracking) and non-CCBA marketing services, but they must not combine an opted-out consumer's PI with PI from other sources.
+
+**Bottom line:** your ad tech vendor is a third party for this data flow, and the disclosure must be covered by your opt-out mechanism — restructuring the contract alone will not exempt you.
+
+## What You Need to Do
+
+### 1. Add/Verify Your Opt-Out Mechanism
+- Maintain a "Do Not Sell or Share My Personal Information" link, prominently placed on your homepage and referenced in your privacy policy.
+- This link must give consumers a way to opt out of exactly this cookie-ID/browsing-data pipeline to the ad tech platform.
+
+### 2. Honor Global Privacy Control (GPC) Signals
+- The CPPA has confirmed that **GPC compliance is mandatory** — you must treat an incoming GPC browser signal as equivalent to the consumer clicking "Do Not Sell or Share."
+- No separate identity verification is required to act on a GPC signal or manual opt-out — only reasonable confirmation that the requester is the consumer (e.g., based on the browser session/cookie itself).
+
+### 3. Propagate Opt-Outs Within 15 Business Days
+- Once a consumer opts out (via link or GPC), you must update your consent/preference management platform and **stop passing their cookie ID/browsing data to the ad tech platform within 15 business days**.
+- You must also propagate that opt-out instruction downstream to any other service providers/contractors involved in the ad delivery pipeline.
+- After a consumer opts out, you must wait **12 months** before asking them to re-consent.
+
+### 4. Update Your Privacy Notices
+- **Notice at collection**: disclose that browsing/cookie data is shared for advertising purposes at or before collection.
+- **Privacy policy**: disclose the categories of PI shared, the categories of third parties (ad tech/ad exchange), and the purposes — updated at least annually.
+
+### 5. Re-Examine Your Vendor Contract
+Even though the ad tech vendor cannot be a service provider *for the CCBA activity*, your contract should still:
+- Clearly document the third-party classification for this data flow
+- Require the vendor to honor opt-out signals you propagate to them
+- Prohibit the vendor from combining opted-out consumers' PI with PI from other sources
+- Address any other, non-CCBA services the vendor performs (e.g., contextual ads) that might legitimately be structured as service-provider activity, if applicable and factually accurate
+
+### 6. Check for Sensitive PI Exposure
+If the cookie IDs or browsing data are combined with or reveal precise geolocation or other SPI categories, a **"Limit the Use of My Sensitive Personal Information"** link/workflow may also be required, with a separate 15-business-day fulfillment window. Evaluate whether your ad tech data flow touches any SPI category.
+
+### 7. Consider Risk Assessment / Cybersecurity Audit Exposure
+Since CPRA risk assessment and cybersecurity audit obligations are now in effect (as of January 1, 2026) for processing that presents **significant risk** to consumers, evaluate whether your ad tech/behavioral-advertising data flow — a common high-risk category — triggers a documented risk assessment.
+
+## Enforcement Context
+
+This exact fact pattern — ad tech data sharing tied to opt-out mechanism deficiencies — was a component of the **Disney enforcement action ($2.75M, the largest CCPA fine to date, 2026)**, which cited third-party ad tech data sharing and opt-out mechanism failures. **PlayOn Sports ($1.1M)** was also fined for unauthorized sharing of PI with third parties and inadequate consumer rights processes. These cases indicate the CPPA is actively scrutinizing ad tech data flows of exactly this kind, not just abstract policy language.
+
+## Summary
+
+| Question | Answer |
+|---|---|
+| Is this a "sale"? | Possibly, if the ad tech platform provides any valuable consideration in return |
+| Is this "sharing"? | Yes — cross-context behavioral advertising, regardless of payment |
+| Can a service-provider contract avoid this? | No — Regs §7050(c) makes CCBA vendors third parties by law |
+| What's required? | "Do Not Sell or Share" link, GPC honoring, 15-business-day opt-out propagation, updated notices, vendor contract review |
+
+*This is general compliance guidance, not legal advice. Confirm your specific vendor's compensation structure and data flow with qualified counsel to finalize the sale/sharing determination.*

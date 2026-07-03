@@ -1,0 +1,33 @@
+{
+  "eval_id": 67,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Identifies the core risks: harmful bias/disparate impact on protected groups, validity/job-relatedness of rankings, transparency to candidates, privacy of applicant data, drift over time",
+      "passed": true,
+      "evidence": "Bias/discrimination section covers disparate impact; 'Construct validity problem' and 'Performance drift' sections cover validity/job-relatedness and drift explicitly; 'Transparency and explainability risks' section covers candidate transparency; 'Privacy risks' section covers applicant data (sensitive data exposure, retention, scraping)."
+    },
+    {
+      "text": "Maps to the right trustworthiness characteristics: fair with harmful bias managed, valid & reliable, accountable & transparent, explainable & interpretable, privacy-enhanced",
+      "passed": true,
+      "evidence": "All seven characteristics enumerated with the five required ones explicitly present: 'Fair – with Harmful Bias Managed', 'Valid and Reliable', 'Explainable and Interpretable', 'Accountable and Transparent', 'Privacy-Enhanced', each with rationale."
+    },
+    {
+      "text": "Prescribes concrete MEASURE-function actions: pre-deployment disparate-impact testing across demographic groups, validity testing against job performance criteria, documented TEVV with defined metrics, and ongoing monitoring cadence",
+      "passed": true,
+      "evidence": "'Disparate/adverse impact ratio (four-fifths rule) by race, sex, age, disability status'; 'Validity testing against ground truth: Compare model rankings to actual downstream job performance/retention data'; Measure 1-4 structure documents metrics; 'Establish ongoing monitoring dashboards tracking adverse impact ratios...on a recurring (e.g., quarterly) basis'."
+    },
+    {
+      "text": "Brings in MAP context work (intended use, affected communities, failure impacts) and MANAGE treatments (human review of rankings, thresholds for suspension, feedback channels)",
+      "passed": true,
+      "evidence": "Closing section: 'underpinned by...MAP (understanding context, intended use, and impacted stakeholders)'; MANAGE treatments include 'Implement human-in-the-loop review with meaningful (not rubber-stamp) oversight', 'Set thresholds/triggers for re-evaluation (e.g., if adverse impact ratio drops below 0.8, automatically flag for human review and possible suspension)', and 'appeals/contest mechanism for candidates'."
+    },
+    {
+      "text": "Flags the regulatory overlay accurately (e.g., EEOC/Title VII exposure, NYC Local Law 144 bias audits, EU AI Act Annex III employment high-risk if EU-facing) without inventing requirements",
+      "passed": true,
+      "evidence": "'EEOC/Title VII (disparate impact liability), ADA..., ADEA..., state/local laws (NYC LL144 bias audits, Illinois AI Video Interview Act, Colorado AI Act, EU AI Act Annex III high-risk employment systems), and OFCCP requirements' — accurate and appropriately hedged, no fabricated citations."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

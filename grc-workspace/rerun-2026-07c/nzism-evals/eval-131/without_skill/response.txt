@@ -1,0 +1,47 @@
+# NZISM Certification & Accreditation (C&A) Gap Analysis
+
+## What the NZISM C&A Process Requires
+
+Under the New Zealand Information Security Manual (NZISM), Certification and Accreditation is the formal process by which a system is assessed against its security requirements (certification) and then a risk-based decision is made by the appropriate authority to allow the system to operate (accreditation). For a RESTRICTED system, the process typically involves the following stages and artefacts:
+
+1. **System Security Plan (SSP)** — Documents the system's architecture, boundary, security controls (mapped to NZISM chapters/controls), roles and responsibilities, and how the system meets its required security classification (RESTRICTED in this case).
+2. **Security Risk Management Plan (SRMP)** — Captures the risk assessment for the system: threats, vulnerabilities, likelihood/consequence ratings, existing and planned controls, residual risk, and risk treatment/acceptance decisions. The SRMP is the primary artefact used by the accreditation authority to understand and formally accept residual risk.
+3. **Control implementation** — Controls identified in the SSP/SRMP as applicable (drawn from the NZISM control catalogue, e.g. access control, cryptography, network security, physical security, personnel security, incident management, system hardening) must actually be implemented, not merely planned.
+4. **Security testing / validation** — Certification requires evidence that controls work as intended. This normally includes a combination of:
+   - Vulnerability assessments
+   - Penetration testing (where warranted by risk/classification)
+   - Control validation / compliance testing against the SSP
+   - Configuration and build reviews
+5. **Certification** — A technical/independent review (often by an IT Security Manager, ITSM, or an independent certifier) confirms the system has been built and tested as described in the SSP and that residual risks are understood.
+6. **Accreditation** — The system owner or Accreditation Authority (typically the Chief Executive or a delegate, informed by the Chief Information Security Officer / ITSM) formally accepts the residual risk and authorises the system to operate, usually issuing a time-bound accreditation with conditions and a re-accreditation/review date.
+7. **Ongoing assurance** — Post-accreditation, the system requires continuous monitoring, periodic reassessment, vulnerability management, incident reporting, and re-accreditation on a defined cycle or upon significant change.
+
+Key roles referenced in NZISM governance include the Chief Executive (ultimately accountable), the Chief Information Security Officer (CISO), the IT Security Manager (ITSM) who manages day-to-day security and typically provides sign-off/advice into the accreditation decision, and system/business owners.
+
+## Gap Analysis Against Your Current State
+
+| C&A Requirement | Your Current State | Gap |
+|---|---|---|
+| System Security Plan | Draft exists | Not finalised/approved. Needs completion, internal review, and formal sign-off before it can support certification. |
+| Security Risk Management Plan | Does not exist | **Critical gap.** Without an SRMP there is no documented risk assessment, no residual risk statement, and no basis for an accreditation decision. This should be prioritised immediately, in parallel with finalising the SSP. |
+| Control implementation | Partially implemented | Gap between controls claimed in the SSP and controls actually operating. Need a control implementation matrix showing status (planned/in progress/implemented) for every applicable NZISM control, with target dates for full implementation. |
+| Validation/compliance testing | None performed | **Critical gap.** No evidence controls work as intended. Certification cannot proceed without testing (vulnerability scanning at minimum, penetration testing if risk warrants given RESTRICTED classification). |
+| Certification | Not started | Cannot occur until SSP is finalised, SRMP exists, controls are implemented, and testing evidence is available. |
+| ITSM sign-off | Not obtained | **Critical gap.** No independent technical assurance has been given. ITSM sign-off (or equivalent independent certifier) is a precondition for accreditation. |
+| Accreditation | Not obtained | Cannot be granted — accreditation authority has no SRMP, no test evidence, and no certification recommendation to base a decision on. The system should not be treated as authorised to hold/process RESTRICTED information until this is resolved. |
+
+## Recommended Sequence to Close Gaps
+
+1. Finalise the SSP, ensuring it maps every applicable NZISM control to the system and clearly defines the system boundary and classification handling requirements for RESTRICTED information.
+2. Develop the SRMP in parallel — conduct a formal risk assessment (threat/vulnerability identification, likelihood/consequence, existing vs residual risk) and identify any additional controls or treatments required.
+3. Complete implementation of all controls identified as applicable, tracking status in a control implementation/compliance matrix.
+4. Commission validation testing — vulnerability assessment as a minimum, with penetration testing strongly recommended given the RESTRICTED classification — and remediate findings.
+5. Package the SSP, SRMP, control evidence, and test results, and route through the ITSM (or independent certifier) for a formal certification recommendation.
+6. Present the certification package to the Accreditation Authority (Chief Executive or delegate) for a risk-acceptance decision and formal accreditation, including any conditions and the re-accreditation timeframe.
+7. Establish continuous monitoring and a defined re-accreditation/review cycle once accredited.
+
+## Bottom Line
+
+The agency currently has none of the three preconditions for accreditation of a RESTRICTED system: a finalised risk plan, tested/validated controls, and independent (ITSM) sign-off. Until the SRMP is produced, controls are fully implemented and validated through testing, and ITSM sign-off is obtained, the system should not be represented as certified or accredited to handle RESTRICTED information, and should not go into production processing RESTRICTED data without a documented and accepted interim risk position from the Accreditation Authority.
+
+*This is general guidance based on NZISM C&A principles and does not replace consultation with your agency's CISO/ITSM or GCSB/NCSC advice for your specific system.*

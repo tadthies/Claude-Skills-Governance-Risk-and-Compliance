@@ -1,0 +1,58 @@
+# Is Passing Cookie IDs/Browsing Data to an Ad Tech Platform a "Sale" or "Sharing"?
+
+## Short answer: Yes — almost certainly "Sharing" (and potentially also a "Sale")
+
+Any pipeline that passes PI — cookie IDs, device fingerprints, hashed emails, IP addresses, browsing data — to an ad tech platform, ad exchange, DMP, or similar partner **for cross-context behavioral advertising is "sharing" under CPRA, even if no money changes hands**. Given your description (an ad tech platform receiving visitor cookie IDs and browsing data to serve targeted ads), this is a textbook cross-context behavioral advertising data flow.
+
+- **Sale**: disclosure of PI to a third party for monetary **or other valuable consideration** — broadly defined, can include non-cash value exchanges (e.g., reciprocal data access, discounted ad rates).
+- **Sharing** (CPRA addition): disclosure of PI to a third party for **cross-context behavioral advertising**, regardless of whether any consideration is exchanged.
+
+Because targeted advertising by definition uses a consumer's behavior across contexts (your site + other properties) to serve ads, this flow triggers "sharing" at minimum. If your ad tech vendor also pays you or provides other valuable consideration for the data, it may additionally constitute a "sale." Either classification carries the same core obligation: it must be covered by your opt-out mechanism.
+
+## Why the Service-Provider Workaround Doesn't Apply Here
+
+You cannot avoid "sharing" classification by simply signing a restrictive contract with the ad tech vendor. Under Regs §7050(c): **a person who contracts with a business to provide cross-context behavioral advertising is a third party, not a service provider or contractor, with respect to those services** — no matter how the contract is worded. Restricted-use contract terms cannot convert a CCBA disclosure into service-provider activity.
+
+- Your ad tech platform is a **third party** for this data flow, not a service provider/contractor.
+- Service providers may still perform **contextual** advertising (ads based on the current page/session, not cross-context profiling) and non-CCBA marketing services without triggering "sharing" — but that's a narrower activity than what you've described.
+- If this vendor also handles opted-out consumers' PI, it must not combine that PI with PI from other sources.
+
+**Contrast:** first-party analytics tools that don't disclose PI to third parties are typically unaffected and don't require opt-out coverage.
+
+## What You Need to Do
+
+### 1. Update your privacy policy and notice at collection
+Disclose that PI (cookie IDs, browsing data) is shared with third parties for cross-context behavioral advertising, list the categories of PI and categories of third parties involved.
+
+### 2. Implement the "Do Not Sell or Share My Personal Information" opt-out link
+Prominently placed on your homepage and in your privacy policy.
+
+### 3. Honor Global Privacy Control (GPC) signals
+The CPPA has confirmed GPC compliance is required — GPC must be treated equivalently to a manual opt-out click. No separate identity verification is required to act on an opt-out; only reasonable confirmation the requester is the consumer.
+
+### 4. Build the opt-out propagation workflow
+
+| Step | Action |
+|---|---|
+| 1 | Consumer submits opt-out via link, form, or GPC signal |
+| 2 | No identity verification required beyond reasonable confirmation |
+| 3 | Update your consent/preference management platform within **15 business days** |
+| 4 | Propagate the opt-out to the ad tech platform and any other service providers/contractors engaged in sale/sharing |
+| 5 | Do not re-contact the consumer for **12 months** to ask them to reconsider |
+
+### 5. Reclassify the vendor relationship in your records
+Update your vendor/data-flow inventory to reflect the ad tech platform as a **third party**, not a service provider, for this specific integration. A mismatch between contractual classification and actual data flow is one of the most common gap-assessment findings — don't let a "service provider" label in the contract paper over what's actually a CCBA disclosure.
+
+### 6. Check whether this data flow also implicates Sensitive Personal Information
+If browsing/cookie data is combined with precise geolocation, health signals, or other SPI categories, you may also need the "Limit the Use of My Sensitive Personal Information" mechanism.
+
+### 7. Reassess your cybersecurity audit / risk assessment obligations
+Ad tech sharing at scale is a strong candidate for "significant risk" processing under the CPRA regulations effective January 1, 2026, which would trigger annual cybersecurity audit and documented risk assessment requirements.
+
+## Enforcement Context
+Ad tech sharing without proper opt-out mechanisms is a live enforcement priority. **The Walt Disney Company's $2.75M fine** (the largest CCPA enforcement to date) involved, in part, third-party ad tech data-sharing deficiencies and opt-out mechanism failures. **PlayOn Sports was fined $1.1M** for unauthorized sharing of consumer PI with third parties and inadequate consumer rights processes. Treat this ad tech integration as a high-priority compliance item, not a minor technical detail.
+
+## Bottom Line
+Classify this as **"sharing"** (cross-context behavioral advertising) at minimum, possibly also a **"sale"** depending on consideration terms. The ad tech vendor is a **third party**, not a service provider, for this activity. You must offer a "Do Not Sell or Share" opt-out, honor GPC signals, and propagate opt-outs to the vendor within 15 business days.
+
+*This is general compliance information, not legal advice. Consult qualified counsel to confirm the classification of your specific vendor contract and data flow.*

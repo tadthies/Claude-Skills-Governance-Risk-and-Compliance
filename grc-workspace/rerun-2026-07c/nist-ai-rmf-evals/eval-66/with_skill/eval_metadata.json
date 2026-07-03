@@ -1,0 +1,13 @@
+{
+  "eval_id": 66,
+  "eval_name": "four-functions-overview",
+  "run_type": "with_skill",
+  "prompt": "Our company is starting to deploy AI systems and wants to use the NIST AI RMF. Can you explain the four core functions — GOVERN, MAP, MEASURE, and MANAGE — and how they relate to each other? What should we implement first?",
+  "assertions": [
+    "Describes all four functions faithfully to NIST AI 100-1: GOVERN (cross-cutting culture, policies, roles, risk tolerance), MAP (context, categorization, capabilities/limitations, impacts), MEASURE (TEVV — analyze, assess, track risks with metrics), MANAGE (prioritize, treat, respond, recover)",
+    "States the structural relationship correctly: GOVERN is the cross-cutting foundation feeding the other three; MAP informs MEASURE which informs MANAGE, iteratively across the AI lifecycle",
+    "Recommends starting with GOVERN (policies, accountability, inventory, risk tolerance) — the canonical NIST guidance for organizations beginning adoption",
+    "Mentions that the framework is voluntary and outcome-based (not a compliance checklist), organized into categories/subcategories with a companion Playbook",
+    "References the seven trustworthiness characteristics (valid & reliable, safe, secure & resilient, accountable & transparent, explainable & interpretable, privacy-enhanced, fair with harmful bias managed) as the risk lens the functions operationalize"
+  ]
+}

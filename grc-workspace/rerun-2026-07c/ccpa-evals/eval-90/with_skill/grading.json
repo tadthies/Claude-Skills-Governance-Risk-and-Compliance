@@ -1,0 +1,33 @@
+{
+  "eval_id": 90,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+      "passed": true,
+      "evidence": "Table classifies geolocation, health metrics, and biometric facial recognition all as SPI, with 'Locating a consumer within a radius of 1,850 feet (§1798.140(w))' for geolocation. Cites subsection (w) rather than (ae) for the geolocation definition specifically, but correctly classifies all three data types as SPI with the correct 1,850-ft figure."
+    },
+    {
+      "text": "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+      "passed": true,
+      "evidence": "'1. Right to Limit Use of Sensitive Personal Information (§1798.121)... Provide a \"Limit the Use of My Sensitive Personal Information\" link... Restrict SPI use to only the permitted purposes once a consumer exercises this right.'"
+    },
+    {
+      "text": "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+      "passed": true,
+      "evidence": "'Practical read for your app: biometric authentication used purely to let the user log into their own account plausibly falls under \"performing services reasonably expected by the consumer\"... meaning you may not need to offer a limitation option for that specific use. However, if you also use... for any secondary purpose... that secondary use... does require the limitation right to be offered.'"
+    },
+    {
+      "text": "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+      "passed": true,
+      "evidence": "'Notice at Collection... disclose: That you are collecting SPI... each specific category; the business/commercial purpose for each; Whether the SPI is sold or shared; Retention period or criteria for each SPI category.'"
+    },
+    {
+      "text": "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable",
+      "passed": true,
+      "evidence": "Section '4. Data Minimization and Retention' and section '6. Cybersecurity Audit and Risk Assessment Obligations (Effective January 1, 2026)': 'A documented risk assessment is required before processing SPI of this kind... Biometric authentication, health data, and precise geolocation are exactly the kind of processing CPRA treats as presenting significant risk.' No explicit §1798.100(c) citation, but the substantive duties are covered."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

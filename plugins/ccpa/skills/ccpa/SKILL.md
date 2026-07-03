@@ -70,10 +70,12 @@ Work through these steps in order for any organization asking "does CCPA/CPRA ap
 
 ### General Request-Handling Principles
 
+- **Response timeline (state it in every request-handling answer):** confirm receipt within **10 business days** with a description of the verification process (Regs §7021(a)); substantive response within **45 calendar days**, extendable once by a further **45 days** with notice to the consumer (§1798.130(a)(2)); opt-out and limit requests must be effectuated within **15 business days**.
 - **Intake channels (§1798.130)**: Provide at least two methods for submitting requests, including (where applicable) a toll-free phone number and a web form or email. Online-only businesses may provide an email address as one method.
-- **Identity verification** scales with sensitivity:
-  - Non-sensitive requests: match **2 data points** the business already holds
-  - Sensitive PI / financial data requests: match **3 data points** plus a signed declaration under penalty of perjury
+- **Identity verification — tiered standards (Regs §§7060–7062):**
+  - **Reasonable degree of certainty** (e.g., categories-of-PI requests, deletion of non-sensitive data): match at least **2 data points** the business already holds
+  - **Reasonably high degree of certainty** (specific pieces of PI; deletion of sensitive data): match at least **3 data points** PLUS a **signed declaration under penalty of perjury** that the requestor is the consumer
+  - **Verification failure handling**: a request to know specific pieces that cannot be verified is answered with categories instead; a **deletion request that cannot be verified is denied as deletion but must be treated as an opt-out of sale/sharing** where applicable (Regs §7022(f)); opt-out requests themselves require no identity verification (only fraud screening)
   - Authorized-agent requests: require written permission from the consumer plus verification of the agent's identity; may also require direct verification with the consumer (except opt-out requests where the agent has power of attorney)
 - **Free of charge**: Fulfill requests free of charge, **twice per 12-month period**. A reasonable fee may be charged for additional requests within 12 months if manifestly unfounded or excessive.
 - **Record-keeping**: Businesses handling PI of **10 million or more** consumers/households must maintain records of consumer requests and responses, disclosures, and CCPA/CPRA training for **24 months**.
@@ -130,6 +132,8 @@ Business must take commercially reasonable steps to correct inaccurate PI and in
 **Scope**: "Sale" = disclosure of PI to a third party for monetary or other valuable consideration. "Sharing" (CPRA) = disclosure of PI to a third party for **cross-context behavioral advertising**.
 
 **Sale vs. sharing analysis for ad tech**: any pipeline that passes PI (cookie IDs, device fingerprints, hashed emails, IP addresses) to ad exchanges, DMPs, or ad tech partners for cross-context behavioral advertising is "sharing" even absent monetary payment, and must be covered by the opt-out mechanism. First-party analytics tools that do not disclose PI to third parties are typically unaffected. Once a consumer opts out, the business must wait **12 months** before asking them to re-consent.
+
+**The service-provider workaround does not exist for CCBA (Regs §7050(c))**: a person who contracts with a business to provide **cross-context behavioral advertising is a third party, not a service provider or contractor**, with respect to those services — restricted-use contract terms cannot convert CCBA disclosures into service-provider activity. Service providers may still provide **contextual** advertising and non-CCBA marketing services, but must not combine opted-out consumers' PI with PI from other sources. State this rule explicitly in any ad-tech classification answer.
 
 **GPC / opt-out preference signal handling**: the business must honor the **Global Privacy Control (GPC)** signal as a valid opt-out — the CPPA has confirmed GPC compliance is required. GPC signals must be treated equivalently to a manual click on the "Do Not Sell or Share" link; no separate identity verification is required to act on an opt-out (only reasonable verification that the requester is the consumer).
 
@@ -245,7 +249,13 @@ These cases signal that the CPPA is actively pursuing large enterprises for syst
 
 ## CCPA/CPRA vs. GDPR — Quick Reference
 
-GDPR is generally the more demanding law. A GDPR-compliant program covers most CCPA/CPRA obligations (privacy notices, rights processes, processor agreements, minimization, retention, security), but these CCPA/CPRA-specific items still need to be added: (1) "Do Not Sell or Share My Personal Information" link and opt-out workflow; (2) honor **GPC** signals; (3) "Limit the Use of My Sensitive Personal Information" link and 15-business-day workflow; (4) confirm vendor classification maps to **service provider**/**contractor** vs. third party; (5) minors' opt-in for sale/sharing (under 16; parental consent under 13); (6) financial incentive/loyalty disclosures, if applicable; (7) annual reconfirmation of the three business thresholds; (8) cybersecurity audit and risk assessment obligations (effective January 1, 2026) and ADMT opt-out (deadline January 1, 2027).
+GDPR is generally the more demanding law. A GDPR-compliant program covers most CCPA/CPRA obligations (privacy notices, rights processes, processor agreements, minimization, retention, security), but these CCPA/CPRA-specific items still need to be added: (1) "Do Not Sell or Share My Personal Information" link and opt-out workflow; (2) honor **GPC** signals; (3) "Limit the Use of My Sensitive Personal Information" link and 15-business-day workflow; (4) confirm vendor classification maps to **service provider**/**contractor** vs. third party, with contracts meeting the **§1798.100(d)** required terms; (5) a compliant **notice at collection** (§1798.100(a)-(b)) — a distinct artifact from a GDPR Art. 13 notice, delivered at or before collection, listing PI/SPI categories, purposes, retention periods per category, and sale/sharing status with the opt-out link; (6) minors' opt-in for sale/sharing (under 16; parental consent under 13); (7) financial incentive/loyalty disclosures, if applicable; (8) annual reconfirmation of the three business thresholds; (9) cybersecurity audit and risk assessment obligations (effective January 1, 2026) and ADMT opt-out (deadline January 1, 2027). **Name notice-at-collection explicitly in every GDPR-to-CCPA gap answer** — it is the most commonly missed delta because GDPR programmes assume their existing privacy notice covers it.
+
+**Structural differences to state in every GDPR-comparison answer:**
+- **Consent model**: CCPA is opt-out (sale/sharing); GDPR requires an opt-in lawful basis — CCPA has no lawful-basis requirement at all
+- **Scope**: CCPA protects consumers **and households**; only businesses meeting the revenue/volume **applicability thresholds** are covered (GDPR has no thresholds); CCPA's "sale" concept (any disclosure for valuable consideration) is broader than anything in GDPR
+- **Rights deltas**: the **right to correct was only added by CPRA**; CCPA has **no GDPR-style objection right and no full portability regime** (portable format applies to right-to-know responses); GDPR's DPO/DPIA regime maps only loosely to CPRA risk assessments
+- **Remedies**: CCPA's **private right of action is limited to data breaches** (statutory damages **$100–$750 per consumer per incident**, §1798.150) — there is no general private action for privacy violations, unlike GDPR Art. 79/82
 
 Key enforcement contrast: GDPR penalties run up to €10M/2% or €20M/4% of global annual turnover with no formal cure period in most cases, versus CCPA/CPRA's per-violation civil penalties of $2,500 (unintentional) / $7,500 (intentional) with a 30-day AG cure period.
 

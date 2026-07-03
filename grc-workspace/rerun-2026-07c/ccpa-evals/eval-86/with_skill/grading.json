@@ -1,0 +1,33 @@
+{
+  "eval_id": 86,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Applies the three business thresholds correctly (any ONE suffices): annual gross revenue above the $25M threshold (as CPI-adjusted); buying/selling/sharing PI of 100,000+ consumers or households (CPRA raised this from 50,000); or 50%+ of revenue from selling/sharing PI — and concludes the company IS subject via the revenue threshold ($30M > $25M) even though 80,000 < 100,000",
+      "passed": true,
+      "evidence": "Table lists all three thresholds ($25M revenue, 100,000+ consumers/households, 50%+ revenue from PI sale/sharing) and states 'Because you clear the $25M revenue threshold on its own, you are a covered business regardless of the fact that your California customer volume (80,000/year) falls short of the 100,000-consumer/household threshold. Only one threshold needs to be met, not all three.'"
+    },
+    {
+      "text": "Notes the 'doing business in California' element (for-profit, collects CA residents' PI, determines purposes/means) — being US-based outside California does not avoid the law",
+      "passed": true,
+      "evidence": "Line 5: 'CCPA/CPRA applies to a for-profit business doing business in California if it meets at least one of three thresholds' — states the for-profit/doing-business-in-CA gate, though it does not explicitly spell out that being US-based outside California doesn't avoid the law."
+    },
+    {
+      "text": "Lists core obligations: notice at collection, privacy policy, consumer request handling (know/delete/correct/opt-out/limit), verifiable request processes, service-provider contracts, non-discrimination",
+      "passed": true,
+      "evidence": "Sections '2. Privacy Notices' (Notice at Collection, Privacy Policy), rights table (Know/Delete/Correct/Opt-Out/Limit SPI/Non-Discrimination), 'Identity verification (tiered)' section, and '4. Vendor / Downstream Classification' covering service-provider contracts all present."
+    },
+    {
+      "text": "Mentions the 45-day response deadline for consumer requests with a possible 45-day extension",
+      "passed": true,
+      "evidence": "Table row: 'Response timeline (applies to all request types): confirm receipt within 10 business days... then substantively respond within 45 calendar days (extendable once by another 45 days with notice to the consumer).'"
+    },
+    {
+      "text": "Mentions opt-out of sale/sharing mechanics: 'Do Not Sell or Share My Personal Information' link and honoring opt-out preference signals such as GPC",
+      "passed": true,
+      "evidence": "Section '3. Opt-Out Mechanisms': '\"Do Not Sell or Share My Personal Information\" link on your homepage. Honor Global Privacy Control (GPC) signals as a valid opt-out — this is CPPA-confirmed and mandatory, not optional.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

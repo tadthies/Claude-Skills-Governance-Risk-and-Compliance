@@ -1,0 +1,33 @@
+{
+  "eval_id": 88,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+      "passed": true,
+      "evidence": "'this is a textbook cross-context behavioral advertising data flow... this flow triggers \"sharing\" at minimum. If your ad tech vendor also pays you or provides other valuable consideration for the data, it may additionally constitute a \"sale.\"'"
+    },
+    {
+      "text": "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+      "passed": true,
+      "evidence": "'\"Sharing\" (CPRA addition): disclosure of PI to a third party for cross-context behavioral advertising, regardless of whether any consideration is exchanged.'"
+    },
+    {
+      "text": "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+      "passed": true,
+      "evidence": "Numbered steps: '2. Implement the \"Do Not Sell or Share My Personal Information\" opt-out link', '3. Honor Global Privacy Control (GPC) signals... GPC must be treated equivalently to a manual opt-out click', '1. Update your privacy policy and notice at collection'."
+    },
+    {
+      "text": "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+      "passed": true,
+      "evidence": "'You cannot avoid \"sharing\" classification by simply signing a restrictive contract with the ad tech vendor. Under Regs §7050(c): a person who contracts with a business to provide cross-context behavioral advertising is a third party, not a service provider or contractor, with respect to those services — no matter how the contract is worded.' This states the categorical rule precisely as required."
+    },
+    {
+      "text": "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days",
+      "passed": true,
+      "evidence": "'Update your consent/preference management platform within 15 business days' and Enforcement Context section cites Disney's $2.75M fine and PlayOn Sports' $1.1M fine for ad tech/sharing failures (satisfies the 'or' condition on enforcement/15-business-day requirement)."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

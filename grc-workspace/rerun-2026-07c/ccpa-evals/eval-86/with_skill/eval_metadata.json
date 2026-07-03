@@ -1,0 +1,13 @@
+{
+  "eval_id": 86,
+  "eval_name": "applicability-thresholds",
+  "run_type": "with_skill",
+  "prompt": "We are a US-based e-commerce company with $30M annual revenue. We collect personal information from about 80,000 California customers per year. Are we subject to CCPA/CPRA? If so, what are our core obligations?",
+  "assertions": [
+    "Applies the three business thresholds correctly (any ONE suffices): annual gross revenue above the $25M threshold (as CPI-adjusted); buying/selling/sharing PI of 100,000+ consumers or households (CPRA raised this from 50,000); or 50%+ of revenue from selling/sharing PI — and concludes the company IS subject via the revenue threshold ($30M > $25M) even though 80,000 < 100,000",
+    "Notes the 'doing business in California' element (for-profit, collects CA residents' PI, determines purposes/means) — being US-based outside California does not avoid the law",
+    "Lists core obligations: notice at collection, privacy policy, consumer request handling (know/delete/correct/opt-out/limit), verifiable request processes, service-provider contracts, non-discrimination",
+    "Mentions the 45-day response deadline for consumer requests with a possible 45-day extension",
+    "Mentions opt-out of sale/sharing mechanics: 'Do Not Sell or Share My Personal Information' link and honoring opt-out preference signals such as GPC"
+  ]
+}

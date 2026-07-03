@@ -1,0 +1,88 @@
+# NZISM-Aligned Due Diligence and Contractual Security Requirements for SaaS Procurement
+
+## Purpose
+
+When procuring a SaaS product for agency use, your agency remains accountable for the security of any government information processed by the vendor, even though the underlying infrastructure and application are managed by a third party. The following due diligence and contractual requirements are aligned to NZISM principles for outsourced/cloud service arrangements.
+
+## 1. Pre-Procurement Due Diligence
+
+### 1.1 Data Classification and Risk Assessment
+- Determine the classification of data that will be stored/processed in the SaaS product (UNCLASSIFIED through RESTRICTED or higher). This drives the level of assurance required.
+- Conduct a risk assessment covering confidentiality, integrity, and availability requirements for the data involved, and document it (feeding into your Security Risk Management Plan).
+- Assess whether the SaaS product is fit for the classification level intended — some SaaS offerings may not be appropriate for RESTRICTED or higher information without additional controls.
+
+### 1.2 Vendor Security Assurance
+- Request evidence of the vendor's security posture: relevant independent certifications (e.g. ISO/IEC 27001, SOC 2 Type II), penetration testing results, and vulnerability management practices.
+- Review the vendor's data centre/hosting arrangements, including sub-processors and where data is physically stored/processed (data sovereignty).
+- Assess the vendor's incident history and any known past breaches.
+- Where the SaaS product is offered via a hyperscaler (AWS, Azure, GCP, etc.), confirm the shared responsibility model — what security controls the vendor/platform provides versus what your agency must configure and manage.
+
+### 1.3 Data Sovereignty and Offshoring
+- Identify where data will be stored and processed, including backup/DR locations and any offshore sub-processors.
+- If data will be held offshore, apply the same offshore risk assessment rigour as for any cloud hosting decision — legal jurisdiction risk, foreign government access laws, and NZ Government cloud policy expectations (via GCDO/DIA guidance).
+- Confirm whether an All-of-Government (AoG) or existing government-negotiated arrangement covers this vendor, which may streamline (but not replace) due diligence.
+
+### 1.4 Personnel and Supply Chain
+- Assess vendor personnel security practices (background checks/vetting) for staff with administrative access to your data.
+- Assess the vendor's own supply chain/sub-processor risk (fourth-party risk) — who else might touch your data.
+
+## 2. Contractual Security Requirements to Impose
+
+### 2.1 Data Handling and Classification
+- Explicit contractual acknowledgement of the classification of data being processed and the corresponding handling obligations (aligned to NZISM classification handling requirements).
+- Data minimisation — vendor must only collect/process data necessary for the service.
+- Prohibition on secondary use of agency data (e.g. for vendor's own analytics, AI training, or marketing) without explicit written agency consent.
+
+### 2.2 Security Controls
+- Requirement for encryption of data at rest and in transit, using agency-acceptable standards.
+- Requirement for strong access control on the vendor side — MFA, least privilege, logging of administrative access to agency data/tenancy.
+- Right for the agency (or an independent auditor on the agency's behalf) to audit or request evidence of the vendor's compliance with these requirements periodically.
+- Vulnerability and patch management obligations with defined remediation timeframes based on severity.
+
+### 2.3 Data Location and Sovereignty
+- Contractual commitment on data location (specific regions/data centres) and advance notification/agreement requirement before changing data location or adding new sub-processors.
+- Restrictions or notification requirements regarding disclosure of agency data in response to foreign government/legal requests, to the extent achievable.
+
+### 2.4 Incident Management
+- Mandatory breach/incident notification clause with a defined maximum notification timeframe (e.g. within 24–72 hours of the vendor becoming aware) to the agency.
+- Requirement for vendor cooperation in incident investigation, including provision of logs, forensic access, and root cause analysis.
+- Clear escalation contacts and a joint incident response process, referencing your agency's obligation to report significant incidents to NCSC/CERT NZ and, where personal information is involved, the Privacy Act 2020 breach notification regime.
+
+### 2.5 Business Continuity and Exit
+- Defined service availability/continuity commitments (SLAs) appropriate to how critical the service is to agency operations.
+- Data backup and disaster recovery commitments.
+- Exit/termination clause guaranteeing return or secure destruction of agency data within a defined period, and data portability in a usable format, to avoid vendor lock-in and ensure a clean transition if the contract ends or the vendor is compromised.
+
+### 2.6 Compliance and Audit Rights
+- Right to audit (directly or via independent third party) the vendor's security controls, at least for higher-classification data or higher-risk services.
+- Requirement for the vendor to promptly notify the agency of material changes to their security posture, ownership, sub-processors, or certifications.
+- Flow-down clauses requiring the vendor's sub-processors to meet equivalent security obligations.
+
+### 2.7 Personnel Security
+- Where the SaaS product will handle RESTRICTED or higher data, contractually require that vendor personnel with administrative or data access hold appropriate clearances/vetting, or that compensating controls (e.g. logging, NZ-based support only) are in place.
+
+## 3. Ongoing Assurance (Post-Contract)
+
+- Incorporate the SaaS product into your agency's security risk register and System Security Plan / Security Risk Management Plan documentation.
+- Schedule periodic reassessment of the vendor (e.g. annually, or upon renewal), including re-checking certifications and any reported incidents.
+- Monitor for changes in the vendor's sub-processor list, ownership, or hosting location that might affect your risk position.
+- Ensure the vendor is included in your agency's incident response and business continuity testing/exercises where the service is critical.
+
+## Summary Checklist
+
+- [ ] Data classification identified and risk-assessed
+- [ ] Vendor certifications and security evidence reviewed (ISO 27001, SOC 2, etc.)
+- [ ] Data location/sovereignty confirmed and offshore risk assessed if applicable
+- [ ] Shared responsibility model understood and agency-side controls planned
+- [ ] Contract includes encryption, access control, and audit rights clauses
+- [ ] Contract includes mandatory incident notification with defined timeframes
+- [ ] Contract includes data return/destruction and exit/portability provisions
+- [ ] Sub-processor flow-down and change-notification clauses included
+- [ ] Personnel security requirements included if handling RESTRICTED+ data
+- [ ] Ongoing vendor reassessment scheduled post go-live
+
+## Bottom Line
+
+Your agency retains accountability for the security of its data even when using a SaaS product, so due diligence should assess the vendor's certifications, data location, and shared-responsibility posture before procurement, and the contract should lock in encryption, access control, breach notification, audit rights, sub-processor transparency, and clean exit/data-return provisions. The rigour of these requirements should scale with the classification of the data involved — treat any RESTRICTED-level use with the same seriousness as an offshore hosting or C&A decision.
+
+*This is general guidance based on NZISM outsourcing/cloud principles. Confirm current NZISM control references and any All-of-Government procurement panel requirements with your agency's CISO/ITSM and procurement team before finalising vendor contracts.*

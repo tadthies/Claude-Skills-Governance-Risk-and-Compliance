@@ -1,0 +1,63 @@
+# Supplier Ransomware Incident: NZISM-Aligned Incident Response Obligations
+
+## Immediate Situation
+
+A supplier holding your agency's data has been hit by ransomware. This is a third-party/supply-chain security incident affecting your agency's information, and it triggers your agency's own incident response obligations under the NZISM even though the breach originated at the supplier, because the data compromised is your agency's information.
+
+## Step 1: Activate Incident Response and Contain
+
+- Activate your agency's incident response plan immediately, treating this as a confirmed (not suspected) security incident given ransomware has already executed at the supplier.
+- Engage the supplier urgently to understand: what agency data was held, whether it was accessed/exfiltrated (not just encrypted), the classification level of the affected data, the timeline of compromise, and containment/eradication status.
+- Assess whether the supplier's compromise creates any onward risk to your agency's own systems (e.g. shared credentials, VPN access, integrations, or API connections between the supplier and your environment) and isolate/rotate credentials as a precaution.
+- Preserve evidence and maintain a timeline/incident log from the moment you are notified.
+
+## Step 2: Classify the Incident and Determine Notification Obligations
+
+Under NZISM, security incidents affecting government information must be assessed for severity and reported through appropriate channels. Key considerations:
+
+1. **Assess data classification and sensitivity** — what classification was the compromised data (e.g. RESTRICTED, personal information, etc.)? This drives urgency and who must be notified.
+2. **Determine whether this is a "reportable" security incident** under NZISM criteria — ransomware affecting a system holding government information, particularly with potential data exfiltration, would typically meet the threshold for mandatory reporting.
+
+## Who You Must Notify in New Zealand
+
+Depending on the nature and classification of the data and the type of information involved, notification obligations can include:
+
+1. **National Cyber Security Centre (NCSC)**, part of the **Government Communications Security Bureau (GCSB)** — NZISM requires agencies to report significant cyber security incidents affecting government systems/information to NCSC. Ransomware incidents affecting a supplier holding government data should be reported to NCSC as the national technical authority for government cyber security incidents.
+2. **CERT NZ** — for broader incident reporting/coordination, particularly if there is any consumer or wider public impact, or as a parallel reporting channel alongside NCSC (CERT NZ and NCSC coordinate on national incident response).
+3. **Your agency's own CISO/ITSM and senior leadership/Chief Executive** — internal escalation is required immediately so the agency can make risk decisions (e.g. whether to suspend the supplier relationship, notify affected individuals, or issue public statements).
+4. **Office of the Privacy Commissioner (OPC)** — if the compromised data includes personal information, and the breach has caused or is likely to cause serious harm, this is a **notifiable privacy breach** under the Privacy Act 2020, which requires notification to the Privacy Commissioner and affected individuals as soon as practicable.
+5. **Affected individuals** — if personal information is compromised and serious harm is likely, individuals must be notified under the Privacy Act 2020 notifiable breach regime, in addition to the technical agency notifications above.
+6. **Relevant Minister / Ministry** — for significant incidents, agencies typically need to brief their Minister and, where relevant, the lead central agency (e.g. Department of the Prime Minister and Cabinet for national security-significant events), particularly if the incident could become public or affects multiple agencies.
+7. **Government Chief Digital Officer (GCDO) / Department of Internal Affairs** — where the incident relates to a cloud service or shared government ICT arrangement, GCDO may need to be informed as the functional lead for government digital services.
+
+## Step 3: Supplier/Contractual Obligations
+
+- Review your contract with the supplier for mandatory breach notification clauses, timeframes, cooperation obligations (forensic access, evidence sharing), and liability provisions.
+- Require the supplier to provide a formal incident report, including root cause, data affected, and remediation actions.
+- Assess whether the supplier met their contracted security obligations (this may be a separate compliance/contractual matter to pursue after the immediate incident is managed).
+
+## Step 4: Investigation and Remediation
+
+- Conduct or commission a forensic assessment (via the supplier or independently) to determine the scope of data compromise.
+- Determine whether any of your agency's credentials, systems, or connected infrastructure were also exposed, and remediate (e.g. password resets, access revocation, network segmentation review).
+- Document lessons learned and update supplier risk assessments/due diligence processes.
+
+## Step 5: Post-Incident Reporting and Review
+
+- Complete a formal incident report for internal governance, capturing timeline, impact, notifications made, and remediation actions.
+- Feed findings into your agency's Security Risk Management Plan and supplier risk register — this incident should trigger a review of the supplier's ongoing suitability to hold agency data, and possibly a broader review of other suppliers with similar data holdings.
+- Consider whether NZISM control gaps (e.g. contractual security requirements, data minimisation with suppliers, encryption of data at rest at the supplier) need strengthening agency-wide as a result.
+
+## Summary of Key NZ Notification Contacts
+
+- **NCSC (GCSB)** — national technical authority for significant government cyber incidents
+- **CERT NZ** — national incident reporting/coordination body
+- **Office of the Privacy Commissioner** — mandatory if personal information and serious harm likely (Privacy Act 2020)
+- **Internal CISO/ITSM/Chief Executive** — immediate internal escalation
+- **Affected individuals** — if personal information compromised with likely serious harm
+
+## Bottom Line
+
+Treat this as your agency's own reportable security incident, not solely the supplier's problem. Contain and assess immediately, notify NCSC (and CERT NZ) given this is a government-information-affecting cyber incident, assess Privacy Act notification obligations if personal information is involved, escalate internally to your CISO and Chief Executive, and enforce your contractual incident cooperation and notification clauses with the supplier. Document everything for both incident response and any subsequent supplier accountability review.
+
+*This is general guidance based on NZISM incident management principles and NZ notification frameworks (NCSC, CERT NZ, Privacy Act 2020). Confirm exact reporting thresholds and timeframes with your agency's CISO/ITSM, as these depend on the specific classification and nature of the compromised data.*

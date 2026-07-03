@@ -25,7 +25,7 @@ import pytest
 # ---------------------------------------------------------------------------
 # Ground truth — bump this when cutting a new release
 # ---------------------------------------------------------------------------
-CANONICAL_VERSION = "1.6.0"
+CANONICAL_VERSION = "1.6.1"
 
 REPO = Path(__file__).parent.parent
 

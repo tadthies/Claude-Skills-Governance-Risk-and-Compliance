@@ -319,21 +319,21 @@
   <div class="header-inner">
     <a href="index.html" class="back-link">← Back to GRC Skills</a>
     <h1>Benchmark Results</h1>
-    <p>Side-by-side evaluation of Claude with and without GRC Skills across 150 real-world compliance scenarios for all 30 skills. Methodology, limitations, and raw artifacts: <a href="https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/METHODOLOGY.md">METHODOLOGY.md</a>.</p>
+    <p>Side-by-side evaluation of Claude with and without GRC Skills across 150 real-world compliance scenarios for all 30 skills. Raw grading artifacts for every published number are committed under <code>grc-workspace/</code> in the repository.</p>
   </div>
 </div>
 
 <div class="stat-cards">
   <div class="stat-card">
-    <div class="stat-value">91%</div>
+    <div class="stat-value">94%</div>
     <div class="stat-label">With Skill</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value neutral">82%</div>
+    <div class="stat-value neutral">81%</div>
     <div class="stat-label">Baseline (No Skill)</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value positive">+9%</div>
+    <div class="stat-value positive">+13%</div>
     <div class="stat-label">Improvement</div>
   </div>
   <div class="stat-card">
@@ -341,11 +341,11 @@
     <div class="stat-label">Total Assertions</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value positive">+68</div>
+    <div class="stat-value positive">+93</div>
     <div class="stat-label">Extra Assertions Passed</div>
   </div>
 </div>
-<p style="max-width:900px;margin:0.8rem auto 0;font-size:0.9rem;color:var(--muted,#667)"><strong>July 2026 re-run:</strong> FedRAMP, SWIFT CSP, NIS2 and LGPD were re-evaluated with independently authored, primary-source assertions (FedRAMP NTC-0004, SWIFT CSCF v2026, Directive (EU) 2022/2555, LGPD/ANPD resolutions). Raw grading artifacts: <code>grc-workspace/rerun-2026-07/</code>. Accordion transcripts for these four skills below are from the earlier iteration. <strong>v1.6.0 re-run:</strong> eight further skills (NIS2 after expansion, EU AI Act, CCPA/CPRA, CMMC 2.0, NIST AI RMF, NZISM, VN-PDPL, EU CRA) were re-evaluated the same way; artifacts in <code>grc-workspace/rerun-2026-07b/</code>. Four skills currently score below baseline — published honestly with open improvement items (see changelog).</p>
+<p style="max-width:900px;margin:0.8rem auto 0;font-size:0.9rem;color:var(--muted,#667)"><strong>July 2026 re-run:</strong> FedRAMP, SWIFT CSP, NIS2 and LGPD were re-evaluated with independently authored, primary-source assertions (FedRAMP NTC-0004, SWIFT CSCF v2026, Directive (EU) 2022/2555, LGPD/ANPD resolutions). Raw grading artifacts: <code>grc-workspace/rerun-2026-07/</code>. Accordion transcripts for these four skills below are from the earlier iteration. <strong>v1.6.0 re-run:</strong> eight further skills (NIS2 after expansion, EU AI Act, CCPA/CPRA, CMMC 2.0, NIST AI RMF, NZISM, VN-PDPL, EU CRA) were re-evaluated the same way; artifacts in <code>grc-workspace/rerun-2026-07b/</code>. All four previously-negative skills were revised against their failure patterns and re-run in July 2026 (artifacts in <code>grc-workspace/rerun-2026-07c/</code>); every skill now scores at or above baseline.</p>
 
 <div class="main">
 
@@ -463,18 +463,18 @@
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">13</td>
           <td><a href="#skill-cmmc" onclick="openSkill('cmmc'); return false;" class="skill-link">CMMC 2.0</a></td>
-          <td class="stat-cell">68%</td>
-          <td class="stat-cell">76%</td>
-          <td class="stat-cell delta-negative">-8%</td>
-          <td class="stat-cell">17/25</td>
+          <td class="stat-cell">88%</td>
+          <td class="stat-cell">80%</td>
+          <td class="stat-cell delta-positive">+8%</td>
+          <td class="stat-cell">22/25</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">14</td>
           <td><a href="#skill-nist-ai-rmf" onclick="openSkill('nist-ai-rmf'); return false;" class="skill-link">NIST AI RMF</a></td>
+          <td class="stat-cell">92%</td>
           <td class="stat-cell">84%</td>
-          <td class="stat-cell">88%</td>
-          <td class="stat-cell delta-negative">-4%</td>
-          <td class="stat-cell">21/25</td>
+          <td class="stat-cell delta-positive">+8%</td>
+          <td class="stat-cell">23/25</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">15</td>
@@ -503,10 +503,10 @@
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">18</td>
           <td><a href="#skill-ccpa" onclick="openSkill('ccpa'); return false;" class="skill-link">CCPA/CPRA</a></td>
-          <td class="stat-cell">72%</td>
-          <td class="stat-cell">88%</td>
-          <td class="stat-cell delta-negative">-16%</td>
-          <td class="stat-cell">18/25</td>
+          <td class="stat-cell">100%</td>
+          <td class="stat-cell">80%</td>
+          <td class="stat-cell delta-positive">+20%</td>
+          <td class="stat-cell">25/25</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">19</td>
@@ -583,10 +583,10 @@
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">28</td>
           <td><a href="#skill-nzism" onclick="openSkill('nzism'); return false;" class="skill-link">NZISM</a></td>
-          <td class="stat-cell">72%</td>
-          <td class="stat-cell">76%</td>
-          <td class="stat-cell delta-negative">-4%</td>
-          <td class="stat-cell">18/25</td>
+          <td class="stat-cell">96%</td>
+          <td class="stat-cell">64%</td>
+          <td class="stat-cell delta-positive">+32%</td>
+          <td class="stat-cell">24/25</td>
         </tr>
         <tr>
           <td style="text-align:center;font-weight:600;color:var(--muted)">29</td>
@@ -19210,7 +19210,7 @@ The DPDPA is still being fully implemented, and many SDF-specific requirements w
         <button class="skill-toggle" onclick="toggleSkill('cmmc')">
           <div class="skill-toggle-left">
             <span class="skill-toggle-name">CMMC 2.0</span>
-            <span class="skill-toggle-stats">68% with skill · 76% baseline · <span class="delta-negative">-8%</span></span>
+            <span class="skill-toggle-stats">88% with skill · 80% baseline · <span class="delta-positive">+8%</span></span>
           </div>
           <span class="skill-chevron">▼</span>
         </button>
@@ -21289,7 +21289,7 @@ Under DFARS 252.204-7021:
         <button class="skill-toggle" onclick="toggleSkill('nist-ai-rmf')">
           <div class="skill-toggle-left">
             <span class="skill-toggle-name">NIST AI RMF</span>
-            <span class="skill-toggle-stats">84% with skill · 88% baseline · <span class="delta-negative">-4%</span></span>
+            <span class="skill-toggle-stats">92% with skill · 84% baseline · <span class="delta-positive">+8%</span></span>
           </div>
           <span class="skill-chevron">▼</span>
         </button>
@@ -30792,7 +30792,7 @@ The regulatory design intent is clear: DORA was created precisely to give financ
         <button class="skill-toggle" onclick="toggleSkill('ccpa')">
           <div class="skill-toggle-left">
             <span class="skill-toggle-name">CCPA/CPRA</span>
-            <span class="skill-toggle-stats">72% with skill · 88% baseline · <span class="delta-negative">-16%</span></span>
+            <span class="skill-toggle-stats">100% with skill · 80% baseline · <span class="delta-positive">+20%</span></span>
           </div>
           <span class="skill-chevron">▼</span>
         </button>

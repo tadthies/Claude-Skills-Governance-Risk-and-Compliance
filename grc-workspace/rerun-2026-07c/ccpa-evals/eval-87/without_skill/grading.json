@@ -1,0 +1,33 @@
+{
+  "eval_id": 87,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Sets out the timeline correctly: confirm receipt within 10 business days; substantive response within 45 calendar days, extendable by a further 45 days with notice",
+      "passed": true,
+      "evidence": "'starts your 45-calendar-day response clock (extendable once by another 45 days, up to 90 total... you must notify the consumer of the extension and the reason within the initial 45-day window). Acknowledge receipt within 10 business days.'"
+    },
+    {
+      "text": "Explains tiered identity verification (reasonable degree vs reasonably high degree depending on sensitivity; specific-pieces requests require higher assurance) and that unverifiable delete requests may be treated as opt-out where applicable",
+      "passed": true,
+      "evidence": "'Right to Know (specific pieces of PI) — highest bar... matching at least 2–3 data points... plus a signed declaration... Right to Know (categories only) — moderate bar. Matching 2 data points... Right to Delete — bar scales with sensitivity... If you can't verify identity at all, you don't have to comply with deletion, but CCPA still requires you to treat the request as an opt-out of sale/share if applicable.'"
+    },
+    {
+      "text": "Right to know: covers categories AND specific pieces, sources, purposes, third parties — with the 12-month lookback default (and the CPRA extension beyond 12 months where feasible on request)",
+      "passed": true,
+      "evidence": "'covering the prior 12 months, or since Jan 1, 2022 if the consumer requests going back further and you retained it' plus lists categories of sources, purposes, third parties, and specific pieces of PI."
+    },
+    {
+      "text": "Deletion: instructs flowing the deletion to service providers/contractors, and cites legitimate statutory exceptions (e.g., complete the transaction, security/fraud, legal compliance, internal uses compatible with expectations) rather than inventing exceptions",
+      "passed": true,
+      "evidence": "'direct any service providers, contractors, and third parties to whom you disclosed the data to also delete it.' Lists 9 statutory exceptions citing Cal. Civ. Code § 1798.105(d): complete transaction, security/fraud, debug, free speech, CalECPA, research, internal lawful uses, legal compliance."
+    },
+    {
+      "text": "Advises maintaining request records (24-month record-keeping) and responding even when denying (state the reason and the exception relied on)",
+      "passed": true,
+      "evidence": "'Keep records of the request, verification steps taken, your response, and any exceptions invoked for at least 24 months.' Also: 'If you deny the request in whole or part... explain the basis for denial.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

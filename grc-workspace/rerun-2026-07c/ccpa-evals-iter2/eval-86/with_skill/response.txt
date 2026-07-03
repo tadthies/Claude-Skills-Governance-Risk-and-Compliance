@@ -1,0 +1,84 @@
+# CCPA/CPRA Applicability Analysis
+
+## Are you subject to CCPA/CPRA?
+
+**Yes.** A for-profit business is covered if it meets **at least one** of three thresholds:
+
+| # | Threshold | Exact Figure | Your Facts |
+|---|---|---|---|
+| 1 | Annual gross revenue | Exceeds **$25 million** in the preceding calendar year | You're at **$30M** — exceeds threshold |
+| 2 | Data volume | Annually buys, sells, receives, or shares PI of **100,000+** consumers/households | Your **80,000 CA customers/year** does *not* independently meet this threshold |
+| 3 | Revenue from data monetization | Derives **50%+** of annual revenue from selling/sharing PI | Not indicated — assumed not met |
+
+Because you only need to meet **one** threshold, your **$30M in annual gross revenue** alone brings you within scope of CCPA/CPRA, regardless of the fact that your California customer data volume (80,000) falls short of the 100,000-consumer/household threshold. You are a covered "business" under Cal. Civ. Code §1798.100 et seq. (CCPA, effective 2020) as amended by the CPRA (effective 2023).
+
+*Note: revenue and data-volume thresholds must be reassessed annually* — if your California customer base grows past 100,000/year that's a second independent basis for coverage, but it isn't necessary here since you already qualify on revenue.
+
+## Core Obligations
+
+### 1. Classify your downstream data recipients
+Before anything else, determine who you share PI with and how:
+
+| Classification | Definition | Sale? |
+|---|---|---|
+| **Service Provider** | Processes PI on your behalf under a contract prohibiting further use beyond the specified business purpose | Not a sale |
+| **Contractor** (CPRA) | Receives PI under a contract prohibiting other use; must certify compliance | Not a sale |
+| **Third Party** | Receives PI but isn't a service provider or contractor | May constitute a sale or sharing |
+
+Vendor classifications should be reassessed whenever a contract is renewed or a new recipient is onboarded.
+
+### 2. Build consumer rights fulfillment processes
+You must be able to honor:
+- **Right to Know** — specific pieces/categories of PI, sources, purposes, third parties (45 days + optional 45-day extension)
+- **Right to Delete** — delete PI, propagate to service providers/contractors, subject to enumerated exceptions (45 days + extension)
+- **Right to Correct** (CPRA) — correct inaccurate PI (45 days + extension)
+- **Right to Opt-Out of Sale/Sharing** — "Do Not Sell or Share" link, honor GPC signals, effectuate within 15 business days
+- **Right to Limit SPI Use** (CPRA) — if you use sensitive personal information beyond permitted purposes (15 business days)
+- **Right to Non-Discrimination** — cannot penalize consumers for exercising rights
+
+**Response timeline (applies across all request types):** confirm receipt within **10 business days**, describing your verification process; substantive response within **45 calendar days**, extendable once by another 45 days with notice; opt-out/limit requests effectuated within **15 business days**.
+
+**Intake channels:** provide at least two request-submission methods (an e-commerce business can typically use a web form plus email; a toll-free number is required where applicable).
+
+**Identity verification:** 2-data-point match for standard requests (know categories, delete non-sensitive data); 3-data-point match plus signed perjury declaration for sensitive requests (specific pieces of PI, deletion of sensitive data). Opt-out requests require no identity verification beyond reasonable confirmation.
+
+**Free of charge:** twice per 12-month period.
+
+### 3. Publish required notices
+- **Privacy Notice at Collection** — categories of PI collected, purposes, whether sold/shared, retention periods, link to full policy — delivered at or before collection
+- **Privacy Policy** — comprehensive disclosures on categories, purposes, third parties, consumer rights, contact info, and the "Do Not Sell or Share My Personal Information" link; update annually
+
+### 4. Stand up opt-out mechanisms
+- "Do Not Sell or Share My Personal Information" homepage link
+- Honor **Global Privacy Control (GPC)** signals as a valid opt-out
+- "Limit the Use of My Sensitive Personal Information" link, if applicable
+- **ADMT opt-out** — only relevant if you use automated decision-making with legal/significant effects; regulations effective January 1, 2026, implementation deadline **January 1, 2027**
+
+### 5. Apply data minimization, purpose limitation, and retention limits (CPRA)
+Only collect PI adequate, relevant, and limited to your disclosed purpose; disclose and adhere to retention periods; don't repurpose PI for undisclosed uses.
+
+### 6. Update vendor contracts
+Contracts with service providers/contractors must include purpose limitations, prohibition on further sale/sharing, cooperation with consumer requests, audit rights, and deletion obligations.
+
+### 7. Cybersecurity audits & risk assessments (effective January 1, 2026)
+If your processing presents **significant risk** to consumers, you must conduct **annual cybersecurity audits** and document **risk assessments** before high-risk processing, producible to the CPPA on request. As an e-commerce business handling payment and customer data at meaningful scale, you should evaluate whether this applies to you now that the regulations are live.
+
+## Penalty Exposure
+
+- Unintentional violations: up to **$2,500 per violation**
+- Intentional violations: up to **$7,500 per violation**
+- Violations involving minors' PI: up to **$7,500 per violation** (always treated as intentional)
+- **Private right of action** (data breach only): $100–$750 per consumer per incident, class-action eligible
+- A **30-day cure period** applies to AG actions
+
+Recent CPPA enforcement (2026) illustrates real exposure at your scale: **Ford Motor Company was fined $375K** specifically for failing to process deletion and access requests within the required timeframes — a reminder that missing the 45-day deadline is itself an actionable violation, not just a procedural lapse. Given you're an e-commerce business relying on ad tech/analytics vendors, also review whether any of those integrations constitute a "sale" or "sharing," since **The Walt Disney Company's $2.75M fine** (the largest CCPA enforcement to date) involved third-party ad tech data-sharing deficiencies.
+
+## Recommended Next Steps
+1. Document your threshold determination (revenue basis) and file it for annual reassessment.
+2. Inventory all PI flows and classify every downstream recipient (service provider / contractor / third party).
+3. Stand up or audit your rights-intake process against the 10-business-day acknowledgment / 45-day response deadlines.
+4. Confirm your homepage has a working "Do Not Sell or Share" link and GPC signal handling.
+5. Evaluate whether your processing triggers the cybersecurity audit and risk assessment obligations effective January 1, 2026.
+6. Refresh your privacy notice at collection and privacy policy to ensure CPRA-era disclosures (retention periods, SPI categories, etc.) are current.
+
+*This is general compliance information, not legal advice. Consult qualified counsel or an accredited assessor for your specific determination.*

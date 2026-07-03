@@ -1,0 +1,43 @@
+# Supplier Ransomware Incident — NZISM-Aligned Incident Response Obligations
+
+The NZISM is issued by the **GCSB (National Cyber Security Centre — NCSC NZ)** as the New Zealand Government's mandatory information security manual. Its controls carry **MUST/SHOULD compliance requirements tied to the system's classification level** — for a supplier holding your agency's data, essential (MUST) obligations around incident reporting and supplier accountability apply regardless of where the breach originated, and cannot simply be waived because the compromise occurred at a third party.
+
+**Critical point: your agency remains responsible for the security of its information even when a third-party supplier is holding it.** A ransomware event at your supplier is your incident too, not solely theirs.
+
+## Immediate Steps
+
+### 1. Activate your incident response plan
+Treat this as a live agency security incident under your Incident Response Plan, not merely a "vendor problem to monitor." Classify severity based on: the classification level of the data held by the supplier, whether personal information is involved, and whether the ransomware event involved data exfiltration (not just encryption/denial of access).
+
+### 2. Engage the supplier under contract
+- Invoke incident notification and cooperation clauses in your supplier contract — the supplier should already be contractually obligated to notify you of breaches within a defined timeframe.
+- Demand details: what data was affected, whether exfiltration occurred (not just encryption), the timeline of compromise, and the supplier's containment/eradication actions.
+- Preserve evidence — request the supplier maintain forensic readiness and chain of custody for incident artefacts; do not let remediation destroy evidence needed for your own assessment.
+
+### 3. Assess data and classification impact
+Determine what classification of agency data the supplier held (Unclassified through Restricted or above) and whether personal information was involved. This determines both your NZISM reporting obligations and your Privacy Act 2020 obligations.
+
+## Who You Must Notify in New Zealand
+
+- **NCSC (GCSB)** — for cyber incidents. Report significant security incidents to the NCSC; note that **CERT NZ's functions now sit within the NCSC**, so there is a single agency to engage for both the "government cyber incident" reporting line and what was formerly the CERT NZ incident-reporting function. This applies whether the compromise happened on your own systems or, as here, at a supplier holding your data — the obligation follows the data, not just the infrastructure.
+- **NZ Police** — for criminal acts. Ransomware is a criminal act (extortion/computer crime); report to NZ Police, particularly if there is a ransom demand or evidence of criminal exploitation.
+- **Office of the Privacy Commissioner (OPC)** — if personal information is involved and the breach meets the **notifiable serious-harm threshold** under the Privacy Act 2020. This is a mandatory, time-bound obligation independent of your NZISM reporting — assess it in parallel, not after NCSC/Police notification is complete.
+
+Do not treat these as sequential or optional — assess all three notification obligations in parallel as soon as the scope of affected data is known, even if the full picture is still emerging. Initial notifications can (and often should) be made with preliminary information, followed by updates as the investigation matures.
+
+## Supplier and Contractual Obligations Going Forward
+
+- **Right to audit**: exercise any contractual right to audit the supplier's security controls and incident response as part of this event.
+- **Incident notification SLA**: confirm the supplier met their contractual notification timeframe; if they did not, this is itself a contract compliance issue to raise formally.
+- **Post-incident review**: require the supplier to provide a root-cause analysis and remediation plan; your agency should conduct its own post-incident review covering both the supplier's failure and your own oversight of that supplier relationship.
+- **Supplier risk register**: log this event against the supplier in your risk register, and reassess whether the existing risk acceptance for this supplier relationship still holds.
+- **Reassess offshore/hosting arrangements**: if the supplier's compromised environment was hosting Restricted+ data, this event should trigger a re-review of the original risk assessment and the Accreditation Authority's residual risk acceptance for that arrangement (NZISM Chapter 13, Third-Party Suppliers).
+
+## Documentation and Recertification Impact
+
+- Maintain a full incident timeline, notifications made, and remediation actions taken.
+- If the affected system underwent NZISM Certification & Accreditation, a significant security incident is a **re-certification trigger** — the ITSM/CISO should assess whether the system's certification remains valid or whether re-certification is required.
+- Conduct a post-incident review with root-cause analysis and lessons learned, feeding into both your own control improvements and any renegotiation of the supplier contract's security clauses.
+
+---
+*This is general compliance guidance, not legal advice. Confirm current NCSC/CERT NZ reporting channels, Privacy Act 2020 notifiable-harm thresholds, and NZ Police reporting procedures against official sources, and consult legal counsel given the potential contractual, regulatory, and criminal dimensions of this incident.*

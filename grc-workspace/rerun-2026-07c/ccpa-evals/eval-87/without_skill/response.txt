@@ -1,0 +1,79 @@
+# Handling a CCPA/CPRA Access + Deletion Request
+
+A consumer asking to both **know** what you hold on them and **delete** it is submitting two distinct (though often combined) verifiable consumer requests (VCRs) under CCPA as amended by CPRA. Here's how to work through it end to end.
+
+## 1. Intake and Logging
+
+- Confirm the request came through a designated method (your "Do Not Sell/Share/Limit," privacy webform, toll-free number, or other required intake channel).
+- Log the request with a timestamp — this starts your **45-calendar-day** response clock (extendable once by another 45 days, up to 90 total, if reasonably necessary given complexity; you must notify the consumer of the extension and the reason within the initial 45-day window).
+- Acknowledge receipt within **10 business days**, confirming you've received the request and outlining your verification process and expected timeline.
+
+## 2. Identity Verification (Before Doing Anything Else)
+
+You cannot act on either request until you've verified the requester is who they claim to be (or their authorized agent). CCPA regulations use a **risk-based, tiered approach** tied to the sensitivity of the data and the harm from unauthorized access/deletion:
+
+**Right to Know (specific pieces of PI)** — highest bar. Because disclosing specific data points to the wrong person is high-risk, you should require **matching at least 2–3 data points** the consumer previously provided (verified against reliable data source), often plus a signed declaration under penalty of perjury. If you can't verify to a "reasonably high degree of certainty," you should deny the request for specific pieces (or offer categories instead) and explain why.
+
+**Right to Know (categories only)** — moderate bar. Matching **2 data points** against records you hold is generally sufficient.
+
+**Right to Delete** — bar scales with sensitivity/risk:
+- If you can verify to a **reasonable degree of certainty** (2 matching data points), you may proceed with deletion.
+- For sensitive data or higher-risk deletions, apply the **reasonably high degree of certainty** standard (matching 3+ data points plus a signed declaration).
+- If you can't verify identity at all, you don't have to comply with deletion, but CCPA still requires you to treat the request as an **opt-out of sale/share** if applicable, since that has a lower verification bar.
+
+Additional notes:
+- If the account is a **password-protected account**, you may verify through existing authentication (e.g., login) rather than the full VCR process, provided you also require re-authentication (e.g., re-entering password) at time of request.
+- For **authorized agents**, require proof of the agent's authorization (power of attorney, or written permission signed by the consumer) AND separately verify the consumer's identity directly (you can require the consumer to confirm the agent's authority or verify their own identity with you), unless the agent has power of attorney under probate code.
+- Never require the consumer to create a new account to submit or verify the request.
+- Don't over-collect: only request the minimum information necessary to verify identity — you cannot force disclosure of sensitive categories (SSN, driver's license, financial account, precise geolocation, etc.) unless already held and necessary for matching, and if you do collect new information solely for verification, it must be deleted after use (except as needed for security/fraud recordkeeping).
+
+## 3. Handling the Right to Know Request
+
+Once verified, you must disclose (covering the prior 12 months, or since Jan 1, 2022 if the consumer requests going back further and you retained it):
+
+- Categories of PI collected
+- Categories of sources
+- Business/commercial purposes for collecting/selling/sharing
+- Categories of third parties with whom PI was disclosed/sold/shared
+- The **specific pieces of personal information** collected about that consumer (this is the "portable" disclosure — must be provided in a readily usable format allowing transmission to another entity, and delivered free of charge up to twice in a 12-month period)
+
+Do not disclose Social Security numbers, driver's license numbers, financial account numbers, health/biometric data used for authentication, or account security answers/passwords, even in a specific-pieces response — these should be withheld or provided only as categories, not raw values.
+
+## 4. Handling the Right to Delete Request
+
+Upon verification, you must delete the consumer's PI from your records **and direct any service providers, contractors, and third parties** to whom you disclosed the data to also delete it — unless a statutory exception applies.
+
+### Statutory Exceptions to Deletion (Cal. Civ. Code § 1798.105(d))
+
+A business (or its service provider/contractor) **may retain** PI notwithstanding a deletion request if reasonably necessary and proportionate to:
+
+1. **Complete the transaction** for which the PI was collected, provide a good/service the consumer requested, perform a contract with the consumer, or take steps reasonably anticipated within the context of the ongoing business relationship, or otherwise perform a contract between the business and consumer.
+2. **Security and fraud prevention** — detect security incidents, protect against malicious/deceptive/fraudulent/illegal activity, or prosecute those responsible.
+3. **Debug** — identify and repair errors that impair existing intended functionality.
+4. **Free speech** — exercise free speech, ensure another consumer's right to free speech, or exercise another legally protected right.
+5. **CalECPA compliance** — comply with the California Electronic Communications Privacy Act.
+6. **Public/peer-reviewed research** — scientific, historical, or statistical research in the public interest that adheres to ethics/privacy law, when deletion would seriously impair the research and the consumer provided informed consent.
+7. **Internal, lawful uses aligned with consumer expectations** — solely internal uses reasonably aligned with the context in which the PI was provided (e.g., internal analytics consistent with the relationship).
+8. **Legal compliance** — comply with a legal obligation (e.g., tax/recordkeeping laws, litigation holds, regulatory retention requirements).
+9. **Other internal and lawful use** compatible with the context of collection.
+
+If an exception applies, you must:
+- **Not use the retained PI for any other purpose** beyond the exception invoked.
+- Still remove it from being used/shared for other purposes if practicable (some businesses de-identify or aggregate instead of fully deleting).
+- Inform the consumer which exception you're relying on when you respond (best practice, and often expected under a "partial compliance" response).
+
+## 5. Responding to the Consumer
+
+Within the 45 (or up to 90) day window, send a written response that:
+- States what you disclosed (for right to know) or confirms deletion (for right to delete), including any exceptions relied upon and what was retained/why.
+- Confirms that service providers/contractors/third parties were also instructed to delete, where applicable.
+- Is provided free of charge, in plain language, and via the same method the request was submitted (or consumer's preferred method) — mail or electronic, consumer's choice.
+- If you deny the request in whole or part (e.g., failed verification, exception applies), explain the basis for denial without disclosing sensitive details that would create a security risk.
+
+## 6. Documentation
+
+Keep records of the request, verification steps taken, your response, and any exceptions invoked for at least 24 months, both to demonstrate compliance and because CCPA requires you to track request metrics for your privacy policy's aggregate statistics disclosure (if you meet the applicable thresholds).
+
+---
+
+**Bottom line:** Verify first (tiered by data sensitivity and request type), disclose specific PI and categories within 45 days (extendable to 90 with notice), delete unless a § 1798.105(d) exception applies — and if you invoke an exception, only use the retained data for that narrow purpose and say so in your response.

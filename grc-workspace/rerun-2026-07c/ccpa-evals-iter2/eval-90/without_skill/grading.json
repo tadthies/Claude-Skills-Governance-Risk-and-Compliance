@@ -1,0 +1,33 @@
+{
+  "eval_id": 90,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+      "passed": true,
+      "evidence": "'SPI includes \"precise geolocation,\" defined as geolocation data accurate to within a radius of 1,850 feet (approximately 1/3 mile) or less', health metrics classified as SPI ('the consumer's health'), and 'SPI explicitly includes \"the processing of biometric information for the purpose of uniquely identifying a consumer.\"' Correctly cites Cal. Civ. Code 1798.140(ae) as the defining section."
+    },
+    {
+      "text": "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+      "passed": true,
+      "evidence": "'Consumers have the right to direct you to limit your use of SPI to only what is necessary to perform the services/provide the goods reasonably expected by an average consumer... You must: Provide a \"Limit the Use of My Sensitive Personal Information\" link... if you use/disclose SPI for purposes beyond those necessary.'"
+    },
+    {
+      "text": "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+      "passed": true,
+      "evidence": "'If you only use SPI for permitted/necessary purposes (e.g., facial recognition solely to authenticate the account holder, not for advertising or profiling), you may not need to offer this opt-out link — but you still must disclose the SPI use.'"
+    },
+    {
+      "text": "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+      "passed": true,
+      "evidence": "'Notice at Collection Must Specifically Call Out SPI... list the specific categories... state the purposes' and Practical Disclosure Checklist item 1 requires 'what, why, retention, whether shared' for each of the three data types individually."
+    },
+    {
+      "text": "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable",
+      "passed": true,
+      "evidence": "'Purpose Limitation / Data Minimization — SPI use must be limited to what's \"reasonably necessary and proportionate\" to achieve the disclosed purpose' and 'Risk Assessments and Cybersecurity Audits... Risk assessments submitted to the CPPA before engaging in processing that presents significant risk to consumer privacy (explicitly including processing sensitive PI, and particularly biometric information for identification purposes).'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

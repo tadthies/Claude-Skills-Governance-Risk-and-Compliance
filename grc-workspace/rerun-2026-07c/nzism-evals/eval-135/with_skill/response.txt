@@ -1,0 +1,58 @@
+# NZISM-Aligned Due Diligence for SaaS Procurement
+
+The NZISM is issued by the **GCSB (National Cyber Security Centre — NCSC NZ)** as the New Zealand Government's mandatory information security manual. Its controls carry **MUST/SHOULD compliance requirements tied to the classification of the data the SaaS product will handle** — the higher the classification, the more rigorous the due diligence and the less negotiable the contractual requirements. **Your agency remains responsible for the security of its information even though the SaaS product is hosted and operated by a third party** — you cannot transfer that accountability to the vendor.
+
+## Step 1: Classify the Data First
+
+Before evaluating any vendor, determine the classification of the data the SaaS product will store or process (Unclassified through Restricted, or above). This determines the depth of assessment required and which contractual protections are mandatory versus best-practice. Default to treating the system as **Restricted** if this is not yet firmly established — it is easier to relax requirements later than to retrofit them after go-live.
+
+## Step 2: Independent Assurance Evidence to Require
+
+Before contract execution, obtain and review:
+- **Current ISO/IEC 27001 certificate** — check the certificate scope actually covers the service, environment, and data centres relevant to your deployment, not just the vendor's corporate entity in general.
+- **SOC 2 Type II report** — covering a sufficient audit period (12 months preferred), reviewed for exceptions and management responses.
+- **IRAP assessment** (or equivalent government-grade assessment) — particularly important if the vendor is hosted on a public cloud platform and the data will reach Restricted classification.
+- **Recent independent penetration test results**, including remediation status of any findings — do not accept a clean summary without visibility into what was tested and what remains open.
+
+## Step 3: Architecture Evidence to Require
+
+- **Tenancy isolation model** — confirm how your agency's data is logically/physically separated from other tenants.
+- **Encryption at rest and in transit** — confirm approved algorithms (AES-256, TLS 1.2 minimum, TLS 1.3 preferred) are used throughout.
+- **Key management** — clarify who holds encryption keys; for Restricted+ data, agency-controlled keys are preferred where feasible.
+- **Data residency and processing locations** — identify every jurisdiction where your data will be stored, processed, or backed up, including any offshore processing.
+- **Subcontractor/fourth-party disclosure** — the vendor must disclose all subcontractors and downstream processors with access to your data, since your due diligence obligations extend through the supply chain, not just the primary vendor.
+
+## Step 4: Identity & Access Integration (Contractual Requirements, Not Nice-to-Haves)
+
+- **SSO/SAML or OIDC support** — the SaaS product must integrate with your agency's identity provider; standalone credential stores are a red flag for Restricted-tier use.
+- **MFA enforcement** — must be supported and enforceable for all users, non-negotiable for privileged/admin accounts.
+- **Role-based access control (RBAC)** — granular enough to implement least privilege and separation of duties for your agency's use cases.
+- **Agency access to audit logs** — export or API access to authentication events, privileged actions, and configuration changes; you cannot rely solely on the vendor's internal logging with no visibility for your own security monitoring.
+
+## Step 5: Contract Clauses to Impose
+
+- **Incident notification SLA** — a defined, short timeframe (e.g., 24–72 hours from vendor's own detection) for notifying your agency of any security incident affecting your data, including incidents at the vendor's subcontractors.
+- **Right to audit** — contractual right to audit the vendor's security controls, or at minimum to receive current assurance evidence (ISO 27001, SOC 2 Type II, pen test summary) annually.
+- **Data return and certified secure deletion on exit** — data portability in a usable format plus certified destruction of all copies (including backups) at contract termination, consistent with NZISM disposal requirements for the applicable classification.
+- **Jurisdiction / data-sovereignty terms** — explicit statement of which jurisdictions' laws govern the data, and restrictions on moving data outside agreed locations without agency approval.
+
+## Step 6: Offshore Hosting Considerations
+
+If the SaaS product hosts data outside New Zealand (a common reality for global SaaS platforms), this is a **risk-based decision, not a prohibition**, but it requires:
+1. A documented cloud/offshore risk assessment (NZ Government Cloud Computing Risk & Resilience Guide; Protective Security Requirements obligations apply alongside the NZISM).
+2. Jurisdictional and legal-access-regime analysis for the hosting country.
+3. Classification-appropriate controls (encryption with agency-influenced key management, cleared-personnel access, agency-visible logging, supplier assurance evidence as above).
+4. **ITSM/CISO certification review**, followed by **formal risk acceptance by the Accreditation Authority / agency head** — recorded in the accreditation record — before go-live, if the data is Restricted or above.
+
+## Step 7: Ongoing Assurance (Post-Contract)
+
+- **Annual reassessment** of the vendor's security posture and updated assurance evidence.
+- **Monitoring of vendor security advisories** and any disclosed incidents throughout the contract term.
+- **Supplier risk register entry** — formally logged, reviewed, and updated as part of the agency's ongoing third-party risk management.
+- **Formal risk acceptance for any residual gaps** — if the vendor cannot meet a specific requirement (e.g., no agency-controlled keys available), document the gap and obtain explicit risk acceptance from the appropriate authority rather than proceeding silently.
+
+## Relevant NZISM References
+Cloud/offshore hosting: **Chapter 22 (Enterprise Systems Security), Section 22.1 Cloud Computing**, including control **22.1.23.C.01 (System availability)**. Access control and privileged access integration requirements: **Chapter 16 (Access Control and Passwords / v3.9: Authentication and Access Controls)**, including **16.1.46.C.02** (account suspension) and **16.3.5.C.02** (privileged account use). Third-party supplier obligations generally: **Chapter 13, Third-Party Suppliers**. For control numbers not listed here, confirm the current citation against the online manual (nzism.gcsb.govt.nz), as the NZISM is updated roughly twice a year.
+
+---
+*This is general compliance guidance, not legal advice. Confirm current NZISM control numbering and PSR requirements against official sources, and have procurement/legal counsel review final contract language before execution.*

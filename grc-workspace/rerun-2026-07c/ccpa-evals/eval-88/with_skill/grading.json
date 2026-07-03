@@ -1,0 +1,33 @@
+{
+  "eval_id": 88,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+      "passed": true,
+      "evidence": "'Almost certainly \"Sharing\" (and likely \"Sale\" too)... Sharing = disclosing PI to a third party for cross-context behavioral advertising, even without monetary consideration... It may also independently qualify as a \"Sale\"... the CCPA \"sale\" definition is broad and covers monetary or other valuable consideration.'"
+    },
+    {
+      "text": "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+      "passed": true,
+      "evidence": "States sharing definition targets 'cross-context behavioral advertising, even without monetary consideration' as the operative CPRA-added concept distinguishing it from sale."
+    },
+    {
+      "text": "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+      "passed": true,
+      "evidence": "Section '1. Add/Verify Your Opt-Out Mechanism' (DNS link), '2. Honor Global Privacy Control (GPC) Signals' ('GPC compliance is mandatory'), '4. Update Your Privacy Notices' (notice at collection + privacy policy)."
+    },
+    {
+      "text": "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+      "passed": true,
+      "evidence": "'Under CPPA regulations (Regs §7050(c)): a person who contracts with a business to provide cross-context behavioral advertising is legally a third party, not a service provider or contractor, with respect to those services — no amount of restrictive contract language can convert a CCBA disclosure into service-provider activity.'"
+    },
+    {
+      "text": "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days",
+      "passed": true,
+      "evidence": "'you must update your consent/preference management platform and stop passing their cookie ID/browsing data to the ad tech platform within 15 business days.' Also cites Disney ($2.75M) and PlayOn Sports ($1.1M) enforcement actions for ad tech/opt-out failures (Sephora not named, but assertion is satisfied via the 15-business-day requirement alone)."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

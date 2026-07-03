@@ -1,0 +1,25 @@
+{
+  "skill": "nist-ai-rmf",
+  "prompts": [
+    {
+      "id": 66,
+      "prompt": "Our company is starting to deploy AI systems and wants to use the NIST AI RMF. Can you explain the four core functions — GOVERN, MAP, MEASURE, and MANAGE — and how they relate to each other? What should we implement first?"
+    },
+    {
+      "id": 67,
+      "prompt": "We have an AI hiring tool that screens resumes and ranks candidates. Using the NIST AI RMF, what are the key risks we need to assess, which trustworthiness properties are most relevant, and what specific MEASURE-function actions should we take before deploying it?"
+    },
+    {
+      "id": 68,
+      "prompt": "Build me an AI risk register template for a financial services firm deploying a credit scoring model. Include the AI RMF categories each risk maps to, and suggest treatment options."
+    },
+    {
+      "id": 69,
+      "prompt": "We are subject to the EU AI Act and also want to align with NIST AI RMF. How do these two frameworks map to each other? Are there gaps we need to fill if we implement AI RMF but still need to comply with the EU AI Act?"
+    },
+    {
+      "id": 70,
+      "prompt": "Conduct a GOVERN gap assessment for our organization. We have an AI ethics statement but no formal AI risk policy, no cross-functional AI team, no defined risk tolerance for AI, and our legal team is not involved in AI deployments. Rate each GOVERN category and give us a prioritised remediation plan."
+    }
+  ]
+}

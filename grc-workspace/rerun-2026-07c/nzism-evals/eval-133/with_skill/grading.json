@@ -1,0 +1,13 @@
+{
+  "eval_id": 133,
+  "run_type": "with_skill",
+  "expectations": [
+    {"text": "Delivers an actual policy document (purpose, scope, roles, policy statements, compliance) — not just a discussion of access control", "passed": true, "evidence": "Response includes numbered sections: 1. Purpose, 2. Scope, 3. Policy Statements (3.1-3.5), 4. Roles and Responsibilities, 5. Exceptions, 6. Review Cycle, 7. Document Control — a full formal policy document, not a discussion."},
+    {"text": "Covers the four requested domains with NZISM-consistent requirements: unique identification of users, authentication strength (MFA for privileged and remote access), least-privilege authorisation, and privileged access management (separate admin accounts, logging, periodic review)", "passed": true, "evidence": "Section 3.1 requires unique identification and prohibits shared accounts; 3.2 mandates 'Multi-Factor Authentication (MFA) is mandatory for all remote access and for all privileged accounts'; 3.3 requires 'principle of least privilege'; 3.4 requires privileged accounts 'separate from standard user accounts', logged, and reviewed (quarterly recommended)."},
+    {"text": "Cites NZISM structure credibly: references NZISM chapters/sections and control identifiers (CIDs) for access control and uses MUST/SHOULD compliance language consistent with the manual's convention", "passed": true, "evidence": "Cites specific control IDs: '16.1.46.C.02 (Suspension of access...)', '16.3.5.C.02 (Use of privileged accounts...)', '16.6.6.C.02', '16.6.10.C.02', plus Chapter 16.1/16.3/16.6 references, and uses bolded MUST/SHOULD-style mandatory language throughout (e.g., 'MFA is mandatory', 'must be uniquely identified')."},
+    {"text": "Includes joiner-mover-leaver / access review lifecycle requirements (timely revocation, periodic recertification of access rights)", "passed": true, "evidence": "'Inactive or departed-staff accounts must be suspended promptly' (3.2) and 'Access rights must be reviewed and re-certified at least annually, with more frequent review for privileged and Restricted-tier access' (3.3) — covers timely revocation and periodic recertification, though not organized as a distinct JML section."},
+    {"text": "Includes policy governance: owner, review cycle, exceptions process requiring documented risk acceptance", "passed": true, "evidence": "Section 4 names CISO as owner ('CISO: owns this policy, approves exceptions'), Section 6 'Review Cycle... reviewed at least annually', Section 5 'Exceptions... requires documented risk assessment and formal approval by the CISO, and — for Restricted-tier systems — acknowledgement by the Accreditation Authority'."}
+  ],
+  "total": 5,
+  "passed": 5
+}

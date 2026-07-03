@@ -1,0 +1,13 @@
+{
+  "eval_id": 67,
+  "eval_name": "hiring-ai-risk-assessment",
+  "run_type": "with_skill",
+  "prompt": "We have an AI hiring tool that screens resumes and ranks candidates. Using the NIST AI RMF, what are the key risks we need to assess, which trustworthiness properties are most relevant, and what specific MEASURE-function actions should we take before deploying it?",
+  "assertions": [
+    "Identifies the core risks: harmful bias/disparate impact on protected groups, validity/job-relatedness of rankings, transparency to candidates, privacy of applicant data, drift over time",
+    "Maps to the right trustworthiness characteristics: fair with harmful bias managed, valid & reliable, accountable & transparent, explainable & interpretable, privacy-enhanced",
+    "Prescribes concrete MEASURE-function actions: pre-deployment disparate-impact testing across demographic groups, validity testing against job performance criteria, documented TEVV with defined metrics, and ongoing monitoring cadence",
+    "Brings in MAP context work (intended use, affected communities, failure impacts) and MANAGE treatments (human review of rankings, thresholds for suspension, feedback channels)",
+    "Flags the regulatory overlay accurately (e.g., EEOC/Title VII exposure, NYC Local Law 144 bias audits, EU AI Act Annex III employment high-risk if EU-facing) without inventing requirements"
+  ]
+}

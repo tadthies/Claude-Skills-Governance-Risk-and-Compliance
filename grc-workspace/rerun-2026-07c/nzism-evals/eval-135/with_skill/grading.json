@@ -1,0 +1,33 @@
+{
+  "eval_id": 135,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Requires classification-driven scoping first: what data (classification level) will the SaaS hold, which determines applicable NZISM controls and whether offshore hosting/risk assessment rules are triggered",
+      "passed": true,
+      "evidence": "'Step 1: Classify the Data First' — 'Before evaluating any vendor, determine the classification of the data the SaaS product will store or process... This determines the depth of assessment required and which contractual protections are mandatory' and Step 6 explicitly ties offshore hosting risk assessment to classification ('if the data is Restricted or above')."
+    },
+    {
+      "text": "Due diligence checklist includes independent assurance evidence: recognised certifications/assessments (e.g., ISO 27001, SOC 2, IRAP or equivalent), penetration test results, and the vendor's security architecture (tenancy isolation, encryption, key management)",
+      "passed": true,
+      "evidence": "Step 2 lists 'Current ISO/IEC 27001 certificate', 'SOC 2 Type II report', 'IRAP assessment (or equivalent)', and 'Recent independent penetration test results'. Step 3 covers 'Tenancy isolation model', 'Encryption at rest and in transit', and 'Key management — clarify who holds encryption keys'."
+    },
+    {
+      "text": "Contractual requirements include: incident notification SLAs to the agency, right to audit/assurance evidence, data residency/jurisdiction terms, data return and secure deletion on exit, and subcontractor/fourth-party disclosure",
+      "passed": true,
+      "evidence": "Step 5: 'Incident notification SLA', 'Right to audit', 'Data return and certified secure deletion on exit', 'Jurisdiction / data-sovereignty terms'; Step 3 covers 'Subcontractor/fourth-party disclosure — the vendor must disclose all subcontractors and downstream processors'."
+    },
+    {
+      "text": "Covers identity and access integration: SSO/MFA support, role-based access, logging/audit trail availability to the agency",
+      "passed": true,
+      "evidence": "Step 4: 'SSO/SAML or OIDC support', 'MFA enforcement', 'Role-based access control (RBAC)', 'Agency access to audit logs — export or API access to authentication events, privileged actions, and configuration changes'."
+    },
+    {
+      "text": "Requires ongoing assurance, not point-in-time: annual reassessment, monitoring of vendor advisories, and inclusion in the agency's supplier risk register with a formal risk acceptance for residual gaps",
+      "passed": true,
+      "evidence": "Step 7: 'Annual reassessment of the vendor's security posture', 'Monitoring of vendor security advisories', 'Supplier risk register entry', and 'Formal risk acceptance for any residual gaps — ...document the gap and obtain explicit risk acceptance from the appropriate authority'."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

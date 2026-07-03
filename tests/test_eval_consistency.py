@@ -419,9 +419,7 @@ class TestEvalConsistency:
     # come out below baseline — that is a finding to publish and fix, not to
     # hide. Any skill listed here must have an open improvement item in the
     # changelog/CHANGELOG.md. Remove entries as skills are improved and re-run.
-    KNOWN_NEGATIVE_DELTA: set[str] = {
-        "ccpa/cpra", "cmmc 2.0", "nist ai rmf", "nzism",
-    }
+    KNOWN_NEGATIVE_DELTA: set[str] = set()
 
     def test_with_skill_not_worse_than_baseline(self, eval_data):
         """
@@ -463,7 +461,7 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     "nis2":             _WS / "rerun-2026-07b" / "nis2-evals",
     "lgpd":             _WS / "rerun-2026-07" / "lgpd-evals",
     # ── iteration-2 (previous run) ───────────────────────────────────────────
-    "ccpa":             _WS / "rerun-2026-07b" / "ccpa-evals",
+    "ccpa":             _WS / "rerun-2026-07c" / "ccpa-evals-iter2",
     "eu-ai-act":        _WS / "rerun-2026-07b" / "eu-ai-act-evals",
     "iso27701":         _WS / "iteration-2" / "iso27701",
     # ── iteration-1 (skill-specific subdirectory) ────────────────────────────
@@ -477,8 +475,8 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     "iso42001":         _WS / "iteration-1" / "iso42001",
     "dora":             _WS / "iteration-1" / "dora",
     "dpdpa":            _WS / "iteration-1" / "dpdpa",
-    "cmmc":             _WS / "rerun-2026-07b" / "cmmc-evals",
-    "nist-ai-rmf":      _WS / "rerun-2026-07b" / "nist-ai-rmf-evals",
+    "cmmc":             _WS / "rerun-2026-07c" / "cmmc-evals",
+    "nist-ai-rmf":      _WS / "rerun-2026-07c" / "nist-ai-rmf-evals",
     "ism":              _WS / "iteration-1" / "ism",
     # ── flat eval directories in iteration-1 root (identified by prefix) ─────
     "itar":             _WS / "iteration-1",   # eval-91..95
@@ -489,7 +487,7 @@ _SKILL_GRADING_DIR: dict[str, Path] = {
     "nist-800-53":      _WS / "nist-800-53-evals",
     "section-508":      _WS / "section-508-evals",
     "wcag":             _WS / "wcag-evals",
-    "nzism":            _WS / "rerun-2026-07b" / "nzism-evals",
+    "nzism":            _WS / "rerun-2026-07c" / "nzism-evals",
     "vn-pdpl":          _WS / "rerun-2026-07b" / "vn-pdpl-evals",
     "eu-cra":           _WS / "rerun-2026-07b" / "eu-cra-evals",
 }

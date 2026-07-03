@@ -1,0 +1,33 @@
+{
+  "eval_id": 66,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Describes all four functions faithfully to NIST AI 100-1: GOVERN (cross-cutting culture, policies, roles, risk tolerance), MAP (context, categorization, capabilities/limitations, impacts), MEASURE (TEVV — analyze, assess, track risks with metrics), MANAGE (prioritize, treat, respond, recover)",
+      "passed": true,
+      "evidence": "GOVERN described as 'cross-cutting function that establishes organizational culture, structures, and accountability'; MAP described as 'establishing context...intended purpose, scope...who is impacted...categorizing the AI system'; MEASURE explicitly uses 'quantitative, qualitative, or mixed-method tools...testing and evaluation...tracking metrics over time'; MANAGE covers 'prioritizing risks...mitigate, transfer, avoid, or accept...incident response, recovery'."
+    },
+    {
+      "text": "States the structural relationship correctly: GOVERN is the cross-cutting foundation feeding the other three; MAP informs MEASURE which informs MANAGE, iteratively across the AI lifecycle",
+      "passed": true,
+      "evidence": "'GOVERN is cross-cutting and continuous... it's not \"step one\" in a sequence so much as the context in which the sequence happens' and 'MAP → MEASURE → MANAGE forms a cycle...You typically MAP context first, then MEASURE against that context, then MANAGE based on what you measured' plus feedback loop description."
+    },
+    {
+      "text": "Recommends starting with GOVERN (policies, accountability, inventory, risk tolerance) — the canonical NIST guidance for organizations beginning adoption",
+      "passed": true,
+      "evidence": "'Start with a baseline of GOVERN' section lists: 'Designate accountability... Inventory what you already have... Set a basic risk tolerance/policy statement... Establish an intake process' before proceeding to MAP."
+    },
+    {
+      "text": "Mentions that the framework is voluntary and outcome-based (not a compliance checklist), organized into categories/subcategories with a companion Playbook",
+      "passed": true,
+      "evidence": "'It is not a checklist or certification scheme — it's a structured way of thinking' and 'It's paired with a companion AI RMF Playbook that gives concrete suggested actions for each function.' However, the response does not explicitly describe the categories/subcategories organizational structure with the same specificity as counts; still, the core claim (voluntary, outcome-based, not checklist, has Playbook) is present."
+    },
+    {
+      "text": "References the seven trustworthiness characteristics (valid & reliable, safe, secure & resilient, accountable & transparent, explainable & interpretable, privacy-enhanced, fair with harmful bias managed) as the risk lens the functions operationalize",
+      "passed": false,
+      "evidence": "The response never mentions the seven trustworthiness characteristics anywhere. It discusses fairness, bias, explainability, privacy, and drift only as scattered examples of metrics under MEASURE, but never names or enumerates the seven characteristics (Valid & Reliable, Safe, Secure & Resilient, Accountable & Transparent, Explainable & Interpretable, Privacy-Enhanced, Fair with Harmful Bias Managed) as the organizing risk lens the framework uses. This is a complete omission of a specifically required assertion."
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

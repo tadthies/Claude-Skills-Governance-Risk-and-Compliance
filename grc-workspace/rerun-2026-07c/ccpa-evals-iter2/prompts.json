@@ -1,0 +1,25 @@
+{
+  "skill": "ccpa",
+  "prompts": [
+    {
+      "id": 86,
+      "prompt": "We are a US-based e-commerce company with $30M annual revenue. We collect personal information from about 80,000 California customers per year. Are we subject to CCPA/CPRA? If so, what are our core obligations?"
+    },
+    {
+      "id": 87,
+      "prompt": "A California resident has submitted a request to know exactly what personal information we hold about them, and also wants it all deleted. Walk me through how to handle both requests, including identity verification and any exceptions we can invoke."
+    },
+    {
+      "id": 88,
+      "prompt": "We use an ad tech platform that receives our website visitors' cookie IDs and browsing data to serve targeted ads. Does this constitute a 'sale' or 'sharing' under CCPA/CPRA? What do we need to do?"
+    },
+    {
+      "id": 89,
+      "prompt": "We already have a GDPR compliance programme. What additional steps do we need to take to comply with CCPA/CPRA? Where do the two laws differ most significantly?"
+    },
+    {
+      "id": 90,
+      "prompt": "Our mobile app collects precise geolocation, health metrics from wearable integration, and biometric facial recognition for authentication. How does CPRA classify this data, what special obligations apply, and what do we need to disclose?"
+    }
+  ]
+}

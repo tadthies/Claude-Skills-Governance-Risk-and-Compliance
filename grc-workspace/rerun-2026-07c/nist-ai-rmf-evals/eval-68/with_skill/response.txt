@@ -1,0 +1,45 @@
+# AI Risk Register — Credit Scoring Model (Financial Services)
+
+Below is a working AI risk register built on the NIST AI RMF structure — columns are aligned to MAP (identification), MEASURE (TEVV), and MANAGE (treatment) so every entry traces cleanly back to the framework. Treatments are connected to model risk management practice under **SR 11-7 / OCC 2011-12**: independent validation before use, champion–challenger comparison in production, ongoing monitoring, and documented effective challenge at the model risk committee. This register is illustrative — populate Likelihood/Impact scoring and owners with your actual governance structure.
+
+| Risk ID | AI System | Lifecycle Stage | TEVV Activity | Characteristic at Risk | Likelihood / Impact | Treatment | Owner |
+|---------|-----------|------------------|----------------|--------------------------|------------------------|-----------|-------|
+| R-01 | Credit Scoring Model v4 | Deployment | Disaggregated performance and disparate impact ratio testing across protected classes (MEASURE 2.2) | Fair with Harmful Bias Managed | High likelihood / High impact — disparate impact ratio below 0.8 threshold observed for one applicant subgroup in back-testing | **Mitigate** — retrain with rebalanced/reweighted features, remove/replace proxy variables correlated with protected class, add human review gate for declines in the affected subgroup; re-validate before re-enabling automated decisions (MANAGE 2.1) | Head of Credit Risk (treatment); Model Risk Committee (residual risk acceptance) |
+| R-02 | Credit Scoring Model v4 | Deployment | Adverse-action explainability testing — SHAP/LIME sufficient to generate ECOA-compliant reason codes (MEASURE 2.3) | Explainable & Interpretable; Accountable & Transparent | Medium likelihood / High impact — reason-code generation not yet validated against all decline scenarios | **Mitigate** — implement and test SHAP-based reason-code generation for every decline; legal review of reason-code language against Regulation B requirements | VP Model Risk (treatment); Chief Compliance Officer (residual risk acceptance) |
+| R-03 | Credit Scoring Model (vendor-hosted) | Deployment / Monitoring | Vendor validation-report review + independent benchmark against internal champion model (GOVERN 6.1, MEASURE 2.5) | Valid & Reliable; Accountable & Transparent | Medium likelihood / High impact — vendor retrains without notice; population drift undetected between reviews | **Mitigate** — contractual change-notification and audit rights, quarterly champion–challenger comparison against internal benchmark model, documented fallback/rollback to prior model version | VP Model Risk (treatment); CRO (residual risk acceptance) |
+| R-04 | Credit Scoring Model v4 | Monitoring | Ongoing model performance and score-drift monitoring (MEASURE 3.1/3.2) | Valid & Reliable | Medium likelihood / Medium impact — macroeconomic shifts or population drift degrade discriminative accuracy (AUC-ROC decline) over time | **Mitigate** — monthly monitoring dashboard with defined drift thresholds (e.g., AUC drop >X%, PSI/KS statistic threshold) that trigger revalidation | Model Owner / Credit Risk Analytics (treatment); Model Risk Committee (residual risk acceptance) |
+| R-05 | Credit Scoring Model v4 | Development / Testing | Adversarial and data-quality robustness testing (MEASURE 2.4) | Secure & Resilient | Low likelihood / High impact — synthetic identity fraud or manipulated application data could exploit model blind spots | **Mitigate** — combine credit score with fraud-detection controls; adversarial robustness testing prior to deployment; periodic red-team exercises | Head of Fraud & Model Risk (treatment); CRO (residual risk acceptance) |
+| R-06 | Credit Scoring Model v4 | Design / Deployment | Legal/regulatory mapping to ECOA, Fair Housing Act, state fair-lending laws, and EU AI Act high-risk classification if applicable (GOVERN 6.1) | Accountable & Transparent; Fair with Harmful Bias Managed | Medium likelihood / High impact — regulatory exposure if fair-lending testing is inadequate or undocumented | **Mitigate** — maintain regulatory register, engage legal/compliance at design stage, document fair-lending testing methodology for examiner review | Chief Compliance Officer (treatment); Board Risk Committee (residual risk acceptance) |
+| R-07 | Credit Scoring Model v4 | Deployment | Human oversight and override validation — escalation path for borderline/declined applications (MEASURE 2.5) | Accountable & Transparent | Low likelihood / Medium impact — automated declines without meaningful human recourse | **Mitigate** — establish human review/appeal path for declined applicants; test that override mechanism is actually used, not just documented | Head of Credit Operations (treatment); Head of Credit Risk (residual risk acceptance) |
+
+## AI RMF Category Mapping Summary
+
+| Risk | MAP | MEASURE | MANAGE | GOVERN |
+|------|-----|---------|--------|--------|
+| R-01 Bias/disparate impact | MAP 3, MAP 5 | MEASURE 2.2 | MANAGE 2.1, MANAGE 1.3 | GOVERN 1.3 (risk tolerance threshold) |
+| R-02 Explainability/adverse action | MAP 1.6 (legal constraints) | MEASURE 2.3 | MANAGE 2.1 | GOVERN 6.1 |
+| R-03 Vendor/third-party dependency | MAP 1.3 | MEASURE 2.5 | MANAGE 2.1, MANAGE 3.1 | GOVERN 6.1, GOVERN 6.2 |
+| R-04 Drift/degradation | MAP 5.3 | MEASURE 3.1, MEASURE 3.2 | MANAGE 3.1 | GOVERN 5.2 |
+| R-05 Security/adversarial | MAP 5.1 | MEASURE 2.4 | MANAGE 2.3 (emergency intervention) | GOVERN 1.3 |
+| R-06 Regulatory alignment | MAP 1.6 | — | MANAGE 1.3 | GOVERN 6.1, GOVERN 6.3 |
+| R-07 Human oversight | MAP 1.2 | MEASURE 2.5 | MANAGE 2.4 | GOVERN 2.1 |
+
+## Treatment Options Reference
+
+- **Mitigate** — technical (retrain, remove proxy features, add human review), operational (restrict use case, tighten thresholds), or process controls that reduce likelihood/impact
+- **Transfer** — contractual risk-shifting to vendor (indemnification, warranty on fair-lending testing, audit rights) — relevant for R-03
+- **Avoid** — decommission or decline to deploy a feature/model version where residual risk cannot be brought within tolerance
+- **Accept** — formally document and obtain Model Risk Committee / CRO sign-off for any residual risk below full mitigation, per MANAGE 1.3
+
+## Financial-Services Model Risk Alignment (SR 11-7 / OCC 2011-12)
+
+Every treatment above should map to standard MRM lifecycle controls:
+- **Independent validation** before initial production use and after any material model change (applies to R-01, R-02, R-05)
+- **Champion–challenger comparison** in production, particularly for the vendor-hosted model (R-03) and ongoing drift monitoring (R-04)
+- **Ongoing monitoring** with defined thresholds and escalation triggers (R-04, R-03)
+- **Effective challenge** documented at the Model Risk Committee — the committee (not the model owner alone) should be the accepting authority for any residual risk above tolerance (MANAGE 1.3), consistent with SR 11-7's requirement for independent, skeptical review
+
+Update the Likelihood/Impact and Treatment columns whenever MEASURE produces new evidence (MEASURE 4.3), and log outcomes back into MANAGE 4 for the quarterly model risk review.
+
+---
+*This is general compliance information, not legal advice. Verify fair-lending testing methodology, reason-code requirements, and EU AI Act applicability with qualified counsel and your model risk governance function.*

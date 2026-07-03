@@ -1,0 +1,79 @@
+# Precise Geolocation, Health Wearable Data, and Biometric Facial Recognition Under CPRA
+
+Your mobile app collects three data types that are each independently classified as **Sensitive Personal Information (SPI)** under CPRA — this is a high-obligation combination that requires careful handling.
+
+## Classification: All Three Are SPI
+
+CPRA's SPI category list includes, among others:
+- **Precise geolocation** — locating a consumer within a radius of **1,850 feet** (§1798.140(w))
+- **Health/medical information** — your wearable-integration health metrics fall squarely here
+- **Biometric data used to uniquely identify a person** — your facial recognition authentication is a textbook example
+
+All three of your listed data types are SPI. This isn't a borderline call — you should treat this app as an SPI-intensive product from a compliance design standpoint, not just apply generic PI handling.
+
+## Special Obligations That Apply
+
+### 1. Right to Limit Use of Sensitive Personal Information (§1798.121)
+Because you collect SPI, you must offer consumers the **"Limit the Use of My Sensitive Personal Information"** link (on your homepage/app, alongside or combined with the "Do Not Sell or Share" link).
+
+**The right to limit does NOT apply** if your use of the SPI falls within these permitted purposes:
+- Performing services or providing goods reasonably expected by the consumer
+- Safety, security, and integrity of services
+- Short-term, transient use (e.g., a contextual feature based on the current session)
+- Services performed on behalf of the business (service provider context)
+- Verifying or maintaining quality of services
+- Activities for which the SPI was specifically provided
+
+Your facial recognition **for authentication** likely qualifies as "safety, security, and integrity of services" or "activities for which the SPI was specifically provided" — if that's the *only* use, you may not need to offer a limitation option for that specific use case. But if you also use facial recognition, geolocation, or health data for **profiling, advertising, analytics beyond the immediate service, or sharing with third parties**, those uses fall outside the permitted-purpose list and **do** trigger the right to limit.
+
+**Workflow if the right to limit applies to any of your uses:**
+
+| Step | Action |
+|---|---|
+| 1 | Provide "Limit the Use of My Sensitive Personal Information" link |
+| 2 | Consumer exercises the right — no identity verification required beyond confirming identity |
+| 3 | Process within **15 business days** |
+| 4 | Restrict SPI use to only the permitted purposes above |
+| 5 | Propagate the limitation instruction to service providers and contractors (e.g., your wearable-integration vendor, facial recognition SDK provider, cloud geolocation processor) |
+
+### 2. Sale/Sharing Analysis for Each Data Type
+Separately from the limit-use right, evaluate whether any of this SPI is disclosed to third parties for a sale or for cross-context behavioral advertising ("sharing"):
+- If geolocation, health, or biometric data is passed to ad tech platforms, analytics vendors acting as third parties, or data brokers, that triggers the standard **"Do Not Sell or Share"** opt-out obligation on top of the SPI-limitation right.
+- Remember the CCBA rule: a vendor providing **cross-context behavioral advertising is a third party, not a service provider/contractor**, regardless of contract terms (Regs §7050(c)) — relevant if any of this sensitive data feeds targeted advertising.
+
+### 3. Heightened identity verification standards apply to requests involving this data
+Because this is sensitive PI, if a consumer submits a **right-to-know (specific pieces)** or **deletion request** touching this data, apply the higher verification tier: **3 data points + a signed declaration under penalty of perjury**, rather than the standard 2-point match.
+
+### 4. Data minimization and retention (CPRA)
+SPI collection must be adequate, relevant, and limited to what's necessary for the disclosed purpose — this is especially important for biometric and health data given their sensitivity. You must disclose retention periods or criteria for each category and cannot retain this data longer than reasonably necessary. Given the sensitivity of facial recognition templates and health metrics, expect this to be scrutinized closely in any assessment.
+
+### 5. Cybersecurity audits and risk assessments (effective January 1, 2026)
+Processing precise geolocation, health data, and biometric identifiers at app scale is a strong candidate for "**significant risk**" processing under the CPRA regulations that took effect January 1, 2026. You likely need to:
+- Conduct **annual cybersecurity audits**
+- Conduct and document a **risk assessment** before processing this SPI, producible to the CPPA upon request
+
+Treat this as a near-term action item, not a future consideration — these regulations are already live as of today.
+
+### 6. ADMT considerations
+If your facial recognition authentication or health-metric processing feeds into any **automated decision-making with legal or similarly significant effects** (e.g., automated account lockouts, eligibility determinations, insurance-linked wellness scoring), you fall under the ADMT regime: consumers have the right to opt out, know about the automated processing, and request human review. Regulations are effective January 1, 2026; you must implement the **opt-out mechanism by January 1, 2027**. Authentication alone (verifying it's you) is less likely to trigger ADMT than uses that determine eligibility or produce adverse consequences — evaluate each use case separately.
+
+## What You Need to Disclose
+
+Your **notice at collection** and **privacy policy** must specifically address:
+1. That you collect **precise geolocation**, **health/medical information**, and **biometric data** — name these SPI categories explicitly, not just generic "personal information."
+2. The **purpose(s)** for each — e.g., "biometric data used solely for account authentication," "health metrics used to power in-app fitness tracking."
+3. Whether each category is **sold or shared**, and to whom (categories of third parties).
+4. **Retention periods** or criteria for each SPI category.
+5. The **"Limit the Use of My Sensitive Personal Information"** link and how to exercise that right, if any of your uses fall outside the permitted-purpose list.
+6. The **"Do Not Sell or Share"** link and opt-out mechanism, if applicable to any of this data.
+7. If any users may be minors under 16, your **opt-in consent** mechanism for sale/sharing of their PI (parental consent under 13).
+
+## Bottom Line
+- **Precise geolocation, health data from wearables, and biometric facial recognition are all SPI** under CPRA.
+- You must offer the **right to limit SPI use** unless every use of each data type falls within the narrow permitted-purpose list (safety/security, service delivery, short-term/transient use, service-provider context, quality verification, or the specific purpose disclosed).
+- Facial recognition for authentication is a plausible permitted use on its own, but any secondary use (analytics, advertising, profiling, third-party sharing) breaks that exemption and requires the limitation mechanism.
+- Apply heightened identity verification (3 points + perjury declaration) to know/delete requests touching this data.
+- Expect this app to fall within the **cybersecurity audit and risk assessment** obligations effective January 1, 2026 given the sensitivity and likely scale of biometric/health/geolocation processing.
+- Disclose all three SPI categories, their purposes, retention periods, and sale/sharing status explicitly in your notice at collection and privacy policy.
+
+*This is general compliance information, not legal advice. Given the sensitivity of biometric and health data involved, consult qualified counsel or an accredited assessor before finalizing your compliance design.*

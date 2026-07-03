@@ -1,0 +1,82 @@
+# From GDPR to CCPA/CPRA: Gap Analysis and Key Differences
+
+Having a mature GDPR program gives you a strong head start — data mapping, a privacy-by-design mindset, breach response processes, and vendor management practices all transfer conceptually. But CCPA/CPRA is a **different legal framework built on different foundations** (a consumer-protection/property-rights model vs. GDPR's fundamental-rights model), so you cannot simply relabel your GDPR documents. Below are the additional steps needed and the most significant divergences.
+
+## Additional Steps You Likely Need
+
+### 1. Re-run Your Applicability Analysis
+GDPR's extraterritorial trigger (offering goods/services to, or monitoring, EU data subjects) is different from CCPA/CPRA's revenue/volume thresholds ($25M+ revenue, 100,000+ CA consumers/households, or 50%+ revenue from selling/sharing PI). You must independently confirm CCPA applies — GDPR applicability does not imply CCPA applicability or vice versa.
+
+### 2. Add "Sale" and "Sharing" Analysis and Opt-Out Infrastructure
+GDPR has no direct equivalent to CCPA's "sale" or CPRA's "sharing" (cross-context behavioral advertising) concepts. You need to:
+- Determine whether any data flows (especially ad tech/analytics/cookie-based advertising) constitute a sale or share
+- Build a "Do Not Sell or Share My Personal Information" mechanism / "Your Privacy Choices" link
+- Honor **Global Privacy Control (GPC)** browser signals as valid opt-outs (no GDPR equivalent requirement)
+
+### 3. Rebuild Your Legal Basis Framework Around Notice + Opt-Out, Not Consent
+GDPR relies on identifying a lawful basis (often consent or legitimate interest) **before** processing. CCPA/CPRA is largely a **notice-and-opt-out** model: you can process and even sell/share data by default as long as you disclose it and let consumers opt out (except for minors under 16, sensitive PI limits, and financial incentive programs, which need opt-in consent). Your GDPR consent banners and lawful-basis registers won't map directly — you'll need CCPA-specific notices.
+
+### 4. Add CCPA-Specific Consumer Rights Workflows
+While similar in spirit to GDPR's Data Subject Access Requests (DSARs), CCPA rights have different mechanics:
+- **Right to Know** (categories + specific pieces, 12-month lookback by default)
+- **Right to Delete** (with CCPA-specific exceptions, different from GDPR Art. 17 exemptions)
+- **Right to Correct** (added by CPRA, similar to GDPR rectification but with its own standard)
+- **Right to Opt-Out of Sale/Sharing**
+- **Right to Limit Use of Sensitive Personal Information**
+- **Right to Non-Discrimination** for exercising rights
+- **Right to Data Portability** (similar to GDPR but implementation details differ)
+
+You'll need a **45-day response deadline** (vs. GDPR's 1 month/30 days, extendable to 3 months), different verification standards, and CCPA-specific denial/exception language.
+
+### 5. Update Notices for CCPA-Specific Content Requirements
+- **Notice at Collection**: distinct CCPA requirement — categories of PI, purposes, retention period, whether sold/shared — delivered at/before collection.
+- **Privacy Policy**: CCPA mandates specific disclosures (categories collected/disclosed/sold/shared in trailing 12 months, consumer rights descriptions, methods to submit requests) updated at least every 12 months — content differs from a GDPR-style Article 13/14 notice.
+
+### 6. Reassess "Sensitive Personal Information" (SPI) Category
+CPRA created a specific **Sensitive Personal Information** category (SSN, precise geolocation, race/ethnicity, religion, union membership, genetic/biometric data for identification, health data, sex life/sexual orientation, contents of mail/email/texts absent business relationship, account login credentials) with its own **"Limit the Use of My Sensitive Personal Information"** right. This is narrower and mechanically different from GDPR's "special category data" (Art. 9), which requires an explicit legal basis for processing at all, not just a limitation right.
+
+### 7. Update Vendor/Third-Party Contracts with CCPA-Specific Clauses
+GDPR Data Processing Agreements (Art. 28) won't satisfy CCPA's service provider/contractor contract requirements, which need CCPA-specific language: restrictions on using PI for purposes outside the specified business purpose, prohibitions on combining data across clients, certification of compliance, and audit rights framed under CCPA's definitions of "service provider," "contractor," and "third party."
+
+### 8. Determine Financial Incentive Program Compliance
+If you offer loyalty programs, discounts, or rewards in exchange for personal information, CCPA requires specific notice and opt-in consent for **financial incentive programs**, plus a "good-faith estimate" of the value of the data to justify the incentive — this has no GDPR equivalent.
+
+### 9. Cybersecurity Audits and Risk Assessments (if thresholds met)
+CPRA introduces (via CPPA regulations being phased in) mandatory **annual cybersecurity audits** and **risk assessments** for businesses whose processing presents significant risk — procedurally different from GDPR's DPIA (Data Protection Impact Assessment) requirement, though conceptually similar. Don't assume your DPIA process automatically satisfies this.
+
+### 10. Register/Monitor CPPA Regulatory Developments
+The California Privacy Protection Agency (CPPA) is a dedicated rulemaking and enforcement body (distinct from a DPA) actively issuing regulations (e.g., on ADMT/automated decision-making technology, risk assessments, cybersecurity audits) — your compliance program needs a process to track CPPA rulemaking separately from EU DPA/EDPB guidance.
+
+### 11. Employee Training Specific to CCPA
+Staff handling consumer inquiries need CCPA-specific training (not just GDPR DSAR training) covering CCPA rights, verification standards, and exceptions.
+
+## Where the Two Laws Differ Most Significantly
+
+| Dimension | GDPR | CCPA/CPRA |
+|---|---|---|
+| **Legal foundation** | Fundamental right to data protection; processing prohibited unless a lawful basis applies | Consumer protection/quasi-property framework; processing generally allowed with notice, subject to opt-out rights |
+| **Consent** | Central — consent is one of six lawful bases, must be freely given, specific, informed, unambiguous | Peripheral — opt-in consent only required for specific cases (selling/sharing minors' data, sensitive PI processing beyond permitted purposes, financial incentives) |
+| **Scope trigger** | Extraterritorial: applies based on processing activities (offering goods/services to, or monitoring, EU residents), no revenue threshold | Applies based on business-level thresholds (revenue, volume of CA consumers, % revenue from data sales) |
+| **Core mechanism** | Lawful basis + data minimization + purpose limitation, enforced ex ante | Notice + opt-out of sale/sharing, enforced ex post via consumer rights |
+| **"Sale"/"Sharing" concept** | No equivalent | Central concept triggering opt-out rights and GPC obligations |
+| **Special/Sensitive data** | Article 9 "special category data" — processing prohibited absent specific exception | "Sensitive Personal Information" — processing generally allowed, but consumer can limit use to specific purposes |
+| **DSAR/rights response time** | 1 month (extendable to 3 months) | 45 days (extendable by another 45 days) |
+| **Regulator model** | National DPAs + EDPB coordination | CPPA (dedicated agency) + California AG |
+| **Data Protection Officer** | Mandatory in many cases | No DPO requirement |
+| **International transfers** | Strict mechanism required (SCCs, adequacy decisions, BCRs) | No equivalent cross-border transfer restriction regime |
+| **Breach notification** | 72-hour notification to supervisory authority | No CCPA-specific breach notification duty (governed instead by separate CA breach notification law, Cal. Civ. Code 1798.82) |
+| **Automated decision-making** | Article 22 gives rights against solely automated decisions with legal/similarly significant effects | CPRA rulemaking on ADMT (automated decision-making technology) is newer and still being finalized — opt-out/access rights emerging but implementation details differ |
+| **Private right of action** | Generally no direct private right of action for most violations (enforced by DPAs) | Limited private right of action exists for certain data breaches involving nonencrypted/nonredacted PI due to failure to maintain reasonable security |
+| **Penalties** | Up to €20M or 4% of global annual turnover | Civil penalties up to $2,500 per violation (up to $7,500 for intentional violations or violations involving minors), enforced by CPPA/AG |
+
+## Practical Recommendation
+Treat this as building a **parallel, CCPA-native compliance layer** that reuses your GDPR data inventory and security controls as inputs, rather than trying to retrofit GDPR documents. A practical sequence:
+1. Confirm CCPA/CPRA applicability.
+2. Extend your data map to flag sale/share flows and SPI categories under CCPA's definitions.
+3. Build CCPA-specific notices (notice at collection, updated privacy policy).
+4. Stand up opt-out infrastructure (Do Not Sell/Share link, GPC honoring).
+5. Extend your DSAR intake process to handle CCPA-specific rights, timelines, and verification tiers.
+6. Update vendor contracts with CCPA service-provider/contractor/third-party clauses (in addition to, not instead of, your GDPR DPAs).
+7. Monitor CPPA rulemaking (cybersecurity audits, risk assessments, ADMT) for upcoming applicability.
+
+**Disclaimer**: This is general guidance, not legal advice. Given the structural differences between the two regimes, I'd recommend a formal gap assessment with California privacy counsel before relying on your GDPR program as a substitute.

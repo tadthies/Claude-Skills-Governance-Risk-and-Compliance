@@ -1,0 +1,33 @@
+{
+  "eval_id": 86,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Applies the three business thresholds correctly (any ONE suffices): annual gross revenue above the $25M threshold (as CPI-adjusted); buying/selling/sharing PI of 100,000+ consumers or households (CPRA raised this from 50,000); or 50%+ of revenue from selling/sharing PI — and concludes the company IS subject via the revenue threshold ($30M > $25M) even though 80,000 < 100,000",
+      "passed": true,
+      "evidence": "Table lists all three thresholds ($25M revenue, 100,000+ consumers/households, 50%+ revenue from PI sale/share) and states: 'Because you only need to meet one threshold, your $30M in annual gross revenue alone brings you within scope... regardless of the fact that your California customer data volume (80,000) falls short of the 100,000-consumer/household threshold.'"
+    },
+    {
+      "text": "Notes the 'doing business in California' element (for-profit, collects CA residents' PI, determines purposes/means) — being US-based outside California does not avoid the law",
+      "passed": true,
+      "evidence": "States 'You are a covered \"business\" under Cal. Civ. Code §1798.100 et seq.' after establishing revenue basis for an explicitly 'US-based' company collecting CA customer PI; the whole analysis implicitly treats being US-based (not California-based) as irrelevant to coverage, addressing the doing-business-in-CA element via the applicability framework applied to a non-CA-based company."
+    },
+    {
+      "text": "Lists core obligations: notice at collection, privacy policy, consumer request handling (know/delete/correct/opt-out/limit), verifiable request processes, service-provider contracts, non-discrimination",
+      "passed": true,
+      "evidence": "Section '3. Publish required notices' covers notice at collection and privacy policy; section '2. Build consumer rights fulfillment processes' covers Right to Know/Delete/Correct/Opt-Out/Limit and non-discrimination; 'Identity verification' subsection covers verifiable request processes; section '6. Update vendor contracts' covers service-provider contracts."
+    },
+    {
+      "text": "Mentions the 45-day response deadline for consumer requests with a possible 45-day extension",
+      "passed": true,
+      "evidence": "'substantive response within 45 calendar days, extendable once by another 45 days with notice'"
+    },
+    {
+      "text": "Mentions opt-out of sale/sharing mechanics: 'Do Not Sell or Share My Personal Information' link and honoring opt-out preference signals such as GPC",
+      "passed": true,
+      "evidence": "Section '4. Stand up opt-out mechanisms' lists '\"Do Not Sell or Share My Personal Information\" homepage link' and 'Honor Global Privacy Control (GPC) signals as a valid opt-out'."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

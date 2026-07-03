@@ -1,0 +1,33 @@
+{
+  "eval_id": 88,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+      "passed": true,
+      "evidence": "'very likely to be classified as both a \"sale\" and/or \"sharing\" of personal information'; explains 'other valuable consideration' is broad and cookie IDs/browsing data qualify as PI; explains sharing applies 'whether or not for consideration.'"
+    },
+    {
+      "text": "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+      "passed": true,
+      "evidence": "'CPRA introduced a distinct concept — \"sharing\" (Cal. Civ. Code § 1798.140(ah)) — specifically to capture cross-context behavioral advertising (CCBA) even when no money or other consideration is exchanged.'"
+    },
+    {
+      "text": "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+      "passed": true,
+      "evidence": "Sections B ('Post a \"Do Not Sell or Share My Personal Information\" Link'), C ('Honor Global Privacy Control (GPC)... automatically'), A ('Update Your Privacy Policy')."
+    },
+    {
+      "text": "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+      "passed": false,
+      "evidence": "The response only hedges that ad tech platforms 'almost never qualify' for the service-provider exception because 'their entire business model depends on using cookie/device data across advertisers.' It never cites CPPA Regs §7050(c) or states the definitive legal position that CCBA disclosures cannot be service-provider activity as a matter of law — it frames this as a practical/factual likelihood rather than the categorical CPPA rule the assertion requires."
+    },
+    {
+      "text": "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days",
+      "passed": true,
+      "evidence": "'you must direct the ad tech platform to stop selling/sharing that consumer's data going forward... generally interpreted as 15 business days.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

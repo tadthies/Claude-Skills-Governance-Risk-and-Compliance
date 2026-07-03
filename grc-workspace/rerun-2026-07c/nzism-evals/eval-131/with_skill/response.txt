@@ -1,0 +1,55 @@
+# NZISM Certification & Accreditation Gap Analysis — RESTRICTED System
+
+The NZISM is issued by the **GCSB (National Cyber Security Centre — NCSC NZ)** as the New Zealand Government's mandatory information security manual. Its controls carry **MUST/SHOULD compliance requirements tied to the system's classification level** — for a RESTRICTED system, essential (MUST) controls cannot be waived without formal risk acceptance recorded by the Accreditation Authority. Certification and Accreditation (C&A) is mandatory for any system handling Restricted and above before it goes live.
+
+## What the NZISM C&A Process Requires
+
+C&A has two distinct stages that must not be conflated:
+
+- **Certification** — the technical assessment confirming NZISM controls are implemented *and effective*. This requires independent validation/testing evidence, not just documentation.
+- **Accreditation** — the formal acceptance of residual risk by the Accreditation Authority (typically the agency head or a delegate), granting Authorisation to Operate (ATO).
+
+The full pathway:
+
+1. **System Security Plan (SSP/SecPlan)** — documents the system boundary, classification, security objectives, and all implemented controls.
+2. **Security Risk Management Plan (SRMP)** — identifies threats, vulnerabilities, likelihood, impact, treatments, and residual risk. This is a **mandatory** C&A artefact alongside the SSP, not optional.
+3. **Control validation** — independent technical review verifying controls are implemented and effective (testing evidence required).
+4. **Certification review and sign-off** — the ITSM (IT Security Manager) and CISO review validation evidence and formally certify the system.
+5. **Plan of Action & Milestones (POA&M)** — documents and tracks remediation of any assessment findings.
+6. **Accreditation decision** — the Accreditation Authority reviews residual risk and grants ATO, recorded formally.
+7. **Ongoing monitoring** — continuous control monitoring and periodic re-certification (typically every 1–3 years depending on risk, or triggered earlier by major change, incident, or classification change).
+
+## Gap Analysis
+
+| Item | NZISM Requirement | Your Status | Gap |
+|---|---|---|---|
+| System Security Plan | Mandatory C&A artefact; documents boundary, classification, objectives, controls | Draft exists | 🟡 Partial — confirm it covers full system boundary and all implemented/planned controls before certification review |
+| Security Risk Management Plan | Mandatory C&A artefact (threats, vulnerabilities, likelihood, impact, treatments, residual risk) | Does not exist | ❌ Not Implemented — **critical gap**; certification cannot proceed without an SRMP |
+| Control implementation | Controls must be implemented and validated as effective for the classification level | Partially implemented | 🟡 Partial — identify which of the Restricted-tier control domains (physical secure zones, encryption at rest, MFA for remote access, privileged account separation, enhanced logging/12-month retention, supplier contractual controls, cloud risk assessment if applicable, MDM/remote wipe if mobile) remain outstanding |
+| Control validation/testing | Independent technical testing evidence required — documentation alone is insufficient | No validation testing performed | ❌ Not Implemented — **critical gap**; even fully implemented controls cannot be certified without test evidence |
+| Certification review and sign-off | ITSM/security practitioner and CISO review validation evidence and certify | Not started (no ITSM sign-off) | ❌ Not Implemented — blocked by the SRMP and validation gaps above |
+| POA&M | Required to track remediation of certification findings | Not yet applicable (no certification run) | N/A pending certification |
+| Accreditation decision | Accreditation Authority formally accepts residual risk and grants ATO | Not started | ❌ Not Implemented — cannot occur until certification is complete |
+
+## Summary of Critical Gaps
+
+Your agency currently cannot proceed to certification, let alone accreditation, for three interlocking reasons:
+
+1. **No SRMP.** This is a mandatory artefact, not a nice-to-have. Without it, residual risk cannot be identified or presented to the Accreditation Authority.
+2. **No control validation testing.** Partial implementation without testing evidence means the ITSM/CISO have nothing independently verifiable to certify against.
+3. **No ITSM sign-off**, which is a direct consequence of gaps 1 and 2 — certification review cannot occur until the SRMP exists and validation testing has been completed.
+
+## Recommended Remediation Priority
+
+1. **Immediately**: Commission the SRMP — threat/vulnerability identification, likelihood/impact assessment, proposed treatments, and residual risk statement, scoped to the RESTRICTED classification.
+2. **In parallel**: Complete implementation of outstanding Restricted-tier controls (encryption at rest, MFA for remote access, privileged access separation, enhanced logging with 12-month retention, physical secure zone controls, supplier contractual NZISM-equivalent clauses).
+3. **Next**: Commission independent control validation/testing against the SSP and NZISM control set — this produces the evidence the ITSM/CISO need.
+4. **Then**: ITSM and CISO conduct certification review, sign off, and raise a POA&M for any residual findings.
+5. **Finally**: Submit the certification package (SSP, SRMP, validation evidence, POA&M) to the Accreditation Authority for the formal accreditation decision and ATO.
+
+Given the current state (draft SSP, no SRMP, no validation testing, no ITSM sign-off), expect roughly 8–12+ weeks to reach an accreditation-ready position, depending on remediation effort for outstanding controls.
+
+I can produce an SSP outline or a structured remediation roadmap (with owners and target dates) as a next step if useful.
+
+---
+*This is general compliance guidance, not legal advice. Confirm current NZISM control numbering and C&A procedural detail against the official manual (nzism.gcsb.govt.nz) and your agency's Accreditation Authority requirements.*

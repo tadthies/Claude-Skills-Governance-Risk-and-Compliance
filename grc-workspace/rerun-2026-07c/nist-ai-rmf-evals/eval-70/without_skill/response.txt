@@ -1,0 +1,171 @@
+# GOVERN Function Gap Assessment — NIST AI RMF 1.0
+
+**Prepared for:** hemant.naik@gmail.com
+**Date:** July 3, 2026
+**Scope:** NIST AI Risk Management Framework — GOVERN function (Categories 1–6)
+
+---
+
+## 1. Executive Summary
+
+Based on the facts provided, your organization has taken a first, meaningful step (a published AI ethics statement) but has **not yet built the operational governance infrastructure** needed to manage AI risk in practice. In NIST AI RMF terms, GOVERN is the *cross-cutting foundation* that the other three functions (MAP, MEASURE, MANAGE) depend on — weak GOVERN maturity means any risk identification or mitigation work happening elsewhere in the organization is likely ad hoc, inconsistent, and unable to scale or withstand audit/regulatory scrutiny.
+
+**Overall GOVERN maturity: Initial (Red/Yellow border)** — you have intent (values) but not infrastructure (policy, accountability, tolerance, legal integration).
+
+| Category | Focus Area | Rating |
+|---|---|---|
+| GOVERN 1 | Policies, processes, legal/regulatory alignment, risk tolerance | 🔴 **Not Started / Initial** |
+| GOVERN 2 | Accountability structures, roles & responsibilities | 🔴 **Not Started** |
+| GOVERN 3 | Workforce diversity, competency, AI literacy | 🟡 **Initial** |
+| GOVERN 4 | Risk culture, safety mindset, continuous improvement | 🟡 **Initial** |
+| GOVERN 5 | Stakeholder engagement (internal & external) | 🟡 **Initial** |
+| GOVERN 6 | Third-party and supply chain risk policies | 🔴 **Not Started** |
+
+Rating scale used: **Not Started → Initial → Developing → Managed → Optimized**
+
+---
+
+## 2. Category-by-Category Rating and Rationale
+
+### GOVERN 1 — Policies, Processes, Procedures & Practices
+*(Legal/regulatory requirements understood and managed; risk tolerance determined and documented; policies for mapping/measuring/managing risk in place)*
+
+**Rating: 🔴 Not Started / Initial (1 of 5)**
+
+**Rationale:**
+- An AI ethics *statement* is a values declaration, not an operational policy. It does not tell employees what they must do, what is prohibited, what approvals are required, or how exceptions are handled.
+- No formal AI risk policy means there is no documented linkage between your ethics principles and actual controls (e.g., acceptable use, model risk tiers, prohibited use cases, data governance for training/fine-tuning, human oversight requirements).
+- **No defined risk tolerance** is a critical gap — without it, no one in the organization can consistently decide what level of AI risk is acceptable, so decisions default to individual judgment or vendor sales pitches.
+- Legal/regulatory mapping is implicitly absent since legal isn't involved (see GOVERN 1.1's explicit requirement that legal and regulatory requirements involving AI are understood, managed, and documented).
+- GOVERN 1 is the anchor category — nearly every other GOVERN, MAP, MEASURE, and MANAGE activity depends on having tolerance thresholds and policy to measure against.
+
+### GOVERN 2 — Accountability Structures
+*(Roles, responsibilities, and lines of communication for AI risk are clear and understood across the organization; leadership is responsible for decisions built on AI risk understanding)*
+
+**Rating: 🔴 Not Started (0–1 of 5)**
+
+**Rationale:**
+- No cross-functional AI team means there is no defined owner for AI risk — not for approvals, not for incident response, not for policy exceptions.
+- No RACI exists (who Recommends, who Approves, who is Consulted, who is Informed) for AI system intake, procurement, or deployment decisions.
+- Without accountable owners, AI risk responsibility is diffused (i.e., "everyone's job" = "no one's job"), which is a classic root cause of shadow AI adoption and uncontrolled tool sprawl.
+- Executive/Board-level accountability and reporting lines for AI risk are presumably also undefined, which will be a gap in any future audit (SOC 2, ISO 42001, EU AI Act governance obligations).
+
+### GOVERN 3 — Workforce Diversity, Equity, and Competency
+*(Team composition includes diverse perspectives and disciplines; workforce has necessary skills and is empowered to raise AI risk concerns)*
+
+**Rating: 🟡 Initial (1–2 of 5)**
+
+**Rationale:**
+- Not explicitly discussed in the facts given, but since there is no cross-functional AI team, GOVERN 3 is structurally impossible to satisfy today — you cannot have diverse, empowered participation in AI governance if there is no forum for it to occur in.
+- Rated slightly above "Not Started" only because the existence of an ethics statement implies *some* baseline organizational awareness and values-setting occurred, which is a precursor to competency building.
+- No evidence of AI literacy training, escalation channels for concerns, or psychological safety mechanisms for staff to flag AI risk issues.
+
+### GOVERN 4 — Organizational Culture of Risk Management
+*(Organizational commitment to a culture that considers and communicates AI risk; leadership models values; lessons learned are incorporated; there is a focus on safety and continuous improvement)*
+
+**Rating: 🟡 Initial (2 of 5)**
+
+**Rationale:**
+- The ethics statement is genuine evidence of cultural intent — this is worth crediting, as GOVERN 4 is partly about tone from the top.
+- However, culture without mechanism doesn't hold under pressure: without a risk policy, tolerance thresholds, or accountable owners, there's no way to know whether the ethics statement actually changes behavior day-to-day (e.g., during a rushed vendor deployment).
+- No indication of a feedback loop (post-incident reviews, red-teaming, lessons-learned processes) tied to AI specifically.
+- This category will naturally mature once GOVERN 1 and 2 are addressed — culture needs structure to become durable rather than aspirational.
+
+### GOVERN 5 — Stakeholder Engagement Mechanisms
+*(Processes for consulting and incorporating feedback from internal and external stakeholders, including affected individuals/communities, in AI risk decisions)*
+
+**Rating: 🟡 Initial (1–2 of 5)**
+
+**Rationale:**
+- No described mechanism for internal stakeholders (business units, legal, security, privacy, HR) to weigh in on AI deployments before they go live — legal's total absence from AI deployment decisions is a direct, explicit failure of this category.
+- No described mechanism for external stakeholder input (customers, affected users, regulators, auditors, civil society groups) regarding AI use.
+- Some credit given if the ethics statement was developed with any stakeholder input, but this is not confirmed in the facts provided.
+
+### GOVERN 6 — Third-Party and Supply Chain Risk Policies
+*(Policies and procedures address AI risks and benefits from third-party software, data, and other supply chain issues, including monitoring, documentation of third-party requirements, and processes for third-party incident response)*
+
+**Rating: 🔴 Not Started (0 of 5)**
+
+**Rationale:**
+- No formal AI risk policy and no legal involvement together strongly imply there is no vendor AI risk assessment process, no AI-specific contract clauses (data use, IP, model training restrictions, right-to-audit, incident notification, indemnification), and no inventory of third-party AI tools/models in use.
+- This is a significant exposure category because most organizations' actual AI risk today comes through **third-party and embedded AI features** (SaaS vendors quietly adding AI capabilities, employees using consumer AI tools, procurement without AI risk review) rather than internally built models.
+- This is often the fastest-growing risk surface and the one most likely to cause a near-term incident (data leakage via an unreviewed AI vendor, contractual gaps on liability, etc.).
+
+---
+
+## 3. Why This Matters Now
+
+- **Regulatory exposure:** Depending on your jurisdiction and industry, frameworks such as the EU AI Act, Colorado AI Act, NYC Local Law 144, and sector regulators (financial services, healthcare) increasingly expect documented AI governance, risk tolerance, and legal review of AI use — an ethics statement alone will not satisfy these expectations.
+- **Audit/customer trust exposure:** Enterprise customers and auditors (SOC 2, ISO 42001) are starting to ask for evidence of AI governance, not just intent. Without policy, accountability, and legal sign-off, you cannot produce that evidence.
+- **Operational risk:** Without cross-functional governance and legal involvement, AI deployments are likely proceeding today based on individual team judgment — increasing the chance of a data privacy incident, IP/contract exposure, or reputational event before governance catches up.
+
+---
+
+## 4. Prioritized Remediation Plan
+
+Plan is phased across **30 / 60 / 90 days**, then **Quarter 2 (Days 91–180)** for maturation. Priorities are marked **P1 (urgent/foundational)**, **P2 (high)**, **P3 (important, sequenced after foundations)**.
+
+### Phase 1: Days 1–30 — Establish Foundation & Stop the Bleeding
+
+| # | Action Item | GOVERN Category | Owner | Priority |
+|---|---|---|---|---|
+| 1.1 | Stand up a cross-functional **AI Governance Working Group** (Legal, Security/IT, Privacy, HR, a business unit lead, and an executive sponsor) with a charter and recurring cadence | GOVERN 2, 3 | CEO/COO sponsor to charter; convened by whoever owns AI initiative (e.g., CIO/CTO) | **P1** |
+| 1.2 | Conduct an **AI inventory/discovery sweep**: identify all AI tools, features, and vendors currently in use across the org (including "shadow AI") | GOVERN 1, 6 | IT/Security + Working Group | **P1** |
+| 1.3 | **Mandate legal review** as a required gate for any new AI vendor contract or deployment, effective immediately (interim control while formal policy is built) | GOVERN 1, 5, 6 | General Counsel | **P1** |
+| 1.4 | Draft a **risk tolerance statement** (even a first-draft, board-reviewable version): what AI use cases are prohibited, what require approval, what are low-risk/self-serve | GOVERN 1 | Working Group + Legal, ratified by executive sponsor | **P1** |
+| 1.5 | Communicate an interim **"AI use guardrails" memo** to all staff bridging the gap until formal policy exists (references the existing ethics statement, adds concrete do's/don'ts) | GOVERN 4 | Working Group, issued by executive sponsor | **P2** |
+
+### Phase 2: Days 31–60 — Build Policy and Accountability
+
+| # | Action Item | GOVERN Category | Owner | Priority |
+|---|---|---|---|---|
+| 2.1 | Draft and approve a **formal AI Risk Management Policy** — translating the ethics statement into enforceable requirements (risk tiering, approval workflows, human oversight requirements, prohibited uses, data handling rules) | GOVERN 1 | Working Group lead + Legal; approved by executive sponsor/Board committee | **P1** |
+| 2.2 | Define and publish **RACI for AI governance** — who approves new AI use cases, who owns incident response, who owns vendor risk review, who reports to the Board | GOVERN 2 | Working Group + HR (for role definitions) | **P1** |
+| 2.3 | Formalize **legal's role in AI deployment lifecycle** — required legal review checkpoints at procurement, contract, and pre-launch stages; update procurement policy accordingly | GOVERN 1, 5, 6 | General Counsel + Procurement | **P1** |
+| 2.4 | Draft **third-party/vendor AI risk assessment questionnaire and contract clause library** (data use rights, training restrictions, audit rights, incident notification SLAs, liability/indemnification) | GOVERN 6 | Legal + Security | **P2** |
+| 2.5 | Establish an **AI risk register** and intake process tied to the risk tolerance thresholds from 1.4 | GOVERN 1, 4 | Working Group (Security/Risk function to maintain) | **P2** |
+| 2.6 | Launch baseline **AI literacy training** for the Working Group and any staff regularly deploying/using AI tools | GOVERN 3 | HR/L&D + Working Group | **P2** |
+
+### Phase 3: Days 61–90 — Operationalize and Test
+
+| # | Action Item | GOVERN Category | Owner | Priority |
+|---|---|---|---|---|
+| 3.1 | Run the new intake/approval process end-to-end on 2–3 real, pending AI deployments; refine based on friction points | GOVERN 1, 2 | Working Group | **P1** |
+| 3.2 | Complete **legal review and re-papering** of top 5–10 highest-risk existing AI vendor contracts | GOVERN 6 | General Counsel | **P1** |
+| 3.3 | Define **external stakeholder engagement mechanism** (e.g., a channel for customer/user AI concerns, and a process for monitoring regulatory developments relevant to your sector) | GOVERN 5 | Legal + Communications/Compliance | **P2** |
+| 3.4 | Define **internal escalation and "speak up" channel** for AI risk concerns, distinct from general compliance hotline if needed | GOVERN 3, 4 | HR + Working Group | **P2** |
+| 3.5 | Present first **AI risk governance report to executive leadership/Board**, including inventory results, policy status, open risks, and remediation progress | GOVERN 2, 4 | Executive sponsor | **P1** |
+| 3.6 | Broaden AI literacy training to all employees; add role-specific modules (engineering, procurement, marketing/customer-facing) | GOVERN 3 | HR/L&D | **P3** |
+
+### Phase 4: Quarter 2 (Days 91–180) — Mature and Sustain
+
+| # | Action Item | GOVERN Category | Owner | Priority |
+|---|---|---|---|---|
+| 4.1 | Formalize **quarterly AI governance reporting cadence** to executive leadership and Board (risk register status, tolerance breaches, incidents, new deployments) | GOVERN 2, 4 | Working Group lead | **P2** |
+| 4.2 | Conduct first **internal audit/self-assessment** against the new AI risk policy to test whether practice matches policy | GOVERN 1, 4 | Internal Audit / Compliance (or external advisor if no internal audit function exists) | **P2** |
+| 4.3 | Formalize **continuous monitoring of third-party AI risk** (annual/periodic vendor reassessment, monitoring for vendor AI feature changes) | GOVERN 6 | Security + Procurement | **P2** |
+| 4.4 | Evaluate need for **diversity/inclusion review of the Working Group and AI decision-making bodies** to ensure varied perspectives (technical, legal, ethical, customer-facing, and potentially affected-community input) | GOVERN 3, 5 | HR + Working Group | **P3** |
+| 4.5 | Benchmark toward a recognized standard (e.g., **ISO/IEC 42001** AI Management System) if AI is becoming core to the business, to move from "Managed" toward "Optimized" | GOVERN 1–6 (all) | Executive sponsor + Working Group | **P3** |
+| 4.6 | Incorporate **lessons learned / post-incident review process** specific to AI into existing incident management program | GOVERN 4 | Security/Risk function | **P2** |
+
+---
+
+## 5. Quick-Reference Priority Summary
+
+**Do first (this month), non-negotiable:**
+1. Stand up the cross-functional AI governance group
+2. Mandate legal review of AI deployments/contracts as an interim gate
+3. Draft even a first-pass risk tolerance statement
+4. Inventory existing AI tool/vendor usage
+
+**Do next (60 days):** formal AI risk policy, RACI/accountability structure, vendor risk questionnaire and contract clauses, baseline training.
+
+**Then operationalize (90 days):** pilot the process on real deployments, re-paper top vendor contracts, report to leadership, stand up stakeholder/escalation channels.
+
+**Then sustain (Q2):** recurring governance reporting, internal audit against policy, continuous vendor monitoring, consider ISO 42001 alignment.
+
+---
+
+## 6. Key Takeaway
+
+Your ethics statement is a legitimate starting asset — it signals leadership intent and gives the Working Group something to operationalize rather than starting from a blank page. But intent without policy, accountability, tolerance, and legal integration will not hold up to a regulator, an auditor, an enterprise customer's security questionnaire, or a real incident. The single highest-leverage move you can make in the next 30 days is standing up the cross-functional governance group and putting a legal review gate in front of all AI deployments — nearly every other gap identified above becomes easier to close once those two things exist.

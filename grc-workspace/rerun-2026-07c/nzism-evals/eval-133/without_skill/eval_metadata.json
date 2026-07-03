@@ -1,0 +1,13 @@
+{
+  "eval_id": 133,
+  "eval_name": "access-control-policy",
+  "run_type": "without_skill",
+  "prompt": "Draft an Access Control Policy for our agency aligned to the NZISM, citing the relevant NZISM sections/controls for identification, authentication, authorisation, and privileged access.",
+  "assertions": [
+    "Delivers an actual policy document (purpose, scope, roles, policy statements, compliance) — not just a discussion of access control",
+    "Covers the four requested domains with NZISM-consistent requirements: unique identification of users, authentication strength (MFA for privileged and remote access), least-privilege authorisation, and privileged access management (separate admin accounts, logging, periodic review)",
+    "Cites NZISM structure credibly: references NZISM chapters/sections and control identifiers (CIDs) for access control and uses MUST/SHOULD compliance language consistent with the manual's convention",
+    "Includes joiner-mover-leaver / access review lifecycle requirements (timely revocation, periodic recertification of access rights)",
+    "Includes policy governance: owner, review cycle, exceptions process requiring documented risk acceptance"
+  ]
+}

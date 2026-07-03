@@ -1,0 +1,33 @@
+{
+  "eval_id": 87,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Sets out the timeline correctly: confirm receipt within 10 business days; substantive response within 45 calendar days, extendable by a further 45 days with notice",
+      "passed": true,
+      "evidence": "'Within 10 business days, confirm receipt and describe your verification process to the consumer.' Summary table: 'Substantive response (disclose PI / execute or explain deletion) | 45 calendar days' and 'Extended deadline (if invoked) | +45 additional days (90 total)'."
+    },
+    {
+      "text": "Explains tiered identity verification (reasonable degree vs reasonably high degree depending on sensitivity; specific-pieces requests require higher assurance) and that unverifiable delete requests may be treated as opt-out where applicable",
+      "passed": true,
+      "evidence": "'verify to the \"reasonably high degree of certainty\" standard... Match at least 3 data points... plus... signed declaration... The lower \"reasonable degree of certainty\" standard — 2 data points — is sufficient only for categories-of-PI requests.' Also: 'The deletion request must be denied as a deletion, but you must instead treat it as an opt-out of sale/sharing where applicable (Regs §7022(f))'."
+    },
+    {
+      "text": "Right to know: covers categories AND specific pieces, sources, purposes, third parties — with the 12-month lookback default (and the CPRA extension beyond 12 months where feasible on request)",
+      "passed": true,
+      "evidence": "Lists specific pieces, categories, sources, purposes, third parties, categories sold/shared. 'Scope: default lookback is 12 months... For PI collected on or after January 1, 2022, the consumer may request information beyond that 12-month window, and you must provide it unless doing so is impossible or would require disproportionate effort.'"
+    },
+    {
+      "text": "Deletion: instructs flowing the deletion to service providers/contractors, and cites legitimate statutory exceptions (e.g., complete the transaction, security/fraud, legal compliance, internal uses compatible with expectations) rather than inventing exceptions",
+      "passed": true,
+      "evidence": "'propagate deletion instructions to all service providers and contractors who process that PI on your behalf.' Lists 7 legitimate exceptions matching the statute: complete transaction, security/fraud detection, debug/errors, free speech, legal compliance §1798.145(a), internal purposes compatible with context, research/journalism/statistical purposes."
+    },
+    {
+      "text": "Advises maintaining request records (24-month record-keeping) and responding even when denying (state the reason and the exception relied on)",
+      "passed": true,
+      "evidence": "'If your business processes PI of 10 million or more consumers/households, you must retain records of this request, your response, and related disclosures for 24 months.' Step 4 also requires confirming deletion 'or explain which exception(s) you invoked and why, for any PI retained.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

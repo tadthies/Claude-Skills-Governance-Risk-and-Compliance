@@ -1,0 +1,33 @@
+{
+  "eval_id": 132,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Does not give a flat yes/no: explains offshore hosting of NZ government data is a risk-based decision requiring a formal cloud risk assessment and agency-level approval (accreditation/risk acceptance by the responsible authority), not a prohibition",
+      "passed": true,
+      "evidence": "\"Short answer: yes, this is possible, but it is a risk-based decision, not a default option — offshore hosting of RESTRICTED data is not prohibited outright, but it requires a documented risk assessment and formal approval before go-live.\""
+    },
+    {
+      "text": "References the NZ Government cloud framework accurately: cloud-first policy with security requirements, the government cloud risk assessment process, and Protective Security Requirements (PSR) obligations alongside the NZISM",
+      "passed": true,
+      "evidence": "\"The cloud-first policy requires a documented cloud risk assessment for public cloud use, per the NZ Government Cloud Computing Risk & Resilience Guide. Protective Security Requirements (PSR) obligations apply alongside the NZISM — the NZISM sits under the PSR for information security specifically, so both frameworks' cloud/offshore requirements must be satisfied.\""
+    },
+    {
+      "text": "Addresses jurisdiction and sovereignty risk explicitly: offshore hosting means Australian jurisdiction over the data; assess legal access regimes, data residency commitments, and exit strategy",
+      "passed": true,
+      "evidence": "\"Hosting in AWS Sydney places your data under Australian legal jurisdiction... Foreign legal access regimes... Data residency and data-in-transit commitments... An exit strategy — data portability and secure deletion if the arrangement ends or needs to be unwound\""
+    },
+    {
+      "text": "Requires classification-appropriate controls for RESTRICTED: encryption at rest and in transit with agency-controlled keys where feasible, access controls limited to cleared personnel, logging/monitoring, and supplier assurance evidence (e.g., IRAP/independent assessments of the AWS region)",
+      "passed": true,
+      "evidence": "\"Encryption at rest and in transit, with agency-controlled keys where feasible... Access restricted to security-cleared personnel only... Comprehensive logging and monitoring available to the agency... Independent supplier assurance evidence — an IRAP assessment of the AWS Sydney region/services in scope, current ISO/IEC 27001 certification, and a SOC 2 Type II report\""
+    },
+    {
+      "text": "Sets out the approval chain: documented risk assessment, CISO/ITSM review, and formal risk acceptance by the accreditation authority/agency head before go-live, with the decision recorded",
+      "passed": true,
+      "evidence": "\"1. Documented risk assessment... 2. ITSM/CISO certification review of the assessment and proposed controls 3. Formal risk acceptance by the Accreditation Authority / agency head — recorded in the accreditation record — before go-live\""
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

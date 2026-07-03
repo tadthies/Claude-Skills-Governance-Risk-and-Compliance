@@ -1,0 +1,33 @@
+{
+  "eval_id": 88,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Concludes this is 'sharing' (disclosure for cross-context behavioral advertising, regardless of monetary consideration) and very likely also a 'sale' (valuable consideration is construed broadly) — cookie IDs and browsing data are personal information",
+      "passed": true,
+      "evidence": "'Sending website visitors' cookie IDs and browsing data to an ad tech platform to serve targeted ads is squarely \"sharing\" (cross-context behavioral advertising) regardless of whether money changes hands, and it may also be a \"sale\" if there's consideration involved.'"
+    },
+    {
+      "text": "Explains the CPRA-added definition: 'sharing' targets cross-context behavioral advertising specifically to close the ad-tech gap",
+      "passed": true,
+      "evidence": "'CPRA introduced \"sharing,\" defined as disclosing personal information to a third party for purposes of cross-context behavioral advertising... This category exists specifically to capture the scenario you describe: sending cookie IDs and browsing behavior to an ad tech platform.'"
+    },
+    {
+      "text": "Requires: 'Do Not Sell or Share' link (or alternative opt-out mechanism), honoring GPC signals automatically, and updating the privacy policy disclosures",
+      "passed": true,
+      "evidence": "'Post a clear and conspicuous \"Do Not Sell or Share My Personal Information\" link', 'Honor Global Privacy Control (GPC) signals as valid opt-out requests — this is now effectively mandatory', and 'Update Your Privacy Policy' section 1."
+    },
+    {
+      "text": "Explains the alternative structuring: the ad platform as a 'service provider'/'contractor' with restricted-use contract terms does not work for cross-context behavioral advertising — CPPA position is that CCBA disclosures cannot be service-provider activity",
+      "passed": false,
+      "evidence": "Response frames this as a fact-dependent question rather than a categorical rule: 'If the ad tech vendor were acting purely as your service provider... the transfer would NOT be a sale/share. However: Most third-party ad tech/ad exchange platforms... use the data for their own purposes... which disqualifies them from service provider status.' This implies a contract COULD in principle make the vendor a service provider if it restricted use narrowly enough — the opposite of the CPPA's categorical position (Regs §7050(c)) that cross-context behavioral advertising disclosures can never be service-provider/contractor activity regardless of contract terms. The specific regulatory rule is never stated; the response substitutes a practical/functional analysis instead."
+    },
+    {
+      "text": "Mentions consequences/enforcement risk (e.g., the Sephora enforcement precedent for ignoring GPC, penalties per violation) or the need for opt-out honoring within 15 business days",
+      "passed": false,
+      "evidence": "No mention of the 15-business-day opt-out honoring timeline, no mention of Sephora or any other enforcement action, and no mention of per-violation penalty amounts anywhere in the response. The closing disclaimer only vaguely references 'recent CPPA enforcement sweeps targeting undisclosed ad tech data sharing' without naming any case or penalty figure — too generic to satisfy the assertion."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

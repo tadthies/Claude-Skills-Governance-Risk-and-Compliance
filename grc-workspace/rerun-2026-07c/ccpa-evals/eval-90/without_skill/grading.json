@@ -1,0 +1,33 @@
+{
+  "eval_id": 90,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+      "passed": true,
+      "evidence": "'The statutory definition (§ 1798.140(ae)) includes... Precise geolocation — defined as geolocation identifying a natural person's location within a radius of 1,850 feet... Biometric information processed for the purpose of uniquely identifying a consumer... Health information — CPRA's SPI definition includes information about a consumer's health.' Exact §1798.140(ae) citation and 1,850-ft figure both correct."
+    },
+    {
+      "text": "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+      "passed": true,
+      "evidence": "'a. Right to Limit Use and Disclosure of SPI (§ 1798.121)... Consumers have an affirmative right to direct you to limit use of their SPI to only what's necessary to perform the services... Provide a clear and conspicuous link titled \"Limit the Use of My Sensitive Personal Information\"... if you only use SPI for permitted business purposes... you are not required to offer this link.'"
+    },
+    {
+      "text": "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+      "passed": true,
+      "evidence": "'for facial recognition authentication and precise geolocation used only to run core app features, you may genuinely fall within the exemption... The moment you use any of this data for advertising, analytics-driven profiling, or cross-context behavioral targeting, the exemption disappears and the opt-out/limit right must be offered.'"
+    },
+    {
+      "text": "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+      "passed": true,
+      "evidence": "'c. Notice at Collection (§ 1798.100(a), 11 CCR § 7012)... Identifies the categories of SPI... States the purposes... Discloses the length of time you intend to retain each category... States whether the SPI is sold or shared.'"
+    },
+    {
+      "text": "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable",
+      "passed": true,
+      "evidence": "'b. Purpose Limitation and Necessity/Proportionality... 11 CCR § 7002... d. Data Minimization and Retention... e. Risk Assessments (11 CCR §§ 7150–7157)... explicitly includes: Processing SPI... Facial recognition for authentication and combined geolocation + health + biometric processing... is a strong candidate for \"significant risk\" processing requiring a documented risk assessment.'"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

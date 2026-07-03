@@ -1,0 +1,79 @@
+# GOVERN Function Gap Assessment
+
+Based on what you've described — an AI ethics statement but no formal AI risk policy, no cross-functional AI team, no defined risk tolerance, and legal not involved in AI deployments — here is a rating across all six GOVERN categories, with gaps, evidence needed, a prioritized remediation roadmap, and pasteable templates to get started immediately.
+
+## Category Ratings
+
+| Category | Status | Gap Notes |
+|----------|--------|-----------|
+| **GOVERN 1** — Policies, processes, risk tolerance in place | 🔴 Not Started | An ethics statement is a values document, not a risk management policy — it doesn't define risk tolerance, ERM integration, or a review cadence. No formal AI Risk Management Policy exists (GOVERN 1.1, 1.2, 1.5). |
+| **GOVERN 2** — Accountability structures | 🔴 Not Started | No named AI Risk Owner or accountable senior official. No documented RACI for AI decisions. Without this, every other GOVERN gap will stay unresolved because no one owns closing it. |
+| **GOVERN 3** — Roles and responsibilities | 🔴 Not Started | No AI roles register; responsibilities across the AI lifecycle (design, development, deployment, monitoring) are undefined, including for any third-party/vendor AI. |
+| **GOVERN 4** — Cross-functional collaboration | 🔴 Not Started | No cross-functional AI team exists. Legal is explicitly not involved in deployments — this is the most urgent structural gap since it also blocks GOVERN 6. |
+| **GOVERN 5** — Risk tolerance communicated | 🔴 Not Started | No defined risk tolerance for AI means there is no basis for go/no-go deployment decisions (GOVERN 5.3) — deployments are likely proceeding without a consistent bar. |
+| **GOVERN 6** — Alignment with laws/regulations/principles | 🟡 Partial | The ethics statement suggests some principle-level alignment exists, but with legal excluded from deployments, there's no mechanism tracking regulatory requirements (GOVERN 6.1) or ensuring deployments are checked against them before launch. |
+
+**Overall: 5 of 6 categories Not Started, 1 Partial.** This is a Tier 1 ("Partial" / ad hoc) organization on the AI RMF's implementation-tier scale — reactive, not yet risk-informed.
+
+## Flag: Complete-on-Paper vs. Operationalized
+
+Your situation is actually the *inverse* of the common "policy exists but isn't operationalized" pattern — you have a values artifact (the ethics statement) with almost no operational infrastructure underneath it. That's arguably higher-risk than a stalled policy, because the ethics statement can create a false impression of governance maturity to leadership, auditors, or customers, while zero enforcement mechanism actually exists. Treat the ethics statement as an input to GOVERN 1.2, not evidence that GOVERN 1 is complete.
+
+## Prioritized Remediation Roadmap
+
+**Quick Wins (0–30 days) — unblock everything else:**
+1. Name an accountable AI Risk Owner (GOVERN 2.2) — even an interim owner while you build the permanent structure.
+2. Add legal/compliance to any AI deployment decision immediately, even informally, pending a formal committee (GOVERN 4.1, GOVERN 6.1).
+3. Draft an initial risk tolerance statement (GOVERN 1.3, GOVERN 5.1) — start simple; see template below.
+4. Start an AI system inventory — even a spreadsheet — covering every AI system in use or planned (GOVERN 1.6).
+
+**Medium Term (30–90 days) — build the structure:**
+5. Publish a formal AI Risk Management Policy, signed by senior leadership, superseding/incorporating the ethics statement (GOVERN 1.1, 1.2, 1.5).
+6. Stand up the AI governance committee / cross-functional working group with defined RACI, including legal, privacy, security, and the business (GOVERN 2.1, GOVERN 3.1, GOVERN 4.1).
+7. Build the AI roles register mapping lifecycle stages to responsible teams, including third-party/vendor AI responsibilities (GOVERN 3.2).
+8. Define an escalation path from teams to executives for AI risk concerns (GOVERN 4.3).
+
+**Long Term (90+ days) — operationalize and sustain:**
+9. Build a deployment checklist that validates every new AI system against the risk tolerance statement before go-live (GOVERN 5.2, 5.3) — this is what actually connects GOVERN to MAP/MEASURE/MANAGE in practice.
+10. Establish a regulatory register and a periodic (at least annual) policy review cadence (GOVERN 1.7, GOVERN 6.1, GOVERN 6.3).
+11. Once GOVERN 1–6 are at least 🟡, begin systematic MAP-function work on your existing deployed AI systems — GOVERN gaps of this scale mean any MAP/MEASURE/MANAGE work done today is happening without accountability structure behind it, and should be revisited once GOVERN is operational.
+
+## Mini-Templates
+
+### AI Risk Policy Outline (GOVERN 1.2)
+1. Purpose & scope
+2. Definitions & AI system inventory criteria
+3. Risk tolerance statement
+4. Roles & accountability (RACI)
+5. Lifecycle requirements (MAP/MEASURE/MANAGE gates per stage)
+6. Third-party AI requirements
+7. Incident response & escalation
+8. Review cadence
+
+### AI Governance Committee Charter — RACI Skeleton (GOVERN 2.1)
+- **Accountable** — Executive sponsor / Chief AI Officer (or interim AI Risk Owner)
+- **Responsible** — AI product owners, data science/engineering leads
+- **Consulted** — Legal, privacy, security (mandatory for every deployment decision going forward — this directly closes your stated legal-involvement gap); HR for any employment-related AI
+- **Informed** — Internal audit, board risk committee
+- Define quorum, meeting cadence (recommend monthly to start), and decision rights: who can approve a deployment, who can deny one, who can accept residual risk above tolerance
+
+### Risk Tolerance Statement Examples (GOVERN 1.3)
+- "We do not deploy AI that makes fully automated adverse decisions about individuals without human review."
+- "Disaggregated performance gaps above [X]% between demographic groups block deployment until remediated."
+- Adapt these two starting statements to your specific AI use cases and have legal/compliance and the executive sponsor sign off before publishing.
+
+### AI Inventory — Minimum Fields (GOVERN 1.6)
+- System name / owner
+- Purpose & users
+- Model type/provenance (built in-house / bought / fine-tuned third-party model)
+- Data categories used
+- Lifecycle stage (design / development / testing / deployment / monitoring / decommission)
+- Risk tier (once GOVERN 5 risk tolerance is defined)
+- Last TEVV (Test, Evaluation, Verification, Validation) date
+
+## Bottom Line
+
+Your single highest-leverage action is **naming an accountable owner and pulling legal into deployment decisions this week** — every other gap (policy, cross-functional team, risk tolerance) depends on someone being responsible for driving it, and right now nobody is. Everything in the Quick Wins column above can start in parallel without waiting for the formal policy to be finished.
+
+---
+*This is general compliance information, not legal advice. Consult qualified counsel to confirm applicable regulatory obligations before finalizing your AI risk policy and deployment decisions.*

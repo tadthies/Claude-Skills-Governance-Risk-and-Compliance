@@ -1,0 +1,113 @@
+# NIST AI Risk Management Framework: The Four Core Functions
+
+Great timing to start with the NIST AI RMF — it's the most widely referenced voluntary framework for AI risk management in the US, and it's designed to be flexible enough to layer onto whatever AI governance maturity you currently have (even "none yet"). Here's a breakdown of the four core functions, how they interact, and where to start.
+
+## Overview: What the AI RMF Is (and Isn't)
+
+The NIST AI Risk Management Framework (AI RMF 1.0), published in January 2023, is a voluntary, non-sector-specific framework to help organizations manage risks associated with AI systems throughout their lifecycle. It's paired with a companion **AI RMF Playbook** that gives concrete suggested actions for each function.
+
+Two things to keep in mind:
+- It is **not a checklist or certification scheme** — it's a structured way of thinking about and organizing AI risk management activities.
+- It's built around the idea that AI risks are **socio-technical**: they arise from the interaction of technical systems with people, organizations, and society, not just from model performance metrics.
+
+## The Four Core Functions
+
+### 1. GOVERN — The Foundation
+
+GOVERN is the cross-cutting function that establishes the organizational culture, structures, and accountability mechanisms for managing AI risk. It's meant to inform and be infused into the other three functions rather than operate as a discrete, one-time phase.
+
+Key elements include:
+- **Policies, processes, and procedures** for AI risk management, aligned to organizational risk tolerance
+- **Accountability structures** — clear roles and responsibilities for AI risk decisions (who can approve deployment, who owns residual risk, etc.)
+- **Culture** — incentivizing risk-aware practices among teams building/deploying AI, not just compliance teams
+- **Workforce diversity and skills** — ensuring teams have the expertise (technical, legal, ethical, domain) to identify risks
+- **Third-party/supply chain risk management** — governance over vendors, open-source models, data providers, and other external dependencies
+- **Mechanisms for monitoring effectiveness** of the risk management program itself, plus channels for feedback, contestability, and redress
+
+Think of GOVERN as the "operating system" the other three functions run on. Without it, MAP/MEASURE/MANAGE activities tend to be ad hoc, inconsistent across teams, and disconnected from actual accountability.
+
+### 2. MAP — Establishing Context
+
+MAP focuses on establishing the context to frame risks related to an AI system. You can't manage risk you haven't identified, and you can't identify risk without understanding what the system is, how it will be used, and who it affects.
+
+Key activities:
+- Identifying the **intended purpose, scope, and context of use** for the AI system
+- Understanding **who is impacted** — end users, third parties, non-users who may still be affected, and vulnerable populations
+- Categorizing the AI system (e.g., is it a general-purpose model, a high-stakes decision system, embedded in a larger product?)
+- Identifying **benefits and potential negative impacts**, including impacts that may not be obvious at design time (bias, safety, environmental, societal)
+- Mapping **dependencies** — data sources, third-party components, downstream systems
+- Determining **risk tolerance and go/no-go criteria** for that specific system before it's built or procured
+
+MAP is typically the first function applied to any *individual* AI system or use case, because its output (context, intended use, stakeholders, risk categorization) feeds directly into what you measure and how you manage.
+
+### 3. MEASURE — Analyzing and Tracking Risk
+
+MEASURE involves using quantitative, qualitative, or mixed-method tools and techniques to analyze, assess, benchmark, and monitor AI risk and related impacts identified in MAP.
+
+Key activities:
+- Selecting **appropriate metrics** for the risks identified (accuracy, robustness, fairness/bias metrics, explainability, privacy leakage, security vulnerabilities, etc.)
+- **Testing and evaluation**, including red-teaming, adversarial testing, and stress testing
+- Tracking metrics **over time**, not just at launch (model drift, performance degradation, emerging harms)
+- Assessing risks that are **difficult to quantify** (societal impact, psychological effects) using qualitative or mixed methods
+- Independent/third-party validation where feasible, to reduce self-assessment bias
+- Documenting measurement results in a way that's usable by decision-makers (not just data scientists)
+
+MEASURE is where GOVERN's policies and MAP's identified risks get turned into evidence — actual data about whether the system behaves as expected and within acceptable risk thresholds.
+
+### 4. MANAGE — Acting on Risk
+
+MANAGE involves allocating resources to identified risks (mapped and measured) on a regular basis, and implementing responses to maximize benefits and minimize negative impacts.
+
+Key activities:
+- **Prioritizing risks** based on MEASURE outputs and organizational risk tolerance from GOVERN
+- Deciding on treatment: **mitigate, transfer, avoid, or accept** each identified risk
+- Implementing **risk response plans** — technical controls, process changes, human oversight mechanisms, or in some cases not deploying the system at all
+- Planning for **incident response, recovery, and communication** when things go wrong
+- Ongoing **monitoring after deployment**, since AI risk isn't static (data drift, new attack vectors, changing use context)
+- Feeding lessons learned back into GOVERN (policy updates), MAP (context reassessment), and MEASURE (new metrics)
+
+## How the Four Functions Relate to Each Other
+
+This is the part people most often get wrong — it's not a strict linear sequence (Govern → Map → Measure → Manage → done). NIST explicitly designed it as **interconnected and iterative**:
+
+- **GOVERN is cross-cutting and continuous.** It surrounds and informs the other three at all times — it's not "step one" in a sequence so much as the context in which the sequence happens. Good governance should already be functioning before you MAP your first system, and it keeps operating throughout.
+- **MAP → MEASURE → MANAGE forms a cycle**, applied per AI system, per use case, and often per lifecycle stage (design, development, deployment, decommissioning). You typically MAP context first, then MEASURE against that context, then MANAGE based on what you measured.
+- **The cycle repeats.** AI systems change (retraining, new data, model updates), contexts change (new use cases, new regulations), and risks change (new attack techniques, emergent behavior at scale). So organizations continuously loop back through MAP → MEASURE → MANAGE — it's not "one and done" per system.
+- **Feedback flows backward too.** Something discovered in MANAGE (e.g., an incident) should trigger a re-MAP (did we understand the context correctly?) and update GOVERN (do our policies need to change?).
+
+A simple mental model:
+> **GOVERN** sets the rules of the game and runs continuously in the background → for each AI system, you **MAP** the context and risks → you **MEASURE** those risks with real evidence → you **MANAGE** by acting on that evidence → and the results feed back into all three other functions, on a recurring loop.
+
+## What to Implement First
+
+Given that you're just starting out, here's a pragmatic sequencing recommendation:
+
+### Start with a baseline of GOVERN — but don't over-invest before you have real systems to govern
+
+You need *some* minimum governance scaffolding before anything else is meaningful:
+1. **Designate accountability** — name an owner (individual or committee) responsible for AI risk oversight, even if it's a part-time responsibility initially.
+2. **Inventory what you already have** — most companies "deploying AI" already have shadow AI usage (SaaS tools with embedded AI, employees using LLMs, vendor products with AI features). You can't govern what you don't know exists.
+3. **Set a basic risk tolerance/policy statement** — what AI use cases are acceptable, which are prohibited or require review (e.g., anything touching PII, hiring, credit, health decisions), and what approval gates exist.
+4. **Establish an intake process** — a lightweight way for teams to flag "we want to build/buy/use an AI system" so it gets routed through MAP before deployment.
+
+This is deliberately minimal — you're not writing a 100-page AI governance manual on day one. You're creating just enough structure that the next AI system deployed doesn't happen completely outside of oversight.
+
+### Then apply MAP to your first (or highest-priority) AI use case
+
+Pick a real, concrete system — ideally either your **highest-risk** current initiative (something touching sensitive data or consequential decisions) or a **low-stakes pilot** to build organizational muscle. For that system, document: intended use, users/impacted parties, data sources, and a first-pass risk categorization.
+
+### Then build MEASURE and MANAGE capability around that first use case, and iterate
+
+Use that first system as a template/pilot to figure out what metrics matter, what your testing process looks like, and how risk decisions get made and documented. Then generalize those practices into repeatable playbooks for the next systems.
+
+### Practical tips for a first implementation
+
+- **Use the AI RMF Playbook** alongside the framework itself — it has concrete suggested actions mapped to each subcategory, which is far more actionable than the framework document alone.
+- **Don't try to do all four functions "completely" before moving forward.** Maturity builds iteratively — a thin slice through all four functions for one real use case teaches you more than a perfect GOVERN function with nothing to apply it to.
+- **Tie it to existing risk/compliance infrastructure** if you have it (enterprise risk management, information security, privacy programs) rather than building an entirely parallel AI governance structure from scratch.
+- **Right-size to risk.** NIST explicitly intends the framework to scale — a low-risk internal chatbot doesn't need the same rigor as a system influencing hiring or lending decisions. Use MAP's risk categorization to decide how much MEASURE/MANAGE rigor to apply.
+- **Consider the NIST Generative AI Profile (NIST AI 600-1)** as a companion resource if generative AI/LLMs are part of your deployment — it applies the same four functions with GenAI-specific risks and actions called out.
+
+## Bottom Line
+
+GOVERN is the continuous foundation; MAP, MEASURE, and MANAGE form an iterative cycle applied to each AI system and revisited over its lifecycle. For a company just starting out, implement a lean version of GOVERN first (ownership, inventory, basic policy, intake process) — just enough to create accountability — then immediately apply the full MAP → MEASURE → MANAGE cycle to one real, concrete AI use case rather than trying to perfect the framework in the abstract. Let that first pass teach you what your organization actually needs, then scale the practices to additional systems.

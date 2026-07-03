@@ -1,0 +1,33 @@
+{
+  "eval_id": 67,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Identifies the core risks: harmful bias/disparate impact on protected groups, validity/job-relatedness of rankings, transparency to candidates, privacy of applicant data, drift over time",
+      "passed": true,
+      "evidence": "Lists 'Disparate impact / hiring bias', 'Lack of explainability for adverse decisions', 'Validity/reliability gaps... may not have been validated for your specific role types', privacy is covered via 'Privacy-Enhanced' section on resumes/PII; drift is covered in MEASURE 3.1/3.2 'Post-deployment monitoring...hiring pools and resume patterns shift over time'."
+    },
+    {
+      "text": "Maps to the right trustworthiness characteristics: fair with harmful bias managed, valid & reliable, accountable & transparent, explainable & interpretable, privacy-enhanced",
+      "passed": true,
+      "evidence": "Explicitly names 'Fair with Harmful Bias Managed', 'Explainable & Interpretable', 'Accountable & Transparent' as primary, and 'Valid & Reliable' and 'Privacy-Enhanced' as secondary — all five present."
+    },
+    {
+      "text": "Prescribes concrete MEASURE-function actions: pre-deployment disparate-impact testing across demographic groups, validity testing against job performance criteria, documented TEVV with defined metrics, and ongoing monitoring cadence",
+      "passed": true,
+      "evidence": "MEASURE 2.2 'disparate impact ratio, demographic parity, and equalized odds across protected classes'; MEASURE 2.1 'Validate accuracy and ranking quality specifically on your applicant population'; MEASURE 1.1/1.3 defining metrics; MEASURE 3.1/3.2 'monitor disaggregated performance and disparate impact ratio on an ongoing basis'."
+    },
+    {
+      "text": "Brings in MAP context work (intended use, affected communities, failure impacts) and MANAGE treatments (human review of rankings, thresholds for suspension, feedback channels)",
+      "passed": true,
+      "evidence": "'MAP: Document intended use and bound it explicitly...identify affected populations' (MAP 1.2/1.4); 'MANAGE: For any subgroup below the 4/5ths threshold, define treatment — retrain...add/strengthen human review gate, or restrict use' (MANAGE 2.1); also MEASURE 2.5 'Confirm and test that a human reviewer meaningfully reviews rejections'."
+    },
+    {
+      "text": "Flags the regulatory overlay accurately (e.g., EEOC/Title VII exposure, NYC Local Law 144 bias audits, EU AI Act Annex III employment high-risk if EU-facing) without inventing requirements",
+      "passed": true,
+      "evidence": "'EEOC disparate impact liability, and in NYC, Local Law 144' and 'EU AI Act Annex III high-risk classification for employment AI if applicable' are both cited accurately, plus reiterated in Recommended Next Steps with a disclaimer to verify with counsel — no fabricated law names or IDs."
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

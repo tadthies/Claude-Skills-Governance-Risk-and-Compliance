@@ -1,0 +1,96 @@
+# CCPA/CPRA Applicability — E-Commerce Business
+
+## Short answer: Yes, you are almost certainly subject to CCPA/CPRA
+
+CCPA/CPRA applies to a for-profit business doing business in California if it meets **at least one** of three thresholds:
+
+| # | Threshold | Exact Figure | Your Status |
+|---|---|---|---|
+| 1 | Annual gross revenue | Exceeds **$25 million** in the preceding calendar year | **Met** — you report $30M |
+| 2 | Data volume | Annually buys, sells, receives, or shares PI of **100,000+** consumers or households | Not met on its own (80,000/year) |
+| 3 | Revenue from data monetization | **50%+** of annual revenue from selling/sharing PI | Unknown — assess separately |
+
+Because you clear the **$25M revenue threshold** on its own, you are a covered business regardless of the fact that your California customer volume (80,000/year) falls short of the 100,000-consumer/household threshold. Only one threshold needs to be met, not all three.
+
+**Caveat:** the 100,000 figure counts *consumers or households*, not just "customers" — if you also count website visitors, prospects, marketing contacts, and other California individuals whose PI you hold (not just completed purchasers), your volume may already be higher than 80,000. Even so, it doesn't change the outcome here since the revenue threshold alone triggers coverage.
+
+**Action item:** Revenue and data-volume thresholds must be reassessed **annually**, since revenue or customer counts can shift your applicability status year to year.
+
+---
+
+## Core Obligations Once Covered
+
+### 1. Consumer Rights You Must Support
+You must build intake and fulfillment processes for:
+
+| Right | What It Covers | Response Deadline |
+|---|---|---|
+| Right to Know | Access to specific PI, categories, sources, purposes, third parties | 45 days (+45-day extension) |
+| Right to Delete | Deletion of PI collected from the consumer, subject to exceptions | 45 days (+45-day extension) |
+| Right to Correct | Correction of inaccurate PI | 45 days (+45-day extension) |
+| Right to Opt-Out of Sale/Sharing | Stop sale/sharing of PI to third parties | Effectuate within 15 business days |
+| Right to Limit SPI Use | Limit use of sensitive personal information | 15 business days |
+| Right to Non-Discrimination | No penalty for exercising rights | N/A |
+| ADMT opt-out | If you use automated decision-making with legal/significant effects | Compliance deadline **January 1, 2027** |
+
+**Response timeline (applies to all request types):** confirm receipt within **10 business days** describing your verification process, then substantively respond within **45 calendar days** (extendable once by another 45 days with notice to the consumer). Opt-out and SPI-limit requests must be effectuated within **15 business days**.
+
+**Intake channels:** provide at least two methods to submit requests. As an online-only e-commerce business, an email address plus a web form typically satisfies this (a toll-free number is required if you also operate offline/have a physical presence, but online businesses may use email as one channel).
+
+**Identity verification (tiered):**
+- Standard requests (categories of PI, deletion of non-sensitive data): match at least 2 data points you already hold
+- Sensitive requests (specific pieces of PI, deletion of sensitive data): match at least 3 data points **plus** a signed declaration under penalty of perjury
+- Opt-out requests require **no** identity verification beyond reasonable fraud screening
+
+**Free of charge:** fulfill requests free twice per 12-month period; a reasonable fee may apply beyond that if manifestly unfounded or excessive.
+
+### 2. Privacy Notices
+- **Notice at Collection**: inform consumers at or before collection of categories collected, purposes, whether PI is sold/shared, and retention periods.
+- **Privacy Policy**: must disclose categories of PI collected in the last 12 months, purposes, categories of third parties PI is disclosed to, consumer rights and how to exercise them, contact information, and a "Do Not Sell or Share My Personal Information" link. **Update the policy annually.**
+
+### 3. Opt-Out Mechanisms
+- "Do Not Sell or Share My Personal Information" link on your homepage.
+- Honor **Global Privacy Control (GPC)** signals as a valid opt-out — this is CPPA-confirmed and mandatory, not optional.
+- "Limit the Use of My Sensitive Personal Information" link if you use SPI beyond the permitted purposes.
+- ADMT opt-out mechanism if applicable — implementation deadline **January 1, 2027**.
+
+### 4. Vendor / Downstream Classification
+Classify every entity that receives customer PI (payment processors, email/marketing platforms, analytics, ad tech, fulfillment/shipping vendors, CRM providers) as:
+- **Service Provider** — processes PI under contract restricting further use; not a sale
+- **Contractor** — similar restriction, must certify compliance
+- **Third Party** — anyone else; disclosure to them may constitute a "sale" or "sharing"
+
+Contracts with service providers/contractors must include purpose limitations, a prohibition on further sale/sharing, an obligation to support consumer requests, audit rights, and deletion obligations. **Reassess vendor classification whenever a contract renews or a new vendor is onboarded** — a mismatch between contract language and actual data flow (e.g., an ad tech vendor labeled "service provider" that actually uses your data for cross-context behavioral advertising) is a common gap-assessment finding and enforcement risk.
+
+### 5. Data Minimization, Purpose Limitation & Retention
+Collect only PI adequate, relevant, and necessary for disclosed purposes. Do not repurpose PI for undisclosed uses. Disclose and adhere to defined retention periods per category — do not retain PI longer than reasonably necessary.
+
+### 6. Cybersecurity Audits & Risk Assessments (effective January 1, 2026)
+If your processing of PI presents **significant risk** to consumers (which is plausible for an e-commerce business handling payment and account data at your revenue scale), you must conduct **annual cybersecurity audits** and document **risk assessments** before undertaking higher-risk processing. These regulations are now live. Assessments must be available to the CPPA upon request.
+
+### 7. Automated Decision-Making Technology (ADMT)
+If you use automated tools for things like fraud-risk scoring, personalized pricing, or credit/financing decisions that have legal or similarly significant effects, ADMT obligations apply: right to opt out, right to know about the processing, and right to human review. Regulations are effective January 1, 2026; the opt-out mechanism must be operational by **January 1, 2027**.
+
+---
+
+## Penalty Exposure If You Don't Comply
+
+- **Unintentional violations**: up to $2,500 per violation
+- **Intentional violations**: up to $7,500 per violation
+- **Violations involving minors' PI**: up to $7,500 per violation (always treated as intentional)
+- **30-day cure period** applies to AG enforcement actions
+- **Private right of action** exists only for data breaches caused by failure to implement reasonable security: $100–$750 per consumer per incident, class-action eligible
+
+Recent CPPA enforcement (2026) illustrates real exposure at businesses your size and larger: **Ford Motor Company was fined $375K** specifically for failing to process consumer deletion/access requests within the required timeframes — a direct warning for e-commerce operations with high request volumes. **The Disney enforcement ($2.75M, the largest CCPA fine to date)** involved inadequate opt-out mechanisms and third-party ad tech sharing failures — relevant if you run retargeting/ad tech on your site.
+
+---
+
+## Recommended Next Steps
+1. Confirm and document your threshold analysis (already met via revenue) and calendar an annual reassessment.
+2. Inventory all vendors receiving customer PI and classify each as service provider, contractor, or third party — update contracts as needed.
+3. Stand up (or audit) your rights-request intake and 45-day fulfillment workflow, including a 2-/3-data-point verification process.
+4. Publish/update your privacy policy and notice at collection; add the "Do Not Sell or Share" link and honor GPC.
+5. Determine whether your processing triggers the significant-risk cybersecurity audit and risk assessment requirements (live since January 1, 2026).
+6. If you use any automated decisioning with legal/significant effects, begin ADMT compliance work now given the January 1, 2027 deadline.
+
+*This is general compliance guidance, not legal advice. Confirm your specific threshold and risk determinations with qualified counsel or an accredited privacy assessor.*

@@ -1,0 +1,147 @@
+# CMMC Level 2 Gap Assessment
+
+**Date:** July 3, 2026
+**Scope:** CMMC 2.0 Level 2 (NIST SP 800-171 Rev. 2, 110 practices, 14 domains)
+**Basis:** Self-reported current state (no documentation reviewed)
+
+> Disclaimer: This is a preliminary, high-level gap assessment based solely on the summary you provided. It is not a substitute for a full NIST SP 800-171A control-by-control assessment, a C3PAO readiness review, or legal/contractual advice. Treat scores as directional estimates.
+
+---
+
+## 1. Current State Summary (as provided)
+
+| Area | Current State |
+|---|---|
+| MFA | Only on cloud email; not enforced elsewhere |
+| Encryption at rest | No FIPS-validated encryption for CUI |
+| SSP | Last updated 2022 (stale, ~4 years old) |
+| Incident Response | Plan exists, never tested |
+| Network architecture | Flat network; CUI on shared drives |
+| Security awareness training | Annual, in place |
+| Personnel screening | Background checks for all staff |
+
+---
+
+## 2. Practice Area Ratings
+
+Rating scale: **Met / Partially Met / Not Met**, with relative risk to SPRS score.
+
+| Domain | Key Practices Implicated | Rating | Risk |
+|---|---|---|---|
+| **Access Control (AC)** | AC.L2-3.1.1, 3.1.12 (remote access), 3.1.13 (crypto for remote access), 3.1.18/3.1.19 | Partially Met | High |
+| **Identification & Authentication (IA)** | IA.L2-3.5.3 (MFA for privileged/network access) | **Not Met** | Critical |
+| **System & Communications Protection (SC)** | SC.L2-3.13.11 (FIPS-validated crypto), 3.13.16 (CUI at rest), 3.13.1/3.13.5 (boundary protection, subnetting) | **Not Met** | Critical |
+| **System & Information Integrity (SI)** | SI.L2-3.14.x — indirectly affected by flat network/no segmentation | Partially Met | Medium |
+| **Incident Response (IR)** | IR.L2-3.6.1 (IR capability exists), 3.6.2 (report/track), 3.6.3 (**test IR capability**) | Partially Met | High |
+| **Risk Assessment (RA)** | RA.L2-3.11.1/3.11.2/3.11.3 — likely stale given SSP age | Partially Met | Medium |
+| **Security Assessment (CA)** | CA.L2-3.12.1 (assessments), 3.12.4 (**SSP currency**), 3.12.2 (POA&M) | **Not Met** | Critical |
+| **Awareness & Training (AT)** | AT.L2-3.2.1, 3.2.2 | Met | Low |
+| **Personnel Security (PS)** | PS.L2-3.9.1, 3.9.2 | Met | Low |
+| **Media Protection (MP)** | MP.L2-3.8.1, 3.8.3 (media sanitization), CUI on shared drives implicates 3.8.x | Partially Met | High |
+| **Physical Protection (PE)** | Not addressed in input — assume unassessed | Unknown | — |
+| **Configuration Management (CM)** | Flat network suggests weak segmentation/baseline config | Partially Met | Medium |
+| **Audit & Accountability (AU)** | Not addressed — assume unassessed | Unknown | — |
+| **Maintenance (MA)** | Not addressed — assume unassessed | Unknown | — |
+
+**Overall posture: Not Level 2 ready.** The combination of no FIPS-validated encryption for CUI at rest, MFA gaps, a flat network exposing CUI broadly, and a 4-year-stale SSP represents fundamental, high-weight gaps that a C3PAO assessor (or self-assessment under DoD scrutiny) would flag immediately.
+
+---
+
+## 3. Estimated SPRS Score Impact
+
+SPRS (Supplier Performance Risk System) scoring starts at **110** (perfect) and subtracts points per unimplemented practice (weighted 1, 3, or 5 points depending on practice criticality per DoD Assessment Methodology).
+
+Estimated deductions based on stated gaps:
+
+| Gap | Likely Practice(s) | Typical Weight | Est. Points Lost |
+|---|---|---|---|
+| MFA not enforced org-wide (only email) | 3.5.3, 3.1.12/3.1.13/3.1.18 | 5-point items | -10 to -15 |
+| No FIPS-validated encryption for CUI at rest | 3.13.11, 3.13.16 | 5-point items | -10 |
+| Flat network / CUI on shared drives (no segmentation, likely weak access enforcement) | 3.1.3, 3.13.1, 3.1.1/3.1.2 exposure | 1–5 point items | -5 to -8 |
+| IR plan untested | 3.6.3 | 1-point item | -1 |
+| SSP outdated (may cascade — if SSP doesn't reflect environment, many practices may be mis-scored or unverifiable) | 3.12.4 | 1-point item (but assessment risk is systemic) | -1 (direct), high indirect risk |
+
+**Rough estimated current SPRS score: 65–80 out of 110**, depending on how strictly the flat-network/shared-drive CUI exposure is scored across multiple AC/SC practices, and assuming the "Unknown" domains (PE, AU, MA) are reasonably implemented. This is a working estimate only — an actual score requires practice-by-practice scoring against the DoD Assessment Methodology.
+
+A score in this range is a **material contract risk**: many DoD solicitations now require a current, satisfactory SPRS score (often with a defined minimum, e.g., 88 or better, or an approved POA&M) prior to award. A score in the 65–80 range without a credible POA&M closure timeline would likely be disqualifying or trigger scrutiny.
+
+---
+
+## 4. Prioritized Remediation Plan
+
+### Tier 1 — Critical / 0–30 days (highest SPRS point recovery, highest risk reduction)
+
+1. **Update the System Security Plan (SSP)**
+   - Refresh to reflect actual current-state environment, boundary, and CUI flow.
+   - This is a prerequisite for accurate self-assessment and for building a valid POA&M.
+   - Practice: CA.L2-3.12.4. *Quick win, unlocks everything else.*
+
+2. **Stand up a Plan of Action & Milestones (POA&M)**
+   - Formally document every gap below with owner, milestone dates, and interim risk mitigations.
+   - Required to support SPRS submission and demonstrate a credible path to Level 2.
+
+3. **Extend MFA beyond cloud email**
+   - Enforce MFA for all privileged accounts, remote access (VPN/RDP), and any system processing/storing CUI.
+   - Practice: IA.L2-3.5.3, AC.L2-3.1.12/3.1.13. *High point value, typically achievable quickly with existing IdP (Entra ID/Okta/Duo).*
+
+### Tier 2 — High Priority / 30–90 days
+
+4. **Implement FIPS 140-2/140-3 validated encryption for CUI at rest**
+   - Identify all repositories (shared drives, servers, endpoints) storing CUI.
+   - Deploy validated encryption (e.g., BitLocker with FIPS mode, validated full-disk/volume encryption, or a CUI enclave solution).
+   - Practice: SC.L2-3.13.11, 3.13.16. *High point value — critical path item.*
+
+5. **Segment the network and relocate/restrict CUI**
+   - Move CUI off general shared drives into a dedicated, access-controlled enclave (or a GCC High/CMMC-ready cloud environment).
+   - Implement VLANs/subnetting to separate CUI systems from general IT.
+   - Apply least-privilege access controls (AC.L2-3.1.1–3.1.5) to the CUI enclave.
+   - Practice: SC.L2-3.13.1/3.13.5, AC.L2-3.1.3. *Largest architectural lift — consider a scoped CUI enclave to reduce overall assessment boundary and cost.*
+
+6. **Test the Incident Response Plan**
+   - Conduct a tabletop exercise within 90 days; document results, lessons learned, and update the plan.
+   - Practice: IR.L2-3.6.3. *Low cost, meaningful point recovery, low effort relative to impact.*
+
+### Tier 3 — Medium Priority / 90–180 days
+
+7. **Formal Risk Assessment refresh**
+   - Conduct/update a risk assessment aligned to the revised SSP and network changes (RA.L2-3.11.1–3.11.3).
+
+8. **Media protection controls**
+   - Define and implement media marking, sanitization, and CUI storage handling procedures for the relocated CUI enclave (MP.L2-3.8.x).
+
+9. **Configuration management baseline**
+   - Document baseline configs for CUI-boundary systems post-segmentation; implement change control (CM.L2-3.4.x).
+
+10. **Audit logging and review** (if not already covered — flagged as "Unknown" above)
+    - Confirm AU.L2 practices (log generation, review, retention) are in place for the CUI enclave.
+
+### Tier 4 — Maintain / Ongoing
+
+11. **Continue annual security awareness training**, but consider adding role-based training for privileged/IT users and CUI handlers (AT.L2-3.2.2).
+12. **Continue background screening program** — already compliant; maintain and document consistently (PS.L2-3.9.1/3.9.2).
+13. **Recurring SSP review cadence** — annual minimum, or upon any significant environment change, to prevent recurrence of staleness.
+
+---
+
+## 5. Recommended SPRS Trajectory
+
+| Milestone | Estimated Score | Notes |
+|---|---|---|
+| Current state | ~65–80 | Working estimate; multiple critical gaps |
+| After Tier 1 (SSP + POA&M + MFA) | ~85–90 | Documentation credibility restored; MFA gap closed |
+| After Tier 2 (encryption + segmentation + IR test) | ~100–105 | Core technical gaps closed |
+| After Tier 3 (RA, MP, CM, AU hardening) | 105–110 | Approaching full compliance |
+
+---
+
+## 6. Key Recommendations
+
+- **Do not delay the SSP/POA&M refresh** — it is both a quick win and the foundation for every other action; DoD contracts increasingly require a current SSP and an active POA&M with realistic milestones as a condition of award.
+- **Prioritize the CUI enclave/segmentation strategy** — isolating CUI onto a smaller, tightly controlled environment (rather than remediating the entire flat network) can significantly reduce both cost and assessment scope.
+- **Treat MFA and encryption as parallel, not sequential, workstreams** — both are high-point, high-risk items achievable within 30–90 days with typical enterprise tooling.
+- **Engage a C3PAO or CMMC Registered Practitioner (RP) early**, particularly before finalizing the POA&M, to validate scoring assumptions and avoid rework ahead of a formal Level 2 assessment.
+- **Budget for a FIPS-validated encryption solution and network segmentation** as the two largest cost/time drivers in this remediation plan.
+
+---
+
+*This assessment is based entirely on the summary provided and general knowledge of CMMC 2.0 / NIST SP 800-171 Rev. 2 requirements as of mid-2026. No source documents, tools, or external references were consulted in producing this analysis. Recommend validating against current DoD CMMC Program rules and the applicable contract clauses (DFARS 252.204-7012, -7019, -7020, -7021) before acting.*

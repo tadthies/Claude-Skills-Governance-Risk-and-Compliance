@@ -1,0 +1,87 @@
+# CMMC Level 2: A Plain-English Guide for Your First DoD Contract
+
+Congratulations on the contract. Here's what DFARS 252.204-7021 and CMMC Level 2 actually mean for a 45-person aerospace firm, and what to expect.
+
+## 1. What is CMMC, in plain English?
+
+CMMC (Cybersecurity Maturity Model Certification) is the Department of Defense's way of verifying — rather than just trusting on paper — that contractors who handle sensitive DoD information actually have adequate cybersecurity in place. It's built on top of requirements that have technically existed since 2017 (DFARS 252.204-7012), but CMMC adds independent verification instead of self-attestation alone.
+
+DFARS 252.204-7021 is the clause that says: "You must have a current CMMC certification at the level specified in the contract before award, and maintain it throughout performance."
+
+## 2. Why does this apply to you?
+
+CMMC Level 2 is required when your contract involves **Controlled Unclassified Information (CUI)** — things like technical drawings, specifications, export-controlled data, or other DoD-related sensitive-but-unclassified information. If your contract requires Level 2, it's because somewhere in the work you'll be creating, storing, or transmitting CUI (this is very common in aerospace/defense engineering — drawings, technical data packages, test data, etc. are frequently CUI).
+
+There are three CMMC levels:
+- **Level 1** (Foundational) — basic safeguarding of Federal Contract Information (FCI) only, 17 practices, self-assessment.
+- **Level 2** (Advanced) — this is you. Protects CUI. Based on **NIST SP 800-171 Rev 2**, 110 security requirements across 14 domains (Access Control, Incident Response, System & Communications Protection, etc.). Most Level 2 contracts require third-party certification.
+- **Level 3** (Expert) — for the highest-risk programs, adds requirements on top of Level 2, assessed by the government (DIBCAC).
+
+## 3. What does Level 2 actually require?
+
+You need to implement all **110 controls in NIST SP 800-171 Rev 2**. In practical terms, this means things like:
+
+- **Access control** — unique logins, least privilege, no shared accounts, multi-factor authentication for remote and privileged access
+- **Asset/data inventory** — knowing exactly where CUI lives (which servers, laptops, email, file shares, CAD/PLM systems)
+- **Encryption** — CUI encrypted at rest and in transit (FIPS-validated cryptography is expected)
+- **Audit logging** — logging and reviewing access to systems that touch CUI
+- **Incident response** — a documented plan, and the ability to detect and report incidents (72-hour DoD reporting requirement for actual breaches under 7012)
+- **Configuration management** — hardened baselines, change control
+- **Physical security** for facilities/areas where CUI is handled
+- **Personnel security** — screening, training, offboarding
+- **Vendor/subcontractor flow-down** — if you use IT MSPs, cloud tools, or subcontractors that touch CUI, they need to meet applicable requirements too (this trips up a lot of small firms — e.g., using consumer Dropbox, personal email, or an IT provider that isn't FedRAMP Moderate equivalent for cloud CUI storage)
+
+You'll also need two required documents:
+- **System Security Plan (SSP)** — describes your environment and how each of the 110 controls is met
+- **Plan of Action & Milestones (POA&M)** — for any controls not yet fully met, with dates to close the gaps (note: as of CMMC 2.0 rules, you must score at least 88 out of 110 points on the SPRS scoring methodology to even use a POA&M, and certain controls can't be on a POA&M at all — they must be fully implemented)
+
+## 4. Self-assessment vs. third-party certification
+
+This is critical to check in your actual contract: some Level 2 requirements only require **annual self-assessment** with an executive affirmation, but most CUI-handling contracts require a **Certified Third-Party Assessment Organization (C3PAO)** assessment — an independent audit, valid for 3 years. Look at the specific contract clause or ask your contracting officer which applies. Given you're brand-new to a first DoD prime or sub relationship, assume third-party certification unless told otherwise.
+
+## 5. What you need to do — a realistic roadmap
+
+**Step 1: Scope it (2-4 weeks)**
+Figure out exactly where CUI enters, flows through, and is stored in your business. Aerospace engineering firms often can shrink their compliance burden significantly by isolating CUI into a well-defined "enclave" (e.g., a segmented network, a dedicated GovCloud tenant, or a small set of locked-down workstations) rather than trying to bring your entire 45-person network into scope. This single decision has the biggest impact on cost and timeline.
+
+**Step 2: Gap assessment (4-6 weeks)**
+Hire a knowledgeable consultant or Registered Practitioner Organization (RPO) to assess your current state against the 110 controls and produce a gap list. Don't skip this — going in blind is the #1 cause of delays and failed assessments.
+
+**Step 3: Remediation (3-9 months, the biggest variable)**
+Close the gaps. For a 45-person firm starting from near-zero maturity, expect to need to:
+- Stand up or reconfigure IT infrastructure (many small firms move CUI workloads to a GCC High / DoD-compliant Microsoft 365 or similar environment)
+- Implement MFA, endpoint detection, log management/SIEM, encryption
+- Write policies and procedures (roughly 20-30 policy documents covering the 14 domains)
+- Vet and formalize agreements with any managed service provider or cloud vendor touching CUI
+- Train employees
+This is usually where the timeline and budget surprises happen — small firms with light IT staff often need 6-9 months here, not the 3 months vendors sometimes advertise.
+
+**Step 4: Readiness / mock assessment (2-4 weeks)**
+Have your consultant do a pre-assessment against the actual C3PAO assessment criteria (CA-SR) to catch anything missed.
+
+**Step 5: C3PAO Certification Assessment (2-6 weeks, including scheduling)**
+An accredited C3PAO conducts the formal assessment. There aren't yet a huge number of accredited C3PAOs, so scheduling lead time can itself take 1-3 months — start looking early. If you pass, certification is valid for 3 years, with annual affirmations.
+
+**Total realistic timeline: 9-18 months from a standing start**, with 12 months being a reasonable planning figure for a small firm with no prior compliance infrastructure. Firms that already run modern, well-managed IT (MFA everywhere, managed endpoints, cloud-based file storage with access controls) can move faster — sometimes 6-9 months.
+
+## 6. Rough cost expectations
+
+For a company your size, budget roughly:
+- Gap assessment/consulting: $15,000-$40,000
+- Remediation (tooling, cloud migration, MSP changes, policy writing): $50,000-$250,000+ depending on your starting IT maturity (this is the widest range — a firm already using GCC High and modern security tooling will be at the low end)
+- C3PAO certification assessment: $20,000-$50,000
+- Ongoing annual costs (affirmations, monitoring, MSP/cloud licensing premiums): $20,000-$60,000/year
+
+## 7. Immediate next steps this week
+
+1. **Read the actual contract clause and any SOW/CDRLs** to confirm whether CUI is really in scope and whether self-assessment or C3PAO certification is required.
+2. **Ask your contracting officer or prime** (if you're a subcontractor) what level and assessment type is actually required and by when — contracts often have a compliance deadline written in.
+3. **Do not wait** — talk to a CMMC-knowledgeable consultant or RPO now to get a gap assessment scheduled. Timelines are long enough that delay is the biggest risk to your contract performance.
+4. **Isolate CUI now if possible** — even before formal remediation, stop CUI from being emailed via personal accounts or stored in consumer cloud tools. This reduces your immediate legal/contractual risk.
+5. **Check your DFARS 7012 compliance today** — this is a separate, already-in-force requirement (SSP + POA&M, incident reporting) that you're likely required to meet right now regardless of CMMC certification timing, and it forms the foundation for CMMC Level 2 anyway.
+
+## Bottom line
+
+CMMC Level 2 means the DoD wants proof — not a promise — that you can protect sensitive technical and program data to a defined standard (NIST 800-171's 110 controls), verified either by you (self-assessment) or by an independent auditor (C3PAO), depending on your contract. For a 45-person firm starting from scratch, plan for roughly a year and a budget in the low-to-mid six figures, and start now, because scheduling and remediation both take longer than most first-timers expect.
+
+*This is general guidance, not legal advice — confirm the specific assessment type and any deadlines directly against your contract language and with your contracting officer.*

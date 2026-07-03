@@ -1,0 +1,83 @@
+# Can You Still Get Certified with 8 NOT MET Practices?
+
+**Short answer: Possibly yes — but it depends entirely on *which* 8 practices failed, your assessment level (CMMC Level 2 self-assessment vs. C3PAO-led certification assessment), and your overall SPRS-equivalent score.** CMMC allows for a limited, conditional path to certification via POA&M even when some practices are not fully implemented, but the allowance is narrow and time-boxed.
+
+---
+
+## 1. Conditional Certification — What It Is
+
+Under the CMMC Level 2 (C3PAO) certification assessment methodology, an OSC (Organization Seeking Certification) does not have to achieve a perfect "MET" on all 110 practices at the moment of assessment to receive a certification. Instead, DoD/Cyber-AB built in a **Plan of Action and Milestones (POA&M) closeout mechanism** that allows an organization to receive a **Conditional Level 2 (C3PAO) Certification** if:
+
+- The organization's assessment score meets the minimum threshold (see below), **and**
+- All NOT MET practices are practices that are **POA&M-eligible** (not on the excluded list), **and**
+- The organization submits a POA&M with defined remediation actions and a closure date, **and**
+- The POA&M is closed out within the required timeline (generally 180 days).
+
+If these conditions are met, the C3PAO issues a **Conditional Certification**, which converts to a **Final (full) Certification** once the C3PAO verifies (via a closeout assessment) that all POA&M items have been remediated and are now MET.
+
+If the conditions are **not** met — e.g., too many points lost, or a "cannot be POA&M'd" practice is NOT MET — the organization **cannot** receive even a conditional certification and must remediate first, then undergo a new (or delta) assessment.
+
+---
+
+## 2. Which Practices Are POA&M-Eligible
+
+This is the most important gate. **Not all 110 CMMC Level 2 practices can be POA&M'd.** The rule (aligned with the DoD Instruction 5000.90-style guidance and the CMMC Program rule, 32 CFR Part 170) is:
+
+### NOT POA&M-eligible (must be MET at time of assessment — no exceptions):
+A specific subset of "high-value/foundational" security requirements are **excluded from POA&M treatment** and must be fully implemented before any certification (conditional or final) can be issued. These are generally described as practices carrying the **highest point value in the DoD Assessment Methodology (5-point and 3-point weighted controls)** — essentially the practices considered so foundational that partial implementation is unacceptable. Historically-referenced examples of this "cannot POA&M" category include controls like:
+
+- Multi-factor authentication requirements (e.g., MFA for privileged/remote access — AC.L2-3.5.3 family)
+- FIPS-validated cryptography (SC.L2-3.13.11)
+- Basic access control / limiting system access to authorized users (AC.L2-3.1.1, AC.L2-3.1.2)
+- Boundary protection fundamentals (SC.L2-3.13.1)
+
+*(Exact list is defined by the DoD's assessment scoring methodology — the "cannot be on a POA&M" list is tied to the highest-weighted 5-point items.)*
+
+### POA&M-eligible (can be deferred and remediated post-assessment):
+Lower-weighted practices (typically the 1-point items in the DoD scoring methodology) generally **can** be POA&M'd, subject to the overall score floor described below. These tend to be more procedural/documentation-oriented controls (e.g., certain audit log review cadences, some awareness/training documentation nuances, minor configuration management documentation gaps) rather than controls that directly prevent unauthorized access or data exfiltration.
+
+**Practical takeaway for your situation:** You need to map each of your 8 NOT MET findings against the DoD scoring methodology point values and the "ineligible for POA&M" list. If any of the 8 are in the non-eligible category (MFA, FIPS crypto, core access control), conditional certification is off the table until those specific items are remediated — full stop, no POA&M possible for those.
+
+---
+
+## 3. Minimum Score Requirement
+
+CMMC Level 2 certification (whether full or conditional) uses the **DoD Assessment Methodology scoring model** (the same 110-control-based scoring approach used for SPRS self-assessment scores), where:
+
+- Maximum possible score is **110** (each practice is worth 1, 3, or 5 points depending on its security impact weight; points are subtracted for NOT MET items).
+- To be eligible for a **Conditional Certification**, the organization's score generally must be **no lower than 88 out of 110** (this is the commonly cited threshold — it mirrors the "88 points, with a documented POA&M and closure plan within 180 days" standard carried over from the interim DoD guidance).
+- Additionally, **no more than a limited number of practices** may be on the POA&M at once — commonly understood as **not exceeding roughly 20 points' worth of deficiencies**, and again, none of them can come from the non-eligible/high-weight list.
+
+With **8 NOT MET practices**, whether you clear the 88-point floor depends on the point-weight of each failed control:
+- If all 8 are 1-point practices: that's -8, landing you at 102/110 — likely still eligible.
+- If several are 5-point practices (e.g., 3 x 5-point + 5 x 1-point = -20): that's 90/110 — borderline, may or may not clear depending on exact mix.
+- If multiple 5-point "foundational" controls are involved, you risk both failing the score floor **and** hitting the non-eligible-for-POA&M list simultaneously.
+
+**Action item:** Have your C3PAO (or your compliance lead) run the actual DoD scoring calculation against your 8 specific findings. The raw count of "8 practices" tells us little without knowing their point weights.
+
+---
+
+## 4. POA&M Closeout Timeline
+
+If you qualify for Conditional Certification:
+
+- **Clock starts** at the date the C3PAO issues the conditional certification determination.
+- **180 calendar days** is the standard maximum window to remediate all POA&M'd practices and achieve full MET status.
+- Before the 180-day window closes, you must undergo a **closeout assessment** (typically a delta/limited-scope assessment focused only on the previously NOT MET practices, not a full re-assessment) conducted by the same C3PAO.
+- If remediation is verified and all practices move to MET, the C3PAO issues the **Final Certification**, and the certification's 3-year validity period is generally counted from the original assessment date (this can vary — confirm with your C3PAO/Cyber-AB guidance in effect at assessment time).
+- If the 180 days lapse **without** closeout, the conditional certification **expires** and is **not** converted to a final certification. The organization would need to restart the assessment process (this can jeopardize existing contract performance if CMMC Level 2 certification is a contractual requirement, so treat the 180-day clock as a hard compliance deadline, not a soft target).
+
+---
+
+## Recommended Next Steps
+
+1. **Get the point-weighted breakdown** of your 8 NOT MET findings from the C3PAO's assessment report — don't rely on "8 practices" as a flat count.
+2. **Cross-check each finding** against the DoD's non-eligible-for-POA&M list (high-weight/foundational controls like MFA, FIPS crypto, core access control).
+3. **Calculate your actual score** (110 minus deducted points) and compare against the 88-point conditional certification floor.
+4. **If eligible**, work with your C3PAO to formally document the POA&M — each item needs a remediation action, resource owner, and firm closure date within the 180-day window.
+5. **If not eligible** (score too low or an ineligible practice is NOT MET), prioritize remediating the disqualifying items first, then request a new assessment date.
+6. **Start remediation immediately** regardless of eligibility determination — the 180-day clock is unforgiving, and closeout assessments still take scheduling lead time with your C3PAO.
+
+---
+
+*Note: This response is based on general CMMC Level 2 / C3PAO certification program knowledge as of my training. CMMC program rules (32 CFR Part 170) and Cyber-AB/DoD scoring guidance have been actively evolving — before making certification decisions, verify current thresholds, the exact POA&M-ineligible practice list, and closeout timelines directly against the current version of the CMMC Assessment Process (CAP) guide and 32 CFR Part 170, or confirm specifics with your C3PAO.*

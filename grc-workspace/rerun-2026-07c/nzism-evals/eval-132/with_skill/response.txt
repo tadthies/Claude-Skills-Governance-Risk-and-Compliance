@@ -1,0 +1,47 @@
+# Hosting RESTRICTED Data in AWS Sydney (Offshore) — NZISM Requirements
+
+The NZISM is issued by the **GCSB (National Cyber Security Centre — NCSC NZ)** as the New Zealand Government's mandatory information security manual. Its controls carry **MUST/SHOULD compliance requirements tied to the system's classification level**; for RESTRICTED data, essential (MUST) controls cannot be waived without formal risk acceptance by the Accreditation Authority.
+
+**Short answer: yes, this is possible, but it is a risk-based decision, not a default option — offshore hosting of RESTRICTED data is not prohibited outright, but it requires a documented risk assessment and formal approval before go-live.** It is not something you can do simply because AWS Sydney is a reputable, capable region.
+
+## The Required Pathway
+
+### 1. Classify the data
+Confirm the data is RESTRICTED (not higher) — this determines the applicable NZISM controls and the depth of assessment required. If any data processed by the system rises above RESTRICTED, offshore hosting becomes substantially harder to justify (Confidential+ generally requires Accrediting Authority approval for any offshore processing, per NZISM Chapter 13 supplier controls).
+
+### 2. Run the NZ Government cloud risk assessment
+The cloud-first policy requires a documented cloud risk assessment for public cloud use, per the **NZ Government Cloud Computing Risk & Resilience Guide**. **Protective Security Requirements (PSR)** obligations apply alongside the NZISM — the NZISM sits under the PSR for information security specifically, so both frameworks' cloud/offshore requirements must be satisfied.
+
+### 3. Assess jurisdiction and sovereignty
+Hosting in AWS Sydney places your data under **Australian legal jurisdiction**, not just AWS's operational control. You need to analyse:
+- Foreign legal access regimes that could compel Amazon Web Services (or Australian authorities) to access or produce the data
+- Data residency and data-in-transit commitments from AWS for the Sydney region
+- Contractual protections limiting AWS's/subcontractors' ability to move or access data outside the agreed jurisdiction
+- An exit strategy — data portability and secure deletion if the arrangement ends or needs to be unwound
+
+### 4. Impose classification-appropriate controls
+For RESTRICTED data hosted offshore, at minimum:
+- **Encryption at rest and in transit**, with **agency-controlled keys where feasible** (evaluate AWS KMS with customer-managed keys, or an agency-held HSM-backed key model)
+- **Access restricted to security-cleared personnel** only
+- **Comprehensive logging and monitoring available to the agency** — not just to AWS; the agency must retain visibility (CloudTrail, VPC flow logs, config change logs exported to agency-controlled tooling)
+- **Independent supplier assurance evidence** — an IRAP assessment of the AWS Sydney region/services in scope, current ISO/IEC 27001 certification, and a SOC 2 Type II report
+
+### 5. Follow the approval chain and record it
+This is not a decision an IT team can make alone:
+1. Documented risk assessment (cloud risk assessment + jurisdiction/sovereignty analysis)
+2. **ITSM/CISO certification review** of the assessment and proposed controls
+3. **Formal risk acceptance by the Accreditation Authority / agency head** — recorded in the accreditation record — before go-live
+
+Skipping the formal accreditation-record step is a common failure mode: agencies sometimes treat a positive risk assessment as sufficient, but the NZISM requires the Accreditation Authority to explicitly accept the residual risk of offshore hosting.
+
+## Relevant Control References
+Cloud computing controls sit in **NZISM Chapter 22 (Enterprise Systems Security), Section 22.1 Cloud Computing**, including control **22.1.23.C.01 (System availability)**. For topics beyond this verified control (e.g., specific offshore data-residency or key-management control numbers), confirm the current control ID against the online manual (nzism.gcsb.govt.nz) — the NZISM is updated roughly twice a year.
+
+## Practical Recommendation
+Before committing to AWS Sydney:
+- Confirm whether an NZ-hosted alternative exists that would avoid the jurisdictional analysis entirely (data residency in NZ is generally preferred where available)
+- If Sydney is the only viable option (e.g., service/feature parity, cost, or NZ region unavailable for the required AWS service), ensure the IRAP assessment, encryption/key-management model, and logging access are locked into the contract *before* the Accreditation Authority sign-off, not treated as follow-up items after go-live
+- Document the decision, including why NZ hosting was not selected, in the accreditation record — this is what an auditor or the Accreditation Authority's successor will look for later
+
+---
+*This is general compliance guidance, not legal advice. Confirm current NZISM control numbering, PSR requirements, and your agency's specific Accreditation Authority process against official sources (nzism.gcsb.govt.nz, protectivesecurity.govt.nz) before proceeding.*

@@ -1,0 +1,33 @@
+{
+  "eval_id": 68,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Delivers an actual register template with sensible columns (risk ID/description, lifecycle stage, AI RMF function/category mapping, trustworthiness characteristic, likelihood/impact, treatment, owner, status)",
+      "passed": false,
+      "evidence": "Table includes Risk ID, Risk Description, AI RMF Mapping, Likelihood, Impact, Risk Rating, Treatment Option, Treatment Actions/Owner — this covers most columns well, but there is no 'Lifecycle Stage' column at all (a required column per the assertion) and no explicit trustworthiness-characteristic column (characteristics are only implied via risk description, not a labeled column) and no 'Status' column for tracking. Two of the requested columns (lifecycle stage, status) are entirely absent, and trustworthiness characteristic is not a distinct column either, which is a meaningful structural gap against the specific columns named in the assertion."
+    },
+    {
+      "text": "Populates credit-scoring-specific risks: disparate impact/fair lending, model validity/population drift, explainability of adverse-action reasons, data quality/privacy, third-party model dependencies, security/adversarial manipulation",
+      "passed": true,
+      "evidence": "FL-01/FL-02 disparate impact & proxy discrimination, MD-01 model drift, EX-01 adverse action explainability, DQ-01 data quality + PR-01 privacy, TP-01 third-party/vendor risk, CY-01 security/adversarial manipulation — all six specific risk categories are explicitly populated with credit-scoring-specific detail."
+    },
+    {
+      "text": "Maps risks to plausible AI RMF functions/categories (e.g., bias testing under MEASURE 2.x, context/impact identification under MAP, treatment decisions under MANAGE 1.x/2.x, oversight under GOVERN) without inventing nonexistent category IDs",
+      "passed": false,
+      "evidence": "Response uses subcategory numbers that do not exist in the actual NIST AI RMF 1.0 taxonomy, e.g., 'MEASURE 2.11' (fairness & bias testing), 'MEASURE 2.9' (explainability/interpretability), 'MEASURE 2.7' (security testing), 'MAP 2.3' (context of use — repeated many times), 'GOVERN 3.2' (human-AI configuration), 'MANAGE 4.1/4.2/4.3'. The real AI RMF 1.0 has only 4 MEASURE categories with a limited number of subcategories each (not extending to 2.9/2.11), and GOVERN category 3 is about workforce diversity, not 'human-AI configuration' (that is actually GOVERN 3.2 in the real framework, coincidentally close, but MAP 2.3 and MEASURE 2.9/2.11 are fabricated well beyond the actual subcategory ranges). This directly violates the 'without inventing nonexistent category IDs' clause of the assertion."
+    },
+    {
+      "text": "Treatment options are concrete and financial-services-appropriate: fairness constraints/reweighting, challenger models, human review bands, adverse action reason-code validation, model risk management (SR 11-7-style) integration",
+      "passed": true,
+      "evidence": "'champion-challenger framework', 'SHAP/LIME or reason-code engine validated against model logic', 'Full model risk management lifecycle per SR 11-7: independent validation, effective challenge', human-in-the-loop checkpoints (HO-01) — all present and concrete."
+    },
+    {
+      "text": "Flags applicable regulatory context accurately: ECOA/Reg B adverse action notices, FCRA, fair lending exams — treatments tied to those obligations",
+      "passed": true,
+      "evidence": "'ECOA/Reg B (disparate impact liability)... FCRA permissible purpose requirements' explicitly named in PR-01 and EX-01 ('required under ECOA/Reg B and FCRA'); SR 11-7/OCC 2011-12 examination standards referenced throughout with RC-01 dedicated to supervisory model risk management expectations, functioning as the fair-lending-exam-adjacent regulatory overlay."
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}

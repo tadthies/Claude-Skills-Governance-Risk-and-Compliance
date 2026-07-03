@@ -1,0 +1,33 @@
+{
+  "eval_id": 87,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Sets out the timeline correctly: confirm receipt within 10 business days; substantive response within 45 calendar days, extendable by a further 45 days with notice",
+      "passed": true,
+      "evidence": "'Confirm receipt within 10 business days, describing your verification process and expected response timeline' and 'You have 45 calendar days from receipt to respond substantively (extendable once by another 45 days if reasonably necessary, with notice to the consumer explaining the delay).'"
+    },
+    {
+      "text": "Explains tiered identity verification (reasonable degree vs reasonably high degree depending on sensitivity; specific-pieces requests require higher assurance) and that unverifiable delete requests may be treated as opt-out where applicable",
+      "passed": true,
+      "evidence": "'For a Right to Know (specific pieces of data) request: Requires a higher standard of verification... For a Right to Delete request: Also requires reasonable verification, though if you can't verify the requestor to the standard needed for deletion, you can treat it as a request to opt-out of sale/sharing instead (a lower bar)' — covers tiering and the opt-out fallback, though less precisely tied to specific data-point counts than a fully rigorous answer."
+    },
+    {
+      "text": "Right to know: covers categories AND specific pieces, sources, purposes, third parties — with the 12-month lookback default (and the CPRA extension beyond 12 months where feasible on request)",
+      "passed": false,
+      "evidence": "States 'for the preceding 12 months (or since collection if you offer more)' — this is vague and does not state the CPRA-specific rule (PI collected on/after Jan 1, 2022 must be disclosed beyond 12 months on request unless impossible/disproportionate effort). 'Or since collection if you offer more' reads as an optional business choice, not the statutory extension right consumers can invoke — missing the specific formulation required by the assertion."
+    },
+    {
+      "text": "Deletion: instructs flowing the deletion to service providers/contractors, and cites legitimate statutory exceptions (e.g., complete the transaction, security/fraud, legal compliance, internal uses compatible with expectations) rather than inventing exceptions",
+      "passed": true,
+      "evidence": "'direct service providers/contractors to delete it as well' and lists valid statutory exceptions: complete transaction, detect security incidents/fraud, comply with legal obligation, internal uses reasonably aligned with consumer expectations — all legitimate, none invented."
+    },
+    {
+      "text": "Advises maintaining request records (24-month record-keeping) and responding even when denying (state the reason and the exception relied on)",
+      "passed": true,
+      "evidence": "'Retain records of the request, verification steps, and actions taken for at least 24 months' and 'If you denied all or part of either request, explain why (e.g., failed verification, applicable exception) and inform them of their right to appeal.'"
+    }
+  ],
+  "total": 5,
+  "passed": 4
+}

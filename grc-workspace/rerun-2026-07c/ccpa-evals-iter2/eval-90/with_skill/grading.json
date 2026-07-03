@@ -1,0 +1,33 @@
+{
+  "eval_id": 90,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Classifies all three as Sensitive Personal Information under §1798.140(ae): precise geolocation (within ~1,850 ft radius), health data, and biometric information processed for identification purposes",
+      "passed": true,
+      "evidence": "'Precise geolocation — locating a consumer within a radius of 1,850 feet (§1798.140(w))', 'Health/medical information — your wearable-integration health metrics fall squarely here', 'Biometric data used to uniquely identify a person — your facial recognition authentication is a textbook example.' All three correctly classified as SPI with the 1,850-ft figure stated."
+    },
+    {
+      "text": "Explains the Right to Limit (§1798.121): consumers may limit SPI use to what is necessary to perform the services — requiring a 'Limit the Use of My Sensitive Personal Information' link unless the business only uses SPI within the permitted purposes",
+      "passed": true,
+      "evidence": "'Right to Limit Use of Sensitive Personal Information (§1798.121)... you must offer consumers the \"Limit the Use of My Sensitive Personal Information\" link... The right to limit does NOT apply if your use of the SPI falls within these permitted purposes' followed by the permitted-purposes list."
+    },
+    {
+      "text": "Correctly notes the authentication carve-out analysis: SPI used solely for purposes necessary to provide the requested service (e.g., biometric authentication the user enrolled in) may fall within permitted purposes, changing whether the Limit link is required",
+      "passed": true,
+      "evidence": "'Your facial recognition for authentication likely qualifies as \"safety, security, and integrity of services\" or \"activities for which the SPI was specifically provided\" — if that's the only use, you may not need to offer a limitation option for that specific use case. But if you also use facial recognition... for profiling, advertising, analytics... those uses fall outside the permitted-purpose list and do trigger the right to limit.'"
+    },
+    {
+      "text": "Requires notice-at-collection disclosures: SPI categories, purposes, retention periods per category, and whether sold/shared",
+      "passed": true,
+      "evidence": "'What You Need to Disclose' section: 'name these SPI categories explicitly', 'The purpose(s) for each', 'Whether each category is sold or shared, and to whom', 'Retention periods or criteria for each SPI category.'"
+    },
+    {
+      "text": "Flags heightened risk posture: data minimization/purpose limitation duties (§1798.100(c)), and risk-assessment obligations for high-risk processing under the CPPA regulations where applicable",
+      "passed": true,
+      "evidence": "'Data minimization and retention (CPRA): SPI collection must be adequate, relevant, and limited to what's necessary for the disclosed purpose' and 'Cybersecurity audits and risk assessments (effective January 1, 2026)... strong candidate for \"significant risk\" processing... Conduct annual cybersecurity audits... Conduct and document a risk assessment.' (No explicit §1798.100(c) citation, but the substantive duty is clearly and correctly described.)"
+    }
+  ],
+  "total": 5,
+  "passed": 5
+}

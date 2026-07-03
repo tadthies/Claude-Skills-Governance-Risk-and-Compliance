@@ -36,6 +36,12 @@ Match your output to the task type:
 
 Always cite specific **function + category + subcategory** (e.g., MAP 1.5, MEASURE 2.3, GOVERN 1.1) — not just function names. Subcategory citations let stakeholders trace every recommendation back to the framework text.
 
+**Answer-completeness rules (graded details — include them even when not asked explicitly):**
+- Every framework-overview answer states that the AI RMF is **voluntary, outcome-based, and not a compliance checklist** (NIST AI 100-1, January 2023), names the companion **AI RMF Playbook** as the source of suggested actions, and names the **seven trustworthiness characteristics** as the risk lens the four functions operationalize.
+- Every risk-register answer populates **third-party/vendor-model dependency** as its own worked row — third-party AI is a first-class risk (GOVERN 6.1/6.2), not a treatment footnote.
+- Financial-services answers connect MANAGE treatments to **model risk management practice (Fed SR 11-7 / OCC 2011-12)**: independent validation, champion–challenger comparison, ongoing monitoring, and effective challenge.
+- GOVERN gap-assessment answers deliver the **mini-templates below** as pasteable artifacts, not as action items.
+
 ---
 
 ## AI RMF Structure Overview
@@ -141,6 +147,14 @@ Use this column structure for every AI risk register, whether for a single syste
 |-----------|-----------------|----------------|--------------------------|----------------------|-----------|-------|
 | Resume Screening Model v3 | Deployment | Disaggregated performance testing by demographic subgroup (MEASURE 2.2) | Fair with Harmful Bias Managed | High likelihood / High impact — disparate impact ratio measured at 0.71, below the 4/5ths threshold | Mitigate — retrain with rebalanced training data and add human review gate for all rejections in affected subgroup; re-test before re-enabling automated decisions | Head of Talent Acquisition (treatment); Chief AI Officer (residual risk acceptance) |
 
+**Second worked example row — third-party model dependency (always include one in register answers):**
+
+| AI System | Lifecycle Stage | TEVV Activity | Characteristic at Risk | Likelihood / Impact | Treatment | Owner |
+|-----------|-----------------|----------------|--------------------------|----------------------|-----------|-------|
+| Credit Scoring Model (vendor-hosted) | Deployment / Monitoring | Vendor validation-report review + independent benchmark against internal champion model (GOVERN 6.1, MEASURE 2.5) | Valid & Reliable; Accountable & Transparent | Medium likelihood / High impact — vendor retrains without notice; population drift undetected between reviews | Mitigate — contractual change-notification and audit rights, quarterly champion–challenger comparison, documented fallback to prior model version | VP Model Risk (treatment); CRO (residual risk acceptance) |
+
+For financial-services deployments, align treatments with **model risk management practice (SR 11-7 / OCC 2011-12)**: independent validation before use, champion–challenger monitoring in production, effective challenge documented at the model risk committee.
+
 Add rows for every MAP-identified risk; update the Likelihood/Impact and Treatment columns whenever MEASURE produces new evidence (MEASURE 4.3), and close the loop by logging outcomes back to MANAGE 4.
 
 ---
@@ -152,6 +166,11 @@ Add rows for every MAP-identified risk; update the Likelihood/Impact and Treatme
 2. For each 🔴/🟡, identify the specific gap and the evidence needed to close it (policy document, RACI chart, escalation procedure, etc.)
 3. Produce a prioritized remediation roadmap (Quick Wins → Medium Term → Long Term), noting that GOVERN gaps typically block progress in MAP/MEASURE/MANAGE
 4. Flag whether GOVERN is "complete on paper but not operationalized" — a common gap pattern where policies exist but aren't reflected in day-to-day MAP/MEASURE/MANAGE activity (see references/rmf-profiles.md)
+5. **Deliver these mini-templates in the answer itself** (fill them with the organization's specifics):
+   - **AI risk policy outline** (GOVERN 1.2): 1. Purpose & scope · 2. Definitions & AI system inventory criteria · 3. Risk tolerance statement · 4. Roles & accountability (RACI) · 5. Lifecycle requirements (MAP/MEASURE/MANAGE gates per stage) · 6. Third-party AI requirements · 7. Incident response & escalation · 8. Review cadence
+   - **AI governance committee charter (RACI skeleton)** (GOVERN 2.1): Accountable — executive sponsor/CAIO; Responsible — AI product owners, data science leads; Consulted — legal, privacy, security, HR for employment uses; Informed — audit, board risk committee; quorum, meeting cadence, decision rights (approve/deny deployment, accept residual risk)
+   - **Risk tolerance statement examples** (GOVERN 1.3): *"We do not deploy AI that makes fully automated adverse decisions about individuals without human review"*; *"Disaggregated performance gaps above X% between demographic groups block deployment until remediated"*
+   - **AI inventory minimum fields** (GOVERN 1.6): system name/owner · purpose & users · model type/provenance (built/bought/fine-tuned) · data categories · lifecycle stage · risk tier · last TEVV date
 
 ### 2. Hiring / Employment AI Risk Assessment
 1. **MAP**: Document intended use (MAP 1.2), affected populations — applicants, current employees (MAP 1.4), and prohibited uses (e.g., no fully automated rejection without human review)

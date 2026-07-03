@@ -1,0 +1,13 @@
+{
+  "eval_id": 70,
+  "eval_name": "govern-gap-assessment",
+  "run_type": "without_skill",
+  "prompt": "Conduct a GOVERN gap assessment for our organization. We have an AI ethics statement but no formal AI risk policy, no cross-functional AI team, no defined risk tolerance for AI, and our legal team is not involved in AI deployments. Rate each GOVERN category and give us a prioritised remediation plan.",
+  "assertions": [
+    "Structures the assessment around the GOVERN categories (policies/processes; accountability structures; workforce diversity/culture; organizational engagement; third-party risk; monitoring/inventory-type categories) with a rating per area — consistent with the six GOVERN categories of AI RMF 1.0",
+    "Correctly rates the described state: ethics statement = partial credit on culture/policy, while missing risk policy, missing cross-functional team, undefined risk tolerance, and absent legal involvement are each flagged as specific gaps against specific GOVERN areas",
+    "Flags undefined risk tolerance as a foundational gap (GOVERN 1.x expects documented risk tolerance informing all downstream MAP/MEASURE/MANAGE work)",
+    "Remediation plan is prioritised and sequenced (policy + accountability + tolerance first; team formation and legal integration next; inventory and third-party processes after) with owners/timeframes",
+    "Deliverables are concrete: AI risk policy outline, RACI or committee charter, risk tolerance statement examples, AI system inventory — not just abstract advice"
+  ]
+}

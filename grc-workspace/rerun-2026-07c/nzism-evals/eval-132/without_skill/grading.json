@@ -1,0 +1,33 @@
+{
+  "eval_id": 132,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Does not give a flat yes/no: explains offshore hosting of NZ government data is a risk-based decision requiring a formal cloud risk assessment and agency-level approval (accreditation/risk acceptance by the responsible authority), not a prohibition",
+      "passed": true,
+      "evidence": "\"It is potentially possible, but not automatic — offshoring RESTRICTED information outside New Zealand requires a formal risk assessment, explicit risk acceptance by your agency's Accreditation Authority... It is not a blanket prohibition, but it is treated as a heightened-risk decision\""
+    },
+    {
+      "text": "References the NZ Government cloud framework accurately: cloud-first policy with security requirements, the government cloud risk assessment process, and Protective Security Requirements (PSR) obligations alongside the NZISM",
+      "passed": false,
+      "evidence": "Response mentions \"Cloud First Policy\" and GCDO's \"Cloud Risk Assessment process/tooling\" but never mentions Protective Security Requirements (PSR) anywhere in the response — no match for 'PSR' or 'Protective Security' in the text, so this specific required element is missing."
+    },
+    {
+      "text": "Addresses jurisdiction and sovereignty risk explicitly: offshore hosting means Australian jurisdiction over the data; assess legal access regimes, data residency commitments, and exit strategy",
+      "passed": true,
+      "evidence": "\"the legal exposure of data being subject to Australian law and any third-country access risk\"; \"Ensure contractual terms with AWS address data location commitments... and data return/deletion on exit\""
+    },
+    {
+      "text": "Requires classification-appropriate controls for RESTRICTED: encryption at rest and in transit with agency-controlled keys where feasible, access controls limited to cleared personnel, logging/monitoring, and supplier assurance evidence (e.g., IRAP/independent assessments of the AWS region)",
+      "passed": false,
+      "evidence": "Response covers encryption, access control, logging, and cleared administrators, but supplier assurance is only vaguely referenced as \"relevant certifications, NZISM control mapping\" — no mention of IRAP or any specific independent assessment of the AWS region, which the assertion calls for explicitly."
+    },
+    {
+      "text": "Sets out the approval chain: documented risk assessment, CISO/ITSM review, and formal risk acceptance by the accreditation authority/agency head before go-live, with the decision recorded",
+      "passed": true,
+      "evidence": "\"Document the offshoring decision and residual risk in the SRMP and obtain explicit accreditation sign-off before go-live... Engage your agency's CISO/ITSM and, where relevant, NCSC... for advice\""
+    }
+  ],
+  "total": 5,
+  "passed": 3
+}
