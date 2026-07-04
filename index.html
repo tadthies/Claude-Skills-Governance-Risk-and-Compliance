@@ -401,9 +401,9 @@ layout: null
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.5);
+      color: rgba(16, 54, 94, 0.62);
       margin-bottom: 0.4rem;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(16, 54, 94, 0.18);
       padding-bottom: 0.2rem;
     }
     .skill-cat-chips {
@@ -413,7 +413,7 @@ layout: null
     }
     .skill-cat-chips span {
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.92);
+      color: #10365e;
       white-space: nowrap;
       display: flex;
       align-items: center;
@@ -700,62 +700,62 @@ layout: null
     .quickstart-strip {
       background: var(--white);
       border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
+      padding: 1.1rem 1.5rem;
     }
     .quickstart-inner {
-      max-width: 1080px;
+      max-width: 980px;
       margin: 0 auto;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
     }
     .qs-step {
       display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      flex: 1 1 260px;
-      max-width: 340px;
-      background: #f8fafc;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: #fbfdff;
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 0.7rem 0.95rem;
+      padding: 0.85rem 1rem;
     }
-    .qs-icon { font-size: 1.35rem; flex-shrink: 0; }
-    .qs-body { min-width: 0; }
+    .qs-num {
+      width: 26px; height: 26px;
+      background: var(--primary); color: #fff;
+      border-radius: 50%;
+      font-size: 0.8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
     .qs-title {
-      display: flex; align-items: center; gap: 0.45rem;
-      font-weight: 600; color: var(--text); font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.3;
     }
-    .qs-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
-    .qs-desc code { font-size: 0.76rem; }
+    .qs-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+    .qs-desc code { font-size: 0.75rem; }
     .qs-desc kbd {
       display: inline-block;
-      background: #fff;
+      background: #f1f5f9;
       border: 1px solid #cbd5e1;
       border-bottom-width: 2px;
       border-radius: 5px;
-      padding: 0.05rem 0.45rem;
+      padding: 0.1rem 0.5rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.74rem;
       font-weight: 600;
       color: var(--text);
     }
-    .qs-path { color: #94a3b8; padding: 0 0.25rem; font-size: 0.75rem; }
-    .qs-num {
-      width: 22px; height: 22px;
-      background: var(--primary); color: #fff;
-      border-radius: 50%;
-      font-size: 0.73rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .qs-arrow { color: #c0cad6; font-size: 1.4rem; align-self: center; }
+    .qs-path { color: #94a3b8; padding: 0 0.3rem; font-size: 0.8rem; }
     @media (max-width: 700px) {
-      .quickstart-inner { flex-direction: column; align-items: stretch; }
-      .qs-step { max-width: none; }
-      .qs-arrow { display: none; }
+      .quickstart-inner { grid-template-columns: 1fr; gap: 0.6rem; }
+      .qs-step { padding: 0.7rem 0.9rem; }
     }
 
 
@@ -889,26 +889,24 @@ layout: null
 <div class="quickstart-strip">
   <div class="quickstart-inner">
     <div class="qs-step">
-      <div class="qs-icon" aria-hidden="true">⬇️</div>
+      <span class="qs-num">1</span>
       <div class="qs-body">
-        <div class="qs-title"><span class="qs-num">1</span> Download</div>
-        <div class="qs-desc">Grab any <code>.skill</code> file below</div>
+        <div class="qs-title">Download a skill</div>
+        <div class="qs-desc">Pick any framework below and download its <code>.skill</code> file</div>
       </div>
     </div>
-    <span class="qs-arrow" aria-hidden="true">›</span>
     <div class="qs-step">
-      <div class="qs-icon" aria-hidden="true">📤</div>
+      <span class="qs-num">2</span>
       <div class="qs-body">
-        <div class="qs-title"><span class="qs-num">2</span> Upload to Claude</div>
-        <div class="qs-desc"><kbd>Customize</kbd><span class="qs-path">→</span><kbd>Skills</kbd><span class="qs-path">→</span><kbd>Upload skill</kbd></div>
+        <div class="qs-title">Upload to Claude</div>
+        <div class="qs-desc"><kbd>Customize</kbd><span class="qs-path">›</span><kbd>Skills</kbd><span class="qs-path">›</span><kbd>Upload skill</kbd></div>
       </div>
     </div>
-    <span class="qs-arrow" aria-hidden="true">›</span>
     <div class="qs-step">
-      <div class="qs-icon" aria-hidden="true">💬</div>
+      <span class="qs-num">3</span>
       <div class="qs-body">
-        <div class="qs-title"><span class="qs-num">3</span> Ask anything</div>
-        <div class="qs-desc">Claude activates the skill and answers with expert-level guidance</div>
+        <div class="qs-title">Ask anything</div>
+        <div class="qs-desc">The skill activates automatically with expert-level guidance</div>
       </div>
     </div>
   </div>
