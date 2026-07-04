@@ -729,6 +729,10 @@ layout: null
     .releases-archive summary::-webkit-details-marker { display: none; }
     .releases-archive[open] summary { border-radius: var(--radius) var(--radius) 0 0; border-bottom-color: transparent; }
     .releases-archive-body { border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); padding: 0.5rem 0; }
+    .project-card { border: 1px solid var(--border, #e2e8f0); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; background: var(--card-bg, #fff); }
+    .project-card img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border, #e2e8f0); margin-bottom: 0.75rem; }
+    .project-card h3 { margin-top: 0.25rem; }
+    .project-tags { color: var(--text-muted, #64748b); font-size: 0.85rem; margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -859,6 +863,7 @@ layout: null
     <button class="tab-btn" data-tab="whats-new" role="tab">📅 Monthly GRC Updates</button>
     <button class="tab-btn" data-tab="resources" role="tab">📚 Resources</button>
     <button class="tab-btn" data-tab="feedback" role="tab">💬 Feedback</button>
+    <button class="tab-btn" data-tab="additional-projects" role="tab">🚀 Additional Projects</button>
   </nav>
 </div>
 
@@ -2696,6 +2701,7 @@ layout: null
       </div>
       <ul>
         <li><span class="release-badge badge-fix">Fix</span> <strong>Documentation drift</strong> — EU AI Act descriptions (README + site) updated from 8 to <strong>9 prohibited practices</strong> (9th: non-consensual intimate imagery / CSAM generation, Digital Omnibus, applies 2 Dec 2026) and now document the <strong>FRIA (Art. 27)</strong> capability added in v1.6.0; NZISM descriptions now document the <strong>verified control-ID citation</strong> capability added in v1.6.1. No skill content changed — docs only</li>
+        <li><span class="release-badge badge-improve">Improved</span> <strong>Site</strong> — Release Notes now show only the two most recent releases (older releases collapsed by default); the Additional Resources section moved to a dedicated <strong>Additional Projects</strong> tab covering iso27001-mcp, Responsible AI Model Evaluations, and AI Safety Guard</li>
       </ul>
     </div>
 
@@ -2714,6 +2720,9 @@ layout: null
         <li><span class="release-badge badge-improve">Improved</span> All 30 plugins bumped to v1.6.1; the four revised skills' ZIPs rebuilt</li>
       </ul>
     </div>
+
+    <details class="releases-archive">
+      <summary>▸ Show older releases (v1.6.0 and earlier)</summary>
 
     <!-- v1.6.0 -->
     <div class="release">
@@ -2802,8 +2811,7 @@ layout: null
       </ul>
     </div>
 
-    <details class="releases-archive">
-      <summary>▸ Show older releases (v0.1.0 – v1.1.0)</summary>
+
       <div class="releases-archive-body">
     <!-- v1.1.0 -->
     <div class="release">
@@ -3084,48 +3092,61 @@ layout: null
     </details>
 
 
-    <hr />
+  </section>
 
-    <h2>Additional Resources</h2>
 
-    <div>
-      <h3>Responsible AI Model Evaluations for NIST AI Risk Management Framework</h3>
-      <p>An open-source, automated red-teaming study benchmarking frontier LLMs from Anthropic, OpenAI, and Google against the RedBench dataset (29,362 prompts across 37 sub-benchmarks and 22 safety risk categories). Scored via a dual-judge pipeline (deterministic regex + Claude Haiku neural judge) and mapped to the NIST AI Risk Management Framework. Findings are published to a live public dashboard and compiled into a peer-reviewed research paper.</p>
-      <p>Across nine weekly evaluation runs, the study produced five major findings:</p>
-      <ul style="margin:0.75rem 0 0.75rem 1.25rem; display:flex; flex-direction:column; gap:0.6rem;">
-        <li style="font-size:0.9rem; line-height:1.6; color:var(--text);">
-          <strong>Safety and utility are not in tension — but only Anthropic has proved it.</strong>
-          All three Anthropic Claude models averaged under 6% Attack Success Rate and under 1.2% false refusals simultaneously. Every other provider fails at least one threshold. On the final run, Claude Sonnet 4.6 achieved a 5.25% ASR with 0.00% false refusals — the only data point in 9 runs where a model hit a perfect false-refusal rate. GPT-4o Mini posted 8.42% ASR and 13.67% false refusals, failing both simultaneously.
-        </li>
-        <li style="font-size:0.9rem; line-height:1.6; color:var(--text);">
-          <strong>CBRN information is the most severe and universal safety failure.</strong>
-          Chemical, Biological, Radiological, and Nuclear prompts bypassed guardrails at an average of 35.41% across all 9 runs and all 7 models — more than 1.6× the second-highest category (Cybersecurity Threats Beyond Malware at 21.99%). This gap holds equally across all providers, confirming it is a structural limit of current AI alignment, not a single-provider weakness.
-        </li>
-        <li style="font-size:0.9rem; line-height:1.6; color:var(--text);">
-          <strong>Election Interference is a structural vulnerability — no provider has solved it.</strong>
-          Ranked 5th in risk with a 5.66% average bypass rate across 53 data points (7 models × up to 9 runs each). Consistent across every model, every provider, and every week — ruling out sampling noise. Given ongoing global electoral cycles, this carries the most immediate real-world policy urgency.
-        </li>
-        <li style="font-size:0.9rem; line-height:1.6; color:var(--text);">
-          <strong>Multi-turn safety is where providers diverge most sharply.</strong>
-          In the final run (22 May), GPT-4o Mini reached guardrail drift of +1.67 per conversation turn — the study's highest single-run reading — and 4 of 7 models simultaneously posted drift of +1.11 per turn or worse. Claude Sonnet 4.6 and Opus 4.6 averaged −0.12 per turn across all runs: their guardrails <em>tighten</em> under sustained adversarial pressure rather than eroding.
-        </li>
-        <li style="font-size:0.9rem; line-height:1.6; color:var(--text);">
-          <strong>Week-to-week variance is high, but structural rankings are stable.</strong>
-          GPT-4o Mini exceeded 8% ASR in 6 of its 9 runs with no improvement trend. Gemini 2.5 Pro never fell below 7.25% across any of its 6 evaluated runs. Gemini 2.5 Flash led on ASR in every multi-provider run it participated in. These are repeatable, structural safety differences across 27,000 evaluations — not statistical artefacts.
-        </li>
+  <!-- ═══ TAB: Additional Projects ═══ -->
+  <section class="tab-panel" id="tab-additional-projects" role="tabpanel">
+
+    <h2>Additional Projects</h2>
+    <p>Open-source projects from the same author, complementing the GRC skills collection.</p>
+
+    <div class="project-card">
+      <img src="assets/projects/iso27001-mcp.png" alt="iso27001-mcp — npm package header with version, downloads, CI, license, ISO 27001:2022 and Socket badges" loading="lazy" onerror="this.style.display='none'" />
+      <h3>iso27001-mcp — ISO 27001 Compliance Workspace for Claude</h3>
+      <p>A stateful MCP server that turns Claude into a full ISO 27001 ISMS assistant. Unlike static prompt templates, it maintains a live, encrypted local database, so Claude can query, reason across, and update an entire ISMS within a single conversation. It ships with all 93 ISO 27001:2022 controls pre-seeded, a working risk register, 30 policy and procedure templates, evidence tracking, Statement of Applicability generation, and Clause 9.3/10.1 management review workflows.</p>
+      <p><strong>Highlights</strong></p>
+      <ul>
+        <li>50 tools, 20 MCP resources, and 3 access roles covering the full ISMS lifecycle</li>
+        <li>Security-first architecture: AES-256 encrypted SQLite, HMAC-signed API keys, tamper-evident audit log, and RBAC (viewer / analyst / admin)</li>
+        <li>Human-in-the-loop confirmation gates on all critical writes</li>
+        <li>Local-first by design — no telemetry, no cloud sync; installs in one line via npm</li>
       </ul>
-      <p>
-        <a href="https://sushegaad.github.io/Responsible-AI-Model-Evaluations/" target="_blank" rel="noopener">🔗 Live Dashboard</a>
-        &nbsp;·&nbsp;
-        <a href="https://sushegaad.github.io/Responsible-AI-Model-Evaluations/paper/research-paper.pdf" target="_blank" rel="noopener">📄 Research Paper (PDF)</a>
-        &nbsp;·&nbsp;
-        <a href="https://github.com/Sushegaad/Responsible-AI-Model-Evaluations" target="_blank" rel="noopener">GitHub Repository</a>
-      </p>
-      <p style="color:var(--text-muted);font-size:0.875rem;">Hemant Naik &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; Dataset: RedBench (knoveleng/redbench, MIT)</p>
+      <p><strong>Links:</strong> <a href="https://www.npmjs.com/package/iso27001-mcp" target="_blank" rel="noopener">npm</a> · <a href="https://github.com/Sushegaad/MCP-Server-for-ISO27001" target="_blank" rel="noopener">GitHub</a> · <a href="https://sushegaad.github.io/MCP-Server-for-ISO27001/" target="_blank" rel="noopener">Live Demo</a></p>
+      <p class="project-tags">ISO 27001 · ISMS · GRC · Risk Management · MCP · Open Source</p>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/projects/responsible-ai-evals.png" alt="Responsible AI Model Evaluations — nine-week red-teaming study infographic with safety leaderboard and top risk categories" loading="lazy" onerror="this.style.display='none'" />
+      <h3>Responsible AI Model Evaluations for the NIST AI Risk Management Framework</h3>
+      <p>An open-source, automated red-teaming study benchmarking frontier LLMs from Anthropic, OpenAI, and Google against the RedBench dataset — 29,362 prompts spanning 37 sub-benchmarks and 22 safety risk categories. Results are scored through a dual-judge pipeline (deterministic regex plus a neural judge), mapped to the NIST AI RMF, published to a live public dashboard, and compiled into a research paper. Across nine weekly evaluation runs and more than 27,000 evaluations, the study surfaced repeatable, structural safety differences between providers.</p>
+      <p><strong>Highlights</strong></p>
+      <ul>
+        <li>Demonstrated that safety and utility are not inherently in tension: Anthropic's Claude models were the only ones to sustain under 6% attack success rate and under 1.2% false refusals simultaneously</li>
+        <li>Identified CBRN prompts as the most severe universal failure mode (35.41% average bypass rate across all providers), and election interference as an unsolved structural vulnerability industry-wide</li>
+        <li>Measured multi-turn guardrail drift, showing some models erode under sustained adversarial pressure while Claude models tightened (−0.12 per turn)</li>
+        <li>Fully reproducible: MIT-licensed code, open dataset, and a live public dashboard</li>
+      </ul>
+      <p><strong>Links:</strong> <a href="https://sushegaad.github.io/Responsible-AI-Model-Evaluations/" target="_blank" rel="noopener">Live Dashboard</a> · <a href="https://sushegaad.github.io/Responsible-AI-Model-Evaluations/paper/research-paper.pdf" target="_blank" rel="noopener">Research Paper (PDF)</a> · <a href="https://github.com/Sushegaad/Responsible-AI-Model-Evaluations" target="_blank" rel="noopener">GitHub</a></p>
+      <p class="project-tags">AI Safety · Red Teaming · NIST AI RMF · LLM Evaluation · Open Source</p>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/projects/ai-safety-guard.png" alt="AI Safety Guard — shield logo and Chrome extension warning dialog flagging IBAN, company secrets, PHI, email and phone number before sending to an AI chatbot" loading="lazy" onerror="this.style.display='none'" />
+      <h3>AI Safety Guard — Chrome Extension for Sensitive-Data Protection</h3>
+      <p>A free, open-source Chrome extension that warns users before they send sensitive data to AI chatbots (ChatGPT, Claude, Gemini, Perplexity, Copilot, and custom domains). It scans prompts as you type — entirely on-device, with no network calls, accounts, or logging — and interrupts risky sends with a masked warning and one-click redaction. Attached PDF and Word files are scanned locally, and pasted screenshots trigger a privacy nudge.</p>
+      <p><strong>Highlights</strong></p>
+      <ul>
+        <li>Detects API keys, private keys, SSNs, credit cards, and EU identifiers (IBAN, NIR, Steuer-ID, DNI), plus confidential business, legal, and health language</li>
+        <li>Multilingual detection in English, French, German, and Spanish</li>
+        <li>100% local processing — no data ever leaves the device</li>
+        <li>Built to WCAG 2.1 AA accessibility standards, with a public SBOM and federal security overview for organizational review</li>
+      </ul>
+      <p><strong>Links:</strong> <a href="https://sushegaad.github.io/AI-Safety-Guard-Chrome-Extension/" target="_blank" rel="noopener">Website</a> · <a href="https://github.com/Sushegaad/AI-Safety-Guard-Chrome-Extension" target="_blank" rel="noopener">GitHub</a> · <a href="https://youtu.be/cRWgHaxGqjY" target="_blank" rel="noopener">Demo Video</a></p>
+      <p class="project-tags">Privacy · Browser Security · Data Loss Prevention · Chrome Extension · Open Source</p>
     </div>
 
   </section>
-
 
 </main>
 
@@ -3161,7 +3182,7 @@ layout: null
 
   // Restore tab from URL hash on load
   const hash = location.hash.replace('#', '');
-  const validTabs = ['skills', 'installation', 'evaluation', 'feedback', 'whats-new', 'resources'];
+  const validTabs = ['skills', 'installation', 'evaluation', 'feedback', 'whats-new', 'resources', 'additional-projects'];
   if (hash && validTabs.includes(hash)) activateTab(hash);
 
   // Form submission is handled by @formspree/ajax (see the feedback tab)
